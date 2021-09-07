@@ -16,12 +16,15 @@ import static dqwapi.domain.model.common.KokoroType.YELLOW_PURPLE;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dqwapi.domain.model.kokoro.Combination;
 import dqwapi.domain.model.kokoro.Kokoro;
 import dqwapi.domain.model.kokoro.Parameter;
 import dqwapi.domain.model.kokoro.Slot;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ClassPathResource;
@@ -33,7 +36,7 @@ import org.springframework.stereotype.Service;
 public class KokoroService implements IKokoroService {
 
   private List<Kokoro> kokoros = new ArrayList<>();
-  private List<List<Slot>> combinations = new ArrayList<>();
+  private List<Combination> combinations = new ArrayList<>();
 
   @PostConstruct
   void init() {
@@ -63,11 +66,12 @@ public class KokoroService implements IKokoroService {
     parameter.setSp((int) Math.ceil(parameter.getSp() * magnification));
     parameter.setDx((int) Math.ceil(parameter.getDx() * magnification));
     slot.getKokoro().getStatus().setParameter(parameter);
+    slot.getKokoro().setName(slot.getKokoro().getName() + "(up)");
   }
 
   void process() {
-    for (List<Slot> slots : combinations) {
-      for (Slot slot : slots) {
+    for (Combination combination : combinations) {
+      for (Slot slot : combination.getSlots()) {
         if (slot.getType().equals(RAINBOW)) {
           multiplyParameter(slot);
         }
@@ -131,8 +135,33 @@ public class KokoroService implements IKokoroService {
           }
         }
       }
+
+      final Parameter parameter = new Parameter();
+      parameter.setHp(combination.getSlots().stream()
+          .mapToInt(slot -> slot.getKokoro().getStatus().getParameter().getHp()).sum());
+      parameter.setMp(combination.getSlots().stream()
+          .mapToInt(slot -> slot.getKokoro().getStatus().getParameter().getMp()).sum());
+      parameter.setOp(combination.getSlots().stream()
+          .mapToInt(slot -> slot.getKokoro().getStatus().getParameter().getOp()).sum());
+      parameter.setDp(combination.getSlots().stream()
+          .mapToInt(slot -> slot.getKokoro().getStatus().getParameter().getDp()).sum());
+      parameter.setOs(combination.getSlots().stream()
+          .mapToInt(slot -> slot.getKokoro().getStatus().getParameter().getOs()).sum());
+      parameter.setDs(combination.getSlots().stream()
+          .mapToInt(slot -> slot.getKokoro().getStatus().getParameter().getDs()).sum());
+      parameter.setSp(combination.getSlots().stream()
+          .mapToInt(slot -> slot.getKokoro().getStatus().getParameter().getSp()).sum());
+      parameter.setDx(combination.getSlots().stream()
+          .mapToInt(slot -> slot.getKokoro().getStatus().getParameter().getDx()).sum());
+      combination.setParameter(parameter);
     }
-    for (List<Slot> slots : combinations) {
+
+    combinations = combinations.stream()
+        .sorted(Comparator.comparingInt(combination -> combination.getParameter().getOp()))
+        .collect(Collectors.toList());
+
+    for (Combination combination : combinations) {
+      final List<Slot> slots = combination.getSlots();
       log.info("{}:{}:{}, {}:{}:{}, {}:{}:{}, {}:{}:{}",
           slots.get(0).getType(),
           slots.get(0).getKokoro().getName(),
@@ -147,11 +176,12 @@ public class KokoroService implements IKokoroService {
           slots.get(3).getKokoro().getName(),
           slots.get(3).getKokoro().getType()
       );
+      log.info(combination.getParameter().toString());
     }
   }
 
   @Override
-  public List<List<Slot>> getCombinations() {
+  public List<Combination> getCombinations() {
     int count = 0;
     for (int i = 0; i < kokoros.size(); i++) {
       for (int j = 0; j < kokoros.size(); j++) {
@@ -165,30 +195,33 @@ public class KokoroService implements IKokoroService {
 
                   final ObjectMapper objectMapper = new ObjectMapper();
 
+                  final Combination combination = new Combination();
+
                   // BATTLE_MASTER
                   List<Slot> slots = new ArrayList<>();
 
-                  Slot slot1 = new Slot();
+                  final Slot slot1 = new Slot();
                   slot1.setType(RED);
                   slot1.setKokoro(objectMapper.convertValue(kokoros.get(i), Kokoro.class));
                   slots.add(slot1);
 
-                  Slot slot2 = new Slot();
+                  final Slot slot2 = new Slot();
                   slot2.setType(RED);
                   slot2.setKokoro(objectMapper.convertValue(kokoros.get(j), Kokoro.class));
                   slots.add(slot2);
 
-                  Slot slot3 = new Slot();
+                  final Slot slot3 = new Slot();
                   slot3.setType(RED_YELLOW);
                   slot3.setKokoro(objectMapper.convertValue(kokoros.get(k), Kokoro.class));
                   slots.add(slot3);
 
-                  Slot slot4 = new Slot();
+                  final Slot slot4 = new Slot();
                   slot4.setType(RAINBOW);
                   slot4.setKokoro(objectMapper.convertValue(kokoros.get(l), Kokoro.class));
                   slots.add(slot4);
 
-                  combinations.add(slots);
+                  combination.setSlots(slots);
+                  combinations.add(combination);
                 }
               }
             }

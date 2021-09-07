@@ -1,8 +1,8 @@
 package dqwapi.domain.service;
 
-import dqwapi.domain.model.kokoro.Slot;
+import dqwapi.domain.model.kokoro.Combination;
 import java.util.List;
 
 public interface IKokoroService {
-  List<List<Slot>> getCombinations();
+  List<Combination> getCombinations();
 }
