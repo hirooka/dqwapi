@@ -1,0 +1,217 @@
+[
+  {
+    "id": 395,
+    "name": "オオヌシガルーダ",
+    "rank": "S",
+    "type": "PURPLE",
+    "race": "BIRD",
+    "status": {
+      "parameter": {
+        "hp": 87,
+        "mp": 100,
+        "op": 18,
+        "dp": 61,
+        "os": 95,
+        "ds": 38,
+        "sp": 90,
+        "dx": 81
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "skill": "SPELL",
+              "attack": "SPELL",
+              "magnification": 5
+            },
+            {
+              "skill": "SPELL",
+              "attack": "SPELL",
+              "attribute": "MERA",
+              "magnification": 7
+            },
+            {
+              "skill": "SPELL",
+              "attack": "SPELL",
+              "attribute": "BAGI",
+              "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 394,
+    "name": "ジャンボきづち",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "PHANTOM",
+    "status": {
+      "parameter": {
+        "hp": 70,
+        "mp": 36,
+        "op": 98,
+        "dp": 34,
+        "os": 16,
+        "ds": 14,
+        "sp": 108,
+        "dx": 117
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "skill": "SPECIALITY",
+              "attack": "HIT",
+              "magnification": 7
+            },
+            {
+              "skill": "SPECIALITY",
+              "attack": "SLASH",
+              "attribute": "DORUMA",
+              "magnification": 7
+            },
+            {
+              "skill": "SPECIALITY",
+              "attack": "HIT",
+              "attribute": "DORUMA",
+              "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 388,
+    "name": "おにこんぼう",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "DEVIL",
+    "status": {
+      "parameter": {
+        "hp":102,
+        "mp": 55,
+        "op": 101,
+        "dp": 59,
+        "os": 18,
+        "ds": 36,
+        "sp": 65,
+        "dx": 26
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "skill": "SPECIALITY",
+              "attack": "SLASH",
+              "magnification": 3
+            },
+            {
+              "skill": "SPECIALITY",
+              "attack": "HIT",
+              "magnification": 3
+            },
+            {
+              "skill": "SPECIALITY",
+              "attack": "SLASH",
+              "attribute": "MERA",
+              "magnification": 10
+            },
+            {
+              "skill": "SPECIALITY",
+              "attack": "HIT",
+              "attribute": "MERA",
+              "magnification": 10
+            },
+            {
+              "skill": "SPECIALITY",
+              "attack": "SLASH",
+              "attribute": "DORUMA",
+              "magnification": 7
+            },
+            {
+              "skill": "SPECIALITY",
+              "attack": "HIT",
+              "attribute": "DORUMA",
+              "magnification": 7
+            }
+          ],
+          "critical": 3
+        }
+      ]
+    }
+  },
+  {
+    "id": 349,
+    "name": "オルゴ・デミーラ",
+    "rank": "S",
+    "type": "RED",
+    "race": "NONE",
+    "status": {
+      "parameter": {
+        "hp":110,
+        "mp": 47,
+        "op": 103,
+        "dp": 63,
+        "os": 16,
+        "ds": 16,
+        "sp": 89,
+        "dx": 78
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "skill": "SPECIALITY",
+              "attack": "SLASH",
+              "magnification": 10
+            },
+            {
+              "skill": "SPECIALITY",
+              "attack": "HIT",
+              "magnification":5
+            },
+            {
+              "skill": "SPECIALITY",
+              "attribute": "HYADO",
+              "magnification": 7
+            },
+            {
+              "skill": "SPECIALITY",
+              "attribute": "GIRA",
+              "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 349,
+    "name": "オルゴ・デミーラ",
+    "rank": "C",
+    "type": "RED",
+    "race": "NONE",
+    "status": {
+      "parameter": {
+        "hp": 62,
+        "mp": 27,
+        "op": 58,
+        "dp": 35,
+        "os": 9,
+        "ds": 9,
+        "sp": 49,
+        "dx": 43
+      },
+      "effects": [
+
+      ]
+    }
+  }
+]

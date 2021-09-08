@@ -27,8 +27,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
@@ -175,22 +177,32 @@ public class KokoroService implements IKokoroService {
 
     for (Combination combination : combinations) {
       final List<Slot> slots = combination.getSlots();
-      log.info("{}:{}:{}, {}:{}:{}, {}:{}:{}, {}:{}:{}",
+      log.info("{}={}({}):{}, {}={}({}):{}, {}={}({}):{}, {}={}({}):{}",
           slots.get(0).getType(),
           slots.get(0).getKokoro().getName(),
+          slots.get(0).getKokoro().getRank(),
           slots.get(0).getKokoro().getType(),
           slots.get(1).getType(),
           slots.get(1).getKokoro().getName(),
+          slots.get(1).getKokoro().getRank(),
           slots.get(1).getKokoro().getType(),
           slots.get(2).getType(),
           slots.get(2).getKokoro().getName(),
+          slots.get(2).getKokoro().getRank(),
           slots.get(2).getKokoro().getType(),
           slots.get(3).getType(),
           slots.get(3).getKokoro().getName(),
+          slots.get(3).getKokoro().getRank(),
           slots.get(3).getKokoro().getType()
       );
       log.info(combination.getParameter().toString());
     }
+  }
+
+  private boolean isDuplicatedId(final List<Integer> list) {
+    final Set<Integer> set = new HashSet<>();
+    list.forEach(index -> set.add(kokoros.get(index).getId()));
+    return set.size() != list.size();
   }
 
   @Override
@@ -204,7 +216,10 @@ public class KokoroService implements IKokoroService {
               for (int l = 0; l < kokoros.size(); l++) {
                 if (l != i && l != j && l != k) {
                   log.debug("{}, {}, {}, {}", i, j, k, l);
-                  final List<Integer> kokoroIds = Arrays.asList(i, j, k, l);
+                  final List<Integer> kokoroIndexes = Arrays.asList(i, j, k, l);
+                  if (isDuplicatedId(kokoroIndexes)) {
+                    break;
+                  }
                   count++;
 
                   final Combination combination = new Combination();
@@ -216,7 +231,7 @@ public class KokoroService implements IKokoroService {
                     final Slot slot = new Slot();
                     slot.setType(kokoroTypes.get(z));
                     slot.setKokoro(
-                        objectMapper.convertValue(kokoros.get(kokoroIds.get(z)), Kokoro.class)
+                        objectMapper.convertValue(kokoros.get(kokoroIndexes.get(z)), Kokoro.class)
                     );
                     slots.add(slot);
                   }
