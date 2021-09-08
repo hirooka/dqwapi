@@ -16,14 +16,19 @@ import static dqwapi.domain.model.common.KokoroType.YELLOW_PURPLE;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dqwapi.domain.model.common.KokoroType;
+import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.Combination;
 import dqwapi.domain.model.kokoro.Kokoro;
 import dqwapi.domain.model.kokoro.Parameter;
 import dqwapi.domain.model.kokoro.Slot;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
@@ -35,22 +40,30 @@ import org.springframework.stereotype.Service;
 @Service
 public class KokoroService implements IKokoroService {
 
+  private Map<JobType, List<KokoroType>> slotsByJob = new HashMap<>();
   private List<Kokoro> kokoros = new ArrayList<>();
   private List<Combination> combinations = new ArrayList<>();
 
   @PostConstruct
   void init() {
-    final String json = "kokoro.json";
-    final Resource resource = new ClassPathResource(json);
+    final String kokoroJson = "kokoro.json";
+    final Resource kokoroJsonResource = new ClassPathResource(kokoroJson);
+    final String jobSlotJson = "slots-by-job.json";
+    final Resource jobSlotJsonResource = new ClassPathResource(jobSlotJson);
     try {
       final ObjectMapper objectMapper = new ObjectMapper();
-      kokoros = objectMapper.readValue(resource.getInputStream(), new TypeReference<>() {});
+      slotsByJob =
+          objectMapper.readValue(jobSlotJsonResource.getInputStream(), new TypeReference<>() {});
+      log.info(slotsByJob.toString());
+      log.info("{} jobs", slotsByJob.size());
+      kokoros =
+          objectMapper.readValue(kokoroJsonResource.getInputStream(), new TypeReference<>() {});
       log.info(kokoros.toString());
       log.info("{} kokoros", kokoros.size());
-      combinations = getCombinations();
+      combinations = getCombinations(JobType.BATTLE_MASTER);
       process();
     } catch (IOException ex) {
-      throw new IllegalStateException("Failed to parse " + json, ex);
+      throw new IllegalStateException("Failed to parse JSON file.", ex);
     }
   }
 
@@ -181,7 +194,7 @@ public class KokoroService implements IKokoroService {
   }
 
   @Override
-  public List<Combination> getCombinations() {
+  public List<Combination> getCombinations(final JobType jobType) {
     int count = 0;
     for (int i = 0; i < kokoros.size(); i++) {
       for (int j = 0; j < kokoros.size(); j++) {
@@ -191,34 +204,22 @@ public class KokoroService implements IKokoroService {
               for (int l = 0; l < kokoros.size(); l++) {
                 if (l != i && l != j && l != k) {
                   log.debug("{}, {}, {}, {}", i, j, k, l);
+                  final List<Integer> kokoroIds = Arrays.asList(i, j, k, l);
                   count++;
 
-                  final ObjectMapper objectMapper = new ObjectMapper();
-
                   final Combination combination = new Combination();
+                  final List<KokoroType> kokoroTypes = slotsByJob.get(jobType);
 
-                  // BATTLE_MASTER
-                  List<Slot> slots = new ArrayList<>();
-
-                  final Slot slot1 = new Slot();
-                  slot1.setType(RED);
-                  slot1.setKokoro(objectMapper.convertValue(kokoros.get(i), Kokoro.class));
-                  slots.add(slot1);
-
-                  final Slot slot2 = new Slot();
-                  slot2.setType(RED);
-                  slot2.setKokoro(objectMapper.convertValue(kokoros.get(j), Kokoro.class));
-                  slots.add(slot2);
-
-                  final Slot slot3 = new Slot();
-                  slot3.setType(RED_YELLOW);
-                  slot3.setKokoro(objectMapper.convertValue(kokoros.get(k), Kokoro.class));
-                  slots.add(slot3);
-
-                  final Slot slot4 = new Slot();
-                  slot4.setType(RAINBOW);
-                  slot4.setKokoro(objectMapper.convertValue(kokoros.get(l), Kokoro.class));
-                  slots.add(slot4);
+                  final List<Slot> slots = new ArrayList<>();
+                  final ObjectMapper objectMapper = new ObjectMapper();
+                  for (int z = 0; z < kokoroTypes.size(); z++) {
+                    final Slot slot = new Slot();
+                    slot.setType(kokoroTypes.get(z));
+                    slot.setKokoro(
+                        objectMapper.convertValue(kokoros.get(kokoroIds.get(z)), Kokoro.class)
+                    );
+                    slots.add(slot);
+                  }
 
                   combination.setSlots(slots);
                   combinations.add(combination);
