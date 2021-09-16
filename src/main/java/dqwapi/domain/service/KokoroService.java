@@ -206,6 +206,11 @@ public class KokoroService implements IKokoroService {
   }
 
   @Override
+  public List<Kokoro> getAll() {
+    return kokoros;
+  }
+
+  @Override
   public List<Combination> getCombinations(final JobType jobType) {
     int count = 0;
     for (int i = 0; i < kokoros.size(); i++) {
