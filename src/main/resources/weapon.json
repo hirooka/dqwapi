@@ -1,0 +1,61 @@
+[
+  {
+    "name": "ルビスの剣",
+    "type": "SWORD",
+    "offensivePower": 157,
+    "jobEffects": [
+      {
+        "job": "BATTLE_MASTER",
+        "offensivePower": 5
+      }
+    ],
+    "specialityEffects": [
+      {
+        "offensivePower": 12
+      }
+    ],
+    "skills": [
+      {
+        "name": "天雷なぎはらい",
+        "attribute": "DEIN",
+        "attack": "SLASH",
+        "range": "ALL",
+        "magnification": 210,
+        "pursuits": []
+      },
+      {
+        "name": "創世の光",
+        "attribute": "DEIN",
+        "attack": "SLASH",
+        "range": "SINGLE",
+        "magnification": 420,
+        "pursuits": []
+      }
+    ],
+    "raceEffects": [
+      {
+        "race": "DEVIL",
+        "magnification": 5
+      },
+      {
+        "race": "ZOMBIE",
+        "magnification": 5
+      }
+    ]
+  },
+  {
+    "name": "常闇のやり",
+    "type": "SPEAR",
+    "offensivePower": 156,
+    "skills": [
+      {
+        "name": "月影の大鎌",
+        "attribute": "DORUMA",
+        "attack": "SLASH",
+        "range": "ALL",
+        "magnification": 240,
+        "pursuits": []
+      }
+    ]
+  }
+]
