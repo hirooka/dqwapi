@@ -21,20 +21,21 @@
           "plusCost": 4,
           "damages": [
             {
-              "skill": "SPELL",
               "attack": "SPELL",
+              "attribute": "ALL",
+              "race": "NONE",
               "magnification": 5
             },
             {
-              "skill": "SPELL",
               "attack": "SPELL",
               "attribute": "MERA",
+              "race": "NONE",
               "magnification": 7
             },
             {
-              "skill": "SPELL",
               "attack": "SPELL",
               "attribute": "BAGI",
+              "race": "NONE",
               "magnification": 7
             }
           ]
@@ -64,20 +65,21 @@
           "plusCost": 4,
           "damages": [
             {
-              "skill": "SPECIALITY",
               "attack": "HIT",
-              "magnification": 7
+              "attribute": "ALL",
+              "race": "NONE",
+              "magnification": 3
             },
             {
-              "skill": "SPECIALITY",
               "attack": "SLASH",
               "attribute": "DORUMA",
+              "race": "NONE",
               "magnification": 7
             },
             {
-              "skill": "SPECIALITY",
               "attack": "HIT",
               "attribute": "DORUMA",
+              "race": "NONE",
               "magnification": 7
             }
           ]
@@ -107,37 +109,39 @@
           "plusCost": 4,
           "damages": [
             {
-              "skill": "SPECIALITY",
               "attack": "SLASH",
+              "attribute": "ALL",
+              "race": "NONE",
               "magnification": 3
             },
             {
-              "skill": "SPECIALITY",
               "attack": "HIT",
+              "attribute": "ALL",
+              "race": "NONE",
               "magnification": 3
             },
             {
-              "skill": "SPECIALITY",
               "attack": "SLASH",
               "attribute": "MERA",
+              "race": "NONE",
               "magnification": 10
             },
             {
-              "skill": "SPECIALITY",
               "attack": "HIT",
               "attribute": "MERA",
+              "race": "NONE",
               "magnification": 10
             },
             {
-              "skill": "SPECIALITY",
               "attack": "SLASH",
               "attribute": "DORUMA",
+              "race": "NONE",
               "magnification": 7
             },
             {
-              "skill": "SPECIALITY",
               "attack": "HIT",
               "attribute": "DORUMA",
+              "race": "NONE",
               "magnification": 7
             }
           ],
@@ -151,7 +155,7 @@
     "name": "オルゴ・デミーラ",
     "rank": "S",
     "type": "RED",
-    "race": "NONE",
+    "race": "SECRET",
     "status": {
       "parameter": {
         "hp":110,
@@ -168,23 +172,39 @@
           "plusCost": 4,
           "damages": [
             {
-              "skill": "SPECIALITY",
               "attack": "SLASH",
+              "attribute": "ALL",
+              "race": "NONE",
               "magnification": 10
             },
             {
-              "skill": "SPECIALITY",
               "attack": "HIT",
-              "magnification":5
+              "attribute": "ALL",
+              "race": "NONE",
+              "magnification": 5
             },
             {
-              "skill": "SPECIALITY",
+              "attack": "SLASH",
               "attribute": "HYADO",
+              "race": "NONE",
               "magnification": 7
             },
             {
-              "skill": "SPECIALITY",
+              "attack": "HIT",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "SLASH",
               "attribute": "GIRA",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "GIRA",
+              "race": "NONE",
               "magnification": 7
             }
           ]
@@ -197,7 +217,7 @@
     "name": "オルゴ・デミーラ",
     "rank": "C",
     "type": "RED",
-    "race": "NONE",
+    "race": "SECRET",
     "status": {
       "parameter": {
         "hp": 62,
@@ -211,6 +231,124 @@
       },
       "effects": [
 
+      ]
+    }
+  },
+  {
+    "id": 306,
+    "name": "ヒュンケル",
+    "rank": "S",
+    "type": "RED",
+    "race": "SECRET",
+    "status": {
+      "parameter": {
+        "hp": 55,
+        "mp": 29,
+        "op": 110,
+        "dp": 24,
+        "os": 5,
+        "ds": 5,
+        "sp": 85,
+        "dx": 81
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "ALL",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "HIT",
+              "attribute": "ALL",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "DORUMA",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "DORUMA",
+              "race": "NONE",
+              "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 243,
+    "name": "ホラービースト",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "DEVIL",
+    "status": {
+      "parameter": {
+        "hp": 91,
+        "mp": 48,
+        "op": 90,
+        "dp": 52,
+        "os": 16,
+        "ds": 32,
+        "sp": 61,
+        "dx": 24
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "ALL",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "ALL",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "DORUMA",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "DORUMA",
+              "race": "NONE",
+              "magnification": 7
+            }
+          ]
+        }
       ]
     }
   }

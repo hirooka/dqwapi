@@ -26,8 +26,8 @@ public class WeaponService implements IWeaponService {
       final ObjectMapper objectMapper = new ObjectMapper();
       weapons =
           objectMapper.readValue(weaponJsonResource.getInputStream(), new TypeReference<>() {});
-      log.info(weapons.toString());
       log.info("{} weapons", weapons.size());
+      log.info(weapons.toString());
     } catch (IOException ex) {
       throw new IllegalStateException("Failed to parse JSON file.", ex);
     }

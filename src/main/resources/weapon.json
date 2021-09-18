@@ -17,16 +17,18 @@
     "skills": [
       {
         "name": "天雷なぎはらい",
-        "attribute": "DEIN",
         "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
         "range": "ALL",
         "magnification": 210,
         "pursuits": []
       },
       {
         "name": "創世の光",
-        "attribute": "DEIN",
         "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
         "range": "SINGLE",
         "magnification": 420,
         "pursuits": []
@@ -50,8 +52,9 @@
     "skills": [
       {
         "name": "月影の大鎌",
-        "attribute": "DORUMA",
         "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
         "range": "ALL",
         "magnification": 240,
         "pursuits": []

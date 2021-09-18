@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Damage {
+public class DamageMagnification {
   private AttackType attack;
   private AttributeType attribute;
   private RaceType race;

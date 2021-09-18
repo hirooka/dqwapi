@@ -12,6 +12,7 @@ public enum RaceType {
   NONE,
   PHANTOM,
   PLANT,
+  SECRET,
   SLIME,
   WATER,
   ZOMBIE

@@ -19,6 +19,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import dqwapi.domain.model.common.KokoroType;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.Combination;
+import dqwapi.domain.model.kokoro.Damage;
+import dqwapi.domain.model.kokoro.DamageMagnification;
+import dqwapi.domain.model.kokoro.Effect;
 import dqwapi.domain.model.kokoro.Kokoro;
 import dqwapi.domain.model.kokoro.Parameter;
 import dqwapi.domain.model.kokoro.Slot;
@@ -56,13 +59,13 @@ public class KokoroService implements IKokoroService {
       final ObjectMapper objectMapper = new ObjectMapper();
       slotsByJob =
           objectMapper.readValue(jobSlotJsonResource.getInputStream(), new TypeReference<>() {});
-      log.info(slotsByJob.toString());
       log.info("{} jobs", slotsByJob.size());
+      log.info(slotsByJob.toString());
       kokoros =
           objectMapper.readValue(kokoroJsonResource.getInputStream(), new TypeReference<>() {});
-      log.info(kokoros.toString());
       log.info("{} kokoros", kokoros.size());
-      combinations = getCombinations(JobType.BATTLE_MASTER);
+      log.info(kokoros.toString());
+      combinations = createCombinations(JobType.BATTLE_MASTER);
       process();
     } catch (IOException ex) {
       throw new IllegalStateException("Failed to parse JSON file.", ex);
@@ -171,13 +174,65 @@ public class KokoroService implements IKokoroService {
       combination.setParameter(parameter);
     }
 
+    for (Combination combination : combinations) {
+      final List<DamageMagnification> damageMagnifications = new ArrayList<>();
+      for (Slot slot : combination.getSlots()) {
+        for (Effect effect : slot.getKokoro().getStatus().getEffects()) {
+          for (Damage damage : effect.getDamages()) {
+            final DamageMagnification damageMagnification = new DamageMagnification();
+            damageMagnification.setAttack(damage.getAttack());
+            damageMagnification.setAttribute(damage.getAttribute());
+            damageMagnification.setRace(damage.getRace());
+            damageMagnification.setMagnification(damage.getMagnification());
+            damageMagnifications.add(damageMagnification);
+          }
+        }
+      }
+
+      // merge
+      final List<DamageMagnification> mergedDamageMagnifications = new ArrayList<>();
+
+      for (int i = 0; i < damageMagnifications.size(); i++) {
+        boolean isMerged = false;
+        int mergedMagnification = damageMagnifications.get(i).getMagnification();
+        for (int j = 0; j < damageMagnifications.size(); j++) {
+
+          if (damageMagnifications.get(i).getAttack()
+              .equals(damageMagnifications.get(j).getAttack())
+              && damageMagnifications.get(i).getAttribute()
+              .equals(damageMagnifications.get(j).getAttribute())
+              && damageMagnifications.get(i).getRace()
+              .equals(damageMagnifications.get(j).getRace())
+          ) {
+            if (j > i) {
+              mergedMagnification += damageMagnifications.get(j).getMagnification();
+            } else if (j < i) {
+              isMerged = true;
+            }
+          }
+
+        }
+
+        if (!isMerged) {
+          DamageMagnification mergedDamageMagnification = new DamageMagnification();
+          mergedDamageMagnification.setAttack(damageMagnifications.get(i).getAttack());
+          mergedDamageMagnification.setAttribute(damageMagnifications.get(i).getAttribute());
+          mergedDamageMagnification.setRace(damageMagnifications.get(i).getRace());
+          mergedDamageMagnification.setMagnification(mergedMagnification);
+          mergedDamageMagnifications.add(mergedDamageMagnification);
+        }
+      }
+
+      combination.setDamageMagnifications(mergedDamageMagnifications);
+    }
+
     combinations = combinations.stream()
         .sorted(Comparator.comparingInt(combination -> combination.getParameter().getOp()))
         .collect(Collectors.toList());
 
     for (Combination combination : combinations) {
       final List<Slot> slots = combination.getSlots();
-      log.info("{}={}({}):{}, {}={}({}):{}, {}={}({}):{}, {}={}({}):{}",
+      log.debug("{}={}({}):{}, {}={}({}):{}, {}={}({}):{}, {}={}({}):{}",
           slots.get(0).getType(),
           slots.get(0).getKokoro().getName(),
           slots.get(0).getKokoro().getRank(),
@@ -195,7 +250,8 @@ public class KokoroService implements IKokoroService {
           slots.get(3).getKokoro().getRank(),
           slots.get(3).getKokoro().getType()
       );
-      log.info(combination.getParameter().toString());
+      log.debug(combination.getParameter().toString());
+      log.debug(combination.getDamageMagnifications().toString());
     }
   }
 
@@ -212,6 +268,10 @@ public class KokoroService implements IKokoroService {
 
   @Override
   public List<Combination> getCombinations(final JobType jobType) {
+    return combinations;
+  }
+
+  private List<Combination> createCombinations(final JobType jobType) {
     int count = 0;
     for (int i = 0; i < kokoros.size(); i++) {
       for (int j = 0; j < kokoros.size(); j++) {

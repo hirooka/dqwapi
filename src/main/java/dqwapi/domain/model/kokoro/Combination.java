@@ -11,4 +11,5 @@ import lombok.NoArgsConstructor;
 public class Combination {
   private List<Slot> slots;
   private Parameter parameter;
+  private List<DamageMagnification> damageMagnifications;
 }
