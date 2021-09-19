@@ -1,5 +1,38 @@
 [
   {
+    "name": "プラチナウィング",
+    "type": "BOOMERANG",
+    "offensivePower": 138,
+    "jobEffects": [
+    ],
+    "specialityEffects": [
+      {
+        "offensivePower": 12
+      }
+    ],
+    "skills": [
+      {
+        "name": "ヒートスライサー",
+        "attack": "SLASH",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "range": "SINGLE",
+        "magnification": 330,
+        "pursuits": []
+      }
+    ],
+    "raceEffects": [
+      {
+        "race": "BIRD",
+        "magnification": 5
+      },
+      {
+        "race": "INSECT",
+        "magnification": 5
+      }
+    ]
+  },
+  {
     "name": "ルビスの剣",
     "type": "SWORD",
     "offensivePower": 157,
@@ -46,9 +79,133 @@
     ]
   },
   {
+    "name": "はぐれメタルの剣",
+    "type": "SWORD",
+    "offensivePower": 153,
+    "jobEffects": [
+    ],
+    "specialityEffects": [
+      {
+        "offensivePower": 12
+      }
+    ],
+    "skills": [
+      {
+        "name": "はぐれ雷光絶火",
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "range": "ALL",
+        "magnification": 280,
+        "pursuits": []
+      },
+      {
+        "name": "超はやぶさ斬り",
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "range": "SINGLE",
+        "magnification": 360,
+        "pursuits": []
+      }
+    ],
+    "raceEffects": [
+      {
+        "race": "ANIMAL",
+        "magnification": 5
+      },
+      {
+        "race": "ZOMBIE",
+        "magnification": 5
+      }
+    ]
+  },
+  {
+    "name": "オチェアーノの剣",
+    "type": "SWORD",
+    "offensivePower": 155,
+    "jobEffects": [
+      {
+        "job": "BATTLE_MASTER",
+        "offensivePower": 5
+      }
+    ],
+    "specialityEffects": [
+      {
+        "offensivePower": 12
+      }
+    ],
+    "skills": [
+      {
+        "name": "ウィンドスラッシュ",
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "range": "ALL",
+        "magnification": 210,
+        "pursuits": []
+      },
+      {
+        "name": "グランエスパーダ",
+        "attack": "SLASH",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "range": "SINGLE",
+        "magnification": 410,
+        "pursuits": []
+      }
+    ],
+    "raceEffects": [
+      {
+        "race": "MACHINE",
+        "magnification": 5
+      },
+      {
+        "race": "ZOMBIE",
+        "magnification": 5
+      }
+    ]
+  },
+  {
+    "name": "ドラゴンブーメラン",
+    "type": "BOOMERANG",
+    "offensivePower": 136,
+    "jobEffects": [
+    ],
+    "specialityEffects": [
+      {
+        "offensivePower": 12
+      }
+    ],
+    "skills": [
+      {
+        "name": "レボルスライサー",
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "range": "SINGLE",
+        "magnification": 300,
+        "pursuits": []
+      }
+    ],
+    "raceEffects": [
+      {
+        "race": "DRAGON",
+        "magnification": 10
+      }
+    ]
+  },
+  {
     "name": "常闇のやり",
     "type": "SPEAR",
-    "offensivePower": 156,
+    "offensivePower": 144,
+    "jobEffects": [
+    ],
+    "specialityEffects": [
+      {
+        "offensivePower": 12
+      }
+    ],
     "skills": [
       {
         "name": "月影の大鎌",
@@ -58,6 +215,63 @@
         "range": "ALL",
         "magnification": 240,
         "pursuits": []
+      },
+      {
+        "name": "退魔突き",
+        "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "range": "SINGLE",
+        "magnification": 270,
+        "pursuits": []
+      }
+    ],
+    "raceEffects": [
+      {
+        "race": "DEVIL",
+        "magnification": 10
+      }
+    ]
+  },
+  {
+    "name": "聖盾戦士のオノ",
+    "type": "AXE",
+    "offensivePower": 149,
+    "jobEffects": [
+      {
+        "job": "PALADIN",
+        "offensivePower": 5
+      }
+    ],
+    "specialityEffects": [
+      {
+        "offensivePower": 12
+      }
+    ],
+    "skills": [
+      {
+        "name": "ホーリークラッシュ",
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "range": "ALL",
+        "magnification": 250,
+        "pursuits": []
+      },
+      {
+        "name": "大地の一撃",
+        "attack": "SLASH",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "range": "SINGLE",
+        "magnification": 300,
+        "pursuits": []
+      }
+    ],
+    "raceEffects": [
+      {
+        "race": "SLIME",
+        "magnification": 10
       }
     ]
   }

@@ -151,6 +151,68 @@
     }
   },
   {
+    "id": 372,
+    "name": "竜王",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "NONE",
+    "status": {
+      "parameter": {
+        "hp": 123,
+        "mp":  75,
+        "op":  86,
+        "dp":  82,
+        "os":  39,
+        "ds":  35,
+        "sp": 112,
+        "dx": 112
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "ALL",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "HIT",
+              "attribute": "ALL",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "GIRA",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "HIT",
+              "attribute": "GIRA",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "HIT",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 5
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": 349,
     "name": "オルゴ・デミーラ",
     "rank": "S",
@@ -231,6 +293,56 @@
       },
       "effects": [
 
+      ]
+    }
+  },
+  {
+    "id": 322,
+    "name": "ランプのまじん",
+    "rank": "B",
+    "type": "BLUE",
+    "race": "DEVIL",
+    "status": {
+      "parameter": {
+        "hp": 84,
+        "mp": 40,
+        "op": 81,
+        "dp": 34,
+        "os": 16,
+        "ds": 15,
+        "sp": 109,
+        "dx": 118
+      },
+      "effects": [
+        {
+          "plusCost": 2,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "ALL",
+              "race": "NONE",
+              "magnification": 6
+            },
+            {
+              "attack": "HIT",
+              "attribute": "ALL",
+              "race": "NONE",
+              "magnification": 6
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 6
+            },
+            {
+              "attack": "HIT",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 6
+            }
+          ]
+        }
       ]
     }
   },
@@ -346,6 +458,144 @@
               "attribute": "DORUMA",
               "race": "NONE",
               "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 153,
+    "name": "まおうのつかい",
+    "rank": "A",
+    "type": "BLUE",
+    "race": "ZOMBIE",
+    "status": {
+      "parameter": {
+        "hp": 93,
+        "mp": 56,
+        "op": 64,
+        "dp": 61,
+        "os": 29,
+        "ds": 26,
+        "sp": 85,
+        "dx": 86
+      },
+      "effects": [
+        {
+          "plusCost": 3,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "ALL",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "ALL",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "IO",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "HIT",
+              "attribute": "IO",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "ALL",
+              "race": "ZOMBIE",
+              "magnification": 5
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 145,
+    "name": "キングスライム",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "SLIME",
+    "status": {
+      "parameter": {
+        "hp":  40,
+        "mp":  58,
+        "op":  81,
+        "dp":  23,
+        "os":  28,
+        "ds":  31,
+        "sp": 120,
+        "dx":  74
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "ALL",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "ALL",
+              "race": "NONE",
+              "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 10001,
+    "name": "ロトの子孫",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "SECRET",
+    "status": {
+      "parameter": {
+        "hp":  95,
+        "mp":  55,
+        "op":  67,
+        "dp":  56,
+        "os":  65,
+        "ds":  17,
+        "sp":  50,
+        "dx":  39
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 16
+            },
+            {
+              "attack": "HIT",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 16
+            },
+            {
+              "attack": "SPELL",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 16
             }
           ]
         }
