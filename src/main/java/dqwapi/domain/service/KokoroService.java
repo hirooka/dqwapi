@@ -61,11 +61,11 @@ public class KokoroService implements IKokoroService {
       slotsByJob =
           objectMapper.readValue(jobSlotJsonResource.getInputStream(), new TypeReference<>() {});
       log.info("{} jobs", slotsByJob.size());
-      log.info(slotsByJob.toString());
+      log.debug(slotsByJob.toString());
       kokoros =
           objectMapper.readValue(kokoroJsonResource.getInputStream(), new TypeReference<>() {});
       log.info("{} kokoros", kokoros.size());
-      log.info(kokoros.toString());
+      log.debug(kokoros.toString());
 
       for (JobType jobType : slotsByJob.keySet()) {
         final List<Combination> combinations = createCombinations(jobType);
@@ -288,16 +288,79 @@ public class KokoroService implements IKokoroService {
     return new ArrayList<>();
   }
 
+  boolean canChangeKokoro(final JobType jobType, final List<Kokoro> kokoros) {
+    switch (jobType) {
+      case BATTLE_MASTER:
+        if (kokoros.size() == 3) {
+          if ((kokoros.get(0).getType().equals(RED) && kokoros.get(2).getType().equals(RED))
+              || (!kokoros.get(0).getType().equals(RED) && !kokoros.get(2).getType().equals(YELLOW))
+          ) {
+            return true;
+          }
+        }
+        if (kokoros.size() == 4) {
+          if (kokoros.get(0).getType().equals(RED) && kokoros.get(3).getType().equals(RED)) {
+            return true;
+          }
+        }
+        return false;
+      case RANGER:
+        if (kokoros.size() == 3) {
+          if ((kokoros.get(0).getType().equals(BLUE) && kokoros.get(2).getType().equals(BLUE))
+              || (!kokoros.get(0).getType().equals(BLUE) && !kokoros.get(2).getType().equals(RED))
+          ) {
+            return true;
+          }
+        }
+        if (kokoros.size() == 4) {
+          if (kokoros.get(0).getType().equals(BLUE) && kokoros.get(3).getType().equals(BLUE)) {
+            return true;
+          }
+        }
+        return false;
+      case SAGE:
+        if (kokoros.size() == 3) {
+          return true;
+        }
+        if (kokoros.size() == 4) {
+          if (kokoros.get(0).getType().equals(PURPLE) && kokoros.get(3).getType().equals(PURPLE)
+              || kokoros.get(0).getType().equals(GREEN) && kokoros.get(3).getType().equals(GREEN)
+              || kokoros.get(0).getType().equals(PURPLE) && kokoros.get(3).getType().equals(GREEN)
+              || kokoros.get(0).getType().equals(GREEN) && kokoros.get(3).getType().equals(PURPLE)
+          ) {
+            return true;
+          }
+        }
+        return false;
+      case PALADIN:
+        if (kokoros.size() == 3) {
+          if ((kokoros.get(0).getType().equals(YELLOW) && kokoros.get(2).getType().equals(YELLOW))
+              || (!kokoros.get(0).getType().equals(YELLOW) && !kokoros.get(2).getType().equals(GREEN))
+          ) {
+            return true;
+          }
+        }
+        if (kokoros.size() == 4) {
+          if (kokoros.get(0).getType().equals(YELLOW) && kokoros.get(3).getType().equals(YELLOW)) {
+            return true;
+          }
+        }
+        return false;
+      default:
+        return false;
+    }
+  }
+
   private List<Combination> createCombinations(final JobType jobType) {
     final List<Combination> combinations = new ArrayList<>();
     int count = 0;
     for (int i = 0; i < kokoros.size(); i++) {
       for (int j = 0; j < kokoros.size(); j++) {
-        if (j != i) {
+        if (j != i && !(i > j)) {
           for (int k = 0; k < kokoros.size(); k++) {
-            if (k != i && k != j) {
+            if ((k != i && k != j) && !((i > k) && canChangeKokoro(jobType, Arrays.asList(kokoros.get(i), kokoros.get(j), kokoros.get(k))))) {
               for (int l = 0; l < kokoros.size(); l++) {
-                if (l != i && l != j && l != k) {
+                if (l != i && l != j && l != k && !((i > l) && canChangeKokoro(jobType, Arrays.asList(kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l))))) {
                   log.debug("{}, {}, {}, {}", i, j, k, l);
                   final List<Integer> kokoroIndexes = Arrays.asList(i, j, k, l);
                   if (isDuplicatedId(kokoroIndexes)) {
@@ -328,7 +391,7 @@ public class KokoroService implements IKokoroService {
         }
       }
     }
-    log.info("{} combinations", count);
+    log.info("{}: {} kokoro combinations", jobType, count);
     log.debug(combinations.toString());
 
     return combinations;
