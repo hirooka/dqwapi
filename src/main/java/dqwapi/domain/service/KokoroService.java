@@ -22,6 +22,7 @@ import dqwapi.domain.model.kokoro.Combination;
 import dqwapi.domain.model.kokoro.Damage;
 import dqwapi.domain.model.kokoro.DamageMagnification;
 import dqwapi.domain.model.kokoro.Effect;
+import dqwapi.domain.model.kokoro.JobKokoroCombination;
 import dqwapi.domain.model.kokoro.Kokoro;
 import dqwapi.domain.model.kokoro.Parameter;
 import dqwapi.domain.model.kokoro.Slot;
@@ -47,7 +48,7 @@ public class KokoroService implements IKokoroService {
 
   private Map<JobType, List<KokoroType>> slotsByJob = new HashMap<>();
   private List<Kokoro> kokoros = new ArrayList<>();
-  private List<Combination> combinations = new ArrayList<>();
+  private final List<JobKokoroCombination> jobKokoroCombinations = new ArrayList<>();
 
   @PostConstruct
   void init() {
@@ -65,8 +66,18 @@ public class KokoroService implements IKokoroService {
           objectMapper.readValue(kokoroJsonResource.getInputStream(), new TypeReference<>() {});
       log.info("{} kokoros", kokoros.size());
       log.info(kokoros.toString());
-      combinations = createCombinations(JobType.BATTLE_MASTER);
-      process();
+
+      for (JobType jobType : slotsByJob.keySet()) {
+        final List<Combination> combinations = createCombinations(jobType);
+        final JobKokoroCombination jobKokoroCombination = new JobKokoroCombination();
+        jobKokoroCombination.setJob(jobType);
+        jobKokoroCombination.setCombinations(combinations);
+        jobKokoroCombinations.add(jobKokoroCombination);
+      }
+      for (JobKokoroCombination jobKokoroCombination : jobKokoroCombinations) {
+        jobKokoroCombination.setCombinations(process(jobKokoroCombination.getCombinations()));
+      }
+
     } catch (IOException ex) {
       throw new IllegalStateException("Failed to parse JSON file.", ex);
     }
@@ -87,7 +98,7 @@ public class KokoroService implements IKokoroService {
     slot.getKokoro().setName(slot.getKokoro().getName() + "(up)");
   }
 
-  void process() {
+  List<Combination> process(List<Combination> combinations) {
     for (Combination combination : combinations) {
       for (Slot slot : combination.getSlots()) {
         if (slot.getType().equals(RAINBOW)) {
@@ -253,6 +264,7 @@ public class KokoroService implements IKokoroService {
       log.debug(combination.getParameter().toString());
       log.debug(combination.getDamageMagnifications().toString());
     }
+    return combinations;
   }
 
   private boolean isDuplicatedId(final List<Integer> list) {
@@ -268,10 +280,16 @@ public class KokoroService implements IKokoroService {
 
   @Override
   public List<Combination> getCombinations(final JobType jobType) {
-    return combinations;
+    for (JobKokoroCombination jobKokoroCombination : jobKokoroCombinations) {
+      if (jobKokoroCombination.getJob().equals(jobType)) {
+        return jobKokoroCombination.getCombinations();
+      }
+    }
+    return new ArrayList<>();
   }
 
   private List<Combination> createCombinations(final JobType jobType) {
+    final List<Combination> combinations = new ArrayList<>();
     int count = 0;
     for (int i = 0; i < kokoros.size(); i++) {
       for (int j = 0; j < kokoros.size(); j++) {
