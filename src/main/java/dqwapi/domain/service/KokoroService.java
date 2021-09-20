@@ -335,7 +335,10 @@ public class KokoroService implements IKokoroService {
       case PALADIN:
         if (kokoros.size() == 3) {
           if ((kokoros.get(0).getType().equals(YELLOW) && kokoros.get(2).getType().equals(YELLOW))
-              || (!kokoros.get(0).getType().equals(YELLOW) && !kokoros.get(2).getType().equals(GREEN))
+              || (
+                  !kokoros.get(0).getType().equals(YELLOW)
+                      && !kokoros.get(2).getType().equals(GREEN)
+                  )
           ) {
             return true;
           }
@@ -358,9 +361,23 @@ public class KokoroService implements IKokoroService {
       for (int j = 0; j < kokoros.size(); j++) {
         if (j != i && !(i > j)) {
           for (int k = 0; k < kokoros.size(); k++) {
-            if ((k != i && k != j) && !((i > k) && canChangeKokoro(jobType, Arrays.asList(kokoros.get(i), kokoros.get(j), kokoros.get(k))))) {
+            if ((k != i && k != j)
+                && !(
+                    (i > k)
+                        && canChangeKokoro(
+                            jobType, Arrays.asList(
+                                kokoros.get(i), kokoros.get(j), kokoros.get(k)
+                        )))
+            ) {
               for (int l = 0; l < kokoros.size(); l++) {
-                if (l != i && l != j && l != k && !((i > l) && canChangeKokoro(jobType, Arrays.asList(kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l))))) {
+                if (l != i && l != j && l != k
+                    && !(
+                        (i > l)
+                            && canChangeKokoro(
+                                jobType, Arrays.asList(
+                                    kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l)
+                            )))
+                ) {
                   log.debug("{}, {}, {}, {}", i, j, k, l);
                   final List<Integer> kokoroIndexes = Arrays.asList(i, j, k, l);
                   if (isDuplicatedId(kokoroIndexes)) {
