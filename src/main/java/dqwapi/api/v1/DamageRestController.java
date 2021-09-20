@@ -1,7 +1,9 @@
 package dqwapi.api.v1;
 
+import dqwapi.domain.model.damage.DamageResult;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.operator.IDamageOperator;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,14 +20,15 @@ public class DamageRestController {
   private final IDamageOperator damageOperator;
 
   @GetMapping
-  String damage(
+  List<DamageResult> damages(
       @RequestParam(value = "job", required = false) final JobType jobType,
       @RequestParam(required = false) final Integer level,
       @RequestParam(required = false) final Integer defence
   ) {
     // TODO: send param
     //damageOperator.getDamage(jobType, level, defence);
-    damageOperator.getDamage(JobType.BATTLE_MASTER, 75, 500);
-    return "";
+    return damageOperator.getDamages(
+        "ルビスの剣", "創世の光", JobType.BATTLE_MASTER, 75, 500
+    );
   }
 }

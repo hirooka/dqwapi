@@ -1,34 +1,51 @@
 package dqwapi.domain.operator;
 
 import dqwapi.domain.model.common.RaceType;
+import dqwapi.domain.model.damage.DamageResult;
+import dqwapi.domain.model.damage.SimplifiedSlot;
 import dqwapi.domain.model.job.JobSpecificEffect;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.Combination;
 import dqwapi.domain.model.kokoro.DamageMagnification;
+import dqwapi.domain.model.kokoro.Slot;
 import dqwapi.domain.model.weapon.JobEffect;
 import dqwapi.domain.model.weapon.Skill;
 import dqwapi.domain.model.weapon.Weapon;
 import dqwapi.domain.service.IJobService;
 import dqwapi.domain.service.IKokoroService;
 import dqwapi.domain.service.IWeaponService;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
 
 @Slf4j
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Component
 public class DamageOperator implements IDamageOperator {
+
+  @Value("${dqwapi.response}")
+  private int response;
 
   private final IJobService jobService;
   private final IWeaponService weaponService;
   private final IKokoroService kokoroService;
 
   @Override
-  public void getDamage(final JobType jobType, final int level, final int defence) {
+  public List<DamageResult> getDamages(
+      final String weaponName,
+      final String skillName,
+      final JobType jobType,
+      final int level,
+      final int defence
+  ) {
+
+    List<DamageResult> damageResults = new ArrayList<>();
 
     final List<Weapon> weapons = weaponService.getAll();
     final List<Combination> combinations = kokoroService.getCombinations(jobType);
@@ -59,6 +76,10 @@ public class DamageOperator implements IDamageOperator {
         final int skillMagnification = skill.getMagnification();
 
         for (Combination combination : combinations) {
+
+          if (!skillName.equals(skill.getName())) {
+            break;
+          }
 
           int attackMagnification = 100;
           int attributeMagnification = 100;
@@ -113,8 +134,32 @@ public class DamageOperator implements IDamageOperator {
                   * (raceMagnification / 100.0)
           );
           log.debug("{}", damage);
+
+          final DamageResult damageResult = new DamageResult();
+          damageResult.setWeaponName(weapon.getName());
+          damageResult.setSkillName(skill.getName());
+          damageResult.setDamage(damage);
+          damageResult.setParameter(combination.getParameter());
+          final List<SimplifiedSlot> simplifiedSlots = new ArrayList<>();
+          for (Slot slot : combination.getSlots()) {
+            final SimplifiedSlot simplifiedSlot = new SimplifiedSlot();
+            simplifiedSlot.setType(slot.getType());
+            simplifiedSlot.setName(slot.getKokoro().getName());
+            simplifiedSlot.setRank(slot.getKokoro().getRank());
+            simplifiedSlots.add(simplifiedSlot);
+          }
+          damageResult.setSlots(simplifiedSlots);
+          damageResults.add(damageResult);
         }
       }
     }
+    log.info("result = {}", damageResults.size());
+
+    damageResults = damageResults.stream()
+        .sorted(Comparator.comparingInt(DamageResult::getDamage).reversed())
+        .collect(Collectors.toList())
+        .subList(0, response);
+
+    return damageResults;
   }
 }

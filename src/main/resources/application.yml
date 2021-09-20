@@ -7,3 +7,6 @@ spring:
   jackson:
     serialization:
       indent_output: true
+
+dqwapi:
+  response: 20
