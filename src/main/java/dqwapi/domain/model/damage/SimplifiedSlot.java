@@ -1,7 +1,6 @@
 package dqwapi.domain.model.damage;
 
 import dqwapi.domain.model.common.KokoroType;
-import dqwapi.domain.model.kokoro.Kokoro;
 import dqwapi.domain.model.kokoro.RankType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
