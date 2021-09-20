@@ -38,6 +38,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
@@ -46,13 +47,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class KokoroService implements IKokoroService {
 
+  @Value("${dqwapi.kokoro-json}")
+  private String kokoroJson;
+
   private Map<JobType, List<KokoroType>> slotsByJob = new HashMap<>();
   private List<Kokoro> kokoros = new ArrayList<>();
   private final List<JobKokoroCombination> jobKokoroCombinations = new ArrayList<>();
 
   @PostConstruct
   void init() {
-    final String kokoroJson = "kokoro.json";
     final Resource kokoroJsonResource = new ClassPathResource(kokoroJson);
     final String jobSlotJson = "slots-by-job.json";
     final Resource jobSlotJsonResource = new ClassPathResource(jobSlotJson);
