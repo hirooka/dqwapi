@@ -15,5 +15,6 @@ public class Kokoro {
   private RankType rank;
   private KokoroType type;
   private RaceType race;
+  private int cost;
   private Status status;
 }
