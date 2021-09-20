@@ -17,4 +17,5 @@ public class Weapon {
   private List<SpecialityEffect> specialityEffects;
   private List<Skill> skills;
   private List<RaceEffect> raceEffects;
+  private List<LimitBreak> limitBreaks;
 }

@@ -274,5 +274,270 @@
         "magnification": 10
       }
     ]
+  },
+  {
+    "name": "王者の剣",
+    "type": "SWORD",
+    "offensivePower": 145,
+    "jobEffects": [
+    ],
+    "specialityEffects": [
+      {
+        "offensivePower": 12
+      }
+    ],
+    "skills": [
+      {
+        "name": "空裂斬",
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "range": "ALL",
+        "magnification": 190,
+        "pursuits": []
+      },
+      {
+        "name": "ギガソード",
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "range": "SINGLE",
+        "magnification": 350,
+        "pursuits": []
+      }
+    ],
+    "raceEffects": [
+      {
+        "race": "DEVIL",
+        "magnification": 5
+      }
+    ],
+    "limitBreaks": [
+    ]
+  },
+  {
+    "name": "天空のつるぎ",
+    "type": "SWORD",
+    "offensivePower": 140,
+    "jobEffects": [
+    ],
+    "specialityEffects": [
+      {
+        "offensivePower": 12
+      }
+    ],
+    "skills": [
+      {
+        "name": "ビッグバンソード",
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "range": "SINGLE",
+        "magnification": 330,
+        "pursuits": []
+      }
+    ],
+    "raceEffects": [
+    ],
+    "limitBreaks": [
+      {
+        "attack": "SLASH",
+        "magnification": 20
+      },
+      {
+        "attack": "HIT",
+        "magnification": 20
+      }
+    ]
+  },
+  {
+    "name": "クリスタルクロー(+4)",
+    "type": "CLAW",
+    "offensivePower": 179,
+    "jobEffects": [
+    ],
+    "specialityEffects": [
+      {
+        "offensivePower": 12
+      }
+    ],
+    "skills": [
+      {
+        "name": "裂鋼拳(マシン系)",
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "MACHINE",
+        "range": "SINGLE",
+        "magnification": 360,
+        "pursuits": []
+      },
+      {
+        "name": "ゴッドスマッシュ",
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "range": "SINGLE",
+        "magnification": 300,
+        "pursuits": []
+      }
+    ],
+    "raceEffects": [
+      {
+        "race": "MATERIAL",
+        "magnification": 10
+      }
+    ],
+    "limitBreaks": [
+      {
+        "attack": "SLASH",
+        "magnification": 20
+      },
+      {
+        "attack": "HIT",
+        "magnification": 20
+      }
+    ]
+  },
+  {
+    "name": "やしゃのこん(+4)",
+    "type": "ROD",
+    "offensivePower": 181,
+    "jobEffects": [
+    ],
+    "specialityEffects": [
+      {
+        "offensivePower": 12
+      }
+    ],
+    "skills": [
+      {
+        "name": "氷結らんげき",
+        "attack": "SLASH",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "range": "ALL",
+        "magnification": 320,
+        "pursuits": []
+      }
+    ],
+    "raceEffects": [
+      {
+        "race": "WATER",
+        "magnification": 10
+      },
+      {
+        "race": "ANIMAL",
+        "magnification": 10
+      }
+    ],
+    "limitBreaks": [
+      {
+        "attack": "SLASH",
+        "magnification": 20
+      },
+      {
+        "attack": "HIT",
+        "magnification": 20
+      }
+    ]
+  },
+  {
+    "name": "らいじんのやり(+4)",
+    "type": "SPEAR",
+    "offensivePower": 181,
+    "jobEffects": [
+    ],
+    "specialityEffects": [
+      {
+        "offensivePower": 12
+      }
+    ],
+    "skills": [
+      {
+        "name": "雷光さみだれ突き",
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "range": "ALL",
+        "magnification": 320,
+        "pursuits": []
+      }
+    ],
+    "raceEffects": [
+      {
+        "race": "ANIMAL",
+        "magnification": 10
+      },
+      {
+        "race": "WATER",
+        "magnification": 10
+      }
+    ],
+    "limitBreaks": [
+      {
+        "attack": "SLASH",
+        "magnification": 20
+      },
+      {
+        "attack": "HIT",
+        "magnification": 20
+      }
+    ]
+  },
+  {
+    "name": "ダミー武器(+4)",
+    "type": "SWORD",
+    "offensivePower": 200,
+    "jobEffects": [
+      {
+        "job": "BATTLE_MASTER",
+        "offensivePower": 5
+      }
+    ],
+    "specialityEffects": [
+      {
+        "offensivePower": 12
+      }
+    ],
+    "skills": [
+      {
+        "name": "ダミー全体",
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "range": "ALL",
+        "magnification": 300,
+        "pursuits": []
+      },
+      {
+        "name": "ダミー単体",
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "range": "SINGLE",
+        "magnification": 400,
+        "pursuits": []
+      }
+    ],
+    "raceEffects": [
+      {
+        "race": "SLIME",
+        "magnification": 10
+      },
+      {
+        "race": "DEVIL",
+        "magnification": 10
+      }
+    ],
+    "limitBreaks": [
+      {
+        "attack": "SLASH",
+        "magnification": 20
+      },
+      {
+        "attack": "HIT",
+        "magnification": 20
+      }
+    ]
   }
 ]
