@@ -8,5 +8,10 @@ spring:
     serialization:
       indent_output: true
 
+springdoc:
+  swagger-ui:
+    path: /api.html
+
 dqwapi:
+  version: $project.version
   response: 20
