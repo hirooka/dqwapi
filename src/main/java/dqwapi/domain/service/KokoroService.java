@@ -297,12 +297,23 @@ public class KokoroService implements IKokoroService {
         if (kokoros.size() == 3) {
           if ((kokoros.get(0).getType().equals(RED) && kokoros.get(2).getType().equals(RED))
               || (!kokoros.get(0).getType().equals(RED) && !kokoros.get(2).getType().equals(YELLOW))
+              || (!kokoros.get(1).getType().equals(RED) && !kokoros.get(2).getType().equals(YELLOW))
           ) {
             return true;
           }
         }
         if (kokoros.size() == 4) {
-          if (kokoros.get(0).getType().equals(RED) && kokoros.get(3).getType().equals(RED)) {
+          if ((kokoros.get(0).getType().equals(RED) && kokoros.get(2).getType().equals(RED))
+              || (!kokoros.get(0).getType().equals(RED) && !kokoros.get(2).getType().equals(YELLOW))
+              || (!kokoros.get(1).getType().equals(RED) && !kokoros.get(2).getType().equals(YELLOW))
+              || (kokoros.get(0).getType().equals(RED) && kokoros.get(3).getType().equals(RED))
+              || (kokoros.get(1).getType().equals(RED) && kokoros.get(2).getType().equals(RED))
+              || (kokoros.get(1).getType().equals(RED) && kokoros.get(3).getType().equals(RED))
+              || (kokoros.get(2).getType().equals(YELLOW) && kokoros.get(3).getType().equals(RED))
+              || (kokoros.get(2).getType().equals(RED) && kokoros.get(3).getType().equals(YELLOW))
+              || (kokoros.get(2).getType().equals(YELLOW) && kokoros.get(3).getType().equals(YELLOW))
+              || (kokoros.get(2).getType().equals(RED) && kokoros.get(3).getType().equals(RED))
+          ) {
             return true;
           }
         }
@@ -366,7 +377,7 @@ public class KokoroService implements IKokoroService {
           for (int k = 0; k < kokoros.size(); k++) {
             if ((k != i && k != j)
                 && !(
-                    (i > k)
+                    (i > j || i > k || j > k)
                         && canChangeKokoro(
                             jobType, Arrays.asList(
                                 kokoros.get(i), kokoros.get(j), kokoros.get(k)
@@ -375,7 +386,7 @@ public class KokoroService implements IKokoroService {
               for (int l = 0; l < kokoros.size(); l++) {
                 if (l != i && l != j && l != k
                     && !(
-                        (i > l)
+                        (i > j || i > k || i > l || j > k || j > l || k > l)
                             && canChangeKokoro(
                                 jobType, Arrays.asList(
                                     kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l)
