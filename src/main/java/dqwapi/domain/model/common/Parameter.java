@@ -1,4 +1,4 @@
-package dqwapi.domain.model.kokoro;
+package dqwapi.domain.model.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

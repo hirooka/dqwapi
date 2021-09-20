@@ -1,9 +1,12 @@
 package dqwapi.domain.operator;
 
+import dqwapi.domain.model.common.AttackType;
+import dqwapi.domain.model.common.AttributeType;
 import dqwapi.domain.model.common.RaceType;
 import dqwapi.domain.model.damage.DamageResult;
 import dqwapi.domain.model.damage.SimplifiedSlot;
 import dqwapi.domain.model.job.JobSpecificEffect;
+import dqwapi.domain.model.job.JobStatus;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.Combination;
 import dqwapi.domain.model.kokoro.DamageMagnification;
@@ -50,6 +53,9 @@ public class DamageOperator implements IDamageOperator {
     final List<Weapon> weapons = weaponService.getAll();
     final List<Combination> combinations = kokoroService.getCombinations(jobType);
 
+    final JobStatus jobStatus = jobService.getStatus(jobType, level);
+    final int power = jobStatus.getParameter().getOp();
+
     final JobSpecificEffect jobSpecificEffect = jobService.getSpecificEffect(jobType, level, true);
     final int jobSpecificEffectPower = jobSpecificEffect.getPower();
     log.debug("{}: power+ = {}", jobType.name(), jobSpecificEffect.getPower());
@@ -85,7 +91,8 @@ public class DamageOperator implements IDamageOperator {
           int attributeMagnification = 100;
           int raceMagnification = 100;
 
-          final int offence = combination.getParameter().getOp()
+          final int offence = power
+              + combination.getParameter().getOp()
               + jobSpecificEffectPower
               + weaponJobEffectPower
               + weapon.getOffensivePower();
@@ -93,27 +100,25 @@ public class DamageOperator implements IDamageOperator {
           log.debug(combination.getDamageMagnifications().toString());
 
           for (DamageMagnification damageMagnification : combination.getDamageMagnifications()) {
-            if (!ObjectUtils.isEmpty(skill.getAttack())
-                && skill.getAttack().equals(damageMagnification.getAttack())
-            ) {
+            if (skill.getAttack().equals(damageMagnification.getAttack()) && damageMagnification.getAttribute().equals(AttributeType.NONE) && damageMagnification.getRace().equals(RaceType.NONE)) {
               attackMagnification += damageMagnification.getMagnification();
             }
-            if (!ObjectUtils.isEmpty(skill.getAttribute())
-                && skill.getAttribute().equals(damageMagnification.getAttribute())
-            ) {
+            if ((skill.getAttack().equals(damageMagnification.getAttack()) && damageMagnification.getAttribute().equals(skill.getAttribute()) && damageMagnification.getRace().equals(RaceType.NONE)) || (damageMagnification.getAttack().equals(AttackType.ALL) && damageMagnification.getAttribute().equals(skill.getAttribute()) && damageMagnification.getRace().equals(RaceType.NONE))) {
               attributeMagnification += damageMagnification.getMagnification();
             }
-            if (!ObjectUtils.isEmpty(skill.getRace())
-                && !skill.getRace().equals(RaceType.NONE)
-                && skill.getRace().equals(damageMagnification.getRace())
-            ) {
-              raceMagnification += damageMagnification.getMagnification();
-            }
+            // TODO: raceType
           }
           log.debug(combination.getSlots().stream()
               .map(slot -> slot.getKokoro().getName())
               .collect(Collectors.toList()).toString()
           );
+
+          if (skill.getAttack().equals(AttackType.SLASH)) {
+            attackMagnification += jobSpecificEffect.getSlash();
+          } else if (skill.getAttack().equals(AttackType.HIT)) {
+            attackMagnification += jobSpecificEffect.getHit();
+          }
+
           log.debug(
               "skillMagnification: {}, "
                   + "attackMagnification({}): {}, "
@@ -140,6 +145,10 @@ public class DamageOperator implements IDamageOperator {
           damageResult.setSkillName(skill.getName());
           damageResult.setDamage(damage);
           damageResult.setParameter(combination.getParameter());
+          damageResult.setSkillMagnification(skillMagnification);
+          damageResult.setAttackMagnification(attackMagnification);
+          damageResult.setAttributeMagnification(attributeMagnification);
+          damageResult.setRaceMagnification(raceMagnification);
           final List<SimplifiedSlot> simplifiedSlots = new ArrayList<>();
           for (Slot slot : combination.getSlots()) {
             final SimplifiedSlot simplifiedSlot = new SimplifiedSlot();

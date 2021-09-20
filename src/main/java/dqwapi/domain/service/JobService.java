@@ -1,6 +1,8 @@
 package dqwapi.domain.service;
 
+import dqwapi.domain.model.common.Parameter;
 import dqwapi.domain.model.job.JobSpecificEffect;
+import dqwapi.domain.model.job.JobStatus;
 import dqwapi.domain.model.job.JobType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -8,6 +10,16 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 public class JobService implements IJobService {
+  @Override
+  public JobStatus getStatus(final JobType jobType, final int level) {
+    // TODO: implementation
+    final JobStatus jobStatus = new JobStatus();
+    jobStatus.setJob(jobType);
+    jobStatus.setLevel(level);
+    jobStatus.setParameter(new Parameter(1, 1, 250, 1, 1, 1, 1, 1));
+    return jobStatus;
+  }
+
   @Override
   public JobSpecificEffect getSpecificEffect(
       final JobType jobType, final int level, final boolean isSpecialty

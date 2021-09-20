@@ -1,5 +1,6 @@
 package dqwapi.domain.model.kokoro;
 
+import dqwapi.domain.model.common.Parameter;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,7 +1,6 @@
-package dqwapi.domain.model.kokoro;
+package dqwapi.domain.model.job;
 
 import dqwapi.domain.model.common.Parameter;
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Status {
+public class JobStatus {
+  private JobType job;
+  private int level;
   private Parameter parameter;
-  private List<Effect> effects;
 }
