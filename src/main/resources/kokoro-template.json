@@ -1,0 +1,66 @@
+[
+  {
+    "id": 0,
+    "name": "ダミー",
+    "rank": "S",
+    "type": "RED",
+    "race": "NONE",
+    "cost": 100,
+    "status": {
+      "parameter": {
+        "hp": 100,
+        "mp":  50,
+        "op":  10,
+        "dp":  10,
+        "os":  10,
+        "ds":  10,
+        "sp":  10,
+        "dx":  10
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "HIT",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "ALL",
+              "attribute": "NONE",
+              "race": "ELEMENT",
+              "magnification": 10
+            },
+            {
+              "attack": "ALL",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 16
+            }
+          ],
+          "critical": 3
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,447 @@
+[
+  {
+    "id": 388,
+    "name": "おにこんぼう",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "DEVIL",
+    "cost": 111,
+    "status": {
+      "parameter": {
+        "hp": 102,
+        "mp":  55,
+        "op": 101,
+        "dp":  59,
+        "os":  18,
+        "ds":  36,
+        "sp":  65,
+        "dx":  26
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "HIT",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "DORUMA",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "DORUMA",
+              "race": "NONE",
+              "magnification": 7
+            }
+          ],
+          "critical": 3
+        }
+      ]
+    }
+  },
+  {
+    "id": 374,
+    "name": "アトラス",
+    "rank": "S",
+    "type": "RED",
+    "race": "DEVIL",
+    "cost": 108,
+    "status": {
+      "parameter": {
+        "hp":  55,
+        "mp":  45,
+        "op": 120,
+        "dp":  40,
+        "os":   7,
+        "ds":   7,
+        "sp":  95,
+        "dx":  91
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "JIBARIA",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "HIT",
+              "attribute": "JIBARIA",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "ALL",
+              "attribute": "NONE",
+              "race": "DEVIL",
+              "magnification": 5
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 372,
+    "name": "竜王",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "SECRET",
+    "cost": 107,
+    "status": {
+      "parameter": {
+        "hp": 123,
+        "mp":  75,
+        "op":  86,
+        "dp":  82,
+        "os":  39,
+        "ds":  35,
+        "sp": 112,
+        "dx": 112
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "GIRA",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "HIT",
+              "attribute": "GIRA",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "HIT",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 5
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 349,
+    "name": "オルゴ・デミーラ",
+    "rank": "S",
+    "type": "RED",
+    "race": "SECRET",
+    "cost": 114,
+    "status": {
+      "parameter": {
+        "hp": 110,
+        "mp":  47,
+        "op": 103,
+        "dp":  63,
+        "os":  16,
+        "ds":  16,
+        "sp":  89,
+        "dx":  78
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "GIRA",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "GIRA",
+              "race": "NONE",
+              "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 322,
+    "name": "ランプのまじん",
+    "rank": "B",
+    "type": "BLUE",
+    "race": "DEVIL",
+    "cost": 107,
+    "status": {
+      "parameter": {
+        "hp":  84,
+        "mp":  40,
+        "op":  81,
+        "dp":  34,
+        "os":  16,
+        "ds":  15,
+        "sp": 109,
+        "dx": 118
+      },
+      "effects": [
+        {
+          "plusCost": 2,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 6
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 6
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 6
+            },
+            {
+              "attack": "HIT",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 6
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 306,
+    "name": "ヒュンケル",
+    "rank": "S",
+    "type": "RED",
+    "race": "SECRET",
+    "cost": 89,
+    "status": {
+      "parameter": {
+        "hp":  55,
+        "mp":  29,
+        "op": 110,
+        "dp":  24,
+        "os":   5,
+        "ds":   5,
+        "sp":  85,
+        "dx":  81
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "DORUMA",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "DORUMA",
+              "race": "NONE",
+              "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 169,
+    "name": "あくまのきし",
+    "rank": "S",
+    "type": "RED",
+    "race": "DEVIL",
+    "cost": 92,
+    "status": {
+      "parameter": {
+        "hp":  87,
+        "mp":  37,
+        "op":  81,
+        "dp":  49,
+        "os":  13,
+        "ds":  13,
+        "sp":  72,
+        "dx":  64
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "HIT",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "ALL",
+              "attribute": "NONE",
+              "race": "DEVIL",
+              "magnification": 5
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 10001,
+    "name": "ロトの子孫",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "SECRET",
+    "cost": 99,
+    "status": {
+      "parameter": {
+        "hp":  95,
+        "mp":  55,
+        "op":  67,
+        "dp":  56,
+        "os":  65,
+        "ds":  17,
+        "sp":  50,
+        "dx":  39
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "ALL",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 16
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

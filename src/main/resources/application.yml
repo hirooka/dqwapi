@@ -14,5 +14,5 @@ springdoc:
 
 dqwapi:
   version: $project.version
-  kokoro-json: kokoro.json
+  kokoro-json: kokoro-min.json
   response: 20

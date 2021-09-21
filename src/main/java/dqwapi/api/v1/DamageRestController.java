@@ -6,6 +6,7 @@ import dqwapi.domain.operator.IDamageOperator;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,14 +22,27 @@ public class DamageRestController {
 
   @GetMapping
   List<DamageResult> damages(
-      @RequestParam(value = "job", required = false) final JobType jobType,
-      @RequestParam(required = false) final Integer level,
-      @RequestParam(required = false) final Integer defence
+      @RequestParam(value = "j", required = false) JobType jobType,
+      @RequestParam(value = "l", required = false) Integer level,
+      @RequestParam(value = "d", required = false) Integer defence,
+      @RequestParam(value = "w", required = false) String weapon,
+      @RequestParam(value = "s", required = false) String skill
   ) {
-    // TODO: send param
-    //damageOperator.getDamage(jobType, level, defence);
-    return damageOperator.getDamages(
-        "ルビスの剣", "創世の光", JobType.BATTLE_MASTER, 75, 500
-    );
+    if (ObjectUtils.isEmpty(jobType)) {
+      jobType = JobType.BATTLE_MASTER;
+    }
+    if (ObjectUtils.isEmpty(level)) {
+      level = 75;
+    }
+    if (ObjectUtils.isEmpty(defence)) {
+      defence = 500;
+    }
+    if (ObjectUtils.isEmpty(weapon)) {
+      weapon = "ルビスの剣";
+    }
+    if (ObjectUtils.isEmpty(skill)) {
+      skill = "創世の光";
+    }
+    return damageOperator.getDamages(weapon, skill, jobType, level, defence);
   }
 }

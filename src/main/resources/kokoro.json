@@ -433,6 +433,51 @@
     }
   },
   {
+    "id": 347,
+    "name": "メカバーン",
+    "rank": "S",
+    "type": "RED",
+    "race": "MACHINE",
+    "cost": 107,
+    "status": {
+      "parameter": {
+        "hp": 125,
+        "mp":  61,
+        "op":  92,
+        "dp":  63,
+        "os":  16,
+        "ds":  16,
+        "sp":  62,
+        "dx": 120
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "ALL",
+              "attribute": "GIRA",
+              "race": "NONE",
+              "magnification": 10
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": 322,
     "name": "ランプのまじん",
     "rank": "B",
@@ -801,6 +846,57 @@
               "attribute": "NONE",
               "race": "NONE",
               "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 137,
+    "name": "アームライオン",
+    "rank": "B",
+    "type": "RED",
+    "race": "ANIMAL",
+    "cost": 92,
+    "status": {
+      "parameter": {
+        "hp": 103,
+        "mp":  44,
+        "op":  59,
+        "dp":  45,
+        "os":  12,
+        "ds":  12,
+        "sp":  46,
+        "dx":  41
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 6
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 6
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 6
+            },
+            {
+              "attack": "HIT",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 6
             }
           ]
         }

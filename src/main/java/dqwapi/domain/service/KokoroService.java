@@ -291,78 +291,59 @@ public class KokoroService implements IKokoroService {
     return new ArrayList<>();
   }
 
-  boolean canChangeKokoro(final JobType jobType, final List<Kokoro> kokoros) {
+  boolean canChangeKokoro(final JobType jobType, final int index1, final int index2, final Kokoro kokoro1, final Kokoro kokoro2) {
     switch (jobType) {
       case BATTLE_MASTER:
-        if (kokoros.size() == 3) {
-          if ((kokoros.get(0).getType().equals(RED) && kokoros.get(2).getType().equals(RED))
-              || (!kokoros.get(0).getType().equals(RED) && !kokoros.get(2).getType().equals(YELLOW))
-              || (!kokoros.get(1).getType().equals(RED) && !kokoros.get(2).getType().equals(YELLOW))
-          ) {
+        if (index1 == 0 && index2 == 1) {
+          if (kokoro1.getType().equals(RED) && kokoro2.getType().equals(RED) || !kokoro1.getType().equals(RED) && !kokoro2.getType().equals(RED) || kokoro1.getType().equals(RED) && !kokoro2.getType().equals(RED) || !kokoro1.getType().equals(RED) && kokoro2.getType().equals(RED)) {
             return true;
           }
         }
-        if (kokoros.size() == 4) {
-          if ((kokoros.get(0).getType().equals(RED) && kokoros.get(2).getType().equals(RED))
-              || (!kokoros.get(0).getType().equals(RED) && !kokoros.get(2).getType().equals(YELLOW))
-              || (!kokoros.get(1).getType().equals(RED) && !kokoros.get(2).getType().equals(YELLOW))
-              || (kokoros.get(0).getType().equals(RED) && kokoros.get(3).getType().equals(RED))
-              || (kokoros.get(1).getType().equals(RED) && kokoros.get(2).getType().equals(RED))
-              || (kokoros.get(1).getType().equals(RED) && kokoros.get(3).getType().equals(RED))
-              || (kokoros.get(2).getType().equals(YELLOW) && kokoros.get(3).getType().equals(RED))
-              || (kokoros.get(2).getType().equals(RED) && kokoros.get(3).getType().equals(YELLOW))
-              || (kokoros.get(2).getType().equals(YELLOW) && kokoros.get(3).getType().equals(YELLOW))
-              || (kokoros.get(2).getType().equals(RED) && kokoros.get(3).getType().equals(RED))
-          ) {
+        if (index1 == 0 && index2 == 2 || index1 == 1 && index2 == 2) {
+          if (kokoro1.getType().equals(RED) && kokoro2.getType().equals(RED) ||  ( (!kokoro1.getType().equals(RED) && (!kokoro1.getType().equals(YELLOW))) && kokoro2.getType().equals(RED) ) ||  (kokoro1.getType().equals(RED) && !kokoro2.getType().equals(YELLOW)) ) {
+            return true;
+          }
+        }
+        if (index1 == 0 && index2 == 3 || index1 == 1 && index2 == 3) {
+          if (kokoro1.getType().equals(RED) && kokoro2.getType().equals(RED)) {
+            return true;
+          }
+        }
+        if (index1 == 2 && index2 == 3) {
+          if (kokoro1.getType().equals(RED) && kokoro2.getType().equals(RED) || kokoro1.getType().equals(RED) && kokoro2.getType().equals(YELLOW) || kokoro1.getType().equals(YELLOW) && kokoro2.getType().equals(RED) || kokoro1.getType().equals(YELLOW) && kokoro2.getType().equals(YELLOW)) {
             return true;
           }
         }
         return false;
       case RANGER:
-        if (kokoros.size() == 3) {
-          if ((kokoros.get(0).getType().equals(BLUE) && kokoros.get(2).getType().equals(BLUE))
-              || (!kokoros.get(0).getType().equals(BLUE) && !kokoros.get(2).getType().equals(RED))
-          ) {
+        if (index1 == 0 && index2 == 1) {
+          if (kokoro1.getType().equals(BLUE) && kokoro2.getType().equals(BLUE) || !kokoro1.getType().equals(BLUE) && !kokoro2.getType().equals(BLUE) || kokoro1.getType().equals(BLUE) && !kokoro2.getType().equals(BLUE) || !kokoro1.getType().equals(BLUE) && kokoro2.getType().equals(BLUE)) {
             return true;
           }
         }
-        if (kokoros.size() == 4) {
-          if (kokoros.get(0).getType().equals(BLUE) && kokoros.get(3).getType().equals(BLUE)) {
+        if (index1 == 0 && index2 == 2 || index1 == 1 && index2 == 2) {
+          if (kokoro1.getType().equals(BLUE) && kokoro2.getType().equals(BLUE) ||  ( (!kokoro1.getType().equals(BLUE) && (!kokoro1.getType().equals(RED))) && kokoro2.getType().equals(BLUE) ) ||  (kokoro1.getType().equals(BLUE) && !kokoro2.getType().equals(RED)) ) {
+            return true;
+          }
+        }
+        if (index1 == 0 && index2 == 3 || index1 == 1 && index2 == 3) {
+          if (kokoro1.getType().equals(BLUE) && kokoro2.getType().equals(BLUE)) {
+            return true;
+          }
+        }
+        if (index1 == 2 && index2 == 3) {
+          if (kokoro1.getType().equals(BLUE) && kokoro2.getType().equals(BLUE) || kokoro1.getType().equals(BLUE) && kokoro2.getType().equals(RED) || kokoro1.getType().equals(RED) && kokoro2.getType().equals(BLUE) || kokoro1.getType().equals(RED) && kokoro2.getType().equals(RED)) {
+            return true;
+          }
+        }
+        if (index1 == 0 && index2 == 3) {
+          if (kokoro1.getType().equals(BLUE) && kokoro2.getType().equals(BLUE)) {
             return true;
           }
         }
         return false;
       case SAGE:
-        if (kokoros.size() == 3) {
-          return true;
-        }
-        if (kokoros.size() == 4) {
-          if (kokoros.get(0).getType().equals(PURPLE) && kokoros.get(3).getType().equals(PURPLE)
-              || kokoros.get(0).getType().equals(GREEN) && kokoros.get(3).getType().equals(GREEN)
-              || kokoros.get(0).getType().equals(PURPLE) && kokoros.get(3).getType().equals(GREEN)
-              || kokoros.get(0).getType().equals(GREEN) && kokoros.get(3).getType().equals(PURPLE)
-          ) {
-            return true;
-          }
-        }
-        return false;
       case PALADIN:
-        if (kokoros.size() == 3) {
-          if ((kokoros.get(0).getType().equals(YELLOW) && kokoros.get(2).getType().equals(YELLOW))
-              || (
-                  !kokoros.get(0).getType().equals(YELLOW)
-                      && !kokoros.get(2).getType().equals(GREEN)
-                  )
-          ) {
-            return true;
-          }
-        }
-        if (kokoros.size() == 4) {
-          if (kokoros.get(0).getType().equals(YELLOW) && kokoros.get(3).getType().equals(YELLOW)) {
-            return true;
-          }
-        }
-        return false;
       default:
         return false;
     }
@@ -373,25 +354,11 @@ public class KokoroService implements IKokoroService {
     int count = 0;
     for (int i = 0; i < kokoros.size(); i++) {
       for (int j = 0; j < kokoros.size(); j++) {
-        if (j != i && !(i > j)) {
+        if (j != i && !((i > j) && canChangeKokoro(jobType, 0, 1, kokoros.get(i), kokoros.get(j)))) {
           for (int k = 0; k < kokoros.size(); k++) {
-            if ((k != i && k != j)
-                && !(
-                    (i > j || i > k || j > k)
-                        && canChangeKokoro(
-                            jobType, Arrays.asList(
-                                kokoros.get(i), kokoros.get(j), kokoros.get(k)
-                        )))
-            ) {
+            if ((k != i && k != j) && !((j > k) && canChangeKokoro(jobType, 1, 2, kokoros.get(j), kokoros.get(k))) && !((i > k) && canChangeKokoro(jobType, 0, 2, kokoros.get(i), kokoros.get(k)))) {
               for (int l = 0; l < kokoros.size(); l++) {
-                if (l != i && l != j && l != k
-                    && !(
-                        (i > j || i > k || i > l || j > k || j > l || k > l)
-                            && canChangeKokoro(
-                                jobType, Arrays.asList(
-                                    kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l)
-                            )))
-                ) {
+                if ((l != i && l != j && l != k) && !((k > l) && canChangeKokoro(jobType, 2, 3, kokoros.get(k), kokoros.get(l))) && !((j > l) && canChangeKokoro(jobType, 1, 3, kokoros.get(j), kokoros.get(l))) && !((i > l) && canChangeKokoro(jobType, 0, 3, kokoros.get(i), kokoros.get(l)))) {
                   log.debug("{}, {}, {}, {}", i, j, k, l);
                   final List<Integer> kokoroIndexes = Arrays.asList(i, j, k, l);
                   if (isDuplicatedId(kokoroIndexes)) {
