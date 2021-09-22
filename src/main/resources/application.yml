@@ -16,3 +16,4 @@ dqwapi:
   version: $project.version
   kokoro-json: kokoro-min.json
   response: 20
+  gcp-project-id: hirooka-pro
