@@ -18,7 +18,7 @@ dependencies {
   compileOnly 'org.projectlombok:lombok:1.18.20'
   annotationProcessor 'org.projectlombok:lombok:1.18.20'
   implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.5.10'
-  implementation group: 'com.google.cloud', name: 'google-cloud-firestore', version: '3.0.4'
+  implementation group: 'com.google.cloud', name: 'google-cloud-firestore', version: '3.0.5'
 }
 
 checkstyle {
