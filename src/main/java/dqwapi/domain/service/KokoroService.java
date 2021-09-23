@@ -295,81 +295,80 @@ public class KokoroService implements IKokoroService {
     switch (jobType) {
       case BATTLE_MASTER:
         if (index1 == 0 && index2 == 1) {
-          if (kokoro1.getType().equals(RED) && kokoro2.getType().equals(RED) || !kokoro1.getType().equals(RED) && !kokoro2.getType().equals(RED) || kokoro1.getType().equals(RED) && !kokoro2.getType().equals(RED) || !kokoro1.getType().equals(RED) && kokoro2.getType().equals(RED)) {
+          return true;
+        }
+        if ((index1 == 0 || index1 == 1) && index2 == 2) {
+          if (kokoro1.getType().equals(RED) && kokoro2.getType().equals(RED)
+              || !kokoro1.getType().equals(RED) && !kokoro2.getType().equals(RED) && !kokoro2.getType().equals(YELLOW)
+          ) {
             return true;
           }
         }
-        if (index1 == 0 && index2 == 2 || index1 == 1 && index2 == 2) {
-          if (kokoro1.getType().equals(RED) && kokoro2.getType().equals(RED) || ((!kokoro1.getType().equals(RED) && (!kokoro1.getType().equals(YELLOW))) && kokoro2.getType().equals(RED) ) || (kokoro1.getType().equals(RED) && !kokoro2.getType().equals(YELLOW))) {
-            return true;
-          }
-        }
-        if (index1 == 0 && index2 == 3 || index1 == 1 && index2 == 3) {
+        if ((index1 == 0 || index1 == 1) && index2 == 3) {
           if (kokoro1.getType().equals(RED) && kokoro2.getType().equals(RED)) {
             return true;
           }
         }
         if (index1 == 2 && index2 == 3) {
-          if (kokoro1.getType().equals(RED) && kokoro2.getType().equals(RED) || kokoro1.getType().equals(RED) && kokoro2.getType().equals(YELLOW) || kokoro1.getType().equals(YELLOW) && kokoro2.getType().equals(RED) || kokoro1.getType().equals(YELLOW) && kokoro2.getType().equals(YELLOW)) {
+          if ((kokoro1.getType().equals(RED) || kokoro1.getType().equals(YELLOW)) && (kokoro2.getType().equals(RED) || kokoro2.getType().equals(YELLOW))) {
             return true;
           }
         }
         return false;
       case RANGER:
         if (index1 == 0 && index2 == 1) {
-          if (kokoro1.getType().equals(BLUE) && kokoro2.getType().equals(BLUE) || !kokoro1.getType().equals(BLUE) && !kokoro2.getType().equals(BLUE) || kokoro1.getType().equals(BLUE) && !kokoro2.getType().equals(BLUE) || !kokoro1.getType().equals(BLUE) && kokoro2.getType().equals(BLUE)) {
+          return true;
+        }
+        if ((index1 == 0 || index1 == 1) && index2 == 2) {
+          if (kokoro1.getType().equals(BLUE) && kokoro2.getType().equals(BLUE)
+              || !kokoro1.getType().equals(BLUE) && !kokoro2.getType().equals(BLUE) && !kokoro2.getType().equals(RED)
+          ) {
             return true;
           }
         }
-        if (index1 == 0 && index2 == 2 || index1 == 1 && index2 == 2) {
-          if (kokoro1.getType().equals(BLUE) && kokoro2.getType().equals(BLUE) || ((!kokoro1.getType().equals(BLUE) && (!kokoro1.getType().equals(RED))) && kokoro2.getType().equals(BLUE) ) ||  (kokoro1.getType().equals(BLUE) && !kokoro2.getType().equals(RED))) {
-            return true;
-          }
-        }
-        if (index1 == 0 && index2 == 3 || index1 == 1 && index2 == 3) {
+        if ((index1 == 0 || index1 == 1) && index2 == 3) {
           if (kokoro1.getType().equals(BLUE) && kokoro2.getType().equals(BLUE)) {
             return true;
           }
         }
         if (index1 == 2 && index2 == 3) {
-          if (kokoro1.getType().equals(BLUE) && kokoro2.getType().equals(BLUE) || kokoro1.getType().equals(BLUE) && kokoro2.getType().equals(RED) || kokoro1.getType().equals(RED) && kokoro2.getType().equals(BLUE) || kokoro1.getType().equals(RED) && kokoro2.getType().equals(RED)) {
+          if ((kokoro1.getType().equals(BLUE) || kokoro1.getType().equals(RED)) && (kokoro2.getType().equals(BLUE) || kokoro2.getType().equals(RED))) {
             return true;
           }
         }
         return false;
       case SAGE:
         if (index1 == 0 && index2 == 1 || index1 == 0 && index2 == 2 || index1 == 1 && index2 == 2) {
-          if (kokoro1.getType().equals(PURPLE) && kokoro2.getType().equals(PURPLE) || kokoro1.getType().equals(PURPLE) && kokoro2.getType().equals(GREEN) || kokoro1.getType().equals(GREEN) && kokoro2.getType().equals(PURPLE) || kokoro1.getType().equals(GREEN) && kokoro2.getType().equals(GREEN) || !kokoro1.getType().equals(PURPLE) && !kokoro1.getType().equals(GREEN) && !kokoro2.getType().equals(PURPLE) && !kokoro2.getType().equals(GREEN)) {
+          return true;
+        }
+        if ((index1 == 0 || index1 == 1 || index1 == 2) && index2 == 3) {
+          if ((kokoro1.getType().equals(PURPLE) || kokoro1.getType().equals(GREEN)) && (kokoro2.getType().equals(PURPLE) || kokoro2.getType().equals(GREEN))) {
             return true;
           }
         }
-
-        if (index1 == 0 && index2 == 3 || index1 == 1 && index2 == 3 || index1 == 2 && index2 == 3) {
-          if (kokoro1.getType().equals(PURPLE) && kokoro2.getType().equals(PURPLE) || kokoro1.getType().equals(PURPLE) && kokoro2.getType().equals(GREEN) || kokoro1.getType().equals(GREEN) && kokoro2.getType().equals(PURPLE) || kokoro1.getType().equals(GREEN) && kokoro2.getType().equals(GREEN)) {
-            return true;
-          }
-        }
+        return false;
       case PALADIN:
         if (index1 == 0 && index2 == 1) {
-          if (kokoro1.getType().equals(YELLOW) && kokoro2.getType().equals(YELLOW) || !kokoro1.getType().equals(YELLOW) && !kokoro2.getType().equals(YELLOW) || kokoro1.getType().equals(YELLOW) && !kokoro2.getType().equals(YELLOW) || !kokoro1.getType().equals(YELLOW) && kokoro2.getType().equals(YELLOW)) {
+          return true;
+        }
+        if ((index1 == 0 || index1 == 1) && index2 == 2) {
+          if (kokoro1.getType().equals(YELLOW) && kokoro2.getType().equals(YELLOW)
+              || !kokoro1.getType().equals(YELLOW) && !kokoro2.getType().equals(YELLOW) && !kokoro2.getType().equals(GREEN)
+          ) {
             return true;
           }
         }
-        if (index1 == 0 && index2 == 2 || index1 == 1 && index2 == 2) {
-          if (kokoro1.getType().equals(YELLOW) && kokoro2.getType().equals(YELLOW) ||  ( (!kokoro1.getType().equals(YELLOW) && (!kokoro1.getType().equals(GREEN))) && kokoro2.getType().equals(YELLOW) ) ||  (kokoro1.getType().equals(YELLOW) && !kokoro2.getType().equals(GREEN)) ) {
-            return true;
-          }
-        }
-        if (index1 == 0 && index2 == 3 || index1 == 1 && index2 == 3) {
+        if ((index1 == 0 || index1 == 1) && index2 == 3) {
           if (kokoro1.getType().equals(YELLOW) && kokoro2.getType().equals(YELLOW)) {
             return true;
           }
         }
         if (index1 == 2 && index2 == 3) {
-          if (kokoro1.getType().equals(YELLOW) && kokoro2.getType().equals(YELLOW) || kokoro1.getType().equals(YELLOW) && kokoro2.getType().equals(GREEN) || kokoro1.getType().equals(GREEN) && kokoro2.getType().equals(YELLOW) || kokoro1.getType().equals(GREEN) && kokoro2.getType().equals(GREEN)) {
+          if ((kokoro1.getType().equals(YELLOW) || kokoro1.getType().equals(GREEN)) && (kokoro2.getType().equals(YELLOW) || kokoro2.getType().equals(GREEN))) {
             return true;
           }
         }
+        return false;
       default:
         return false;
     }
