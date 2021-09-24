@@ -2,6 +2,45 @@
   {
     "id":398,
     "name": "グレイトドラゴン",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "DRAGON",
+    "cost": 116,
+    "status": {
+      "parameter": {
+        "hp": 117,
+        "mp":  71,
+        "op":  81,
+        "dp":  79,
+        "os":  37,
+        "ds":  33,
+        "sp": 105,
+        "dx": 105
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "ALL",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 14
+            },
+            {
+              "attack": "ALL",
+              "attribute": "IO",
+              "race": "NONE",
+              "magnification": 14
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id":398,
+    "name": "グレイトドラゴン",
     "rank": "A",
     "type": "BLUE",
     "race": "DRAGON",
@@ -491,25 +530,13 @@
               "magnification": 10
             },
             {
-              "attack": "SLASH",
+              "attack": "ALL",
               "attribute": "GIRA",
               "race": "NONE",
               "magnification": 5
             },
             {
-              "attack": "HIT",
-              "attribute": "GIRA",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
+              "attack": "ALL",
               "attribute": "MERA",
               "race": "NONE",
               "magnification": 5
@@ -581,44 +608,7 @@
         {
           "plusCost": 4,
           "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "ALL",
-              "attribute": "NONE",
-              "race": "ELEMENT",
-              "magnification": 10
-            },
-            {
-              "attack": "ALL",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 16
-            }
-          ],
-          "critical": 3
+          ]
         }
       ]
     }
@@ -629,7 +619,7 @@
     "rank": "S",
     "type": "RED",
     "race": "SECRET",
-    "cost": 114,
+    "cost": 107,
     "status": {
       "parameter": {
         "hp": 110,
@@ -732,6 +722,84 @@
     }
   },
   {
+    "id": 340,
+    "name": "デスマシーン",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "MACHINE",
+    "cost": 101,
+    "status": {
+      "parameter": {
+        "hp":  152,
+        "mp":   25,
+        "op":   41,
+        "dp":  127,
+        "os":   23,
+        "ds":   23,
+        "sp":   16,
+        "dx":   25
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 340,
+    "name": "デスマシーン",
+    "rank": "A",
+    "type": "YELLOW",
+    "race": "MACHINE",
+    "cost": 101,
+    "status": {
+      "parameter": {
+        "hp":  133,
+        "mp":   22,
+        "op":   36,
+        "dp":  111,
+        "os":   21,
+        "ds":   21,
+        "sp":   14,
+        "dx":   22
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 6
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 6
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": 338,
     "name": "ナイトリッチ",
     "rank": "S",
@@ -809,6 +877,108 @@
               "attribute": "NONE",
               "race": "NONE",
               "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 325,
+    "name": "キラーアーマー",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "MATERIAL",
+    "cost": 111,
+    "status": {
+      "parameter": {
+        "hp": 114,
+        "mp":  69,
+        "op":  79,
+        "dp":  76,
+        "os":  36,
+        "ds":  32,
+        "sp": 102,
+        "dx": 102
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "JIBARIA",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "JIBARIA",
+              "race": "NONE",
+              "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 325,
+    "name": "キラーアーマー",
+    "rank": "B",
+    "type": "BLUE",
+    "race": "MATERIAL",
+    "cost": 111,
+    "status": {
+      "parameter": {
+        "hp":  93,
+        "mp":  56,
+        "op":  65,
+        "dp":  62,
+        "os":  30,
+        "ds":  27,
+        "sp":  84,
+        "dx":  84
+      },
+      "effects": [
+        {
+          "plusCost": 2,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "JIBARIA",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "HIT",
+              "attribute": "JIBARIA",
+              "race": "NONE",
+              "magnification": 5
             }
           ]
         }
@@ -894,6 +1064,51 @@
     }
   },
   {
+    "id": 308,
+    "name": "フレイザード",
+    "rank": "S",
+    "type": "PURPLE",
+    "race": "MATERIAL",
+    "cost": 99,
+    "status": {
+      "parameter": {
+        "hp":  120,
+        "mp":  125,
+        "op":   17,
+        "dp":   28,
+        "os":   71,
+        "ds":   28,
+        "sp":   52,
+        "dx":   76
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SPELL",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "SPELL",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "SPELL",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 10
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": 306,
     "name": "ヒュンケル",
     "rank": "S",
@@ -950,6 +1165,51 @@
               "attribute": "DORUMA",
               "race": "NONE",
               "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 303,
+    "name": "魔王ハドラー",
+    "rank": "S",
+    "type": "PURPLE",
+    "race": "SECRET",
+    "cost": 92,
+    "status": {
+      "parameter": {
+        "hp":   84,
+        "mp":  101,
+        "op":   16,
+        "dp":   52,
+        "os":   81,
+        "ds":   32,
+        "sp":   62,
+        "dx":   72
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SPELL",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "SPELL",
+              "attribute": "GIRA",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "SPELL",
+              "attribute": "IO",
+              "race": "NONE",
+              "magnification": 5
             }
           ]
         }
@@ -1145,7 +1405,7 @@
     "cost": 84,
     "status": {
       "parameter": {
-        "hp":  67,
+        "hp":  57,
         "mp":  88,
         "op":   7,
         "dp":  27,
@@ -1178,14 +1438,14 @@
     "cost": 77,
     "status": {
       "parameter": {
-        "hp": 106,
+        "hp": 108,
         "mp":  67,
         "op":  44,
         "dp":  41,
         "os":  33,
         "ds":  55,
-        "sp":  41,
-        "dx":  77
+        "sp":  55,
+        "dx":  41
       },
       "effects": [
         {
