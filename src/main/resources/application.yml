@@ -14,6 +14,6 @@ springdoc:
 
 dqwapi:
   version: $project.version
-  kokoro-json: kokoro-min.json
+  kokoro-json: kokoro.json
   response: 20
   gcp-project-id: hirooka-pro

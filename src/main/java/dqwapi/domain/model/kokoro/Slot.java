@@ -11,6 +11,4 @@ import lombok.NoArgsConstructor;
 public class Slot {
   private KokoroType type;
   private Kokoro kokoro;
-  private int id;
-  private String name;
 }

@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Combination {
-  private List<Slot> slots;
+public class SuitableCombination {
+  private List<Kokoro> kokoros;
   private Parameter parameter;
-  private List<Damage> damages;
 }

@@ -9,7 +9,7 @@ import dqwapi.domain.model.job.JobSpecificEffect;
 import dqwapi.domain.model.job.JobStatus;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.Combination;
-import dqwapi.domain.model.kokoro.DamageMagnification;
+import dqwapi.domain.model.kokoro.Damage;
 import dqwapi.domain.model.kokoro.Slot;
 import dqwapi.domain.model.weapon.JobEffect;
 import dqwapi.domain.model.weapon.Skill;
@@ -47,7 +47,6 @@ public class DamageOperator implements IDamageOperator {
       final int level,
       final int defence
   ) {
-
     List<DamageResult> damageResults = new ArrayList<>();
 
     final List<Weapon> weapons = weaponService.getAll();
@@ -97,14 +96,23 @@ public class DamageOperator implements IDamageOperator {
               + weaponJobEffectPower
               + weapon.getOffensivePower();
 
-          log.debug(combination.getDamageMagnifications().toString());
+          log.debug(combination.getDamages().toString());
 
-          for (DamageMagnification damageMagnification : combination.getDamageMagnifications()) {
-            if (skill.getAttack().equals(damageMagnification.getAttack()) && damageMagnification.getAttribute().equals(AttributeType.NONE) && damageMagnification.getRace().equals(RaceType.NONE)) {
-              attackMagnification += damageMagnification.getMagnification();
+          for (Damage damage : combination.getDamages()) {
+            if (skill.getAttack().equals(damage.getAttack())
+                && damage.getAttribute().equals(AttributeType.NONE)
+                && damage.getRace().equals(RaceType.NONE)
+            ) {
+              attackMagnification += damage.getMagnification();
             }
-            if ((skill.getAttack().equals(damageMagnification.getAttack()) && damageMagnification.getAttribute().equals(skill.getAttribute()) && damageMagnification.getRace().equals(RaceType.NONE)) || (damageMagnification.getAttack().equals(AttackType.ALL) && damageMagnification.getAttribute().equals(skill.getAttribute()) && damageMagnification.getRace().equals(RaceType.NONE))) {
-              attributeMagnification += damageMagnification.getMagnification();
+            if (skill.getAttack().equals(damage.getAttack())
+                && damage.getAttribute().equals(skill.getAttribute())
+                && damage.getRace().equals(RaceType.NONE)
+                || damage.getAttack().equals(AttackType.ALL)
+                && damage.getAttribute().equals(skill.getAttribute())
+                && damage.getRace().equals(RaceType.NONE)
+            ) {
+              attributeMagnification += damage.getMagnification();
             }
             // TODO: raceType
           }
@@ -131,19 +139,26 @@ public class DamageOperator implements IDamageOperator {
           );
 
           final int basis = (int) Math.ceil(offence / 2.0 - defence / 4.0);
-          final int damage = (int) Math.ceil(
+          final int damageValue = (int) Math.ceil(
               basis
                   * (skillMagnification / 100.0)
                   * (attackMagnification / 100.0)
                   * (attributeMagnification / 100.0)
                   * (raceMagnification / 100.0)
           );
-          log.debug("{}", damage);
+          log.debug("{} * {} * {} * {} * {} = ",
+              basis,
+              (skillMagnification / 100.0),
+              (attackMagnification / 100.0),
+              (attributeMagnification / 100.0),
+              (raceMagnification / 100.0)
+          );
+          log.debug("{}", damageValue);
 
           final DamageResult damageResult = new DamageResult();
           damageResult.setWeaponName(weapon.getName());
           damageResult.setSkillName(skill.getName());
-          damageResult.setDamage(damage);
+          damageResult.setDamage(damageValue);
           damageResult.setParameter(combination.getParameter());
           damageResult.setSkillMagnification(skillMagnification);
           damageResult.setAttackMagnification(attackMagnification);
@@ -164,10 +179,16 @@ public class DamageOperator implements IDamageOperator {
     }
     log.info("result = {}", damageResults.size());
 
-    damageResults = damageResults.stream()
-        .sorted(Comparator.comparingInt(DamageResult::getDamage).reversed())
-        .collect(Collectors.toList())
-        .subList(0, response);
+    if (damageResults.size() > response) {
+      damageResults = damageResults.stream()
+          .sorted(Comparator.comparingInt(DamageResult::getDamage).reversed())
+          .collect(Collectors.toList())
+          .subList(0, response);
+    } else {
+      damageResults = damageResults.stream()
+          .sorted(Comparator.comparingInt(DamageResult::getDamage).reversed())
+          .collect(Collectors.toList());
+    }
 
     return damageResults;
   }
