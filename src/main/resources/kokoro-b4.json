@@ -1,0 +1,194 @@
+[
+  {
+    "id":398,
+    "name": "グレイトドラゴン",
+    "rank": "A",
+    "type": "BLUE",
+    "race": "DRAGON",
+    "cost": 116,
+    "status": {
+      "parameter": {
+        "hp": 104,
+        "mp":  62,
+        "op":  72,
+        "dp":  68,
+        "os":  33,
+        "ds":  29,
+        "sp":  92,
+        "dx":  92
+      },
+      "effects": [
+        {
+          "plusCost": 3,
+          "damages": [
+            {
+              "attack": "ALL",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 9
+            },
+            {
+              "attack": "ALL",
+              "attribute": "IO",
+              "race": "NONE",
+              "magnification": 9
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 394,
+    "name": "ジャンボきづち",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "PHANTOM",
+    "cost": 107,
+    "status": {
+      "parameter": {
+        "hp":  70,
+        "mp":  36,
+        "op":  98,
+        "dp":  34,
+        "os":  16,
+        "ds":  14,
+        "sp": 108,
+        "dx": 117
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "DORUMA",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "DORUMA",
+              "race": "NONE",
+              "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 373,
+    "name": "アックスドラゴン",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "DRAGON",
+    "cost": 99,
+    "status": {
+      "parameter": {
+        "hp":  90,
+        "mp":  63,
+        "op":  86,
+        "dp":  70,
+        "os":  33,
+        "ds":  30,
+        "sp":  75,
+        "dx":  96
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 14
+            },
+            {
+              "attack": "HIT",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 14
+            },
+            {
+              "attack": "ALL",
+              "attribute": "NONE",
+              "race": "DRAGON",
+              "magnification": 5
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 372,
+    "name": "竜王",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "SECRET",
+    "cost": 107,
+    "status": {
+      "parameter": {
+        "hp": 123,
+        "mp":  75,
+        "op":  86,
+        "dp":  82,
+        "os":  39,
+        "ds":  35,
+        "sp": 112,
+        "dx": 112
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "GIRA",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "HIT",
+              "attribute": "GIRA",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "HIT",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 5
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

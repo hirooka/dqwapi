@@ -1,0 +1,209 @@
+[
+  {
+    "id": 388,
+    "name": "おにこんぼう",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "DEVIL",
+    "cost": 111,
+    "status": {
+      "parameter": {
+        "hp": 102,
+        "mp":  55,
+        "op": 101,
+        "dp":  59,
+        "os":  18,
+        "ds":  36,
+        "sp":  65,
+        "dx":  26
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "HIT",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "DORUMA",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "DORUMA",
+              "race": "NONE",
+              "magnification": 7
+            }
+          ],
+          "critical": 3
+        }
+      ]
+    }
+  },
+  {
+    "id": 364,
+    "name": "碧落天バリゲーン",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "SECRET",
+    "cost": 99,
+    "status": {
+      "parameter": {
+        "hp": 146,
+        "mp":  59,
+        "op":  68,
+        "dp": 110,
+        "os":  39,
+        "ds":  39,
+        "sp":  36,
+        "dx":  57
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 6
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 13
+            }
+          ],
+          "critical": 5
+        }
+      ]
+    }
+  },
+  {
+    "id": 351,
+    "name": "メガゴールドマン",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "MATERIAL",
+    "cost": 66,
+    "status": {
+      "parameter": {
+        "hp":  93,
+        "mp":  38,
+        "op":  47,
+        "dp":  49,
+        "os":  19,
+        "ds":  13,
+        "sp":  20,
+        "dx":  12
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 3
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "HIT",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "ALL",
+              "attribute": "NONE",
+              "race": "ELEMENT",
+              "magnification": 10
+            },
+            {
+              "attack": "ALL",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 16
+            }
+          ],
+          "critical": 3
+        }
+      ]
+    }
+  },
+  {
+    "id": 335,
+    "name": "グレイトマーマン",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "WATER",
+    "cost": 102,
+    "status": {
+      "parameter": {
+        "hp":  96,
+        "mp":  52,
+        "op":  95,
+        "dp":  56,
+        "os":  17,
+        "ds":  34,
+        "sp":  62,
+        "dx":  25
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
