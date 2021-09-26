@@ -26,6 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
+import org.springframework.util.StopWatch;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -50,7 +51,12 @@ public class DamageOperator implements IDamageOperator {
     List<DamageResult> damageResults = new ArrayList<>();
 
     final List<Weapon> weapons = weaponService.getAll();
+
+    final StopWatch stopWatch = new StopWatch();
+    stopWatch.start("getKokoroCombinations");
     final List<Combination> combinations = kokoroService.getCombinations(jobType);
+    stopWatch.stop();
+    log.info("getKokoroCombinations: {} ms", stopWatch.getLastTaskTimeMillis());
 
     final JobStatus jobStatus = jobService.getStatus(jobType, level);
     final int power = jobStatus.getParameter().getOp();
@@ -73,112 +79,116 @@ public class DamageOperator implements IDamageOperator {
       }
 
       for (Skill skill : weapon.getSkills()) {
-        log.debug(
-            "{}: {}, {}, {}, {}, {}",
-            weapon.getName(), skill.getName(),  skill.getRange(),
-            skill.getAttack(), skill.getAttribute(), skill.getMagnification()
-        );
-        final int skillMagnification = skill.getMagnification();
+        log.debug("{}: {}", weapon.getName(), skill.getName());
+        if (skillName.equals(skill.getName())) {
+          log.info(
+              "{}: {}, {}, {}, {}, {}",
+              weapon.getName(), skill.getName(), skill.getRange(),
+              skill.getAttack(), skill.getAttribute(), skill.getMagnification()
+          );
 
-        for (Combination combination : combinations) {
+          final int skillMagnification = skill.getMagnification();
 
-          if (!skillName.equals(skill.getName())) {
-            break;
-          }
+          stopWatch.start("loopCombinations");
+          for (Combination combination : combinations) {
 
-          int attackMagnification = 100;
-          int attributeMagnification = 100;
-          int raceMagnification = 100;
+            int attackMagnification = 100;
+            int attributeMagnification = 100;
+            int raceMagnification = 100;
 
-          final int offence = power
-              + combination.getParameter().getOp()
-              + jobSpecificEffectPower
-              + weaponJobEffectPower
-              + weapon.getOffensivePower();
+            final int offence = power
+                + combination.getParameter().getOp()
+                + jobSpecificEffectPower
+                + weaponJobEffectPower
+                + weapon.getOffensivePower();
 
-          log.debug(combination.getDamages().toString());
+            log.debug(combination.getDamages().toString());
 
-          for (Damage damage : combination.getDamages()) {
-            if (skill.getAttack().equals(damage.getAttack())
-                && damage.getAttribute().equals(AttributeType.NONE)
-                && damage.getRace().equals(RaceType.NONE)
-            ) {
-              attackMagnification += damage.getMagnification();
+            for (Damage damage : combination.getDamages()) {
+              if (skill.getAttack().equals(damage.getAttack())
+                  && damage.getAttribute().equals(AttributeType.NONE)
+                  && damage.getRace().equals(RaceType.NONE)
+              ) {
+                attackMagnification += damage.getMagnification();
+              }
+              if (skill.getAttack().equals(damage.getAttack())
+                  && damage.getAttribute().equals(skill.getAttribute())
+                  && damage.getRace().equals(RaceType.NONE)
+                  || damage.getAttack().equals(AttackType.ALL)
+                  && damage.getAttribute().equals(skill.getAttribute())
+                  && damage.getRace().equals(RaceType.NONE)
+              ) {
+                attributeMagnification += damage.getMagnification();
+              }
+              // TODO: raceType
             }
-            if (skill.getAttack().equals(damage.getAttack())
-                && damage.getAttribute().equals(skill.getAttribute())
-                && damage.getRace().equals(RaceType.NONE)
-                || damage.getAttack().equals(AttackType.ALL)
-                && damage.getAttribute().equals(skill.getAttribute())
-                && damage.getRace().equals(RaceType.NONE)
-            ) {
-              attributeMagnification += damage.getMagnification();
+            log.debug(combination.getSlots().stream()
+                .map(slot -> slot.getKokoro().getName())
+                .collect(Collectors.toList()).toString()
+            );
+
+            if (skill.getAttack().equals(AttackType.SLASH)) {
+              attackMagnification += jobSpecificEffect.getSlash();
+            } else if (skill.getAttack().equals(AttackType.HIT)) {
+              attackMagnification += jobSpecificEffect.getHit();
             }
-            // TODO: raceType
+
+            log.debug(
+                "skillMagnification: {}, "
+                    + "attackMagnification({}): {}, "
+                    + "attributeMagnification({}): {}, "
+                    + "raceMagnification({}): {}",
+                skillMagnification,
+                skill.getAttack(), attackMagnification,
+                skill.getAttribute(), attributeMagnification,
+                skill.getRace(), raceMagnification
+            );
+
+            final int basis = (int) Math.ceil(offence / 2.0 - defence / 4.0);
+            final int damageValue = (int) Math.ceil(
+                basis
+                    * (skillMagnification / 100.0)
+                    * (attackMagnification / 100.0)
+                    * (attributeMagnification / 100.0)
+                    * (raceMagnification / 100.0)
+            );
+            log.debug("{} * {} * {} * {} * {} = ",
+                basis,
+                (skillMagnification / 100.0),
+                (attackMagnification / 100.0),
+                (attributeMagnification / 100.0),
+                (raceMagnification / 100.0)
+            );
+            log.debug("{}", damageValue);
+
+            final DamageResult damageResult = new DamageResult();
+            damageResult.setWeaponName(weapon.getName());
+            damageResult.setSkillName(skill.getName());
+            damageResult.setDamage(damageValue);
+            damageResult.setParameter(combination.getParameter());
+            damageResult.setSkillMagnification(skillMagnification);
+            damageResult.setAttackMagnification(attackMagnification);
+            damageResult.setAttributeMagnification(attributeMagnification);
+            damageResult.setRaceMagnification(raceMagnification);
+            final List<SimplifiedSlot> simplifiedSlots = new ArrayList<>();
+            for (Slot slot : combination.getSlots()) {
+              final SimplifiedSlot simplifiedSlot = new SimplifiedSlot();
+              simplifiedSlot.setType(slot.getType());
+              simplifiedSlot.setName(slot.getKokoro().getName());
+              simplifiedSlot.setRank(slot.getKokoro().getRank());
+              simplifiedSlots.add(simplifiedSlot);
+            }
+            damageResult.setSlots(simplifiedSlots);
+            damageResults.add(damageResult);
           }
-          log.debug(combination.getSlots().stream()
-              .map(slot -> slot.getKokoro().getName())
-              .collect(Collectors.toList()).toString()
-          );
-
-          if (skill.getAttack().equals(AttackType.SLASH)) {
-            attackMagnification += jobSpecificEffect.getSlash();
-          } else if (skill.getAttack().equals(AttackType.HIT)) {
-            attackMagnification += jobSpecificEffect.getHit();
-          }
-
-          log.debug(
-              "skillMagnification: {}, "
-                  + "attackMagnification({}): {}, "
-                  + "attributeMagnification({}): {}, "
-                  + "raceMagnification({}): {}",
-              skillMagnification,
-              skill.getAttack(), attackMagnification,
-              skill.getAttribute(), attributeMagnification,
-              skill.getRace(), raceMagnification
-          );
-
-          final int basis = (int) Math.ceil(offence / 2.0 - defence / 4.0);
-          final int damageValue = (int) Math.ceil(
-              basis
-                  * (skillMagnification / 100.0)
-                  * (attackMagnification / 100.0)
-                  * (attributeMagnification / 100.0)
-                  * (raceMagnification / 100.0)
-          );
-          log.debug("{} * {} * {} * {} * {} = ",
-              basis,
-              (skillMagnification / 100.0),
-              (attackMagnification / 100.0),
-              (attributeMagnification / 100.0),
-              (raceMagnification / 100.0)
-          );
-          log.debug("{}", damageValue);
-
-          final DamageResult damageResult = new DamageResult();
-          damageResult.setWeaponName(weapon.getName());
-          damageResult.setSkillName(skill.getName());
-          damageResult.setDamage(damageValue);
-          damageResult.setParameter(combination.getParameter());
-          damageResult.setSkillMagnification(skillMagnification);
-          damageResult.setAttackMagnification(attackMagnification);
-          damageResult.setAttributeMagnification(attributeMagnification);
-          damageResult.setRaceMagnification(raceMagnification);
-          final List<SimplifiedSlot> simplifiedSlots = new ArrayList<>();
-          for (Slot slot : combination.getSlots()) {
-            final SimplifiedSlot simplifiedSlot = new SimplifiedSlot();
-            simplifiedSlot.setType(slot.getType());
-            simplifiedSlot.setName(slot.getKokoro().getName());
-            simplifiedSlot.setRank(slot.getKokoro().getRank());
-            simplifiedSlots.add(simplifiedSlot);
-          }
-          damageResult.setSlots(simplifiedSlots);
-          damageResults.add(damageResult);
+          stopWatch.stop();
+          log.info("loopCombination: {} ms", stopWatch.getLastTaskTimeMillis());
         }
       }
     }
     log.info("result = {}", damageResults.size());
 
+    stopWatch.start("sortDamageResults");
     if (damageResults.size() > response) {
       damageResults = damageResults.stream()
           .sorted(Comparator.comparingInt(DamageResult::getDamage).reversed())
@@ -189,6 +199,8 @@ public class DamageOperator implements IDamageOperator {
           .sorted(Comparator.comparingInt(DamageResult::getDamage).reversed())
           .collect(Collectors.toList());
     }
+    stopWatch.stop();
+    log.info("sortDamageResults: {} ms", stopWatch.getLastTaskTimeMillis());
 
     return damageResults;
   }
