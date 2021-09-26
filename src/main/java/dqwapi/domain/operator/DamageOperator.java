@@ -54,7 +54,8 @@ public class DamageOperator implements IDamageOperator {
 
     final StopWatch stopWatch = new StopWatch();
     stopWatch.start("getKokoroCombinations");
-    final List<Combination> combinations = kokoroService.getCombinations(jobType);
+    // TODO: convert level to cost
+    final List<Combination> combinations = kokoroService.getCombinations(jobType, 412);
     stopWatch.stop();
     log.info("getKokoroCombinations: {} ms", stopWatch.getLastTaskTimeMillis());
 

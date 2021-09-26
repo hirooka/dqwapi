@@ -21,9 +21,11 @@ import dqwapi.domain.model.kokoro.SuitableCombination;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -505,6 +507,24 @@ public class KokoroService implements IKokoroService {
                     combination.setSlots(slots);
                     combination.setParameter(suitableCombination.getParameter());
 
+                    combination.setHp(suitableCombination.getParameter().getHp());
+                    combination.setMp(suitableCombination.getParameter().getMp());
+                    combination.setOp(suitableCombination.getParameter().getOp());
+                    combination.setDp(suitableCombination.getParameter().getDp());
+                    combination.setOs(suitableCombination.getParameter().getOs());
+                    combination.setOp(suitableCombination.getParameter().getOp());
+                    combination.setSp(suitableCombination.getParameter().getSp());
+                    combination.setDx(suitableCombination.getParameter().getDx());
+                    final int cost = suitableCombination.getKokoros().get(0).getCost()
+                        - suitableCombination.getKokoros().get(0).getStatus().getEffects().get(0).getPlusCost()
+                        + suitableCombination.getKokoros().get(1).getCost()
+                        - suitableCombination.getKokoros().get(1).getStatus().getEffects().get(0).getPlusCost()
+                        + suitableCombination.getKokoros().get(2).getCost()
+                        - suitableCombination.getKokoros().get(2).getStatus().getEffects().get(0).getPlusCost()
+                        + suitableCombination.getKokoros().get(3).getCost()
+                        - suitableCombination.getKokoros().get(3).getStatus().getEffects().get(0).getPlusCost();
+                    combination.setCost(cost);
+
                     final List<Damage> damages = new ArrayList<>();
                     for (Slot slot : slots) {
                       for (Effect effect : slot.getKokoro().getStatus().getEffects()) {
@@ -606,6 +626,20 @@ public class KokoroService implements IKokoroService {
     for (JobKokoroCombination jobKokoroCombination : jobKokoroCombinations) {
       if (jobKokoroCombination.getJob().equals(jobType)) {
         return jobKokoroCombination.getCombinations();
+      }
+    }
+    return new ArrayList<>();
+  }
+
+  @Override
+  public List<Combination> getCombinations(final JobType jobType, final int cost) {
+    final int magicN = 10_000;
+    for (JobKokoroCombination jobKokoroCombination : jobKokoroCombinations) {
+      if (jobKokoroCombination.getJob().equals(jobType)) {
+        return jobKokoroCombination.getCombinations().stream()
+            .filter(combination -> combination.getCost() <= cost)
+            .sorted(Comparator.comparingInt(Combination::getOp).reversed())
+            .collect(Collectors.toList()).subList(0, magicN);
       }
     }
     return new ArrayList<>();
