@@ -411,11 +411,20 @@
     ],
     "skills": [
       {
+        "name": "しんくうげり",
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "range": "ALL",
+        "magnification": 150,
+        "pursuits": []
+      },
+      {
         "name": "氷結らんげき",
         "attack": "SLASH",
         "attribute": "HYADO",
         "race": "NONE",
-        "range": "ALL",
+        "range": "SINGLE",
         "magnification": 320,
         "pursuits": []
       }
