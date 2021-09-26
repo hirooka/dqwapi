@@ -167,6 +167,49 @@
     ]
   },
   {
+    "name": "王家のレイピア(+2)",
+    "type": "SWORD",
+    "offensivePower": 159,
+    "jobEffects": [
+    ],
+    "specialityEffects": [
+      {
+        "offensivePower": 12
+      }
+    ],
+    "skills": [
+      {
+        "name": "アーススイング",
+        "attack": "SLASH",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "range": "ALL",
+        "magnification": 220,
+        "pursuits": []
+      }
+    ],
+    "raceEffects": [
+      {
+        "race": "ZOMBIE",
+        "magnification": 5
+      },
+      {
+        "race": "PHANTOM",
+        "magnification": 5
+      }
+    ],
+    "limitBreaks": [
+      {
+        "attack": "SLASH",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "magnification": 10
+      }
+    ]
+  },
+  {
     "name": "ドラゴンブーメラン",
     "type": "BOOMERANG",
     "offensivePower": 136,
