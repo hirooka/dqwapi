@@ -46,7 +46,8 @@ public class DamageOperator implements IDamageOperator {
       final String skillName,
       final JobType jobType,
       final int level,
-      final int defence
+      final int defence,
+      final String bride
   ) {
     List<DamageResult> damageResults = new ArrayList<>();
 
@@ -55,7 +56,7 @@ public class DamageOperator implements IDamageOperator {
     final StopWatch stopWatch = new StopWatch();
     stopWatch.start("getKokoroCombinations");
     // TODO: convert level to cost
-    final List<Combination> combinations = kokoroService.getCombinations(jobType, 412);
+    final List<Combination> combinations = kokoroService.getCombinations(jobType, 412, bride);
     stopWatch.stop();
     log.info("getKokoroCombinations: {} ms", stopWatch.getLastTaskTimeMillis());
 

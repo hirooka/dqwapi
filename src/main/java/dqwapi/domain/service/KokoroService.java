@@ -451,6 +451,24 @@ public class KokoroService implements IKokoroService {
     return suitableCombination;
   }
 
+  boolean canBrideSkip(final int i0, final int i1, final int i2, final int i3) {
+    final List<Integer> list = Arrays.asList(i0, i1, i2, i3);
+    if (list.contains(50_001)) {
+      if (list.contains(50_002) || list.contains(50_003)) {
+        return true;
+      }
+    }
+    if (list.contains(50_002)) {
+      if (list.contains(50_001) || list.contains(50_003)) {
+        return true;
+      }
+    }
+    if (list.contains(50_003)) {
+      return list.contains(50_001) || list.contains(50_002);
+    }
+    return false;
+  }
+
   private List<Combination> createSimpleCombinations(final JobType jobType) {
 
     final List<Combination> combinations = new ArrayList<>();
@@ -469,7 +487,7 @@ public class KokoroService implements IKokoroService {
                   final int i1 = kokoros.get(j).getId();
                   final int i2 = kokoros.get(k).getId();
                   final int i3 = kokoros.get(l).getId();
-                  if (i0 != i1 && i0 != i2 && i0 != i3 && i1 != i2 && i1 != i3 && i2 != i3) {
+                  if (i0 != i1 && i0 != i2 && i0 != i3 && i1 != i2 && i1 != i3 && i2 != i3 && !canBrideSkip(i0, i1, i2, i3)) {
                     log.debug("{}, {}, {}, {}", i, j, k, l);
                     log.debug("org: {} {} {} {}",
                         kokoros.get(i).getName(),
@@ -632,12 +650,38 @@ public class KokoroService implements IKokoroService {
   }
 
   @Override
-  public List<Combination> getCombinations(final JobType jobType, final int cost) {
+  public List<Combination> getCombinations(final JobType jobType, final int cost, final String bride) {
+    final int brideId;
+    switch (bride) {
+      case "ビアンカ":
+        brideId = 50_001;
+        break;
+      case "フローラ":
+        brideId = 50_002;
+        break;
+      case "デボラ":
+        brideId = 50_003;
+        break;
+      default:
+        throw new IllegalArgumentException("Illegal Argument: set correct bride name.");
+    }
     final int magicN = 10_000;
     for (JobKokoroCombination jobKokoroCombination : jobKokoroCombinations) {
       if (jobKokoroCombination.getJob().equals(jobType)) {
         return jobKokoroCombination.getCombinations().stream()
             .filter(combination -> combination.getCost() <= cost)
+            .filter(combination -> {
+              final List<Integer> ids = combination.getSlots().stream()
+                  .map(slot -> slot.getKokoro().getId())
+                  .collect(Collectors.toList());
+              if (brideId == 50_001) {
+                return !ids.contains(50_002) && !ids.contains(50_003);
+              }
+              if (brideId == 50_002) {
+                return !ids.contains(50_001) && !ids.contains(50_003);
+              }
+              return !ids.contains(50_001) && !ids.contains(50_002);
+            })
             .sorted(Comparator.comparingInt(Combination::getOp).reversed())
             .collect(Collectors.toList()).subList(0, magicN);
       }
