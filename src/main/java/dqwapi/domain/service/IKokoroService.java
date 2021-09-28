@@ -10,5 +10,5 @@ public interface IKokoroService {
 
   List<Combination> getCombinations(final JobType jobType);
 
-  List<Combination> getCombinations(final JobType jobType, final int cost);
+  List<Combination> getCombinations(final JobType jobType, final int cost, final String bride);
 }

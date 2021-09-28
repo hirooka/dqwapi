@@ -26,7 +26,8 @@ public class DamageRestController {
       @RequestParam(value = "l", required = false) Integer level,
       @RequestParam(value = "d", required = false) Integer defence,
       @RequestParam(value = "w", required = false) String weapon,
-      @RequestParam(value = "s", required = false) String skill
+      @RequestParam(value = "s", required = false) String skill,
+      @RequestParam(value = "b", required = false) String bride
   ) {
     if (ObjectUtils.isEmpty(jobType)) {
       jobType = JobType.BATTLE_MASTER;
@@ -43,6 +44,13 @@ public class DamageRestController {
     if (ObjectUtils.isEmpty(skill)) {
       skill = "創世の光";
     }
-    return damageOperator.getDamages(weapon, skill, jobType, level, defence);
+    if (ObjectUtils.isEmpty(bride)) {
+      bride = "フローラ";
+    } else {
+      if (!bride.equals("ビアンカ") && !bride.equals("フローラ") && !bride.equals("デボラ")) {
+        throw new IllegalArgumentException("Illegal Argument: set correct bride name.");
+      }
+    }
+    return damageOperator.getDamages(weapon, skill, jobType, level, defence, bride);
   }
 }

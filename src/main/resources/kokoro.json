@@ -3046,5 +3046,230 @@
         }
       ]
     }
+  },
+  {
+    "id": 50001,
+    "name": "ビアンカ",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "NONE",
+    "cost": 99,
+    "status": {
+      "parameter": {
+        "hp": 101,
+        "mp":  58,
+        "op":  90,
+        "dp":  80,
+        "os":  30,
+        "ds":  29,
+        "sp":  85,
+        "dx":  85
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "BAGI",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "BAGI",
+              "race": "NONE",
+              "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 50002,
+    "name": "フローラ",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "NONE",
+    "cost": 99,
+    "status": {
+      "parameter": {
+        "hp": 101,
+        "mp":  58,
+        "op":  90,
+        "dp":  80,
+        "os":  30,
+        "ds":  29,
+        "sp":  85,
+        "dx":  85
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "BAGI",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "BAGI",
+              "race": "NONE",
+              "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 50003,
+    "name": "デボラ",
+    "rank": "S",
+    "type": "RED",
+    "race": "NONE",
+    "cost": 99,
+    "status": {
+      "parameter": {
+        "hp": 101,
+        "mp":  58,
+        "op":  90,
+        "dp":  80,
+        "os":  30,
+        "ds":  29,
+        "sp":  85,
+        "dx":  85
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "DEIN",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "BAGI",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "BAGI",
+              "race": "NONE",
+              "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
   }
 ]

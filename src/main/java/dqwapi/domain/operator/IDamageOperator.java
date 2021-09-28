@@ -10,6 +10,7 @@ public interface IDamageOperator {
       final String skillName,
       final JobType jobType,
       final int level,
-      final int defence
+      final int defence,
+      final String bride
   );
 }
