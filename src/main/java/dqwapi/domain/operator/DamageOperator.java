@@ -10,6 +10,7 @@ import dqwapi.domain.model.job.JobStatus;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.Combination;
 import dqwapi.domain.model.kokoro.Damage;
+import dqwapi.domain.model.kokoro.RankType;
 import dqwapi.domain.model.kokoro.Slot;
 import dqwapi.domain.model.weapon.JobEffect;
 import dqwapi.domain.model.weapon.Skill;
@@ -20,6 +21,7 @@ import dqwapi.domain.service.IWeaponService;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -47,7 +49,8 @@ public class DamageOperator implements IDamageOperator {
       final JobType jobType,
       final int level,
       final int defence,
-      final String bride
+      final String bride,
+      final Map<Integer, List<RankType>> exclusions
   ) {
     List<DamageResult> damageResults = new ArrayList<>();
 
@@ -56,7 +59,8 @@ public class DamageOperator implements IDamageOperator {
     final StopWatch stopWatch = new StopWatch();
     stopWatch.start("getKokoroCombinations");
     // TODO: convert level to cost
-    final List<Combination> combinations = kokoroService.getCombinations(jobType, 412, bride);
+    final List<Combination> combinations =
+        kokoroService.getCombinations(jobType, 412, bride, exclusions);
     stopWatch.stop();
     log.info("getKokoroCombinations: {} ms", stopWatch.getLastTaskTimeMillis());
 

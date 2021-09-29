@@ -2,8 +2,12 @@ package dqwapi.api.v1;
 
 import dqwapi.domain.model.damage.DamageResult;
 import dqwapi.domain.model.job.JobType;
+import dqwapi.domain.model.kokoro.RankType;
 import dqwapi.domain.operator.IDamageOperator;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.ObjectUtils;
@@ -27,7 +31,8 @@ public class DamageRestController {
       @RequestParam(value = "d", required = false) Integer defence,
       @RequestParam(value = "w", required = false) String weapon,
       @RequestParam(value = "s", required = false) String skill,
-      @RequestParam(value = "b", required = false) String bride
+      @RequestParam(value = "b", required = false) String bride,
+      @RequestParam(value = "e", required = false) List<String> exclusions
   ) {
     if (ObjectUtils.isEmpty(jobType)) {
       jobType = JobType.BATTLE_MASTER;
@@ -51,6 +56,20 @@ public class DamageRestController {
         throw new IllegalArgumentException("Illegal Argument: set correct bride name.");
       }
     }
-    return damageOperator.getDamages(weapon, skill, jobType, level, defence, bride);
+    final Map<Integer, List<RankType>> excludeMap = new HashMap<>();
+    if (!ObjectUtils.isEmpty(exclusions)) {
+      for (String str : exclusions) {
+        final int key = Integer.parseInt(str.substring(0, str.length() - 1));
+        final RankType rankType = RankType.valueOf(str.substring(str.length() - 1).toUpperCase());
+        if (excludeMap.containsKey(key)) {
+          final List<RankType> rankTypes = new ArrayList<>(excludeMap.get(key));
+          rankTypes.add(rankType);
+          excludeMap.put(key, rankTypes);
+        } else {
+          excludeMap.put(key, List.of(rankType));
+        }
+      }
+    }
+    return damageOperator.getDamages(weapon, skill, jobType, level, defence, bride, excludeMap);
   }
 }

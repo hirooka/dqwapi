@@ -16,6 +16,7 @@ import dqwapi.domain.model.kokoro.Damage;
 import dqwapi.domain.model.kokoro.Effect;
 import dqwapi.domain.model.kokoro.JobKokoroCombination;
 import dqwapi.domain.model.kokoro.Kokoro;
+import dqwapi.domain.model.kokoro.RankType;
 import dqwapi.domain.model.kokoro.Slot;
 import dqwapi.domain.model.kokoro.SuitableCombination;
 import java.io.IOException;
@@ -650,7 +651,12 @@ public class KokoroService implements IKokoroService {
   }
 
   @Override
-  public List<Combination> getCombinations(final JobType jobType, final int cost, final String bride) {
+  public List<Combination> getCombinations(
+      final JobType jobType,
+      final int cost,
+      final String bride,
+      final Map<Integer, List<RankType>> exclusions
+  ) {
     final int brideId;
     switch (bride) {
       case "ビアンカ":
@@ -681,6 +687,16 @@ public class KokoroService implements IKokoroService {
                 return !ids.contains(50_001) && !ids.contains(50_003);
               }
               return !ids.contains(50_001) && !ids.contains(50_002);
+            })
+            .filter(combination -> {
+              for (Slot slot : combination.getSlots()) {
+                if (exclusions.containsKey(slot.getKokoro().getId())) {
+                  if (exclusions.get(slot.getKokoro().getId()).contains(slot.getKokoro().getRank())) {
+                    return false;
+                  }
+                }
+              }
+              return true;
             })
             .sorted(Comparator.comparingInt(Combination::getOp).reversed())
             .collect(Collectors.toList()).subList(0, magicN);
