@@ -470,7 +470,7 @@ public class KokoroService implements IKokoroService {
     return false;
   }
 
-  private List<Combination> createSimpleCombinations(final JobType jobType) {
+  private List<Combination> createCombinations(final JobType jobType) {
 
     final List<Combination> combinations = new ArrayList<>();
     final int len = kokoros.size();
@@ -621,7 +621,7 @@ public class KokoroService implements IKokoroService {
 
       stopWatch.start("initialize");
       for (JobType jobType : slotsByJob.keySet()) {
-        final List<Combination> combinations = createSimpleCombinations(jobType);
+        final List<Combination> combinations = createCombinations(jobType);
         final JobKokoroCombination jobKokoroCombination = new JobKokoroCombination();
         jobKokoroCombination.setJob(jobType);
         jobKokoroCombination.setCombinations(combinations);
