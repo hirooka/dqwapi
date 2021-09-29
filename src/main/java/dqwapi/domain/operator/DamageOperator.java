@@ -55,12 +55,12 @@ public class DamageOperator implements IDamageOperator {
     List<DamageResult> damageResults = new ArrayList<>();
 
     final List<Weapon> weapons = weaponService.getAll();
+    final int cost = jobService.getCost(level);
 
     final StopWatch stopWatch = new StopWatch();
     stopWatch.start("getKokoroCombinations");
-    // TODO: convert level to cost
     final List<Combination> combinations =
-        kokoroService.getCombinations(jobType, 412, bride, exclusions);
+        kokoroService.getCombinations(jobType, cost, bride, exclusions);
     stopWatch.stop();
     log.info("getKokoroCombinations: {} ms", stopWatch.getLastTaskTimeMillis());
 
@@ -172,6 +172,7 @@ public class DamageOperator implements IDamageOperator {
             damageResult.setSkillName(skill.getName());
             damageResult.setDamage(damageValue);
             damageResult.setParameter(combination.getParameter());
+            damageResult.setCost(combination.getCost());
             damageResult.setSkillMagnification(skillMagnification);
             damageResult.setAttackMagnification(attackMagnification);
             damageResult.setAttributeMagnification(attributeMagnification);

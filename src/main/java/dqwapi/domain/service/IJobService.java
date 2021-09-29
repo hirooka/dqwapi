@@ -10,4 +10,6 @@ public interface IJobService {
   JobSpecificEffect getSpecificEffect(
       final JobType jobType, final int level, final boolean isSpecialty
   );
+
+  int getCost(final int level);
 }
