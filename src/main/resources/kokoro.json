@@ -671,6 +671,57 @@
     }
   },
   {
+    "id": 359,
+    "name": "アークデーモン",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "DEVIL",
+    "cost": 114,
+    "status": {
+      "parameter": {
+        "hp": 134,
+        "mp":  62,
+        "op":  85,
+        "dp":  88,
+        "os":  11,
+        "ds":  41,
+        "sp":  56,
+        "dx":  45
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "IO",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "HIT",
+              "attribute": "IO",
+              "race": "NONE",
+              "magnification": 10
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": 354,
     "name": "ブラックチャック",
     "rank": "S",
@@ -1811,6 +1862,60 @@
     }
   },
   {
+    "id": 272,
+    "name": "ボボンガー",
+    "rank": "A",
+    "type": "GREEN",
+    "race": "DRAGON",
+    "cost": 99,
+    "status": {
+      "parameter": {
+        "hp": 100,
+        "mp":  90,
+        "op":  33,
+        "dp":  62,
+        "os":  51,
+        "ds":  86,
+        "sp":  45,
+        "dx":  36
+      },
+      "effects": [
+        {
+          "plusCost": 3,
+          "damages": [
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 272,
+    "name": "ボボンガー",
+    "rank": "B",
+    "type": "GREEN",
+    "race": "DRAGON",
+    "cost": 99,
+    "status": {
+      "parameter": {
+        "hp":  93,
+        "mp":  83,
+        "op":  31,
+        "dp":  57,
+        "os":  47,
+        "ds":  80,
+        "sp":  42,
+        "dx":  34
+      },
+      "effects": [
+        {
+          "plusCost": 2,
+          "damages": [
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": 264,
     "name": "ドラゴンガイア",
     "rank": "S",
@@ -2710,6 +2815,108 @@
   {
     "id": 137,
     "name": "アームライオン",
+    "rank": "S",
+    "type": "RED",
+    "race": "ANIMAL",
+    "cost": 92,
+    "status": {
+      "parameter": {
+        "hp": 127,
+        "mp":  54,
+        "op":  73,
+        "dp":  55,
+        "os":  14,
+        "ds":  14,
+        "sp":  57,
+        "dx":  50
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "HIT",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 10
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 137,
+    "name": "アームライオン",
+    "rank": "A",
+    "type": "RED",
+    "race": "ANIMAL",
+    "cost": 92,
+    "status": {
+      "parameter": {
+        "hp": 112,
+        "mp":  47,
+        "op":  64,
+        "dp":  49,
+        "os":  13,
+        "ds":  13,
+        "sp":  50,
+        "dx":  44
+      },
+      "effects": [
+        {
+          "plusCost": 3,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 8
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 8
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 8
+            },
+            {
+              "attack": "HIT",
+              "attribute": "HYADO",
+              "race": "NONE",
+              "magnification": 8
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 137,
+    "name": "アームライオン",
     "rank": "B",
     "type": "RED",
     "race": "ANIMAL",
@@ -2752,6 +2959,84 @@
               "attribute": "HYADO",
               "race": "NONE",
               "magnification": 6
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 105,
+    "name": "キラーマシン",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "MACHINE",
+    "cost": 77,
+    "status": {
+      "parameter": {
+        "hp": 114,
+        "mp":  48,
+        "op":  58,
+        "dp":  61,
+        "os":  24,
+        "ds":  17,
+        "sp":  25,
+        "dx":  16
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 12
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 12
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 105,
+    "name": "キラーマシン",
+    "rank": "A",
+    "type": "YELLOW",
+    "race": "MACHINE",
+    "cost": 77,
+    "status": {
+      "parameter": {
+        "hp": 100,
+        "mp":  42,
+        "op":  51,
+        "dp":  54,
+        "os":  21,
+        "ds":  15,
+        "sp":  22,
+        "dx":  14
+      },
+      "effects": [
+        {
+          "plusCost": 3,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 10
             }
           ]
         }
@@ -2860,6 +3145,84 @@
   {
     "id": 68,
     "name": "ヘルビースト",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "DEVIL",
+    "cost": 39,
+    "status": {
+      "parameter": {
+        "hp":  27,
+        "mp":  38,
+        "op":  52,
+        "dp":  15,
+        "os":  17,
+        "ds":  18,
+        "sp":  83,
+        "dx":  50
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 10
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 10
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 68,
+    "name": "ヘルビースト",
+    "rank": "A",
+    "type": "BLUE",
+    "race": "DEVIL",
+    "cost": 39,
+    "status": {
+      "parameter": {
+        "hp":  24,
+        "mp":  33,
+        "op":  46,
+        "dp":  13,
+        "os":  15,
+        "ds":  16,
+        "sp":  73,
+        "dx":  44
+      },
+      "effects": [
+        {
+          "plusCost": 3,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 8
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 8
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 68,
+    "name": "ヘルビースト",
     "rank": "B",
     "type": "BLUE",
     "race": "DEVIL",
@@ -2897,6 +3260,45 @@
     }
   },
   {
+    "id": 68,
+    "name": "ヘルビースト",
+    "rank": "C",
+    "type": "BLUE",
+    "race": "DEVIL",
+    "cost": 39,
+    "status": {
+      "parameter": {
+        "hp":  20,
+        "mp":  28,
+        "op":  39,
+        "dp":  11,
+        "os":  13,
+        "ds":  14,
+        "sp":  62,
+        "dx":  37
+      },
+      "effects": [
+        {
+          "plusCost": 0,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 6
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 6
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": 46,
     "name": "デザートゴースト",
     "rank": "S",
@@ -2926,6 +3328,138 @@
             }
           ],
           "critical": 4
+        }
+      ]
+    }
+  },
+  {
+    "id": 34,
+    "name": "ドルイド",
+    "rank": "S",
+    "type": "PURPLE",
+    "race": "PHANTOM",
+    "cost": 24,
+    "status": {
+      "parameter": {
+        "hp":  23,
+        "mp":  40,
+        "op":  11,
+        "dp":   8,
+        "os":  43,
+        "ds":   8,
+        "sp":  29,
+        "dx":  30
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SPELL",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 10
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 34,
+    "name": "ドルイド",
+    "rank": "S",
+    "type": "PURPLE",
+    "race": "PHANTOM",
+    "cost": 24,
+    "status": {
+      "parameter": {
+        "hp":  23,
+        "mp":  40,
+        "op":  11,
+        "dp":   8,
+        "os":  43,
+        "ds":   8,
+        "sp":  29,
+        "dx":  30
+      },
+      "effects": [
+        {
+          "plusCost": 4,
+          "damages": [
+            {
+              "attack": "SPELL",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 10
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 34,
+    "name": "ドルイド",
+    "rank": "A",
+    "type": "PURPLE",
+    "race": "PHANTOM",
+    "cost": 24,
+    "status": {
+      "parameter": {
+        "hp":  20,
+        "mp":  35,
+        "op":  10,
+        "dp":   7,
+        "os":  38,
+        "ds":   7,
+        "sp":  25,
+        "dx":  26
+      },
+      "effects": [
+        {
+          "plusCost": 3,
+          "damages": [
+            {
+              "attack": "SPELL",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 8
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 34,
+    "name": "ドルイド",
+    "rank": "B",
+    "type": "PURPLE",
+    "race": "PHANTOM",
+    "cost": 24,
+    "status": {
+      "parameter": {
+        "hp":  19,
+        "mp":  32,
+        "op":   9,
+        "dp":   6,
+        "os":  35,
+        "ds":   7,
+        "sp":  23,
+        "dx":  24
+      },
+      "effects": [
+        {
+          "plusCost": 2,
+          "damages": [
+            {
+              "attack": "SPELL",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 7
+            }
+          ]
         }
       ]
     }
@@ -2975,6 +3509,159 @@
               "attribute": "MERA",
               "race": "NONE",
               "magnification": 10
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "name": "メラリザード",
+    "rank": "B",
+    "type": "RED",
+    "race": "DRAGON",
+    "cost": 17,
+    "status": {
+      "parameter": {
+        "hp":  19,
+        "mp":   6,
+        "op":  13,
+        "dp":   8,
+        "os":   3,
+        "ds":   3,
+        "sp":  16,
+        "dx":  20
+      },
+      "effects": [
+        {
+          "plusCost": 2,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 7
+            },
+            {
+              "attack": "HIT",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "name": "メラリザード",
+    "rank": "C",
+    "type": "RED",
+    "race": "DRAGON",
+    "cost": 17,
+    "status": {
+      "parameter": {
+        "hp":  18,
+        "mp":   5,
+        "op":  12,
+        "dp":   7,
+        "os":   3,
+        "ds":   3,
+        "sp":  14,
+        "dx":  18
+      },
+      "effects": [
+        {
+          "plusCost": 0,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 6
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 6
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 6
+            },
+            {
+              "attack": "HIT",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 6
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "name": "メラリザード",
+    "rank": "D",
+    "type": "RED",
+    "race": "DRAGON",
+    "cost": 17,
+    "status": {
+      "parameter": {
+        "hp":  16,
+        "mp":   5,
+        "op":  11,
+        "dp":   7,
+        "os":   3,
+        "ds":   3,
+        "sp":  13,
+        "dx":  17
+      },
+      "effects": [
+        {
+          "plusCost": 0,
+          "damages": [
+            {
+              "attack": "SLASH",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "HIT",
+              "attribute": "NONE",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "SLASH",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 5
+            },
+            {
+              "attack": "HIT",
+              "attribute": "MERA",
+              "race": "NONE",
+              "magnification": 5
             }
           ]
         }

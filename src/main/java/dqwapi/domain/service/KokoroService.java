@@ -475,7 +475,7 @@ public class KokoroService implements IKokoroService {
     final List<Combination> combinations = new ArrayList<>();
     final int len = kokoros.size();
     final StopWatch stopWatch = new StopWatch();
-    stopWatch.start("createSimpleCombinations-" + jobType.name());
+    stopWatch.start("createCombinations-" + jobType.name());
 
     for (int i = 0; i < len; i++) {
       for (int j = 0; j < len; j++) {
