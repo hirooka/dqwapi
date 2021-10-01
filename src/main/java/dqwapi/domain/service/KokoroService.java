@@ -592,7 +592,7 @@ public class KokoroService implements IKokoroService {
     }
     stopWatch.stop();
     log.info("{}: {} kokoro combinations, {} ms",
-        jobType, combinations.size(), stopWatch.getLastTaskTimeMillis()
+        jobType, combinations.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis())
     );
     return combinations;
   }
@@ -609,14 +609,14 @@ public class KokoroService implements IKokoroService {
       slotsByJob =
           objectMapper.readValue(jobSlotJsonResource.getInputStream(), new TypeReference<>() {});
       stopWatch.stop();
-      log.info("{} jobs, {} ms", slotsByJob.size(), stopWatch.getLastTaskTimeMillis());
+      log.info("{} jobs, {} ms", slotsByJob.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis()));
       log.debug(slotsByJob.toString());
 
       stopWatch.start("kokoros");
       kokoros =
           objectMapper.readValue(kokoroJsonResource.getInputStream(), new TypeReference<>() {});
       stopWatch.stop();
-      log.info("{} kokoros, {} ms", kokoros.size(), stopWatch.getLastTaskTimeMillis());
+      log.info("{} kokoros, {} ms", kokoros.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis()));
       log.debug(kokoros.toString());
 
       stopWatch.start("initialize");
@@ -628,7 +628,7 @@ public class KokoroService implements IKokoroService {
         jobKokoroCombinations.add(jobKokoroCombination);
       }
       stopWatch.stop();
-      log.info("initialize: {} ms", stopWatch.getLastTaskTimeMillis());
+      log.info("initialize: {} ms", String.format("%,d", stopWatch.getLastTaskTimeMillis()));
 
     } catch (IOException ex) {
       throw new IllegalStateException("Failed to parse JSON file.", ex);

@@ -181,6 +181,7 @@ public class DamageOperator implements IDamageOperator {
             for (Slot slot : combination.getSlots()) {
               final SimplifiedSlot simplifiedSlot = new SimplifiedSlot();
               simplifiedSlot.setType(slot.getType());
+              simplifiedSlot.setId(slot.getKokoro().getId());
               simplifiedSlot.setName(slot.getKokoro().getName());
               simplifiedSlot.setRank(slot.getKokoro().getRank());
               simplifiedSlots.add(simplifiedSlot);
