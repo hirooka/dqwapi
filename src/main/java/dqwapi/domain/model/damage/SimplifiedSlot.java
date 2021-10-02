@@ -14,4 +14,5 @@ public class SimplifiedSlot {
   private int id;
   private String name;
   private RankType rank;
+  private boolean isUp;
 }

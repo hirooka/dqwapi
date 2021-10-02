@@ -11,4 +11,5 @@ import lombok.NoArgsConstructor;
 public class Slot {
   private KokoroType type;
   private Kokoro kokoro;
+  private boolean isUp;
 }

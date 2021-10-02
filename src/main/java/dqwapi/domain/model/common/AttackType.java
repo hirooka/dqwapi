@@ -4,6 +4,7 @@ public enum AttackType {
   ALL,
   BREATH,
   HIT,
+  PHYSICS_SPELL,
   SLASH,
   SPELL
 }

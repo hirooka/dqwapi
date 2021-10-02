@@ -544,6 +544,7 @@ public class KokoroService implements IKokoroService {
                         - suitableCombination.getKokoros().get(3).getStatus().getEffects().get(0).getPlusCost();
                     combination.setCost(cost);
 
+                    // TODO: from -- Processing time and memory consumption
                     final List<Damage> damages = new ArrayList<>();
                     for (Slot slot : slots) {
                       for (Effect effect : slot.getKokoro().getStatus().getEffects()) {
@@ -578,6 +579,7 @@ public class KokoroService implements IKokoroService {
                         mergedDamages.add(mergedDamage);
                       }
                     }
+                    // TODO: to -- Processing time and memory consumption
                     log.debug(mergedDamages.toString());
                     combination.setDamages(mergedDamages);
 
