@@ -7,6 +7,18 @@ spring:
   jackson:
     serialization:
       indent_output: true
+  datasource:
+    url:
+    username:
+    password:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        globally_quoted_identifiers: true
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
 
 springdoc:
   swagger-ui:
@@ -14,5 +26,5 @@ springdoc:
 
 dqwapi:
   version: $project.version
-  kokoro-json: kokoro.json
+  kokoro-json: kokoro-new.json
   response: 20

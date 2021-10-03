@@ -103,7 +103,7 @@ public class DamageOperator implements IDamageOperator {
             int raceMagnification = 100;
 
             final int offence = power
-                + combination.getParameter().getOp()
+                + combination.getOp()
                 + jobSpecificEffectPower
                 + weaponJobEffectPower
                 + weapon.getOffensivePower();
@@ -171,7 +171,7 @@ public class DamageOperator implements IDamageOperator {
             damageResult.setWeaponName(weapon.getName());
             damageResult.setSkillName(skill.getName());
             damageResult.setDamage(damageValue);
-            damageResult.setParameter(combination.getParameter());
+            //damageResult.setParameter(combination.getParameter());
             damageResult.setCost(combination.getCost());
             damageResult.setSkillMagnification(skillMagnification);
             damageResult.setAttackMagnification(attackMagnification);

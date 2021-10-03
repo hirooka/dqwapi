@@ -18,4 +18,8 @@ public interface IKokoroService {
       final String bride,
       final Map<Integer, List<RankType>> exclusions
   );
+
+  void persistKokoros();
+
+  void persistCombinations();
 }

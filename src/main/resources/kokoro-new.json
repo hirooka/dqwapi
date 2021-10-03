@@ -1,0 +1,341 @@
+[
+  {
+    "id":398,
+    "name": "グレイトドラゴン",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "DRAGON",
+    "cost": 116,
+    "plusCost": 4,
+    "hp": 117,
+    "mp":  71,
+    "op":  81,
+    "dp":  79,
+    "os":  37,
+    "ds":  33,
+    "sp": 105,
+    "dx": 105,
+    "damages": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 14
+      },
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 14
+      }
+    ]
+  },
+  {
+    "id":398,
+    "name": "グレイトドラゴン",
+    "rank": "A",
+    "type": "BLUE",
+    "race": "DRAGON",
+    "cost": 116,
+    "plusCost": 3,
+    "hp": 104,
+    "mp":  62,
+    "op":  72,
+    "dp":  68,
+    "os":  33,
+    "ds":  29,
+    "sp":  92,
+    "dx":  92,
+    "damages": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 9
+      },
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 9
+      }
+    ]
+  },
+  {
+    "id": 397,
+    "name": "ゆきのじょおう",
+    "rank": "S",
+    "type": "RED",
+    "race": "ELEMENT",
+    "cost": 114,
+    "plusCost": 4,
+    "hp": 104,
+    "mp":  44,
+    "op":  97,
+    "dp":  59,
+    "os":  16,
+    "ds":  16,
+    "sp":  83,
+    "dx":  72,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ANIMAL",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ELEMENT",
+        "magnification": 10
+      }
+    ]
+  },
+  {
+    "id": 396,
+    "name": "バズールカンダタ",
+    "rank": "S",
+    "type": "RED",
+    "race": "PHANTOM",
+    "cost": 47,
+    "plusCost": 4,
+    "hp":  29,
+    "mp":   8,
+    "op":  61,
+    "dp":  13,
+    "os":   8,
+    "ds":   8,
+    "sp":  46,
+    "dx":  86,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
+  },
+  {
+    "id": 395,
+    "name": "オオヌシガルーダ",
+    "rank": "S",
+    "type": "PURPLE",
+    "race": "BIRD",
+    "cost": 111,
+    "plusCost": 4,
+    "hp":  87,
+    "mp": 100,
+    "op":  18,
+    "dp":  61,
+    "os":  95,
+    "ds":  38,
+    "sp":  90,
+    "dx":  81,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "id": 394,
+    "name": "ジャンボきづち",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "PHANTOM",
+    "cost": 107,
+    "plusCost": 4,
+    "hp":  70,
+    "mp":  36,
+    "op":  98,
+    "dp":  34,
+    "os":  16,
+    "ds":  14,
+    "sp": 108,
+    "dx": 117,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "id": 388,
+    "name": "おにこんぼう",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "DEVIL",
+    "cost": 111,
+    "plusCost": 4,
+    "hp": 102,
+    "mp":  55,
+    "op": 101,
+    "dp":  59,
+    "os":  18,
+    "ds":  36,
+    "sp":  65,
+    "dx":  26,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "id": 382,
+    "name": "イズライール",
+    "rank": "S",
+    "type": "PURPLE",
+    "race": "DEVIL",
+    "cost": 114,
+    "plusCost": 4,
+    "hp": 110,
+    "mp":  74,
+    "op":  56,
+    "dp":  63,
+    "os":  92,
+    "ds":  13,
+    "sp":  47,
+    "dx":  55,
+    "damages": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 15
+      },
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 15
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ELEMENT",
+        "magnification": 10
+      }
+    ]
+  },
+  {
+    "id": 379,
+    "name": "破壊神シドー",
+    "rank": "S",
+    "type": "GREEN",
+    "race": "SECRET",
+    "cost": 113,
+    "plusCost": 4,
+    "hp": 140,
+    "mp": 112,
+    "op":  41,
+    "dp":  58,
+    "os":  56,
+    "ds":  90,
+    "sp":  44,
+    "dx":  43,
+    "damages": [
+    ]
+  }
+]
