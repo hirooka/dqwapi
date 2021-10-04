@@ -11,6 +11,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dqwapi.domain.entity.CombinationEntity;
+import dqwapi.domain.entity.DamageEntity;
 import dqwapi.domain.entity.KokoroEntity;
 import dqwapi.domain.model.common.KokoroType;
 import dqwapi.domain.model.common.Parameter;
@@ -34,6 +35,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -723,12 +725,19 @@ public class KokoroService implements IKokoroService {
 
   @Override
   public void persistKokoros() {
-    final ObjectMapper objectMapper = new ObjectMapper();
-    kokoros.forEach(kokoro -> {
-      kokoroRepository.save(objectMapper.convertValue(kokoro, KokoroEntity.class));
-    });
-    KokoroEntity kokoroEntity = kokoroRepository.getById(kokoros.get(0).getUuid());
-    log.info(kokoroEntity.toString());
+    final ModelMapper modelMapper = new ModelMapper();
+    for (Kokoro kokoro : kokoros) {
+      final KokoroEntity kokoroEntity = modelMapper.map(kokoro, KokoroEntity.class);
+      final List<DamageEntity> damageEntities = new ArrayList<>();
+      for (Damage damage : kokoro.getDamages()) {
+        final DamageEntity damageEntity = modelMapper.map(damage, DamageEntity.class);
+        damageEntity.setKokoro(kokoroEntity);
+        damageEntities.add(damageEntity);
+      }
+      kokoroEntity.setDamages(damageEntities);
+      log.debug(kokoroEntity.toString());
+      kokoroRepository.save(kokoroEntity);
+    }
   }
 
   @Async

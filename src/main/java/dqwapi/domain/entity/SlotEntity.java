@@ -13,7 +13,7 @@ import org.hibernate.annotations.Type;
 @Entity
 public class SlotEntity  {
 
-  @Type(type = "uuid-char")
+  //@Type(type = "uuid-char")
   @Id
   private UUID uuid = UUID.randomUUID();
 
