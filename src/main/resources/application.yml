@@ -14,10 +14,10 @@ spring:
   jpa:
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
         globally_quoted_identifiers: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
     show-sql: false
 
 springdoc:
@@ -27,4 +27,5 @@ springdoc:
 dqwapi:
   version: $project.version
   kokoro-json: kokoro-new.json
+  kokoro-flat-json: kokoro-flat.json
   response: 20
