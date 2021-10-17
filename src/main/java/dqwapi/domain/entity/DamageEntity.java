@@ -9,14 +9,12 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Type;
 
 @Entity
 public class DamageEntity  {
 
   @Getter
   @Setter
-  //@Type(type = "uuid-char")
   @Id
   private UUID uuid = UUID.randomUUID();
   @Getter

@@ -7,13 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import lombok.Data;
-import org.hibernate.annotations.Type;
 
 @Data
 @Entity
 public class CombinationEntity {
 
-  //@Type(type = "uuid-char")
   @Id
   private UUID uuid = UUID.randomUUID();
 

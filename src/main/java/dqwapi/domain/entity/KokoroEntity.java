@@ -13,7 +13,6 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Type;
 
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = {"id", "rank"}))
 @Entity
@@ -21,7 +20,6 @@ public class KokoroEntity {
 
   @Getter
   @Setter
-  //@Type(type = "uuid-char")
   @Id
   private UUID uuid = UUID.randomUUID();
 
