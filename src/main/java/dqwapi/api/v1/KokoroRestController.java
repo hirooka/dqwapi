@@ -22,6 +22,12 @@ public class KokoroRestController {
     return kokoroService.getAll();
   }
 
+  @GetMapping("pkf")
+  public String persistKokoroFlats() {
+    kokoroService.persistKokoroFlats();
+    return "persisted.";
+  }
+
   @GetMapping("pk")
   public String persistK() {
     kokoroService.persistKokoros();
