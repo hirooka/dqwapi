@@ -3,7 +3,9 @@ package dqwapi.domain.service;
 import static dqwapi.domain.model.common.KokoroType.BLUE;
 import static dqwapi.domain.model.common.KokoroType.GREEN;
 import static dqwapi.domain.model.common.KokoroType.PURPLE;
+import static dqwapi.domain.model.common.KokoroType.RAINBOW;
 import static dqwapi.domain.model.common.KokoroType.RED;
+import static dqwapi.domain.model.common.KokoroType.RED_YELLOW;
 import static dqwapi.domain.model.common.KokoroType.YELLOW;
 import static java.util.Objects.requireNonNull;
 
@@ -13,6 +15,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import dqwapi.domain.entity.CombinationEntity;
 import dqwapi.domain.entity.DamageEntity;
 import dqwapi.domain.entity.KokoroEntity;
+import dqwapi.domain.entity.KokoroFlatEntity;
+import dqwapi.domain.entity.Result;
 import dqwapi.domain.model.common.KokoroType;
 import dqwapi.domain.model.common.Parameter;
 import dqwapi.domain.model.job.JobType;
@@ -20,10 +24,12 @@ import dqwapi.domain.model.kokoro.Combination;
 import dqwapi.domain.model.kokoro.Damage;
 import dqwapi.domain.model.kokoro.JobKokoroCombination;
 import dqwapi.domain.model.kokoro.Kokoro;
+import dqwapi.domain.model.kokoro.KokoroFlat;
 import dqwapi.domain.model.kokoro.RankType;
 import dqwapi.domain.model.kokoro.Slot;
 import dqwapi.domain.model.kokoro.SuitableCombination;
 import dqwapi.domain.repository.ICombinationRepository;
+import dqwapi.domain.repository.IKokoroFlatRepository;
 import dqwapi.domain.repository.IKokoroRepository;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -50,18 +56,26 @@ public class KokoroService implements IKokoroService {
   @Value("${dqwapi.kokoro-json}")
   private String kokoroJson;
 
+  @Value("${dqwapi.kokoro-flat-json}")
+  private String kokoroFlatJson;
+
   private final IKokoroRepository kokoroRepository;
   private final ICombinationRepository combinationRepository;
+  private final IKokoroFlatRepository kokoroFlatRepository;
 
   private Map<JobType, List<KokoroType>> slotsByJob = new HashMap<>();
   private List<Kokoro> kokoros = new ArrayList<>();
   private final List<JobKokoroCombination> jobKokoroCombinations = new ArrayList<>();
+  private List<KokoroFlat> kokoroFlats = new ArrayList<>();
 
   public KokoroService(
       final IKokoroRepository kokoroRepository,
-      final ICombinationRepository combinationRepository) {
+      final ICombinationRepository combinationRepository,
+      final IKokoroFlatRepository kokoroFlatRepository
+  ) {
     this.kokoroRepository = requireNonNull(kokoroRepository);
     this.combinationRepository = requireNonNull(combinationRepository);
+    this.kokoroFlatRepository = requireNonNull(kokoroFlatRepository);
   }
 
   private SuitableCombination sortKokoro(final JobType jobType, final List<Kokoro> kokoros) {
@@ -123,7 +137,9 @@ public class KokoroService implements IKokoroService {
                         sp += kokoros.get(j).getSp();
                         dx += kokoros.get(j).getDx();
                       }
-                      if (kokoros.get(k).getType().equals(RED) || kokoros.get(k).getType().equals(YELLOW)) {
+                      if (kokoros.get(k).getType().equals(RED)
+                          || kokoros.get(k).getType().equals(YELLOW)
+                      ) {
                         hp += (int) Math.ceil(kokoros.get(k).getHp() * magnification);
                         mp += (int) Math.ceil(kokoros.get(k).getMp() * magnification);
                         op += (int) Math.ceil(kokoros.get(k).getOp() * magnification);
@@ -222,7 +238,9 @@ public class KokoroService implements IKokoroService {
                         sp += kokoros.get(j).getSp();
                         dx += kokoros.get(j).getDx();
                       }
-                      if (kokoros.get(k).getType().equals(BLUE) || kokoros.get(k).getType().equals(RED)) {
+                      if (kokoros.get(k).getType().equals(BLUE)
+                          || kokoros.get(k).getType().equals(RED)
+                      ) {
                         hp += (int) Math.ceil(kokoros.get(k).getHp());
                         mp += (int) Math.ceil(kokoros.get(k).getMp());
                         op += (int) Math.ceil(kokoros.get(k).getOp());
@@ -283,7 +301,9 @@ public class KokoroService implements IKokoroService {
                       int ds = 0;
                       int sp = 0;
                       int dx = 0;
-                      if (kokoros.get(i).getType().equals(PURPLE) || kokoros.get(i).getType().equals(GREEN)) {
+                      if (kokoros.get(i).getType().equals(PURPLE)
+                          || kokoros.get(i).getType().equals(GREEN)
+                      ) {
                         hp += (int) Math.ceil(kokoros.get(i).getHp());
                         mp += (int) Math.ceil(kokoros.get(i).getMp());
                         op += (int) Math.ceil(kokoros.get(i).getOp());
@@ -302,7 +322,9 @@ public class KokoroService implements IKokoroService {
                         sp += kokoros.get(i).getSp();
                         dx += kokoros.get(i).getDx();
                       }
-                      if (kokoros.get(j).getType().equals(PURPLE) || kokoros.get(j).getType().equals(GREEN)) {
+                      if (kokoros.get(j).getType().equals(PURPLE)
+                          || kokoros.get(j).getType().equals(GREEN)
+                      ) {
                         hp += (int) Math.ceil(kokoros.get(j).getHp());
                         mp += (int) Math.ceil(kokoros.get(j).getMp());
                         op += (int) Math.ceil(kokoros.get(j).getOp());
@@ -321,7 +343,9 @@ public class KokoroService implements IKokoroService {
                         sp += kokoros.get(j).getSp();
                         dx += kokoros.get(j).getDx();
                       }
-                      if (kokoros.get(k).getType().equals(PURPLE) || kokoros.get(k).getType().equals(GREEN)) {
+                      if (kokoros.get(k).getType().equals(PURPLE)
+                          || kokoros.get(k).getType().equals(GREEN)
+                      ) {
                         hp += (int) Math.ceil(kokoros.get(k).getHp());
                         mp += (int) Math.ceil(kokoros.get(k).getMp());
                         op += (int) Math.ceil(kokoros.get(k).getOp());
@@ -420,7 +444,9 @@ public class KokoroService implements IKokoroService {
                         sp += kokoros.get(j).getSp();
                         dx += kokoros.get(j).getDx();
                       }
-                      if (kokoros.get(k).getType().equals(YELLOW) || kokoros.get(k).getType().equals(GREEN)) {
+                      if (kokoros.get(k).getType().equals(YELLOW)
+                          || kokoros.get(k).getType().equals(GREEN)
+                      ) {
                         hp += (int) Math.ceil(kokoros.get(k).getHp());
                         mp += (int) Math.ceil(kokoros.get(k).getMp());
                         op += (int) Math.ceil(kokoros.get(k).getOp());
@@ -506,7 +532,9 @@ public class KokoroService implements IKokoroService {
                   final int i1 = kokoros.get(j).getId();
                   final int i2 = kokoros.get(k).getId();
                   final int i3 = kokoros.get(l).getId();
-                  if (i0 != i1 && i0 != i2 && i0 != i3 && i1 != i2 && i1 != i3 && i2 != i3 && !canBrideSkip(i0, i1, i2, i3)) {
+                  if (i0 != i1 && i0 != i2 && i0 != i3 && i1 != i2 && i1 != i3 && i2 != i3
+                      && !canBrideSkip(i0, i1, i2, i3)
+                  ) {
                     log.debug("{}, {}, {}, {}", i, j, k, l);
                     log.debug("org: {} {} {} {}",
                         kokoros.get(i).getName(),
@@ -620,6 +648,7 @@ public class KokoroService implements IKokoroService {
     final Resource kokoroJsonResource = new ClassPathResource(kokoroJson);
     final String jobSlotJson = "slots-by-job.json";
     final Resource jobSlotJsonResource = new ClassPathResource(jobSlotJson);
+    final Resource kokoroFlatJsonResource = new ClassPathResource(kokoroFlatJson);
     try {
       final StopWatch stopWatch = new StopWatch();
       stopWatch.start("slotsByJob");
@@ -627,16 +656,32 @@ public class KokoroService implements IKokoroService {
       slotsByJob =
           objectMapper.readValue(jobSlotJsonResource.getInputStream(), new TypeReference<>() {});
       stopWatch.stop();
-      log.info("{} jobs, {} ms", slotsByJob.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis()));
+      log.info("{} jobs, {} ms",
+          slotsByJob.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis())
+      );
       log.debug(slotsByJob.toString());
 
       stopWatch.start("kokoros");
       kokoros =
           objectMapper.readValue(kokoroJsonResource.getInputStream(), new TypeReference<>() {});
       stopWatch.stop();
-      log.info("{} kokoros, {} ms", kokoros.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis()));
+      log.info("{} kokoros, {} ms",
+          kokoros.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis())
+      );
       log.debug(kokoros.toString());
 
+      stopWatch.start("kokoroFlats");
+      objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+      kokoroFlats =
+          objectMapper.readValue(kokoroFlatJsonResource.getInputStream(), new TypeReference<>() {});
+      stopWatch.stop();
+      log.info("{} kokoroFlats, {} ms",
+          kokoroFlats.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis())
+      );
+      log.debug(kokoroFlats.toString());
+
+      // TODO: initialized on memory (too many memory usage)
+      /*
       stopWatch.start("initialize");
       for (JobType jobType : slotsByJob.keySet()) {
         final List<Combination> combinations = createCombinations(jobType);
@@ -647,7 +692,7 @@ public class KokoroService implements IKokoroService {
       }
       stopWatch.stop();
       log.info("initialize: {} ms", String.format("%,d", stopWatch.getLastTaskTimeMillis()));
-
+      */
     } catch (IOException ex) {
       throw new IllegalStateException("Failed to parse JSON file.", ex);
     }
@@ -709,7 +754,9 @@ public class KokoroService implements IKokoroService {
             .filter(combination -> {
               for (Slot slot : combination.getSlots()) {
                 if (exclusions.containsKey(slot.getKokoro().getId())) {
-                  if (exclusions.get(slot.getKokoro().getId()).contains(slot.getKokoro().getRank())) {
+                  if (exclusions.get(slot.getKokoro().getId())
+                      .contains(slot.getKokoro().getRank())
+                  ) {
                     return false;
                   }
                 }
@@ -721,6 +768,285 @@ public class KokoroService implements IKokoroService {
       }
     }
     return new ArrayList<>();
+  }
+
+  private RankType convert(final int i) {
+    switch (i) {
+      case 0:
+        return RankType.SP;
+      case 1:
+        return RankType.S;
+      case 2:
+        return RankType.A;
+      case 3:
+        return RankType.B;
+      case 4:
+        return RankType.C;
+      case 5:
+        return RankType.D;
+      default:
+        throw new IllegalArgumentException("");
+    }
+  }
+
+  private List<Result> convert(final List<Object[]> objects) {
+    final List<Result> results = new ArrayList<>();
+    for (Object[] o : objects) {
+      final Result result = new Result();
+      result.setK0id((Integer) o[0]);
+      result.setK0rank(convert((Integer) o[1]));
+      result.setK1id((Integer) o[2]);
+      result.setK1rank(convert((Integer) o[3]));
+      result.setK2id((Integer) o[4]);
+      result.setK2rank(convert((Integer) o[5]));
+      result.setK3id((Integer) o[6]);
+      result.setK3rank(convert((Integer) o[7]));
+      result.setPattern((String) o[8]);
+      results.add(result);
+    }
+    return results;
+  }
+
+  private Kokoro get(final int id, final RankType rankType) {
+    for (Kokoro kokoro : kokoros) {
+      if (kokoro.getId() == id && kokoro.getRank().equals(rankType)) {
+        return kokoro;
+      }
+    }
+    throw new IllegalArgumentException("");
+  }
+
+  private void setParameter(final Combination combination, final JobType jobType) {
+    final double magnification = 1.2;
+    switch (jobType) {
+      case BATTLE_MASTER:
+        int hp = 0;
+        int mp = 0;
+        int op = 0;
+        int dp = 0;
+        int os = 0;
+        int ds = 0;
+        int sp = 0;
+        int dx = 0;
+        if (combination.getSlots().get(0).getKokoro().getType().equals(RED)) {
+          hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(0).getKokoro().getHp();
+          mp += combination.getSlots().get(0).getKokoro().getMp();
+          op += combination.getSlots().get(0).getKokoro().getOp();
+          dp += combination.getSlots().get(0).getKokoro().getDp();
+          os += combination.getSlots().get(0).getKokoro().getOs();
+          ds += combination.getSlots().get(0).getKokoro().getDs();
+          sp += combination.getSlots().get(0).getKokoro().getSp();
+          dx += combination.getSlots().get(0).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(1).getKokoro().getType().equals(RED)) {
+          hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(1).getKokoro().getHp();
+          mp += combination.getSlots().get(1).getKokoro().getMp();
+          op += combination.getSlots().get(1).getKokoro().getOp();
+          dp += combination.getSlots().get(1).getKokoro().getDp();
+          os += combination.getSlots().get(1).getKokoro().getOs();
+          ds += combination.getSlots().get(1).getKokoro().getDs();
+          sp += combination.getSlots().get(1).getKokoro().getSp();
+          dx += combination.getSlots().get(1).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(2).getKokoro().getType().equals(RED)
+            || combination.getSlots().get(2).getKokoro().getType().equals(YELLOW)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(2).getKokoro().getHp();
+          mp += combination.getSlots().get(2).getKokoro().getMp();
+          op += combination.getSlots().get(2).getKokoro().getOp();
+          dp += combination.getSlots().get(2).getKokoro().getDp();
+          os += combination.getSlots().get(2).getKokoro().getOs();
+          ds += combination.getSlots().get(2).getKokoro().getDs();
+          sp += combination.getSlots().get(2).getKokoro().getSp();
+          dx += combination.getSlots().get(2).getKokoro().getDx();
+        }
+        hp += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getHp() * magnification);
+        mp += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getMp() * magnification);
+        op += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getOp() * magnification);
+        dp += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getDp() * magnification);
+        os += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getOs() * magnification);
+        ds += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getDs() * magnification);
+        sp += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getSp() * magnification);
+        dx += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getDx() * magnification);
+
+        combination.setHp(hp);
+        combination.setMp(mp);
+        combination.setOp(op);
+        combination.setDp(dp);
+        combination.setOs(os);
+        combination.setDs(ds);
+        combination.setDx(dx);
+        combination.setSp(sp);
+        break;
+      case RANGER:
+      case SAGE:
+      case PALADIN:
+      default:
+        break;
+    }
+  }
+
+  private List<Combination> convert(final List<Result> results, final JobType jobType) {
+    final List<Combination> combinations = new ArrayList<>();
+    switch (jobType) {
+      case BATTLE_MASTER:
+        for (Result result : results) {
+          final String pattern = result.getPattern();
+          final int k0Index = Integer.parseInt(pattern.substring(1, 2));
+          final int k1Index = Integer.parseInt(pattern.substring(2, 3));
+          final int k2Index = Integer.parseInt(pattern.substring(3, 4));
+          final int k3Index = Integer.parseInt(pattern.substring(4, 5));
+          log.info("{}, {}, {}, {}", k0Index, k1Index, k2Index, k3Index);
+          List<Integer> indexes = Arrays.asList(k0Index, k1Index, k2Index, k3Index);
+          List<Integer> ids = Arrays.asList(
+              result.getK0id(), result.getK1id(), result.getK2id(), result.getK3id()
+          );
+          List<RankType> ranks = Arrays.asList(
+              result.getK0rank(), result.getK1rank(), result.getK2rank(), result.getK3rank()
+          );
+          final Combination combination = new Combination();
+          final List<Slot> slots = new ArrayList<>();
+          for (int i = 0; i < 4; i++) {
+            final Slot slot = new Slot();
+            slot.setKokoro(get(ids.get(indexes.get(i)), ranks.get(indexes.get(i))));
+            switch (i) {
+              case 0:
+              case 1:
+                slot.setType(RED);
+                break;
+              case 2:
+                slot.setType(RED_YELLOW);
+                break;
+              case 3:
+                slot.setType(RAINBOW);
+                break;
+              default:
+                throw new IllegalArgumentException("");
+            }
+            slots.add(slot);
+          }
+          combination.setSlots(slots);
+
+          setParameter(combination, jobType);
+
+          final int cost = combination.getSlots().get(0).getKokoro().getCost()
+              //- combination.getSlots().get(0).getKokoro().getPlusCost()
+              + combination.getSlots().get(1).getKokoro().getCost()
+              //- combination.getSlots().get(1).getKokoro().getPlusCost()
+              + combination.getSlots().get(2).getKokoro().getCost()
+              //- combination.getSlots().get(2).getKokoro().getPlusCost()
+              + combination.getSlots().get(3).getKokoro().getCost();
+              //- combination.getSlots().get(3).getKokoro().getPlusCost();
+          combination.setCost(cost);
+
+          final List<Damage> damages = new ArrayList<>();
+          for (Slot slot : slots) {
+            damages.addAll(slot.getKokoro().getDamages());
+          }
+          final List<Damage> mergedDamages = new ArrayList<>();
+          for (int x = 0; x < damages.size(); x++) {
+            boolean isMerged = false;
+            int mergedMagnification = damages.get(x).getMagnification();
+            for (int y = 0; y < damages.size(); y++) {
+              if (damages.get(x).getAttack()
+                  .equals(damages.get(y).getAttack())
+                  && damages.get(x).getAttribute()
+                  .equals(damages.get(y).getAttribute())
+                  && damages.get(x).getRace()
+                  .equals(damages.get(y).getRace())
+              ) {
+                if (y > x) {
+                  mergedMagnification += damages.get(y).getMagnification();
+                } else if (y < x) {
+                  isMerged = true;
+                }
+              }
+            }
+            if (!isMerged) {
+              final Damage mergedDamage = new Damage();
+              mergedDamage.setAttack(damages.get(x).getAttack());
+              mergedDamage.setAttribute(damages.get(x).getAttribute());
+              mergedDamage.setRace(damages.get(x).getRace());
+              mergedDamage.setMagnification(mergedMagnification);
+              mergedDamages.add(mergedDamage);
+            }
+          }
+          combination.setDamages(damages);
+
+          combinations.add(combination);
+          log.info("{}, {}, {}, {}",
+              result.getK0id(),
+              result.getK1id(),
+              result.getK2id(),
+              result.getK3id()
+          );
+          log.info("{}, {}, {}, {}",
+              slots.get(0).getKokoro().getId(),
+              slots.get(1).getKokoro().getId(),
+              slots.get(2).getKokoro().getId(),
+              slots.get(3).getKokoro().getId()
+          );
+        }
+      default:
+        break;
+    }
+    return combinations;
+  }
+
+  @Override
+  public List<Combination> getCombinations(
+      final JobType jobType,
+      final int cost,
+      final String bride,
+      final Map<Integer, List<RankType>> exclusions,
+      final int limit
+  ) {
+    final StopWatch stopWatch = new StopWatch();
+    stopWatch.start("findCombinationsFromRdbms");
+    final List<Result> results = convert(kokoroFlatRepository.findBmHyadoSlashDamages(50));
+    stopWatch.stop();
+    log.info("{} results, {} ms",
+        results.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis())
+    );
+    log.info(results.toString());
+    return convert(results, jobType);
+  }
+
+  @Override
+  public void persistKokoroFlats() {
+    final ModelMapper modelMapper = new ModelMapper();
+    for (KokoroFlat kokoroFlat : kokoroFlats) {
+      final KokoroFlatEntity kokoroFlatEntity = modelMapper.map(kokoroFlat, KokoroFlatEntity.class);
+      log.debug(kokoroFlatEntity.toString());
+      kokoroFlatRepository.save(kokoroFlatEntity);
+    }
   }
 
   @Override
@@ -751,6 +1077,9 @@ public class KokoroService implements IKokoroService {
       combinationRepository.save(objectMapper.convertValue(combination, CombinationEntity.class));
     });
     stopWatch.stop();
-    log.info("save {} entities: {} ms", jobKokoroCombinations.get(0).getCombinations().size(), String.format("%,d", stopWatch.getLastTaskTimeMillis()));
+    log.info("save {} entities: {} ms",
+        jobKokoroCombinations.get(0).getCombinations().size(),
+        String.format("%,d", stopWatch.getLastTaskTimeMillis())
+    );
   }
 }

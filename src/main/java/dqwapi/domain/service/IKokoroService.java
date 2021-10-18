@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface IKokoroService {
+
   List<Kokoro> getAll();
 
   List<Combination> getCombinations(final JobType jobType);
@@ -18,6 +19,16 @@ public interface IKokoroService {
       final String bride,
       final Map<Integer, List<RankType>> exclusions
   );
+
+  List<Combination> getCombinations(
+      final JobType jobType,
+      final int cost,
+      final String bride,
+      final Map<Integer, List<RankType>> exclusions,
+      final int limit
+  );
+
+  void persistKokoroFlats();
 
   void persistKokoros();
 
