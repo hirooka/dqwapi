@@ -12,11 +12,11 @@ public interface IKokoroFlatRepository extends JpaRepository<KokoroFlatEntity, U
 
   @Query(value = "select "
       + "k0id, k0rank, k1id, k1rank, k2id, k2rank, k3id, k3rank, max_battle_master_op_pattern "
-      + "from kokoro_flat_cb_mv order by bm_dein_slash_damage desc limit 50", nativeQuery = true)
-  List<Object[]> findBmDeinSlashDamages();
+      + "from kokoro_flat_cb_mv order by bm_dein_slash_damage desc limit ?1", nativeQuery = true)
+  List<Object[]> findBmDeinSlashDamages(final Integer limit);
 
   @Query(value = "select "
       + "k0id, k0rank, k1id, k1rank, k2id, k2rank, k3id, k3rank, max_battle_master_op_pattern "
-      + "from kokoro_flat_cb_mv order by bm_hyado_slash_damage desc limit 50", nativeQuery = true)
-  List<Object[]> findBmHyadoSlashDamages();
+      + "from kokoro_flat_cb_mv order by bm_hyado_slash_damage desc limit ?1", nativeQuery = true)
+  List<Object[]> findBmHyadoSlashDamages(final Integer limit);
 }
