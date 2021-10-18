@@ -60,7 +60,7 @@ public class DamageOperator implements IDamageOperator {
     final StopWatch stopWatch = new StopWatch();
     stopWatch.start("getKokoroCombinations");
     final List<Combination> combinations =
-        kokoroService.getCombinations(jobType, cost, bride, exclusions);
+        kokoroService.getCombinations(jobType, cost, bride, exclusions, 50);
     stopWatch.stop();
     log.info("getKokoroCombinations: {} ms", stopWatch.getLastTaskTimeMillis());
 
@@ -172,6 +172,14 @@ public class DamageOperator implements IDamageOperator {
             damageResult.setSkillName(skill.getName());
             damageResult.setDamage(damageValue);
             //damageResult.setParameter(combination.getParameter());
+            damageResult.setHp(combination.getHp());
+            damageResult.setMp(combination.getMp());
+            damageResult.setOp(combination.getOp());
+            damageResult.setDp(combination.getDp());
+            damageResult.setOs(combination.getOs());
+            damageResult.setDs(combination.getDs());
+            damageResult.setDx(combination.getDx());
+            damageResult.setSp(combination.getSp());
             damageResult.setCost(combination.getCost());
             damageResult.setSkillMagnification(skillMagnification);
             damageResult.setAttackMagnification(attackMagnification);

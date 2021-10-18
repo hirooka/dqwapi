@@ -15,6 +15,14 @@ public class DamageResult {
   private int damage;
   private List<SimplifiedSlot> slots;
   private Parameter parameter;
+  private int hp;
+  private int mp;
+  private int op;
+  private int dp;
+  private int os;
+  private int ds;
+  private int sp;
+  private int dx;
   private int cost;
   private int skillMagnification;
   private int attackMagnification;
