@@ -1,5 +1,441 @@
 [
   {
+    "id":402,
+    "name": "ゲマ",
+    "rank": "S",
+    "type": "PURPLE",
+    "race": "ZOMBIE",
+    "cost": 119,
+    "plusCost": 4,
+    "hp":  67,
+    "mp":  90,
+    "op":   8,
+    "dp":  32,
+    "os": 114,
+    "ds":  52,
+    "sp": 119,
+    "dx":  84,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
+  },
+  {
+    "id":402,
+    "name": "ゲマ",
+    "rank": "A",
+    "type": "PURPLE",
+    "race": "ZOMBIE",
+    "cost": 119,
+    "plusCost": 3,
+    "hp":  59,
+    "mp":  79,
+    "op":   7,
+    "dp":  28,
+    "os": 108,
+    "ds":  46,
+    "sp":  98,
+    "dx":  74,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 4
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 4
+      }
+    ]
+  },
+  {
+    "id":402,
+    "name": "ゲマ",
+    "rank": "B",
+    "type": "PURPLE",
+    "race": "ZOMBIE",
+    "cost": 119,
+    "plusCost": 2,
+    "hp":  50,
+    "mp":  67,
+    "op":   6,
+    "dp":  25,
+    "os": 103,
+    "ds":  38,
+    "sp":  81,
+    "dx":  82,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ]
+  },
+  {
+    "id":401,
+    "name": "ようがんげんじん",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "ELEMENT",
+    "cost": 114,
+    "plusCost": 4,
+    "hp": 101,
+    "mp":  50,
+    "op":  65,
+    "dp":  68,
+    "os":  63,
+    "ds":  17,
+    "sp":  30,
+    "dx":  48,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 12
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 12
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 12
+      },
+      {
+        "attack": "HIT",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 12
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ZOMBIE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "id":401,
+    "name": "ようがんげんじん",
+    "rank": "A",
+    "type": "YELLOW",
+    "race": "ELEMENT",
+    "cost": 114,
+    "plusCost": 3,
+    "hp":  88,
+    "mp":  43,
+    "op":  55,
+    "dp":  60,
+    "os":  58,
+    "ds":  15,
+    "sp":  27,
+    "dx":  42,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 9
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 9
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 9
+      },
+      {
+        "attack": "HIT",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 9
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ZOMBIE",
+        "magnification": 5
+      }
+    ]
+  },
+  {
+    "id":401,
+    "name": "ようがんげんじん",
+    "rank": "B",
+    "type": "YELLOW",
+    "race": "ELEMENT",
+    "cost": 114,
+    "plusCost": 2,
+    "hp":  82,
+    "mp":  40,
+    "op":  51,
+    "dp":  55,
+    "os":  56,
+    "ds":  14,
+    "sp":  25,
+    "dx":  39,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "HIT",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ZOMBIE",
+        "magnification": 3
+      }
+    ]
+  },
+  {
+    "id":400,
+    "name": "ゴンズ",
+    "rank": "S",
+    "type": "RED",
+    "race": "ANIMAL",
+    "cost": 116,
+    "plusCost": 4,
+    "hp": 105,
+    "mp":  45,
+    "op":  98,
+    "dp":  59,
+    "os":  16,
+    "ds":  16,
+    "sp":  83,
+    "dx":  73,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "id":400,
+    "name": "ゴンズ",
+    "rank": "A",
+    "type": "RED",
+    "race": "ANIMAL",
+    "cost": 116,
+    "plusCost": 3,
+    "hp":  93,
+    "mp":  40,
+    "op":  86,
+    "dp":  53,
+    "os":  14,
+    "ds":  14,
+    "sp":  73,
+    "dx":  64,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
+  },
+  {
+    "id":400,
+    "name": "ゴンズ",
+    "rank": "B",
+    "type": "RED",
+    "race": "ANIMAL",
+    "cost": 116,
+    "plusCost": 2,
+    "hp":  78,
+    "mp":  33,
+    "op":  73,
+    "dp":  44,
+    "os":  12,
+    "ds":  12,
+    "sp":  61,
+    "dx":  54,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 1
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 1
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ]
+  },
+  {
+    "id":399,
+    "name": "ジャミ",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "ANIMAL",
+    "cost": 101,
+    "plusCost": 4,
+    "hp":  75,
+    "mp":  38,
+    "op": 103,
+    "dp":  36,
+    "os":  17,
+    "ds":  15,
+    "sp": 116,
+    "dx": 126,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ANIMAL",
+        "magnification": 7
+      }
+    ]
+  },
+  {
     "id":398,
     "name": "グレイトドラゴン",
     "rank": "S",
