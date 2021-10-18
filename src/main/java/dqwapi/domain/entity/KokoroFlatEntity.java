@@ -226,6 +226,38 @@ public class KokoroFlatEntity {
 
   @Getter
   @Setter
+  private Integer breathBagiNone;
+
+  @Getter
+  @Setter
+  private Integer breathDeinNone;
+
+  @Getter
+  @Setter
+  private Integer breathDorumaNone;
+
+  @Getter
+  @Setter
+  private Integer breathGiraNone;
+
+  @Getter
+  @Setter
+  private Integer breathHyadoNone;
+
+  @Getter
+  @Setter
+  private Integer breathIoNone;
+
+  @Getter
+  @Setter
+  private Integer breathJibariaNone;
+
+  @Getter
+  @Setter
+  private Integer breathMeraNone;
+
+  @Getter
+  @Setter
   private Integer allNoneAnimal;
 
   @Getter

@@ -73,6 +73,15 @@ public class KokoroFlat {
   private int spellJibariaNone;
   private int spellMeraNone;
 
+  private int breathBagiNone;
+  private int breathDeinNone;
+  private int breathDorumaNone;
+  private int breathGiraNone;
+  private int breathHyadoNone;
+  private int breathIoNone;
+  private int breathJibariaNone;
+  private int breathMeraNone;
+
   private int allNoneAnimal;
   private int allNoneBird;
   private int allNoneDevil;
