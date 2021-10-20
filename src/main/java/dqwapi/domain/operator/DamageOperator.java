@@ -57,13 +57,6 @@ public class DamageOperator implements IDamageOperator {
     final List<Weapon> weapons = weaponService.getAll();
     final int cost = jobService.getCost(level);
 
-    final StopWatch stopWatch = new StopWatch();
-    stopWatch.start("getKokoroCombinations");
-    final List<Combination> combinations =
-        kokoroService.getCombinations(jobType, cost, bride, exclusions, 50);
-    stopWatch.stop();
-    log.info("getKokoroCombinations: {} ms", stopWatch.getLastTaskTimeMillis());
-
     final JobStatus jobStatus = jobService.getStatus(jobType, level);
     final int power = jobStatus.getParameter().getOp();
 
@@ -92,6 +85,16 @@ public class DamageOperator implements IDamageOperator {
               weapon.getName(), skill.getName(), skill.getRange(),
               skill.getAttack(), skill.getAttribute(), skill.getMagnification()
           );
+
+          final StopWatch stopWatch = new StopWatch();
+          stopWatch.start("getKokoroCombinations");
+          final List<Combination> combinations =
+              kokoroService.getCombinations(
+                  jobType, skill.getAttack(), skill.getAttribute(), RaceType.NONE,
+                  cost, bride, exclusions, 50
+              );
+          stopWatch.stop();
+          log.info("getKokoroCombinations: {} ms", stopWatch.getLastTaskTimeMillis());
 
           final int skillMagnification = skill.getMagnification();
 
@@ -205,6 +208,7 @@ public class DamageOperator implements IDamageOperator {
     }
     log.info("result = {}", damageResults.size());
 
+    final StopWatch stopWatch = new StopWatch();
     stopWatch.start("sortDamageResults");
     if (damageResults.size() > response) {
       damageResults = damageResults.stream()

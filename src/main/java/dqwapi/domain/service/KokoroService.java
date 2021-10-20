@@ -17,8 +17,11 @@ import dqwapi.domain.entity.DamageEntity;
 import dqwapi.domain.entity.KokoroEntity;
 import dqwapi.domain.entity.KokoroFlatEntity;
 import dqwapi.domain.entity.Result;
+import dqwapi.domain.model.common.AttackType;
+import dqwapi.domain.model.common.AttributeType;
 import dqwapi.domain.model.common.KokoroType;
 import dqwapi.domain.model.common.Parameter;
+import dqwapi.domain.model.common.RaceType;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.Combination;
 import dqwapi.domain.model.kokoro.Damage;
@@ -770,7 +773,7 @@ public class KokoroService implements IKokoroService {
     return new ArrayList<>();
   }
 
-  private RankType convert(final int i) {
+  private RankType convertRankType(final int i) {
     switch (i) {
       case 0:
         return RankType.SP;
@@ -789,18 +792,18 @@ public class KokoroService implements IKokoroService {
     }
   }
 
-  private List<Result> convert(final List<Object[]> objects) {
+  private List<Result> convertRdbmsResult(final List<Object[]> objects) {
     final List<Result> results = new ArrayList<>();
     for (Object[] o : objects) {
       final Result result = new Result();
       result.setK0id((Integer) o[0]);
-      result.setK0rank(convert((Integer) o[1]));
+      result.setK0rank(convertRankType((Integer) o[1]));
       result.setK1id((Integer) o[2]);
-      result.setK1rank(convert((Integer) o[3]));
+      result.setK1rank(convertRankType((Integer) o[3]));
       result.setK2id((Integer) o[4]);
-      result.setK2rank(convert((Integer) o[5]));
+      result.setK2rank(convertRankType((Integer) o[5]));
       result.setK3id((Integer) o[6]);
-      result.setK3rank(convert((Integer) o[7]));
+      result.setK3rank(convertRankType((Integer) o[7]));
       result.setPattern((String) o[8]);
       results.add(result);
     }
@@ -923,7 +926,7 @@ public class KokoroService implements IKokoroService {
           final int k1Index = Integer.parseInt(pattern.substring(2, 3));
           final int k2Index = Integer.parseInt(pattern.substring(3, 4));
           final int k3Index = Integer.parseInt(pattern.substring(4, 5));
-          log.info("{}, {}, {}, {}", k0Index, k1Index, k2Index, k3Index);
+          log.debug("{}, {}, {}, {}", k0Index, k1Index, k2Index, k3Index);
           List<Integer> indexes = Arrays.asList(k0Index, k1Index, k2Index, k3Index);
           List<Integer> ids = Arrays.asList(
               result.getK0id(), result.getK1id(), result.getK2id(), result.getK3id()
@@ -1001,28 +1004,226 @@ public class KokoroService implements IKokoroService {
           combination.setDamages(damages);
 
           combinations.add(combination);
-          log.info("{}, {}, {}, {}",
+          log.debug("{}, {}, {}, {}",
               result.getK0id(),
               result.getK1id(),
               result.getK2id(),
               result.getK3id()
           );
-          log.info("{}, {}, {}, {}",
+          log.debug("{}, {}, {}, {}",
               slots.get(0).getKokoro().getId(),
               slots.get(1).getKokoro().getId(),
               slots.get(2).getKokoro().getId(),
               slots.get(3).getKokoro().getId()
           );
         }
+        return combinations;
+      case RANGER:
+      case SAGE:
+      case PALADIN:
       default:
-        break;
+        return combinations;
     }
-    return combinations;
+  }
+
+  private List<Object[]> getCombinationsFromRdbms(
+      final JobType jobType,
+      final AttackType attackType,
+      final AttributeType attributeType,
+      final RaceType raceType,
+      final int cost,
+      final String bride,
+      final Map<Integer, List<RankType>> exclusions,
+      final int limit
+  ) {
+    switch (jobType) {
+      case BATTLE_MASTER:
+        switch (attackType) {
+          case SLASH:
+            switch (attributeType) {
+              case BAGI:
+                return kokoroFlatRepository.findBattleMasterBagiSlashDamages(limit);
+              case DEIN:
+                return kokoroFlatRepository.findBattleMasterDeinSlashDamages(limit);
+              case DORUMA:
+                return kokoroFlatRepository.findBattleMasterDorumaSlashDamages(limit);
+              case GIRA:
+                return kokoroFlatRepository.findBattleMasterGiraSlashDamages(limit);
+              case HYADO:
+                return kokoroFlatRepository.findBattleMasterHyadoSlashDamages(limit);
+              case IO:
+                return kokoroFlatRepository.findBattleMasterIoSlashDamages(limit);
+              case JIBARIA:
+                return kokoroFlatRepository.findBattleMasterJibariaSlashDamages(limit);
+              case MERA:
+                return kokoroFlatRepository.findBattleMasterMeraSlashDamages(limit);
+              default:
+                return null;
+            }
+          case HIT:
+            switch (attributeType) {
+              case BAGI:
+                return kokoroFlatRepository.findBattleMasterBagiHitDamages(limit);
+              case DEIN:
+                return kokoroFlatRepository.findBattleMasterDeinHitDamages(limit);
+              case DORUMA:
+                return kokoroFlatRepository.findBattleMasterDorumaHitDamages(limit);
+              case GIRA:
+                return kokoroFlatRepository.findBattleMasterGiraHitDamages(limit);
+              case HYADO:
+                return kokoroFlatRepository.findBattleMasterHyadoHitDamages(limit);
+              case IO:
+                return kokoroFlatRepository.findBattleMasterIoHitDamages(limit);
+              case JIBARIA:
+                return kokoroFlatRepository.findBattleMasterJibariaHitDamages(limit);
+              case MERA:
+                return kokoroFlatRepository.findBattleMasterMeraHitDamages(limit);
+              default:
+                return null;
+            }
+          case BREATH:
+          case SPELL:
+          default:
+            return null;
+        }
+      case RANGER:
+        switch (attackType) {
+          case SLASH:
+            switch (attributeType) {
+              case BAGI:
+                return kokoroFlatRepository.findRangerBagiSlashDamages(limit);
+              case DEIN:
+                return kokoroFlatRepository.findRangerDeinSlashDamages(limit);
+              case DORUMA:
+                return kokoroFlatRepository.findRangerDorumaSlashDamages(limit);
+              case GIRA:
+                return kokoroFlatRepository.findRangerGiraSlashDamages(limit);
+              case HYADO:
+                return kokoroFlatRepository.findRangerHyadoSlashDamages(limit);
+              case IO:
+                return kokoroFlatRepository.findRangerIoSlashDamages(limit);
+              case JIBARIA:
+                return kokoroFlatRepository.findRangerJibariaSlashDamages(limit);
+              case MERA:
+                return kokoroFlatRepository.findRangerMeraSlashDamages(limit);
+              default:
+                return null;
+            }
+          case HIT:
+            switch (attributeType) {
+              case BAGI:
+                return kokoroFlatRepository.findRangerBagiHitDamages(limit);
+              case DEIN:
+                return kokoroFlatRepository.findRangerDeinHitDamages(limit);
+              case DORUMA:
+                return kokoroFlatRepository.findRangerDorumaHitDamages(limit);
+              case GIRA:
+                return kokoroFlatRepository.findRangerGiraHitDamages(limit);
+              case HYADO:
+                return kokoroFlatRepository.findRangerHyadoHitDamages(limit);
+              case IO:
+                return kokoroFlatRepository.findRangerIoHitDamages(limit);
+              case JIBARIA:
+                return kokoroFlatRepository.findRangerJibariaHitDamages(limit);
+              case MERA:
+                return kokoroFlatRepository.findRangerMeraHitDamages(limit);
+              default:
+                return null;
+            }
+          case BREATH:
+            switch (attributeType) {
+              case BAGI:
+                return kokoroFlatRepository.findRangerBagiBreathDamages(limit);
+              case DEIN:
+                return kokoroFlatRepository.findRangerDeinBreathDamages(limit);
+              case DORUMA:
+                return kokoroFlatRepository.findRangerDorumaBreathDamages(limit);
+              case GIRA:
+                return kokoroFlatRepository.findRangerGiraBreathDamages(limit);
+              case HYADO:
+                return kokoroFlatRepository.findRangerHyadoBreathDamages(limit);
+              case IO:
+                return kokoroFlatRepository.findRangerIoBreathDamages(limit);
+              case JIBARIA:
+                return kokoroFlatRepository.findRangerJibariaBreathDamages(limit);
+              case MERA:
+                return kokoroFlatRepository.findRangerMeraBreathDamages(limit);
+              default:
+                return null;
+            }
+          case SPELL:
+          default:
+            return null;
+        }
+      case SAGE:
+        switch (attackType) {
+          case SLASH:
+          case HIT:
+          case BREATH:
+          case SPELL:
+            switch (attributeType) {
+              case BAGI:
+                return kokoroFlatRepository.findSageBagiSpellDamages(limit);
+              case DEIN:
+                return kokoroFlatRepository.findSageDeinSpellDamages(limit);
+              case DORUMA:
+                return kokoroFlatRepository.findSageDorumaSpellDamages(limit);
+              case GIRA:
+                return kokoroFlatRepository.findSageGiraSpellDamages(limit);
+              case HYADO:
+                return kokoroFlatRepository.findSageHyadoSpellDamages(limit);
+              case IO:
+                return kokoroFlatRepository.findSageIoSpellDamages(limit);
+              case JIBARIA:
+                return kokoroFlatRepository.findSageJibariaSpellDamages(limit);
+              case MERA:
+                return kokoroFlatRepository.findSageMeraSpellDamages(limit);
+              default:
+                return null;
+            }
+          default:
+            return null;
+        }
+      case PALADIN:
+        switch (attackType) {
+          case SLASH:
+            switch (attributeType) {
+              case BAGI:
+                return kokoroFlatRepository.findPaladinBagiSlashDamages(limit);
+              case DEIN:
+                return kokoroFlatRepository.findPaladinDeinSlashDamages(limit);
+              case DORUMA:
+                return kokoroFlatRepository.findPaladinDorumaSlashDamages(limit);
+              case GIRA:
+                return kokoroFlatRepository.findPaladinGiraSlashDamages(limit);
+              case HYADO:
+                return kokoroFlatRepository.findPaladinHyadoSlashDamages(limit);
+              case IO:
+                return kokoroFlatRepository.findPaladinIoSlashDamages(limit);
+              case JIBARIA:
+                return kokoroFlatRepository.findPaladinJibariaSlashDamages(limit);
+              case MERA:
+                return kokoroFlatRepository.findPaladinMeraSlashDamages(limit);
+              default:
+                return null;
+            }
+          case HIT:
+          case BREATH:
+          case SPELL:
+          default:
+            return null;
+        }
+      default:
+        return null;
+    }
   }
 
   @Override
   public List<Combination> getCombinations(
       final JobType jobType,
+      final AttackType attackType,
+      final AttributeType attributeType,
+      final RaceType raceType,
       final int cost,
       final String bride,
       final Map<Integer, List<RankType>> exclusions,
@@ -1030,12 +1231,17 @@ public class KokoroService implements IKokoroService {
   ) {
     final StopWatch stopWatch = new StopWatch();
     stopWatch.start("findCombinationsFromRdbms");
-    final List<Result> results = convert(kokoroFlatRepository.findBmHyadoSlashDamages(50));
+
+    final List<Result> results = convertRdbmsResult(
+        getCombinationsFromRdbms(
+            jobType, attackType, attributeType, raceType, cost, bride, exclusions, limit
+        )
+    );
     stopWatch.stop();
     log.info("{} results, {} ms",
         results.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis())
     );
-    log.info(results.toString());
+    log.debug(results.toString());
     return convert(results, jobType);
   }
 
