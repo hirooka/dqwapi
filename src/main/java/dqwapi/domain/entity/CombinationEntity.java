@@ -21,4 +21,7 @@ public class CombinationEntity {
   @OneToMany(mappedBy = "combination", cascade = CascadeType.ALL)
   private List<DamageEntity> damages;
 
+  @OneToMany(mappedBy = "combination", cascade = CascadeType.ALL)
+  private List<HealingEntity> healings;
+
 }

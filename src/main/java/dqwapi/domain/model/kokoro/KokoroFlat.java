@@ -95,4 +95,9 @@ public class KokoroFlat {
   private int allNoneSlime;
   private int allNoneWater;
   private int allNoneZombie;
+
+  private int healingSkill;
+  private int healingSpecialty;
+  private int healingSpell;
+
 }

@@ -307,4 +307,17 @@ public class KokoroFlatEntity {
   @Getter
   @Setter
   private Integer allNoneZombie;
+
+  @Getter
+  @Setter
+  private Integer healingSkill;
+
+  @Getter
+  @Setter
+  private Integer healingSpecialty;
+
+  @Getter
+  @Setter
+  private Integer healingSpell;
+
 }

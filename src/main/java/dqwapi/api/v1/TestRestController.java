@@ -3,6 +3,7 @@ package dqwapi.api.v1;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dqwapi.domain.model.kokoro.Damage;
+import dqwapi.domain.model.kokoro.Healing;
 import dqwapi.domain.model.kokoro.Kokoro;
 import dqwapi.domain.model.kokoro.KokoroFlat;
 import java.io.FileOutputStream;
@@ -16,6 +17,7 @@ import org.apache.commons.text.CaseUtils;
 import org.modelmapper.ModelMapper;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import org.springframework.util.ObjectUtils;
 import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -211,6 +213,28 @@ public class TestRestController {
               break;
             default:
               throw new IllegalArgumentException("Unknown damage format.");
+          }
+        }
+        if (!ObjectUtils.isEmpty(kokoro.getHealings())) {
+          for (Healing healing : kokoro.getHealings()) {
+            final String string = "healing" + " " + healing.getType().name();
+            final String healingString =
+                CaseUtils.toCamelCase(string, false, ' ');
+            log.debug(healingString);
+
+            switch (healingString) {
+              case "healingSkill":
+                kokoroFlat.setHealingSkill(healing.getMagnification());
+                break;
+              case "healingSpecialty":
+                kokoroFlat.setHealingSpecialty(healing.getMagnification());
+                break;
+              case "healingSpell":
+                kokoroFlat.setHealingSpell(healing.getMagnification());
+                break;
+              default:
+                throw new IllegalArgumentException("Unknown healing format.");
+            }
           }
         }
         log.debug(kokoroFlat.toString());

@@ -29,4 +29,5 @@ public class Kokoro {
   private int sp;
   private int dx;
   private List<Damage> damages;
+  private List<Healing> healings;
 }

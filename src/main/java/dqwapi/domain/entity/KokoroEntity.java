@@ -88,4 +88,9 @@ public class KokoroEntity {
   @OneToMany(mappedBy = "kokoro", cascade = CascadeType.ALL)
   private List<DamageEntity> damages;
 
+  @Getter
+  @Setter
+  @OneToMany(mappedBy = "kokoro", cascade = CascadeType.ALL)
+  private List<HealingEntity> healings;
+
 }
