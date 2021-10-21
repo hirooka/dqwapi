@@ -57,13 +57,6 @@ public class DamageOperator implements IDamageOperator {
     final List<Weapon> weapons = weaponService.getAll();
     final int cost = jobService.getCost(level);
 
-    final StopWatch stopWatch = new StopWatch();
-    stopWatch.start("getKokoroCombinations");
-    final List<Combination> combinations =
-        kokoroService.getCombinations(jobType, cost, bride, exclusions);
-    stopWatch.stop();
-    log.info("getKokoroCombinations: {} ms", stopWatch.getLastTaskTimeMillis());
-
     final JobStatus jobStatus = jobService.getStatus(jobType, level);
     final int power = jobStatus.getParameter().getOp();
 
@@ -93,6 +86,16 @@ public class DamageOperator implements IDamageOperator {
               skill.getAttack(), skill.getAttribute(), skill.getMagnification()
           );
 
+          final StopWatch stopWatch = new StopWatch();
+          stopWatch.start("getKokoroCombinations");
+          final List<Combination> combinations =
+              kokoroService.getCombinations(
+                  jobType, skill.getAttack(), skill.getAttribute(), RaceType.NONE,
+                  cost, bride, exclusions, 50
+              );
+          stopWatch.stop();
+          log.info("getKokoroCombinations: {} ms", stopWatch.getLastTaskTimeMillis());
+
           final int skillMagnification = skill.getMagnification();
 
           stopWatch.start("loopCombinations");
@@ -103,7 +106,7 @@ public class DamageOperator implements IDamageOperator {
             int raceMagnification = 100;
 
             final int offence = power
-                + combination.getParameter().getOp()
+                + combination.getOp()
                 + jobSpecificEffectPower
                 + weaponJobEffectPower
                 + weapon.getOffensivePower();
@@ -171,7 +174,14 @@ public class DamageOperator implements IDamageOperator {
             damageResult.setWeaponName(weapon.getName());
             damageResult.setSkillName(skill.getName());
             damageResult.setDamage(damageValue);
-            damageResult.setParameter(combination.getParameter());
+            damageResult.setHp(combination.getHp());
+            damageResult.setMp(combination.getMp());
+            damageResult.setOp(combination.getOp());
+            damageResult.setDp(combination.getDp());
+            damageResult.setOs(combination.getOs());
+            damageResult.setDs(combination.getDs());
+            damageResult.setDx(combination.getDx());
+            damageResult.setSp(combination.getSp());
             damageResult.setCost(combination.getCost());
             damageResult.setSkillMagnification(skillMagnification);
             damageResult.setAttackMagnification(attackMagnification);
@@ -184,6 +194,7 @@ public class DamageOperator implements IDamageOperator {
               simplifiedSlot.setId(slot.getKokoro().getId());
               simplifiedSlot.setName(slot.getKokoro().getName());
               simplifiedSlot.setRank(slot.getKokoro().getRank());
+              simplifiedSlot.setCost(slot.getKokoro().getCost());
               simplifiedSlot.setUp(slot.isUp());
               simplifiedSlots.add(simplifiedSlot);
             }
@@ -197,6 +208,7 @@ public class DamageOperator implements IDamageOperator {
     }
     log.info("result = {}", damageResults.size());
 
+    final StopWatch stopWatch = new StopWatch();
     stopWatch.start("sortDamageResults");
     if (damageResults.size() > response) {
       damageResults = damageResults.stream()

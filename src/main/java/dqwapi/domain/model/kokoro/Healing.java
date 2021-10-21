@@ -1,6 +1,6 @@
 package dqwapi.domain.model.kokoro;
 
-import java.util.List;
+import dqwapi.domain.model.common.HealingType;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,9 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Effect {
+public class Healing {
   private UUID uuid = UUID.randomUUID();
-  private int plusCost;
-  private List<Damage> damages;
-  private int critical;
+  private HealingType type;
+  private int magnification;
 }

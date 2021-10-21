@@ -3,22 +3,40 @@ package dqwapi.domain.service;
 import static dqwapi.domain.model.common.KokoroType.BLUE;
 import static dqwapi.domain.model.common.KokoroType.GREEN;
 import static dqwapi.domain.model.common.KokoroType.PURPLE;
+import static dqwapi.domain.model.common.KokoroType.PURPLE_GREEN;
+import static dqwapi.domain.model.common.KokoroType.RAINBOW;
 import static dqwapi.domain.model.common.KokoroType.RED;
+import static dqwapi.domain.model.common.KokoroType.RED_BLUE;
+import static dqwapi.domain.model.common.KokoroType.RED_YELLOW;
 import static dqwapi.domain.model.common.KokoroType.YELLOW;
+import static dqwapi.domain.model.common.KokoroType.YELLOW_GREEN;
+import static java.util.Objects.requireNonNull;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dqwapi.domain.entity.CombinationEntity;
+import dqwapi.domain.entity.DamageEntity;
+import dqwapi.domain.entity.KokoroEntity;
+import dqwapi.domain.entity.KokoroFlatEntity;
+import dqwapi.domain.entity.Result;
+import dqwapi.domain.model.common.AttackType;
+import dqwapi.domain.model.common.AttributeType;
 import dqwapi.domain.model.common.KokoroType;
 import dqwapi.domain.model.common.Parameter;
+import dqwapi.domain.model.common.RaceType;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.Combination;
 import dqwapi.domain.model.kokoro.Damage;
-import dqwapi.domain.model.kokoro.Effect;
 import dqwapi.domain.model.kokoro.JobKokoroCombination;
 import dqwapi.domain.model.kokoro.Kokoro;
+import dqwapi.domain.model.kokoro.KokoroFlat;
 import dqwapi.domain.model.kokoro.RankType;
 import dqwapi.domain.model.kokoro.Slot;
 import dqwapi.domain.model.kokoro.SuitableCombination;
+import dqwapi.domain.repository.ICombinationRepository;
+import dqwapi.domain.repository.IKokoroFlatRepository;
+import dqwapi.domain.repository.IKokoroRepository;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,9 +47,13 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StopWatch;
 
@@ -42,9 +64,27 @@ public class KokoroService implements IKokoroService {
   @Value("${dqwapi.kokoro-json}")
   private String kokoroJson;
 
+  @Value("${dqwapi.kokoro-flat-json}")
+  private String kokoroFlatJson;
+
+  private final IKokoroRepository kokoroRepository;
+  private final ICombinationRepository combinationRepository;
+  private final IKokoroFlatRepository kokoroFlatRepository;
+
   private Map<JobType, List<KokoroType>> slotsByJob = new HashMap<>();
   private List<Kokoro> kokoros = new ArrayList<>();
   private final List<JobKokoroCombination> jobKokoroCombinations = new ArrayList<>();
+  private List<KokoroFlat> kokoroFlats = new ArrayList<>();
+
+  public KokoroService(
+      final IKokoroRepository kokoroRepository,
+      final ICombinationRepository combinationRepository,
+      final IKokoroFlatRepository kokoroFlatRepository
+  ) {
+    this.kokoroRepository = requireNonNull(kokoroRepository);
+    this.combinationRepository = requireNonNull(combinationRepository);
+    this.kokoroFlatRepository = requireNonNull(kokoroFlatRepository);
+  }
 
   private SuitableCombination sortKokoro(final JobType jobType, final List<Kokoro> kokoros) {
     final double magnification = 1.2;
@@ -68,70 +108,72 @@ public class KokoroService implements IKokoroService {
                       int sp = 0;
                       int dx = 0;
                       if (kokoros.get(i).getType().equals(RED)) {
-                        hp += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getHp() * magnification);
-                        mp += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getMp() * magnification);
-                        op += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getOp() * magnification);
-                        dp += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getDp() * magnification);
-                        os += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getOs() * magnification);
-                        ds += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getDs() * magnification);
-                        sp += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getSp() * magnification);
-                        dx += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getDx() * magnification);
+                        hp += (int) Math.ceil(kokoros.get(i).getHp() * magnification);
+                        mp += (int) Math.ceil(kokoros.get(i).getMp() * magnification);
+                        op += (int) Math.ceil(kokoros.get(i).getOp() * magnification);
+                        dp += (int) Math.ceil(kokoros.get(i).getDp() * magnification);
+                        os += (int) Math.ceil(kokoros.get(i).getOs() * magnification);
+                        ds += (int) Math.ceil(kokoros.get(i).getDs() * magnification);
+                        sp += (int) Math.ceil(kokoros.get(i).getSp() * magnification);
+                        dx += (int) Math.ceil(kokoros.get(i).getDx() * magnification);
                       } else {
-                        hp += kokoros.get(i).getStatus().getParameter().getHp();
-                        mp += kokoros.get(i).getStatus().getParameter().getMp();
-                        op += kokoros.get(i).getStatus().getParameter().getOp();
-                        dp += kokoros.get(i).getStatus().getParameter().getDp();
-                        os += kokoros.get(i).getStatus().getParameter().getOs();
-                        ds += kokoros.get(i).getStatus().getParameter().getDs();
-                        sp += kokoros.get(i).getStatus().getParameter().getSp();
-                        dx += kokoros.get(i).getStatus().getParameter().getDx();
+                        hp += kokoros.get(i).getHp();
+                        mp += kokoros.get(i).getMp();
+                        op += kokoros.get(i).getOp();
+                        dp += kokoros.get(i).getDp();
+                        os += kokoros.get(i).getOs();
+                        ds += kokoros.get(i).getDs();
+                        sp += kokoros.get(i).getSp();
+                        dx += kokoros.get(i).getDx();
                       }
                       if (kokoros.get(j).getType().equals(RED)) {
-                        hp += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getHp() * magnification);
-                        mp += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getMp() * magnification);
-                        op += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getOp() * magnification);
-                        dp += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getDp() * magnification);
-                        os += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getOs() * magnification);
-                        ds += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getDs() * magnification);
-                        sp += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getSp() * magnification);
-                        dx += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getDx() * magnification);
+                        hp += (int) Math.ceil(kokoros.get(j).getHp() * magnification);
+                        mp += (int) Math.ceil(kokoros.get(j).getMp() * magnification);
+                        op += (int) Math.ceil(kokoros.get(j).getOp() * magnification);
+                        dp += (int) Math.ceil(kokoros.get(j).getDp() * magnification);
+                        os += (int) Math.ceil(kokoros.get(j).getOs() * magnification);
+                        ds += (int) Math.ceil(kokoros.get(j).getDs() * magnification);
+                        sp += (int) Math.ceil(kokoros.get(j).getSp() * magnification);
+                        dx += (int) Math.ceil(kokoros.get(j).getDx() * magnification);
                       } else {
-                        hp += kokoros.get(j).getStatus().getParameter().getHp();
-                        mp += kokoros.get(j).getStatus().getParameter().getMp();
-                        op += kokoros.get(j).getStatus().getParameter().getOp();
-                        dp += kokoros.get(j).getStatus().getParameter().getDp();
-                        os += kokoros.get(j).getStatus().getParameter().getOs();
-                        ds += kokoros.get(j).getStatus().getParameter().getDs();
-                        sp += kokoros.get(j).getStatus().getParameter().getSp();
-                        dx += kokoros.get(j).getStatus().getParameter().getDx();
+                        hp += kokoros.get(j).getHp();
+                        mp += kokoros.get(j).getMp();
+                        op += kokoros.get(j).getOp();
+                        dp += kokoros.get(j).getDp();
+                        os += kokoros.get(j).getOs();
+                        ds += kokoros.get(j).getDs();
+                        sp += kokoros.get(j).getSp();
+                        dx += kokoros.get(j).getDx();
                       }
-                      if (kokoros.get(k).getType().equals(RED) || kokoros.get(k).getType().equals(YELLOW)) {
-                        hp += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getHp() * magnification);
-                        mp += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getMp() * magnification);
-                        op += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getOp() * magnification);
-                        dp += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getDp() * magnification);
-                        os += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getOs() * magnification);
-                        ds += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getDs() * magnification);
-                        sp += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getSp() * magnification);
-                        dx += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getDx() * magnification);
+                      if (kokoros.get(k).getType().equals(RED)
+                          || kokoros.get(k).getType().equals(YELLOW)
+                      ) {
+                        hp += (int) Math.ceil(kokoros.get(k).getHp() * magnification);
+                        mp += (int) Math.ceil(kokoros.get(k).getMp() * magnification);
+                        op += (int) Math.ceil(kokoros.get(k).getOp() * magnification);
+                        dp += (int) Math.ceil(kokoros.get(k).getDp() * magnification);
+                        os += (int) Math.ceil(kokoros.get(k).getOs() * magnification);
+                        ds += (int) Math.ceil(kokoros.get(k).getDs() * magnification);
+                        sp += (int) Math.ceil(kokoros.get(k).getSp() * magnification);
+                        dx += (int) Math.ceil(kokoros.get(k).getDx() * magnification);
                       } else {
-                        hp += kokoros.get(k).getStatus().getParameter().getHp();
-                        mp += kokoros.get(k).getStatus().getParameter().getMp();
-                        op += kokoros.get(k).getStatus().getParameter().getOp();
-                        dp += kokoros.get(k).getStatus().getParameter().getDp();
-                        os += kokoros.get(k).getStatus().getParameter().getOs();
-                        ds += kokoros.get(k).getStatus().getParameter().getDs();
-                        sp += kokoros.get(k).getStatus().getParameter().getSp();
-                        dx += kokoros.get(k).getStatus().getParameter().getDx();
+                        hp += kokoros.get(k).getHp();
+                        mp += kokoros.get(k).getMp();
+                        op += kokoros.get(k).getOp();
+                        dp += kokoros.get(k).getDp();
+                        os += kokoros.get(k).getOs();
+                        ds += kokoros.get(k).getDs();
+                        sp += kokoros.get(k).getSp();
+                        dx += kokoros.get(k).getDx();
                       }
-                      hp += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getHp() * magnification);
-                      mp += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getMp() * magnification);
-                      op += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getOp() * magnification);
-                      dp += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getDp() * magnification);
-                      os += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getOs() * magnification);
-                      ds += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getDs() * magnification);
-                      sp += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getSp() * magnification);
-                      dx += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getDx() * magnification);
+                      hp += (int) Math.ceil(kokoros.get(l).getHp() * magnification);
+                      mp += (int) Math.ceil(kokoros.get(l).getMp() * magnification);
+                      op += (int) Math.ceil(kokoros.get(l).getOp() * magnification);
+                      dp += (int) Math.ceil(kokoros.get(l).getDp() * magnification);
+                      os += (int) Math.ceil(kokoros.get(l).getOs() * magnification);
+                      ds += (int) Math.ceil(kokoros.get(l).getDs() * magnification);
+                      sp += (int) Math.ceil(kokoros.get(l).getSp() * magnification);
+                      dx += (int) Math.ceil(kokoros.get(l).getDx() * magnification);
                       if (op > max) {
                         max = op;
                         final Parameter parameter = new Parameter(hp, mp, op, dp, os, ds, sp, dx);
@@ -167,70 +209,72 @@ public class KokoroService implements IKokoroService {
                       int sp = 0;
                       int dx = 0;
                       if (kokoros.get(i).getType().equals(BLUE)) {
-                        hp += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getHp());
-                        mp += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getMp());
-                        op += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getOp());
-                        dp += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getDp());
-                        os += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getOs());
-                        ds += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getDs());
-                        sp += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getSp());
-                        dx += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getDx());
+                        hp += (int) Math.ceil(kokoros.get(i).getHp());
+                        mp += (int) Math.ceil(kokoros.get(i).getMp());
+                        op += (int) Math.ceil(kokoros.get(i).getOp());
+                        dp += (int) Math.ceil(kokoros.get(i).getDp());
+                        os += (int) Math.ceil(kokoros.get(i).getOs());
+                        ds += (int) Math.ceil(kokoros.get(i).getDs());
+                        sp += (int) Math.ceil(kokoros.get(i).getSp());
+                        dx += (int) Math.ceil(kokoros.get(i).getDx());
                       } else {
-                        hp += kokoros.get(i).getStatus().getParameter().getHp();
-                        mp += kokoros.get(i).getStatus().getParameter().getMp();
-                        op += kokoros.get(i).getStatus().getParameter().getOp();
-                        dp += kokoros.get(i).getStatus().getParameter().getDp();
-                        os += kokoros.get(i).getStatus().getParameter().getOs();
-                        ds += kokoros.get(i).getStatus().getParameter().getDs();
-                        sp += kokoros.get(i).getStatus().getParameter().getSp();
-                        dx += kokoros.get(i).getStatus().getParameter().getDx();
+                        hp += kokoros.get(i).getHp();
+                        mp += kokoros.get(i).getMp();
+                        op += kokoros.get(i).getOp();
+                        dp += kokoros.get(i).getDp();
+                        os += kokoros.get(i).getOs();
+                        ds += kokoros.get(i).getDs();
+                        sp += kokoros.get(i).getSp();
+                        dx += kokoros.get(i).getDx();
                       }
                       if (kokoros.get(j).getType().equals(BLUE)) {
-                        hp += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getHp());
-                        mp += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getMp());
-                        op += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getOp());
-                        dp += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getDp());
-                        os += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getOs());
-                        ds += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getDs());
-                        sp += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getSp());
-                        dx += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getDx());
+                        hp += (int) Math.ceil(kokoros.get(j).getHp());
+                        mp += (int) Math.ceil(kokoros.get(j).getMp());
+                        op += (int) Math.ceil(kokoros.get(j).getOp());
+                        dp += (int) Math.ceil(kokoros.get(j).getDp());
+                        os += (int) Math.ceil(kokoros.get(j).getOs());
+                        ds += (int) Math.ceil(kokoros.get(j).getDs());
+                        sp += (int) Math.ceil(kokoros.get(j).getSp());
+                        dx += (int) Math.ceil(kokoros.get(j).getDx());
                       } else {
-                        hp += kokoros.get(j).getStatus().getParameter().getHp();
-                        mp += kokoros.get(j).getStatus().getParameter().getMp();
-                        op += kokoros.get(j).getStatus().getParameter().getOp();
-                        dp += kokoros.get(j).getStatus().getParameter().getDp();
-                        os += kokoros.get(j).getStatus().getParameter().getOs();
-                        ds += kokoros.get(j).getStatus().getParameter().getDs();
-                        sp += kokoros.get(j).getStatus().getParameter().getSp();
-                        dx += kokoros.get(j).getStatus().getParameter().getDx();
+                        hp += kokoros.get(j).getHp();
+                        mp += kokoros.get(j).getMp();
+                        op += kokoros.get(j).getOp();
+                        dp += kokoros.get(j).getDp();
+                        os += kokoros.get(j).getOs();
+                        ds += kokoros.get(j).getDs();
+                        sp += kokoros.get(j).getSp();
+                        dx += kokoros.get(j).getDx();
                       }
-                      if (kokoros.get(k).getType().equals(BLUE) || kokoros.get(k).getType().equals(RED)) {
-                        hp += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getHp());
-                        mp += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getMp());
-                        op += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getOp());
-                        dp += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getDp());
-                        os += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getOs());
-                        ds += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getDs());
-                        sp += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getSp());
-                        dx += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getDx());
+                      if (kokoros.get(k).getType().equals(BLUE)
+                          || kokoros.get(k).getType().equals(RED)
+                      ) {
+                        hp += (int) Math.ceil(kokoros.get(k).getHp());
+                        mp += (int) Math.ceil(kokoros.get(k).getMp());
+                        op += (int) Math.ceil(kokoros.get(k).getOp());
+                        dp += (int) Math.ceil(kokoros.get(k).getDp());
+                        os += (int) Math.ceil(kokoros.get(k).getOs());
+                        ds += (int) Math.ceil(kokoros.get(k).getDs());
+                        sp += (int) Math.ceil(kokoros.get(k).getSp());
+                        dx += (int) Math.ceil(kokoros.get(k).getDx());
                       } else {
-                        hp += kokoros.get(k).getStatus().getParameter().getHp();
-                        mp += kokoros.get(k).getStatus().getParameter().getMp();
-                        op += kokoros.get(k).getStatus().getParameter().getOp();
-                        dp += kokoros.get(k).getStatus().getParameter().getDp();
-                        os += kokoros.get(k).getStatus().getParameter().getOs();
-                        ds += kokoros.get(k).getStatus().getParameter().getDs();
-                        sp += kokoros.get(k).getStatus().getParameter().getSp();
-                        dx += kokoros.get(k).getStatus().getParameter().getDx();
+                        hp += kokoros.get(k).getHp();
+                        mp += kokoros.get(k).getMp();
+                        op += kokoros.get(k).getOp();
+                        dp += kokoros.get(k).getDp();
+                        os += kokoros.get(k).getOs();
+                        ds += kokoros.get(k).getDs();
+                        sp += kokoros.get(k).getSp();
+                        dx += kokoros.get(k).getDx();
                       }
-                      hp += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getHp());
-                      mp += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getMp());
-                      op += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getOp());
-                      dp += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getDp());
-                      os += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getOs());
-                      ds += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getDs());
-                      sp += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getSp());
-                      dx += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getDx());
+                      hp += (int) Math.ceil(kokoros.get(l).getHp());
+                      mp += (int) Math.ceil(kokoros.get(l).getMp());
+                      op += (int) Math.ceil(kokoros.get(l).getOp());
+                      dp += (int) Math.ceil(kokoros.get(l).getDp());
+                      os += (int) Math.ceil(kokoros.get(l).getOs());
+                      ds += (int) Math.ceil(kokoros.get(l).getDs());
+                      sp += (int) Math.ceil(kokoros.get(l).getSp());
+                      dx += (int) Math.ceil(kokoros.get(l).getDx());
                       if (op > max) {
                         max = op;
                         final Parameter parameter = new Parameter(hp, mp, op, dp, os, ds, sp, dx);
@@ -265,71 +309,77 @@ public class KokoroService implements IKokoroService {
                       int ds = 0;
                       int sp = 0;
                       int dx = 0;
-                      if (kokoros.get(i).getType().equals(PURPLE) || kokoros.get(i).getType().equals(GREEN)) {
-                        hp += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getHp());
-                        mp += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getMp());
-                        op += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getOp());
-                        dp += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getDp());
-                        os += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getOs());
-                        ds += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getDs());
-                        sp += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getSp());
-                        dx += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getDx());
+                      if (kokoros.get(i).getType().equals(PURPLE)
+                          || kokoros.get(i).getType().equals(GREEN)
+                      ) {
+                        hp += (int) Math.ceil(kokoros.get(i).getHp());
+                        mp += (int) Math.ceil(kokoros.get(i).getMp());
+                        op += (int) Math.ceil(kokoros.get(i).getOp());
+                        dp += (int) Math.ceil(kokoros.get(i).getDp());
+                        os += (int) Math.ceil(kokoros.get(i).getOs());
+                        ds += (int) Math.ceil(kokoros.get(i).getDs());
+                        sp += (int) Math.ceil(kokoros.get(i).getSp());
+                        dx += (int) Math.ceil(kokoros.get(i).getDx());
                       } else {
-                        hp += kokoros.get(i).getStatus().getParameter().getHp();
-                        mp += kokoros.get(i).getStatus().getParameter().getMp();
-                        op += kokoros.get(i).getStatus().getParameter().getOp();
-                        dp += kokoros.get(i).getStatus().getParameter().getDp();
-                        os += kokoros.get(i).getStatus().getParameter().getOs();
-                        ds += kokoros.get(i).getStatus().getParameter().getDs();
-                        sp += kokoros.get(i).getStatus().getParameter().getSp();
-                        dx += kokoros.get(i).getStatus().getParameter().getDx();
+                        hp += kokoros.get(i).getHp();
+                        mp += kokoros.get(i).getMp();
+                        op += kokoros.get(i).getOp();
+                        dp += kokoros.get(i).getDp();
+                        os += kokoros.get(i).getOs();
+                        ds += kokoros.get(i).getDs();
+                        sp += kokoros.get(i).getSp();
+                        dx += kokoros.get(i).getDx();
                       }
-                      if (kokoros.get(j).getType().equals(PURPLE) || kokoros.get(j).getType().equals(GREEN)) {
-                        hp += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getHp());
-                        mp += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getMp());
-                        op += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getOp());
-                        dp += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getDp());
-                        os += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getOs());
-                        ds += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getDs());
-                        sp += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getSp());
-                        dx += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getDx());
+                      if (kokoros.get(j).getType().equals(PURPLE)
+                          || kokoros.get(j).getType().equals(GREEN)
+                      ) {
+                        hp += (int) Math.ceil(kokoros.get(j).getHp());
+                        mp += (int) Math.ceil(kokoros.get(j).getMp());
+                        op += (int) Math.ceil(kokoros.get(j).getOp());
+                        dp += (int) Math.ceil(kokoros.get(j).getDp());
+                        os += (int) Math.ceil(kokoros.get(j).getOs());
+                        ds += (int) Math.ceil(kokoros.get(j).getDs());
+                        sp += (int) Math.ceil(kokoros.get(j).getSp());
+                        dx += (int) Math.ceil(kokoros.get(j).getDx());
                       } else {
-                        hp += kokoros.get(j).getStatus().getParameter().getHp();
-                        mp += kokoros.get(j).getStatus().getParameter().getMp();
-                        op += kokoros.get(j).getStatus().getParameter().getOp();
-                        dp += kokoros.get(j).getStatus().getParameter().getDp();
-                        os += kokoros.get(j).getStatus().getParameter().getOs();
-                        ds += kokoros.get(j).getStatus().getParameter().getDs();
-                        sp += kokoros.get(j).getStatus().getParameter().getSp();
-                        dx += kokoros.get(j).getStatus().getParameter().getDx();
+                        hp += kokoros.get(j).getHp();
+                        mp += kokoros.get(j).getMp();
+                        op += kokoros.get(j).getOp();
+                        dp += kokoros.get(j).getDp();
+                        os += kokoros.get(j).getOs();
+                        ds += kokoros.get(j).getDs();
+                        sp += kokoros.get(j).getSp();
+                        dx += kokoros.get(j).getDx();
                       }
-                      if (kokoros.get(k).getType().equals(PURPLE) || kokoros.get(k).getType().equals(GREEN)) {
-                        hp += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getHp());
-                        mp += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getMp());
-                        op += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getOp());
-                        dp += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getDp());
-                        os += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getOs());
-                        ds += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getDs());
-                        sp += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getSp());
-                        dx += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getDx());
+                      if (kokoros.get(k).getType().equals(PURPLE)
+                          || kokoros.get(k).getType().equals(GREEN)
+                      ) {
+                        hp += (int) Math.ceil(kokoros.get(k).getHp());
+                        mp += (int) Math.ceil(kokoros.get(k).getMp());
+                        op += (int) Math.ceil(kokoros.get(k).getOp());
+                        dp += (int) Math.ceil(kokoros.get(k).getDp());
+                        os += (int) Math.ceil(kokoros.get(k).getOs());
+                        ds += (int) Math.ceil(kokoros.get(k).getDs());
+                        sp += (int) Math.ceil(kokoros.get(k).getSp());
+                        dx += (int) Math.ceil(kokoros.get(k).getDx());
                       } else {
-                        hp += kokoros.get(k).getStatus().getParameter().getHp();
-                        mp += kokoros.get(k).getStatus().getParameter().getMp();
-                        op += kokoros.get(k).getStatus().getParameter().getOp();
-                        dp += kokoros.get(k).getStatus().getParameter().getDp();
-                        os += kokoros.get(k).getStatus().getParameter().getOs();
-                        ds += kokoros.get(k).getStatus().getParameter().getDs();
-                        sp += kokoros.get(k).getStatus().getParameter().getSp();
-                        dx += kokoros.get(k).getStatus().getParameter().getDx();
+                        hp += kokoros.get(k).getHp();
+                        mp += kokoros.get(k).getMp();
+                        op += kokoros.get(k).getOp();
+                        dp += kokoros.get(k).getDp();
+                        os += kokoros.get(k).getOs();
+                        ds += kokoros.get(k).getDs();
+                        sp += kokoros.get(k).getSp();
+                        dx += kokoros.get(k).getDx();
                       }
-                      hp += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getHp());
-                      mp += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getMp());
-                      op += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getOp());
-                      dp += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getDp());
-                      os += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getOs());
-                      ds += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getDs());
-                      sp += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getSp());
-                      dx += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getDx());
+                      hp += (int) Math.ceil(kokoros.get(l).getHp());
+                      mp += (int) Math.ceil(kokoros.get(l).getMp());
+                      op += (int) Math.ceil(kokoros.get(l).getOp());
+                      dp += (int) Math.ceil(kokoros.get(l).getDp());
+                      os += (int) Math.ceil(kokoros.get(l).getOs());
+                      ds += (int) Math.ceil(kokoros.get(l).getDs());
+                      sp += (int) Math.ceil(kokoros.get(l).getSp());
+                      dx += (int) Math.ceil(kokoros.get(l).getDx());
                       if (op > max) {
                         max = op;
                         final Parameter parameter = new Parameter(hp, mp, op, dp, os, ds, sp, dx);
@@ -365,70 +415,72 @@ public class KokoroService implements IKokoroService {
                       int sp = 0;
                       int dx = 0;
                       if (kokoros.get(i).getType().equals(YELLOW)) {
-                        hp += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getHp());
-                        mp += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getMp());
-                        op += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getOp());
-                        dp += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getDp());
-                        os += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getOs());
-                        ds += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getDs());
-                        sp += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getSp());
-                        dx += (int) Math.ceil(kokoros.get(i).getStatus().getParameter().getDx());
+                        hp += (int) Math.ceil(kokoros.get(i).getHp());
+                        mp += (int) Math.ceil(kokoros.get(i).getMp());
+                        op += (int) Math.ceil(kokoros.get(i).getOp());
+                        dp += (int) Math.ceil(kokoros.get(i).getDp());
+                        os += (int) Math.ceil(kokoros.get(i).getOs());
+                        ds += (int) Math.ceil(kokoros.get(i).getDs());
+                        sp += (int) Math.ceil(kokoros.get(i).getSp());
+                        dx += (int) Math.ceil(kokoros.get(i).getDx());
                       } else {
-                        hp += kokoros.get(i).getStatus().getParameter().getHp();
-                        mp += kokoros.get(i).getStatus().getParameter().getMp();
-                        op += kokoros.get(i).getStatus().getParameter().getOp();
-                        dp += kokoros.get(i).getStatus().getParameter().getDp();
-                        os += kokoros.get(i).getStatus().getParameter().getOs();
-                        ds += kokoros.get(i).getStatus().getParameter().getDs();
-                        sp += kokoros.get(i).getStatus().getParameter().getSp();
-                        dx += kokoros.get(i).getStatus().getParameter().getDx();
+                        hp += kokoros.get(i).getHp();
+                        mp += kokoros.get(i).getMp();
+                        op += kokoros.get(i).getOp();
+                        dp += kokoros.get(i).getDp();
+                        os += kokoros.get(i).getOs();
+                        ds += kokoros.get(i).getDs();
+                        sp += kokoros.get(i).getSp();
+                        dx += kokoros.get(i).getDx();
                       }
                       if (kokoros.get(j).getType().equals(YELLOW)) {
-                        hp += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getHp());
-                        mp += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getMp());
-                        op += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getOp());
-                        dp += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getDp());
-                        os += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getOs());
-                        ds += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getDs());
-                        sp += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getSp());
-                        dx += (int) Math.ceil(kokoros.get(j).getStatus().getParameter().getDx());
+                        hp += (int) Math.ceil(kokoros.get(j).getHp());
+                        mp += (int) Math.ceil(kokoros.get(j).getMp());
+                        op += (int) Math.ceil(kokoros.get(j).getOp());
+                        dp += (int) Math.ceil(kokoros.get(j).getDp());
+                        os += (int) Math.ceil(kokoros.get(j).getOs());
+                        ds += (int) Math.ceil(kokoros.get(j).getDs());
+                        sp += (int) Math.ceil(kokoros.get(j).getSp());
+                        dx += (int) Math.ceil(kokoros.get(j).getDx());
                       } else {
-                        hp += kokoros.get(j).getStatus().getParameter().getHp();
-                        mp += kokoros.get(j).getStatus().getParameter().getMp();
-                        op += kokoros.get(j).getStatus().getParameter().getOp();
-                        dp += kokoros.get(j).getStatus().getParameter().getDp();
-                        os += kokoros.get(j).getStatus().getParameter().getOs();
-                        ds += kokoros.get(j).getStatus().getParameter().getDs();
-                        sp += kokoros.get(j).getStatus().getParameter().getSp();
-                        dx += kokoros.get(j).getStatus().getParameter().getDx();
+                        hp += kokoros.get(j).getHp();
+                        mp += kokoros.get(j).getMp();
+                        op += kokoros.get(j).getOp();
+                        dp += kokoros.get(j).getDp();
+                        os += kokoros.get(j).getOs();
+                        ds += kokoros.get(j).getDs();
+                        sp += kokoros.get(j).getSp();
+                        dx += kokoros.get(j).getDx();
                       }
-                      if (kokoros.get(k).getType().equals(YELLOW) || kokoros.get(k).getType().equals(GREEN)) {
-                        hp += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getHp());
-                        mp += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getMp());
-                        op += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getOp());
-                        dp += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getDp());
-                        os += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getOs());
-                        ds += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getDs());
-                        sp += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getSp());
-                        dx += (int) Math.ceil(kokoros.get(k).getStatus().getParameter().getDx());
+                      if (kokoros.get(k).getType().equals(YELLOW)
+                          || kokoros.get(k).getType().equals(GREEN)
+                      ) {
+                        hp += (int) Math.ceil(kokoros.get(k).getHp());
+                        mp += (int) Math.ceil(kokoros.get(k).getMp());
+                        op += (int) Math.ceil(kokoros.get(k).getOp());
+                        dp += (int) Math.ceil(kokoros.get(k).getDp());
+                        os += (int) Math.ceil(kokoros.get(k).getOs());
+                        ds += (int) Math.ceil(kokoros.get(k).getDs());
+                        sp += (int) Math.ceil(kokoros.get(k).getSp());
+                        dx += (int) Math.ceil(kokoros.get(k).getDx());
                       } else {
-                        hp += kokoros.get(k).getStatus().getParameter().getHp();
-                        mp += kokoros.get(k).getStatus().getParameter().getMp();
-                        op += kokoros.get(k).getStatus().getParameter().getOp();
-                        dp += kokoros.get(k).getStatus().getParameter().getDp();
-                        os += kokoros.get(k).getStatus().getParameter().getOs();
-                        ds += kokoros.get(k).getStatus().getParameter().getDs();
-                        sp += kokoros.get(k).getStatus().getParameter().getSp();
-                        dx += kokoros.get(k).getStatus().getParameter().getDx();
+                        hp += kokoros.get(k).getHp();
+                        mp += kokoros.get(k).getMp();
+                        op += kokoros.get(k).getOp();
+                        dp += kokoros.get(k).getDp();
+                        os += kokoros.get(k).getOs();
+                        ds += kokoros.get(k).getDs();
+                        sp += kokoros.get(k).getSp();
+                        dx += kokoros.get(k).getDx();
                       }
-                      hp += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getHp());
-                      mp += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getMp());
-                      op += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getOp());
-                      dp += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getDp());
-                      os += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getOs());
-                      ds += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getDs());
-                      sp += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getSp());
-                      dx += (int) Math.ceil(kokoros.get(l).getStatus().getParameter().getDx());
+                      hp += (int) Math.ceil(kokoros.get(l).getHp());
+                      mp += (int) Math.ceil(kokoros.get(l).getMp());
+                      op += (int) Math.ceil(kokoros.get(l).getOp());
+                      dp += (int) Math.ceil(kokoros.get(l).getDp());
+                      os += (int) Math.ceil(kokoros.get(l).getOs());
+                      ds += (int) Math.ceil(kokoros.get(l).getDs());
+                      sp += (int) Math.ceil(kokoros.get(l).getSp());
+                      dx += (int) Math.ceil(kokoros.get(l).getDx());
                       if (op > max) {
                         max = op;
                         final Parameter parameter = new Parameter(hp, mp, op, dp, os, ds, sp, dx);
@@ -488,7 +540,9 @@ public class KokoroService implements IKokoroService {
                   final int i1 = kokoros.get(j).getId();
                   final int i2 = kokoros.get(k).getId();
                   final int i3 = kokoros.get(l).getId();
-                  if (i0 != i1 && i0 != i2 && i0 != i3 && i1 != i2 && i1 != i3 && i2 != i3 && !canBrideSkip(i0, i1, i2, i3)) {
+                  if (i0 != i1 && i0 != i2 && i0 != i3 && i1 != i2 && i1 != i3 && i2 != i3
+                      && !canBrideSkip(i0, i1, i2, i3)
+                  ) {
                     log.debug("{}, {}, {}, {}", i, j, k, l);
                     log.debug("org: {} {} {} {}",
                         kokoros.get(i).getName(),
@@ -524,7 +578,7 @@ public class KokoroService implements IKokoroService {
                     final List<Slot> slots = Arrays.asList(slot0, slot1, slot2, slot3);
                     final Combination combination = new Combination();
                     combination.setSlots(slots);
-                    combination.setParameter(suitableCombination.getParameter());
+                    //combination.setParameter(suitableCombination.getParameter());
 
                     combination.setHp(suitableCombination.getParameter().getHp());
                     combination.setMp(suitableCombination.getParameter().getMp());
@@ -535,21 +589,19 @@ public class KokoroService implements IKokoroService {
                     combination.setSp(suitableCombination.getParameter().getSp());
                     combination.setDx(suitableCombination.getParameter().getDx());
                     final int cost = suitableCombination.getKokoros().get(0).getCost()
-                        - suitableCombination.getKokoros().get(0).getStatus().getEffects().get(0).getPlusCost()
+                        - suitableCombination.getKokoros().get(0).getPlusCost()
                         + suitableCombination.getKokoros().get(1).getCost()
-                        - suitableCombination.getKokoros().get(1).getStatus().getEffects().get(0).getPlusCost()
+                        - suitableCombination.getKokoros().get(1).getPlusCost()
                         + suitableCombination.getKokoros().get(2).getCost()
-                        - suitableCombination.getKokoros().get(2).getStatus().getEffects().get(0).getPlusCost()
+                        - suitableCombination.getKokoros().get(2).getPlusCost()
                         + suitableCombination.getKokoros().get(3).getCost()
-                        - suitableCombination.getKokoros().get(3).getStatus().getEffects().get(0).getPlusCost();
+                        - suitableCombination.getKokoros().get(3).getPlusCost();
                     combination.setCost(cost);
 
                     // TODO: from -- Processing time and memory consumption
                     final List<Damage> damages = new ArrayList<>();
                     for (Slot slot : slots) {
-                      for (Effect effect : slot.getKokoro().getStatus().getEffects()) {
-                        damages.addAll(effect.getDamages());
-                      }
+                      damages.addAll(slot.getKokoro().getDamages());
                     }
                     final List<Damage> mergedDamages = new ArrayList<>();
                     for (int x = 0; x < damages.size(); x++) {
@@ -604,6 +656,7 @@ public class KokoroService implements IKokoroService {
     final Resource kokoroJsonResource = new ClassPathResource(kokoroJson);
     final String jobSlotJson = "slots-by-job.json";
     final Resource jobSlotJsonResource = new ClassPathResource(jobSlotJson);
+    final Resource kokoroFlatJsonResource = new ClassPathResource(kokoroFlatJson);
     try {
       final StopWatch stopWatch = new StopWatch();
       stopWatch.start("slotsByJob");
@@ -611,16 +664,32 @@ public class KokoroService implements IKokoroService {
       slotsByJob =
           objectMapper.readValue(jobSlotJsonResource.getInputStream(), new TypeReference<>() {});
       stopWatch.stop();
-      log.info("{} jobs, {} ms", slotsByJob.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis()));
+      log.info("{} jobs, {} ms",
+          slotsByJob.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis())
+      );
       log.debug(slotsByJob.toString());
 
       stopWatch.start("kokoros");
       kokoros =
           objectMapper.readValue(kokoroJsonResource.getInputStream(), new TypeReference<>() {});
       stopWatch.stop();
-      log.info("{} kokoros, {} ms", kokoros.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis()));
+      log.info("{} kokoros, {} ms",
+          kokoros.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis())
+      );
       log.debug(kokoros.toString());
 
+      stopWatch.start("kokoroFlats");
+      objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+      kokoroFlats =
+          objectMapper.readValue(kokoroFlatJsonResource.getInputStream(), new TypeReference<>() {});
+      stopWatch.stop();
+      log.info("{} kokoroFlats, {} ms",
+          kokoroFlats.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis())
+      );
+      log.debug(kokoroFlats.toString());
+
+      // TODO: initialized on memory (too many memory usage)
+      /*
       stopWatch.start("initialize");
       for (JobType jobType : slotsByJob.keySet()) {
         final List<Combination> combinations = createCombinations(jobType);
@@ -631,7 +700,7 @@ public class KokoroService implements IKokoroService {
       }
       stopWatch.stop();
       log.info("initialize: {} ms", String.format("%,d", stopWatch.getLastTaskTimeMillis()));
-
+      */
     } catch (IOException ex) {
       throw new IllegalStateException("Failed to parse JSON file.", ex);
     }
@@ -643,7 +712,7 @@ public class KokoroService implements IKokoroService {
   }
 
   @Override
-  public List<Combination> getCombinations(final JobType jobType) {
+  public List<Combination> getCombinationsOnMemory(final JobType jobType) {
     for (JobKokoroCombination jobKokoroCombination : jobKokoroCombinations) {
       if (jobKokoroCombination.getJob().equals(jobType)) {
         return jobKokoroCombination.getCombinations();
@@ -653,7 +722,7 @@ public class KokoroService implements IKokoroService {
   }
 
   @Override
-  public List<Combination> getCombinations(
+  public List<Combination> getCombinationsOnMemory(
       final JobType jobType,
       final int cost,
       final String bride,
@@ -693,7 +762,9 @@ public class KokoroService implements IKokoroService {
             .filter(combination -> {
               for (Slot slot : combination.getSlots()) {
                 if (exclusions.containsKey(slot.getKokoro().getId())) {
-                  if (exclusions.get(slot.getKokoro().getId()).contains(slot.getKokoro().getRank())) {
+                  if (exclusions.get(slot.getKokoro().getId())
+                      .contains(slot.getKokoro().getRank())
+                  ) {
                     return false;
                   }
                 }
@@ -705,5 +776,707 @@ public class KokoroService implements IKokoroService {
       }
     }
     return new ArrayList<>();
+  }
+
+  private RankType convertRankType(final int i) {
+    switch (i) {
+      case 0:
+        return RankType.SP;
+      case 1:
+        return RankType.S;
+      case 2:
+        return RankType.A;
+      case 3:
+        return RankType.B;
+      case 4:
+        return RankType.C;
+      case 5:
+        return RankType.D;
+      default:
+        throw new IllegalArgumentException("");
+    }
+  }
+
+  private List<Result> convertRdbmsResult(final List<Object[]> objects) {
+    final List<Result> results = new ArrayList<>();
+    for (Object[] o : objects) {
+      final Result result = new Result();
+      result.setK0id((Integer) o[0]);
+      result.setK0rank(convertRankType((Integer) o[1]));
+      result.setK1id((Integer) o[2]);
+      result.setK1rank(convertRankType((Integer) o[3]));
+      result.setK2id((Integer) o[4]);
+      result.setK2rank(convertRankType((Integer) o[5]));
+      result.setK3id((Integer) o[6]);
+      result.setK3rank(convertRankType((Integer) o[7]));
+      result.setPattern((String) o[8]);
+      results.add(result);
+    }
+    return results;
+  }
+
+  private Kokoro get(final int id, final RankType rankType) {
+    for (Kokoro kokoro : kokoros) {
+      if (kokoro.getId() == id && kokoro.getRank().equals(rankType)) {
+        return kokoro;
+      }
+    }
+    throw new IllegalArgumentException("");
+  }
+
+  private void setParameter(final Combination combination, final JobType jobType) {
+    final double magnification = 1.2;
+    int hp = 0;
+    int mp = 0;
+    int op = 0;
+    int dp = 0;
+    int os = 0;
+    int ds = 0;
+    int sp = 0;
+    int dx = 0;
+    switch (jobType) {
+      case BATTLE_MASTER:
+        if (combination.getSlots().get(0).getKokoro().getType().equals(RED)) {
+          hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(0).getKokoro().getHp();
+          mp += combination.getSlots().get(0).getKokoro().getMp();
+          op += combination.getSlots().get(0).getKokoro().getOp();
+          dp += combination.getSlots().get(0).getKokoro().getDp();
+          os += combination.getSlots().get(0).getKokoro().getOs();
+          ds += combination.getSlots().get(0).getKokoro().getDs();
+          sp += combination.getSlots().get(0).getKokoro().getSp();
+          dx += combination.getSlots().get(0).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(1).getKokoro().getType().equals(RED)) {
+          hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(1).getKokoro().getHp();
+          mp += combination.getSlots().get(1).getKokoro().getMp();
+          op += combination.getSlots().get(1).getKokoro().getOp();
+          dp += combination.getSlots().get(1).getKokoro().getDp();
+          os += combination.getSlots().get(1).getKokoro().getOs();
+          ds += combination.getSlots().get(1).getKokoro().getDs();
+          sp += combination.getSlots().get(1).getKokoro().getSp();
+          dx += combination.getSlots().get(1).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(2).getKokoro().getType().equals(RED)
+            || combination.getSlots().get(2).getKokoro().getType().equals(YELLOW)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(2).getKokoro().getHp();
+          mp += combination.getSlots().get(2).getKokoro().getMp();
+          op += combination.getSlots().get(2).getKokoro().getOp();
+          dp += combination.getSlots().get(2).getKokoro().getDp();
+          os += combination.getSlots().get(2).getKokoro().getOs();
+          ds += combination.getSlots().get(2).getKokoro().getDs();
+          sp += combination.getSlots().get(2).getKokoro().getSp();
+          dx += combination.getSlots().get(2).getKokoro().getDx();
+        }
+        break;
+      case RANGER:
+        if (combination.getSlots().get(0).getKokoro().getType().equals(BLUE)) {
+          hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(0).getKokoro().getHp();
+          mp += combination.getSlots().get(0).getKokoro().getMp();
+          op += combination.getSlots().get(0).getKokoro().getOp();
+          dp += combination.getSlots().get(0).getKokoro().getDp();
+          os += combination.getSlots().get(0).getKokoro().getOs();
+          ds += combination.getSlots().get(0).getKokoro().getDs();
+          sp += combination.getSlots().get(0).getKokoro().getSp();
+          dx += combination.getSlots().get(0).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(1).getKokoro().getType().equals(BLUE)) {
+          hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(1).getKokoro().getHp();
+          mp += combination.getSlots().get(1).getKokoro().getMp();
+          op += combination.getSlots().get(1).getKokoro().getOp();
+          dp += combination.getSlots().get(1).getKokoro().getDp();
+          os += combination.getSlots().get(1).getKokoro().getOs();
+          ds += combination.getSlots().get(1).getKokoro().getDs();
+          sp += combination.getSlots().get(1).getKokoro().getSp();
+          dx += combination.getSlots().get(1).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(2).getKokoro().getType().equals(RED)
+            || combination.getSlots().get(2).getKokoro().getType().equals(BLUE)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(2).getKokoro().getHp();
+          mp += combination.getSlots().get(2).getKokoro().getMp();
+          op += combination.getSlots().get(2).getKokoro().getOp();
+          dp += combination.getSlots().get(2).getKokoro().getDp();
+          os += combination.getSlots().get(2).getKokoro().getOs();
+          ds += combination.getSlots().get(2).getKokoro().getDs();
+          sp += combination.getSlots().get(2).getKokoro().getSp();
+          dx += combination.getSlots().get(2).getKokoro().getDx();
+        }
+        break;
+      case SAGE:
+        if (combination.getSlots().get(0).getKokoro().getType().equals(PURPLE)
+            || combination.getSlots().get(0).getKokoro().getType().equals(GREEN)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(0).getKokoro().getHp();
+          mp += combination.getSlots().get(0).getKokoro().getMp();
+          op += combination.getSlots().get(0).getKokoro().getOp();
+          dp += combination.getSlots().get(0).getKokoro().getDp();
+          os += combination.getSlots().get(0).getKokoro().getOs();
+          ds += combination.getSlots().get(0).getKokoro().getDs();
+          sp += combination.getSlots().get(0).getKokoro().getSp();
+          dx += combination.getSlots().get(0).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(1).getKokoro().getType().equals(PURPLE)
+            || combination.getSlots().get(1).getKokoro().getType().equals(GREEN)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(1).getKokoro().getHp();
+          mp += combination.getSlots().get(1).getKokoro().getMp();
+          op += combination.getSlots().get(1).getKokoro().getOp();
+          dp += combination.getSlots().get(1).getKokoro().getDp();
+          os += combination.getSlots().get(1).getKokoro().getOs();
+          ds += combination.getSlots().get(1).getKokoro().getDs();
+          sp += combination.getSlots().get(1).getKokoro().getSp();
+          dx += combination.getSlots().get(1).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(2).getKokoro().getType().equals(PURPLE)
+            || combination.getSlots().get(2).getKokoro().getType().equals(GREEN)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(2).getKokoro().getHp();
+          mp += combination.getSlots().get(2).getKokoro().getMp();
+          op += combination.getSlots().get(2).getKokoro().getOp();
+          dp += combination.getSlots().get(2).getKokoro().getDp();
+          os += combination.getSlots().get(2).getKokoro().getOs();
+          ds += combination.getSlots().get(2).getKokoro().getDs();
+          sp += combination.getSlots().get(2).getKokoro().getSp();
+          dx += combination.getSlots().get(2).getKokoro().getDx();
+        }
+        break;
+      case PALADIN:
+        if (combination.getSlots().get(0).getKokoro().getType().equals(YELLOW)
+            || combination.getSlots().get(0).getKokoro().getType().equals(GREEN)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(0).getKokoro().getHp();
+          mp += combination.getSlots().get(0).getKokoro().getMp();
+          op += combination.getSlots().get(0).getKokoro().getOp();
+          dp += combination.getSlots().get(0).getKokoro().getDp();
+          os += combination.getSlots().get(0).getKokoro().getOs();
+          ds += combination.getSlots().get(0).getKokoro().getDs();
+          sp += combination.getSlots().get(0).getKokoro().getSp();
+          dx += combination.getSlots().get(0).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(1).getKokoro().getType().equals(YELLOW)
+            || combination.getSlots().get(1).getKokoro().getType().equals(GREEN)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(1).getKokoro().getHp();
+          mp += combination.getSlots().get(1).getKokoro().getMp();
+          op += combination.getSlots().get(1).getKokoro().getOp();
+          dp += combination.getSlots().get(1).getKokoro().getDp();
+          os += combination.getSlots().get(1).getKokoro().getOs();
+          ds += combination.getSlots().get(1).getKokoro().getDs();
+          sp += combination.getSlots().get(1).getKokoro().getSp();
+          dx += combination.getSlots().get(1).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(2).getKokoro().getType().equals(YELLOW)
+            || combination.getSlots().get(2).getKokoro().getType().equals(GREEN)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(2).getKokoro().getHp();
+          mp += combination.getSlots().get(2).getKokoro().getMp();
+          op += combination.getSlots().get(2).getKokoro().getOp();
+          dp += combination.getSlots().get(2).getKokoro().getDp();
+          os += combination.getSlots().get(2).getKokoro().getOs();
+          ds += combination.getSlots().get(2).getKokoro().getDs();
+          sp += combination.getSlots().get(2).getKokoro().getSp();
+          dx += combination.getSlots().get(2).getKokoro().getDx();
+        }
+        break;
+      default:
+        throw new IllegalArgumentException("");
+    }
+    hp += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getHp() * magnification);
+    mp += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getMp() * magnification);
+    op += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getOp() * magnification);
+    dp += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getDp() * magnification);
+    os += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getOs() * magnification);
+    ds += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getDs() * magnification);
+    sp += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getSp() * magnification);
+    dx += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getDx() * magnification);
+
+    combination.setHp(hp);
+    combination.setMp(mp);
+    combination.setOp(op);
+    combination.setDp(dp);
+    combination.setOs(os);
+    combination.setDs(ds);
+    combination.setDx(dx);
+    combination.setSp(sp);
+  }
+
+  private List<Combination> convert(final List<Result> results, final JobType jobType) {
+    final List<Combination> combinations = new ArrayList<>();
+    for (Result result : results) {
+      final String pattern = result.getPattern();
+      final int k0Index = Integer.parseInt(pattern.substring(1, 2));
+      final int k1Index = Integer.parseInt(pattern.substring(2, 3));
+      final int k2Index = Integer.parseInt(pattern.substring(3, 4));
+      final int k3Index = Integer.parseInt(pattern.substring(4, 5));
+      log.debug("{}, {}, {}, {}", k0Index, k1Index, k2Index, k3Index);
+      List<Integer> indexes = Arrays.asList(k0Index, k1Index, k2Index, k3Index);
+      List<Integer> ids = Arrays.asList(
+          result.getK0id(), result.getK1id(), result.getK2id(), result.getK3id()
+      );
+      List<RankType> ranks = Arrays.asList(
+          result.getK0rank(), result.getK1rank(), result.getK2rank(), result.getK3rank()
+      );
+      final Combination combination = new Combination();
+      final List<Slot> slots = new ArrayList<>();
+      for (int i = 0; i < 4; i++) {
+        final Slot slot = new Slot();
+        slot.setKokoro(get(ids.get(indexes.get(i)), ranks.get(indexes.get(i))));
+        switch (jobType) {
+          case BATTLE_MASTER:
+            switch (i) {
+              case 0:
+              case 1:
+                slot.setType(RED);
+                if (slot.getKokoro().getType().equals(RED)) {
+                  slot.setUp(true);
+                }
+                break;
+              case 2:
+                slot.setType(RED_YELLOW);
+                if (slot.getKokoro().getType().equals(RED)
+                    || slot.getKokoro().getType().equals(YELLOW)
+                ) {
+                  slot.setUp(true);
+                }
+                break;
+              case 3:
+                slot.setType(RAINBOW);
+                slot.setUp(true);
+                break;
+              default:
+                throw new IllegalArgumentException("");
+            }
+            break;
+          case RANGER:
+            switch (i) {
+              case 0:
+              case 1:
+                slot.setType(BLUE);
+                if (slot.getKokoro().getType().equals(BLUE)) {
+                  slot.setUp(true);
+                }
+                break;
+              case 2:
+                slot.setType(RED_BLUE);
+                if (slot.getKokoro().getType().equals(RED)
+                    || slot.getKokoro().getType().equals(BLUE)
+                ) {
+                  slot.setUp(true);
+                }
+                break;
+              case 3:
+                slot.setType(RAINBOW);
+                slot.setUp(true);
+                break;
+              default:
+                throw new IllegalArgumentException("");
+            }
+            break;
+          case SAGE:
+            switch (i) {
+              case 0:
+              case 1:
+              case 2:
+                slot.setType(PURPLE_GREEN);
+                if (slot.getKokoro().getType().equals(PURPLE)
+                    || slot.getKokoro().getType().equals(GREEN)
+                ) {
+                  slot.setUp(true);
+                }
+                break;
+              case 3:
+                slot.setType(RAINBOW);
+                slot.setUp(true);
+                break;
+              default:
+                throw new IllegalArgumentException("");
+            }
+            break;
+          case PALADIN:
+            switch (i) {
+              case 0:
+              case 1:
+              case 2:
+                slot.setType(YELLOW_GREEN);
+                if (slot.getKokoro().getType().equals(YELLOW)
+                    || slot.getKokoro().getType().equals(GREEN)
+                ) {
+                  slot.setUp(true);
+                }
+                break;
+              case 3:
+                slot.setType(RAINBOW);
+                slot.setUp(true);
+                break;
+              default:
+                throw new IllegalArgumentException("");
+            }
+            break;
+          default:
+            throw new IllegalArgumentException("");
+        }
+        slots.add(slot);
+      }
+      combination.setSlots(slots);
+
+      setParameter(combination, jobType);
+
+      final int cost = combination.getSlots().get(0).getKokoro().getCost()
+          + combination.getSlots().get(1).getKokoro().getCost()
+          + combination.getSlots().get(2).getKokoro().getCost()
+          + combination.getSlots().get(3).getKokoro().getCost();
+      combination.setCost(cost);
+
+      final List<Damage> damages = new ArrayList<>();
+      for (Slot slot : slots) {
+        damages.addAll(slot.getKokoro().getDamages());
+      }
+      final List<Damage> mergedDamages = new ArrayList<>();
+      for (int x = 0; x < damages.size(); x++) {
+        boolean isMerged = false;
+        int mergedMagnification = damages.get(x).getMagnification();
+        for (int y = 0; y < damages.size(); y++) {
+          if (damages.get(x).getAttack()
+              .equals(damages.get(y).getAttack())
+              && damages.get(x).getAttribute()
+              .equals(damages.get(y).getAttribute())
+              && damages.get(x).getRace()
+              .equals(damages.get(y).getRace())
+          ) {
+            if (y > x) {
+              mergedMagnification += damages.get(y).getMagnification();
+            } else if (y < x) {
+              isMerged = true;
+            }
+          }
+        }
+        if (!isMerged) {
+          final Damage mergedDamage = new Damage();
+          mergedDamage.setAttack(damages.get(x).getAttack());
+          mergedDamage.setAttribute(damages.get(x).getAttribute());
+          mergedDamage.setRace(damages.get(x).getRace());
+          mergedDamage.setMagnification(mergedMagnification);
+          mergedDamages.add(mergedDamage);
+        }
+      }
+      combination.setDamages(damages);
+
+      combinations.add(combination);
+      log.debug("{}, {}, {}, {}",
+          result.getK0id(),
+          result.getK1id(),
+          result.getK2id(),
+          result.getK3id()
+      );
+      log.debug("{}, {}, {}, {}",
+          slots.get(0).getKokoro().getId(),
+          slots.get(1).getKokoro().getId(),
+          slots.get(2).getKokoro().getId(),
+          slots.get(3).getKokoro().getId()
+      );
+    }
+    return combinations;
+  }
+
+  private List<Object[]> getCombinationsFromRdbms(
+      final JobType jobType,
+      final AttackType attackType,
+      final AttributeType attributeType,
+      final RaceType raceType,
+      final int cost,
+      final List<Integer> nonBrides,
+      final List<String> exclusionRanks,
+      final int limit
+  ) {
+    final String column =
+        (jobType.name() + "_" + attributeType.name() + "_" + attackType.name() + "_damage")
+            .toLowerCase();
+    switch (jobType) {
+      case BATTLE_MASTER:
+        switch (attackType) {
+          case SLASH:
+          case HIT:
+            return kokoroFlatRepository.findByBattleMasterOp(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case BREATH:
+          case SPELL:
+          default:
+            return null;
+        }
+      case RANGER:
+        switch (attackType) {
+          case SLASH:
+          case HIT:
+            return kokoroFlatRepository.findByRangerOp(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case BREATH:
+            return kokoroFlatRepository.findByRangerOpDx(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case SPELL:
+          default:
+            return null;
+        }
+      case SAGE:
+        switch (attackType) {
+          case SLASH:
+          case HIT:
+          case BREATH:
+          case SPELL:
+            return kokoroFlatRepository.findBySageOs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          default:
+            return null;
+        }
+      case PALADIN:
+        switch (attackType) {
+          case SLASH:
+            return kokoroFlatRepository.findByPaladinOp(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case HIT:
+          case BREATH:
+          case SPELL:
+          default:
+            return null;
+        }
+      default:
+        return null;
+    }
+  }
+
+  @Override
+  public List<Combination> getCombinations(
+      final JobType jobType,
+      final AttackType attackType,
+      final AttributeType attributeType,
+      final RaceType raceType,
+      final int cost,
+      final String bride,
+      final Map<Integer, List<RankType>> exclusions,
+      final int limit
+  ) {
+    final List<Integer> nonBrides;
+    switch (bride) {
+      case "ビアンカ":
+        nonBrides = Arrays.asList(50002, 50003);
+        break;
+      case "フローラ":
+        nonBrides = Arrays.asList(50001, 50003);
+        break;
+      case "デボラ":
+        nonBrides = Arrays.asList(50001, 50002);
+        break;
+      default:
+        throw new IllegalArgumentException("Illegal Argument: set correct bride name.");
+    }
+
+    final List<String> exclusionRanks = new ArrayList<>();
+    for (Map.Entry<Integer, List<RankType>> entry : exclusions.entrySet()) {
+      final Integer key = entry.getKey();
+      for (RankType rankType : entry.getValue()) {
+        switch (rankType) {
+          case SP:
+            exclusionRanks.add(key + "_0");
+            break;
+          case S:
+            exclusionRanks.add(key + "_1");
+            break;
+          case A:
+            exclusionRanks.add(key + "_2");
+            break;
+          case B:
+            exclusionRanks.add(key + "_3");
+            break;
+          case C:
+            exclusionRanks.add(key + "_4");
+            break;
+          case D:
+            exclusionRanks.add(key + "_5");
+            break;
+          default:
+            throw new IllegalArgumentException("Illegal Argument: set correct RankType.");
+        }
+      }
+    }
+    if (exclusionRanks.size() == 0) {
+      exclusionRanks.add("");
+    }
+
+    final StopWatch stopWatch = new StopWatch();
+    stopWatch.start("findCombinationsFromRdbms");
+
+    final List<Result> results = convertRdbmsResult(
+        getCombinationsFromRdbms(
+            jobType, attackType, attributeType, raceType, cost, nonBrides, exclusionRanks, limit
+        )
+    );
+    stopWatch.stop();
+    log.info("{} results, {} ms",
+        results.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis())
+    );
+    log.debug(results.toString());
+    return convert(results, jobType);
+  }
+
+  @Override
+  public void persistKokoroFlats() {
+    final ModelMapper modelMapper = new ModelMapper();
+    for (KokoroFlat kokoroFlat : kokoroFlats) {
+      final KokoroFlatEntity kokoroFlatEntity = modelMapper.map(kokoroFlat, KokoroFlatEntity.class);
+      log.debug(kokoroFlatEntity.toString());
+      kokoroFlatRepository.save(kokoroFlatEntity);
+    }
+  }
+
+  @Override
+  public void persistKokoros() {
+    final ModelMapper modelMapper = new ModelMapper();
+    for (Kokoro kokoro : kokoros) {
+      final KokoroEntity kokoroEntity = modelMapper.map(kokoro, KokoroEntity.class);
+      final List<DamageEntity> damageEntities = new ArrayList<>();
+      for (Damage damage : kokoro.getDamages()) {
+        final DamageEntity damageEntity = modelMapper.map(damage, DamageEntity.class);
+        damageEntity.setKokoro(kokoroEntity);
+        damageEntities.add(damageEntity);
+      }
+      kokoroEntity.setDamages(damageEntities);
+      log.debug(kokoroEntity.toString());
+      kokoroRepository.save(kokoroEntity);
+    }
+  }
+
+  @Async
+  @Override
+  public void persistCombinations() {
+    final ObjectMapper objectMapper = new ObjectMapper();
+    final StopWatch stopWatch = new StopWatch();
+    stopWatch.start("persistCombinations");
+    objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    jobKokoroCombinations.get(0).getCombinations().forEach(combination -> {
+      combinationRepository.save(objectMapper.convertValue(combination, CombinationEntity.class));
+    });
+    stopWatch.stop();
+    log.info("save {} entities: {} ms",
+        jobKokoroCombinations.get(0).getCombinations().size(),
+        String.format("%,d", stopWatch.getLastTaskTimeMillis())
+    );
   }
 }
