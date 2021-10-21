@@ -3,10 +3,13 @@ package dqwapi.domain.service;
 import static dqwapi.domain.model.common.KokoroType.BLUE;
 import static dqwapi.domain.model.common.KokoroType.GREEN;
 import static dqwapi.domain.model.common.KokoroType.PURPLE;
+import static dqwapi.domain.model.common.KokoroType.PURPLE_GREEN;
 import static dqwapi.domain.model.common.KokoroType.RAINBOW;
 import static dqwapi.domain.model.common.KokoroType.RED;
+import static dqwapi.domain.model.common.KokoroType.RED_BLUE;
 import static dqwapi.domain.model.common.KokoroType.RED_YELLOW;
 import static dqwapi.domain.model.common.KokoroType.YELLOW;
+import static dqwapi.domain.model.common.KokoroType.YELLOW_GREEN;
 import static java.util.Objects.requireNonNull;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -48,6 +51,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StopWatch;
@@ -707,7 +712,7 @@ public class KokoroService implements IKokoroService {
   }
 
   @Override
-  public List<Combination> getCombinations(final JobType jobType) {
+  public List<Combination> getCombinationsOnMemory(final JobType jobType) {
     for (JobKokoroCombination jobKokoroCombination : jobKokoroCombinations) {
       if (jobKokoroCombination.getJob().equals(jobType)) {
         return jobKokoroCombination.getCombinations();
@@ -717,7 +722,7 @@ public class KokoroService implements IKokoroService {
   }
 
   @Override
-  public List<Combination> getCombinations(
+  public List<Combination> getCombinationsOnMemory(
       final JobType jobType,
       final int cost,
       final String bride,
@@ -821,16 +826,16 @@ public class KokoroService implements IKokoroService {
 
   private void setParameter(final Combination combination, final JobType jobType) {
     final double magnification = 1.2;
+    int hp = 0;
+    int mp = 0;
+    int op = 0;
+    int dp = 0;
+    int os = 0;
+    int ds = 0;
+    int sp = 0;
+    int dx = 0;
     switch (jobType) {
       case BATTLE_MASTER:
-        int hp = 0;
-        int mp = 0;
-        int op = 0;
-        int dp = 0;
-        int os = 0;
-        int ds = 0;
-        int sp = 0;
-        int dx = 0;
         if (combination.getSlots().get(0).getKokoro().getType().equals(RED)) {
           hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
@@ -890,140 +895,396 @@ public class KokoroService implements IKokoroService {
           sp += combination.getSlots().get(2).getKokoro().getSp();
           dx += combination.getSlots().get(2).getKokoro().getDx();
         }
-        hp += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getHp() * magnification);
-        mp += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getMp() * magnification);
-        op += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getOp() * magnification);
-        dp += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getDp() * magnification);
-        os += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getOs() * magnification);
-        ds += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getDs() * magnification);
-        sp += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getSp() * magnification);
-        dx += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getDx() * magnification);
-
-        combination.setHp(hp);
-        combination.setMp(mp);
-        combination.setOp(op);
-        combination.setDp(dp);
-        combination.setOs(os);
-        combination.setDs(ds);
-        combination.setDx(dx);
-        combination.setSp(sp);
         break;
       case RANGER:
-      case SAGE:
-      case PALADIN:
-      default:
+        if (combination.getSlots().get(0).getKokoro().getType().equals(BLUE)) {
+          hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(0).getKokoro().getHp();
+          mp += combination.getSlots().get(0).getKokoro().getMp();
+          op += combination.getSlots().get(0).getKokoro().getOp();
+          dp += combination.getSlots().get(0).getKokoro().getDp();
+          os += combination.getSlots().get(0).getKokoro().getOs();
+          ds += combination.getSlots().get(0).getKokoro().getDs();
+          sp += combination.getSlots().get(0).getKokoro().getSp();
+          dx += combination.getSlots().get(0).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(1).getKokoro().getType().equals(BLUE)) {
+          hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(1).getKokoro().getHp();
+          mp += combination.getSlots().get(1).getKokoro().getMp();
+          op += combination.getSlots().get(1).getKokoro().getOp();
+          dp += combination.getSlots().get(1).getKokoro().getDp();
+          os += combination.getSlots().get(1).getKokoro().getOs();
+          ds += combination.getSlots().get(1).getKokoro().getDs();
+          sp += combination.getSlots().get(1).getKokoro().getSp();
+          dx += combination.getSlots().get(1).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(2).getKokoro().getType().equals(RED)
+            || combination.getSlots().get(2).getKokoro().getType().equals(BLUE)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(2).getKokoro().getHp();
+          mp += combination.getSlots().get(2).getKokoro().getMp();
+          op += combination.getSlots().get(2).getKokoro().getOp();
+          dp += combination.getSlots().get(2).getKokoro().getDp();
+          os += combination.getSlots().get(2).getKokoro().getOs();
+          ds += combination.getSlots().get(2).getKokoro().getDs();
+          sp += combination.getSlots().get(2).getKokoro().getSp();
+          dx += combination.getSlots().get(2).getKokoro().getDx();
+        }
         break;
+      case SAGE:
+        if (combination.getSlots().get(0).getKokoro().getType().equals(PURPLE)
+            || combination.getSlots().get(0).getKokoro().getType().equals(GREEN)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(0).getKokoro().getHp();
+          mp += combination.getSlots().get(0).getKokoro().getMp();
+          op += combination.getSlots().get(0).getKokoro().getOp();
+          dp += combination.getSlots().get(0).getKokoro().getDp();
+          os += combination.getSlots().get(0).getKokoro().getOs();
+          ds += combination.getSlots().get(0).getKokoro().getDs();
+          sp += combination.getSlots().get(0).getKokoro().getSp();
+          dx += combination.getSlots().get(0).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(1).getKokoro().getType().equals(PURPLE)
+            || combination.getSlots().get(1).getKokoro().getType().equals(GREEN)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(1).getKokoro().getHp();
+          mp += combination.getSlots().get(1).getKokoro().getMp();
+          op += combination.getSlots().get(1).getKokoro().getOp();
+          dp += combination.getSlots().get(1).getKokoro().getDp();
+          os += combination.getSlots().get(1).getKokoro().getOs();
+          ds += combination.getSlots().get(1).getKokoro().getDs();
+          sp += combination.getSlots().get(1).getKokoro().getSp();
+          dx += combination.getSlots().get(1).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(2).getKokoro().getType().equals(PURPLE)
+            || combination.getSlots().get(2).getKokoro().getType().equals(GREEN)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(2).getKokoro().getHp();
+          mp += combination.getSlots().get(2).getKokoro().getMp();
+          op += combination.getSlots().get(2).getKokoro().getOp();
+          dp += combination.getSlots().get(2).getKokoro().getDp();
+          os += combination.getSlots().get(2).getKokoro().getOs();
+          ds += combination.getSlots().get(2).getKokoro().getDs();
+          sp += combination.getSlots().get(2).getKokoro().getSp();
+          dx += combination.getSlots().get(2).getKokoro().getDx();
+        }
+        break;
+      case PALADIN:
+        if (combination.getSlots().get(0).getKokoro().getType().equals(YELLOW)
+            || combination.getSlots().get(0).getKokoro().getType().equals(GREEN)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(0).getKokoro().getHp();
+          mp += combination.getSlots().get(0).getKokoro().getMp();
+          op += combination.getSlots().get(0).getKokoro().getOp();
+          dp += combination.getSlots().get(0).getKokoro().getDp();
+          os += combination.getSlots().get(0).getKokoro().getOs();
+          ds += combination.getSlots().get(0).getKokoro().getDs();
+          sp += combination.getSlots().get(0).getKokoro().getSp();
+          dx += combination.getSlots().get(0).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(1).getKokoro().getType().equals(YELLOW)
+            || combination.getSlots().get(1).getKokoro().getType().equals(GREEN)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(1).getKokoro().getHp();
+          mp += combination.getSlots().get(1).getKokoro().getMp();
+          op += combination.getSlots().get(1).getKokoro().getOp();
+          dp += combination.getSlots().get(1).getKokoro().getDp();
+          os += combination.getSlots().get(1).getKokoro().getOs();
+          ds += combination.getSlots().get(1).getKokoro().getDs();
+          sp += combination.getSlots().get(1).getKokoro().getSp();
+          dx += combination.getSlots().get(1).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(2).getKokoro().getType().equals(YELLOW)
+            || combination.getSlots().get(2).getKokoro().getType().equals(GREEN)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(2).getKokoro().getHp();
+          mp += combination.getSlots().get(2).getKokoro().getMp();
+          op += combination.getSlots().get(2).getKokoro().getOp();
+          dp += combination.getSlots().get(2).getKokoro().getDp();
+          os += combination.getSlots().get(2).getKokoro().getOs();
+          ds += combination.getSlots().get(2).getKokoro().getDs();
+          sp += combination.getSlots().get(2).getKokoro().getSp();
+          dx += combination.getSlots().get(2).getKokoro().getDx();
+        }
+        break;
+      default:
+        throw new IllegalArgumentException("");
     }
+    hp += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getHp() * magnification);
+    mp += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getMp() * magnification);
+    op += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getOp() * magnification);
+    dp += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getDp() * magnification);
+    os += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getOs() * magnification);
+    ds += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getDs() * magnification);
+    sp += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getSp() * magnification);
+    dx += (int) Math.ceil(combination.getSlots().get(3).getKokoro().getDx() * magnification);
+
+    combination.setHp(hp);
+    combination.setMp(mp);
+    combination.setOp(op);
+    combination.setDp(dp);
+    combination.setOs(os);
+    combination.setDs(ds);
+    combination.setDx(dx);
+    combination.setSp(sp);
   }
 
   private List<Combination> convert(final List<Result> results, final JobType jobType) {
     final List<Combination> combinations = new ArrayList<>();
-    switch (jobType) {
-      case BATTLE_MASTER:
-        for (Result result : results) {
-          final String pattern = result.getPattern();
-          final int k0Index = Integer.parseInt(pattern.substring(1, 2));
-          final int k1Index = Integer.parseInt(pattern.substring(2, 3));
-          final int k2Index = Integer.parseInt(pattern.substring(3, 4));
-          final int k3Index = Integer.parseInt(pattern.substring(4, 5));
-          log.debug("{}, {}, {}, {}", k0Index, k1Index, k2Index, k3Index);
-          List<Integer> indexes = Arrays.asList(k0Index, k1Index, k2Index, k3Index);
-          List<Integer> ids = Arrays.asList(
-              result.getK0id(), result.getK1id(), result.getK2id(), result.getK3id()
-          );
-          List<RankType> ranks = Arrays.asList(
-              result.getK0rank(), result.getK1rank(), result.getK2rank(), result.getK3rank()
-          );
-          final Combination combination = new Combination();
-          final List<Slot> slots = new ArrayList<>();
-          for (int i = 0; i < 4; i++) {
-            final Slot slot = new Slot();
-            slot.setKokoro(get(ids.get(indexes.get(i)), ranks.get(indexes.get(i))));
+    for (Result result : results) {
+      final String pattern = result.getPattern();
+      final int k0Index = Integer.parseInt(pattern.substring(1, 2));
+      final int k1Index = Integer.parseInt(pattern.substring(2, 3));
+      final int k2Index = Integer.parseInt(pattern.substring(3, 4));
+      final int k3Index = Integer.parseInt(pattern.substring(4, 5));
+      log.debug("{}, {}, {}, {}", k0Index, k1Index, k2Index, k3Index);
+      List<Integer> indexes = Arrays.asList(k0Index, k1Index, k2Index, k3Index);
+      List<Integer> ids = Arrays.asList(
+          result.getK0id(), result.getK1id(), result.getK2id(), result.getK3id()
+      );
+      List<RankType> ranks = Arrays.asList(
+          result.getK0rank(), result.getK1rank(), result.getK2rank(), result.getK3rank()
+      );
+      final Combination combination = new Combination();
+      final List<Slot> slots = new ArrayList<>();
+      for (int i = 0; i < 4; i++) {
+        final Slot slot = new Slot();
+        slot.setKokoro(get(ids.get(indexes.get(i)), ranks.get(indexes.get(i))));
+        switch (jobType) {
+          case BATTLE_MASTER:
             switch (i) {
               case 0:
               case 1:
                 slot.setType(RED);
+                if (slot.getKokoro().getType().equals(RED)) {
+                  slot.setUp(true);
+                }
                 break;
               case 2:
                 slot.setType(RED_YELLOW);
+                if (slot.getKokoro().getType().equals(RED)
+                    || slot.getKokoro().getType().equals(YELLOW)
+                ) {
+                  slot.setUp(true);
+                }
                 break;
               case 3:
                 slot.setType(RAINBOW);
+                slot.setUp(true);
                 break;
               default:
                 throw new IllegalArgumentException("");
             }
-            slots.add(slot);
-          }
-          combination.setSlots(slots);
-
-          setParameter(combination, jobType);
-
-          final int cost = combination.getSlots().get(0).getKokoro().getCost()
-              //- combination.getSlots().get(0).getKokoro().getPlusCost()
-              + combination.getSlots().get(1).getKokoro().getCost()
-              //- combination.getSlots().get(1).getKokoro().getPlusCost()
-              + combination.getSlots().get(2).getKokoro().getCost()
-              //- combination.getSlots().get(2).getKokoro().getPlusCost()
-              + combination.getSlots().get(3).getKokoro().getCost();
-              //- combination.getSlots().get(3).getKokoro().getPlusCost();
-          combination.setCost(cost);
-
-          final List<Damage> damages = new ArrayList<>();
-          for (Slot slot : slots) {
-            damages.addAll(slot.getKokoro().getDamages());
-          }
-          final List<Damage> mergedDamages = new ArrayList<>();
-          for (int x = 0; x < damages.size(); x++) {
-            boolean isMerged = false;
-            int mergedMagnification = damages.get(x).getMagnification();
-            for (int y = 0; y < damages.size(); y++) {
-              if (damages.get(x).getAttack()
-                  .equals(damages.get(y).getAttack())
-                  && damages.get(x).getAttribute()
-                  .equals(damages.get(y).getAttribute())
-                  && damages.get(x).getRace()
-                  .equals(damages.get(y).getRace())
-              ) {
-                if (y > x) {
-                  mergedMagnification += damages.get(y).getMagnification();
-                } else if (y < x) {
-                  isMerged = true;
+            break;
+          case RANGER:
+            switch (i) {
+              case 0:
+              case 1:
+                slot.setType(BLUE);
+                if (slot.getKokoro().getType().equals(BLUE)) {
+                  slot.setUp(true);
                 }
-              }
+                break;
+              case 2:
+                slot.setType(RED_BLUE);
+                if (slot.getKokoro().getType().equals(RED)
+                    || slot.getKokoro().getType().equals(BLUE)
+                ) {
+                  slot.setUp(true);
+                }
+                break;
+              case 3:
+                slot.setType(RAINBOW);
+                slot.setUp(true);
+                break;
+              default:
+                throw new IllegalArgumentException("");
             }
-            if (!isMerged) {
-              final Damage mergedDamage = new Damage();
-              mergedDamage.setAttack(damages.get(x).getAttack());
-              mergedDamage.setAttribute(damages.get(x).getAttribute());
-              mergedDamage.setRace(damages.get(x).getRace());
-              mergedDamage.setMagnification(mergedMagnification);
-              mergedDamages.add(mergedDamage);
+            break;
+          case SAGE:
+            switch (i) {
+              case 0:
+              case 1:
+              case 2:
+                slot.setType(PURPLE_GREEN);
+                if (slot.getKokoro().getType().equals(PURPLE)
+                    || slot.getKokoro().getType().equals(GREEN)
+                ) {
+                  slot.setUp(true);
+                }
+                break;
+              case 3:
+                slot.setType(RAINBOW);
+                slot.setUp(true);
+                break;
+              default:
+                throw new IllegalArgumentException("");
+            }
+            break;
+          case PALADIN:
+            switch (i) {
+              case 0:
+              case 1:
+              case 2:
+                slot.setType(YELLOW_GREEN);
+                if (slot.getKokoro().getType().equals(YELLOW)
+                    || slot.getKokoro().getType().equals(GREEN)
+                ) {
+                  slot.setUp(true);
+                }
+                break;
+              case 3:
+                slot.setType(RAINBOW);
+                slot.setUp(true);
+                break;
+              default:
+                throw new IllegalArgumentException("");
+            }
+            break;
+          default:
+            throw new IllegalArgumentException("");
+        }
+        slots.add(slot);
+      }
+      combination.setSlots(slots);
+
+      setParameter(combination, jobType);
+
+      final int cost = combination.getSlots().get(0).getKokoro().getCost()
+          + combination.getSlots().get(1).getKokoro().getCost()
+          + combination.getSlots().get(2).getKokoro().getCost()
+          + combination.getSlots().get(3).getKokoro().getCost();
+      combination.setCost(cost);
+
+      final List<Damage> damages = new ArrayList<>();
+      for (Slot slot : slots) {
+        damages.addAll(slot.getKokoro().getDamages());
+      }
+      final List<Damage> mergedDamages = new ArrayList<>();
+      for (int x = 0; x < damages.size(); x++) {
+        boolean isMerged = false;
+        int mergedMagnification = damages.get(x).getMagnification();
+        for (int y = 0; y < damages.size(); y++) {
+          if (damages.get(x).getAttack()
+              .equals(damages.get(y).getAttack())
+              && damages.get(x).getAttribute()
+              .equals(damages.get(y).getAttribute())
+              && damages.get(x).getRace()
+              .equals(damages.get(y).getRace())
+          ) {
+            if (y > x) {
+              mergedMagnification += damages.get(y).getMagnification();
+            } else if (y < x) {
+              isMerged = true;
             }
           }
-          combination.setDamages(damages);
-
-          combinations.add(combination);
-          log.debug("{}, {}, {}, {}",
-              result.getK0id(),
-              result.getK1id(),
-              result.getK2id(),
-              result.getK3id()
-          );
-          log.debug("{}, {}, {}, {}",
-              slots.get(0).getKokoro().getId(),
-              slots.get(1).getKokoro().getId(),
-              slots.get(2).getKokoro().getId(),
-              slots.get(3).getKokoro().getId()
-          );
         }
-        return combinations;
-      case RANGER:
-      case SAGE:
-      case PALADIN:
-      default:
-        return combinations;
+        if (!isMerged) {
+          final Damage mergedDamage = new Damage();
+          mergedDamage.setAttack(damages.get(x).getAttack());
+          mergedDamage.setAttribute(damages.get(x).getAttribute());
+          mergedDamage.setRace(damages.get(x).getRace());
+          mergedDamage.setMagnification(mergedMagnification);
+          mergedDamages.add(mergedDamage);
+        }
+      }
+      combination.setDamages(damages);
+
+      combinations.add(combination);
+      log.debug("{}, {}, {}, {}",
+          result.getK0id(),
+          result.getK1id(),
+          result.getK2id(),
+          result.getK3id()
+      );
+      log.debug("{}, {}, {}, {}",
+          slots.get(0).getKokoro().getId(),
+          slots.get(1).getKokoro().getId(),
+          slots.get(2).getKokoro().getId(),
+          slots.get(3).getKokoro().getId()
+      );
     }
+    return combinations;
   }
 
   private List<Object[]> getCombinationsFromRdbms(
@@ -1032,55 +1293,22 @@ public class KokoroService implements IKokoroService {
       final AttributeType attributeType,
       final RaceType raceType,
       final int cost,
-      final String bride,
-      final Map<Integer, List<RankType>> exclusions,
+      final List<Integer> nonBrides,
+      final List<String> exclusionRanks,
       final int limit
   ) {
+    final String column =
+        (jobType.name() + "_" + attributeType.name() + "_" + attackType.name() + "_damage")
+            .toLowerCase();
     switch (jobType) {
       case BATTLE_MASTER:
         switch (attackType) {
           case SLASH:
-            switch (attributeType) {
-              case BAGI:
-                return kokoroFlatRepository.findBattleMasterBagiSlashDamages(limit);
-              case DEIN:
-                return kokoroFlatRepository.findBattleMasterDeinSlashDamages(limit);
-              case DORUMA:
-                return kokoroFlatRepository.findBattleMasterDorumaSlashDamages(limit);
-              case GIRA:
-                return kokoroFlatRepository.findBattleMasterGiraSlashDamages(limit);
-              case HYADO:
-                return kokoroFlatRepository.findBattleMasterHyadoSlashDamages(limit);
-              case IO:
-                return kokoroFlatRepository.findBattleMasterIoSlashDamages(limit);
-              case JIBARIA:
-                return kokoroFlatRepository.findBattleMasterJibariaSlashDamages(limit);
-              case MERA:
-                return kokoroFlatRepository.findBattleMasterMeraSlashDamages(limit);
-              default:
-                return null;
-            }
           case HIT:
-            switch (attributeType) {
-              case BAGI:
-                return kokoroFlatRepository.findBattleMasterBagiHitDamages(limit);
-              case DEIN:
-                return kokoroFlatRepository.findBattleMasterDeinHitDamages(limit);
-              case DORUMA:
-                return kokoroFlatRepository.findBattleMasterDorumaHitDamages(limit);
-              case GIRA:
-                return kokoroFlatRepository.findBattleMasterGiraHitDamages(limit);
-              case HYADO:
-                return kokoroFlatRepository.findBattleMasterHyadoHitDamages(limit);
-              case IO:
-                return kokoroFlatRepository.findBattleMasterIoHitDamages(limit);
-              case JIBARIA:
-                return kokoroFlatRepository.findBattleMasterJibariaHitDamages(limit);
-              case MERA:
-                return kokoroFlatRepository.findBattleMasterMeraHitDamages(limit);
-              default:
-                return null;
-            }
+            return kokoroFlatRepository.findByBattleMasterOp(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
           case BREATH:
           case SPELL:
           default:
@@ -1089,68 +1317,16 @@ public class KokoroService implements IKokoroService {
       case RANGER:
         switch (attackType) {
           case SLASH:
-            switch (attributeType) {
-              case BAGI:
-                return kokoroFlatRepository.findRangerBagiSlashDamages(limit);
-              case DEIN:
-                return kokoroFlatRepository.findRangerDeinSlashDamages(limit);
-              case DORUMA:
-                return kokoroFlatRepository.findRangerDorumaSlashDamages(limit);
-              case GIRA:
-                return kokoroFlatRepository.findRangerGiraSlashDamages(limit);
-              case HYADO:
-                return kokoroFlatRepository.findRangerHyadoSlashDamages(limit);
-              case IO:
-                return kokoroFlatRepository.findRangerIoSlashDamages(limit);
-              case JIBARIA:
-                return kokoroFlatRepository.findRangerJibariaSlashDamages(limit);
-              case MERA:
-                return kokoroFlatRepository.findRangerMeraSlashDamages(limit);
-              default:
-                return null;
-            }
           case HIT:
-            switch (attributeType) {
-              case BAGI:
-                return kokoroFlatRepository.findRangerBagiHitDamages(limit);
-              case DEIN:
-                return kokoroFlatRepository.findRangerDeinHitDamages(limit);
-              case DORUMA:
-                return kokoroFlatRepository.findRangerDorumaHitDamages(limit);
-              case GIRA:
-                return kokoroFlatRepository.findRangerGiraHitDamages(limit);
-              case HYADO:
-                return kokoroFlatRepository.findRangerHyadoHitDamages(limit);
-              case IO:
-                return kokoroFlatRepository.findRangerIoHitDamages(limit);
-              case JIBARIA:
-                return kokoroFlatRepository.findRangerJibariaHitDamages(limit);
-              case MERA:
-                return kokoroFlatRepository.findRangerMeraHitDamages(limit);
-              default:
-                return null;
-            }
+            return kokoroFlatRepository.findByRangerOp(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
           case BREATH:
-            switch (attributeType) {
-              case BAGI:
-                return kokoroFlatRepository.findRangerBagiBreathDamages(limit);
-              case DEIN:
-                return kokoroFlatRepository.findRangerDeinBreathDamages(limit);
-              case DORUMA:
-                return kokoroFlatRepository.findRangerDorumaBreathDamages(limit);
-              case GIRA:
-                return kokoroFlatRepository.findRangerGiraBreathDamages(limit);
-              case HYADO:
-                return kokoroFlatRepository.findRangerHyadoBreathDamages(limit);
-              case IO:
-                return kokoroFlatRepository.findRangerIoBreathDamages(limit);
-              case JIBARIA:
-                return kokoroFlatRepository.findRangerJibariaBreathDamages(limit);
-              case MERA:
-                return kokoroFlatRepository.findRangerMeraBreathDamages(limit);
-              default:
-                return null;
-            }
+            return kokoroFlatRepository.findByRangerOpDx(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
           case SPELL:
           default:
             return null;
@@ -1161,52 +1337,20 @@ public class KokoroService implements IKokoroService {
           case HIT:
           case BREATH:
           case SPELL:
-            switch (attributeType) {
-              case BAGI:
-                return kokoroFlatRepository.findSageBagiSpellDamages(limit);
-              case DEIN:
-                return kokoroFlatRepository.findSageDeinSpellDamages(limit);
-              case DORUMA:
-                return kokoroFlatRepository.findSageDorumaSpellDamages(limit);
-              case GIRA:
-                return kokoroFlatRepository.findSageGiraSpellDamages(limit);
-              case HYADO:
-                return kokoroFlatRepository.findSageHyadoSpellDamages(limit);
-              case IO:
-                return kokoroFlatRepository.findSageIoSpellDamages(limit);
-              case JIBARIA:
-                return kokoroFlatRepository.findSageJibariaSpellDamages(limit);
-              case MERA:
-                return kokoroFlatRepository.findSageMeraSpellDamages(limit);
-              default:
-                return null;
-            }
+            return kokoroFlatRepository.findBySageOs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
           default:
             return null;
         }
       case PALADIN:
         switch (attackType) {
           case SLASH:
-            switch (attributeType) {
-              case BAGI:
-                return kokoroFlatRepository.findPaladinBagiSlashDamages(limit);
-              case DEIN:
-                return kokoroFlatRepository.findPaladinDeinSlashDamages(limit);
-              case DORUMA:
-                return kokoroFlatRepository.findPaladinDorumaSlashDamages(limit);
-              case GIRA:
-                return kokoroFlatRepository.findPaladinGiraSlashDamages(limit);
-              case HYADO:
-                return kokoroFlatRepository.findPaladinHyadoSlashDamages(limit);
-              case IO:
-                return kokoroFlatRepository.findPaladinIoSlashDamages(limit);
-              case JIBARIA:
-                return kokoroFlatRepository.findPaladinJibariaSlashDamages(limit);
-              case MERA:
-                return kokoroFlatRepository.findPaladinMeraSlashDamages(limit);
-              default:
-                return null;
-            }
+            return kokoroFlatRepository.findByPaladinOp(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
           case HIT:
           case BREATH:
           case SPELL:
@@ -1229,12 +1373,59 @@ public class KokoroService implements IKokoroService {
       final Map<Integer, List<RankType>> exclusions,
       final int limit
   ) {
+    final List<Integer> nonBrides;
+    switch (bride) {
+      case "ビアンカ":
+        nonBrides = Arrays.asList(50002, 50003);
+        break;
+      case "フローラ":
+        nonBrides = Arrays.asList(50001, 50003);
+        break;
+      case "デボラ":
+        nonBrides = Arrays.asList(50001, 50002);
+        break;
+      default:
+        throw new IllegalArgumentException("Illegal Argument: set correct bride name.");
+    }
+
+    final List<String> exclusionRanks = new ArrayList<>();
+    for (Map.Entry<Integer, List<RankType>> entry : exclusions.entrySet()) {
+      final Integer key = entry.getKey();
+      for (RankType rankType : entry.getValue()) {
+        switch (rankType) {
+          case SP:
+            exclusionRanks.add(key + "_0");
+            break;
+          case S:
+            exclusionRanks.add(key + "_1");
+            break;
+          case A:
+            exclusionRanks.add(key + "_2");
+            break;
+          case B:
+            exclusionRanks.add(key + "_3");
+            break;
+          case C:
+            exclusionRanks.add(key + "_4");
+            break;
+          case D:
+            exclusionRanks.add(key + "_5");
+            break;
+          default:
+            throw new IllegalArgumentException("Illegal Argument: set correct RankType.");
+        }
+      }
+    }
+    if (exclusionRanks.size() == 0) {
+      exclusionRanks.add("");
+    }
+
     final StopWatch stopWatch = new StopWatch();
     stopWatch.start("findCombinationsFromRdbms");
 
     final List<Result> results = convertRdbmsResult(
         getCombinationsFromRdbms(
-            jobType, attackType, attributeType, raceType, cost, bride, exclusions, limit
+            jobType, attackType, attributeType, raceType, cost, nonBrides, exclusionRanks, limit
         )
     );
     stopWatch.stop();

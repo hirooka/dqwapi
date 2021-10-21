@@ -174,7 +174,6 @@ public class DamageOperator implements IDamageOperator {
             damageResult.setWeaponName(weapon.getName());
             damageResult.setSkillName(skill.getName());
             damageResult.setDamage(damageValue);
-            //damageResult.setParameter(combination.getParameter());
             damageResult.setHp(combination.getHp());
             damageResult.setMp(combination.getMp());
             damageResult.setOp(combination.getOp());
@@ -195,6 +194,7 @@ public class DamageOperator implements IDamageOperator {
               simplifiedSlot.setId(slot.getKokoro().getId());
               simplifiedSlot.setName(slot.getKokoro().getName());
               simplifiedSlot.setRank(slot.getKokoro().getRank());
+              simplifiedSlot.setCost(slot.getKokoro().getCost());
               simplifiedSlot.setUp(slot.isUp());
               simplifiedSlots.add(simplifiedSlot);
             }

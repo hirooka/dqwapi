@@ -14,9 +14,9 @@ public interface IKokoroService {
 
   List<Kokoro> getAll();
 
-  List<Combination> getCombinations(final JobType jobType);
+  List<Combination> getCombinationsOnMemory(final JobType jobType);
 
-  List<Combination> getCombinations(
+  List<Combination> getCombinationsOnMemory(
       final JobType jobType,
       final int cost,
       final String bride,
