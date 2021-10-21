@@ -8,9 +8,15 @@ spring:
     serialization:
       indent_output: true
   datasource:
-    url:
-    username:
-    password:
+    url: \${DQWAPI_CLOUD_SQL_URL}
+    username: \${DQWAPI_CLOUD_SQL_USERNAME}
+    password: \${DQWAPI_CLOUD_SQL_PASSWORD}
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      data-source-properties:
+        socketFactory: com.google.cloud.sql.postgres.SocketFactory
+        cloudSqlInstance: \${DQWAPI_CLOUD_SQL_INSTANCE_CONNECTION_NAME}
+        ipTypes: PUBLIC,PRIVATE
   jpa:
     properties:
       hibernate:
