@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
-@RequestMapping("api/v1/hello")
+@RequestMapping("${dqwapi.path-prefix}v1/hello")
 @RestController
 public class HelloRestController {
 

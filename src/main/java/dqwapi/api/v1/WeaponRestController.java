@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @AllArgsConstructor
-@RequestMapping("api/v1/weapons")
+@RequestMapping("${dqwapi.path-prefix}v1/weapons")
 @RestController
 public class WeaponRestController {
 

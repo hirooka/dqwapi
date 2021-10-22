@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @AllArgsConstructor
-@RequestMapping("api/v1/tests")
+@RequestMapping("${dqwapi.path-prefix}v1/tests")
 @RestController
 public class TestRestController {
 
