@@ -32,6 +32,16 @@ springdoc:
 
 dqwapi:
   version: $project.version
+  path-prefix:
   kokoro-json: kokoro-new.json
   kokoro-flat-json: kokoro-flat.json
   response: 20
+
+logging:
+  level:
+    com:
+      google:
+        cloud:
+          sql:
+            core:
+              CoreSocketFactory: warn
