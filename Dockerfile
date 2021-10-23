@@ -3,7 +3,7 @@ WORKDIR /app
 COPY . .
 RUN ./gradlew build
 
-FROM openjdk:11-jre-slim
+FROM openjdk:11
 RUN apt-get install -y locales 
 # locale
 RUN locale-gen ja_JP.UTF-8
