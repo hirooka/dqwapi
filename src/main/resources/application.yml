@@ -1,5 +1,8 @@
 server:
   port: 8888
+  error:
+    whitelabel:
+      enabled: false
 
 spring:
   application:
@@ -35,6 +38,7 @@ dqwapi:
   path-prefix:
   kokoro-json: kokoro-new.json
   kokoro-flat-json: kokoro-flat.json
+  kokoro-persist: false
   response: 20
 
 logging:
