@@ -4,6 +4,7 @@ COPY . .
 RUN ./gradlew build
 
 FROM openjdk:11-jre-slim
+RUN apt-get install -y locales 
 # locale
 RUN locale-gen ja_JP.UTF-8
 ENV LANG ja_JP.UTF-8
