@@ -1,81 +1,483 @@
 [
   {
+    "id":403,
+    "name": "イブール",
+    "rank": "S",
+    "type": "GREEN",
+    "race": "DEVIL",
+    "cost": 92,
+    "plusCost": 4,
+    "hp":  61,
+    "mp":  66,
+    "op":  13,
+    "dp":  35,
+    "os":  57,
+    "ds": 113,
+    "sp":  26,
+    "dx":  35,
+    "damages": [
+    ],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "id":403,
+    "name": "イブール",
+    "rank": "A",
+    "type": "GREEN",
+    "race": "DEVIL",
+    "cost": 92,
+    "plusCost": 3,
+    "hp":  54,
+    "mp":  58,
+    "op":  11,
+    "dp":  31,
+    "os":  50,
+    "ds": 100,
+    "sp":  23,
+    "dx":  31,
+    "damages": [
+    ],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 5
+      }
+    ]
+  },
+  {
+    "id":402,
+    "name": "ゲマ",
+    "rank": "S",
+    "type": "PURPLE",
+    "race": "ZOMBIE",
+    "cost": 119,
+    "plusCost": 4,
+    "hp":  67,
+    "mp":  90,
+    "op":   8,
+    "dp":  32,
+    "os": 114,
+    "ds":  52,
+    "sp": 119,
+    "dx":  84,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
+  },
+  {
+    "id":402,
+    "name": "ゲマ",
+    "rank": "A",
+    "type": "PURPLE",
+    "race": "ZOMBIE",
+    "cost": 119,
+    "plusCost": 3,
+    "hp":  59,
+    "mp":  79,
+    "op":   7,
+    "dp":  28,
+    "os": 108,
+    "ds":  46,
+    "sp":  98,
+    "dx":  74,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 4
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 4
+      }
+    ]
+  },
+  {
+    "id":401,
+    "name": "ようがんげんじん",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "ELEMENT",
+    "cost": 114,
+    "plusCost": 4,
+    "hp": 101,
+    "mp":  50,
+    "op":  65,
+    "dp":  68,
+    "os":  63,
+    "ds":  17,
+    "sp":  30,
+    "dx":  48,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 12
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 12
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 12
+      },
+      {
+        "attack": "HIT",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 12
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ZOMBIE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "id":401,
+    "name": "ようがんげんじん",
+    "rank": "A",
+    "type": "YELLOW",
+    "race": "ELEMENT",
+    "cost": 114,
+    "plusCost": 3,
+    "hp":  88,
+    "mp":  43,
+    "op":  55,
+    "dp":  60,
+    "os":  58,
+    "ds":  15,
+    "sp":  27,
+    "dx":  42,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 9
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 9
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 9
+      },
+      {
+        "attack": "HIT",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 9
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ZOMBIE",
+        "magnification": 5
+      }
+    ]
+  },
+  {
+    "id":401,
+    "name": "ようがんげんじん",
+    "rank": "B",
+    "type": "YELLOW",
+    "race": "ELEMENT",
+    "cost": 114,
+    "plusCost": 2,
+    "hp":  82,
+    "mp":  40,
+    "op":  51,
+    "dp":  55,
+    "os":  56,
+    "ds":  14,
+    "sp":  25,
+    "dx":  39,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "HIT",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ZOMBIE",
+        "magnification": 3
+      }
+    ]
+  },
+  {
+    "id":400,
+    "name": "ゴンズ",
+    "rank": "S",
+    "type": "RED",
+    "race": "ANIMAL",
+    "cost": 116,
+    "plusCost": 4,
+    "hp": 105,
+    "mp":  45,
+    "op":  98,
+    "dp":  59,
+    "os":  16,
+    "ds":  16,
+    "sp":  83,
+    "dx":  73,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "id":400,
+    "name": "ゴンズ",
+    "rank": "A",
+    "type": "RED",
+    "race": "ANIMAL",
+    "cost": 116,
+    "plusCost": 3,
+    "hp":  93,
+    "mp":  40,
+    "op":  86,
+    "dp":  53,
+    "os":  14,
+    "ds":  14,
+    "sp":  73,
+    "dx":  64,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
+  },
+  {
+    "id":400,
+    "name": "ゴンズ",
+    "rank": "B",
+    "type": "RED",
+    "race": "ANIMAL",
+    "cost": 116,
+    "plusCost": 2,
+    "hp":  78,
+    "mp":  33,
+    "op":  73,
+    "dp":  44,
+    "os":  12,
+    "ds":  12,
+    "sp":  61,
+    "dx":  54,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 1
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 1
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ]
+  },
+  {
+    "id":399,
+    "name": "ジャミ",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "ANIMAL",
+    "cost": 101,
+    "plusCost": 4,
+    "hp":  75,
+    "mp":  38,
+    "op": 103,
+    "dp":  36,
+    "os":  17,
+    "ds":  15,
+    "sp": 116,
+    "dx": 126,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ANIMAL",
+        "magnification": 7
+      }
+    ]
+  },
+  {
     "id":398,
     "name": "グレイトドラゴン",
     "rank": "S",
     "type": "BLUE",
     "race": "DRAGON",
     "cost": 116,
-    "status": {
-      "parameter": {
-        "hp": 117,
-        "mp":  71,
-        "op":  81,
-        "dp":  79,
-        "os":  37,
-        "ds":  33,
-        "sp": 105,
-        "dx": 105
+    "plusCost": 4,
+    "hp": 117,
+    "mp":  71,
+    "op":  81,
+    "dp":  79,
+    "os":  37,
+    "ds":  33,
+    "sp": 105,
+    "dx": 105,
+    "damages": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 14
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "ALL",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 14
-            },
-            {
-              "attack": "ALL",
-              "attribute": "IO",
-              "race": "NONE",
-              "magnification": 14
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "id":398,
-    "name": "グレイトドラゴン",
-    "rank": "A",
-    "type": "BLUE",
-    "race": "DRAGON",
-    "cost": 116,
-    "status": {
-      "parameter": {
-        "hp": 104,
-        "mp":  62,
-        "op":  72,
-        "dp":  68,
-        "os":  33,
-        "ds":  29,
-        "sp":  92,
-        "dx":  92
-      },
-      "effects": [
-        {
-          "plusCost": 3,
-          "damages": [
-            {
-              "attack": "ALL",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 9
-            },
-            {
-              "attack": "ALL",
-              "attribute": "IO",
-              "race": "NONE",
-              "magnification": 9
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 14
+      }
+    ]
   },
   {
     "id": 397,
@@ -84,49 +486,41 @@
     "type": "RED",
     "race": "ELEMENT",
     "cost": 114,
-    "status": {
-      "parameter": {
-        "hp": 104,
-        "mp":  44,
-        "op":  97,
-        "dp":  59,
-        "os":  16,
-        "ds":  16,
-        "sp":  83,
-        "dx":  72
+    "plusCost": 4,
+    "hp": 104,
+    "mp":  44,
+    "op":  97,
+    "dp":  59,
+    "os":  16,
+    "ds":  16,
+    "sp":  83,
+    "dx":  72,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "ALL",
-              "attribute": "NONE",
-              "race": "ANIMAL",
-              "magnification": 10
-            },
-            {
-              "attack": "ALL",
-              "attribute": "NONE",
-              "race": "ELEMENT",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ANIMAL",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ELEMENT",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 396,
@@ -135,55 +529,47 @@
     "type": "RED",
     "race": "PHANTOM",
     "cost": 47,
-    "status": {
-      "parameter": {
-        "hp":  29,
-        "mp":   8,
-        "op":  61,
-        "dp":  13,
-        "os":   8,
-        "ds":   8,
-        "sp":  46,
-        "dx":  86
+    "plusCost": 4,
+    "hp":  29,
+    "mp":   8,
+    "op":  61,
+    "dp":  13,
+    "os":   8,
+    "ds":   8,
+    "sp":  46,
+    "dx":  86,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "IO",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "IO",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "JIBARIA",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "JIBARIA",
-              "race": "NONE",
-              "magnification": 5
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "id": 395,
@@ -192,43 +578,35 @@
     "type": "PURPLE",
     "race": "BIRD",
     "cost": 111,
-    "status": {
-      "parameter": {
-        "hp":  87,
-        "mp": 100,
-        "op":  18,
-        "dp":  61,
-        "os":  95,
-        "ds":  38,
-        "sp":  90,
-        "dx":  81
+    "plusCost": 4,
+    "hp":  87,
+    "mp": 100,
+    "op":  18,
+    "dp":  61,
+    "os":  95,
+    "ds":  38,
+    "sp":  90,
+    "dx":  81,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SPELL",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "SPELL",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SPELL",
-              "attribute": "BAGI",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "SPELL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 394,
@@ -237,43 +615,35 @@
     "type": "BLUE",
     "race": "PHANTOM",
     "cost": 107,
-    "status": {
-      "parameter": {
-        "hp":  70,
-        "mp":  36,
-        "op":  98,
-        "dp":  34,
-        "os":  16,
-        "ds":  14,
-        "sp": 108,
-        "dx": 117
+    "plusCost": 4,
+    "hp":  70,
+    "mp":  36,
+    "op":  98,
+    "dp":  34,
+    "os":  16,
+    "ds":  14,
+    "sp": 108,
+    "dx": 117,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DORUMA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "DORUMA",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 388,
@@ -282,62 +652,53 @@
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 111,
-    "status": {
-      "parameter": {
-        "hp": 102,
-        "mp":  55,
-        "op": 101,
-        "dp":  59,
-        "os":  18,
-        "ds":  36,
-        "sp":  65,
-        "dx":  26
+    "plusCost": 4,
+    "hp": 102,
+    "mp":  55,
+    "op": 101,
+    "dp":  59,
+    "os":  18,
+    "ds":  36,
+    "sp":  65,
+    "dx":  26,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DORUMA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "DORUMA",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ],
-          "critical": 3
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 382,
@@ -346,43 +707,35 @@
     "type": "PURPLE",
     "race": "DEVIL",
     "cost": 114,
-    "status": {
-      "parameter": {
-        "hp": 110,
-        "mp":  74,
-        "op":  56,
-        "dp":  63,
-        "os":  92,
-        "ds":  13,
-        "sp":  47,
-        "dx":  55
+    "plusCost": 4,
+    "hp": 110,
+    "mp":  74,
+    "op":  56,
+    "dp":  63,
+    "os":  92,
+    "ds":  13,
+    "sp":  47,
+    "dx":  55,
+    "damages": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 15
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "ALL",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 15
-            },
-            {
-              "attack": "ALL",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 15
-            },
-            {
-              "attack": "ALL",
-              "attribute": "NONE",
-              "race": "ELEMENT",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 15
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ELEMENT",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 379,
@@ -391,25 +744,23 @@
     "type": "GREEN",
     "race": "SECRET",
     "cost": 113,
-    "status": {
-      "parameter": {
-        "hp": 140,
-        "mp": 112,
-        "op":  41,
-        "dp":  58,
-        "os":  56,
-        "ds":  90,
-        "sp":  44,
-        "dx":  43
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-          ]
-        }
-      ]
-    }
+    "plusCost": 4,
+    "hp": 140,
+    "mp": 112,
+    "op":  41,
+    "dp":  58,
+    "os":  56,
+    "ds":  90,
+    "sp":  44,
+    "dx":  43,
+    "damages": [
+    ],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 377,
@@ -418,37 +769,29 @@
     "type": "PURPLE",
     "race": "SECRET",
     "cost": 111,
-    "status": {
-      "parameter": {
-        "hp":  64,
-        "mp":  88,
-        "op":   8,
-        "dp":  45,
-        "os": 120,
-        "ds":  49,
-        "sp":  90,
-        "dx":  85
+    "plusCost": 4,
+    "hp":  64,
+    "mp":  88,
+    "op":   8,
+    "dp":  45,
+    "os": 120,
+    "ds":  49,
+    "sp":  90,
+    "dx":  85,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SPELL",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "SPELL",
-              "attribute": "IO",
-              "race": "NONE",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "SPELL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 376,
@@ -457,25 +800,9 @@
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 111,
-    "status": {
-      "parameter": {
-        "hp": 125,
-        "mp":  21,
-        "op":  34,
-        "dp": 105,
-        "os":  20,
-        "ds":  20,
-        "sp":  13,
-        "dx":  20
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-          ]
-        }
-      ]
-    }
+    "plusCost": 4,
+    "damages": [
+    ]
   },
   {
     "id": 374,
@@ -484,55 +811,47 @@
     "type": "RED",
     "race": "DEVIL",
     "cost": 108,
-    "status": {
-      "parameter": {
-        "hp":  55,
-        "mp":  45,
-        "op": 120,
-        "dp":  40,
-        "os":   7,
-        "ds":   7,
-        "sp":  95,
-        "dx":  91
+    "plusCost": 4,
+    "hp":  55,
+    "mp":  45,
+    "op": 120,
+    "dp":  40,
+    "os":   7,
+    "ds":   7,
+    "sp":  95,
+    "dx":  91,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "JIBARIA",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "JIBARIA",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "ALL",
-              "attribute": "NONE",
-              "race": "DEVIL",
-              "magnification": 5
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "DEVIL",
+        "magnification": 5
+      }
+    ]
   },
   {
     "id": 373,
@@ -541,43 +860,35 @@
     "type": "BLUE",
     "race": "DRAGON",
     "cost": 99,
-    "status": {
-      "parameter": {
-        "hp":  90,
-        "mp":  63,
-        "op":  86,
-        "dp":  70,
-        "os":  33,
-        "ds":  30,
-        "sp":  75,
-        "dx":  96
+    "plusCost": 4,
+    "hp":  90,
+    "mp":  63,
+    "op":  86,
+    "dp":  70,
+    "os":  33,
+    "ds":  30,
+    "sp":  75,
+    "dx":  96,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 14
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 14
-            },
-            {
-              "attack": "HIT",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 14
-            },
-            {
-              "attack": "ALL",
-              "attribute": "NONE",
-              "race": "DRAGON",
-              "magnification": 5
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 14
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "DRAGON",
+        "magnification": 5
+      }
+    ]
   },
   {
     "id": 372,
@@ -586,49 +897,41 @@
     "type": "BLUE",
     "race": "SECRET",
     "cost": 107,
-    "status": {
-      "parameter": {
-        "hp": 123,
-        "mp":  75,
-        "op":  86,
-        "dp":  82,
-        "os":  39,
-        "ds":  35,
-        "sp": 112,
-        "dx": 112
+    "plusCost": 4,
+    "hp": 123,
+    "mp":  75,
+    "op":  86,
+    "dp":  82,
+    "os":  39,
+    "ds":  35,
+    "sp": 112,
+    "dx": 112,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "ALL",
-              "attribute": "GIRA",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "ALL",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 5
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "id": 364,
@@ -637,38 +940,29 @@
     "type": "YELLOW",
     "race": "SECRET",
     "cost": 99,
-    "status": {
-      "parameter": {
-        "hp": 146,
-        "mp":  59,
-        "op":  68,
-        "dp": 110,
-        "os":  39,
-        "ds":  39,
-        "sp":  36,
-        "dx":  57
+    "plusCost": 4,
+    "hp": 146,
+    "mp":  59,
+    "op":  68,
+    "dp": 110,
+    "os":  39,
+    "ds":  39,
+    "sp":  36,
+    "dx":  57,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 6
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 13
-            }
-          ],
-          "critical": 5
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 13
+      }
+    ]
   },
   {
     "id": 359,
@@ -677,49 +971,41 @@
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 114,
-    "status": {
-      "parameter": {
-        "hp": 134,
-        "mp":  62,
-        "op":  85,
-        "dp":  88,
-        "os":  11,
-        "ds":  41,
-        "sp":  56,
-        "dx":  45
+    "plusCost": 4,
+    "hp": 134,
+    "mp":  62,
+    "op":  85,
+    "dp":  88,
+    "os":  11,
+    "ds":  41,
+    "sp":  56,
+    "dx":  45,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "IO",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "IO",
-              "race": "NONE",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 354,
@@ -728,25 +1014,17 @@
     "type": "RED",
     "race": "PHANTOM",
     "cost": 110,
-    "status": {
-      "parameter": {
-        "hp":  54,
-        "mp":  30,
-        "op": 110,
-        "dp":  24,
-        "os":   7,
-        "ds":   7,
-        "sp":  80,
-        "dx":  76
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-          ]
-        }
-      ]
-    }
+    "plusCost": 4,
+    "hp":  54,
+    "mp":  30,
+    "op": 110,
+    "dp":  24,
+    "os":   7,
+    "ds":   7,
+    "sp":  80,
+    "dx":  76,
+    "damages": [
+    ]
   },
   {
     "id": 351,
@@ -755,25 +1033,17 @@
     "type": "YELLOW",
     "race": "MATERIAL",
     "cost": 66,
-    "status": {
-      "parameter": {
-        "hp":  93,
-        "mp":  38,
-        "op":  47,
-        "dp":  49,
-        "os":  19,
-        "ds":  13,
-        "sp":  20,
-        "dx":  12
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-          ]
-        }
-      ]
-    }
+    "plusCost": 4,
+    "hp":  93,
+    "mp":  38,
+    "op":  47,
+    "dp":  49,
+    "os":  19,
+    "ds":  13,
+    "sp":  20,
+    "dx":  12,
+    "damages": [
+    ]
   },
   {
     "id": 349,
@@ -782,61 +1052,53 @@
     "type": "RED",
     "race": "SECRET",
     "cost": 107,
-    "status": {
-      "parameter": {
-        "hp": 110,
-        "mp":  47,
-        "op": 103,
-        "dp":  63,
-        "os":  16,
-        "ds":  16,
-        "sp":  89,
-        "dx":  78
+    "plusCost": 4,
+    "hp": 110,
+    "mp":  47,
+    "op": 103,
+    "dp":  63,
+    "os":  16,
+    "ds":  16,
+    "sp":  89,
+    "dx":  78,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "GIRA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "GIRA",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 347,
@@ -845,43 +1107,66 @@
     "type": "RED",
     "race": "MACHINE",
     "cost": 107,
-    "status": {
-      "parameter": {
-        "hp": 125,
-        "mp":  61,
-        "op":  92,
-        "dp":  63,
-        "os":  16,
-        "ds":  16,
-        "sp":  62,
-        "dx": 120
+    "plusCost": 4,
+    "hp": 125,
+    "mp":  61,
+    "op":  92,
+    "dp":  63,
+    "os":  16,
+    "ds":  16,
+    "sp":  62,
+    "dx": 120,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "ALL",
-              "attribute": "GIRA",
-              "race": "NONE",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
+  },
+  {
+    "id": 346,
+    "name": "ヘルクラウダー",
+    "rank": "S",
+    "type": "GREEN",
+    "race": "ELEMENT",
+    "cost": 102,
+    "plusCost": 4,
+    "hp":  88,
+    "mp":  20,
+    "op":  15,
+    "dp":  53,
+    "os":  63,
+    "ds": 110,
+    "sp":  12,
+    "dx":  37,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 340,
@@ -890,37 +1175,29 @@
     "type": "YELLOW",
     "race": "MACHINE",
     "cost": 101,
-    "status": {
-      "parameter": {
-        "hp":  152,
-        "mp":   25,
-        "op":   41,
-        "dp":  127,
-        "os":   23,
-        "ds":   23,
-        "sp":   16,
-        "dx":   25
+    "plusCost": 4,
+    "hp":  152,
+    "mp":   25,
+    "op":   41,
+    "dp":  127,
+    "os":   23,
+    "ds":   23,
+    "sp":   16,
+    "dx":   25,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 340,
@@ -929,37 +1206,29 @@
     "type": "YELLOW",
     "race": "MACHINE",
     "cost": 101,
-    "status": {
-      "parameter": {
-        "hp":  133,
-        "mp":   22,
-        "op":   36,
-        "dp":  111,
-        "os":   21,
-        "ds":   21,
-        "sp":   14,
-        "dx":   22
+    "plusCost": 3,
+    "hp":  133,
+    "mp":   22,
+    "op":   36,
+    "dp":  111,
+    "os":   21,
+    "ds":   21,
+    "sp":   14,
+    "dx":   22,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 6
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 6
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
+      }
+    ]
   },
   {
     "id": 338,
@@ -968,43 +1237,35 @@
     "type": "RED",
     "race": "ZOMBIE",
     "cost": 102,
-    "status": {
-      "parameter": {
-        "hp":  68,
-        "mp":  30,
-        "op": 100,
-        "dp":  38,
-        "os":   5,
-        "ds":   5,
-        "sp":  83,
-        "dx":  80
+    "plusCost": 4,
+    "hp":  68,
+    "mp":  30,
+    "op": 100,
+    "dp":  38,
+    "os":   5,
+    "ds":   5,
+    "sp":  83,
+    "dx":  80,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "ALL",
-              "attribute": "NONE",
-              "race": "ZOMBIE",
-              "magnification": 10
-            },
-            {
-              "attack": "ALL",
-              "attribute": "NONE",
-              "race": "MACHINE",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ZOMBIE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "MACHINE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 335,
@@ -1013,37 +1274,29 @@
     "type": "YELLOW",
     "race": "WATER",
     "cost": 102,
-    "status": {
-      "parameter": {
-        "hp":  96,
-        "mp":  52,
-        "op":  95,
-        "dp":  56,
-        "os":  17,
-        "ds":  34,
-        "sp":  62,
-        "dx":  25
+    "plusCost": 4,
+    "hp":  96,
+    "mp":  52,
+    "op":  95,
+    "dp":  56,
+    "os":  17,
+    "ds":  34,
+    "sp":  62,
+    "dx":  25,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 325,
@@ -1052,49 +1305,41 @@
     "type": "BLUE",
     "race": "MATERIAL",
     "cost": 111,
-    "status": {
-      "parameter": {
-        "hp": 114,
-        "mp":  69,
-        "op":  79,
-        "dp":  76,
-        "os":  36,
-        "ds":  32,
-        "sp": 102,
-        "dx": 102
+    "plusCost": 4,
+    "hp": 114,
+    "mp":  69,
+    "op":  79,
+    "dp":  76,
+    "os":  36,
+    "ds":  32,
+    "sp": 102,
+    "dx": 102,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "JIBARIA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "JIBARIA",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 325,
@@ -1103,49 +1348,41 @@
     "type": "BLUE",
     "race": "MATERIAL",
     "cost": 111,
-    "status": {
-      "parameter": {
-        "hp":  93,
-        "mp":  56,
-        "op":  65,
-        "dp":  62,
-        "os":  30,
-        "ds":  27,
-        "sp":  84,
-        "dx":  84
+    "plusCost": 2,
+    "hp":  93,
+    "mp":  56,
+    "op":  65,
+    "dp":  62,
+    "os":  30,
+    "ds":  27,
+    "sp":  84,
+    "dx":  84,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
       },
-      "effects": [
-        {
-          "plusCost": 2,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "JIBARIA",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "JIBARIA",
-              "race": "NONE",
-              "magnification": 5
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "id": 324,
@@ -1154,49 +1391,41 @@
     "type": "YELLOW",
     "race": "PLANT",
     "cost": 92,
-    "status": {
-      "parameter": {
-        "hp":  82,
-        "mp":  55,
-        "op":  80,
-        "dp":  52,
-        "os":  40,
-        "ds":  16,
-        "sp":  30,
-        "dx":  47
+    "plusCost": 4,
+    "hp":  82,
+    "mp":  55,
+    "op":  80,
+    "dp":  52,
+    "os":  40,
+    "ds":  16,
+    "sp":  30,
+    "dx":  47,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 12
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "IO",
-              "race": "NONE",
-              "magnification": 12
-            },
-            {
-              "attack": "HIT",
-              "attribute": "IO",
-              "race": "NONE",
-              "magnification": 12
-            },
-            {
-              "attack": "ALL",
-              "attribute": "NONE",
-              "race": "PLANT",
-              "magnification": 7
-            },
-            {
-              "attack": "ALL",
-              "attribute": "NONE",
-              "race": "DEVIL",
-              "magnification": 5
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 12
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "PLANT",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "DEVIL",
+        "magnification": 5
+      }
+    ]
   },
   {
     "id": 322,
@@ -1205,49 +1434,41 @@
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 107,
-    "status": {
-      "parameter": {
-        "hp": 105,
-        "mp":  50,
-        "op": 100,
-        "dp":  41,
-        "os":  20,
-        "ds":  17,
-        "sp": 134,
-        "dx": 145
+    "plusCost": 4,
+    "hp": 105,
+    "mp":  50,
+    "op": 100,
+    "dp":  41,
+    "os":  20,
+    "ds":  17,
+    "sp": 134,
+    "dx": 145,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 322,
@@ -1256,49 +1477,41 @@
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 107,
-    "status": {
-      "parameter": {
-        "hp":  92,
-        "mp":  44,
-        "op":  88,
-        "dp":  37,
-        "os":  18,
-        "ds":  16,
-        "sp": 118,
-        "dx": 128
+    "plusCost": 3,
+    "hp":  92,
+    "mp":  44,
+    "op":  88,
+    "dp":  37,
+    "os":  18,
+    "ds":  16,
+    "sp": 118,
+    "dx": 128,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 8
       },
-      "effects": [
-        {
-          "plusCost": 3,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 8
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 8
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 8
-            },
-            {
-              "attack": "HIT",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 8
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 8
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 8
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 8
+      }
+    ]
   },
   {
     "id": 322,
@@ -1307,49 +1520,41 @@
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 107,
-    "status": {
-      "parameter": {
-        "hp":  84,
-        "mp":  40,
-        "op":  81,
-        "dp":  34,
-        "os":  16,
-        "ds":  15,
-        "sp": 109,
-        "dx": 118
+    "plusCost": 2,
+    "hp":  84,
+    "mp":  40,
+    "op":  81,
+    "dp":  34,
+    "os":  16,
+    "ds":  15,
+    "sp": 109,
+    "dx": 118,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
       },
-      "effects": [
-        {
-          "plusCost": 2,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 6
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 6
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 6
-            },
-            {
-              "attack": "HIT",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 6
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 6
+      }
+    ]
   },
   {
     "id": 315,
@@ -1358,55 +1563,47 @@
     "type": "BLUE",
     "race": "DRAGON",
     "cost": 78,
-    "status": {
-      "parameter": {
-        "hp":  56,
-        "mp":  29,
-        "op":  77,
-        "dp":  27,
-        "os":  13,
-        "ds":  12,
-        "sp":  93,
-        "dx": 101
+    "plusCost": 4,
+    "hp":  56,
+    "mp":  29,
+    "op":  77,
+    "dp":  27,
+    "os":  13,
+    "ds":  12,
+    "sp":  93,
+    "dx": 101,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "BAGI",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "BAGI",
-              "race": "NONE",
-              "magnification": 5
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "SLASH",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "id": 313,
@@ -1415,37 +1612,29 @@
     "type": "RED",
     "race": "MATERIAL",
     "cost": 96,
-    "status": {
-      "parameter": {
-        "hp":  71,
-        "mp":  35,
-        "op":  83,
-        "dp":  35,
-        "os":  12,
-        "ds":  12,
-        "sp":  67,
-        "dx":  59
+    "plusCost": 4,
+    "hp":  71,
+    "mp":  35,
+    "op":  83,
+    "dp":  35,
+    "os":  12,
+    "ds":  12,
+    "sp":  67,
+    "dx":  59,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "ALL",
-              "attribute": "NONE",
-              "race": "MATERIAL",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "MATERIAL",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 314,
@@ -1454,25 +1643,23 @@
     "type": "GREEN",
     "race": "MATERIAL",
     "cost": 98,
-    "status": {
-      "parameter": {
-        "hp": 125,
-        "mp": 100,
-        "op":  33,
-        "dp":  31,
-        "os":  41,
-        "ds":  60,
-        "sp":  27,
-        "dx":  36
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-          ]
-        }
-      ]
-    }
+    "plusCost": 4,
+    "hp": 125,
+    "mp": 100,
+    "op":  33,
+    "dp":  31,
+    "os":  41,
+    "ds":  60,
+    "sp":  27,
+    "dx":  36,
+    "damages": [
+    ],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 308,
@@ -1481,43 +1668,35 @@
     "type": "PURPLE",
     "race": "MATERIAL",
     "cost": 99,
-    "status": {
-      "parameter": {
-        "hp":  120,
-        "mp":  125,
-        "op":   17,
-        "dp":   28,
-        "os":   71,
-        "ds":   28,
-        "sp":   52,
-        "dx":   76
+    "plusCost": 4,
+    "hp":  120,
+    "mp":  125,
+    "op":   17,
+    "dp":   28,
+    "os":   71,
+    "ds":   28,
+    "sp":   52,
+    "dx":   76,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SPELL",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "SPELL",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "SPELL",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "SPELL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 306,
@@ -1526,61 +1705,53 @@
     "type": "RED",
     "race": "SECRET",
     "cost": 89,
-    "status": {
-      "parameter": {
-        "hp":  55,
-        "mp":  29,
-        "op": 110,
-        "dp":  24,
-        "os":   5,
-        "ds":   5,
-        "sp":  85,
-        "dx":  81
+    "plusCost": 4,
+    "hp":  55,
+    "mp":  29,
+    "op": 110,
+    "dp":  24,
+    "os":   5,
+    "ds":   5,
+    "sp":  85,
+    "dx":  81,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DORUMA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "DORUMA",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 303,
@@ -1589,43 +1760,35 @@
     "type": "PURPLE",
     "race": "SECRET",
     "cost": 92,
-    "status": {
-      "parameter": {
-        "hp":   84,
-        "mp":  101,
-        "op":   16,
-        "dp":   52,
-        "os":   81,
-        "ds":   32,
-        "sp":   62,
-        "dx":   72
+    "plusCost": 4,
+    "hp":   84,
+    "mp":  101,
+    "op":   16,
+    "dp":   52,
+    "os":   81,
+    "ds":   32,
+    "sp":   62,
+    "dx":   72,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SPELL",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SPELL",
-              "attribute": "GIRA",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "SPELL",
-              "attribute": "IO",
-              "race": "NONE",
-              "magnification": 5
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "SPELL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "id": 301,
@@ -1634,49 +1797,41 @@
     "type": "BLUE",
     "race": "MACHINE",
     "cost": 93,
-    "status": {
-      "parameter": {
-        "hp":  55,
-        "mp":  28,
-        "op":  75,
-        "dp":  26,
-        "os":  13,
-        "ds":  11,
-        "sp":  87,
-        "dx":  95
+    "plusCost": 4,
+    "hp":  55,
+    "mp":  28,
+    "op":  75,
+    "dp":  26,
+    "os":  13,
+    "ds":  11,
+    "sp":  87,
+    "dx":  95,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 2
       },
-      "effects": [
-        {
-          "plusCost": 3,
-          "damages": [
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 2
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DORUMA",
-              "race": "NONE",
-              "magnification": 6
-            },
-            {
-              "attack": "HIT",
-              "attribute": "DORUMA",
-              "race": "NONE",
-              "magnification": 6
-            },
-            {
-              "attack": "ALL",
-              "attribute": "NONE",
-              "race": "MACHINE",
-              "magnification": 4
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "MACHINE",
+        "magnification": 4
+      }
+    ]
   },
   {
     "id": 296,
@@ -1685,31 +1840,23 @@
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 92,
-    "status": {
-      "parameter": {
-        "hp": 125,
-        "mp":  21,
-        "op":  34,
-        "dp": 104,
-        "os":  19,
-        "ds":  19,
-        "sp":  14,
-        "dx":  21
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+    "plusCost": 4,
+    "hp": 125,
+    "mp":  21,
+    "op":  34,
+    "dp": 104,
+    "os":  19,
+    "ds":  19,
+    "sp":  14,
+    "dx":  21,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 290,
@@ -1718,37 +1865,29 @@
     "type": "RED",
     "race": "DEVIL",
     "cost": 93,
-    "status": {
-      "parameter": {
-        "hp":  88,
-        "mp":  38,
-        "op":  82,
-        "dp":  50,
-        "os":  13,
-        "ds":  13,
-        "sp":  73,
-        "dx":  64
+    "plusCost": 4,
+    "hp":  88,
+    "mp":  38,
+    "op":  82,
+    "dp":  50,
+    "os":  13,
+    "ds":  13,
+    "sp":  73,
+    "dx":  64,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 284,
@@ -1757,37 +1896,29 @@
     "type": "RED",
     "race": "DEVIL",
     "cost": 90,
-    "status": {
-      "parameter": {
-        "hp": 100,
-        "mp":  10,
-        "op":  80,
-        "dp":  44,
-        "os":  11,
-        "ds":  11,
-        "sp":  30,
-        "dx":  40
+    "plusCost": 4,
+    "hp": 100,
+    "mp":  10,
+    "op":  80,
+    "dp":  44,
+    "os":  11,
+    "ds":  11,
+    "sp":  30,
+    "dx":  40,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "id": 282,
@@ -1796,43 +1927,35 @@
     "type": "BLUE",
     "race": "ANIMAL",
     "cost": 92,
-    "status": {
-      "parameter": {
-        "hp":  97,
-        "mp":  58,
-        "op":  67,
-        "dp":  64,
-        "os":  31,
-        "ds":  28,
-        "sp":  91,
-        "dx":  91
+    "plusCost": 4,
+    "hp":  97,
+    "mp":  58,
+    "op":  67,
+    "dp":  64,
+    "os":  31,
+    "ds":  28,
+    "sp":  91,
+    "dx":  91,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "BAGI",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "ALL",
-              "attribute": "NONE",
-              "race": "ZOMBIE",
-              "magnification": 5
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ZOMBIE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "id": 272,
@@ -1841,25 +1964,23 @@
     "type": "GREEN",
     "race": "DRAGON",
     "cost": 99,
-    "status": {
-      "parameter": {
-        "hp": 114,
-        "mp": 103,
-        "op":  38,
-        "dp":  71,
-        "os":  58,
-        "ds":  98,
-        "sp":  51,
-        "dx":  41
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-          ]
-        }
-      ]
-    }
+    "plusCost": 4,
+    "hp": 114,
+    "mp": 103,
+    "op":  38,
+    "dp":  71,
+    "os":  58,
+    "ds":  98,
+    "sp":  51,
+    "dx":  41,
+    "damages": [
+    ],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 272,
@@ -1868,25 +1989,23 @@
     "type": "GREEN",
     "race": "DRAGON",
     "cost": 99,
-    "status": {
-      "parameter": {
-        "hp": 100,
-        "mp":  90,
-        "op":  33,
-        "dp":  62,
-        "os":  51,
-        "ds":  86,
-        "sp":  45,
-        "dx":  36
-      },
-      "effects": [
-        {
-          "plusCost": 3,
-          "damages": [
-          ]
-        }
-      ]
-    }
+    "plusCost": 3,
+    "hp": 100,
+    "mp":  90,
+    "op":  33,
+    "dp":  62,
+    "os":  51,
+    "ds":  86,
+    "sp":  45,
+    "dx":  36,
+    "damages": [
+    ],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 8
+      }
+    ]
   },
   {
     "id": 272,
@@ -1895,25 +2014,23 @@
     "type": "GREEN",
     "race": "DRAGON",
     "cost": 99,
-    "status": {
-      "parameter": {
-        "hp":  93,
-        "mp":  83,
-        "op":  31,
-        "dp":  57,
-        "os":  47,
-        "ds":  80,
-        "sp":  42,
-        "dx":  34
-      },
-      "effects": [
-        {
-          "plusCost": 2,
-          "damages": [
-          ]
-        }
-      ]
-    }
+    "plusCost": 2,
+    "hp":  93,
+    "mp":  83,
+    "op":  31,
+    "dp":  57,
+    "os":  47,
+    "ds":  80,
+    "sp":  42,
+    "dx":  34,
+    "damages": [
+    ],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 6
+      }
+    ]
   },
   {
     "id": 264,
@@ -1922,61 +2039,53 @@
     "type": "RED",
     "race": "DRAGON",
     "cost": 87,
-    "status": {
-      "parameter": {
-        "hp":  83,
-        "mp":  35,
-        "op":  77,
-        "dp":  47,
-        "os":  12,
-        "ds":  12,
-        "sp":  70,
-        "dx":  62
+    "plusCost": 4,
+    "hp":  83,
+    "mp":  35,
+    "op":  77,
+    "dp":  47,
+    "os":  12,
+    "ds":  12,
+    "sp":  70,
+    "dx":  62,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "JIBARIA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "JIBARIA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "IO",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "IO",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 253,
@@ -1985,61 +2094,53 @@
     "type": "RED",
     "race": "BIRD",
     "cost": 81,
-    "status": {
-      "parameter": {
-        "hp":  51,
-        "mp":  26,
-        "op": 101,
-        "dp":  22,
-        "os":   6,
-        "ds":   6,
-        "sp":  80,
-        "dx":  76
+    "plusCost": 4,
+    "hp":  51,
+    "mp":  26,
+    "op": 101,
+    "dp":  22,
+    "os":   6,
+    "ds":   6,
+    "sp":  80,
+    "dx":  76,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "BAGI",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "BAGI",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 250,
@@ -2048,49 +2149,41 @@
     "type": "BLUE",
     "race": "INSECT",
     "cost": 99,
-    "status": {
-      "parameter": {
-        "hp":  79,
-        "mp":  36,
-        "op":  80,
-        "dp":  47,
-        "os":  13,
-        "ds":  13,
-        "sp":  67,
-        "dx":  59
+    "plusCost": 3,
+    "hp":  79,
+    "mp":  36,
+    "op":  80,
+    "dp":  47,
+    "os":  13,
+    "ds":  13,
+    "sp":  67,
+    "dx":  59,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "ALL",
-              "attribute": "NONE",
-              "race": "INSECT",
-              "magnification": 3
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "INSECT",
+        "magnification": 3
+      }
+    ]
   },
   {
     "id": 246,
@@ -2099,31 +2192,23 @@
     "type": "YELLOW",
     "race": "ZOMBIE",
     "cost": 92,
-    "status": {
-      "parameter": {
-        "hp": 108,
-        "mp":  46,
-        "op":  34,
-        "dp":  69,
-        "os":  31,
-        "ds":  60,
-        "sp":  30,
-        "dx":  47
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+    "plusCost": 4,
+    "hp": 108,
+    "mp":  46,
+    "op":  34,
+    "dp":  69,
+    "os":  31,
+    "ds":  60,
+    "sp":  30,
+    "dx":  47,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 245,
@@ -2132,31 +2217,23 @@
     "type": "RED",
     "race": "BIRD",
     "cost": 98,
-    "status": {
-      "parameter": {
-        "hp":  83,
-        "mp":  35,
-        "op":  78,
-        "dp":  47,
-        "os":  12,
-        "ds":  12,
-        "sp":  68,
-        "dx":  60
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+    "plusCost": 4,
+    "hp":  83,
+    "mp":  35,
+    "op":  78,
+    "dp":  47,
+    "os":  12,
+    "ds":  12,
+    "sp":  68,
+    "dx":  60,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 243,
@@ -2165,49 +2242,41 @@
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 86,
-    "status": {
-      "parameter": {
-        "hp":  74,
-        "mp":  40,
-        "op":  74,
-        "dp":  43,
-        "os":  13,
-        "ds":  26,
-        "sp":  50,
-        "dx":  20
+    "plusCost": 2,
+    "hp":  74,
+    "mp":  40,
+    "op":  74,
+    "dp":  43,
+    "os":  13,
+    "ds":  26,
+    "sp":  50,
+    "dx":  20,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
       },
-      "effects": [
-        {
-          "plusCost": 2,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DORUMA",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "DORUMA",
-              "race": "NONE",
-              "magnification": 5
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "id": 234,
@@ -2216,31 +2285,23 @@
     "type": "PURPLE",
     "race": "SECRET",
     "cost": 84,
-    "status": {
-      "parameter": {
-        "hp":  57,
-        "mp":  88,
-        "op":   7,
-        "dp":  27,
-        "os": 117,
-        "ds":  43,
-        "sp":  85,
-        "dx":  77
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SPELL",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+    "plusCost": 4,
+    "hp":  57,
+    "mp":  88,
+    "op":   7,
+    "dp":  27,
+    "os": 117,
+    "ds":  43,
+    "sp":  85,
+    "dx":  77,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 232,
@@ -2249,25 +2310,23 @@
     "type": "GREEN",
     "race": "SECRET",
     "cost": 77,
-    "status": {
-      "parameter": {
-        "hp": 108,
-        "mp":  67,
-        "op":  44,
-        "dp":  41,
-        "os":  33,
-        "ds":  55,
-        "sp":  55,
-        "dx":  41
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-          ]
-        }
-      ]
-    }
+    "plusCost": 4,
+    "hp": 108,
+    "mp":  67,
+    "op":  44,
+    "dp":  41,
+    "os":  33,
+    "ds":  55,
+    "sp":  55,
+    "dx":  41,
+    "damages": [
+    ],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 231,
@@ -2276,55 +2335,47 @@
     "type": "RED",
     "race": "DRAGON",
     "cost": 80,
-    "status": {
-      "parameter": {
-        "hp":  76,
-        "mp":  32,
-        "op":  71,
-        "dp":  43,
-        "os":  11,
-        "ds":  11,
-        "sp":  66,
-        "dx":  58
+    "plusCost": 4,
+    "hp":  76,
+    "mp":  32,
+    "op":  71,
+    "dp":  43,
+    "os":  11,
+    "ds":  11,
+    "sp":  66,
+    "dx":  58,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "BAGI",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "BAGI",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 225,
@@ -2333,49 +2384,41 @@
     "type": "YELLOW",
     "race": "ANIMAL",
     "cost": 99,
-    "status": {
-      "parameter": {
-        "hp":  94,
-        "mp":  44,
-        "op":  59,
-        "dp":  71,
-        "os":  29,
-        "ds":  29,
-        "sp":  44,
-        "dx":  44
+    "plusCost": 3,
+    "hp":  94,
+    "mp":  44,
+    "op":  59,
+    "dp":  71,
+    "os":  29,
+    "ds":  29,
+    "sp":  44,
+    "dx":  44,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "BAGI",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "ALL",
-              "attribute": "NONE",
-              "race": "ANIMAL",
-              "magnification": 5
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ANIMAL",
+        "magnification": 5
+      }
+    ]
   },
   {
     "id": 207,
@@ -2384,61 +2427,78 @@
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 77,
-    "status": {
-      "parameter": {
-        "hp":  51,
-        "mp":  22,
-        "op":  77,
-        "dp":  33,
-        "os":  21,
-        "ds":  15,
-        "sp":  36,
-        "dx":   7
+    "plusCost": 4,
+    "hp":  51,
+    "mp":  22,
+    "op":  77,
+    "dp":  33,
+    "os":  21,
+    "ds":  15,
+    "sp":  36,
+    "dx":   7,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "IO",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "IO",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "id": 201,
+    "name": "メタルホイミン",
+    "rank": "S",
+    "type": "GREEN",
+    "race": "SLIME",
+    "cost": 78,
+    "plusCost": 4,
+    "hp":  73,
+    "mp":  74,
+    "op":  24,
+    "dp":  45,
+    "os":  37,
+    "ds":  62,
+    "sp":  35,
+    "dx":  28,
+    "damages": [
+    ],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 192,
@@ -2447,49 +2507,41 @@
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 77,
-    "status": {
-      "parameter": {
-        "hp":  91,
-        "mp":  66,
-        "op":  55,
-        "dp":  53,
-        "os":  32,
-        "ds":  35,
-        "sp":  91,
-        "dx":  71
+    "plusCost": 4,
+    "hp":  91,
+    "mp":  66,
+    "op":  55,
+    "dp":  53,
+    "os":  32,
+    "ds":  35,
+    "sp":  91,
+    "dx":  71,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 189,
@@ -2498,49 +2550,41 @@
     "type": "RED",
     "race": "DRAGON",
     "cost": 69,
-    "status": {
-      "parameter": {
-        "hp":  78,
-        "mp":  29,
-        "op":  57,
-        "dp":  37,
-        "os":  10,
-        "ds":  10,
-        "sp":  62,
-        "dx":  77
+    "plusCost": 4,
+    "hp":  78,
+    "mp":  29,
+    "op":  57,
+    "dp":  37,
+    "os":  10,
+    "ds":  10,
+    "sp":  62,
+    "dx":  77,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 184,
@@ -2549,31 +2593,23 @@
     "type": "RED",
     "race": "DRAGON",
     "cost": 44,
-    "status": {
-      "parameter": {
-        "hp":  49,
-        "mp":  16,
-        "op":  35,
-        "dp":  22,
-        "os":   8,
-        "ds":   8,
-        "sp":  39,
-        "dx":  49
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+    "plusCost": 4,
+    "hp":  49,
+    "mp":  16,
+    "op":  35,
+    "dp":  22,
+    "os":   8,
+    "ds":   8,
+    "sp":  39,
+    "dx":  49,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 182,
@@ -2582,37 +2618,29 @@
     "type": "BLUE",
     "race": "DRAGON",
     "cost": 68,
-    "status": {
-      "parameter": {
-        "hp":  66,
-        "mp":  48,
-        "op":  39,
-        "dp":  38,
-        "os":  23,
-        "ds":  25,
-        "sp":  67,
-        "dx":  51
+    "plusCost": 3,
+    "hp":  66,
+    "mp":  48,
+    "op":  39,
+    "dp":  38,
+    "os":  23,
+    "ds":  25,
+    "sp":  67,
+    "dx":  51,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 6
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 6
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
+      }
+    ]
   },
   {
     "id": 169,
@@ -2621,49 +2649,41 @@
     "type": "RED",
     "race": "DEVIL",
     "cost": 92,
-    "status": {
-      "parameter": {
-        "hp":  87,
-        "mp":  37,
-        "op":  81,
-        "dp":  49,
-        "os":  13,
-        "ds":  13,
-        "sp":  72,
-        "dx":  64
+    "plusCost": 4,
+    "hp":  87,
+    "mp":  37,
+    "op":  81,
+    "dp":  49,
+    "os":  13,
+    "ds":  13,
+    "sp":  72,
+    "dx":  64,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "ALL",
-              "attribute": "NONE",
-              "race": "DEVIL",
-              "magnification": 5
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "DEVIL",
+        "magnification": 5
+      }
+    ]
   },
   {
     "id": 153,
@@ -2672,55 +2692,47 @@
     "type": "BLUE",
     "race": "ZOMBIE",
     "cost": 99,
-    "status": {
-      "parameter": {
-        "hp": 93,
-        "mp": 56,
-        "op": 64,
-        "dp": 61,
-        "os": 29,
-        "ds": 26,
-        "sp": 85,
-        "dx": 85
+    "plusCost": 3,
+    "hp": 93,
+    "mp": 56,
+    "op": 64,
+    "dp": 61,
+    "os": 29,
+    "ds": 26,
+    "sp": 85,
+    "dx": 85,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
       },
-      "effects": [
-        {
-          "plusCost": 3,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "ALL",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "ALL",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "IO",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "HIT",
-              "attribute": "IO",
-              "race": "NONE",
-              "magnification": 3
-            },
-            {
-              "attack": "ALL",
-              "attribute": "NONE",
-              "race": "ZOMBIE",
-              "magnification": 5
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ZOMBIE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "id": 152,
@@ -2729,49 +2741,66 @@
     "type": "RED",
     "race": "BIRD",
     "cost": 81,
-    "status": {
-      "parameter": {
-        "hp":  78,
-        "mp":  33,
-        "op":  72,
-        "dp":  44,
-        "os":  18,
-        "ds":  18,
-        "sp":  67,
-        "dx":  59
+    "plusCost": 4,
+    "hp":  78,
+    "mp":  33,
+    "op":  72,
+    "dp":  44,
+    "os":  18,
+    "ds":  18,
+    "sp":  67,
+    "dx":  59,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DORUMA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "DORUMA",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "id": 147,
+    "name": "ドラゴスライム",
+    "rank": "S",
+    "type": "GREEN",
+    "race": "SLIME",
+    "cost": 71,
+    "plusCost": 4,
+    "hp":  69,
+    "mp":  68,
+    "op":  34,
+    "dp":  37,
+    "os":  25,
+    "ds":  52,
+    "sp":  35,
+    "dx":  31,
+    "damages": [
+    ],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 145,
@@ -2780,37 +2809,29 @@
     "type": "BLUE",
     "race": "SLIME",
     "cost": 75,
-    "status": {
-      "parameter": {
-        "hp":  40,
-        "mp":  58,
-        "op":  81,
-        "dp":  23,
-        "os":  28,
-        "ds":  31,
-        "sp": 120,
-        "dx":  74
+    "plusCost": 4,
+    "hp":  40,
+    "mp":  58,
+    "op":  81,
+    "dp":  23,
+    "os":  28,
+    "ds":  31,
+    "sp": 120,
+    "dx":  74,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 137,
@@ -2819,49 +2840,41 @@
     "type": "RED",
     "race": "ANIMAL",
     "cost": 92,
-    "status": {
-      "parameter": {
-        "hp": 127,
-        "mp":  54,
-        "op":  73,
-        "dp":  55,
-        "os":  14,
-        "ds":  14,
-        "sp":  57,
-        "dx":  50
+    "plusCost": 4,
+    "hp": 127,
+    "mp":  54,
+    "op":  73,
+    "dp":  55,
+    "os":  14,
+    "ds":  14,
+    "sp":  57,
+    "dx":  50,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 137,
@@ -2870,49 +2883,41 @@
     "type": "RED",
     "race": "ANIMAL",
     "cost": 92,
-    "status": {
-      "parameter": {
-        "hp": 112,
-        "mp":  47,
-        "op":  64,
-        "dp":  49,
-        "os":  13,
-        "ds":  13,
-        "sp":  50,
-        "dx":  44
+    "plusCost": 3,
+    "hp": 112,
+    "mp":  47,
+    "op":  64,
+    "dp":  49,
+    "os":  13,
+    "ds":  13,
+    "sp":  50,
+    "dx":  44,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 8
       },
-      "effects": [
-        {
-          "plusCost": 3,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 8
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 8
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 8
-            },
-            {
-              "attack": "HIT",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 8
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 8
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 8
+      },
+      {
+        "attack": "HIT",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 8
+      }
+    ]
   },
   {
     "id": 137,
@@ -2921,49 +2926,41 @@
     "type": "RED",
     "race": "ANIMAL",
     "cost": 92,
-    "status": {
-      "parameter": {
-        "hp": 103,
-        "mp":  44,
-        "op":  59,
-        "dp":  45,
-        "os":  12,
-        "ds":  12,
-        "sp":  46,
-        "dx":  41
+    "plusCost": 2,
+    "hp": 103,
+    "mp":  44,
+    "op":  59,
+    "dp":  45,
+    "os":  12,
+    "ds":  12,
+    "sp":  46,
+    "dx":  41,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 6
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 6
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 6
-            },
-            {
-              "attack": "HIT",
-              "attribute": "HYADO",
-              "race": "NONE",
-              "magnification": 6
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "HIT",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 6
+      }
+    ]
   },
   {
     "id": 105,
@@ -2972,37 +2969,29 @@
     "type": "YELLOW",
     "race": "MACHINE",
     "cost": 77,
-    "status": {
-      "parameter": {
-        "hp": 114,
-        "mp":  48,
-        "op":  58,
-        "dp":  61,
-        "os":  24,
-        "ds":  17,
-        "sp":  25,
-        "dx":  16
+    "plusCost": 4,
+    "hp": 114,
+    "mp":  48,
+    "op":  58,
+    "dp":  61,
+    "os":  24,
+    "ds":  17,
+    "sp":  25,
+    "dx":  16,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 12
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 12
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 12
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 12
+      }
+    ]
   },
   {
     "id": 105,
@@ -3011,37 +3000,29 @@
     "type": "YELLOW",
     "race": "MACHINE",
     "cost": 77,
-    "status": {
-      "parameter": {
-        "hp": 100,
-        "mp":  42,
-        "op":  51,
-        "dp":  54,
-        "os":  21,
-        "ds":  15,
-        "sp":  22,
-        "dx":  14
+    "plusCost": 3,
+    "hp": 100,
+    "mp":  42,
+    "op":  51,
+    "dp":  54,
+    "os":  21,
+    "ds":  15,
+    "sp":  22,
+    "dx":  14,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
       },
-      "effects": [
-        {
-          "plusCost": 3,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 103,
@@ -3050,31 +3031,23 @@
     "type": "RED",
     "race": "MACHINE",
     "cost": 53,
-    "status": {
-      "parameter": {
-        "hp":  29,
-        "mp":  20,
-        "op":  70,
-        "dp":  13,
-        "os":   8,
-        "ds":   8,
-        "sp":  55,
-        "dx":  85
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+    "plusCost": 4,
+    "hp":  29,
+    "mp":  20,
+    "op":  70,
+    "dp":  13,
+    "os":   8,
+    "ds":   8,
+    "sp":  55,
+    "dx":  85,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 95,
@@ -3083,31 +3056,23 @@
     "type": "RED",
     "race": "BIRD",
     "cost": 54,
-    "status": {
-      "parameter": {
-        "hp":  73,
-        "mp":  25,
-        "op":  53,
-        "dp":  34,
-        "os":  10,
-        "ds":  10,
-        "sp":  58,
-        "dx":  73
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+    "plusCost": 4,
+    "hp":  73,
+    "mp":  25,
+    "op":  53,
+    "dp":  34,
+    "os":  10,
+    "ds":  10,
+    "sp":  58,
+    "dx":  73,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 72,
@@ -3116,31 +3081,23 @@
     "type": "RED",
     "race": "ANIMAL",
     "cost": 75,
-    "status": {
-      "parameter": {
-        "hp":  74,
-        "mp":  28,
-        "op":  54,
-        "dp":  36,
-        "os":   9,
-        "ds":   9,
-        "sp":  59,
-        "dx":  72
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+    "plusCost": 4,
+    "hp":  74,
+    "mp":  28,
+    "op":  54,
+    "dp":  36,
+    "os":   9,
+    "ds":   9,
+    "sp":  59,
+    "dx":  72,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 68,
@@ -3149,37 +3106,29 @@
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 39,
-    "status": {
-      "parameter": {
-        "hp":  27,
-        "mp":  38,
-        "op":  52,
-        "dp":  15,
-        "os":  17,
-        "ds":  18,
-        "sp":  83,
-        "dx":  50
+    "plusCost": 4,
+    "hp":  27,
+    "mp":  38,
+    "op":  52,
+    "dp":  15,
+    "os":  17,
+    "ds":  18,
+    "sp":  83,
+    "dx":  50,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 68,
@@ -3188,37 +3137,29 @@
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 39,
-    "status": {
-      "parameter": {
-        "hp":  24,
-        "mp":  33,
-        "op":  46,
-        "dp":  13,
-        "os":  15,
-        "ds":  16,
-        "sp":  73,
-        "dx":  44
+    "plusCost": 3,
+    "hp":  24,
+    "mp":  33,
+    "op":  46,
+    "dp":  13,
+    "os":  15,
+    "ds":  16,
+    "sp":  73,
+    "dx":  44,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 8
       },
-      "effects": [
-        {
-          "plusCost": 3,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 8
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 8
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 8
+      }
+    ]
   },
   {
     "id": 68,
@@ -3227,37 +3168,29 @@
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 39,
-    "status": {
-      "parameter": {
-        "hp":  22,
-        "mp":  31,
-        "op":  42,
-        "dp":  12,
-        "os":  14,
-        "ds":  15,
-        "sp":  67,
-        "dx":  41
+    "plusCost": 2,
+    "hp":  22,
+    "mp":  31,
+    "op":  42,
+    "dp":  12,
+    "os":  14,
+    "ds":  15,
+    "sp":  67,
+    "dx":  41,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
       },
-      "effects": [
-        {
-          "plusCost": 2,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 68,
@@ -3266,37 +3199,29 @@
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 39,
-    "status": {
-      "parameter": {
-        "hp":  20,
-        "mp":  28,
-        "op":  39,
-        "dp":  11,
-        "os":  13,
-        "ds":  14,
-        "sp":  62,
-        "dx":  37
+    "plusCost": 0,
+    "hp":  20,
+    "mp":  28,
+    "op":  39,
+    "dp":  11,
+    "os":  13,
+    "ds":  14,
+    "sp":  62,
+    "dx":  37,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
       },
-      "effects": [
-        {
-          "plusCost": 0,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 6
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 6
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
+      }
+    ]
   },
   {
     "id": 46,
@@ -3305,32 +3230,23 @@
     "type": "RED",
     "race": "ANIMAL",
     "cost": 33,
-    "status": {
-      "parameter": {
-        "hp":  42,
-        "mp":  13,
-        "op":  30,
-        "dp":  18,
-        "os":   6,
-        "ds":   6,
-        "sp":  34,
-        "dx":  43
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ],
-          "critical": 4
-        }
-      ]
-    }
+    "plusCost": 4,
+    "hp":  42,
+    "mp":  13,
+    "op":  30,
+    "dp":  18,
+    "os":   6,
+    "ds":   6,
+    "sp":  34,
+    "dx":  43,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 34,
@@ -3339,64 +3255,23 @@
     "type": "PURPLE",
     "race": "PHANTOM",
     "cost": 24,
-    "status": {
-      "parameter": {
-        "hp":  23,
-        "mp":  40,
-        "op":  11,
-        "dp":   8,
-        "os":  43,
-        "ds":   8,
-        "sp":  29,
-        "dx":  30
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SPELL",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "id": 34,
-    "name": "ドルイド",
-    "rank": "S",
-    "type": "PURPLE",
-    "race": "PHANTOM",
-    "cost": 24,
-    "status": {
-      "parameter": {
-        "hp":  23,
-        "mp":  40,
-        "op":  11,
-        "dp":   8,
-        "os":  43,
-        "ds":   8,
-        "sp":  29,
-        "dx":  30
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SPELL",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+    "plusCost": 4,
+    "hp":  23,
+    "mp":  40,
+    "op":  11,
+    "dp":   8,
+    "os":  43,
+    "ds":   8,
+    "sp":  29,
+    "dx":  30,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 34,
@@ -3405,31 +3280,23 @@
     "type": "PURPLE",
     "race": "PHANTOM",
     "cost": 24,
-    "status": {
-      "parameter": {
-        "hp":  20,
-        "mp":  35,
-        "op":  10,
-        "dp":   7,
-        "os":  38,
-        "ds":   7,
-        "sp":  25,
-        "dx":  26
-      },
-      "effects": [
-        {
-          "plusCost": 3,
-          "damages": [
-            {
-              "attack": "SPELL",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 8
-            }
-          ]
-        }
-      ]
-    }
+    "plusCost": 3,
+    "hp":  20,
+    "mp":  35,
+    "op":  10,
+    "dp":   7,
+    "os":  38,
+    "ds":   7,
+    "sp":  25,
+    "dx":  26,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 8
+      }
+    ]
   },
   {
     "id": 34,
@@ -3438,31 +3305,23 @@
     "type": "PURPLE",
     "race": "PHANTOM",
     "cost": 24,
-    "status": {
-      "parameter": {
-        "hp":  19,
-        "mp":  32,
-        "op":   9,
-        "dp":   6,
-        "os":  35,
-        "ds":   7,
-        "sp":  23,
-        "dx":  24
-      },
-      "effects": [
-        {
-          "plusCost": 2,
-          "damages": [
-            {
-              "attack": "SPELL",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+    "plusCost": 2,
+    "hp":  19,
+    "mp":  32,
+    "op":   9,
+    "dp":   6,
+    "os":  35,
+    "ds":   7,
+    "sp":  23,
+    "dx":  24,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 13,
@@ -3471,49 +3330,41 @@
     "type": "RED",
     "race": "DRAGON",
     "cost": 17,
-    "status": {
-      "parameter": {
-        "hp":  24,
-        "mp":   7,
-        "op":  16,
-        "dp":  10,
-        "os":   4,
-        "ds":   4,
-        "sp":  19,
-        "dx":  24
+    "plusCost": 4,
+    "hp":  24,
+    "mp":   7,
+    "op":  16,
+    "dp":  10,
+    "os":   4,
+    "ds":   4,
+    "sp":  19,
+    "dx":  24,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 10
-            },
-            {
-              "attack": "HIT",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 10
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "id": 13,
@@ -3522,49 +3373,41 @@
     "type": "RED",
     "race": "DRAGON",
     "cost": 17,
-    "status": {
-      "parameter": {
-        "hp":  19,
-        "mp":   6,
-        "op":  13,
-        "dp":   8,
-        "os":   3,
-        "ds":   3,
-        "sp":  16,
-        "dx":  20
+    "plusCost": 2,
+    "hp":  19,
+    "mp":   6,
+    "op":  13,
+    "dp":   8,
+    "os":   3,
+    "ds":   3,
+    "sp":  16,
+    "dx":  20,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
       },
-      "effects": [
-        {
-          "plusCost": 2,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 13,
@@ -3573,49 +3416,41 @@
     "type": "RED",
     "race": "DRAGON",
     "cost": 17,
-    "status": {
-      "parameter": {
-        "hp":  18,
-        "mp":   5,
-        "op":  12,
-        "dp":   7,
-        "os":   3,
-        "ds":   3,
-        "sp":  14,
-        "dx":  18
+    "plusCost": 0,
+    "hp":  18,
+    "mp":   5,
+    "op":  12,
+    "dp":   7,
+    "os":   3,
+    "ds":   3,
+    "sp":  14,
+    "dx":  18,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
       },
-      "effects": [
-        {
-          "plusCost": 0,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 6
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 6
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 6
-            },
-            {
-              "attack": "HIT",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 6
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 6
+      }
+    ]
   },
   {
     "id": 13,
@@ -3624,217 +3459,239 @@
     "type": "RED",
     "race": "DRAGON",
     "cost": 17,
-    "status": {
-      "parameter": {
-        "hp":  16,
-        "mp":   5,
-        "op":  11,
-        "dp":   7,
-        "os":   3,
-        "ds":   3,
-        "sp":  13,
-        "dx":  17
+    "hp":  16,
+    "mp":   5,
+    "op":  11,
+    "dp":   7,
+    "os":   3,
+    "ds":   3,
+    "sp":  13,
+    "dx":  17,
+    "plusCost": 0,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
       },
-      "effects": [
-        {
-          "plusCost": 0,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 5
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
-    "id": 10001,
+    "id": 20001,
     "name": "ロトの子孫",
     "rank": "S",
     "type": "YELLOW",
     "race": "SECRET",
     "cost": 99,
-    "status": {
-      "parameter": {
-        "hp":  95,
-        "mp":  55,
-        "op":  67,
-        "dp":  56,
-        "os":  65,
-        "ds":  17,
-        "sp":  50,
-        "dx":  39
-      },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "ALL",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 16
-            }
-          ]
-        }
-      ]
-    }
+    "plusCost": 4,
+    "hp":  95,
+    "mp":  55,
+    "op":  67,
+    "dp":  56,
+    "os":  65,
+    "ds":  17,
+    "sp":  50,
+    "dx":  39,
+    "damages": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 16
+      }
+    ]
   },
   {
-    "id": 10002,
+    "id": 70001,
     "name": "エデンの戦士たち1",
     "rank": "S",
     "type": "BLUE",
     "race": "NONE",
     "cost": 84,
-    "status": {
-      "parameter": {
-        "hp":  95,
-        "mp":  54,
-        "op":  72,
-        "dp":  63,
-        "os":  28,
-        "ds":  26,
-        "sp":  92,
-        "dx":  86
+    "plusCost": 4,
+    "hp":  95,
+    "mp":  54,
+    "op":  72,
+    "dp":  63,
+    "os":  28,
+    "ds":  26,
+    "sp":  92,
+    "dx":  86,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SPELL",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
-    "id": 10003,
+    "id": 70002,
+    "name": "エデンの戦士たち2",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "NONE",
+    "cost": 84,
+    "plusCost": 4,
+    "hp": 107,
+    "mp":  42,
+    "op":  50,
+    "dp":  76,
+    "os":  28,
+    "ds":  28,
+    "sp":  44,
+    "dx":  78,
+    "damages": [
+    ]
+  },
+  {
+    "id": 30001,
     "name": "ハロウィンルイーダ",
     "rank": "S",
     "type": "BLUE",
     "race": "NONE",
     "cost": 66,
-    "status": {
-      "parameter": {
-        "hp":  74,
-        "mp":  53,
-        "op":  44,
-        "dp":  42,
-        "os":  25,
-        "ds":  27,
-        "sp":  75,
-        "dx":  58
+    "plusCost": 4,
+    "hp":  74,
+    "mp":  53,
+    "op":  44,
+    "dp":  42,
+    "os":  25,
+    "ds":  27,
+    "sp":  75,
+    "dx":  58,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
-    "id": 10004,
+    "id": 11101,
+    "name": "アバン",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "NONE",
+    "cost": 87,
+    "plusCost": 3,
+    "hp":  83,
+    "mp":  44,
+    "op":  82,
+    "dp":  47,
+    "os":  15,
+    "ds":  29,
+    "sp":  57,
+    "dx":  23,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "id": 11101,
     "name": "アバン",
     "rank": "A",
     "type": "YELLOW",
     "race": "NONE",
     "cost": 87,
-    "status": {
-      "parameter": {
-        "hp":  73,
-        "mp":  39,
-        "op":  72,
-        "dp":  42,
-        "os":  13,
-        "ds":  26,
-        "sp":  50,
-        "dx":  20
+    "plusCost": 3,
+    "hp":  73,
+    "mp":  39,
+    "op":  72,
+    "dp":  42,
+    "os":  13,
+    "ds":  26,
+    "sp":  50,
+    "dx":  20,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 2
       },
-      "effects": [
-        {
-          "plusCost": 3,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 2
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 2
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 6
-            },
-            {
-              "attack": "HIT",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 6
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 2
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 6
+      }
+    ]
   },
   {
     "id": 50001,
@@ -3843,73 +3700,65 @@
     "type": "YELLOW",
     "race": "NONE",
     "cost": 99,
-    "status": {
-      "parameter": {
-        "hp": 101,
-        "mp":  58,
-        "op":  90,
-        "dp":  80,
-        "os":  30,
-        "ds":  29,
-        "sp":  85,
-        "dx":  85
+    "plusCost": 4,
+    "hp": 101,
+    "mp":  58,
+    "op":  90,
+    "dp":  80,
+    "os":  30,
+    "ds":  29,
+    "sp":  85,
+    "dx":  85,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "BAGI",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "BAGI",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 50002,
@@ -3918,73 +3767,65 @@
     "type": "BLUE",
     "race": "NONE",
     "cost": 99,
-    "status": {
-      "parameter": {
-        "hp": 101,
-        "mp":  58,
-        "op":  90,
-        "dp":  80,
-        "os":  30,
-        "ds":  29,
-        "sp":  85,
-        "dx":  85
+    "plusCost": 4,
+    "hp": 101,
+    "mp":  58,
+    "op":  90,
+    "dp":  80,
+    "os":  30,
+    "ds":  29,
+    "sp":  85,
+    "dx":  85,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "BAGI",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "BAGI",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "id": 50003,
@@ -3993,72 +3834,64 @@
     "type": "RED",
     "race": "NONE",
     "cost": 99,
-    "status": {
-      "parameter": {
-        "hp": 101,
-        "mp":  58,
-        "op":  90,
-        "dp":  80,
-        "os":  30,
-        "ds":  29,
-        "sp":  85,
-        "dx":  85
+    "plusCost": 4,
+    "hp": 101,
+    "mp":  58,
+    "op":  90,
+    "dp":  80,
+    "os":  30,
+    "ds":  29,
+    "sp":  85,
+    "dx":  85,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
       },
-      "effects": [
-        {
-          "plusCost": 4,
-          "damages": [
-            {
-              "attack": "SLASH",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "HIT",
-              "attribute": "NONE",
-              "race": "NONE",
-              "magnification": 5
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "DEIN",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "MERA",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "SLASH",
-              "attribute": "BAGI",
-              "race": "NONE",
-              "magnification": 7
-            },
-            {
-              "attack": "HIT",
-              "attribute": "BAGI",
-              "race": "NONE",
-              "magnification": 7
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   }
 ]

@@ -73,7 +73,7 @@ public class KokoroRestController {
     if (!canPersist) {
       throw new IllegalArgumentException("Cannot persist kokoros...");
     }
-    final Resource kokoroJsonResource = new ClassPathResource("kokoro-new.json");
+    final Resource kokoroJsonResource = new ClassPathResource("kokoro.json");
     try {
       final StopWatch stopWatch = new StopWatch();
       stopWatch.start("kokoros");

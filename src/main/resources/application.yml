@@ -36,7 +36,7 @@ springdoc:
 dqwapi:
   version: $project.version
   path-prefix:
-  kokoro-json: kokoro-new.json
+  kokoro-json: kokoro.json
   kokoro-flat-json: kokoro-flat.json
   kokoro-persist: false
   response: 20
