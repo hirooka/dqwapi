@@ -869,3 +869,9 @@ create index on kokoro_flat_cb_mv(paladin_mera_slash_damage);
 create index on kokoro_flat_cb_mv(sage_specialty_healing);
 create index on kokoro_flat_cb_mv(sage_spell_healing);
 ```
+## 6
+```
+create materialized view kokoro_flat_cb_mv, create index
+  1vCPU, 614.4NB Memory, 10GB HDD -> 9GB 5h30m+index
+  1vCPU, 3.75GB Memory, 150GB SSD -> 9GB 2h20m
+```
