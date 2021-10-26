@@ -1,5 +1,159 @@
 [ {
-  "uuid" : "433267a4-29bd-4abc-b154-a252ade5a6a2",
+  "uuid" : "f82bc7e0-f485-416e-a8e3-b4597a92a711",
+  "id" : 404,
+  "name" : "ミルドラース",
+  "rank" : "S",
+  "type" : "YELLOW",
+  "race" : "SECRET",
+  "cost" : 122,
+  "plusCost" : 4,
+  "hp" : 160,
+  "mp" : 65,
+  "op" : 74,
+  "dp" : 115,
+  "os" : 42,
+  "ds" : 42,
+  "sp" : 38,
+  "dx" : 61,
+  "breathNoneNone" : 0,
+  "hitNoneNone" : 10,
+  "slashNoneNone" : 10,
+  "spellNoneNone" : 0,
+  "allBagiNone" : 0,
+  "allDeinNone" : 0,
+  "allDorumaNone" : 0,
+  "allGiraNone" : 0,
+  "allHyadoNone" : 0,
+  "allIoNone" : 0,
+  "allJibariaNone" : 0,
+  "allMeraNone" : 0,
+  "hitBagiNone" : 10,
+  "hitDeinNone" : 0,
+  "hitDorumaNone" : 0,
+  "hitGiraNone" : 0,
+  "hitHyadoNone" : 0,
+  "hitIoNone" : 0,
+  "hitJibariaNone" : 0,
+  "hitMeraNone" : 0,
+  "slashBagiNone" : 10,
+  "slashDeinNone" : 0,
+  "slashDorumaNone" : 0,
+  "slashGiraNone" : 0,
+  "slashHyadoNone" : 0,
+  "slashIoNone" : 0,
+  "slashJibariaNone" : 0,
+  "slashMeraNone" : 0,
+  "spellBagiNone" : 0,
+  "spellDeinNone" : 0,
+  "spellDorumaNone" : 0,
+  "spellGiraNone" : 0,
+  "spellHyadoNone" : 0,
+  "spellIoNone" : 0,
+  "spellJibariaNone" : 0,
+  "spellMeraNone" : 0,
+  "breathBagiNone" : 0,
+  "breathDeinNone" : 0,
+  "breathDorumaNone" : 0,
+  "breathGiraNone" : 0,
+  "breathHyadoNone" : 0,
+  "breathIoNone" : 0,
+  "breathJibariaNone" : 0,
+  "breathMeraNone" : 0,
+  "allNoneAnimal" : 0,
+  "allNoneBird" : 0,
+  "allNoneDevil" : 0,
+  "allNoneDragon" : 0,
+  "allNoneElement" : 0,
+  "allNoneInsect" : 0,
+  "allNoneMachine" : 0,
+  "allNoneMaterial" : 0,
+  "allNonePhantom" : 0,
+  "allNonePlant" : 0,
+  "allNoneSlime" : 0,
+  "allNoneWater" : 0,
+  "allNoneZombie" : 0,
+  "healingSkill" : 0,
+  "healingSpecialty" : 0,
+  "healingSpell" : 0
+}, {
+  "uuid" : "332047b9-c04e-49da-aff6-6937ae27cbea",
+  "id" : 404,
+  "name" : "ミルドラース",
+  "rank" : "A",
+  "type" : "YELLOW",
+  "race" : "SECRET",
+  "cost" : 122,
+  "plusCost" : 3,
+  "hp" : 128,
+  "mp" : 51,
+  "op" : 59,
+  "dp" : 92,
+  "os" : 34,
+  "ds" : 34,
+  "sp" : 31,
+  "dx" : 49,
+  "breathNoneNone" : 0,
+  "hitNoneNone" : 7,
+  "slashNoneNone" : 7,
+  "spellNoneNone" : 0,
+  "allBagiNone" : 0,
+  "allDeinNone" : 0,
+  "allDorumaNone" : 0,
+  "allGiraNone" : 0,
+  "allHyadoNone" : 0,
+  "allIoNone" : 0,
+  "allJibariaNone" : 0,
+  "allMeraNone" : 0,
+  "hitBagiNone" : 6,
+  "hitDeinNone" : 0,
+  "hitDorumaNone" : 0,
+  "hitGiraNone" : 0,
+  "hitHyadoNone" : 0,
+  "hitIoNone" : 0,
+  "hitJibariaNone" : 0,
+  "hitMeraNone" : 0,
+  "slashBagiNone" : 6,
+  "slashDeinNone" : 0,
+  "slashDorumaNone" : 0,
+  "slashGiraNone" : 0,
+  "slashHyadoNone" : 0,
+  "slashIoNone" : 0,
+  "slashJibariaNone" : 0,
+  "slashMeraNone" : 0,
+  "spellBagiNone" : 0,
+  "spellDeinNone" : 0,
+  "spellDorumaNone" : 0,
+  "spellGiraNone" : 0,
+  "spellHyadoNone" : 0,
+  "spellIoNone" : 0,
+  "spellJibariaNone" : 0,
+  "spellMeraNone" : 0,
+  "breathBagiNone" : 0,
+  "breathDeinNone" : 0,
+  "breathDorumaNone" : 0,
+  "breathGiraNone" : 0,
+  "breathHyadoNone" : 0,
+  "breathIoNone" : 0,
+  "breathJibariaNone" : 0,
+  "breathMeraNone" : 0,
+  "allNoneAnimal" : 0,
+  "allNoneBird" : 0,
+  "allNoneDevil" : 0,
+  "allNoneDragon" : 0,
+  "allNoneElement" : 0,
+  "allNoneInsect" : 0,
+  "allNoneMachine" : 0,
+  "allNoneMaterial" : 0,
+  "allNonePhantom" : 0,
+  "allNonePlant" : 0,
+  "allNoneSlime" : 0,
+  "allNoneWater" : 0,
+  "allNoneZombie" : 0,
+  "healingSkill" : 0,
+  "healingSpecialty" : 0,
+  "healingSpell" : 0
+}, {
+  "uuid" : "2f9047c4-a4c1-4887-9369-ea47ec9a8fdf",
   "id" : 403,
   "name" : "イブール",
   "rank" : "S",
@@ -76,7 +230,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "4c73f9bd-9202-4314-93ff-e10b2e87d077",
+  "uuid" : "947b62aa-e616-4ed4-9308-169f4ccdc281",
   "id" : 403,
   "name" : "イブール",
   "rank" : "A",
@@ -153,7 +307,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "95cf6b14-9e97-4d90-94a2-68635d83eee5",
+  "uuid" : "a477e621-cd8e-469b-95e2-8de7e87add3c",
   "id" : 402,
   "name" : "ゲマ",
   "rank" : "S",
@@ -230,7 +384,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "831cce97-9af3-43fb-a05f-214d64a62124",
+  "uuid" : "fc0e5786-0f7b-4e75-a754-3e5eef26afc3",
   "id" : 402,
   "name" : "ゲマ",
   "rank" : "A",
@@ -307,7 +461,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "2de09160-1ce9-4f84-a58e-897ad4ef6945",
+  "uuid" : "bebe8e10-6f6b-486e-b00d-d223e627cb77",
   "id" : 401,
   "name" : "ようがんげんじん",
   "rank" : "S",
@@ -384,7 +538,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "de77a706-eb36-4355-8aa2-a4d9e5fe34ca",
+  "uuid" : "7ad6272c-3f00-4f04-855a-5d07dc1fb4a7",
   "id" : 401,
   "name" : "ようがんげんじん",
   "rank" : "A",
@@ -461,7 +615,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "73c404f4-ee79-4ec7-9127-7200028edec9",
+  "uuid" : "5736cadd-3cf1-4ff6-a5d9-fbee6ff70406",
   "id" : 401,
   "name" : "ようがんげんじん",
   "rank" : "B",
@@ -538,7 +692,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "0b53738e-7e1c-421f-8b99-9c6547a21e97",
+  "uuid" : "c8225852-e84b-4f18-8231-3039fdd5353b",
   "id" : 400,
   "name" : "ゴンズ",
   "rank" : "S",
@@ -615,7 +769,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "f6d39a94-3052-4eec-a3aa-380d4429d7c8",
+  "uuid" : "fa5431dd-4b6e-4549-8d98-e1b48630775a",
   "id" : 400,
   "name" : "ゴンズ",
   "rank" : "A",
@@ -692,7 +846,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "a5c2cd6f-63be-40aa-b18d-efc562c837f3",
+  "uuid" : "de29db4a-1fb4-4c90-b6b5-302ddb008c07",
   "id" : 400,
   "name" : "ゴンズ",
   "rank" : "B",
@@ -769,7 +923,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "daff00ff-9a24-4e0b-8fd0-5396b2ee3065",
+  "uuid" : "c9dad1c3-ce21-4cda-8a8e-e6a855619634",
   "id" : 399,
   "name" : "ジャミ",
   "rank" : "S",
@@ -846,7 +1000,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "89eb0623-413a-4e80-9d67-61b8a35747fc",
+  "uuid" : "19502041-03f3-446c-ac44-03383a24cc28",
   "id" : 398,
   "name" : "グレイトドラゴン",
   "rank" : "S",
@@ -923,7 +1077,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "174a3932-0add-435f-9331-31a2ae666541",
+  "uuid" : "9c9dedba-17e2-4d45-9637-9ba6b6b196f6",
   "id" : 397,
   "name" : "ゆきのじょおう",
   "rank" : "S",
@@ -1000,7 +1154,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "af08c903-4ff0-43f2-845c-f6f89220e766",
+  "uuid" : "b52ff616-b28b-4c0c-b27f-49f4b9cfe6bc",
   "id" : 396,
   "name" : "バズールカンダタ",
   "rank" : "S",
@@ -1077,7 +1231,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "a6b748ac-d9e3-42c3-8278-934a4b760ee4",
+  "uuid" : "b02c360f-bfe8-4ed2-8238-70177b134521",
   "id" : 395,
   "name" : "オオヌシガルーダ",
   "rank" : "S",
@@ -1154,7 +1308,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "1098565a-c321-4606-9f94-792021bfd43b",
+  "uuid" : "40414b1b-d2de-4032-a162-e48ef6256907",
   "id" : 394,
   "name" : "ジャンボきづち",
   "rank" : "S",
@@ -1231,7 +1385,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "d9eea1b2-c09e-4bfb-817e-614e83e23b7b",
+  "uuid" : "dbc7a214-3a07-4a78-bbda-3c70410a2f8b",
   "id" : 388,
   "name" : "おにこんぼう",
   "rank" : "S",
@@ -1308,7 +1462,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "109275f0-25a0-4801-87df-2a514dbd06f4",
+  "uuid" : "35dea0df-375c-422f-b580-dd0136083619",
   "id" : 382,
   "name" : "イズライール",
   "rank" : "S",
@@ -1385,7 +1539,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "a49317bd-9c09-4002-a933-17c3b0e4f729",
+  "uuid" : "d6bfe34f-1ea5-450f-add1-1322ae0094e7",
   "id" : 379,
   "name" : "破壊神シドー",
   "rank" : "S",
@@ -1462,7 +1616,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "ac0d1de4-fa9c-4d05-b1f2-f553e8dbcc4e",
+  "uuid" : "747fd878-a36f-44ff-ade6-756d0451fc7c",
   "id" : 377,
   "name" : "大神官ハーゴン",
   "rank" : "S",
@@ -1539,7 +1693,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "3ee74826-5fb8-4ab6-9c23-ebd50b616293",
+  "uuid" : "38b7568c-e12e-45a2-8558-31e57fdf47d3",
   "id" : 376,
   "name" : "ベリアル",
   "rank" : "S",
@@ -1616,7 +1770,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "1bda933f-373c-4049-8398-48c5a360867a",
+  "uuid" : "15e62afd-8c68-4fe6-9ba3-511af00d16ee",
   "id" : 374,
   "name" : "アトラス",
   "rank" : "S",
@@ -1693,7 +1847,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "858e40b9-083e-4fce-94f8-9e41ad89ef2f",
+  "uuid" : "07fb26a7-863a-4713-a749-39f78b30e58b",
   "id" : 373,
   "name" : "アックスドラゴン",
   "rank" : "S",
@@ -1770,7 +1924,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "b84de176-6278-4908-8380-aef21543a925",
+  "uuid" : "1d4b5c29-8633-45b6-bda9-0bb7c45b9a58",
   "id" : 372,
   "name" : "竜王",
   "rank" : "S",
@@ -1847,7 +2001,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "bec68660-c922-4d69-b291-ff81bb47267b",
+  "uuid" : "8e29da92-b084-4b3c-9035-616a9456b92d",
   "id" : 364,
   "name" : "碧落天バリゲーン",
   "rank" : "S",
@@ -1924,7 +2078,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "752cd3b8-699a-4118-adf8-f63543d55cde",
+  "uuid" : "e4313c76-b046-4d48-8961-1be66eece275",
   "id" : 359,
   "name" : "アークデーモン",
   "rank" : "S",
@@ -2001,7 +2155,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "a967dc1a-1f20-4e1f-83a0-3b2263080675",
+  "uuid" : "65071094-58fa-496a-a027-6596d2b301b0",
   "id" : 354,
   "name" : "ブラックチャック",
   "rank" : "S",
@@ -2078,7 +2232,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "575adf6d-b998-4e1f-a1f6-f6c59624147b",
+  "uuid" : "2215a3fe-597a-4ab1-b227-960c885d0652",
   "id" : 351,
   "name" : "メガゴールドマン",
   "rank" : "S",
@@ -2155,7 +2309,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "2e66fa34-5589-49ce-b3dc-51c07a37ae01",
+  "uuid" : "9ba57be6-9a17-42d4-8a5a-5cf4e678ee95",
   "id" : 349,
   "name" : "オルゴ・デミーラ",
   "rank" : "S",
@@ -2232,7 +2386,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "df93534d-1761-4823-8b6f-4ed722142a99",
+  "uuid" : "aba312ce-29f7-4d27-91c8-15d0531e455c",
   "id" : 347,
   "name" : "メカバーン",
   "rank" : "S",
@@ -2309,7 +2463,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "b4a2af67-ccdd-4361-adab-f6b3534c642d",
+  "uuid" : "23c775cb-1fc5-4920-9f69-6b4190bb5491",
   "id" : 346,
   "name" : "ヘルクラウダー",
   "rank" : "S",
@@ -2386,7 +2540,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "e8c83371-a992-4e21-8123-a62cc7c8f4f1",
+  "uuid" : "3b04d384-3384-4a05-8f02-08d685e8a0c9",
   "id" : 340,
   "name" : "デスマシーン",
   "rank" : "S",
@@ -2463,7 +2617,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "84128893-fed9-4003-805d-6afdfb470bec",
+  "uuid" : "305fad25-8eea-4317-903b-6cfa470ee0fa",
   "id" : 340,
   "name" : "デスマシーン",
   "rank" : "A",
@@ -2540,7 +2694,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "0818ca5f-4fae-4e31-a338-7b73254d91b2",
+  "uuid" : "65d15d53-5cce-4adc-87ac-9409a1474b5a",
   "id" : 338,
   "name" : "ナイトリッチ",
   "rank" : "S",
@@ -2617,7 +2771,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "df55d578-b3ef-4252-9ca2-731e0d604c02",
+  "uuid" : "5b0c0d94-5c32-4e4f-b82f-cadf5d83a6fd",
   "id" : 335,
   "name" : "グレイトマーマン",
   "rank" : "S",
@@ -2694,7 +2848,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "68f92d5b-1243-4be0-81c8-84694a120430",
+  "uuid" : "d456cfeb-84e6-4c43-a246-fa83e531b41d",
   "id" : 325,
   "name" : "キラーアーマー",
   "rank" : "S",
@@ -2771,7 +2925,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "d5d73890-23e3-4802-b051-090455f07a54",
+  "uuid" : "cb21d960-eaf4-4a82-84dd-3d2d51a31d53",
   "id" : 325,
   "name" : "キラーアーマー",
   "rank" : "B",
@@ -2848,7 +3002,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "c2e505f3-828f-40b3-b824-08aa78890680",
+  "uuid" : "7a135c7d-d282-4e64-bd40-a87738514a18",
   "id" : 324,
   "name" : "ウドラー",
   "rank" : "S",
@@ -2925,7 +3079,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "7a26e35f-e921-4b64-84ec-8a42a2e9da50",
+  "uuid" : "23ba9de0-b11c-46b1-8af7-489d9d76597a",
   "id" : 322,
   "name" : "ランプのまじん",
   "rank" : "S",
@@ -3002,7 +3156,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "50b3e219-32cf-4e98-b6e3-3438c6b51823",
+  "uuid" : "dbefa907-9db8-4d27-921f-9fc8e50668c4",
   "id" : 322,
   "name" : "ランプのまじん",
   "rank" : "A",
@@ -3079,7 +3233,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "0d6e2be3-7aa9-4497-b715-d28d6d202fde",
+  "uuid" : "a79cf5fb-345a-48eb-86e0-8c5e054135c6",
   "id" : 322,
   "name" : "ランプのまじん",
   "rank" : "B",
@@ -3156,7 +3310,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "48e140cb-99d4-4f11-9439-b4350238f495",
+  "uuid" : "ce1748f1-b184-423c-9698-d839d3d3b1bb",
   "id" : 315,
   "name" : "コキュードス",
   "rank" : "S",
@@ -3233,7 +3387,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "a81f2e2d-e30a-4907-abb5-b9e71e235a55",
+  "uuid" : "5b8656bb-91f9-4fab-9b36-1e1eab5548ad",
   "id" : 313,
   "name" : "ひょうがまじん",
   "rank" : "S",
@@ -3310,7 +3464,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "006006da-f396-47d5-8567-921845cce57e",
+  "uuid" : "bbdacbc1-fba4-482f-b9a0-7b78200c3a5f",
   "id" : 314,
   "name" : "うごくひょうぞう",
   "rank" : "S",
@@ -3387,7 +3541,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "04a6abd2-9d95-49d7-8102-104d00e713ea",
+  "uuid" : "d2820cce-47a7-4d37-9d7f-54e8b33186b0",
   "id" : 308,
   "name" : "フレイザード",
   "rank" : "S",
@@ -3464,7 +3618,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "01c6ccb0-5292-493f-8171-96598889a4bb",
+  "uuid" : "3f6830aa-001a-4dc3-a21c-104f472c34fb",
   "id" : 306,
   "name" : "ヒュンケル",
   "rank" : "S",
@@ -3541,7 +3695,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "7eac956f-8e5b-4fe7-a726-502d36fdd78e",
+  "uuid" : "00ce082a-0469-497d-8975-83af5e775bb0",
   "id" : 303,
   "name" : "魔王ハドラー",
   "rank" : "S",
@@ -3618,7 +3772,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "8fec1c99-4797-48f1-8b8f-1b8a66c48460",
+  "uuid" : "214ab664-8fac-4b18-922e-6144bbebe865",
   "id" : 301,
   "name" : "バロン版キラーマシン",
   "rank" : "A",
@@ -3695,7 +3849,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "da10614b-b4ae-49b8-8f59-ab231365c9ca",
+  "uuid" : "c62d0b6f-d695-46ca-b8bd-f507cf10312f",
   "id" : 296,
   "name" : "しろバラのきし",
   "rank" : "S",
@@ -3772,7 +3926,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "2129411a-3017-4924-baf9-2eb70f4fc0a1",
+  "uuid" : "56af7436-eded-474f-995c-49ac1e63582f",
   "id" : 290,
   "name" : "シャドーサタン",
   "rank" : "S",
@@ -3849,7 +4003,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "3be20b74-2f13-4945-a1af-62116912de4a",
+  "uuid" : "bf570eeb-3acd-4569-bc07-de637422da6a",
   "id" : 284,
   "name" : "ボストロール",
   "rank" : "S",
@@ -3926,7 +4080,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "cabdf9a0-bc0b-4626-b37e-29e4f89acfed",
+  "uuid" : "15b75b3e-b300-400c-9e22-2fe80a6763bc",
   "id" : 282,
   "name" : "ウイングタイガー",
   "rank" : "S",
@@ -4003,7 +4157,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "e15377f6-c801-481a-8d07-317656b21951",
+  "uuid" : "ee63f958-856b-4b3e-96ae-8fd6dfc3d076",
   "id" : 272,
   "name" : "ボボンガー",
   "rank" : "S",
@@ -4080,7 +4234,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "d2be1fcc-1a01-4555-911e-4dd21eea6aca",
+  "uuid" : "c8612d20-d979-45d0-94d6-bab7372604f6",
   "id" : 272,
   "name" : "ボボンガー",
   "rank" : "A",
@@ -4157,7 +4311,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "f1d48d87-3d25-44fd-9f53-70b5f0d82060",
+  "uuid" : "f5ce06b4-9727-4ba5-a3d2-e544af989f52",
   "id" : 272,
   "name" : "ボボンガー",
   "rank" : "B",
@@ -4234,7 +4388,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "52386568-e040-4876-9558-b3ecb9d3ee0c",
+  "uuid" : "90f9afd6-6180-4612-a23f-6d1f557351ba",
   "id" : 264,
   "name" : "ドラゴンガイア",
   "rank" : "S",
@@ -4311,7 +4465,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "836d3d16-ba50-480f-8f71-b447de63c195",
+  "uuid" : "ce39a300-589e-4ee8-9d40-c38c527a6dfd",
   "id" : 253,
   "name" : "ヘルコンドル",
   "rank" : "S",
@@ -4388,7 +4542,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "46154d7e-05f2-4774-a569-cacce7260443",
+  "uuid" : "4c730ad7-3d98-4595-af08-79f19fbca9e9",
   "id" : 250,
   "name" : "スカラベキング",
   "rank" : "A",
@@ -4465,7 +4619,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "8295fba0-f041-493a-a910-cf3a0671732a",
+  "uuid" : "80effe1f-f05a-49c5-b455-ae20634a4ccb",
   "id" : 246,
   "name" : "しにがみきぞく",
   "rank" : "S",
@@ -4542,7 +4696,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "dcdee2bf-dd7c-4827-9c4d-6d225cefbb26",
+  "uuid" : "854ba0eb-a379-4f52-a8cd-ecffaf0a608b",
   "id" : 245,
   "name" : "ガーゴイル",
   "rank" : "S",
@@ -4619,7 +4773,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "9b9a231a-b7fb-4dae-8e66-966c0cd59cf9",
+  "uuid" : "c1765f3d-6f81-4d3f-bc9f-4118d864574e",
   "id" : 243,
   "name" : "ホラービースト",
   "rank" : "B",
@@ -4696,7 +4850,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "093b1a7e-08ab-469e-ae57-98146d2633cc",
+  "uuid" : "8f65ba37-fae3-4836-b53c-e2fbab2dfc33",
   "id" : 234,
   "name" : "ゾーマ",
   "rank" : "S",
@@ -4773,7 +4927,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "58213d00-d3fa-4fbf-9663-2a1b7ae2eda4",
+  "uuid" : "b779e461-effa-41eb-8547-2a180d138e23",
   "id" : 232,
   "name" : "バラモス",
   "rank" : "S",
@@ -4850,7 +5004,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "c838361e-9a6f-4755-be2c-97b1fa96f4f9",
+  "uuid" : "f742d966-ea50-43f9-b77b-4995d77da13c",
   "id" : 231,
   "name" : "やまたのおろち",
   "rank" : "S",
@@ -4927,7 +5081,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "1154324f-103a-4c9a-a4d2-63b2b398431a",
+  "uuid" : "247dba38-cc74-432e-bc04-786affd6329c",
   "id" : 225,
   "name" : "ゲリュオン",
   "rank" : "A",
@@ -5004,7 +5158,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "8a855d0a-b81b-46fd-91be-854f9cf32563",
+  "uuid" : "6eba788a-5092-49b6-8b38-57ed7a361047",
   "id" : 207,
   "name" : "セルゲイナス",
   "rank" : "S",
@@ -5081,7 +5235,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "0b3338c6-3414-4104-8ca5-6dc8151c5d02",
+  "uuid" : "80cd8428-b746-4525-af37-2bf52102f498",
   "id" : 201,
   "name" : "メタルホイミン",
   "rank" : "S",
@@ -5158,7 +5312,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "3c5222b9-617d-4db8-81a9-6cdcf5e0f3fd",
+  "uuid" : "452db842-0924-4712-aa21-3caeb0218bc2",
   "id" : 192,
   "name" : "究極エビルプリースト",
   "rank" : "S",
@@ -5235,7 +5389,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "26ba0709-f159-4aea-ad19-5fb1df35b6d9",
+  "uuid" : "61f51b5c-960d-4df4-a222-8bbfc2eae3a4",
   "id" : 189,
   "name" : "アンドレアル",
   "rank" : "S",
@@ -5312,7 +5466,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "ed171014-6e89-44ab-8372-fcb427793e78",
+  "uuid" : "582c6c1d-d28c-4700-9e78-80b2b7ef3752",
   "id" : 184,
   "name" : "ドラゴンバゲージ",
   "rank" : "S",
@@ -5389,7 +5543,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "0df42484-2767-46f0-9a1f-4c8626d5e2f1",
+  "uuid" : "708150fc-7fe4-4067-96e0-f7d55bb23ca4",
   "id" : 182,
   "name" : "バトルレックス",
   "rank" : "A",
@@ -5466,7 +5620,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "be8bb980-5ae4-4806-bc33-002f0214465c",
+  "uuid" : "70d5cffd-1f0c-46db-9dbf-c7fdb3a83910",
   "id" : 169,
   "name" : "あくまのきし",
   "rank" : "S",
@@ -5543,7 +5697,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "d7bcd9bc-01e3-4f06-9f1e-e524e98c294f",
+  "uuid" : "6fd052f3-7584-4a69-9a2a-b83eb47a2b76",
   "id" : 153,
   "name" : "まおうのつかい",
   "rank" : "A",
@@ -5620,7 +5774,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "8746e8ae-7a05-4e89-924a-218fdda7985e",
+  "uuid" : "95c66785-1790-4716-9ac4-d73399de24b4",
   "id" : 152,
   "name" : "エビルホーク",
   "rank" : "S",
@@ -5697,7 +5851,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "024e8ac9-d560-4bba-a216-84b0f3e45361",
+  "uuid" : "9c17b392-4b28-4075-b672-47b3f8f34922",
   "id" : 147,
   "name" : "ドラゴスライム",
   "rank" : "S",
@@ -5774,7 +5928,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "040641c1-aadc-4d79-9890-2ebfa83b8fb4",
+  "uuid" : "a030ee8a-0068-40e3-96fc-85754c17e835",
   "id" : 145,
   "name" : "キングスライム",
   "rank" : "S",
@@ -5851,7 +6005,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "6d40f9d7-19bd-4f3e-bfd6-b53023f729bf",
+  "uuid" : "8ede2b3a-f166-4f64-8d7b-ef3662364ff6",
   "id" : 137,
   "name" : "アームライオン",
   "rank" : "S",
@@ -5928,7 +6082,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "c816a220-17bc-45f0-a378-2ff9727adaa7",
+  "uuid" : "7b375d16-a7d1-484b-8d35-ee7f187d5944",
   "id" : 137,
   "name" : "アームライオン",
   "rank" : "A",
@@ -6005,7 +6159,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "3a1c1e45-9b48-4036-bf9e-4ec47c3ad78a",
+  "uuid" : "a2469dc1-89c5-4ac8-b165-cce96b66899e",
   "id" : 137,
   "name" : "アームライオン",
   "rank" : "B",
@@ -6082,7 +6236,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "b139dda4-fa68-44f8-bb53-590006cb2a44",
+  "uuid" : "98f9aedd-39c5-45b3-ad1a-d428f3322802",
   "id" : 105,
   "name" : "キラーマシン",
   "rank" : "S",
@@ -6159,7 +6313,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "ab132f9b-a596-4f7f-8a27-d739ee5baf10",
+  "uuid" : "b940b6cc-e077-4555-8819-bab4f5663937",
   "id" : 105,
   "name" : "キラーマシン",
   "rank" : "A",
@@ -6236,7 +6390,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "20d4df73-9539-419a-9a17-0725a0f0fca6",
+  "uuid" : "2b315161-02f9-4448-9479-2129a5bf9f6d",
   "id" : 103,
   "name" : "メタルハンター",
   "rank" : "S",
@@ -6313,7 +6467,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "eca4f5dc-88fc-4212-a7ea-6549bab079cd",
+  "uuid" : "9f22d591-243e-4069-82db-4de5e8a85537",
   "id" : 95,
   "name" : "ホークマン",
   "rank" : "S",
@@ -6390,7 +6544,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "fc2ab803-fd28-44f7-8e4c-afcfc9844ba2",
+  "uuid" : "13e2bdf8-650a-43fa-b7f8-ac9831e88f63",
   "id" : 72,
   "name" : "サイおとこ",
   "rank" : "S",
@@ -6467,7 +6621,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "14369b04-e3e3-4c14-b7c0-cf2c283bf453",
+  "uuid" : "a859d534-e298-4d5e-ba4e-f61438cbea9a",
   "id" : 68,
   "name" : "ヘルビースト",
   "rank" : "S",
@@ -6544,7 +6698,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "fb29aea6-d241-414c-af64-a99b5a40d674",
+  "uuid" : "109cf6f3-769c-4e03-83f0-acc435c42688",
   "id" : 68,
   "name" : "ヘルビースト",
   "rank" : "A",
@@ -6621,7 +6775,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "b69eb3b4-727a-45fd-875b-d04281d1cab5",
+  "uuid" : "a4f1eabe-2572-41eb-8eaf-96e7deba9ea2",
   "id" : 68,
   "name" : "ヘルビースト",
   "rank" : "B",
@@ -6698,7 +6852,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "d899cc82-2514-4d5c-97b2-2a20a1da0027",
+  "uuid" : "bc3a7bc3-c253-4b62-840b-01c2fbb77e64",
   "id" : 68,
   "name" : "ヘルビースト",
   "rank" : "C",
@@ -6775,7 +6929,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "50efdb88-8111-42c7-9dc1-ed5486ef5217",
+  "uuid" : "0b953798-126a-4d0e-921b-7b788d7f4e81",
   "id" : 46,
   "name" : "デザートゴースト",
   "rank" : "S",
@@ -6852,7 +7006,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "3616fd89-fa59-45e8-8f45-d18726a0b8e2",
+  "uuid" : "da9247aa-7e40-40cd-acc5-b1c910bf14ed",
   "id" : 34,
   "name" : "ドルイド",
   "rank" : "S",
@@ -6929,7 +7083,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "c999cd18-5919-4f30-a339-9c83bbd98eab",
+  "uuid" : "5259045c-1d70-4524-a771-339101ffb81e",
   "id" : 34,
   "name" : "ドルイド",
   "rank" : "A",
@@ -7006,7 +7160,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "4394da13-1f6d-47c8-831d-b6e1ae57d8be",
+  "uuid" : "138c3fa4-d566-428e-8b9d-5a69db53f796",
   "id" : 34,
   "name" : "ドルイド",
   "rank" : "B",
@@ -7083,7 +7237,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "a0fbc873-1942-4dc2-88c8-e9039d7d5b58",
+  "uuid" : "f1a69cb5-8cc0-416a-af42-edf6fa3d7c5a",
   "id" : 13,
   "name" : "メラリザード",
   "rank" : "S",
@@ -7160,7 +7314,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "f82fc077-d3ad-460c-92e3-a6b5a5dbaad1",
+  "uuid" : "5bd0d301-4f6d-465f-a87e-75160d73bf23",
   "id" : 13,
   "name" : "メラリザード",
   "rank" : "B",
@@ -7237,7 +7391,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "0298bcc5-41b2-45c5-a168-afc1ad388b51",
+  "uuid" : "c05a904c-8d86-4ef0-a84b-43e00f3c987e",
   "id" : 13,
   "name" : "メラリザード",
   "rank" : "C",
@@ -7314,7 +7468,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "803310cf-e858-483a-9033-d236a7b87ac3",
+  "uuid" : "cffd7bb5-83f4-4318-b214-e5658fb017e7",
   "id" : 13,
   "name" : "メラリザード",
   "rank" : "D",
@@ -7391,7 +7545,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "f1ad2c67-6916-48d0-b7d3-7cd00c14d4a2",
+  "uuid" : "18e2db29-80a0-446d-9da2-ca2c3177b872",
   "id" : 20001,
   "name" : "ロトの子孫",
   "rank" : "S",
@@ -7468,7 +7622,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "7db3cdb5-30eb-4fbe-a0b0-aa22ef63bee0",
+  "uuid" : "ba6332c1-2dac-4e46-a58a-e9165ca3c280",
   "id" : 70001,
   "name" : "エデンの戦士たち1",
   "rank" : "S",
@@ -7545,7 +7699,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "622e484d-17ed-40ed-a485-aad25a1501a9",
+  "uuid" : "2053c59a-b095-4608-9c42-57831f2dadc1",
   "id" : 70002,
   "name" : "エデンの戦士たち2",
   "rank" : "S",
@@ -7622,7 +7776,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "fb116852-a16a-4f34-b8d0-bdea3204c45c",
+  "uuid" : "b5471eec-2654-4da1-873e-bd4503b34e4d",
   "id" : 30001,
   "name" : "ハロウィンルイーダ",
   "rank" : "S",
@@ -7699,7 +7853,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "2b39a0a3-1375-4f44-97b7-4427601a10bf",
+  "uuid" : "26f91086-0c76-4b4f-a3b5-12685223b1fb",
   "id" : 11101,
   "name" : "アバン",
   "rank" : "S",
@@ -7776,7 +7930,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "c5de505d-cc01-4fd8-aed4-25bc7a6a4840",
+  "uuid" : "7851bfe3-bd06-4cb5-8d8b-a81723489500",
   "id" : 11101,
   "name" : "アバン",
   "rank" : "A",
@@ -7853,7 +8007,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "e979aa57-d2de-43a6-8aee-8afc4e2ab323",
+  "uuid" : "5e518c4e-229c-43cf-807b-534224fd3392",
   "id" : 50001,
   "name" : "ビアンカ",
   "rank" : "S",
@@ -7930,7 +8084,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "a2e0a971-4383-49ca-a049-2b1532404e56",
+  "uuid" : "85e90fd7-2304-457c-8f24-ce492b684986",
   "id" : 50002,
   "name" : "フローラ",
   "rank" : "S",
@@ -8007,7 +8161,7 @@
   "healingSpecialty" : 0,
   "healingSpell" : 0
 }, {
-  "uuid" : "f4834114-09aa-4e20-a595-2ce02dbd6bf3",
+  "uuid" : "a097ba6e-dc02-4f17-83bc-87c3789a7a3c",
   "id" : 50003,
   "name" : "デボラ",
   "rank" : "S",

@@ -1,5 +1,95 @@
 [
   {
+    "id":404,
+    "name": "ミルドラース",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "SECRET",
+    "cost": 122,
+    "plusCost": 4,
+    "hp": 160,
+    "mp":  65,
+    "op":  74,
+    "dp": 115,
+    "os":  42,
+    "ds":  42,
+    "sp":  38,
+    "dx":  61,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ],
+    "healings": [
+    ]
+  },
+  {
+    "id":404,
+    "name": "ミルドラース",
+    "rank": "A",
+    "type": "YELLOW",
+    "race": "SECRET",
+    "cost": 122,
+    "plusCost": 3,
+    "hp": 128,
+    "mp":  51,
+    "op":  59,
+    "dp":  92,
+    "os":  34,
+    "ds":  34,
+    "sp":  31,
+    "dx":  49,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 6
+      }
+    ],
+    "healings": [
+    ]
+  },
+  {
     "id":403,
     "name": "イブール",
     "rank": "S",
