@@ -1442,7 +1442,9 @@ public class KokoroService implements IKokoroService {
     for (KokoroFlat kokoroFlat : kokoroFlats) {
       final KokoroFlatEntity kokoroFlatEntity = modelMapper.map(kokoroFlat, KokoroFlatEntity.class);
       log.debug(kokoroFlatEntity.toString());
-      kokoroFlatRepository.save(kokoroFlatEntity);
+      if (kokoroFlatRepository.findFirstByIdAndRank(kokoroFlat.getId(), kokoroFlat.getRank()).size() == 0) {
+        kokoroFlatRepository.save(kokoroFlatEntity);
+      }
     }
   }
 
