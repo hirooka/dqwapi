@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.text.CaseUtils;
@@ -39,6 +40,11 @@ public class KokoroRestController {
   @GetMapping
   public List<Kokoro> getAll() {
     return kokoroService.getAll();
+  }
+
+  @GetMapping("k")
+  public List<Map<String, String>> get() {
+    return kokoroService.get();
   }
 
   @GetMapping("pkf")
