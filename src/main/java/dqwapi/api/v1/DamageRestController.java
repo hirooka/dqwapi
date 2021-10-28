@@ -34,6 +34,8 @@ public class DamageRestController {
       @RequestParam(value = "b", required = false) String bride,
       @RequestParam(value = "e", required = false) List<String> exclusions
   ) {
+    log.info("jobType: {}, level: {}, defence: {}, weapon: {}, skill: {}, bride: {}, exclusions: {}",
+        jobType, level, defence, weapon, skill, bride, exclusions);
     if (ObjectUtils.isEmpty(jobType)) {
       jobType = JobType.BATTLE_MASTER;
     }

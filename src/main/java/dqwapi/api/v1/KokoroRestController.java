@@ -47,6 +47,11 @@ public class KokoroRestController {
     return kokoroService.get();
   }
 
+  @GetMapping("j")
+  public List<Map<String, String>> getJobs() {
+    return kokoroService.getJobs();
+  }
+
   @GetMapping("pkf")
   public String persistKokoroFlats() {
     if (!canPersist) {

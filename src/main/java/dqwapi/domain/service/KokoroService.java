@@ -42,7 +42,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -721,6 +720,37 @@ public class KokoroService implements IKokoroService {
       map.put("value", kokoro.getId() + "" + kokoro.getRank().name().toLowerCase());
       list.add(map);
     }
+    return list;
+  }
+
+  @Override
+  public List<Map<String, String>> getJobs() {
+    // TODO:
+    final List<Map<String, String>> list = new ArrayList<>();
+    slotsByJob.forEach((k, v) -> {
+      final Map<String, String> map = new HashMap<>();
+      final String text;
+      switch (k) {
+        case BATTLE_MASTER:
+          text = "バトルマスター";
+          break;
+        case RANGER:
+          text = "レンジャー";
+          break;
+        case SAGE:
+          text = "賢者";
+          break;
+        case PALADIN:
+          text = "パラディン";
+          break;
+        default:
+          throw new IllegalArgumentException("");
+      }
+      map.put("text", text);
+      map.put("value", k.name());
+      list.add(map);
+    });
+    log.info(list.toString());
     return list;
   }
 
