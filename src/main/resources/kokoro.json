@@ -1,6 +1,6 @@
 [
   {
-    "id":404,
+    "id": 404,
     "name": "ミルドラース",
     "rank": "S",
     "type": "YELLOW",
@@ -41,11 +41,10 @@
         "magnification": 10
       }
     ],
-    "healings": [
-    ]
+    "healings": []
   },
   {
-    "id":404,
+    "id": 404,
     "name": "ミルドラース",
     "rank": "A",
     "type": "YELLOW",
@@ -86,11 +85,10 @@
         "magnification": 6
       }
     ],
-    "healings": [
-    ]
+    "healings": []
   },
   {
-    "id":403,
+    "id": 403,
     "name": "イブール",
     "rank": "S",
     "type": "GREEN",
@@ -105,8 +103,7 @@
     "ds": 113,
     "sp":  26,
     "dx":  35,
-    "damages": [
-    ],
+    "damages": [],
     "healings": [
       {
         "type": "SKILL",
@@ -115,7 +112,7 @@
     ]
   },
   {
-    "id":403,
+    "id": 403,
     "name": "イブール",
     "rank": "A",
     "type": "GREEN",
@@ -130,8 +127,7 @@
     "ds": 100,
     "sp":  23,
     "dx":  31,
-    "damages": [
-    ],
+    "damages": [],
     "healings": [
       {
         "type": "SKILL",
@@ -140,7 +136,7 @@
     ]
   },
   {
-    "id":402,
+    "id": 402,
     "name": "ゲマ",
     "rank": "S",
     "type": "PURPLE",
@@ -174,10 +170,11 @@
         "race": "NONE",
         "magnification": 5
       }
-    ]
+    ],
+    "healings": []
   },
   {
-    "id":402,
+    "id": 402,
     "name": "ゲマ",
     "rank": "A",
     "type": "PURPLE",
@@ -211,10 +208,11 @@
         "race": "NONE",
         "magnification": 4
       }
-    ]
+    ],
+    "healings": []
   },
   {
-    "id":401,
+    "id": 401,
     "name": "ようがんげんじん",
     "rank": "S",
     "type": "YELLOW",
@@ -260,10 +258,11 @@
         "race": "ZOMBIE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
-    "id":401,
+    "id": 401,
     "name": "ようがんげんじん",
     "rank": "A",
     "type": "YELLOW",
@@ -309,59 +308,11 @@
         "race": "ZOMBIE",
         "magnification": 5
       }
-    ]
+    ],
+    "healings": []
   },
   {
-    "id":401,
-    "name": "ようがんげんじん",
-    "rank": "B",
-    "type": "YELLOW",
-    "race": "ELEMENT",
-    "cost": 114,
-    "plusCost": 2,
-    "hp":  82,
-    "mp":  40,
-    "op":  51,
-    "dp":  55,
-    "os":  56,
-    "ds":  14,
-    "sp":  25,
-    "dx":  39,
-    "damages": [
-      {
-        "attack": "SLASH",
-        "attribute": "MERA",
-        "race": "NONE",
-        "magnification": 6
-      },
-      {
-        "attack": "HIT",
-        "attribute": "MERA",
-        "race": "NONE",
-        "magnification": 6
-      },
-      {
-        "attack": "SLASH",
-        "attribute": "GIRA",
-        "race": "NONE",
-        "magnification": 6
-      },
-      {
-        "attack": "HIT",
-        "attribute": "GIRA",
-        "race": "NONE",
-        "magnification": 6
-      },
-      {
-        "attack": "ALL",
-        "attribute": "NONE",
-        "race": "ZOMBIE",
-        "magnification": 3
-      }
-    ]
-  },
-  {
-    "id":400,
+    "id": 400,
     "name": "ゴンズ",
     "rank": "S",
     "type": "RED",
@@ -401,10 +352,11 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
-    "id":400,
+    "id": 400,
     "name": "ゴンズ",
     "rank": "A",
     "type": "RED",
@@ -444,53 +396,11 @@
         "race": "NONE",
         "magnification": 5
       }
-    ]
+    ],
+    "healings": []
   },
   {
-    "id":400,
-    "name": "ゴンズ",
-    "rank": "B",
-    "type": "RED",
-    "race": "ANIMAL",
-    "cost": 116,
-    "plusCost": 2,
-    "hp":  78,
-    "mp":  33,
-    "op":  73,
-    "dp":  44,
-    "os":  12,
-    "ds":  12,
-    "sp":  61,
-    "dx":  54,
-    "damages": [
-      {
-        "attack": "SLASH",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 1
-      },
-      {
-        "attack": "HIT",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 1
-      },
-      {
-        "attack": "SLASH",
-        "attribute": "BAGI",
-        "race": "NONE",
-        "magnification": 3
-      },
-      {
-        "attack": "HIT",
-        "attribute": "BAGI",
-        "race": "NONE",
-        "magnification": 3
-      }
-    ]
-  },
-  {
-    "id":399,
+    "id": 399,
     "name": "ジャミ",
     "rank": "S",
     "type": "BLUE",
@@ -536,10 +446,11 @@
         "race": "ANIMAL",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
-    "id":398,
+    "id": 398,
     "name": "グレイトドラゴン",
     "rank": "S",
     "type": "BLUE",
@@ -567,7 +478,8 @@
         "race": "NONE",
         "magnification": 14
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 397,
@@ -610,7 +522,8 @@
         "race": "ELEMENT",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 396,
@@ -659,7 +572,8 @@
         "race": "NONE",
         "magnification": 5
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 395,
@@ -696,7 +610,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 394,
@@ -733,7 +648,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 388,
@@ -788,7 +704,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 382,
@@ -825,7 +742,8 @@
         "race": "ELEMENT",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 379,
@@ -881,7 +799,8 @@
         "race": "NONE",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 376,
@@ -891,8 +810,16 @@
     "race": "DEVIL",
     "cost": 111,
     "plusCost": 4,
-    "damages": [
-    ]
+    "hp": 125,
+    "mp":  21,
+    "op":  34,
+    "dp": 105,
+    "os":  20,
+    "ds":  20,
+    "sp":  13,
+    "dx":  20,
+    "damages": [],
+    "healings": []
   },
   {
     "id": 374,
@@ -941,7 +868,8 @@
         "race": "DEVIL",
         "magnification": 5
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 373,
@@ -978,7 +906,8 @@
         "race": "DRAGON",
         "magnification": 5
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 372,
@@ -1021,7 +950,8 @@
         "race": "NONE",
         "magnification": 5
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 364,
@@ -1052,7 +982,8 @@
         "race": "NONE",
         "magnification": 13
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 359,
@@ -1095,7 +1026,8 @@
         "race": "NONE",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 354,
@@ -1113,8 +1045,8 @@
     "ds":   7,
     "sp":  80,
     "dx":  76,
-    "damages": [
-    ]
+    "damages": [],
+    "healings": []
   },
   {
     "id": 351,
@@ -1132,8 +1064,8 @@
     "ds":  13,
     "sp":  20,
     "dx":  12,
-    "damages": [
-    ]
+    "damages": [],
+    "healings": []
   },
   {
     "id": 349,
@@ -1188,7 +1120,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 347,
@@ -1225,7 +1158,8 @@
         "race": "NONE",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 346,
@@ -1287,7 +1221,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 340,
@@ -1318,7 +1253,8 @@
         "race": "NONE",
         "magnification": 6
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 338,
@@ -1355,7 +1291,8 @@
         "race": "MACHINE",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 335,
@@ -1386,7 +1323,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 325,
@@ -1429,7 +1367,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 325,
@@ -1472,7 +1411,8 @@
         "race": "NONE",
         "magnification": 5
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 324,
@@ -1515,7 +1455,8 @@
         "race": "DEVIL",
         "magnification": 5
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 322,
@@ -1558,7 +1499,8 @@
         "race": "NONE",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 322,
@@ -1601,7 +1543,8 @@
         "race": "NONE",
         "magnification": 8
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 322,
@@ -1644,7 +1587,8 @@
         "race": "NONE",
         "magnification": 6
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 315,
@@ -1693,7 +1637,8 @@
         "race": "NONE",
         "magnification": 5
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 313,
@@ -1724,7 +1669,8 @@
         "race": "MATERIAL",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 314,
@@ -1742,8 +1688,7 @@
     "ds":  60,
     "sp":  27,
     "dx":  36,
-    "damages": [
-    ],
+    "damages": [],
     "healings": [
       {
         "type": "SKILL",
@@ -1786,7 +1731,8 @@
         "race": "NONE",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 306,
@@ -1841,7 +1787,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 303,
@@ -1878,7 +1825,8 @@
         "race": "NONE",
         "magnification": 5
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 301,
@@ -1921,7 +1869,8 @@
         "race": "MACHINE",
         "magnification": 4
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 296,
@@ -3283,37 +3232,6 @@
     ]
   },
   {
-    "id": 68,
-    "name": "ヘルビースト",
-    "rank": "C",
-    "type": "BLUE",
-    "race": "DEVIL",
-    "cost": 39,
-    "plusCost": 0,
-    "hp":  20,
-    "mp":  28,
-    "op":  39,
-    "dp":  11,
-    "os":  13,
-    "ds":  14,
-    "sp":  62,
-    "dx":  37,
-    "damages": [
-      {
-        "attack": "SLASH",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 6
-      },
-      {
-        "attack": "HIT",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 6
-      }
-    ]
-  },
-  {
     "id": 46,
     "name": "デザートゴースト",
     "rank": "S",
@@ -3497,428 +3415,12 @@
         "race": "NONE",
         "magnification": 7
       }
+    ],
+    "healings": [
     ]
   },
   {
-    "id": 13,
-    "name": "メラリザード",
-    "rank": "C",
-    "type": "RED",
-    "race": "DRAGON",
-    "cost": 17,
-    "plusCost": 0,
-    "hp":  18,
-    "mp":   5,
-    "op":  12,
-    "dp":   7,
-    "os":   3,
-    "ds":   3,
-    "sp":  14,
-    "dx":  18,
-    "damages": [
-      {
-        "attack": "SLASH",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 6
-      },
-      {
-        "attack": "HIT",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 6
-      },
-      {
-        "attack": "SLASH",
-        "attribute": "MERA",
-        "race": "NONE",
-        "magnification": 6
-      },
-      {
-        "attack": "HIT",
-        "attribute": "MERA",
-        "race": "NONE",
-        "magnification": 6
-      }
-    ]
-  },
-  {
-    "id": 13,
-    "name": "メラリザード",
-    "rank": "D",
-    "type": "RED",
-    "race": "DRAGON",
-    "cost": 17,
-    "hp":  16,
-    "mp":   5,
-    "op":  11,
-    "dp":   7,
-    "os":   3,
-    "ds":   3,
-    "sp":  13,
-    "dx":  17,
-    "plusCost": 0,
-    "damages": [
-      {
-        "attack": "SLASH",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 5
-      },
-      {
-        "attack": "HIT",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 5
-      },
-      {
-        "attack": "SLASH",
-        "attribute": "MERA",
-        "race": "NONE",
-        "magnification": 5
-      },
-      {
-        "attack": "HIT",
-        "attribute": "MERA",
-        "race": "NONE",
-        "magnification": 5
-      }
-    ]
-  },
-  {
-    "id": 20001,
-    "name": "ロトの子孫",
-    "rank": "S",
-    "type": "YELLOW",
-    "race": "SECRET",
-    "cost": 99,
-    "plusCost": 4,
-    "hp":  95,
-    "mp":  55,
-    "op":  67,
-    "dp":  56,
-    "os":  65,
-    "ds":  17,
-    "sp":  50,
-    "dx":  39,
-    "damages": [
-      {
-        "attack": "ALL",
-        "attribute": "DEIN",
-        "race": "NONE",
-        "magnification": 16
-      }
-    ]
-  },
-  {
-    "id": 70001,
-    "name": "エデンの戦士たち1",
-    "rank": "S",
-    "type": "BLUE",
-    "race": "NONE",
-    "cost": 84,
-    "plusCost": 4,
-    "hp":  95,
-    "mp":  54,
-    "op":  72,
-    "dp":  63,
-    "os":  28,
-    "ds":  26,
-    "sp":  92,
-    "dx":  86,
-    "damages": [
-      {
-        "attack": "SLASH",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 7
-      },
-      {
-        "attack": "HIT",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 7
-      },
-      {
-        "attack": "SPELL",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 7
-      }
-    ]
-  },
-  {
-    "id": 70002,
-    "name": "エデンの戦士たち2",
-    "rank": "S",
-    "type": "YELLOW",
-    "race": "NONE",
-    "cost": 84,
-    "plusCost": 4,
-    "hp": 107,
-    "mp":  42,
-    "op":  50,
-    "dp":  76,
-    "os":  28,
-    "ds":  28,
-    "sp":  44,
-    "dx":  78,
-    "damages": [
-    ]
-  },
-  {
-    "id": 30001,
-    "name": "ハロウィンルイーダ",
-    "rank": "S",
-    "type": "BLUE",
-    "race": "NONE",
-    "cost": 66,
-    "plusCost": 4,
-    "hp":  74,
-    "mp":  53,
-    "op":  44,
-    "dp":  42,
-    "os":  25,
-    "ds":  27,
-    "sp":  75,
-    "dx":  58,
-    "damages": [
-      {
-        "attack": "SLASH",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 7
-      },
-      {
-        "attack": "HIT",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 7
-      }
-    ]
-  },
-  {
-    "id": 11101,
-    "name": "アバン",
-    "rank": "S",
-    "type": "YELLOW",
-    "race": "NONE",
-    "cost": 87,
-    "plusCost": 3,
-    "hp":  83,
-    "mp":  44,
-    "op":  82,
-    "dp":  47,
-    "os":  15,
-    "ds":  29,
-    "sp":  57,
-    "dx":  23,
-    "damages": [
-      {
-        "attack": "SLASH",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 3
-      },
-      {
-        "attack": "HIT",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 3
-      },
-      {
-        "attack": "SLASH",
-        "attribute": "DEIN",
-        "race": "NONE",
-        "magnification": 7
-      },
-      {
-        "attack": "HIT",
-        "attribute": "DEIN",
-        "race": "NONE",
-        "magnification": 7
-      }
-    ]
-  },
-  {
-    "id": 11101,
-    "name": "アバン",
-    "rank": "A",
-    "type": "YELLOW",
-    "race": "NONE",
-    "cost": 87,
-    "plusCost": 3,
-    "hp":  73,
-    "mp":  39,
-    "op":  72,
-    "dp":  42,
-    "os":  13,
-    "ds":  26,
-    "sp":  50,
-    "dx":  20,
-    "damages": [
-      {
-        "attack": "SLASH",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 2
-      },
-      {
-        "attack": "HIT",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 2
-      },
-      {
-        "attack": "SLASH",
-        "attribute": "DEIN",
-        "race": "NONE",
-        "magnification": 6
-      },
-      {
-        "attack": "HIT",
-        "attribute": "DEIN",
-        "race": "NONE",
-        "magnification": 6
-      }
-    ]
-  },
-  {
-    "id": 50001,
-    "name": "ビアンカ",
-    "rank": "S",
-    "type": "YELLOW",
-    "race": "NONE",
-    "cost": 99,
-    "plusCost": 4,
-    "hp": 101,
-    "mp":  58,
-    "op":  90,
-    "dp":  80,
-    "os":  30,
-    "ds":  29,
-    "sp":  85,
-    "dx":  85,
-    "damages": [
-      {
-        "attack": "SLASH",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 5
-      },
-      {
-        "attack": "HIT",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 5
-      },
-      {
-        "attack": "SLASH",
-        "attribute": "DEIN",
-        "race": "NONE",
-        "magnification": 7
-      },
-      {
-        "attack": "HIT",
-        "attribute": "DEIN",
-        "race": "NONE",
-        "magnification": 7
-      },
-      {
-        "attack": "SLASH",
-        "attribute": "MERA",
-        "race": "NONE",
-        "magnification": 7
-      },
-      {
-        "attack": "HIT",
-        "attribute": "MERA",
-        "race": "NONE",
-        "magnification": 7
-      },
-      {
-        "attack": "SLASH",
-        "attribute": "BAGI",
-        "race": "NONE",
-        "magnification": 7
-      },
-      {
-        "attack": "HIT",
-        "attribute": "BAGI",
-        "race": "NONE",
-        "magnification": 7
-      }
-    ]
-  },
-  {
-    "id": 50002,
-    "name": "フローラ",
-    "rank": "S",
-    "type": "BLUE",
-    "race": "NONE",
-    "cost": 99,
-    "plusCost": 4,
-    "hp": 101,
-    "mp":  58,
-    "op":  90,
-    "dp":  80,
-    "os":  30,
-    "ds":  29,
-    "sp":  85,
-    "dx":  85,
-    "damages": [
-      {
-        "attack": "SLASH",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 5
-      },
-      {
-        "attack": "HIT",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 5
-      },
-      {
-        "attack": "SLASH",
-        "attribute": "DEIN",
-        "race": "NONE",
-        "magnification": 7
-      },
-      {
-        "attack": "HIT",
-        "attribute": "DEIN",
-        "race": "NONE",
-        "magnification": 7
-      },
-      {
-        "attack": "SLASH",
-        "attribute": "MERA",
-        "race": "NONE",
-        "magnification": 7
-      },
-      {
-        "attack": "HIT",
-        "attribute": "MERA",
-        "race": "NONE",
-        "magnification": 7
-      },
-      {
-        "attack": "SLASH",
-        "attribute": "BAGI",
-        "race": "NONE",
-        "magnification": 7
-      },
-      {
-        "attack": "HIT",
-        "attribute": "BAGI",
-        "race": "NONE",
-        "magnification": 7
-      }
-    ]
-  },
-  {
-    "id": 50003,
+    "id": 9992,
     "name": "デボラ",
     "rank": "S",
     "type": "RED",
@@ -3982,6 +3484,356 @@
         "race": "NONE",
         "magnification": 7
       }
+    ],
+    "healings": [
+    ]
+  },
+  {
+    "id": 9993,
+    "name": "フローラ",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "NONE",
+    "cost": 99,
+    "plusCost": 4,
+    "hp": 101,
+    "mp":  58,
+    "op":  90,
+    "dp":  80,
+    "os":  30,
+    "ds":  29,
+    "sp":  85,
+    "dx":  85,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "healings": [
+    ]
+  },
+  {
+    "id": 9994,
+    "name": "ビアンカ",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "NONE",
+    "cost": 99,
+    "plusCost": 4,
+    "hp": 101,
+    "mp":  58,
+    "op":  90,
+    "dp":  80,
+    "os":  30,
+    "ds":  29,
+    "sp":  85,
+    "dx":  85,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "healings": [
+    ]
+  },
+  {
+    "id": 9995,
+    "name": "ロトの子孫",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "SECRET",
+    "cost": 99,
+    "plusCost": 4,
+    "hp":  95,
+    "mp":  55,
+    "op":  67,
+    "dp":  56,
+    "os":  65,
+    "ds":  17,
+    "sp":  50,
+    "dx":  39,
+    "damages": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 16
+      }
+    ],
+    "healings": [
+    ]
+  },
+  {
+    "id": 9996,
+    "name": "エデンの戦士たち2",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "NONE",
+    "cost": 84,
+    "plusCost": 4,
+    "hp": 107,
+    "mp":  42,
+    "op":  50,
+    "dp":  76,
+    "os":  28,
+    "ds":  28,
+    "sp":  44,
+    "dx":  78,
+    "damages": [
+    ],
+    "healings": [
+    ]
+  },
+  {
+    "id": 9997,
+    "name": "エデンの戦士たち1",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "NONE",
+    "cost": 84,
+    "plusCost": 4,
+    "hp":  95,
+    "mp":  54,
+    "op":  72,
+    "dp":  63,
+    "os":  28,
+    "ds":  26,
+    "sp":  92,
+    "dx":  86,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "healings": [
+    ]
+  },
+  {
+    "id": 9998,
+    "name": "アバン",
+    "rank": "S",
+    "type": "YELLOW",
+    "race": "NONE",
+    "cost": 87,
+    "plusCost": 3,
+    "hp":  83,
+    "mp":  44,
+    "op":  82,
+    "dp":  47,
+    "os":  15,
+    "ds":  29,
+    "sp":  57,
+    "dx":  23,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "healings": [
+    ]
+  },
+  {
+    "id": 9998,
+    "name": "アバン",
+    "rank": "A",
+    "type": "YELLOW",
+    "race": "NONE",
+    "cost": 87,
+    "plusCost": 3,
+    "hp":  73,
+    "mp":  39,
+    "op":  72,
+    "dp":  42,
+    "os":  13,
+    "ds":  26,
+    "sp":  50,
+    "dx":  20,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 2
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 2
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 6
+      }
+    ],
+    "healings": [
+    ]
+  },
+  {
+    "id": 9999,
+    "name": "ハロウィンルイーダ",
+    "rank": "S",
+    "type": "BLUE",
+    "race": "NONE",
+    "cost": 66,
+    "plusCost": 4,
+    "hp":  74,
+    "mp":  53,
+    "op":  44,
+    "dp":  42,
+    "os":  25,
+    "ds":  27,
+    "sp":  75,
+    "dx":  58,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "healings": [
     ]
   }
 ]
