@@ -35,6 +35,12 @@ public class KokoroRestController {
   @Value("${dqwapi.kokoro-persist}")
   private boolean canPersist;
 
+  @Value("${dqwapi.kokoro-json}")
+  private String kokoroJson;
+
+  @Value("${dqwapi.kokoro-flat-json}")
+  private String kokoroFlatJson;
+
   private final IKokoroService kokoroService;
 
   @GetMapping
@@ -84,7 +90,7 @@ public class KokoroRestController {
     if (!canPersist) {
       throw new IllegalArgumentException("Cannot persist kokoros...");
     }
-    final Resource kokoroJsonResource = new ClassPathResource("kokoro.json");
+    final Resource kokoroJsonResource = new ClassPathResource(kokoroJson);
     try {
       final StopWatch stopWatch = new StopWatch();
       stopWatch.start("kokoros");
@@ -298,7 +304,7 @@ public class KokoroRestController {
           objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(kokoroFlats);
       log.info(json);
 
-      final FileOutputStream fos = new FileOutputStream("kokoro-flat.json");
+      final FileOutputStream fos = new FileOutputStream(kokoroFlatJson);
       fos.write(json.getBytes(StandardCharsets.UTF_8));
       fos.close();
 
