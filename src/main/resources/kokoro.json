@@ -1895,7 +1895,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 290,
@@ -1926,7 +1927,8 @@
         "race": "NONE",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 284,
@@ -1957,7 +1959,8 @@
         "race": "NONE",
         "magnification": 5
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 282,
@@ -1994,7 +1997,8 @@
         "race": "ZOMBIE",
         "magnification": 5
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 272,
@@ -2012,8 +2016,7 @@
     "ds":  98,
     "sp":  51,
     "dx":  41,
-    "damages": [
-    ],
+    "damages": [],
     "healings": [
       {
         "type": "SKILL",
@@ -2037,8 +2040,7 @@
     "ds":  86,
     "sp":  45,
     "dx":  36,
-    "damages": [
-    ],
+    "damages": [],
     "healings": [
       {
         "type": "SKILL",
@@ -2062,8 +2064,7 @@
     "ds":  80,
     "sp":  42,
     "dx":  34,
-    "damages": [
-    ],
+    "damages": [],
     "healings": [
       {
         "type": "SKILL",
@@ -2124,7 +2125,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 253,
@@ -2179,7 +2181,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 250,
@@ -2222,7 +2225,8 @@
         "race": "INSECT",
         "magnification": 3
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 246,
@@ -2247,7 +2251,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 245,
@@ -2272,7 +2277,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 243,
@@ -2315,7 +2321,8 @@
         "race": "NONE",
         "magnification": 5
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 234,
@@ -2340,7 +2347,8 @@
         "race": "NONE",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 232,
@@ -2414,7 +2422,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 225,
@@ -2457,7 +2466,8 @@
         "race": "ANIMAL",
         "magnification": 5
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 207,
@@ -2512,7 +2522,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 201,
@@ -2580,7 +2591,8 @@
         "race": "NONE",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 189,
@@ -2623,7 +2635,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 184,
@@ -2648,7 +2661,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 182,
@@ -2679,7 +2693,8 @@
         "race": "NONE",
         "magnification": 6
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 169,
@@ -2722,7 +2737,8 @@
         "race": "DEVIL",
         "magnification": 5
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 153,
@@ -2771,7 +2787,8 @@
         "race": "ZOMBIE",
         "magnification": 5
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 152,
@@ -2814,7 +2831,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 147,
@@ -2870,7 +2888,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 137,
@@ -2913,7 +2932,8 @@
         "race": "NONE",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 137,
@@ -2956,7 +2976,8 @@
         "race": "NONE",
         "magnification": 8
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 137,
@@ -2999,7 +3020,8 @@
         "race": "NONE",
         "magnification": 6
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 105,
@@ -3030,7 +3052,8 @@
         "race": "NONE",
         "magnification": 12
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 105,
@@ -3061,7 +3084,8 @@
         "race": "NONE",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 103,
@@ -3086,7 +3110,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 95,
@@ -3111,7 +3136,8 @@
         "race": "NONE",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 72,
@@ -3136,7 +3162,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 68,
@@ -3167,7 +3194,8 @@
         "race": "NONE",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 68,
@@ -3198,7 +3226,8 @@
         "race": "NONE",
         "magnification": 8
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 68,
@@ -3229,7 +3258,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 46,
@@ -3254,7 +3284,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 34,
@@ -3279,7 +3310,8 @@
         "race": "NONE",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 34,
@@ -3304,7 +3336,8 @@
         "race": "NONE",
         "magnification": 8
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 34,
@@ -3329,7 +3362,8 @@
         "race": "NONE",
         "magnification": 7
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 13,
@@ -3372,7 +3406,8 @@
         "race": "NONE",
         "magnification": 10
       }
-    ]
+    ],
+    "healings": []
   },
   {
     "id": 13,
@@ -3416,8 +3451,7 @@
         "magnification": 7
       }
     ],
-    "healings": [
-    ]
+    "healings": []
   },
   {
     "id": 9992,
@@ -3485,8 +3519,7 @@
         "magnification": 7
       }
     ],
-    "healings": [
-    ]
+    "healings": []
   },
   {
     "id": 9993,
@@ -3554,8 +3587,7 @@
         "magnification": 7
       }
     ],
-    "healings": [
-    ]
+    "healings": []
   },
   {
     "id": 9994,
@@ -3623,8 +3655,7 @@
         "magnification": 7
       }
     ],
-    "healings": [
-    ]
+    "healings": []
   },
   {
     "id": 9995,
@@ -3650,8 +3681,7 @@
         "magnification": 16
       }
     ],
-    "healings": [
-    ]
+    "healings": []
   },
   {
     "id": 9996,
@@ -3669,10 +3699,8 @@
     "ds":  28,
     "sp":  44,
     "dx":  78,
-    "damages": [
-    ],
-    "healings": [
-    ]
+    "damages": [],
+    "healings": []
   },
   {
     "id": 9997,
@@ -3710,8 +3738,7 @@
         "magnification": 7
       }
     ],
-    "healings": [
-    ]
+    "healings": []
   },
   {
     "id": 9998,
@@ -3755,8 +3782,7 @@
         "magnification": 7
       }
     ],
-    "healings": [
-    ]
+    "healings": []
   },
   {
     "id": 9998,
@@ -3800,8 +3826,7 @@
         "magnification": 6
       }
     ],
-    "healings": [
-    ]
+    "healings": []
   },
   {
     "id": 9999,
@@ -3833,7 +3858,6 @@
         "magnification": 7
       }
     ],
-    "healings": [
-    ]
+    "healings": []
   }
 ]
