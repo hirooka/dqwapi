@@ -6,6 +6,7 @@ import dqwapi.domain.model.kokoro.Damage;
 import dqwapi.domain.model.kokoro.Healing;
 import dqwapi.domain.model.kokoro.Kokoro;
 import dqwapi.domain.model.kokoro.KokoroFlat;
+import dqwapi.domain.service.IDataService;
 import dqwapi.domain.service.IKokoroService;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -42,6 +43,7 @@ public class KokoroRestController {
   private String kokoroFlatJson;
 
   private final IKokoroService kokoroService;
+  private final IDataService dataService;
 
   @GetMapping
   public List<Kokoro> getAll() {
@@ -321,4 +323,9 @@ public class KokoroRestController {
     }
   }
 
+  @GetMapping("csv")
+  public String csv() {
+    dataService.createCombinationCsv();
+    return "csv";
+  }
 }
