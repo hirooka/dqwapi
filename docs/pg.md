@@ -454,3 +454,406 @@ create table test (
   total_cost integer
 );
 ```
+
+```
+create index on test(battle_master_bagi_slash_damage);
+create index on test(battle_master_dein_slash_damage);
+create index on test(battle_master_doruma_slash_damage);
+create index on test(battle_master_gira_slash_damage);
+create index on test(battle_master_hyado_slash_damage);
+create index on test(battle_master_io_slash_damage);
+create index on test(battle_master_jibaria_slash_damage);
+create index on test(battle_master_mera_slash_damage);
+  
+create index on test(battle_master_bagi_hit_damage);
+create index on test(battle_master_dein_hit_damage);
+create index on test(battle_master_doruma_hit_damage);
+create index on test(battle_master_gira_hit_damage);
+create index on test(battle_master_hyado_hit_damage);
+create index on test(battle_master_io_hit_damage);
+create index on test(battle_master_jibaria_hit_damage);
+create index on test(battle_master_mera_hit_damage);
+
+create index on test(battle_master_bagi_spell_damage);
+create index on test(battle_master_dein_spell_damage);
+create index on test(battle_master_doruma_spell_damage);
+create index on test(battle_master_gira_spell_damage);
+create index on test(battle_master_hyado_spell_damage);
+create index on test(battle_master_io_spell_damage);
+create index on test(battle_master_jibaria_spell_damage);
+create index on test(battle_master_mera_spell_damage);
+
+create index on test(battle_master_bagi_slash_physical_spell_damage);
+create index on test(battle_master_dein_slash_physical_spell_damage);
+create index on test(battle_master_doruma_slash_physical_spell_damage);
+create index on test(battle_master_gira_slash_physical_spell_damage);
+create index on test(battle_master_hyado_slash_physical_spell_damage);
+create index on test(battle_master_io_slash_physical_spell_damage);
+create index on test(battle_master_jibaria_slash_physical_spell_damage);
+create index on test(battle_master_mera_slash_physical_spell_damage);
+
+create index on test(battle_master_bagi_hit_physical_spell_damage);
+create index on test(battle_master_dein_hit_physical_spell_damage);
+create index on test(battle_master_doruma_hit_physical_spell_damage);
+create index on test(battle_master_gira_hit_physical_spell_damage);
+create index on test(battle_master_hyado_hit_physical_spell_damage);
+create index on test(battle_master_io_hit_physical_spell_damage);
+create index on test(battle_master_jibaria_hit_physical_spell_damage);
+create index on test(battle_master_mera_hit_physical_spell_damage);
+
+create index on test(battle_master_bagi_breath_damage);
+create index on test(battle_master_dein_breath_damage);
+create index on test(battle_master_doruma_breath_damage);
+create index on test(battle_master_gira_breath_damage);
+create index on test(battle_master_hyado_breath_damage);
+create index on test(battle_master_io_breath_damage);
+create index on test(battle_master_jibaria_breath_damage);
+create index on test(battle_master_mera_breath_damage);
+
+create index on test(battle_master_speciality_healing);
+create index on test(battle_master_spell_healing);
+
+create index on test(ranger_bagi_slash_damage);
+create index on test(ranger_dein_slash_damage);
+create index on test(ranger_doruma_slash_damage);
+create index on test(ranger_gira_slash_damage);
+create index on test(ranger_hyado_slash_damage);
+create index on test(ranger_io_slash_damage);
+create index on test(ranger_jibaria_slash_damage);
+create index on test(ranger_mera_slash_damage);
+
+create index on test(ranger_bagi_hit_damage);
+create index on test(ranger_dein_hit_damage);
+create index on test(ranger_doruma_hit_damage);
+create index on test(ranger_gira_hit_damage);
+create index on test(ranger_hyado_hit_damage);
+create index on test(ranger_io_hit_damage);
+create index on test(ranger_jibaria_hit_damage);
+create index on test(ranger_mera_hit_damage);
+
+create index on test(ranger_bagi_spell_damage);
+create index on test(ranger_dein_spell_damage);
+create index on test(ranger_doruma_spell_damage);
+create index on test(ranger_gira_spell_damage);
+create index on test(ranger_hyado_spell_damage);
+create index on test(ranger_io_spell_damage);
+create index on test(ranger_jibaria_spell_damage);
+create index on test(ranger_mera_spell_damage);
+
+create index on test(ranger_bagi_slash_physical_spell_damage);
+create index on test(ranger_dein_slash_physical_spell_damage);
+create index on test(ranger_doruma_slash_physical_spell_damage);
+create index on test(ranger_gira_slash_physical_spell_damage);
+create index on test(ranger_hyado_slash_physical_spell_damage);
+create index on test(ranger_io_slash_physical_spell_damage);
+create index on test(ranger_jibaria_slash_physical_spell_damage);
+create index on test(ranger_mera_slash_physical_spell_damage);
+
+create index on test(ranger_bagi_hit_physical_spell_damage);
+create index on test(ranger_dein_hit_physical_spell_damage);
+create index on test(ranger_doruma_hit_physical_spell_damage);
+create index on test(ranger_gira_hit_physical_spell_damage);
+create index on test(ranger_hyado_hit_physical_spell_damage);
+create index on test(ranger_io_hit_physical_spell_damage);
+create index on test(ranger_jibaria_hit_physical_spell_damage);
+create index on test(ranger_mera_hit_physical_spell_damage);
+
+create index on test(ranger_bagi_breath_damage);
+create index on test(ranger_dein_breath_damage);
+create index on test(ranger_doruma_breath_damage);
+create index on test(ranger_gira_breath_damage);
+create index on test(ranger_hyado_breath_damage);
+create index on test(ranger_io_breath_damage);
+create index on test(ranger_jibaria_breath_damage);
+create index on test(ranger_mera_breath_damage);
+
+create index on test(ranger_speciality_healing);
+create index on test(ranger_spell_healing);
+
+create index on test(sage_bagi_slash_damage);
+create index on test(sage_dein_slash_damage);
+create index on test(sage_doruma_slash_damage);
+create index on test(sage_gira_slash_damage);
+create index on test(sage_hyado_slash_damage);
+create index on test(sage_io_slash_damage);
+create index on test(sage_jibaria_slash_damage);
+create index on test(sage_mera_slash_damage);
+
+create index on test(sage_bagi_hit_damage);
+create index on test(sage_dein_hit_damage);
+create index on test(sage_doruma_hit_damage);
+create index on test(sage_gira_hit_damage);
+create index on test(sage_hyado_hit_damage);
+create index on test(sage_io_hit_damage);
+create index on test(sage_jibaria_hit_damage);
+create index on test(sage_mera_hit_damage);
+
+create index on test(sage_bagi_spell_damage);
+create index on test(sage_dein_spell_damage);
+create index on test(sage_doruma_spell_damage);
+create index on test(sage_gira_spell_damage);
+create index on test(sage_hyado_spell_damage);
+create index on test(sage_io_spell_damage);
+create index on test(sage_jibaria_spell_damage);
+create index on test(sage_mera_spell_damage);
+
+create index on test(sage_bagi_slash_physical_spell_damage);
+create index on test(sage_dein_slash_physical_spell_damage);
+create index on test(sage_doruma_slash_physical_spell_damage);
+create index on test(sage_gira_slash_physical_spell_damage);
+create index on test(sage_hyado_slash_physical_spell_damage);
+create index on test(sage_io_slash_physical_spell_damage);
+create index on test(sage_jibaria_slash_physical_spell_damage);
+create index on test(sage_mera_slash_physical_spell_damage);
+
+create index on test(sage_bagi_hit_physical_spell_damage);
+create index on test(sage_dein_hit_physical_spell_damage);
+create index on test(sage_doruma_hit_physical_spell_damage);
+create index on test(sage_gira_hit_physical_spell_damage);
+create index on test(sage_hyado_hit_physical_spell_damage);
+create index on test(sage_io_hit_physical_spell_damage);
+create index on test(sage_jibaria_hit_physical_spell_damage);
+create index on test(sage_mera_hit_physical_spell_damage);
+
+create index on test(sage_bagi_breath_damage);
+create index on test(sage_dein_breath_damage);
+create index on test(sage_doruma_breath_damage);
+create index on test(sage_gira_breath_damage);
+create index on test(sage_hyado_breath_damage);
+create index on test(sage_io_breath_damage);
+create index on test(sage_jibaria_breath_damage);
+create index on test(sage_mera_breath_damage);
+
+create index on test(sage_speciality_healing);
+create index on test(sage_spell_healing);
+
+create index on test(paladin_bagi_slash_damage);
+create index on test(paladin_dein_slash_damage);
+create index on test(paladin_doruma_slash_damage);
+create index on test(paladin_gira_slash_damage);
+create index on test(paladin_hyado_slash_damage);
+create index on test(paladin_io_slash_damage);
+create index on test(paladin_jibaria_slash_damage);
+create index on test(paladin_mera_slash_damage);
+
+create index on test(paladin_bagi_hit_damage);
+create index on test(paladin_dein_hit_damage);
+create index on test(paladin_doruma_hit_damage);
+create index on test(paladin_gira_hit_damage);
+create index on test(paladin_hyado_hit_damage);
+create index on test(paladin_io_hit_damage);
+create index on test(paladin_jibaria_hit_damage);
+create index on test(paladin_mera_hit_damage);
+
+create index on test(paladin_bagi_spell_damage);
+create index on test(paladin_dein_spell_damage);
+create index on test(paladin_doruma_spell_damage);
+create index on test(paladin_gira_spell_damage);
+create index on test(paladin_hyado_spell_damage);
+create index on test(paladin_io_spell_damage);
+create index on test(paladin_jibaria_spell_damage);
+create index on test(paladin_mera_spell_damage);
+
+create index on test(paladin_bagi_slash_physical_spell_damage);
+create index on test(paladin_dein_slash_physical_spell_damage);
+create index on test(paladin_doruma_slash_physical_spell_damage);
+create index on test(paladin_gira_slash_physical_spell_damage);
+create index on test(paladin_hyado_slash_physical_spell_damage);
+create index on test(paladin_io_slash_physical_spell_damage);
+create index on test(paladin_jibaria_slash_physical_spell_damage);
+create index on test(paladin_mera_slash_physical_spell_damage);
+
+create index on test(paladin_bagi_hit_physical_spell_damage);
+create index on test(paladin_dein_hit_physical_spell_damage);
+create index on test(paladin_doruma_hit_physical_spell_damage);
+create index on test(paladin_gira_hit_physical_spell_damage);
+create index on test(paladin_hyado_hit_physical_spell_damage);
+create index on test(paladin_io_hit_physical_spell_damage);
+create index on test(paladin_jibaria_hit_physical_spell_damage);
+create index on test(paladin_mera_hit_physical_spell_damage);
+
+create index on test(paladin_bagi_breath_damage);
+create index on test(paladin_dein_breath_damage);
+create index on test(paladin_doruma_breath_damage);
+create index on test(paladin_gira_breath_damage);
+create index on test(paladin_hyado_breath_damage);
+create index on test(paladin_io_breath_damage);
+create index on test(paladin_jibaria_breath_damage);
+create index on test(paladin_mera_breath_damage);
+
+create index on test(paladin_speciality_healing);
+create index on test(paladin_spell_healing);
+
+create index on test(magic_warrior_bagi_slash_damage);
+create index on test(magic_warrior_dein_slash_damage);
+create index on test(magic_warrior_doruma_slash_damage);
+create index on test(magic_warrior_gira_slash_damage);
+create index on test(magic_warrior_hyado_slash_damage);
+create index on test(magic_warrior_io_slash_damage);
+create index on test(magic_warrior_jibaria_slash_damage);
+create index on test(magic_warrior_mera_slash_damage);
+
+create index on test(magic_warrior_bagi_hit_damage);
+create index on test(magic_warrior_dein_hit_damage);
+create index on test(magic_warrior_doruma_hit_damage);
+create index on test(magic_warrior_gira_hit_damage);
+create index on test(magic_warrior_hyado_hit_damage);
+create index on test(magic_warrior_io_hit_damage);
+create index on test(magic_warrior_jibaria_hit_damage);
+create index on test(magic_warrior_mera_hit_damage);
+
+create index on test(magic_warrior_bagi_spell_damage);
+create index on test(magic_warrior_dein_spell_damage);
+create index on test(magic_warrior_doruma_spell_damage);
+create index on test(magic_warrior_gira_spell_damage);
+create index on test(magic_warrior_hyado_spell_damage);
+create index on test(magic_warrior_io_spell_damage);
+create index on test(magic_warrior_jibaria_spell_damage);
+create index on test(magic_warrior_mera_spell_damage);
+
+create index on test(magic_warrior_bagi_slash_physical_spell_damage);
+create index on test(magic_warrior_dein_slash_physical_spell_damage);
+create index on test(magic_warrior_doruma_slash_physical_spell_damage);
+create index on test(magic_warrior_gira_slash_physical_spell_damage);
+create index on test(magic_warrior_hyado_slash_physical_spell_damage);
+create index on test(magic_warrior_io_slash_physical_spell_damage);
+create index on test(magic_warrior_jibaria_slash_physical_spell_damage);
+create index on test(magic_warrior_mera_slash_physical_spell_damage);
+
+create index on test(magic_warrior_bagi_hit_physical_spell_damage);
+create index on test(magic_warrior_dein_hit_physical_spell_damage);
+create index on test(magic_warrior_doruma_hit_physical_spell_damage);
+create index on test(magic_warrior_gira_hit_physical_spell_damage);
+create index on test(magic_warrior_hyado_hit_physical_spell_damage);
+create index on test(magic_warrior_io_hit_physical_spell_damage);
+create index on test(magic_warrior_jibaria_hit_physical_spell_damage);
+create index on test(magic_warrior_mera_hit_physical_spell_damage);
+
+create index on test(magic_warrior_bagi_breath_damage);
+create index on test(magic_warrior_dein_breath_damage);
+create index on test(magic_warrior_doruma_breath_damage);
+create index on test(magic_warrior_gira_breath_damage);
+create index on test(magic_warrior_hyado_breath_damage);
+create index on test(magic_warrior_io_breath_damage);
+create index on test(magic_warrior_jibaria_breath_damage);
+create index on test(magic_warrior_mera_breath_damage);
+
+create index on test(magic_warrior_speciality_healing);
+create index on test(magic_warrior_spell_healing);
+
+create index on test(super_star_bagi_slash_damage);
+create index on test(super_star_dein_slash_damage);
+create index on test(super_star_doruma_slash_damage);
+create index on test(super_star_gira_slash_damage);
+create index on test(super_star_hyado_slash_damage);
+create index on test(super_star_io_slash_damage);
+create index on test(super_star_jibaria_slash_damage);
+create index on test(super_star_mera_slash_damage);
+
+create index on test(super_star_bagi_hit_damage);
+create index on test(super_star_dein_hit_damage);
+create index on test(super_star_doruma_hit_damage);
+create index on test(super_star_gira_hit_damage);
+create index on test(super_star_hyado_hit_damage);
+create index on test(super_star_io_hit_damage);
+create index on test(super_star_jibaria_hit_damage);
+create index on test(super_star_mera_hit_damage);
+
+create index on test(super_star_bagi_spell_damage);
+create index on test(super_star_dein_spell_damage);
+create index on test(super_star_doruma_spell_damage);
+create index on test(super_star_gira_spell_damage);
+create index on test(super_star_hyado_spell_damage);
+create index on test(super_star_io_spell_damage);
+create index on test(super_star_jibaria_spell_damage);
+create index on test(super_star_mera_spell_damage);
+
+create index on test(super_star_bagi_slash_physical_spell_damage);
+create index on test(super_star_dein_slash_physical_spell_damage);
+create index on test(super_star_doruma_slash_physical_spell_damage);
+create index on test(super_star_gira_slash_physical_spell_damage);
+create index on test(super_star_hyado_slash_physical_spell_damage);
+create index on test(super_star_io_slash_physical_spell_damage);
+create index on test(super_star_jibaria_slash_physical_spell_damage);
+create index on test(super_star_mera_slash_physical_spell_damage);
+
+create index on test(super_star_bagi_hit_physical_spell_damage);
+create index on test(super_star_dein_hit_physical_spell_damage);
+create index on test(super_star_doruma_hit_physical_spell_damage);
+create index on test(super_star_gira_hit_physical_spell_damage);
+create index on test(super_star_hyado_hit_physical_spell_damage);
+create index on test(super_star_io_hit_physical_spell_damage);
+create index on test(super_star_jibaria_hit_physical_spell_damage);
+create index on test(super_star_mera_hit_physical_spell_damage);
+
+create index on test(super_star_bagi_breath_damage);
+create index on test(super_star_dein_breath_damage);
+create index on test(super_star_doruma_breath_damage);
+create index on test(super_star_gira_breath_damage);
+create index on test(super_star_hyado_breath_damage);
+create index on test(super_star_io_breath_damage);
+create index on test(super_star_jibaria_breath_damage);
+create index on test(super_star_mera_breath_damage);
+
+create index on test(super_star_speciality_healing);
+create index on test(super_star_spell_healing);
+
+create index on test(pirate_bagi_slash_damage);
+create index on test(pirate_dein_slash_damage);
+create index on test(pirate_doruma_slash_damage);
+create index on test(pirate_gira_slash_damage);
+create index on test(pirate_hyado_slash_damage);
+create index on test(pirate_io_slash_damage);
+create index on test(pirate_jibaria_slash_damage);
+create index on test(pirate_mera_slash_damage);
+
+create index on test(pirate_bagi_hit_damage);
+create index on test(pirate_dein_hit_damage);
+create index on test(pirate_doruma_hit_damage);
+create index on test(pirate_gira_hit_damage);
+create index on test(pirate_hyado_hit_damage);
+create index on test(pirate_io_hit_damage);
+create index on test(pirate_jibaria_hit_damage);
+create index on test(pirate_mera_hit_damage);
+
+create index on test(pirate_bagi_spell_damage);
+create index on test(pirate_dein_spell_damage);
+create index on test(pirate_doruma_spell_damage);
+create index on test(pirate_gira_spell_damage);
+create index on test(pirate_hyado_spell_damage);
+create index on test(pirate_io_spell_damage);
+create index on test(pirate_jibaria_spell_damage);
+create index on test(pirate_mera_spell_damage);
+
+create index on test(pirate_bagi_slash_physical_spell_damage);
+create index on test(pirate_dein_slash_physical_spell_damage);
+create index on test(pirate_doruma_slash_physical_spell_damage);
+create index on test(pirate_gira_slash_physical_spell_damage);
+create index on test(pirate_hyado_slash_physical_spell_damage);
+create index on test(pirate_io_slash_physical_spell_damage);
+create index on test(pirate_jibaria_slash_physical_spell_damage);
+create index on test(pirate_mera_slash_physical_spell_damage);
+
+create index on test(pirate_bagi_hit_physical_spell_damage);
+create index on test(pirate_dein_hit_physical_spell_damage);
+create index on test(pirate_doruma_hit_physical_spell_damage);
+create index on test(pirate_gira_hit_physical_spell_damage);
+create index on test(pirate_hyado_hit_physical_spell_damage);
+create index on test(pirate_io_hit_physical_spell_damage);
+create index on test(pirate_jibaria_hit_physical_spell_damage);
+create index on test(pirate_mera_hit_physical_spell_damage);
+
+create index on test(pirate_bagi_breath_damage);
+create index on test(pirate_dein_breath_damage);
+create index on test(pirate_doruma_breath_damage);
+create index on test(pirate_gira_breath_damage);
+create index on test(pirate_hyado_breath_damage);
+create index on test(pirate_io_breath_damage);
+create index on test(pirate_jibaria_breath_damage);
+create index on test(pirate_mera_breath_damage);
+
+create index on test(pirate_speciality_healing);
+create index on test(pirate_spell_healing);
+
+create index on test(total_cost integer);
+```
