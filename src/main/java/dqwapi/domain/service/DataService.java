@@ -5,10 +5,13 @@ import static dqwapi.domain.model.common.KokoroType.GREEN;
 import static dqwapi.domain.model.common.KokoroType.PURPLE;
 import static dqwapi.domain.model.common.KokoroType.RED;
 import static dqwapi.domain.model.common.KokoroType.YELLOW;
+import static dqwapi.domain.model.job.JobType.ARMAMENTALIST;
 import static dqwapi.domain.model.job.JobType.BATTLE_MASTER;
 import static dqwapi.domain.model.job.JobType.PALADIN;
+import static dqwapi.domain.model.job.JobType.PIRATE;
 import static dqwapi.domain.model.job.JobType.RANGER;
 import static dqwapi.domain.model.job.JobType.SAGE;
+import static dqwapi.domain.model.job.JobType.SUPERSTAR;
 import static java.lang.Math.ceil;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -128,60 +131,6 @@ public class DataService implements IDataService {
             }
           }
         }
-      case RANGER:
-        if (t0.equals(BLUE)) {
-          if (t1.equals(BLUE)) {
-            if (t2.equals(RED) || t2.equals(BLUE)) {
-              return (int) ceil(p0 * mag)
-                  + (int) ceil(p1 * mag)
-                  + (int) ceil(p2 * mag)
-                  + (int) ceil(p3 * mag);
-            } else {
-              return (int) ceil(p0 * mag)
-                  + (int) ceil(p1 * mag)
-                  + p2
-                  + (int) ceil(p3 * mag);
-            }
-          } else {
-            if (t2.equals(RED) || t2.equals(BLUE)) {
-              return (int) ceil(p0 * mag)
-                  + p1
-                  + (int) ceil(p2 * mag)
-                  + (int) ceil(p3 * mag);
-            } else {
-              return (int) ceil(p0 * mag)
-                  + p1
-                  + p2
-                  + (int) ceil(p3 * mag);
-            }
-          }
-        } else {
-          if (t1.equals(BLUE)) {
-            if (t2.equals(RED) || t2.equals(BLUE)) {
-              return p0
-                  + (int) ceil(p1 * mag)
-                  + (int) ceil(p2 * mag)
-                  + (int) ceil(p3 * mag);
-            } else {
-              return p0
-                  + (int) ceil(p1 * mag)
-                  + p2
-                  + (int) ceil(p3 * mag);
-            }
-          } else {
-            if (t2.equals(RED) || t2.equals(BLUE)) {
-              return p0
-                  + p1
-                  + (int) ceil(p2 * mag)
-                  + (int) ceil(p3 * mag);
-            } else {
-              return p0
-                  + p1
-                  + p2
-                  + (int) ceil(p3 * mag);
-            }
-          }
-        }
       case SAGE:
         if (t0.equals(PURPLE) || t0.equals(GREEN)) {
           if (t1.equals(PURPLE) || t1.equals(GREEN)) {
@@ -236,6 +185,114 @@ public class DataService implements IDataService {
             }
           }
         }
+      case RANGER:
+        if (t0.equals(BLUE)) {
+          if (t1.equals(BLUE)) {
+            if (t2.equals(RED) || t2.equals(BLUE)) {
+              return (int) ceil(p0 * mag)
+                  + (int) ceil(p1 * mag)
+                  + (int) ceil(p2 * mag)
+                  + (int) ceil(p3 * mag);
+            } else {
+              return (int) ceil(p0 * mag)
+                  + (int) ceil(p1 * mag)
+                  + p2
+                  + (int) ceil(p3 * mag);
+            }
+          } else {
+            if (t2.equals(RED) || t2.equals(BLUE)) {
+              return (int) ceil(p0 * mag)
+                  + p1
+                  + (int) ceil(p2 * mag)
+                  + (int) ceil(p3 * mag);
+            } else {
+              return (int) ceil(p0 * mag)
+                  + p1
+                  + p2
+                  + (int) ceil(p3 * mag);
+            }
+          }
+        } else {
+          if (t1.equals(BLUE)) {
+            if (t2.equals(RED) || t2.equals(BLUE)) {
+              return p0
+                  + (int) ceil(p1 * mag)
+                  + (int) ceil(p2 * mag)
+                  + (int) ceil(p3 * mag);
+            } else {
+              return p0
+                  + (int) ceil(p1 * mag)
+                  + p2
+                  + (int) ceil(p3 * mag);
+            }
+          } else {
+            if (t2.equals(RED) || t2.equals(BLUE)) {
+              return p0
+                  + p1
+                  + (int) ceil(p2 * mag)
+                  + (int) ceil(p3 * mag);
+            } else {
+              return p0
+                  + p1
+                  + p2
+                  + (int) ceil(p3 * mag);
+            }
+          }
+        }
+      case ARMAMENTALIST:
+        if (t0.equals(YELLOW) || t0.equals(PURPLE)) {
+          if (t1.equals(YELLOW) || t1.equals(PURPLE)) {
+            if (t2.equals(YELLOW) || t2.equals(PURPLE)) {
+              return (int) ceil(p0 * mag)
+                  + (int) ceil(p1 * mag)
+                  + (int) ceil(p2 * mag)
+                  + (int) ceil(p3 * mag);
+            } else {
+              return (int) ceil(p0 * mag)
+                  + (int) ceil(p1 * mag)
+                  + p2
+                  + (int) ceil(p3 * mag);
+            }
+          } else {
+            if (t2.equals(YELLOW) || t2.equals(PURPLE)) {
+              return (int) ceil(p0 * mag)
+                  + p1
+                  + (int) ceil(p2 * mag)
+                  + (int) ceil(p3 * mag);
+            } else {
+              return (int) ceil(p0 * mag)
+                  + p1
+                  + p2
+                  + (int) ceil(p3 * mag);
+            }
+          }
+        } else {
+          if (t1.equals(YELLOW) || t1.equals(PURPLE)) {
+            if (t2.equals(YELLOW) || t2.equals(PURPLE)) {
+              return p0
+                  + (int) ceil(p1 * mag)
+                  + (int) ceil(p2 * mag)
+                  + (int) ceil(p3 * mag);
+            } else {
+              return p0
+                  + (int) ceil(p1 * mag)
+                  + p2
+                  + (int) ceil(p3 * mag);
+            }
+          } else {
+            if (t2.equals(YELLOW) || t2.equals(PURPLE)) {
+              return p0
+                  + p1
+                  + (int) ceil(p2 * mag)
+                  + (int) ceil(p3 * mag);
+            } else {
+              return p0
+                  + p1
+                  + p2
+                  + (int) ceil(p3 * mag);
+            }
+          }
+        }
       case PALADIN:
         if (t0.equals(YELLOW) || t0.equals(GREEN)) {
           if (t1.equals(YELLOW) || t1.equals(GREEN)) {
@@ -278,6 +335,114 @@ public class DataService implements IDataService {
             }
           } else {
             if (t2.equals(YELLOW) || t2.equals(GREEN)) {
+              return p0
+                  + p1
+                  + (int) ceil(p2 * mag)
+                  + (int) ceil(p3 * mag);
+            } else {
+              return p0
+                  + p1
+                  + p2
+                  + (int) ceil(p3 * mag);
+            }
+          }
+        }
+      case SUPERSTAR:
+        if (t0.equals(BLUE)) {
+          if (t1.equals(GREEN)) {
+            if (t2.equals(BLUE) || t2.equals(GREEN)) {
+              return (int) ceil(p0 * mag)
+                  + (int) ceil(p1 * mag)
+                  + (int) ceil(p2 * mag)
+                  + (int) ceil(p3 * mag);
+            } else {
+              return (int) ceil(p0 * mag)
+                  + (int) ceil(p1 * mag)
+                  + p2
+                  + (int) ceil(p3 * mag);
+            }
+          } else {
+            if (t2.equals(BLUE) || t2.equals(GREEN)) {
+              return (int) ceil(p0 * mag)
+                  + p1
+                  + (int) ceil(p2 * mag)
+                  + (int) ceil(p3 * mag);
+            } else {
+              return (int) ceil(p0 * mag)
+                  + p1
+                  + p2
+                  + (int) ceil(p3 * mag);
+            }
+          }
+        } else {
+          if (t1.equals(GREEN)) {
+            if (t2.equals(BLUE) || t2.equals(GREEN)) {
+              return p0
+                  + (int) ceil(p1 * mag)
+                  + (int) ceil(p2 * mag)
+                  + (int) ceil(p3 * mag);
+            } else {
+              return p0
+                  + (int) ceil(p1 * mag)
+                  + p2
+                  + (int) ceil(p3 * mag);
+            }
+          } else {
+            if (t2.equals(BLUE) || t2.equals(GREEN)) {
+              return p0
+                  + p1
+                  + (int) ceil(p2 * mag)
+                  + (int) ceil(p3 * mag);
+            } else {
+              return p0
+                  + p1
+                  + p2
+                  + (int) ceil(p3 * mag);
+            }
+          }
+        }
+      case PIRATE:
+        if (t0.equals(YELLOW)) {
+          if (t1.equals(BLUE)) {
+            if (t2.equals(YELLOW) || t2.equals(BLUE)) {
+              return (int) ceil(p0 * mag)
+                  + (int) ceil(p1 * mag)
+                  + (int) ceil(p2 * mag)
+                  + (int) ceil(p3 * mag);
+            } else {
+              return (int) ceil(p0 * mag)
+                  + (int) ceil(p1 * mag)
+                  + p2
+                  + (int) ceil(p3 * mag);
+            }
+          } else {
+            if (t2.equals(YELLOW) || t2.equals(BLUE)) {
+              return (int) ceil(p0 * mag)
+                  + p1
+                  + (int) ceil(p2 * mag)
+                  + (int) ceil(p3 * mag);
+            } else {
+              return (int) ceil(p0 * mag)
+                  + p1
+                  + p2
+                  + (int) ceil(p3 * mag);
+            }
+          }
+        } else {
+          if (t1.equals(BLUE)) {
+            if (t2.equals(YELLOW) || t2.equals(BLUE)) {
+              return p0
+                  + (int) ceil(p1 * mag)
+                  + (int) ceil(p2 * mag)
+                  + (int) ceil(p3 * mag);
+            } else {
+              return p0
+                  + (int) ceil(p1 * mag)
+                  + p2
+                  + (int) ceil(p3 * mag);
+            }
+          } else {
+            if (t2.equals(YELLOW) || t2.equals(BLUE)) {
               return p0
                   + p1
                   + (int) ceil(p2 * mag)
@@ -714,22 +879,22 @@ public class DataService implements IDataService {
                           + "," + k3.getId() + "," + k3.getRank().ordinal();
 
                       final String battleMaster = getCsv(BATTLE_MASTER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
-                      final String ranger = getCsv(RANGER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
                       final String sage = getCsv(SAGE, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
+                      final String ranger = getCsv(RANGER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
+                      final String armamentalist = getCsv(ARMAMENTALIST, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
                       final String paladin = getCsv(PALADIN, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
-                      final String magicWarrior = getCsv(BATTLE_MASTER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
-                      final String superStar = getCsv(BATTLE_MASTER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
-                      final String pirate = getCsv(BATTLE_MASTER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
+                      final String superstar = getCsv(SUPERSTAR, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
+                      final String pirate = getCsv(PIRATE, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
 
                       bufferedWriter.write(
                           idsAndRanks
                               + ","
                               + battleMaster
-                              + ranger
                               + sage
+                              + ranger
+                              + armamentalist
                               + paladin
-                              + magicWarrior
-                              + superStar
+                              + superstar
                               + pirate
                               + totalCost
                       );

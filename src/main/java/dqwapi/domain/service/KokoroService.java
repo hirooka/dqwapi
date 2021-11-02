@@ -734,14 +734,23 @@ public class KokoroService implements IKokoroService {
         case BATTLE_MASTER:
           text = "バトルマスター";
           break;
-        case RANGER:
-          text = "レンジャー";
-          break;
         case SAGE:
           text = "賢者";
           break;
+        case RANGER:
+          text = "レンジャー";
+          break;
+        case ARMAMENTALIST:
+          text = "魔法戦士";
+          break;
         case PALADIN:
           text = "パラディン";
+          break;
+        case SUPERSTAR:
+          text = "スーパースター";
+          break;
+        case PIRATE:
+          text = "海賊";
           break;
         default:
           throw new IllegalArgumentException("");
@@ -1199,6 +1208,26 @@ public class KokoroService implements IKokoroService {
                 throw new IllegalArgumentException("");
             }
             break;
+          case SAGE:
+            switch (i) {
+              case 0:
+              case 1:
+              case 2:
+                slot.setType(PURPLE_GREEN);
+                if (slot.getKokoro().getType().equals(PURPLE)
+                    || slot.getKokoro().getType().equals(GREEN)
+                ) {
+                  slot.setUp(true);
+                }
+                break;
+              case 3:
+                slot.setType(RAINBOW);
+                slot.setUp(true);
+                break;
+              default:
+                throw new IllegalArgumentException("");
+            }
+            break;
           case RANGER:
             switch (i) {
               case 0:
@@ -1224,26 +1253,7 @@ public class KokoroService implements IKokoroService {
                 throw new IllegalArgumentException("");
             }
             break;
-          case SAGE:
-            switch (i) {
-              case 0:
-              case 1:
-              case 2:
-                slot.setType(PURPLE_GREEN);
-                if (slot.getKokoro().getType().equals(PURPLE)
-                    || slot.getKokoro().getType().equals(GREEN)
-                ) {
-                  slot.setUp(true);
-                }
-                break;
-              case 3:
-                slot.setType(RAINBOW);
-                slot.setUp(true);
-                break;
-              default:
-                throw new IllegalArgumentException("");
-            }
-            break;
+          case ARMAMENTALIST:
           case PALADIN:
             switch (i) {
               case 0:
@@ -1264,6 +1274,8 @@ public class KokoroService implements IKokoroService {
                 throw new IllegalArgumentException("");
             }
             break;
+          case SUPERSTAR:
+          case PIRATE:
           default:
             throw new IllegalArgumentException("");
         }
@@ -1357,6 +1369,19 @@ public class KokoroService implements IKokoroService {
           default:
             return null;
         }
+      case SAGE:
+        switch (attackType) {
+          case SLASH:
+          case HIT:
+          case BREATH:
+          case SPELL:
+            return kokoroFlatRepository.findBySageOs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          default:
+            return null;
+        }
       case RANGER:
         switch (attackType) {
           case SLASH:
@@ -1374,19 +1399,7 @@ public class KokoroService implements IKokoroService {
           default:
             return null;
         }
-      case SAGE:
-        switch (attackType) {
-          case SLASH:
-          case HIT:
-          case BREATH:
-          case SPELL:
-            return kokoroFlatRepository.findBySageOs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          default:
-            return null;
-        }
+      case ARMAMENTALIST:
       case PALADIN:
         switch (attackType) {
           case SLASH:
@@ -1400,6 +1413,8 @@ public class KokoroService implements IKokoroService {
           default:
             return null;
         }
+      case SUPERSTAR:
+      case PIRATE:
       default:
         return null;
     }

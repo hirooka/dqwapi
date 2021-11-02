@@ -98,9 +98,12 @@ public class JobService implements IJobService {
         effect.setSlash(slash);
         effect.setHit(hit);
         return effect;
-      case RANGER:
-      case PALADIN:
       case SAGE:
+      case RANGER:
+      case ARMAMENTALIST:
+      case PALADIN:
+      case SUPERSTAR:
+      case PIRATE:
       default:
         return new JobSpecificEffect();
     }
