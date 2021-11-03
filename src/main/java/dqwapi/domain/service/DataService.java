@@ -37,6 +37,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 import org.springframework.util.StopWatch;
 
 @Slf4j
@@ -831,7 +832,13 @@ public class DataService implements IDataService {
 
   @Async
   @Override
-  public void createCombinationCsv() {
+  public void createCombinationCsv(final String type) {
+    if (type.equals("d")) {
+      divideCsv();
+      return;
+    } else if (ObjectUtils.isEmpty(type) || !type.equals("o")) {
+      return;
+    }
     log.info("{} kokoros, {} combinations", kokoros.size(), String.format("%,d", getCombinationSize()));
     final StopWatch stopWatch = new StopWatch();
     stopWatch.start();
@@ -915,6 +922,102 @@ public class DataService implements IDataService {
       );
     } catch (IOException ex) {
       throw new IllegalStateException("Failed to write combination.csv.");
+    }
+  }
+
+  private void divideCsv() {
+    log.info("{} kokoros, {} combinations", kokoros.size(), String.format("%,d", getCombinationSize()));
+    final StopWatch stopWatch = new StopWatch();
+    stopWatch.start();
+    try {
+      int div = 0;
+      BufferedWriter bufferedWriter = Files.newBufferedWriter(Paths.get("combination" + div + ".csv"), StandardCharsets.UTF_8);
+      final int len = kokoros.size();
+      log.info("{} kokoros", len);
+      int count = 0;
+      for (int i = 0; i < len; i++) {
+        for (int j = 0; j < len; j++) {
+          if (!(i >= j)) {
+            for (int k = 0; k < len; k++) {
+              if (!(i >= k) && !(j >= k)) {
+                for (int l = 0; l < len; l++) {
+                  if (!(i >= l) && !(j >= l) && !(k >= l)) {
+                    final int i0 = kokoros.get(i).getId();
+                    final int i1 = kokoros.get(j).getId();
+                    final int i2 = kokoros.get(k).getId();
+                    final int i3 = kokoros.get(l).getId();
+                    if (i0 != i1 && i0 != i2 && i0 != i3 && i1 != i2 && i1 != i3 && i2 != i3) {
+                      count++;
+
+                      final KokoroFlat k0 = kokoros.get(i);
+                      final KokoroFlat k1 = kokoros.get(j);
+                      final KokoroFlat k2 = kokoros.get(k);
+                      final KokoroFlat k3 = kokoros.get(l);
+
+                      // Basis
+                      final String names = k0.getName()
+                          + "," + k1.getName()
+                          + "," + k2.getName()
+                          + "," + k3.getName();
+                      final String ids = k0.getId()
+                          + "," + k1.getId()
+                          + "," + k2.getId()
+                          + "," + k3.getId();
+                      final String ranks = k0.getRank().ordinal()
+                          + "," + k1.getRank().ordinal()
+                          + "," + k2.getRank().ordinal()
+                          + "," + k3.getRank().ordinal();
+                      int totalCost = k0.getCost() + k1.getCost() + k2.getCost() + k3.getCost()
+                          - k0.getPlusCost() - k1.getPlusCost() - k2.getPlusCost() - k3.getPlusCost();
+                      final String idsAndRanks = k0.getId() + "," + k0.getRank().ordinal()
+                          + "," + k1.getId() + "," + k1.getRank().ordinal()
+                          + "," + k2.getId() + "," + k2.getRank().ordinal()
+                          + "," + k3.getId() + "," + k3.getRank().ordinal();
+
+                      final String battleMaster = getCsv(BATTLE_MASTER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
+                      final String sage = getCsv(SAGE, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
+                      final String ranger = getCsv(RANGER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
+                      final String armamentalist = getCsv(ARMAMENTALIST, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
+                      final String paladin = getCsv(PALADIN, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
+                      final String superstar = getCsv(SUPERSTAR, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
+                      final String pirate = getCsv(PIRATE, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
+
+                      if (count % 1_000_000 == 0) {
+                        bufferedWriter.close();
+                        div++;
+                        bufferedWriter = Files.newBufferedWriter(Paths.get("combination" + div + ".csv"), StandardCharsets.UTF_8);
+                      }
+
+                      bufferedWriter.write(
+                          idsAndRanks
+                              + ","
+                              + battleMaster
+                              + sage
+                              + ranger
+                              + armamentalist
+                              + paladin
+                              + superstar
+                              + pirate
+                              + totalCost
+                      );
+                      bufferedWriter.newLine();
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      stopWatch.stop();
+      log.info("{} kokoros, {} combinations, {} div, {} ms",
+          kokoros.size(),
+          String.format("%,d", count),
+          String.format("%,d", div),
+          String.format("%,d", stopWatch.getLastTaskTimeMillis())
+      );
+    } catch (IOException ex) {
+      throw new IllegalStateException("Failed to write combination csv.", ex);
     }
   }
 }

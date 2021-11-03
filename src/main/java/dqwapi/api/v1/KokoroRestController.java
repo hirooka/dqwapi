@@ -25,6 +25,7 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
@@ -324,8 +325,13 @@ public class KokoroRestController {
   }
 
   @GetMapping("csv")
-  public String csv() {
-    dataService.createCombinationCsv();
-    return "csv";
+  public Map<String, String> createCsv(
+      @RequestParam(value = "t", required = false) String type
+  ) {
+    if (!ObjectUtils.isEmpty(type) || !type.equals("d")) {
+      type = "o";
+    }
+    dataService.createCombinationCsv(type);
+    return Map.of("csv", type);
   }
 }

@@ -1,5 +1,5 @@
 package dqwapi.domain.service;
 
 public interface IDataService {
-  void createCombinationCsv();
+  void createCombinationCsv(final String type);
 }
