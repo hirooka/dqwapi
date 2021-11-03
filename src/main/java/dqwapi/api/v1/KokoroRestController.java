@@ -328,6 +328,9 @@ public class KokoroRestController {
   public Map<String, String> createCsv(
       @RequestParam(value = "t", required = false) String type
   ) {
+    if (!canPersist) {
+      throw new IllegalArgumentException("Cannot create CSV...");
+    }
     if (!ObjectUtils.isEmpty(type) || !type.equals("d")) {
       type = "o";
     }

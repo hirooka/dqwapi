@@ -1,6 +1,7 @@
 package dqwapi.domain.service;
 
 import static dqwapi.domain.model.common.KokoroType.BLUE;
+import static dqwapi.domain.model.common.KokoroType.BLUE_GREEN;
 import static dqwapi.domain.model.common.KokoroType.GREEN;
 import static dqwapi.domain.model.common.KokoroType.PURPLE;
 import static dqwapi.domain.model.common.KokoroType.PURPLE_GREEN;
@@ -9,7 +10,9 @@ import static dqwapi.domain.model.common.KokoroType.RED;
 import static dqwapi.domain.model.common.KokoroType.RED_BLUE;
 import static dqwapi.domain.model.common.KokoroType.RED_YELLOW;
 import static dqwapi.domain.model.common.KokoroType.YELLOW;
+import static dqwapi.domain.model.common.KokoroType.YELLOW_BLUE;
 import static dqwapi.domain.model.common.KokoroType.YELLOW_GREEN;
+import static dqwapi.domain.model.common.KokoroType.YELLOW_PURPLE;
 import static java.util.Objects.requireNonNull;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -948,67 +951,6 @@ public class KokoroService implements IKokoroService {
           dx += combination.getSlots().get(2).getKokoro().getDx();
         }
         break;
-      case RANGER:
-        if (combination.getSlots().get(0).getKokoro().getType().equals(BLUE)) {
-          hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
-          mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
-          op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
-          dp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDp() * magnification);
-          os += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOs() * magnification);
-          ds += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDs() * magnification);
-          sp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getSp() * magnification);
-          dx += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDx() * magnification);
-        } else {
-          hp += combination.getSlots().get(0).getKokoro().getHp();
-          mp += combination.getSlots().get(0).getKokoro().getMp();
-          op += combination.getSlots().get(0).getKokoro().getOp();
-          dp += combination.getSlots().get(0).getKokoro().getDp();
-          os += combination.getSlots().get(0).getKokoro().getOs();
-          ds += combination.getSlots().get(0).getKokoro().getDs();
-          sp += combination.getSlots().get(0).getKokoro().getSp();
-          dx += combination.getSlots().get(0).getKokoro().getDx();
-        }
-        if (combination.getSlots().get(1).getKokoro().getType().equals(BLUE)) {
-          hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
-          mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
-          op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
-          dp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDp() * magnification);
-          os += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOs() * magnification);
-          ds += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDs() * magnification);
-          sp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getSp() * magnification);
-          dx += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDx() * magnification);
-        } else {
-          hp += combination.getSlots().get(1).getKokoro().getHp();
-          mp += combination.getSlots().get(1).getKokoro().getMp();
-          op += combination.getSlots().get(1).getKokoro().getOp();
-          dp += combination.getSlots().get(1).getKokoro().getDp();
-          os += combination.getSlots().get(1).getKokoro().getOs();
-          ds += combination.getSlots().get(1).getKokoro().getDs();
-          sp += combination.getSlots().get(1).getKokoro().getSp();
-          dx += combination.getSlots().get(1).getKokoro().getDx();
-        }
-        if (combination.getSlots().get(2).getKokoro().getType().equals(RED)
-            || combination.getSlots().get(2).getKokoro().getType().equals(BLUE)
-        ) {
-          hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
-          mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
-          op += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOp() * magnification);
-          dp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDp() * magnification);
-          os += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOs() * magnification);
-          ds += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDs() * magnification);
-          sp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getSp() * magnification);
-          dx += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDx() * magnification);
-        } else {
-          hp += combination.getSlots().get(2).getKokoro().getHp();
-          mp += combination.getSlots().get(2).getKokoro().getMp();
-          op += combination.getSlots().get(2).getKokoro().getOp();
-          dp += combination.getSlots().get(2).getKokoro().getDp();
-          os += combination.getSlots().get(2).getKokoro().getOs();
-          ds += combination.getSlots().get(2).getKokoro().getDs();
-          sp += combination.getSlots().get(2).getKokoro().getSp();
-          dx += combination.getSlots().get(2).getKokoro().getDx();
-        }
-        break;
       case SAGE:
         if (combination.getSlots().get(0).getKokoro().getType().equals(PURPLE)
             || combination.getSlots().get(0).getKokoro().getType().equals(GREEN)
@@ -1074,6 +1016,132 @@ public class KokoroService implements IKokoroService {
           dx += combination.getSlots().get(2).getKokoro().getDx();
         }
         break;
+      case RANGER:
+        if (combination.getSlots().get(0).getKokoro().getType().equals(BLUE)) {
+          hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(0).getKokoro().getHp();
+          mp += combination.getSlots().get(0).getKokoro().getMp();
+          op += combination.getSlots().get(0).getKokoro().getOp();
+          dp += combination.getSlots().get(0).getKokoro().getDp();
+          os += combination.getSlots().get(0).getKokoro().getOs();
+          ds += combination.getSlots().get(0).getKokoro().getDs();
+          sp += combination.getSlots().get(0).getKokoro().getSp();
+          dx += combination.getSlots().get(0).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(1).getKokoro().getType().equals(BLUE)) {
+          hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(1).getKokoro().getHp();
+          mp += combination.getSlots().get(1).getKokoro().getMp();
+          op += combination.getSlots().get(1).getKokoro().getOp();
+          dp += combination.getSlots().get(1).getKokoro().getDp();
+          os += combination.getSlots().get(1).getKokoro().getOs();
+          ds += combination.getSlots().get(1).getKokoro().getDs();
+          sp += combination.getSlots().get(1).getKokoro().getSp();
+          dx += combination.getSlots().get(1).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(2).getKokoro().getType().equals(RED)
+            || combination.getSlots().get(2).getKokoro().getType().equals(BLUE)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(2).getKokoro().getHp();
+          mp += combination.getSlots().get(2).getKokoro().getMp();
+          op += combination.getSlots().get(2).getKokoro().getOp();
+          dp += combination.getSlots().get(2).getKokoro().getDp();
+          os += combination.getSlots().get(2).getKokoro().getOs();
+          ds += combination.getSlots().get(2).getKokoro().getDs();
+          sp += combination.getSlots().get(2).getKokoro().getSp();
+          dx += combination.getSlots().get(2).getKokoro().getDx();
+        }
+        break;
+      case ARMAMENTALIST:
+        if (combination.getSlots().get(0).getKokoro().getType().equals(YELLOW)
+            || combination.getSlots().get(0).getKokoro().getType().equals(PURPLE)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(0).getKokoro().getHp();
+          mp += combination.getSlots().get(0).getKokoro().getMp();
+          op += combination.getSlots().get(0).getKokoro().getOp();
+          dp += combination.getSlots().get(0).getKokoro().getDp();
+          os += combination.getSlots().get(0).getKokoro().getOs();
+          ds += combination.getSlots().get(0).getKokoro().getDs();
+          sp += combination.getSlots().get(0).getKokoro().getSp();
+          dx += combination.getSlots().get(0).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(1).getKokoro().getType().equals(YELLOW)
+            || combination.getSlots().get(1).getKokoro().getType().equals(PURPLE)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(1).getKokoro().getHp();
+          mp += combination.getSlots().get(1).getKokoro().getMp();
+          op += combination.getSlots().get(1).getKokoro().getOp();
+          dp += combination.getSlots().get(1).getKokoro().getDp();
+          os += combination.getSlots().get(1).getKokoro().getOs();
+          ds += combination.getSlots().get(1).getKokoro().getDs();
+          sp += combination.getSlots().get(1).getKokoro().getSp();
+          dx += combination.getSlots().get(1).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(2).getKokoro().getType().equals(YELLOW)
+            || combination.getSlots().get(2).getKokoro().getType().equals(PURPLE)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(2).getKokoro().getHp();
+          mp += combination.getSlots().get(2).getKokoro().getMp();
+          op += combination.getSlots().get(2).getKokoro().getOp();
+          dp += combination.getSlots().get(2).getKokoro().getDp();
+          os += combination.getSlots().get(2).getKokoro().getOs();
+          ds += combination.getSlots().get(2).getKokoro().getDs();
+          sp += combination.getSlots().get(2).getKokoro().getSp();
+          dx += combination.getSlots().get(2).getKokoro().getDx();
+        }
+        break;
       case PALADIN:
         if (combination.getSlots().get(0).getKokoro().getType().equals(YELLOW)
             || combination.getSlots().get(0).getKokoro().getType().equals(GREEN)
@@ -1119,6 +1187,128 @@ public class KokoroService implements IKokoroService {
         }
         if (combination.getSlots().get(2).getKokoro().getType().equals(YELLOW)
             || combination.getSlots().get(2).getKokoro().getType().equals(GREEN)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(2).getKokoro().getHp();
+          mp += combination.getSlots().get(2).getKokoro().getMp();
+          op += combination.getSlots().get(2).getKokoro().getOp();
+          dp += combination.getSlots().get(2).getKokoro().getDp();
+          os += combination.getSlots().get(2).getKokoro().getOs();
+          ds += combination.getSlots().get(2).getKokoro().getDs();
+          sp += combination.getSlots().get(2).getKokoro().getSp();
+          dx += combination.getSlots().get(2).getKokoro().getDx();
+        }
+        break;
+      case SUPERSTAR:
+        if (combination.getSlots().get(0).getKokoro().getType().equals(BLUE)) {
+          hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(0).getKokoro().getHp();
+          mp += combination.getSlots().get(0).getKokoro().getMp();
+          op += combination.getSlots().get(0).getKokoro().getOp();
+          dp += combination.getSlots().get(0).getKokoro().getDp();
+          os += combination.getSlots().get(0).getKokoro().getOs();
+          ds += combination.getSlots().get(0).getKokoro().getDs();
+          sp += combination.getSlots().get(0).getKokoro().getSp();
+          dx += combination.getSlots().get(0).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(1).getKokoro().getType().equals(GREEN)) {
+          hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(1).getKokoro().getHp();
+          mp += combination.getSlots().get(1).getKokoro().getMp();
+          op += combination.getSlots().get(1).getKokoro().getOp();
+          dp += combination.getSlots().get(1).getKokoro().getDp();
+          os += combination.getSlots().get(1).getKokoro().getOs();
+          ds += combination.getSlots().get(1).getKokoro().getDs();
+          sp += combination.getSlots().get(1).getKokoro().getSp();
+          dx += combination.getSlots().get(1).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(2).getKokoro().getType().equals(BLUE)
+            || combination.getSlots().get(2).getKokoro().getType().equals(GREEN)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(2).getKokoro().getHp();
+          mp += combination.getSlots().get(2).getKokoro().getMp();
+          op += combination.getSlots().get(2).getKokoro().getOp();
+          dp += combination.getSlots().get(2).getKokoro().getDp();
+          os += combination.getSlots().get(2).getKokoro().getOs();
+          ds += combination.getSlots().get(2).getKokoro().getDs();
+          sp += combination.getSlots().get(2).getKokoro().getSp();
+          dx += combination.getSlots().get(2).getKokoro().getDx();
+        }
+        break;
+      case PIRATE:
+        if (combination.getSlots().get(0).getKokoro().getType().equals(YELLOW)) {
+          hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(0).getKokoro().getHp();
+          mp += combination.getSlots().get(0).getKokoro().getMp();
+          op += combination.getSlots().get(0).getKokoro().getOp();
+          dp += combination.getSlots().get(0).getKokoro().getDp();
+          os += combination.getSlots().get(0).getKokoro().getOs();
+          ds += combination.getSlots().get(0).getKokoro().getDs();
+          sp += combination.getSlots().get(0).getKokoro().getSp();
+          dx += combination.getSlots().get(0).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(1).getKokoro().getType().equals(BLUE)) {
+          hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(1).getKokoro().getHp();
+          mp += combination.getSlots().get(1).getKokoro().getMp();
+          op += combination.getSlots().get(1).getKokoro().getOp();
+          dp += combination.getSlots().get(1).getKokoro().getDp();
+          os += combination.getSlots().get(1).getKokoro().getOs();
+          ds += combination.getSlots().get(1).getKokoro().getDs();
+          sp += combination.getSlots().get(1).getKokoro().getSp();
+          dx += combination.getSlots().get(1).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(2).getKokoro().getType().equals(YELLOW)
+            || combination.getSlots().get(2).getKokoro().getType().equals(BLUE)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
@@ -1254,6 +1444,25 @@ public class KokoroService implements IKokoroService {
             }
             break;
           case ARMAMENTALIST:
+            switch (i) {
+              case 0:
+              case 1:
+              case 2:
+                slot.setType(YELLOW_PURPLE);
+                if (slot.getKokoro().getType().equals(YELLOW)
+                    || slot.getKokoro().getType().equals(PURPLE)
+                ) {
+                  slot.setUp(true);
+                }
+                break;
+              case 3:
+                slot.setType(RAINBOW);
+                slot.setUp(true);
+                break;
+              default:
+                throw new IllegalArgumentException("");
+            }
+            break;
           case PALADIN:
             switch (i) {
               case 0:
@@ -1275,7 +1484,65 @@ public class KokoroService implements IKokoroService {
             }
             break;
           case SUPERSTAR:
+            switch (i) {
+              case 0:
+                slot.setType(BLUE);
+                if (slot.getKokoro().getType().equals(BLUE)) {
+                  slot.setUp(true);
+                }
+                break;
+              case 1:
+                slot.setType(GREEN);
+                if (slot.getKokoro().getType().equals(GREEN)) {
+                  slot.setUp(true);
+                }
+                break;
+              case 2:
+                slot.setType(BLUE_GREEN);
+                if (slot.getKokoro().getType().equals(BLUE)
+                    || slot.getKokoro().getType().equals(GREEN)
+                ) {
+                  slot.setUp(true);
+                }
+                break;
+              case 3:
+                slot.setType(RAINBOW);
+                slot.setUp(true);
+                break;
+              default:
+                throw new IllegalArgumentException("");
+            }
+            break;
           case PIRATE:
+            switch (i) {
+              case 0:
+                slot.setType(YELLOW);
+                if (slot.getKokoro().getType().equals(YELLOW)) {
+                  slot.setUp(true);
+                }
+                break;
+              case 1:
+                slot.setType(BLUE);
+                if (slot.getKokoro().getType().equals(BLUE)) {
+                  slot.setUp(true);
+                }
+                break;
+              case 2:
+                slot.setType(YELLOW_BLUE);
+                if (slot.getKokoro().getType().equals(YELLOW)
+                    || slot.getKokoro().getType().equals(BLUE)
+                ) {
+                  slot.setUp(true);
+                }
+                break;
+              case 3:
+                slot.setType(RAINBOW);
+                slot.setUp(true);
+                break;
+              default:
+                throw new IllegalArgumentException("");
+            }
+            break;
           default:
             throw new IllegalArgumentException("");
         }
@@ -1364,8 +1631,26 @@ public class KokoroService implements IKokoroService {
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
             );
-          case BREATH:
           case SPELL:
+            return kokoroFlatRepository.findByBattleMasterOs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case PHYSICS_SPELL:
+            return kokoroFlatRepository.findByBattleMasterOpOs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case BREATH:
+            return kokoroFlatRepository.findByBattleMasterOpDx(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case HEALING:
+            return kokoroFlatRepository.findByBattleMasterDs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
           default:
             return null;
         }
@@ -1373,9 +1658,27 @@ public class KokoroService implements IKokoroService {
         switch (attackType) {
           case SLASH:
           case HIT:
-          case BREATH:
+            return kokoroFlatRepository.findBySageOp(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
           case SPELL:
             return kokoroFlatRepository.findBySageOs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case PHYSICS_SPELL:
+            return kokoroFlatRepository.findBySageOpOs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case BREATH:
+            return kokoroFlatRepository.findBySageOpDx(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case HEALING:
+            return kokoroFlatRepository.findBySageDs(
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
             );
@@ -1390,31 +1693,153 @@ public class KokoroService implements IKokoroService {
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
             );
+          case SPELL:
+            return kokoroFlatRepository.findByRangerOs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case PHYSICS_SPELL:
+            return kokoroFlatRepository.findByRangerOpOs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
           case BREATH:
             return kokoroFlatRepository.findByRangerOpDx(
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
             );
-          case SPELL:
+          case HEALING:
+            return kokoroFlatRepository.findByRangerDs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
           default:
             return null;
         }
       case ARMAMENTALIST:
+        switch (attackType) {
+          case SLASH:
+          case HIT:
+            return kokoroFlatRepository.findByArmamentalistOp(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case SPELL:
+            return kokoroFlatRepository.findByArmamentalistOs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case PHYSICS_SPELL:
+            return kokoroFlatRepository.findByArmamentalistOpOs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case BREATH:
+            return kokoroFlatRepository.findByArmamentalistOpDx(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case HEALING:
+            return kokoroFlatRepository.findByArmamentalistDs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          default:
+            return null;
+        }
       case PALADIN:
         switch (attackType) {
           case SLASH:
+          case HIT:
             return kokoroFlatRepository.findByPaladinOp(
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
             );
-          case HIT:
-          case BREATH:
           case SPELL:
+            return kokoroFlatRepository.findByPaladinOs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case PHYSICS_SPELL:
+            return kokoroFlatRepository.findByPaladinOpOs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case BREATH:
+            return kokoroFlatRepository.findByPaladinOpDx(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case HEALING:
+            return kokoroFlatRepository.findByPaladinDs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
           default:
             return null;
         }
       case SUPERSTAR:
+        switch (attackType) {
+          case SLASH:
+          case HIT:
+            return kokoroFlatRepository.findBySuperstarOp(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case SPELL:
+            return kokoroFlatRepository.findBySuperstarOs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case PHYSICS_SPELL:
+            return kokoroFlatRepository.findBySuperstarOpOs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case BREATH:
+            return kokoroFlatRepository.findBySuperstarOpDx(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case HEALING:
+            return kokoroFlatRepository.findBySuperstarDs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          default:
+            return null;
+        }
       case PIRATE:
+        switch (attackType) {
+          case SLASH:
+          case HIT:
+            return kokoroFlatRepository.findByPirateOp(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case SPELL:
+            return kokoroFlatRepository.findByPirateOs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case PHYSICS_SPELL:
+            return kokoroFlatRepository.findByPirateOpOs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case BREATH:
+            return kokoroFlatRepository.findByPirateOpDx(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          case HEALING:
+            return kokoroFlatRepository.findByPirateDs(
+                PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                cost, nonBrides, exclusionRanks
+            );
+          default:
+            return null;
+        }
       default:
         return null;
     }
