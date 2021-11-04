@@ -568,9 +568,9 @@ public class DataService implements IDataService {
 
   private String getCsv(final JobType jobType, final KokoroFlat k0, final KokoroFlat k1, final KokoroFlat k2, final KokoroFlat k3) {
     // Magnification
-    final int slashMag = k0.getBreathNoneNone() + k1.getBreathNoneNone() + k2.getBreathNoneNone() + k3.getBreathNoneNone();
-    final int hitMag = k0.getBreathNoneNone() + k1.getBreathNoneNone() + k2.getBreathNoneNone() + k3.getBreathNoneNone();
-    final int spellMag = k0.getBreathNoneNone() + k1.getBreathNoneNone() + k2.getBreathNoneNone() + k3.getBreathNoneNone();
+    final int slashMag = k0.getSlashNoneNone() + k1.getSlashNoneNone() + k2.getSlashNoneNone() + k3.getSlashNoneNone();
+    final int hitMag = k0.getHitNoneNone() + k1.getHitNoneNone() + k2.getHitNoneNone() + k3.getHitNoneNone();
+    final int spellMag = k0.getSpellNoneNone() + k1.getSpellNoneNone() + k2.getSpellNoneNone() + k3.getSpellNoneNone();
     final int breathMag = k0.getBreathNoneNone() + k1.getBreathNoneNone() + k2.getBreathNoneNone() + k3.getBreathNoneNone();
 
     final int slashBagiMag = k0.getSlashBagiNone() + k1.getSlashBagiNone() + k2.getSlashBagiNone() + k3.getSlashBagiNone();
@@ -734,6 +734,8 @@ public class DataService implements IDataService {
 
     final int specialityHealing = (int) ceil(maxDs * (1 + (healingSkillMag / 100.0)) * (1 + (healingSpecialtyMag / 100.0)));
     final int spellHealing = (int) ceil(maxDs * (1 + (healingSkillMag / 100.0)) * (1 + (healingSpellMag / 100.0)));
+
+    // TODO: RACE
 
     final List<Integer> damageList = Arrays.asList(
         bagiSlashDamage,

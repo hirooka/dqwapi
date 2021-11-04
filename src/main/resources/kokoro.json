@@ -3468,7 +3468,7 @@
     "os":  30,
     "ds":  29,
     "sp":  85,
-    "dx":  85,
+    "dx":  80,
     "damages": [
       {
         "attack": "SLASH",
@@ -3536,7 +3536,7 @@
     "os":  30,
     "ds":  29,
     "sp":  85,
-    "dx":  85,
+    "dx":  80,
     "damages": [
       {
         "attack": "SLASH",
@@ -3604,7 +3604,7 @@
     "os":  30,
     "ds":  29,
     "sp":  85,
-    "dx":  85,
+    "dx":  80,
     "damages": [
       {
         "attack": "SLASH",

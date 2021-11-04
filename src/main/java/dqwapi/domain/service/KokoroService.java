@@ -1859,13 +1859,13 @@ public class KokoroService implements IKokoroService {
     final List<Integer> nonBrides;
     switch (bride) {
       case "ビアンカ":
-        nonBrides = Arrays.asList(50002, 50003);
+        nonBrides = Arrays.asList(9992, 9993);
         break;
       case "フローラ":
-        nonBrides = Arrays.asList(50001, 50003);
+        nonBrides = Arrays.asList(9992, 9994);
         break;
       case "デボラ":
-        nonBrides = Arrays.asList(50001, 50002);
+        nonBrides = Arrays.asList(9993, 9994);
         break;
       default:
         throw new IllegalArgumentException("Illegal Argument: set correct bride name.");
