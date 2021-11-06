@@ -1,5 +1,7 @@
 package dqwapi.domain.service;
 
+import static dqwapi.domain.model.common.CsvType.ATTRIBUTE;
+import static dqwapi.domain.model.common.CsvType.ATTRIBUTE_RACE;
 import static dqwapi.domain.model.common.KokoroType.BLUE;
 import static dqwapi.domain.model.common.KokoroType.GREEN;
 import static dqwapi.domain.model.common.KokoroType.PURPLE;
@@ -18,6 +20,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dqwapi.domain.model.common.AttackType;
+import dqwapi.domain.model.common.CsvType;
 import dqwapi.domain.model.common.KokoroType;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.KokoroFlat;
@@ -517,7 +520,8 @@ public class DataService implements IDataService {
                         indexes = Arrays.asList(i, j, k, l);
                       }
                       break;
-                    case PHYSICS_SPELL:
+                    case PHYSICS_SPELL_HIT:
+                    case PHYSICS_SPELL_SLASH:
                       int physicsSpell = getParameter(
                           jobType,
                           kokoros.get(i).getOp() + kokoros.get(i).getOs(), kokoros.get(i).getType(),
@@ -566,7 +570,63 @@ public class DataService implements IDataService {
     return p.toString();
   }
 
-  private String getCsv(final JobType jobType, final KokoroFlat k0, final KokoroFlat k1, final KokoroFlat k2, final KokoroFlat k3) {
+  private String getCsv(
+      final JobType jobType,
+      final KokoroFlat k0, final KokoroFlat k1, final KokoroFlat k2, final KokoroFlat k3,
+      final CsvType csvType
+      ) {
+
+    // Pattern
+    final MaxPattern opMaxPattern = getMaxPattern(
+        jobType,
+        AttackType.SLASH,
+        Arrays.asList(
+            k0, k1, k2, k3
+        )
+    );
+    final int maxOp = opMaxPattern.getValue();
+    final String maxOpPattern = getPattern(opMaxPattern.getIndexes());
+
+    final MaxPattern osMaxPattern = getMaxPattern(
+        jobType,
+        AttackType.SPELL,
+        Arrays.asList(
+            k0, k1, k2, k3
+        )
+    );
+    final int maxOs = osMaxPattern.getValue();
+    final String maxOsPattern = getPattern(osMaxPattern.getIndexes());
+
+    final MaxPattern opOsMaxPattern = getMaxPattern(
+        jobType,
+        AttackType.PHYSICS_SPELL_SLASH,
+        Arrays.asList(
+            k0, k1, k2, k3
+        )
+    );
+    final int maxOpOs = opOsMaxPattern.getValue();
+    final String maxOpOsPattern = getPattern(opOsMaxPattern.getIndexes());
+
+    final MaxPattern opDxMaxPattern = getMaxPattern(
+        jobType,
+        AttackType.BREATH,
+        Arrays.asList(
+            k0, k1, k2, k3
+        )
+    );
+    final int maxOpDx = opDxMaxPattern.getValue();
+    final String maxOpDxPattern = getPattern(opDxMaxPattern.getIndexes());
+
+    final MaxPattern dsMaxPattern = getMaxPattern(
+        jobType,
+        AttackType.HEALING,
+        Arrays.asList(
+            k0, k1, k2, k3
+        )
+    );
+    final int maxDs = dsMaxPattern.getValue();
+    final String maxDsPattern = getPattern(dsMaxPattern.getIndexes());
+
     // Magnification
     final int slashMag = k0.getSlashNoneNone() + k1.getSlashNoneNone() + k2.getSlashNoneNone() + k3.getSlashNoneNone();
     final int hitMag = k0.getHitNoneNone() + k1.getHitNoneNone() + k2.getHitNoneNone() + k3.getHitNoneNone();
@@ -622,62 +682,21 @@ public class DataService implements IDataService {
     final int healingSpecialtyMag = k0.getHealingSpecialty() + k1.getHealingSpecialty() + k2.getHealingSpecialty() + k3.getHealingSpecialty();
     final int healingSpellMag = k0.getHealingSpell() + k1.getHealingSpell() + k2.getHealingSpell() + k3.getHealingSpell();
 
-    final MaxPattern opMaxPattern = getMaxPattern(
-        jobType,
-        AttackType.SLASH,
-        Arrays.asList(
-            k0, k1, k2, k3
-        )
-    );
-    final int maxOp = opMaxPattern.getValue();
-    final String maxOpPattern = getPattern(opMaxPattern.getIndexes());
+    final int animalMag = k0.getAllNoneAnimal() + k1.getAllNoneAnimal() + k2.getAllNoneAnimal() + k3.getAllNoneAnimal();
+    final int birdMag = k0.getAllNoneBird() + k1.getAllNoneBird() + k2.getAllNoneBird() + k3.getAllNoneBird();
+    final int devilMag = k0.getAllNoneDevil() + k1.getAllNoneDevil() + k2.getAllNoneDevil() + k3.getAllNoneDevil();
+    final int dragonMag = k0.getAllNoneDragon() + k1.getAllNoneDragon() + k2.getAllNoneDragon() + k3.getAllNoneDragon();
+    final int elementMag = k0.getAllNoneElement() + k1.getAllNoneElement() + k2.getAllNoneElement() + k3.getAllNoneElement();
+    final int insectMag = k0.getAllNoneInsect() + k1.getAllNoneInsect() + k2.getAllNoneInsect() + k3.getAllNoneInsect();
+    final int machineMag = k0.getAllNoneMachine() + k1.getAllNoneMachine() + k2.getAllNoneMachine() + k3.getAllNoneMachine();
+    final int materialMag = k0.getAllNoneMaterial() + k1.getAllNoneMaterial() + k2.getAllNoneMaterial() + k3.getAllNoneMaterial();
+    final int phantomMag = k0.getAllNonePhantom() + k1.getAllNonePhantom() + k2.getAllNonePhantom() + k3.getAllNonePhantom();
+    final int plantMag = k0.getAllNonePlant() + k1.getAllNonePlant() + k2.getAllNonePlant() + k3.getAllNonePlant();
+    final int slimeMag = k0.getAllNoneSlime() + k1.getAllNoneSlime() + k2.getAllNoneSlime() + k3.getAllNoneSlime();
+    final int waterMag = k0.getAllNoneWater() + k1.getAllNoneWater() + k2.getAllNoneWater() + k3.getAllNoneWater();
+    final int zombieMag = k0.getAllNoneZombie() + k1.getAllNoneZombie() + k2.getAllNoneZombie() + k3.getAllNoneZombie();
 
-    final MaxPattern osMaxPattern = getMaxPattern(
-        jobType,
-        AttackType.SPELL,
-        Arrays.asList(
-            k0, k1, k2, k3
-        )
-    );
-    final int maxOs = osMaxPattern.getValue();
-    final String maxOsPattern = getPattern(osMaxPattern.getIndexes());
-
-    final MaxPattern opOsMaxPattern = getMaxPattern(
-        jobType,
-        AttackType.PHYSICS_SPELL,
-        Arrays.asList(
-            k0, k1, k2, k3
-        )
-    );
-    final int maxOpOs = opOsMaxPattern.getValue();
-    final String maxOpOsPattern = getPattern(opOsMaxPattern.getIndexes());
-
-    final MaxPattern opDxMaxPattern = getMaxPattern(
-        jobType,
-        AttackType.BREATH,
-        Arrays.asList(
-            k0, k1, k2, k3
-        )
-    );
-    final int maxOpDx = opDxMaxPattern.getValue();
-    final String maxOpDxPattern = getPattern(opDxMaxPattern.getIndexes());
-
-    final MaxPattern dsMaxPattern = getMaxPattern(
-        jobType,
-        AttackType.HEALING,
-        Arrays.asList(
-            k0, k1, k2, k3
-        )
-    );
-    final int maxDs = dsMaxPattern.getValue();
-    final String maxDsPattern = getPattern(dsMaxPattern.getIndexes());
-
-    final String patterns = maxOpPattern
-        + "," + maxOsPattern
-        + "," + maxOpOsPattern
-        + "," + maxOpDxPattern
-        + "," + maxDsPattern;
-
+    // Damage (Attribute)
     final int bagiSlashDamage = (int) ceil(maxOp * (1 + (slashMag / 100.0)) * (1 + (slashBagiMag / 100.0)) * (1 + (bagiMag / 100.0)));
     final int deinSlashDamage = (int) ceil(maxOp * (1 + (slashMag / 100.0)) * (1 + (slashDeinMag / 100.0)) * (1 + (deinMag / 100.0)));
     final int dorumaSlashDamage = (int) ceil(maxOp * (1 + (slashMag / 100.0)) * (1 + (slashDorumaMag / 100.0)) * (1 + (dorumaMag / 100.0)));
@@ -732,12 +751,18 @@ public class DataService implements IDataService {
     final int jibariaBreathDamage = (int) ceil(maxOpDx * (1 + (breathMag / 100.0)) * (1 + (breathJibariaMag / 100.0)) * (1 + (jibariaMag / 100.0)));
     final int meraBreathDamage = (int) ceil(maxOpDx * (1 + (breathMag / 100.0)) * (1 + (breathMeraMag / 100.0)) * (1 + (meraMag / 100.0)));
 
+    // Healing
     final int specialityHealing = (int) ceil(maxDs * (1 + (healingSkillMag / 100.0)) * (1 + (healingSpecialtyMag / 100.0)));
     final int spellHealing = (int) ceil(maxDs * (1 + (healingSkillMag / 100.0)) * (1 + (healingSpellMag / 100.0)));
 
-    // TODO: RACE
+    // CSV string
+    final String patterns = maxOpPattern
+        + "," + maxOsPattern
+        + "," + maxOpOsPattern
+        + "," + maxOpDxPattern
+        + "," + maxDsPattern;
 
-    final List<Integer> damageList = Arrays.asList(
+    final List<Integer> attributeDamages = Arrays.asList(
         bagiSlashDamage,
         deinSlashDamage,
         dorumaSlashDamage,
@@ -795,14 +820,41 @@ public class DataService implements IDataService {
         specialityHealing,
         spellHealing
     );
-    final StringBuilder damageSb = new StringBuilder();
-    damageSb.append(patterns);
-    damageSb.append(",");
-    for (int integer : damageList) {
-      damageSb.append(integer);
-      damageSb.append(",");
+
+    final List<Integer> raceMags = Arrays.asList(
+        animalMag, birdMag, devilMag, dragonMag, elementMag, insectMag, machineMag,
+        materialMag, phantomMag, plantMag, slimeMag, waterMag, zombieMag
+    );
+
+    if (csvType.equals(ATTRIBUTE)) {
+      final StringBuilder stringBuilder = new StringBuilder();
+      stringBuilder.append(patterns);
+      stringBuilder.append(",");
+      for (int integer : attributeDamages) {
+        stringBuilder.append(integer);
+        stringBuilder.append(",");
+      }
+      return stringBuilder.toString();
+    } else if (csvType.equals(ATTRIBUTE_RACE)) {
+      final StringBuilder stringBuilder = new StringBuilder();
+      stringBuilder.append(patterns);
+      stringBuilder.append(",");
+      for (int integer : attributeDamages) {
+        stringBuilder.append(integer);
+        stringBuilder.append(",");
+      }
+      final List<Integer> subAttributeDamages = attributeDamages.subList(0, attributeDamages.size() - 2);
+      for (int raceMag : raceMags) {
+        for (int attributeDamage : subAttributeDamages) {
+          int attributeRaceDamage = (int) ceil(attributeDamage * (1 + (raceMag / 100.0)));
+          stringBuilder.append(attributeRaceDamage);
+          stringBuilder.append(",");
+        }
+      }
+      return stringBuilder.toString();
+    } else {
+      throw new IllegalArgumentException("");
     }
-    return damageSb.toString();
   }
 
   private int getCombinationSize() {
@@ -835,6 +887,7 @@ public class DataService implements IDataService {
   @Async
   @Override
   public void createCombinationCsv(final String type) {
+    attrRaceCsv();
     if (type.equals("d")) {
       divideCsv();
       return;
@@ -887,13 +940,13 @@ public class DataService implements IDataService {
                           + "," + k2.getId() + "," + k2.getRank().ordinal()
                           + "," + k3.getId() + "," + k3.getRank().ordinal();
 
-                      final String battleMaster = getCsv(BATTLE_MASTER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
-                      final String sage = getCsv(SAGE, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
-                      final String ranger = getCsv(RANGER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
-                      final String armamentalist = getCsv(ARMAMENTALIST, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
-                      final String paladin = getCsv(PALADIN, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
-                      final String superstar = getCsv(SUPERSTAR, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
-                      final String pirate = getCsv(PIRATE, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
+                      final String battleMaster = getCsv(BATTLE_MASTER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
+                      final String sage = getCsv(SAGE, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
+                      final String ranger = getCsv(RANGER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
+                      final String armamentalist = getCsv(ARMAMENTALIST, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
+                      final String paladin = getCsv(PALADIN, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
+                      final String superstar = getCsv(SUPERSTAR, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
+                      final String pirate = getCsv(PIRATE, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
 
                       bufferedWriter.write(
                           idsAndRanks
@@ -927,6 +980,7 @@ public class DataService implements IDataService {
     }
   }
 
+  @Deprecated
   private void divideCsv() {
     log.info("{} kokoros, {} combinations", kokoros.size(), String.format("%,d", getCombinationSize()));
     final StopWatch stopWatch = new StopWatch();
@@ -976,13 +1030,13 @@ public class DataService implements IDataService {
                           + "," + k2.getId() + "," + k2.getRank().ordinal()
                           + "," + k3.getId() + "," + k3.getRank().ordinal();
 
-                      final String battleMaster = getCsv(BATTLE_MASTER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
-                      final String sage = getCsv(SAGE, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
-                      final String ranger = getCsv(RANGER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
-                      final String armamentalist = getCsv(ARMAMENTALIST, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
-                      final String paladin = getCsv(PALADIN, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
-                      final String superstar = getCsv(SUPERSTAR, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
-                      final String pirate = getCsv(PIRATE, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l));
+                      final String battleMaster = getCsv(BATTLE_MASTER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
+                      final String sage = getCsv(SAGE, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
+                      final String ranger = getCsv(RANGER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
+                      final String armamentalist = getCsv(ARMAMENTALIST, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
+                      final String paladin = getCsv(PALADIN, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
+                      final String superstar = getCsv(SUPERSTAR, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
+                      final String pirate = getCsv(PIRATE, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
 
                       if (count % 1_000_000 == 0) {
                         bufferedWriter.close();
@@ -1020,6 +1074,88 @@ public class DataService implements IDataService {
       );
     } catch (IOException ex) {
       throw new IllegalStateException("Failed to write combination csv.", ex);
+    }
+  }
+
+  private void attrRaceCsv() {
+    final List<JobType> jobs = Arrays.asList(
+        BATTLE_MASTER, SAGE, RANGER, ARMAMENTALIST, PALADIN, SUPERSTAR, PIRATE
+    );
+    log.info("{} kokoros, {} combinations", kokoros.size(), String.format("%,d", getCombinationSize()));
+    final StopWatch stopWatch = new StopWatch();
+    for (JobType jobType : jobs) {
+      try {
+        stopWatch.start();
+        final BufferedWriter bufferedWriter = Files.newBufferedWriter(Paths.get("combination_" + jobType.name().toLowerCase() + ".csv"), StandardCharsets.UTF_8);
+        final int len = kokoros.size();
+        log.info("{} kokoros", len);
+        int count = 0;
+        for (int i = 0; i < len; i++) {
+          for (int j = 0; j < len; j++) {
+            if (!(i >= j)) {
+              for (int k = 0; k < len; k++) {
+                if (!(i >= k) && !(j >= k)) {
+                  for (int l = 0; l < len; l++) {
+                    if (!(i >= l) && !(j >= l) && !(k >= l)) {
+                      final int i0 = kokoros.get(i).getId();
+                      final int i1 = kokoros.get(j).getId();
+                      final int i2 = kokoros.get(k).getId();
+                      final int i3 = kokoros.get(l).getId();
+                      if (i0 != i1 && i0 != i2 && i0 != i3 && i1 != i2 && i1 != i3 && i2 != i3) {
+                        count++;
+
+                        final KokoroFlat k0 = kokoros.get(i);
+                        final KokoroFlat k1 = kokoros.get(j);
+                        final KokoroFlat k2 = kokoros.get(k);
+                        final KokoroFlat k3 = kokoros.get(l);
+
+                        // Basis
+                        final String names = k0.getName()
+                            + "," + k1.getName()
+                            + "," + k2.getName()
+                            + "," + k3.getName();
+                        final String ids = k0.getId()
+                            + "," + k1.getId()
+                            + "," + k2.getId()
+                            + "," + k3.getId();
+                        final String ranks = k0.getRank().ordinal()
+                            + "," + k1.getRank().ordinal()
+                            + "," + k2.getRank().ordinal()
+                            + "," + k3.getRank().ordinal();
+                        int totalCost = k0.getCost() + k1.getCost() + k2.getCost() + k3.getCost()
+                            - k0.getPlusCost() - k1.getPlusCost() - k2.getPlusCost() - k3.getPlusCost();
+                        final String idsAndRanks = k0.getId() + "," + k0.getRank().ordinal()
+                            + "," + k1.getId() + "," + k1.getRank().ordinal()
+                            + "," + k2.getId() + "," + k2.getRank().ordinal()
+                            + "," + k3.getId() + "," + k3.getRank().ordinal();
+
+                        final String string = getCsv(jobType, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE_RACE);
+
+                        bufferedWriter.write(
+                            idsAndRanks
+                                + ","
+                                + string
+                                + totalCost
+                        );
+                        bufferedWriter.newLine();
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        bufferedWriter.close();
+        stopWatch.stop();
+        log.info("{} kokoros, {} combinations, {} ms",
+            kokoros.size(),
+            String.format("%,d", count),
+            String.format("%,d", stopWatch.getLastTaskTimeMillis())
+        );
+      } catch (IOException ex) {
+        throw new IllegalStateException("Failed to write combination csv.", ex);
+      }
     }
   }
 }

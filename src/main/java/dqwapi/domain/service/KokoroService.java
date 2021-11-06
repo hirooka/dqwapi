@@ -1636,7 +1636,8 @@ public class KokoroService implements IKokoroService {
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
             );
-          case PHYSICS_SPELL:
+          case PHYSICS_SPELL_SLASH:
+          case PHYSICS_SPELL_HIT:
             return kokoroFlatRepository.findByBattleMasterOpOs(
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
@@ -1667,7 +1668,8 @@ public class KokoroService implements IKokoroService {
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
             );
-          case PHYSICS_SPELL:
+          case PHYSICS_SPELL_SLASH:
+          case PHYSICS_SPELL_HIT:
             return kokoroFlatRepository.findBySageOpOs(
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
@@ -1698,7 +1700,8 @@ public class KokoroService implements IKokoroService {
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
             );
-          case PHYSICS_SPELL:
+          case PHYSICS_SPELL_SLASH:
+          case PHYSICS_SPELL_HIT:
             return kokoroFlatRepository.findByRangerOpOs(
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
@@ -1729,7 +1732,8 @@ public class KokoroService implements IKokoroService {
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
             );
-          case PHYSICS_SPELL:
+          case PHYSICS_SPELL_SLASH:
+          case PHYSICS_SPELL_HIT:
             return kokoroFlatRepository.findByArmamentalistOpOs(
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
@@ -1760,7 +1764,8 @@ public class KokoroService implements IKokoroService {
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
             );
-          case PHYSICS_SPELL:
+          case PHYSICS_SPELL_SLASH:
+          case PHYSICS_SPELL_HIT:
             return kokoroFlatRepository.findByPaladinOpOs(
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
@@ -1791,7 +1796,8 @@ public class KokoroService implements IKokoroService {
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
             );
-          case PHYSICS_SPELL:
+          case PHYSICS_SPELL_SLASH:
+          case PHYSICS_SPELL_HIT:
             return kokoroFlatRepository.findBySuperstarOpOs(
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
@@ -1822,7 +1828,8 @@ public class KokoroService implements IKokoroService {
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
             );
-          case PHYSICS_SPELL:
+          case PHYSICS_SPELL_SLASH:
+          case PHYSICS_SPELL_HIT:
             return kokoroFlatRepository.findByPirateOpOs(
                 PageRequest.of(0, limit, Sort.Direction.DESC, column),
                 cost, nonBrides, exclusionRanks
