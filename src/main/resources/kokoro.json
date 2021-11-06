@@ -1030,6 +1030,50 @@
     "healings": []
   },
   {
+    "id": 359,
+    "name": "アークデーモン",
+    "rank": "A",
+    "type": "YELLOW",
+    "race": "DEVIL",
+    "cost": 114,
+    "plusCost": 3,
+    "hp": 119,
+    "mp":  54,
+    "op":  74,
+    "dp":  77,
+    "os":   8,
+    "ds":  36,
+    "sp":  49,
+    "dx":  39,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 8
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 8
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 8
+      },
+      {
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 8
+      }
+    ],
+    "healings": []
+  },
+  {
     "id": 354,
     "name": "ブラックチャック",
     "rank": "S",
