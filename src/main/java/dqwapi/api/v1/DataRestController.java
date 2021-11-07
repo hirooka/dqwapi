@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("data")
+@RequestMapping("${dqwapi.path-prefix}v1/data")
 @RestController
 public class DataRestController {
 
@@ -24,7 +24,7 @@ public class DataRestController {
   private final IDataService dataService;
 
   @GetMapping("csv")
-  public Map<String, String> header(@RequestParam(value = "t", required = false) CsvType csvType) {
+  public Map<String, String> csv(@RequestParam(value = "t", required = false) CsvType csvType) {
     if (!canPersist) {
       throw new IllegalArgumentException("Cannot create CSV...");
     }

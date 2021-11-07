@@ -22,6 +22,19 @@ import static dqwapi.domain.model.common.KokoroType.GREEN;
 import static dqwapi.domain.model.common.KokoroType.PURPLE;
 import static dqwapi.domain.model.common.KokoroType.RED;
 import static dqwapi.domain.model.common.KokoroType.YELLOW;
+import static dqwapi.domain.model.common.RaceType.ANIMAL;
+import static dqwapi.domain.model.common.RaceType.BIRD;
+import static dqwapi.domain.model.common.RaceType.DEVIL;
+import static dqwapi.domain.model.common.RaceType.DRAGON;
+import static dqwapi.domain.model.common.RaceType.ELEMENT;
+import static dqwapi.domain.model.common.RaceType.INSECT;
+import static dqwapi.domain.model.common.RaceType.MACHINE;
+import static dqwapi.domain.model.common.RaceType.MATERIAL;
+import static dqwapi.domain.model.common.RaceType.PHANTOM;
+import static dqwapi.domain.model.common.RaceType.PLANT;
+import static dqwapi.domain.model.common.RaceType.SLIME;
+import static dqwapi.domain.model.common.RaceType.WATER;
+import static dqwapi.domain.model.common.RaceType.ZOMBIE;
 import static dqwapi.domain.model.job.JobType.ARMAMENTALIST;
 import static dqwapi.domain.model.job.JobType.BATTLE_MASTER;
 import static dqwapi.domain.model.job.JobType.PALADIN;
@@ -38,6 +51,7 @@ import dqwapi.domain.model.common.AttackType;
 import dqwapi.domain.model.common.AttributeType;
 import dqwapi.domain.model.common.CsvType;
 import dqwapi.domain.model.common.KokoroType;
+import dqwapi.domain.model.common.RaceType;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.KokoroFlat;
 import dqwapi.domain.model.kokoro.MaxPattern;
@@ -910,8 +924,9 @@ public class DataService implements IDataService {
       createAttributeCsv();
     } else if (csvType.equals(ATTRIBUTE_RACE)) {
       createAttributeRaceCsv();
+    } else {
+      throw new IllegalArgumentException("Unknown type: " + csvType);
     }
-    throw new IllegalArgumentException("");
   }
 
   private void createAttributeCsv() {
@@ -919,7 +934,7 @@ public class DataService implements IDataService {
     final StopWatch stopWatch = new StopWatch();
     stopWatch.start();
     try (final BufferedWriter bufferedWriter = Files.newBufferedWriter(Paths.get("combination.csv"), StandardCharsets.UTF_8)) {
-      bufferedWriter.write(createCsvHeader());
+      bufferedWriter.write(createAttributeCsvHeader());
       bufferedWriter.newLine();
       final int len = kokoros.size();
       log.info("{} kokoros", len);
@@ -1013,7 +1028,7 @@ public class DataService implements IDataService {
       try {
         stopWatch.start();
         final BufferedWriter bufferedWriter = Files.newBufferedWriter(Paths.get("combination_" + jobType.name().toLowerCase() + ".csv"), StandardCharsets.UTF_8);
-        bufferedWriter.write(createCsvHeader());
+        bufferedWriter.write(createAttributeRaceCsvHeader(jobType));
         bufferedWriter.newLine();
         final int len = kokoros.size();
         log.info("{} kokoros", len);
@@ -1076,7 +1091,8 @@ public class DataService implements IDataService {
         }
         bufferedWriter.close();
         stopWatch.stop();
-        log.info("{} kokoros, {} combinations, {} ms",
+        log.info("{}, {} kokoros, {} combinations, {} ms",
+            jobType.name(),
             kokoros.size(),
             String.format("%,d", count),
             String.format("%,d", stopWatch.getLastTaskTimeMillis())
@@ -1087,7 +1103,7 @@ public class DataService implements IDataService {
     }
   }
 
-  private String createCsvHeader() {
+  private String createAttributeCsvHeader() {
     String header = "";
     final List<JobType> jobTypes = Arrays.asList(JobType.values());
     final List<AttributeType> attributeTypes = Arrays.asList(
@@ -1106,8 +1122,8 @@ public class DataService implements IDataService {
           + "max_" + jobType.name().toLowerCase() + "_opdx_pattern,"
           + "max_" + jobType.name().toLowerCase() + "_ds_pattern,";
       header += pattern;
-      for (AttributeType attributeType : attributeTypes) {
-        for (AttackType attackType : attackTypes) {
+      for (AttackType attackType : attackTypes) {
+        for (AttributeType attributeType : attributeTypes) {
           final String column = jobType.name().toLowerCase() + "_"
               + attributeType.name().toLowerCase() + "_"
               + attackType.name().toLowerCase() + "_damage,";
@@ -1116,6 +1132,56 @@ public class DataService implements IDataService {
       }
       header += jobType.name().toLowerCase() + "_speciality_healing,";
       header += jobType.name().toLowerCase() + "_spell_healing,";
+    }
+    final String suffix = "total_cost";
+    header += suffix;
+    return header;
+  }
+
+  private String createAttributeRaceCsvHeader(final JobType jobType) {
+    String header = "";
+    final List<RaceType> raceTypes = Arrays.asList(
+        ANIMAL, BIRD, DEVIL, DRAGON, ELEMENT, INSECT, MACHINE,
+        MATERIAL, PHANTOM, PLANT, SLIME, WATER, ZOMBIE
+    );
+    final List<AttributeType> attributeTypes = Arrays.asList(
+        BAGI, DEIN, DORUMA, GIRA, HYADO, IO, JIBARIA, MERA
+    );
+    final List<AttackType> attackTypes = Arrays.asList(
+        SLASH, HIT, SPELL, PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT, BREATH
+    );
+
+    //
+    final String basis = "k0id,k0rank,k1id,k1rank,k2id,k2rank,k3id,k3rank,";
+    header += basis;
+    final String pattern = "max_" + jobType.name().toLowerCase() + "_op_pattern,"
+        + "max_" + jobType.name().toLowerCase() + "_os_pattern,"
+        + "max_" + jobType.name().toLowerCase() + "_opos_pattern,"
+        + "max_" + jobType.name().toLowerCase() + "_opdx_pattern,"
+        + "max_" + jobType.name().toLowerCase() + "_ds_pattern,";
+    header += pattern;
+    for (AttackType attackType : attackTypes) {
+      for (AttributeType attributeType : attributeTypes) {
+        final String column = jobType.name().toLowerCase() + "_"
+            + attributeType.name().toLowerCase() + "_"
+            + attackType.name().toLowerCase() + "_damage,";
+        header += column;
+      }
+    }
+    header += jobType.name().toLowerCase() + "_speciality_healing,";
+    header += jobType.name().toLowerCase() + "_spell_healing,";
+    //
+
+    for (RaceType raceType : raceTypes) {
+      for (AttackType attackType : attackTypes) {
+        for (AttributeType attributeType : attributeTypes) {
+          final String column = jobType.name().toLowerCase() + "_"
+              + attributeType.name().toLowerCase() + "_"
+              + attackType.name().toLowerCase() + "_"
+              + raceType.name().toLowerCase() + "_damage,";
+          header += column;
+        }
+      }
     }
     final String suffix = "total_cost";
     header += suffix;
