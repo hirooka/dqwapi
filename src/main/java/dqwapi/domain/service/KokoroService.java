@@ -1619,236 +1619,470 @@ public class KokoroService implements IKokoroService {
       final List<String> exclusionRanks,
       final int limit
   ) {
-    final String column =
-        (jobType.name() + "_" + attributeType.name() + "_" + attackType.name() + "_damage")
-            .toLowerCase();
-    switch (jobType) {
-      case BATTLE_MASTER:
-        switch (attackType) {
-          case SLASH:
-          case HIT:
-            return kokoroFlatRepository.findByBattleMasterOp(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case SPELL:
-            return kokoroFlatRepository.findByBattleMasterOs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case PHYSICS_SPELL_SLASH:
-          case PHYSICS_SPELL_HIT:
-            return kokoroFlatRepository.findByBattleMasterOpOs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case BREATH:
-            return kokoroFlatRepository.findByBattleMasterOpDx(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case HEALING:
-            return kokoroFlatRepository.findByBattleMasterDs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          default:
-            return null;
-        }
-      case SAGE:
-        switch (attackType) {
-          case SLASH:
-          case HIT:
-            return kokoroFlatRepository.findBySageOp(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case SPELL:
-            return kokoroFlatRepository.findBySageOs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case PHYSICS_SPELL_SLASH:
-          case PHYSICS_SPELL_HIT:
-            return kokoroFlatRepository.findBySageOpOs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case BREATH:
-            return kokoroFlatRepository.findBySageOpDx(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case HEALING:
-            return kokoroFlatRepository.findBySageDs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          default:
-            return null;
-        }
-      case RANGER:
-        switch (attackType) {
-          case SLASH:
-          case HIT:
-            return kokoroFlatRepository.findByRangerOp(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case SPELL:
-            return kokoroFlatRepository.findByRangerOs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case PHYSICS_SPELL_SLASH:
-          case PHYSICS_SPELL_HIT:
-            return kokoroFlatRepository.findByRangerOpOs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case BREATH:
-            return kokoroFlatRepository.findByRangerOpDx(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case HEALING:
-            return kokoroFlatRepository.findByRangerDs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          default:
-            return null;
-        }
-      case ARMAMENTALIST:
-        switch (attackType) {
-          case SLASH:
-          case HIT:
-            return kokoroFlatRepository.findByArmamentalistOp(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case SPELL:
-            return kokoroFlatRepository.findByArmamentalistOs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case PHYSICS_SPELL_SLASH:
-          case PHYSICS_SPELL_HIT:
-            return kokoroFlatRepository.findByArmamentalistOpOs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case BREATH:
-            return kokoroFlatRepository.findByArmamentalistOpDx(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case HEALING:
-            return kokoroFlatRepository.findByArmamentalistDs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          default:
-            return null;
-        }
-      case PALADIN:
-        switch (attackType) {
-          case SLASH:
-          case HIT:
-            return kokoroFlatRepository.findByPaladinOp(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case SPELL:
-            return kokoroFlatRepository.findByPaladinOs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case PHYSICS_SPELL_SLASH:
-          case PHYSICS_SPELL_HIT:
-            return kokoroFlatRepository.findByPaladinOpOs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case BREATH:
-            return kokoroFlatRepository.findByPaladinOpDx(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case HEALING:
-            return kokoroFlatRepository.findByPaladinDs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          default:
-            return null;
-        }
-      case SUPERSTAR:
-        switch (attackType) {
-          case SLASH:
-          case HIT:
-            return kokoroFlatRepository.findBySuperstarOp(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case SPELL:
-            return kokoroFlatRepository.findBySuperstarOs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case PHYSICS_SPELL_SLASH:
-          case PHYSICS_SPELL_HIT:
-            return kokoroFlatRepository.findBySuperstarOpOs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case BREATH:
-            return kokoroFlatRepository.findBySuperstarOpDx(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case HEALING:
-            return kokoroFlatRepository.findBySuperstarDs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          default:
-            return null;
-        }
-      case PIRATE:
-        switch (attackType) {
-          case SLASH:
-          case HIT:
-            return kokoroFlatRepository.findByPirateOp(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case SPELL:
-            return kokoroFlatRepository.findByPirateOs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case PHYSICS_SPELL_SLASH:
-          case PHYSICS_SPELL_HIT:
-            return kokoroFlatRepository.findByPirateOpOs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case BREATH:
-            return kokoroFlatRepository.findByPirateOpDx(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          case HEALING:
-            return kokoroFlatRepository.findByPirateDs(
-                PageRequest.of(0, limit, Sort.Direction.DESC, column),
-                cost, nonBrides, exclusionRanks
-            );
-          default:
-            return null;
-        }
-      default:
-        return null;
+    if (raceType.equals(RaceType.NONE)) {
+      final String column =
+          (jobType.name() + "_" + attributeType.name() + "_" + attackType.name() + "_damage")
+              .toLowerCase();
+      switch (jobType) {
+        case BATTLE_MASTER:
+          switch (attackType) {
+            case SLASH:
+            case HIT:
+              return kokoroFlatRepository.findByBattleMasterOp(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case SPELL:
+              return kokoroFlatRepository.findByBattleMasterOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case PHYSICS_SPELL_SLASH:
+            case PHYSICS_SPELL_HIT:
+              return kokoroFlatRepository.findByBattleMasterOpOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case BREATH:
+              return kokoroFlatRepository.findByBattleMasterOpDx(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case HEALING:
+              return kokoroFlatRepository.findByBattleMasterDs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            default:
+              return null;
+          }
+        case SAGE:
+          switch (attackType) {
+            case SLASH:
+            case HIT:
+              return kokoroFlatRepository.findBySageOp(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case SPELL:
+              return kokoroFlatRepository.findBySageOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case PHYSICS_SPELL_SLASH:
+            case PHYSICS_SPELL_HIT:
+              return kokoroFlatRepository.findBySageOpOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case BREATH:
+              return kokoroFlatRepository.findBySageOpDx(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case HEALING:
+              return kokoroFlatRepository.findBySageDs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            default:
+              return null;
+          }
+        case RANGER:
+          switch (attackType) {
+            case SLASH:
+            case HIT:
+              return kokoroFlatRepository.findByRangerOp(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case SPELL:
+              return kokoroFlatRepository.findByRangerOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case PHYSICS_SPELL_SLASH:
+            case PHYSICS_SPELL_HIT:
+              return kokoroFlatRepository.findByRangerOpOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case BREATH:
+              return kokoroFlatRepository.findByRangerOpDx(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case HEALING:
+              return kokoroFlatRepository.findByRangerDs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            default:
+              return null;
+          }
+        case ARMAMENTALIST:
+          switch (attackType) {
+            case SLASH:
+            case HIT:
+              return kokoroFlatRepository.findByArmamentalistOp(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case SPELL:
+              return kokoroFlatRepository.findByArmamentalistOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case PHYSICS_SPELL_SLASH:
+            case PHYSICS_SPELL_HIT:
+              return kokoroFlatRepository.findByArmamentalistOpOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case BREATH:
+              return kokoroFlatRepository.findByArmamentalistOpDx(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case HEALING:
+              return kokoroFlatRepository.findByArmamentalistDs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            default:
+              return null;
+          }
+        case PALADIN:
+          switch (attackType) {
+            case SLASH:
+            case HIT:
+              return kokoroFlatRepository.findByPaladinOp(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case SPELL:
+              return kokoroFlatRepository.findByPaladinOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case PHYSICS_SPELL_SLASH:
+            case PHYSICS_SPELL_HIT:
+              return kokoroFlatRepository.findByPaladinOpOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case BREATH:
+              return kokoroFlatRepository.findByPaladinOpDx(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case HEALING:
+              return kokoroFlatRepository.findByPaladinDs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            default:
+              return null;
+          }
+        case SUPERSTAR:
+          switch (attackType) {
+            case SLASH:
+            case HIT:
+              return kokoroFlatRepository.findBySuperstarOp(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case SPELL:
+              return kokoroFlatRepository.findBySuperstarOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case PHYSICS_SPELL_SLASH:
+            case PHYSICS_SPELL_HIT:
+              return kokoroFlatRepository.findBySuperstarOpOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case BREATH:
+              return kokoroFlatRepository.findBySuperstarOpDx(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case HEALING:
+              return kokoroFlatRepository.findBySuperstarDs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            default:
+              return null;
+          }
+        case PIRATE:
+          switch (attackType) {
+            case SLASH:
+            case HIT:
+              return kokoroFlatRepository.findByPirateOp(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case SPELL:
+              return kokoroFlatRepository.findByPirateOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case PHYSICS_SPELL_SLASH:
+            case PHYSICS_SPELL_HIT:
+              return kokoroFlatRepository.findByPirateOpOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case BREATH:
+              return kokoroFlatRepository.findByPirateOpDx(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case HEALING:
+              return kokoroFlatRepository.findByPirateDs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            default:
+              return null;
+          }
+        default:
+          return null;
+      }
+    } else {
+      final String column =
+          (jobType.name() + "_" + attributeType.name() + "_" + attackType.name() + "_" + raceType.name() + "_damage")
+              .toLowerCase();
+      switch (jobType) {
+        case BATTLE_MASTER:
+          switch (attackType) {
+            case SLASH:
+            case HIT:
+              return kokoroFlatRepository.findCombinationsByBattleMasterOp(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case SPELL:
+              return kokoroFlatRepository.findCombinationsByBattleMasterOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case PHYSICS_SPELL_SLASH:
+            case PHYSICS_SPELL_HIT:
+              return kokoroFlatRepository.findCombinationsByBattleMasterOpOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case BREATH:
+              return kokoroFlatRepository.findCombinationsByBattleMasterOpDx(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case HEALING:
+              return kokoroFlatRepository.findCombinationsByBattleMasterDs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            default:
+              return null;
+          }
+        case SAGE:
+          switch (attackType) {
+            case SLASH:
+            case HIT:
+              return kokoroFlatRepository.findCombinationsBySageOp(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case SPELL:
+              return kokoroFlatRepository.findCombinationsBySageOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case PHYSICS_SPELL_SLASH:
+            case PHYSICS_SPELL_HIT:
+              return kokoroFlatRepository.findCombinationsBySageOpOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case BREATH:
+              return kokoroFlatRepository.findCombinationsBySageOpDx(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case HEALING:
+              return kokoroFlatRepository.findCombinationsBySageDs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            default:
+              return null;
+          }
+        case RANGER:
+          switch (attackType) {
+            case SLASH:
+            case HIT:
+              return kokoroFlatRepository.findCombinationsByRangerOp(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case SPELL:
+              return kokoroFlatRepository.findCombinationsByRangerOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case PHYSICS_SPELL_SLASH:
+            case PHYSICS_SPELL_HIT:
+              return kokoroFlatRepository.findCombinationsByRangerOpOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case BREATH:
+              return kokoroFlatRepository.findCombinationsByRangerOpDx(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case HEALING:
+              return kokoroFlatRepository.findCombinationsByRangerDs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            default:
+              return null;
+          }
+        case ARMAMENTALIST:
+          switch (attackType) {
+            case SLASH:
+            case HIT:
+              return kokoroFlatRepository.findCombinationsByArmamentalistOp(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case SPELL:
+              return kokoroFlatRepository.findCombinationsByArmamentalistOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case PHYSICS_SPELL_SLASH:
+            case PHYSICS_SPELL_HIT:
+              return kokoroFlatRepository.findCombinationsByArmamentalistOpOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case BREATH:
+              return kokoroFlatRepository.findCombinationsByArmamentalistOpDx(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case HEALING:
+              return kokoroFlatRepository.findCombinationsByArmamentalistDs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            default:
+              return null;
+          }
+        case PALADIN:
+          switch (attackType) {
+            case SLASH:
+            case HIT:
+              return kokoroFlatRepository.findCombinationsByPaladinOp(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case SPELL:
+              return kokoroFlatRepository.findCombinationsByPaladinOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case PHYSICS_SPELL_SLASH:
+            case PHYSICS_SPELL_HIT:
+              return kokoroFlatRepository.findCombinationsByPaladinOpOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case BREATH:
+              return kokoroFlatRepository.findCombinationsByPaladinOpDx(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case HEALING:
+              return kokoroFlatRepository.findCombinationsByPaladinDs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            default:
+              return null;
+          }
+        case SUPERSTAR:
+          switch (attackType) {
+            case SLASH:
+            case HIT:
+              return kokoroFlatRepository.findCombinationsBySuperstarOp(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case SPELL:
+              return kokoroFlatRepository.findCombinationsBySuperstarOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case PHYSICS_SPELL_SLASH:
+            case PHYSICS_SPELL_HIT:
+              return kokoroFlatRepository.findCombinationsBySuperstarOpOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case BREATH:
+              return kokoroFlatRepository.findCombinationsBySuperstarOpDx(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case HEALING:
+              return kokoroFlatRepository.findCombinationsBySuperstarDs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            default:
+              return null;
+          }
+        case PIRATE:
+          switch (attackType) {
+            case SLASH:
+            case HIT:
+              return kokoroFlatRepository.findCombinationsByPirateOp(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case SPELL:
+              return kokoroFlatRepository.findCombinationsByPirateOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case PHYSICS_SPELL_SLASH:
+            case PHYSICS_SPELL_HIT:
+              return kokoroFlatRepository.findCombinationsByPirateOpOs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case BREATH:
+              return kokoroFlatRepository.findCombinationsByPirateOpDx(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            case HEALING:
+              return kokoroFlatRepository.findCombinationsByPirateDs(
+                  PageRequest.of(0, limit, Sort.Direction.DESC, column),
+                  cost, nonBrides, exclusionRanks
+              );
+            default:
+              return null;
+          }
+        default:
+          return null;
+      }
     }
   }
 

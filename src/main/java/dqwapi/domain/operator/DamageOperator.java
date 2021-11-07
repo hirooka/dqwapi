@@ -50,7 +50,8 @@ public class DamageOperator implements IDamageOperator {
       final int level,
       final int defence,
       final String bride,
-      final Map<Integer, List<RankType>> exclusions
+      final Map<Integer, List<RankType>> exclusions,
+      final RaceType raceType
   ) {
     List<DamageResult> damageResults = new ArrayList<>();
 
@@ -90,7 +91,7 @@ public class DamageOperator implements IDamageOperator {
           stopWatch.start("getKokoroCombinations");
           final List<Combination> combinations =
               kokoroService.getCombinations(
-                  jobType, skill.getAttack(), skill.getAttribute(), RaceType.NONE,
+                  jobType, skill.getAttack(), skill.getAttribute(), raceType,
                   cost, bride, exclusions, 50
               );
           stopWatch.stop();
@@ -129,7 +130,9 @@ public class DamageOperator implements IDamageOperator {
               ) {
                 attributeMagnification += damage.getMagnification();
               }
-              // TODO: raceType
+              if (damage.getRace().equals(raceType)) {
+                raceMagnification += damage.getMagnification();
+              }
             }
             log.debug(combination.getSlots().stream()
                 .map(slot -> slot.getKokoro().getName())

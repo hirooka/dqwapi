@@ -1,5 +1,6 @@
 package dqwapi.api.v1;
 
+import dqwapi.domain.model.common.RaceType;
 import dqwapi.domain.model.damage.DamageResult;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.RankType;
@@ -32,11 +33,12 @@ public class DamageRestController {
       @RequestParam(value = "w", required = false) String weapon,
       @RequestParam(value = "s", required = false) String skill,
       @RequestParam(value = "b", required = false) String bride,
-      @RequestParam(value = "e", required = false) List<String> exclusions
+      @RequestParam(value = "e", required = false) List<String> exclusions,
+      @RequestParam(value = "r", required = false) RaceType raceType
   ) {
     log.info(
-        "jobType: {}, level: {}, defence: {}, weapon: {}, skill: {}, bride: {}, exclusions: {}",
-        jobType, level, defence, weapon, skill, bride, exclusions);
+        "jobType: {}, level: {}, defence: {}, weapon: {}, skill: {}, bride: {}, exclusions: {}, race: {}",
+        jobType, level, defence, weapon, skill, bride, exclusions, raceType);
     if (ObjectUtils.isEmpty(jobType)) {
       jobType = JobType.BATTLE_MASTER;
     }
@@ -73,6 +75,9 @@ public class DamageRestController {
         }
       }
     }
-    return damageOperator.getDamages(weapon, skill, jobType, level, defence, bride, excludeMap);
+    if (ObjectUtils.isEmpty(raceType)) {
+      raceType = RaceType.NONE;
+    }
+    return damageOperator.getDamages(weapon, skill, jobType, level, defence, bride, excludeMap, raceType);
   }
 }
