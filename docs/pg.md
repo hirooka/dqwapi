@@ -44,23 +44,23 @@ create table kokoro_combination (
   battle_master_jibaria_spell_damage integer,
   battle_master_mera_spell_damage integer,
   
-  battle_master_bagi_slash_physical_spell_damage integer,
-  battle_master_dein_slash_physical_spell_damage integer,
-  battle_master_doruma_slash_physical_spell_damage integer,
-  battle_master_gira_slash_physical_spell_damage integer,
-  battle_master_hyado_slash_physical_spell_damage integer,
-  battle_master_io_slash_physical_spell_damage integer,
-  battle_master_jibaria_slash_physical_spell_damage integer,
-  battle_master_mera_slash_physical_spell_damage integer,
+  battle_master_bagi_physical_spell_slash_damage integer,
+  battle_master_dein_physical_spell_slash_damage integer,
+  battle_master_doruma_physical_spell_slash_damage integer,
+  battle_master_gira_physical_spell_slash_damage integer,
+  battle_master_hyado_physical_spell_slash_damage integer,
+  battle_master_io_physical_spell_slash_damage integer,
+  battle_master_jibaria_physical_spell_slash_damage integer,
+  battle_master_mera_physical_spell_slash_damage integer,
   
-  battle_master_bagi_hit_physical_spell_damage integer,
-  battle_master_dein_hit_physical_spell_damage integer,
-  battle_master_doruma_hit_physical_spell_damage integer,
-  battle_master_gira_hit_physical_spell_damage integer,
-  battle_master_hyado_hit_physical_spell_damage integer,
-  battle_master_io_hit_physical_spell_damage integer,
-  battle_master_jibaria_hit_physical_spell_damage integer,
-  battle_master_mera_hit_physical_spell_damage integer,
+  battle_master_bagi_physical_spell_hit_damage integer,
+  battle_master_dein_physical_spell_hit_damage integer,
+  battle_master_doruma_physical_spell_hit_damage integer,
+  battle_master_gira_physical_spell_hit_damage integer,
+  battle_master_hyado_physical_spell_hit_damage integer,
+  battle_master_io_physical_spell_hit_damage integer,
+  battle_master_jibaria_physical_spell_hit_damage integer,
+  battle_master_mera_physical_spell_hit_damage integer,
 
   battle_master_bagi_breath_damage integer,
   battle_master_dein_breath_damage integer,
@@ -108,23 +108,23 @@ create table kokoro_combination (
   sage_jibaria_spell_damage integer,
   sage_mera_spell_damage integer,
 
-  sage_bagi_slash_physical_spell_damage integer,
-  sage_dein_slash_physical_spell_damage integer,
-  sage_doruma_slash_physical_spell_damage integer,
-  sage_gira_slash_physical_spell_damage integer,
-  sage_hyado_slash_physical_spell_damage integer,
-  sage_io_slash_physical_spell_damage integer,
-  sage_jibaria_slash_physical_spell_damage integer,
-  sage_mera_slash_physical_spell_damage integer,
+  sage_bagi_physical_spell_slash_damage integer,
+  sage_dein_physical_spell_slash_damage integer,
+  sage_doruma_physical_spell_slash_damage integer,
+  sage_gira_physical_spell_slash_damage integer,
+  sage_hyado_physical_spell_slash_damage integer,
+  sage_io_physical_spell_slash_damage integer,
+  sage_jibaria_physical_spell_slash_damage integer,
+  sage_mera_physical_spell_slash_damage integer,
 
-  sage_bagi_hit_physical_spell_damage integer,
-  sage_dein_hit_physical_spell_damage integer,
-  sage_doruma_hit_physical_spell_damage integer,
-  sage_gira_hit_physical_spell_damage integer,
-  sage_hyado_hit_physical_spell_damage integer,
-  sage_io_hit_physical_spell_damage integer,
-  sage_jibaria_hit_physical_spell_damage integer,
-  sage_mera_hit_physical_spell_damage integer,
+  sage_bagi_physical_spell_hit_damage integer,
+  sage_dein_physical_spell_hit_damage integer,
+  sage_doruma_physical_spell_hit_damage integer,
+  sage_gira_physical_spell_hit_damage integer,
+  sage_hyado_physical_spell_hit_damage integer,
+  sage_io_physical_spell_hit_damage integer,
+  sage_jibaria_physical_spell_hit_damage integer,
+  sage_mera_physical_spell_hit_damage integer,
 
   sage_bagi_breath_damage integer,
   sage_dein_breath_damage integer,
@@ -172,23 +172,23 @@ create table kokoro_combination (
   ranger_jibaria_spell_damage integer,
   ranger_mera_spell_damage integer,
 
-  ranger_bagi_slash_physical_spell_damage integer,
-  ranger_dein_slash_physical_spell_damage integer,
-  ranger_doruma_slash_physical_spell_damage integer,
-  ranger_gira_slash_physical_spell_damage integer,
-  ranger_hyado_slash_physical_spell_damage integer,
-  ranger_io_slash_physical_spell_damage integer,
-  ranger_jibaria_slash_physical_spell_damage integer,
-  ranger_mera_slash_physical_spell_damage integer,
+  ranger_bagi_physical_spell_slash_damage integer,
+  ranger_dein_physical_spell_slash_damage integer,
+  ranger_doruma_physical_spell_slash_damage integer,
+  ranger_gira_physical_spell_slash_damage integer,
+  ranger_hyado_physical_spell_slash_damage integer,
+  ranger_io_physical_spell_slash_damage integer,
+  ranger_jibaria_physical_spell_slash_damage integer,
+  ranger_mera_physical_spell_slash_damage integer,
 
-  ranger_bagi_hit_physical_spell_damage integer,
-  ranger_dein_hit_physical_spell_damage integer,
-  ranger_doruma_hit_physical_spell_damage integer,
-  ranger_gira_hit_physical_spell_damage integer,
-  ranger_hyado_hit_physical_spell_damage integer,
-  ranger_io_hit_physical_spell_damage integer,
-  ranger_jibaria_hit_physical_spell_damage integer,
-  ranger_mera_hit_physical_spell_damage integer,
+  ranger_bagi_physical_spell_hit_damage integer,
+  ranger_dein_physical_spell_hit_damage integer,
+  ranger_doruma_physical_spell_hit_damage integer,
+  ranger_gira_physical_spell_hit_damage integer,
+  ranger_hyado_physical_spell_hit_damage integer,
+  ranger_io_physical_spell_hit_damage integer,
+  ranger_jibaria_physical_spell_hit_damage integer,
+  ranger_mera_physical_spell_hit_damage integer,
 
   ranger_bagi_breath_damage integer,
   ranger_dein_breath_damage integer,
@@ -236,23 +236,23 @@ create table kokoro_combination (
   armamentalist_jibaria_spell_damage integer,
   armamentalist_mera_spell_damage integer,
 
-  armamentalist_bagi_slash_physical_spell_damage integer,
-  armamentalist_dein_slash_physical_spell_damage integer,
-  armamentalist_doruma_slash_physical_spell_damage integer,
-  armamentalist_gira_slash_physical_spell_damage integer,
-  armamentalist_hyado_slash_physical_spell_damage integer,
-  armamentalist_io_slash_physical_spell_damage integer,
-  armamentalist_jibaria_slash_physical_spell_damage integer,
-  armamentalist_mera_slash_physical_spell_damage integer,
+  armamentalist_bagi_physical_spell_slash_damage integer,
+  armamentalist_dein_physical_spell_slash_damage integer,
+  armamentalist_doruma_physical_spell_slash_damage integer,
+  armamentalist_gira_physical_spell_slash_damage integer,
+  armamentalist_hyado_physical_spell_slash_damage integer,
+  armamentalist_io_physical_spell_slash_damage integer,
+  armamentalist_jibaria_physical_spell_slash_damage integer,
+  armamentalist_mera_physical_spell_slash_damage integer,
 
-  armamentalist_bagi_hit_physical_spell_damage integer,
-  armamentalist_dein_hit_physical_spell_damage integer,
-  armamentalist_doruma_hit_physical_spell_damage integer,
-  armamentalist_gira_hit_physical_spell_damage integer,
-  armamentalist_hyado_hit_physical_spell_damage integer,
-  armamentalist_io_hit_physical_spell_damage integer,
-  armamentalist_jibaria_hit_physical_spell_damage integer,
-  armamentalist_mera_hit_physical_spell_damage integer,
+  armamentalist_bagi_physical_spell_hit_damage integer,
+  armamentalist_dein_physical_spell_hit_damage integer,
+  armamentalist_doruma_physical_spell_hit_damage integer,
+  armamentalist_gira_physical_spell_hit_damage integer,
+  armamentalist_hyado_physical_spell_hit_damage integer,
+  armamentalist_io_physical_spell_hit_damage integer,
+  armamentalist_jibaria_physical_spell_hit_damage integer,
+  armamentalist_mera_physical_spell_hit_damage integer,
 
   armamentalist_bagi_breath_damage integer,
   armamentalist_dein_breath_damage integer,
@@ -300,23 +300,23 @@ create table kokoro_combination (
   paladin_jibaria_spell_damage integer,
   paladin_mera_spell_damage integer,
 
-  paladin_bagi_slash_physical_spell_damage integer,
-  paladin_dein_slash_physical_spell_damage integer,
-  paladin_doruma_slash_physical_spell_damage integer,
-  paladin_gira_slash_physical_spell_damage integer,
-  paladin_hyado_slash_physical_spell_damage integer,
-  paladin_io_slash_physical_spell_damage integer,
-  paladin_jibaria_slash_physical_spell_damage integer,
-  paladin_mera_slash_physical_spell_damage integer,
+  paladin_bagi_physical_spell_slash_damage integer,
+  paladin_dein_physical_spell_slash_damage integer,
+  paladin_doruma_physical_spell_slash_damage integer,
+  paladin_gira_physical_spell_slash_damage integer,
+  paladin_hyado_physical_spell_slash_damage integer,
+  paladin_io_physical_spell_slash_damage integer,
+  paladin_jibaria_physical_spell_slash_damage integer,
+  paladin_mera_physical_spell_slash_damage integer,
 
-  paladin_bagi_hit_physical_spell_damage integer,
-  paladin_dein_hit_physical_spell_damage integer,
-  paladin_doruma_hit_physical_spell_damage integer,
-  paladin_gira_hit_physical_spell_damage integer,
-  paladin_hyado_hit_physical_spell_damage integer,
-  paladin_io_hit_physical_spell_damage integer,
-  paladin_jibaria_hit_physical_spell_damage integer,
-  paladin_mera_hit_physical_spell_damage integer,
+  paladin_bagi_physical_spell_hit_damage integer,
+  paladin_dein_physical_spell_hit_damage integer,
+  paladin_doruma_physical_spell_hit_damage integer,
+  paladin_gira_physical_spell_hit_damage integer,
+  paladin_hyado_physical_spell_hit_damage integer,
+  paladin_io_physical_spell_hit_damage integer,
+  paladin_jibaria_physical_spell_hit_damage integer,
+  paladin_mera_physical_spell_hit_damage integer,
 
   paladin_bagi_breath_damage integer,
   paladin_dein_breath_damage integer,
@@ -364,23 +364,23 @@ create table kokoro_combination (
   superstar_jibaria_spell_damage integer,
   superstar_mera_spell_damage integer,
 
-  superstar_bagi_slash_physical_spell_damage integer,
-  superstar_dein_slash_physical_spell_damage integer,
-  superstar_doruma_slash_physical_spell_damage integer,
-  superstar_gira_slash_physical_spell_damage integer,
-  superstar_hyado_slash_physical_spell_damage integer,
-  superstar_io_slash_physical_spell_damage integer,
-  superstar_jibaria_slash_physical_spell_damage integer,
-  superstar_mera_slash_physical_spell_damage integer,
+  superstar_bagi_physical_spell_slash_damage integer,
+  superstar_dein_physical_spell_slash_damage integer,
+  superstar_doruma_physical_spell_slash_damage integer,
+  superstar_gira_physical_spell_slash_damage integer,
+  superstar_hyado_physical_spell_slash_damage integer,
+  superstar_io_physical_spell_slash_damage integer,
+  superstar_jibaria_physical_spell_slash_damage integer,
+  superstar_mera_physical_spell_slash_damage integer,
 
-  superstar_bagi_hit_physical_spell_damage integer,
-  superstar_dein_hit_physical_spell_damage integer,
-  superstar_doruma_hit_physical_spell_damage integer,
-  superstar_gira_hit_physical_spell_damage integer,
-  superstar_hyado_hit_physical_spell_damage integer,
-  superstar_io_hit_physical_spell_damage integer,
-  superstar_jibaria_hit_physical_spell_damage integer,
-  superstar_mera_hit_physical_spell_damage integer,
+  superstar_bagi_physical_spell_hit_damage integer,
+  superstar_dein_physical_spell_hit_damage integer,
+  superstar_doruma_physical_spell_hit_damage integer,
+  superstar_gira_physical_spell_hit_damage integer,
+  superstar_hyado_physical_spell_hit_damage integer,
+  superstar_io_physical_spell_hit_damage integer,
+  superstar_jibaria_physical_spell_hit_damage integer,
+  superstar_mera_physical_spell_hit_damage integer,
 
   superstar_bagi_breath_damage integer,
   superstar_dein_breath_damage integer,
@@ -428,23 +428,23 @@ create table kokoro_combination (
   pirate_jibaria_spell_damage integer,
   pirate_mera_spell_damage integer,
 
-  pirate_bagi_slash_physical_spell_damage integer,
-  pirate_dein_slash_physical_spell_damage integer,
-  pirate_doruma_slash_physical_spell_damage integer,
-  pirate_gira_slash_physical_spell_damage integer,
-  pirate_hyado_slash_physical_spell_damage integer,
-  pirate_io_slash_physical_spell_damage integer,
-  pirate_jibaria_slash_physical_spell_damage integer,
-  pirate_mera_slash_physical_spell_damage integer,
+  pirate_bagi_physical_spell_slash_damage integer,
+  pirate_dein_physical_spell_slash_damage integer,
+  pirate_doruma_physical_spell_slash_damage integer,
+  pirate_gira_physical_spell_slash_damage integer,
+  pirate_hyado_physical_spell_slash_damage integer,
+  pirate_io_physical_spell_slash_damage integer,
+  pirate_jibaria_physical_spell_slash_damage integer,
+  pirate_mera_physical_spell_slash_damage integer,
 
-  pirate_bagi_hit_physical_spell_damage integer,
-  pirate_dein_hit_physical_spell_damage integer,
-  pirate_doruma_hit_physical_spell_damage integer,
-  pirate_gira_hit_physical_spell_damage integer,
-  pirate_hyado_hit_physical_spell_damage integer,
-  pirate_io_hit_physical_spell_damage integer,
-  pirate_jibaria_hit_physical_spell_damage integer,
-  pirate_mera_hit_physical_spell_damage integer,
+  pirate_bagi_physical_spell_hit_damage integer,
+  pirate_dein_physical_spell_hit_damage integer,
+  pirate_doruma_physical_spell_hit_damage integer,
+  pirate_gira_physical_spell_hit_damage integer,
+  pirate_hyado_physical_spell_hit_damage integer,
+  pirate_io_physical_spell_hit_damage integer,
+  pirate_jibaria_physical_spell_hit_damage integer,
+  pirate_mera_physical_spell_hit_damage integer,
 
   pirate_bagi_breath_damage integer,
   pirate_dein_breath_damage integer,
@@ -491,23 +491,23 @@ create index on kokoro_combination(battle_master_io_spell_damage);
 create index on kokoro_combination(battle_master_jibaria_spell_damage);
 create index on kokoro_combination(battle_master_mera_spell_damage);
 
-create index on kokoro_combination(battle_master_bagi_slash_physical_spell_damage);
-create index on kokoro_combination(battle_master_dein_slash_physical_spell_damage);
-create index on kokoro_combination(battle_master_doruma_slash_physical_spell_damage);
-create index on kokoro_combination(battle_master_gira_slash_physical_spell_damage);
-create index on kokoro_combination(battle_master_hyado_slash_physical_spell_damage);
-create index on kokoro_combination(battle_master_io_slash_physical_spell_damage);
-create index on kokoro_combination(battle_master_jibaria_slash_physical_spell_damage);
-create index on kokoro_combination(battle_master_mera_slash_physical_spell_damage);
+create index on kokoro_combination(battle_master_bagi_physical_spell_slash_damage);
+create index on kokoro_combination(battle_master_dein_physical_spell_slash_damage);
+create index on kokoro_combination(battle_master_doruma_physical_spell_slash_damage);
+create index on kokoro_combination(battle_master_gira_physical_spell_slash_damage);
+create index on kokoro_combination(battle_master_hyado_physical_spell_slash_damage);
+create index on kokoro_combination(battle_master_io_physical_spell_slash_damage);
+create index on kokoro_combination(battle_master_jibaria_physical_spell_slash_damage);
+create index on kokoro_combination(battle_master_mera_physical_spell_slash_damage);
 
-create index on kokoro_combination(battle_master_bagi_hit_physical_spell_damage);
-create index on kokoro_combination(battle_master_dein_hit_physical_spell_damage);
-create index on kokoro_combination(battle_master_doruma_hit_physical_spell_damage);
-create index on kokoro_combination(battle_master_gira_hit_physical_spell_damage);
-create index on kokoro_combination(battle_master_hyado_hit_physical_spell_damage);
-create index on kokoro_combination(battle_master_io_hit_physical_spell_damage);
-create index on kokoro_combination(battle_master_jibaria_hit_physical_spell_damage);
-create index on kokoro_combination(battle_master_mera_hit_physical_spell_damage);
+create index on kokoro_combination(battle_master_bagi_physical_spell_hit_damage);
+create index on kokoro_combination(battle_master_dein_physical_spell_hit_damage);
+create index on kokoro_combination(battle_master_doruma_physical_spell_hit_damage);
+create index on kokoro_combination(battle_master_gira_physical_spell_hit_damage);
+create index on kokoro_combination(battle_master_hyado_physical_spell_hit_damage);
+create index on kokoro_combination(battle_master_io_physical_spell_hit_damage);
+create index on kokoro_combination(battle_master_jibaria_physical_spell_hit_damage);
+create index on kokoro_combination(battle_master_mera_physical_spell_hit_damage);
 
 create index on kokoro_combination(battle_master_bagi_breath_damage);
 create index on kokoro_combination(battle_master_dein_breath_damage);
@@ -549,23 +549,23 @@ create index on kokoro_combination(sage_io_spell_damage);
 create index on kokoro_combination(sage_jibaria_spell_damage);
 create index on kokoro_combination(sage_mera_spell_damage);
 
-create index on kokoro_combination(sage_bagi_slash_physical_spell_damage);
-create index on kokoro_combination(sage_dein_slash_physical_spell_damage);
-create index on kokoro_combination(sage_doruma_slash_physical_spell_damage);
-create index on kokoro_combination(sage_gira_slash_physical_spell_damage);
-create index on kokoro_combination(sage_hyado_slash_physical_spell_damage);
-create index on kokoro_combination(sage_io_slash_physical_spell_damage);
-create index on kokoro_combination(sage_jibaria_slash_physical_spell_damage);
-create index on kokoro_combination(sage_mera_slash_physical_spell_damage);
+create index on kokoro_combination(sage_bagi_physical_spell_slash_damage);
+create index on kokoro_combination(sage_dein_physical_spell_slash_damage);
+create index on kokoro_combination(sage_doruma_physical_spell_slash_damage);
+create index on kokoro_combination(sage_gira_physical_spell_slash_damage);
+create index on kokoro_combination(sage_hyado_physical_spell_slash_damage);
+create index on kokoro_combination(sage_io_physical_spell_slash_damage);
+create index on kokoro_combination(sage_jibaria_physical_spell_slash_damage);
+create index on kokoro_combination(sage_mera_physical_spell_slash_damage);
 
-create index on kokoro_combination(sage_bagi_hit_physical_spell_damage);
-create index on kokoro_combination(sage_dein_hit_physical_spell_damage);
-create index on kokoro_combination(sage_doruma_hit_physical_spell_damage);
-create index on kokoro_combination(sage_gira_hit_physical_spell_damage);
-create index on kokoro_combination(sage_hyado_hit_physical_spell_damage);
-create index on kokoro_combination(sage_io_hit_physical_spell_damage);
-create index on kokoro_combination(sage_jibaria_hit_physical_spell_damage);
-create index on kokoro_combination(sage_mera_hit_physical_spell_damage);
+create index on kokoro_combination(sage_bagi_physical_spell_hit_damage);
+create index on kokoro_combination(sage_dein_physical_spell_hit_damage);
+create index on kokoro_combination(sage_doruma_physical_spell_hit_damage);
+create index on kokoro_combination(sage_gira_physical_spell_hit_damage);
+create index on kokoro_combination(sage_hyado_physical_spell_hit_damage);
+create index on kokoro_combination(sage_io_physical_spell_hit_damage);
+create index on kokoro_combination(sage_jibaria_physical_spell_hit_damage);
+create index on kokoro_combination(sage_mera_physical_spell_hit_damage);
 
 create index on kokoro_combination(sage_bagi_breath_damage);
 create index on kokoro_combination(sage_dein_breath_damage);
@@ -607,23 +607,23 @@ create index on kokoro_combination(ranger_io_spell_damage);
 create index on kokoro_combination(ranger_jibaria_spell_damage);
 create index on kokoro_combination(ranger_mera_spell_damage);
 
-create index on kokoro_combination(ranger_bagi_slash_physical_spell_damage);
-create index on kokoro_combination(ranger_dein_slash_physical_spell_damage);
-create index on kokoro_combination(ranger_doruma_slash_physical_spell_damage);
-create index on kokoro_combination(ranger_gira_slash_physical_spell_damage);
-create index on kokoro_combination(ranger_hyado_slash_physical_spell_damage);
-create index on kokoro_combination(ranger_io_slash_physical_spell_damage);
-create index on kokoro_combination(ranger_jibaria_slash_physical_spell_damage);
-create index on kokoro_combination(ranger_mera_slash_physical_spell_damage);
+create index on kokoro_combination(ranger_bagi_physical_spell_slash_damage);
+create index on kokoro_combination(ranger_dein_physical_spell_slash_damage);
+create index on kokoro_combination(ranger_doruma_physical_spell_slash_damage);
+create index on kokoro_combination(ranger_gira_physical_spell_slash_damage);
+create index on kokoro_combination(ranger_hyado_physical_spell_slash_damage);
+create index on kokoro_combination(ranger_io_physical_spell_slash_damage);
+create index on kokoro_combination(ranger_jibaria_physical_spell_slash_damage);
+create index on kokoro_combination(ranger_mera_physical_spell_slash_damage);
 
-create index on kokoro_combination(ranger_bagi_hit_physical_spell_damage);
-create index on kokoro_combination(ranger_dein_hit_physical_spell_damage);
-create index on kokoro_combination(ranger_doruma_hit_physical_spell_damage);
-create index on kokoro_combination(ranger_gira_hit_physical_spell_damage);
-create index on kokoro_combination(ranger_hyado_hit_physical_spell_damage);
-create index on kokoro_combination(ranger_io_hit_physical_spell_damage);
-create index on kokoro_combination(ranger_jibaria_hit_physical_spell_damage);
-create index on kokoro_combination(ranger_mera_hit_physical_spell_damage);
+create index on kokoro_combination(ranger_bagi_physical_spell_hit_damage);
+create index on kokoro_combination(ranger_dein_physical_spell_hit_damage);
+create index on kokoro_combination(ranger_doruma_physical_spell_hit_damage);
+create index on kokoro_combination(ranger_gira_physical_spell_hit_damage);
+create index on kokoro_combination(ranger_hyado_physical_spell_hit_damage);
+create index on kokoro_combination(ranger_io_physical_spell_hit_damage);
+create index on kokoro_combination(ranger_jibaria_physical_spell_hit_damage);
+create index on kokoro_combination(ranger_mera_physical_spell_hit_damage);
 
 create index on kokoro_combination(ranger_bagi_breath_damage);
 create index on kokoro_combination(ranger_dein_breath_damage);
@@ -665,23 +665,23 @@ create index on kokoro_combination(armamentalist_io_spell_damage);
 create index on kokoro_combination(armamentalist_jibaria_spell_damage);
 create index on kokoro_combination(armamentalist_mera_spell_damage);
 
-create index on kokoro_combination(armamentalist_bagi_slash_physical_spell_damage);
-create index on kokoro_combination(armamentalist_dein_slash_physical_spell_damage);
-create index on kokoro_combination(armamentalist_doruma_slash_physical_spell_damage);
-create index on kokoro_combination(armamentalist_gira_slash_physical_spell_damage);
-create index on kokoro_combination(armamentalist_hyado_slash_physical_spell_damage);
-create index on kokoro_combination(armamentalist_io_slash_physical_spell_damage);
-create index on kokoro_combination(armamentalist_jibaria_slash_physical_spell_damage);
-create index on kokoro_combination(armamentalist_mera_slash_physical_spell_damage);
+create index on kokoro_combination(armamentalist_bagi_physical_spell_slash_damage);
+create index on kokoro_combination(armamentalist_dein_physical_spell_slash_damage);
+create index on kokoro_combination(armamentalist_doruma_physical_spell_slash_damage);
+create index on kokoro_combination(armamentalist_gira_physical_spell_slash_damage);
+create index on kokoro_combination(armamentalist_hyado_physical_spell_slash_damage);
+create index on kokoro_combination(armamentalist_io_physical_spell_slash_damage);
+create index on kokoro_combination(armamentalist_jibaria_physical_spell_slash_damage);
+create index on kokoro_combination(armamentalist_mera_physical_spell_slash_damage);
 
-create index on kokoro_combination(armamentalist_bagi_hit_physical_spell_damage);
-create index on kokoro_combination(armamentalist_dein_hit_physical_spell_damage);
-create index on kokoro_combination(armamentalist_doruma_hit_physical_spell_damage);
-create index on kokoro_combination(armamentalist_gira_hit_physical_spell_damage);
-create index on kokoro_combination(armamentalist_hyado_hit_physical_spell_damage);
-create index on kokoro_combination(armamentalist_io_hit_physical_spell_damage);
-create index on kokoro_combination(armamentalist_jibaria_hit_physical_spell_damage);
-create index on kokoro_combination(armamentalist_mera_hit_physical_spell_damage);
+create index on kokoro_combination(armamentalist_bagi_physical_spell_hit_damage);
+create index on kokoro_combination(armamentalist_dein_physical_spell_hit_damage);
+create index on kokoro_combination(armamentalist_doruma_physical_spell_hit_damage);
+create index on kokoro_combination(armamentalist_gira_physical_spell_hit_damage);
+create index on kokoro_combination(armamentalist_hyado_physical_spell_hit_damage);
+create index on kokoro_combination(armamentalist_io_physical_spell_hit_damage);
+create index on kokoro_combination(armamentalist_jibaria_physical_spell_hit_damage);
+create index on kokoro_combination(armamentalist_mera_physical_spell_hit_damage);
 
 create index on kokoro_combination(armamentalist_bagi_breath_damage);
 create index on kokoro_combination(armamentalist_dein_breath_damage);
@@ -723,23 +723,23 @@ create index on kokoro_combination(paladin_io_spell_damage);
 create index on kokoro_combination(paladin_jibaria_spell_damage);
 create index on kokoro_combination(paladin_mera_spell_damage);
 
-create index on kokoro_combination(paladin_bagi_slash_physical_spell_damage);
-create index on kokoro_combination(paladin_dein_slash_physical_spell_damage);
-create index on kokoro_combination(paladin_doruma_slash_physical_spell_damage);
-create index on kokoro_combination(paladin_gira_slash_physical_spell_damage);
-create index on kokoro_combination(paladin_hyado_slash_physical_spell_damage);
-create index on kokoro_combination(paladin_io_slash_physical_spell_damage);
-create index on kokoro_combination(paladin_jibaria_slash_physical_spell_damage);
-create index on kokoro_combination(paladin_mera_slash_physical_spell_damage);
+create index on kokoro_combination(paladin_bagi_physical_spell_slash_damage);
+create index on kokoro_combination(paladin_dein_physical_spell_slash_damage);
+create index on kokoro_combination(paladin_doruma_physical_spell_slash_damage);
+create index on kokoro_combination(paladin_gira_physical_spell_slash_damage);
+create index on kokoro_combination(paladin_hyado_physical_spell_slash_damage);
+create index on kokoro_combination(paladin_io_physical_spell_slash_damage);
+create index on kokoro_combination(paladin_jibaria_physical_spell_slash_damage);
+create index on kokoro_combination(paladin_mera_physical_spell_slash_damage);
 
-create index on kokoro_combination(paladin_bagi_hit_physical_spell_damage);
-create index on kokoro_combination(paladin_dein_hit_physical_spell_damage);
-create index on kokoro_combination(paladin_doruma_hit_physical_spell_damage);
-create index on kokoro_combination(paladin_gira_hit_physical_spell_damage);
-create index on kokoro_combination(paladin_hyado_hit_physical_spell_damage);
-create index on kokoro_combination(paladin_io_hit_physical_spell_damage);
-create index on kokoro_combination(paladin_jibaria_hit_physical_spell_damage);
-create index on kokoro_combination(paladin_mera_hit_physical_spell_damage);
+create index on kokoro_combination(paladin_bagi_physical_spell_hit_damage);
+create index on kokoro_combination(paladin_dein_physical_spell_hit_damage);
+create index on kokoro_combination(paladin_doruma_physical_spell_hit_damage);
+create index on kokoro_combination(paladin_gira_physical_spell_hit_damage);
+create index on kokoro_combination(paladin_hyado_physical_spell_hit_damage);
+create index on kokoro_combination(paladin_io_physical_spell_hit_damage);
+create index on kokoro_combination(paladin_jibaria_physical_spell_hit_damage);
+create index on kokoro_combination(paladin_mera_physical_spell_hit_damage);
 
 create index on kokoro_combination(paladin_bagi_breath_damage);
 create index on kokoro_combination(paladin_dein_breath_damage);
@@ -781,23 +781,23 @@ create index on kokoro_combination(superstar_io_spell_damage);
 create index on kokoro_combination(superstar_jibaria_spell_damage);
 create index on kokoro_combination(superstar_mera_spell_damage);
 
-create index on kokoro_combination(superstar_bagi_slash_physical_spell_damage);
-create index on kokoro_combination(superstar_dein_slash_physical_spell_damage);
-create index on kokoro_combination(superstar_doruma_slash_physical_spell_damage);
-create index on kokoro_combination(superstar_gira_slash_physical_spell_damage);
-create index on kokoro_combination(superstar_hyado_slash_physical_spell_damage);
-create index on kokoro_combination(superstar_io_slash_physical_spell_damage);
-create index on kokoro_combination(superstar_jibaria_slash_physical_spell_damage);
-create index on kokoro_combination(superstar_mera_slash_physical_spell_damage);
+create index on kokoro_combination(superstar_bagi_physical_spell_slash_damage);
+create index on kokoro_combination(superstar_dein_physical_spell_slash_damage);
+create index on kokoro_combination(superstar_doruma_physical_spell_slash_damage);
+create index on kokoro_combination(superstar_gira_physical_spell_slash_damage);
+create index on kokoro_combination(superstar_hyado_physical_spell_slash_damage);
+create index on kokoro_combination(superstar_io_physical_spell_slash_damage);
+create index on kokoro_combination(superstar_jibaria_physical_spell_slash_damage);
+create index on kokoro_combination(superstar_mera_physical_spell_slash_damage);
 
-create index on kokoro_combination(superstar_bagi_hit_physical_spell_damage);
-create index on kokoro_combination(superstar_dein_hit_physical_spell_damage);
-create index on kokoro_combination(superstar_doruma_hit_physical_spell_damage);
-create index on kokoro_combination(superstar_gira_hit_physical_spell_damage);
-create index on kokoro_combination(superstar_hyado_hit_physical_spell_damage);
-create index on kokoro_combination(superstar_io_hit_physical_spell_damage);
-create index on kokoro_combination(superstar_jibaria_hit_physical_spell_damage);
-create index on kokoro_combination(superstar_mera_hit_physical_spell_damage);
+create index on kokoro_combination(superstar_bagi_physical_spell_hit_damage);
+create index on kokoro_combination(superstar_dein_physical_spell_hit_damage);
+create index on kokoro_combination(superstar_doruma_physical_spell_hit_damage);
+create index on kokoro_combination(superstar_gira_physical_spell_hit_damage);
+create index on kokoro_combination(superstar_hyado_physical_spell_hit_damage);
+create index on kokoro_combination(superstar_io_physical_spell_hit_damage);
+create index on kokoro_combination(superstar_jibaria_physical_spell_hit_damage);
+create index on kokoro_combination(superstar_mera_physical_spell_hit_damage);
 
 create index on kokoro_combination(superstar_bagi_breath_damage);
 create index on kokoro_combination(superstar_dein_breath_damage);
@@ -839,23 +839,23 @@ create index on kokoro_combination(pirate_io_spell_damage);
 create index on kokoro_combination(pirate_jibaria_spell_damage);
 create index on kokoro_combination(pirate_mera_spell_damage);
 
-create index on kokoro_combination(pirate_bagi_slash_physical_spell_damage);
-create index on kokoro_combination(pirate_dein_slash_physical_spell_damage);
-create index on kokoro_combination(pirate_doruma_slash_physical_spell_damage);
-create index on kokoro_combination(pirate_gira_slash_physical_spell_damage);
-create index on kokoro_combination(pirate_hyado_slash_physical_spell_damage);
-create index on kokoro_combination(pirate_io_slash_physical_spell_damage);
-create index on kokoro_combination(pirate_jibaria_slash_physical_spell_damage);
-create index on kokoro_combination(pirate_mera_slash_physical_spell_damage);
+create index on kokoro_combination(pirate_bagi_physical_spell_slash_damage);
+create index on kokoro_combination(pirate_dein_physical_spell_slash_damage);
+create index on kokoro_combination(pirate_doruma_physical_spell_slash_damage);
+create index on kokoro_combination(pirate_gira_physical_spell_slash_damage);
+create index on kokoro_combination(pirate_hyado_physical_spell_slash_damage);
+create index on kokoro_combination(pirate_io_physical_spell_slash_damage);
+create index on kokoro_combination(pirate_jibaria_physical_spell_slash_damage);
+create index on kokoro_combination(pirate_mera_physical_spell_slash_damage);
 
-create index on kokoro_combination(pirate_bagi_hit_physical_spell_damage);
-create index on kokoro_combination(pirate_dein_hit_physical_spell_damage);
-create index on kokoro_combination(pirate_doruma_hit_physical_spell_damage);
-create index on kokoro_combination(pirate_gira_hit_physical_spell_damage);
-create index on kokoro_combination(pirate_hyado_hit_physical_spell_damage);
-create index on kokoro_combination(pirate_io_hit_physical_spell_damage);
-create index on kokoro_combination(pirate_jibaria_hit_physical_spell_damage);
-create index on kokoro_combination(pirate_mera_hit_physical_spell_damage);
+create index on kokoro_combination(pirate_bagi_physical_spell_hit_damage);
+create index on kokoro_combination(pirate_dein_physical_spell_hit_damage);
+create index on kokoro_combination(pirate_doruma_physical_spell_hit_damage);
+create index on kokoro_combination(pirate_gira_physical_spell_hit_damage);
+create index on kokoro_combination(pirate_hyado_physical_spell_hit_damage);
+create index on kokoro_combination(pirate_io_physical_spell_hit_damage);
+create index on kokoro_combination(pirate_jibaria_physical_spell_hit_damage);
+create index on kokoro_combination(pirate_mera_physical_spell_hit_damage);
 
 create index on kokoro_combination(pirate_bagi_breath_damage);
 create index on kokoro_combination(pirate_dein_breath_damage);

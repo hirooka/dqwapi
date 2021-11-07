@@ -37,7 +37,8 @@ public class DamageRestController {
       @RequestParam(value = "r", required = false) RaceType raceType
   ) {
     log.info(
-        "jobType: {}, level: {}, defence: {}, weapon: {}, skill: {}, bride: {}, exclusions: {}, race: {}",
+        "jobType: {}, level: {}, defence: {}, weapon: {}" +
+            ", skill: {}, bride: {}, exclusions: {}, race: {}",
         jobType, level, defence, weapon, skill, bride, exclusions, raceType);
     if (ObjectUtils.isEmpty(jobType)) {
       jobType = JobType.BATTLE_MASTER;
@@ -78,6 +79,8 @@ public class DamageRestController {
     if (ObjectUtils.isEmpty(raceType)) {
       raceType = RaceType.NONE;
     }
-    return damageOperator.getDamages(weapon, skill, jobType, level, defence, bride, excludeMap, raceType);
+    return damageOperator.getDamages(
+        weapon, skill, jobType, level, defence, bride, excludeMap, raceType
+    );
   }
 }

@@ -1,6 +1,7 @@
 package dqwapi.domain.model.common;
 
 public enum KokoroType {
+  RAINBOW,
   RED,
   YELLOW,
   BLUE,
@@ -8,10 +9,9 @@ public enum KokoroType {
   GREEN,
   RED_YELLOW,
   RED_BLUE,
-  PURPLE_GREEN,
+  YELLOW_BLUE,
   YELLOW_PURPLE,
   YELLOW_GREEN,
   BLUE_GREEN,
-  YELLOW_BLUE,
-  RAINBOW
+  PURPLE_GREEN
 }

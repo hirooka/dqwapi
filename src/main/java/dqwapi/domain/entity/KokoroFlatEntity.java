@@ -82,7 +82,7 @@ public class KokoroFlatEntity {
 
   @Getter
   @Setter
-  private Integer breathNoneNone;
+  private Integer slashNoneNone;
 
   @Getter
   @Setter
@@ -90,11 +90,11 @@ public class KokoroFlatEntity {
 
   @Getter
   @Setter
-  private Integer slashNoneNone;
+  private Integer spellNoneNone;
 
   @Getter
   @Setter
-  private Integer spellNoneNone;
+  private Integer breathNoneNone;
 
   @Getter
   @Setter
@@ -130,38 +130,6 @@ public class KokoroFlatEntity {
 
   @Getter
   @Setter
-  private Integer hitBagiNone;
-
-  @Getter
-  @Setter
-  private Integer hitDeinNone;
-
-  @Getter
-  @Setter
-  private Integer hitDorumaNone;
-
-  @Getter
-  @Setter
-  private Integer hitGiraNone;
-
-  @Getter
-  @Setter
-  private Integer hitHyadoNone;
-
-  @Getter
-  @Setter
-  private Integer hitIoNone;
-
-  @Getter
-  @Setter
-  private Integer hitJibariaNone;
-
-  @Getter
-  @Setter
-  private Integer hitMeraNone;
-
-  @Getter
-  @Setter
   private Integer slashBagiNone;
 
   @Getter
@@ -191,6 +159,38 @@ public class KokoroFlatEntity {
   @Getter
   @Setter
   private Integer slashMeraNone;
+
+  @Getter
+  @Setter
+  private Integer hitBagiNone;
+
+  @Getter
+  @Setter
+  private Integer hitDeinNone;
+
+  @Getter
+  @Setter
+  private Integer hitDorumaNone;
+
+  @Getter
+  @Setter
+  private Integer hitGiraNone;
+
+  @Getter
+  @Setter
+  private Integer hitHyadoNone;
+
+  @Getter
+  @Setter
+  private Integer hitIoNone;
+
+  @Getter
+  @Setter
+  private Integer hitJibariaNone;
+
+  @Getter
+  @Setter
+  private Integer hitMeraNone;
 
   @Getter
   @Setter

@@ -1,5 +1,20 @@
 package dqwapi.domain.service;
 
+import static dqwapi.domain.model.common.AttackType.BREATH;
+import static dqwapi.domain.model.common.AttackType.HIT;
+import static dqwapi.domain.model.common.AttackType.PHYSICS_SPELL_HIT;
+import static dqwapi.domain.model.common.AttackType.PHYSICS_SPELL_SLASH;
+import static dqwapi.domain.model.common.AttackType.SLASH;
+import static dqwapi.domain.model.common.AttackType.SPELL;
+import static dqwapi.domain.model.common.AttributeType.BAGI;
+import static dqwapi.domain.model.common.AttributeType.DEIN;
+import static dqwapi.domain.model.common.AttributeType.DORUMA;
+import static dqwapi.domain.model.common.AttributeType.GIRA;
+import static dqwapi.domain.model.common.AttributeType.HYADO;
+import static dqwapi.domain.model.common.AttributeType.IO;
+import static dqwapi.domain.model.common.AttributeType.JIBARIA;
+import static dqwapi.domain.model.common.AttributeType.MERA;
+import static dqwapi.domain.model.common.CsvType.ALL;
 import static dqwapi.domain.model.common.CsvType.ATTRIBUTE;
 import static dqwapi.domain.model.common.CsvType.ATTRIBUTE_RACE;
 import static dqwapi.domain.model.common.KokoroType.BLUE;
@@ -20,6 +35,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dqwapi.domain.model.common.AttackType;
+import dqwapi.domain.model.common.AttributeType;
 import dqwapi.domain.model.common.CsvType;
 import dqwapi.domain.model.common.KokoroType;
 import dqwapi.domain.model.job.JobType;
@@ -886,18 +902,25 @@ public class DataService implements IDataService {
 
   @Async
   @Override
-  public void createCombinationCsv(final String type) {
-    attrRaceCsv();
-    if (type.equals("d")) {
-      divideCsv();
-      return;
-    } else if (ObjectUtils.isEmpty(type) || !type.equals("o")) {
-      return;
+  public void createCombinationCsv(final CsvType csvType) {
+    if (csvType.equals(ALL)) {
+      createAttributeCsv();
+      createAttributeRaceCsv();
+    } else if (csvType.equals(ATTRIBUTE)) {
+      createAttributeCsv();
+    } else if (csvType.equals(ATTRIBUTE_RACE)) {
+      createAttributeRaceCsv();
     }
+    throw new IllegalArgumentException("");
+  }
+
+  private void createAttributeCsv() {
     log.info("{} kokoros, {} combinations", kokoros.size(), String.format("%,d", getCombinationSize()));
     final StopWatch stopWatch = new StopWatch();
     stopWatch.start();
-    try (BufferedWriter bufferedWriter = Files.newBufferedWriter(Paths.get("combination.csv"), StandardCharsets.UTF_8)) {
+    try (final BufferedWriter bufferedWriter = Files.newBufferedWriter(Paths.get("combination.csv"), StandardCharsets.UTF_8)) {
+      bufferedWriter.write(createCsvHeader());
+      bufferedWriter.newLine();
       final int len = kokoros.size();
       log.info("{} kokoros", len);
       int count = 0;
@@ -980,104 +1003,7 @@ public class DataService implements IDataService {
     }
   }
 
-  @Deprecated
-  private void divideCsv() {
-    log.info("{} kokoros, {} combinations", kokoros.size(), String.format("%,d", getCombinationSize()));
-    final StopWatch stopWatch = new StopWatch();
-    stopWatch.start();
-    try {
-      int div = 0;
-      BufferedWriter bufferedWriter = Files.newBufferedWriter(Paths.get("combination" + div + ".csv"), StandardCharsets.UTF_8);
-      final int len = kokoros.size();
-      log.info("{} kokoros", len);
-      int count = 0;
-      for (int i = 0; i < len; i++) {
-        for (int j = 0; j < len; j++) {
-          if (!(i >= j)) {
-            for (int k = 0; k < len; k++) {
-              if (!(i >= k) && !(j >= k)) {
-                for (int l = 0; l < len; l++) {
-                  if (!(i >= l) && !(j >= l) && !(k >= l)) {
-                    final int i0 = kokoros.get(i).getId();
-                    final int i1 = kokoros.get(j).getId();
-                    final int i2 = kokoros.get(k).getId();
-                    final int i3 = kokoros.get(l).getId();
-                    if (i0 != i1 && i0 != i2 && i0 != i3 && i1 != i2 && i1 != i3 && i2 != i3) {
-                      count++;
-
-                      final KokoroFlat k0 = kokoros.get(i);
-                      final KokoroFlat k1 = kokoros.get(j);
-                      final KokoroFlat k2 = kokoros.get(k);
-                      final KokoroFlat k3 = kokoros.get(l);
-
-                      // Basis
-                      final String names = k0.getName()
-                          + "," + k1.getName()
-                          + "," + k2.getName()
-                          + "," + k3.getName();
-                      final String ids = k0.getId()
-                          + "," + k1.getId()
-                          + "," + k2.getId()
-                          + "," + k3.getId();
-                      final String ranks = k0.getRank().ordinal()
-                          + "," + k1.getRank().ordinal()
-                          + "," + k2.getRank().ordinal()
-                          + "," + k3.getRank().ordinal();
-                      int totalCost = k0.getCost() + k1.getCost() + k2.getCost() + k3.getCost()
-                          - k0.getPlusCost() - k1.getPlusCost() - k2.getPlusCost() - k3.getPlusCost();
-                      final String idsAndRanks = k0.getId() + "," + k0.getRank().ordinal()
-                          + "," + k1.getId() + "," + k1.getRank().ordinal()
-                          + "," + k2.getId() + "," + k2.getRank().ordinal()
-                          + "," + k3.getId() + "," + k3.getRank().ordinal();
-
-                      final String battleMaster = getCsv(BATTLE_MASTER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
-                      final String sage = getCsv(SAGE, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
-                      final String ranger = getCsv(RANGER, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
-                      final String armamentalist = getCsv(ARMAMENTALIST, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
-                      final String paladin = getCsv(PALADIN, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
-                      final String superstar = getCsv(SUPERSTAR, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
-                      final String pirate = getCsv(PIRATE, kokoros.get(i), kokoros.get(j), kokoros.get(k), kokoros.get(l), ATTRIBUTE);
-
-                      if (count % 1_000_000 == 0) {
-                        bufferedWriter.close();
-                        div++;
-                        bufferedWriter = Files.newBufferedWriter(Paths.get("combination" + div + ".csv"), StandardCharsets.UTF_8);
-                      }
-
-                      bufferedWriter.write(
-                          idsAndRanks
-                              + ","
-                              + battleMaster
-                              + sage
-                              + ranger
-                              + armamentalist
-                              + paladin
-                              + superstar
-                              + pirate
-                              + totalCost
-                      );
-                      bufferedWriter.newLine();
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      stopWatch.stop();
-      log.info("{} kokoros, {} combinations, {} div, {} ms",
-          kokoros.size(),
-          String.format("%,d", count),
-          String.format("%,d", div),
-          String.format("%,d", stopWatch.getLastTaskTimeMillis())
-      );
-    } catch (IOException ex) {
-      throw new IllegalStateException("Failed to write combination csv.", ex);
-    }
-  }
-
-  private void attrRaceCsv() {
+  private void createAttributeRaceCsv() {
     final List<JobType> jobs = Arrays.asList(
         BATTLE_MASTER, SAGE, RANGER, ARMAMENTALIST, PALADIN, SUPERSTAR, PIRATE
     );
@@ -1087,6 +1013,8 @@ public class DataService implements IDataService {
       try {
         stopWatch.start();
         final BufferedWriter bufferedWriter = Files.newBufferedWriter(Paths.get("combination_" + jobType.name().toLowerCase() + ".csv"), StandardCharsets.UTF_8);
+        bufferedWriter.write(createCsvHeader());
+        bufferedWriter.newLine();
         final int len = kokoros.size();
         log.info("{} kokoros", len);
         int count = 0;
@@ -1157,5 +1085,40 @@ public class DataService implements IDataService {
         throw new IllegalStateException("Failed to write combination csv.", ex);
       }
     }
+  }
+
+  private String createCsvHeader() {
+    String header = "";
+    final List<JobType> jobTypes = Arrays.asList(JobType.values());
+    final List<AttributeType> attributeTypes = Arrays.asList(
+        BAGI, DEIN, DORUMA, GIRA, HYADO, IO, JIBARIA, MERA
+    );
+    final List<AttackType> attackTypes = Arrays.asList(
+        SLASH, HIT, SPELL, PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT, BREATH
+    );
+
+    final String basis = "k0id,k0rank,k1id,k1rank,k2id,k2rank,k3id,k3rank,";
+    header += basis;
+    for (JobType jobType : jobTypes) {
+      final String pattern = "max_" + jobType.name().toLowerCase() + "_op_pattern,"
+          + "max_" + jobType.name().toLowerCase() + "_os_pattern,"
+          + "max_" + jobType.name().toLowerCase() + "_opos_pattern,"
+          + "max_" + jobType.name().toLowerCase() + "_opdx_pattern,"
+          + "max_" + jobType.name().toLowerCase() + "_ds_pattern,";
+      header += pattern;
+      for (AttributeType attributeType : attributeTypes) {
+        for (AttackType attackType : attackTypes) {
+          final String column = jobType.name().toLowerCase() + "_"
+              + attributeType.name().toLowerCase() + "_"
+              + attackType.name().toLowerCase() + "_damage,";
+          header += column;
+        }
+      }
+      header += jobType.name().toLowerCase() + "_speciality_healing,";
+      header += jobType.name().toLowerCase() + "_spell_healing,";
+    }
+    final String suffix = "total_cost";
+    header += suffix;
+    return header;
   }
 }

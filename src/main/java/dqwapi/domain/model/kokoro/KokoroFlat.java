@@ -32,10 +32,10 @@ public class KokoroFlat {
   private int sp;
   private int dx;
 
-  private int breathNoneNone;
-  private int hitNoneNone;
   private int slashNoneNone;
+  private int hitNoneNone;
   private int spellNoneNone;
+  private int breathNoneNone;
 
   private int allBagiNone;
   private int allDeinNone;
@@ -46,15 +46,6 @@ public class KokoroFlat {
   private int allJibariaNone;
   private int allMeraNone;
 
-  private int hitBagiNone;
-  private int hitDeinNone;
-  private int hitDorumaNone;
-  private int hitGiraNone;
-  private int hitHyadoNone;
-  private int hitIoNone;
-  private int hitJibariaNone;
-  private int hitMeraNone;
-
   private int slashBagiNone;
   private int slashDeinNone;
   private int slashDorumaNone;
@@ -63,6 +54,15 @@ public class KokoroFlat {
   private int slashIoNone;
   private int slashJibariaNone;
   private int slashMeraNone;
+
+  private int hitBagiNone;
+  private int hitDeinNone;
+  private int hitDorumaNone;
+  private int hitGiraNone;
+  private int hitHyadoNone;
+  private int hitIoNone;
+  private int hitJibariaNone;
+  private int hitMeraNone;
 
   private int spellBagiNone;
   private int spellDeinNone;

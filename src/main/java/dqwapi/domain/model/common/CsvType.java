@@ -2,5 +2,6 @@ package dqwapi.domain.model.common;
 
 public enum CsvType {
   ATTRIBUTE,
-  ATTRIBUTE_RACE
+  ATTRIBUTE_RACE,
+  ALL
 }

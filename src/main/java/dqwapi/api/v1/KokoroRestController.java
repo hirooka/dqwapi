@@ -25,7 +25,6 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
@@ -44,7 +43,6 @@ public class KokoroRestController {
   private String kokoroFlatJson;
 
   private final IKokoroService kokoroService;
-  private final IDataService dataService;
 
   @GetMapping
   public List<Kokoro> getAll() {
@@ -322,19 +320,5 @@ public class KokoroRestController {
     } catch (IOException ex) {
       throw new IllegalStateException("Failed to parse JSON file.", ex);
     }
-  }
-
-  @GetMapping("csv")
-  public Map<String, String> createCsv(
-      @RequestParam(value = "t", required = false) String type
-  ) {
-    if (!canPersist) {
-      throw new IllegalArgumentException("Cannot create CSV...");
-    }
-    if (!ObjectUtils.isEmpty(type) || !type.equals("d")) {
-      type = "o";
-    }
-    dataService.createCombinationCsv(type);
-    return Map.of("csv", type);
   }
 }

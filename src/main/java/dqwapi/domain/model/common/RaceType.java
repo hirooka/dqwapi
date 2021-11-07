@@ -1,6 +1,8 @@
 package dqwapi.domain.model.common;
 
 public enum RaceType {
+  NONE,
+  SECRET,
   ANIMAL,
   BIRD,
   DEVIL,
@@ -9,10 +11,8 @@ public enum RaceType {
   INSECT,
   MACHINE,
   MATERIAL,
-  NONE,
   PHANTOM,
   PLANT,
-  SECRET,
   SLIME,
   WATER,
   ZOMBIE

@@ -2,6 +2,7 @@ package dqwapi.domain.model.common;
 
 public enum AttributeType {
   ALL,
+  NONE,
   BAGI,
   DEIN,
   DORUMA,
@@ -9,6 +10,5 @@ public enum AttributeType {
   HYADO,
   IO,
   JIBARIA,
-  MERA,
-  NONE
+  MERA
 }

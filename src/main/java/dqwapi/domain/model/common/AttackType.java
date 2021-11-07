@@ -2,11 +2,11 @@ package dqwapi.domain.model.common;
 
 public enum AttackType {
   ALL,
-  BREATH,
-  HEALING,
+  SLASH,
   HIT,
+  SPELL,
+  HEALING,
   PHYSICS_SPELL_HIT,
   PHYSICS_SPELL_SLASH,
-  SLASH,
-  SPELL
+  BREATH
 }
