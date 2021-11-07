@@ -3,7 +3,7 @@ package dqwapi.api.v1;
 import dqwapi.domain.model.common.CsvType;
 import dqwapi.domain.service.IDataService;
 import java.util.Map;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.ObjectUtils;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RequestMapping("data")
 @RestController
 public class DataRestController {
