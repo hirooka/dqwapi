@@ -1,5 +1,7 @@
 package dqwapi.domain.service;
 
+import static com.google.common.base.CaseFormat.LOWER_HYPHEN;
+import static com.google.common.base.CaseFormat.UPPER_UNDERSCORE;
 import static dqwapi.domain.model.common.KokoroType.BLUE;
 import static dqwapi.domain.model.common.KokoroType.BLUE_GREEN;
 import static dqwapi.domain.model.common.KokoroType.GREEN;
@@ -13,7 +15,6 @@ import static dqwapi.domain.model.common.KokoroType.YELLOW;
 import static dqwapi.domain.model.common.KokoroType.YELLOW_BLUE;
 import static dqwapi.domain.model.common.KokoroType.YELLOW_GREEN;
 import static dqwapi.domain.model.common.KokoroType.YELLOW_PURPLE;
-import static java.util.Objects.requireNonNull;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -25,6 +26,7 @@ import dqwapi.domain.entity.KokoroFlatEntity;
 import dqwapi.domain.entity.Result;
 import dqwapi.domain.model.common.AttackType;
 import dqwapi.domain.model.common.AttributeType;
+import dqwapi.domain.model.common.DwhType;
 import dqwapi.domain.model.common.KokoroType;
 import dqwapi.domain.model.common.Parameter;
 import dqwapi.domain.model.common.RaceType;
@@ -38,6 +40,7 @@ import dqwapi.domain.model.kokoro.RankType;
 import dqwapi.domain.model.kokoro.Slot;
 import dqwapi.domain.model.kokoro.SuitableCombination;
 import dqwapi.domain.repository.ICombinationRepository;
+import dqwapi.domain.repository.IKokoroCombinationRepository;
 import dqwapi.domain.repository.IKokoroFlatRepository;
 import dqwapi.domain.repository.IKokoroRepository;
 import java.io.IOException;
@@ -49,9 +52,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.data.domain.PageRequest;
@@ -61,8 +66,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StopWatch;
 
 @Slf4j
+@RequiredArgsConstructor
 @Service
 public class KokoroService implements IKokoroService {
+
+  @Value("${dqwapi.dwh}")
+  private DwhType dwhType;
 
   @Value("${dqwapi.kokoro-json}")
   private String kokoroJson;
@@ -70,24 +79,17 @@ public class KokoroService implements IKokoroService {
   @Value("${dqwapi.kokoro-flat-json}")
   private String kokoroFlatJson;
 
+  private final ApplicationContext applicationContext;
   private final IKokoroRepository kokoroRepository;
   private final ICombinationRepository combinationRepository;
   private final IKokoroFlatRepository kokoroFlatRepository;
+
+  private final String repositorySuffix = "-repository";
 
   private Map<JobType, List<KokoroType>> slotsByJob = new HashMap<>();
   private List<Kokoro> kokoros = new ArrayList<>();
   private final List<JobKokoroCombination> jobKokoroCombinations = new ArrayList<>();
   private List<KokoroFlat> kokoroFlats = new ArrayList<>();
-
-  public KokoroService(
-      final IKokoroRepository kokoroRepository,
-      final ICombinationRepository combinationRepository,
-      final IKokoroFlatRepository kokoroFlatRepository
-  ) {
-    this.kokoroRepository = requireNonNull(kokoroRepository);
-    this.combinationRepository = requireNonNull(combinationRepository);
-    this.kokoroFlatRepository = requireNonNull(kokoroFlatRepository);
-  }
 
   private SuitableCombination sortKokoro(final JobType jobType, final List<Kokoro> kokoros) {
     final double magnification = 1.2;
@@ -2147,11 +2149,15 @@ public class KokoroService implements IKokoroService {
     final StopWatch stopWatch = new StopWatch();
     stopWatch.start("findCombinationsFromRdbms");
 
-    final List<Result> results = convertRdbmsResult(
-        getCombinationsFromRdbms(
-            jobType, attackType, attributeType, raceType, cost, nonBrides, exclusionRanks, limit
-        )
-    );
+    // TODO: PostgreSQL
+//    final List<Result> results = convertRdbmsResult(
+//        getCombinationsFromRdbms(
+//            jobType, attackType, attributeType, raceType, cost, nonBrides, exclusionRanks, limit
+//        )
+//    );
+    final List<Result> results = applicationContext.getBeansOfType(IKokoroCombinationRepository.class)
+        .get(UPPER_UNDERSCORE.to(LOWER_HYPHEN, dwhType.name()) + repositorySuffix)
+        .get(jobType, attackType, attributeType, raceType, cost, nonBrides, exclusionRanks, limit);
     stopWatch.stop();
     log.info("{} results, {} ms",
         results.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis())

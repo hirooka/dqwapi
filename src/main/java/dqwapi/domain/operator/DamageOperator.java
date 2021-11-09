@@ -130,7 +130,7 @@ public class DamageOperator implements IDamageOperator {
               ) {
                 attributeMagnification += damage.getMagnification();
               }
-              if (damage.getRace().equals(raceType)) {
+              if (!raceType.equals(RaceType.NONE) && damage.getRace().equals(raceType)) {
                 raceMagnification += damage.getMagnification();
               }
             }

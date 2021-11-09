@@ -40,6 +40,13 @@ dqwapi:
   kokoro-flat-json: kokoro-flat.json
   kokoro-persist: false
   response: 20
+  dwh: BIG_QUERY
+
+gcp:
+  project-id: hirooka-pro
+  big-query:
+    dataset: dqwapi
+    table: kokoro_combination
 
 logging:
   level:
