@@ -1855,8 +1855,10 @@ public class KokoroService implements IKokoroService {
       }
     } else {
       final String column =
-          (jobType.name() + "_" + attributeType.name() + "_" + attackType.name() + "_" + raceType.name() + "_damage")
-              .toLowerCase();
+          (jobType.name()
+              + "_" + attributeType.name()
+              + "_" + attackType.name()
+              + "_" + raceType.name() + "_damage").toLowerCase();
       switch (jobType) {
         case BATTLE_MASTER:
           switch (attackType) {
@@ -2155,7 +2157,8 @@ public class KokoroService implements IKokoroService {
 //            jobType, attackType, attributeType, raceType, cost, nonBrides, exclusionRanks, limit
 //        )
 //    );
-    final List<Result> results = applicationContext.getBeansOfType(IKokoroCombinationRepository.class)
+    final List<Result> results = applicationContext
+        .getBeansOfType(IKokoroCombinationRepository.class)
         .get(UPPER_UNDERSCORE.to(LOWER_HYPHEN, dwhType.name()) + repositorySuffix)
         .get(jobType, attackType, attributeType, raceType, cost, nonBrides, exclusionRanks, limit);
     stopWatch.stop();
@@ -2172,7 +2175,9 @@ public class KokoroService implements IKokoroService {
     for (KokoroFlat kokoroFlat : kokoroFlats) {
       final KokoroFlatEntity kokoroFlatEntity = modelMapper.map(kokoroFlat, KokoroFlatEntity.class);
       log.debug(kokoroFlatEntity.toString());
-      if (kokoroFlatRepository.findFirstByIdAndRank(kokoroFlat.getId(), kokoroFlat.getRank()).size() == 0) {
+      if (kokoroFlatRepository.findFirstByIdAndRank(kokoroFlat.getId(), kokoroFlat.getRank())
+          .size() == 0
+      ) {
         kokoroFlatRepository.save(kokoroFlatEntity);
       }
     }

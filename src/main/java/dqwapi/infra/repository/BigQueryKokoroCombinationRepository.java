@@ -74,10 +74,15 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
         throw new IllegalArgumentException("Unknown AttackType: " + attackType);
     }
     final String pattern = "max_" + jobType.name().toLowerCase() + "_" + parameter + "_pattern";
-    final String joinedNonBrides = nonBrides.stream().map(integer -> Integer.toString(integer)).collect(Collectors.joining(","));
-    final String joinedExclusions = exclusions.stream().collect(Collectors.joining("','", "'", "'"));
+    final String joinedNonBrides = nonBrides.stream()
+        .map(integer -> Integer.toString(integer)).collect(Collectors.joining(","));
+    final String joinedExclusions = exclusions.stream()
+        .collect(Collectors.joining("','", "'", "'"));
     if (raceType.equals(RaceType.NONE)) {
-      column = (jobType.name() + "_" + attributeType.name() + "_" + attackType.name() + "_damage").toLowerCase();
+      column = (jobType.name()
+          + "_" + attributeType.name()
+          + "_" + attackType.name()
+          + "_damage").toLowerCase();
       query = "SELECT k0id, k0rank, k1id, k1rank, k2id, k2rank, k3id, k3rank, " + pattern
           + " FROM `"
           + "$projectId"
@@ -98,7 +103,11 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
           + " ORDER BY " + column + " DESC"
           + " LIMIT " + limit;
     } else {
-      column = (jobType.name() + "_" + attributeType.name() + "_" + attackType.name() + "_" + raceType.name() + "_damage").toLowerCase();
+      column = (jobType.name()
+          + "_" + attributeType.name()
+          + "_" + attackType.name()
+          + "_" + raceType.name()
+          + "_damage").toLowerCase();
       query = "SELECT k0id, k0rank, k1id, k1rank, k2id, k2rank, k3id, k3rank, " + pattern
           + " FROM `"
           + "$projectId"
