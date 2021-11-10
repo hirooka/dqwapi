@@ -1,10 +1,12 @@
 package dqwapi.api.v1;
 
+import dqwapi.domain.model.common.AttackType;
+import dqwapi.domain.model.common.AttributeType;
 import dqwapi.domain.model.common.RaceType;
-import dqwapi.domain.model.damage.DamageResult;
 import dqwapi.domain.model.job.JobType;
+import dqwapi.domain.model.kokoro.KokoroCombinationResult;
 import dqwapi.domain.model.kokoro.RankType;
-import dqwapi.domain.operator.IDamageOperator;
+import dqwapi.domain.operator.IKokoroOperator;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,41 +21,30 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @AllArgsConstructor
-@RequestMapping("${dqwapi.path-prefix}v1/damages")
+@RequestMapping("${dqwapi.path-prefix}v1/kokoro/combinations")
 @RestController
-public class DamageRestController {
+public class KokoroCombinationRestController {
 
-  private final IDamageOperator damageOperator;
+  private final IKokoroOperator kokoroOperator;
 
   @GetMapping
-  List<DamageResult> damages(
+  List<KokoroCombinationResult> combinations(
       @RequestParam(value = "j", required = false) JobType jobType,
       @RequestParam(value = "l", required = false) Integer level,
-      @RequestParam(value = "d", required = false) Integer defence,
-      @RequestParam(value = "w", required = false) String weapon,
-      @RequestParam(value = "s", required = false) String skill,
       @RequestParam(value = "b", required = false) String bride,
       @RequestParam(value = "e", required = false) List<String> exclusions,
+      @RequestParam(value = "atr", required = false) AttributeType attributeType,
+      @RequestParam(value = "atk", required = false) AttackType attackType,
       @RequestParam(value = "r", required = false) RaceType raceType
   ) {
     log.info(
-        "jobType: {}, level: {}, defence: {}, weapon: {}" +
-            ", skill: {}, bride: {}, exclusions: {}, race: {}",
-        jobType, level, defence, weapon, skill, bride, exclusions, raceType);
+        "jobType: {}, level: {}, bride: {}, exclusions: {}, attribute: {}, attack: {}, race: {}",
+        jobType, level, bride, exclusions, attributeType, attackType, raceType);
     if (ObjectUtils.isEmpty(jobType)) {
       jobType = JobType.BATTLE_MASTER;
     }
     if (ObjectUtils.isEmpty(level)) {
       level = 80;
-    }
-    if (ObjectUtils.isEmpty(defence)) {
-      defence = 500;
-    }
-    if (ObjectUtils.isEmpty(weapon)) {
-      weapon = "ルビスの剣";
-    }
-    if (ObjectUtils.isEmpty(skill)) {
-      skill = "創世の光";
     }
     if (ObjectUtils.isEmpty(bride)) {
       bride = "フローラ";
@@ -76,11 +67,17 @@ public class DamageRestController {
         }
       }
     }
+    if (ObjectUtils.isEmpty(attributeType)) {
+      attributeType = AttributeType.DEIN;
+    }
+    if (ObjectUtils.isEmpty(attackType)) {
+      attackType = AttackType.SLASH;
+    }
     if (ObjectUtils.isEmpty(raceType)) {
       raceType = RaceType.NONE;
     }
-    return damageOperator.getDamages(
-        weapon, skill, jobType, level, defence, bride, excludeMap, raceType
+    return kokoroOperator.getCombinations(
+        jobType, level, bride, excludeMap, attributeType, attackType, raceType
     );
   }
 }

@@ -6,7 +6,6 @@ import dqwapi.domain.model.kokoro.Damage;
 import dqwapi.domain.model.kokoro.Healing;
 import dqwapi.domain.model.kokoro.Kokoro;
 import dqwapi.domain.model.kokoro.KokoroFlat;
-import dqwapi.domain.service.IDataService;
 import dqwapi.domain.service.IKokoroService;
 import java.io.FileOutputStream;
 import java.io.IOException;
