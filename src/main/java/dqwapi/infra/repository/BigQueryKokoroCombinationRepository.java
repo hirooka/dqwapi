@@ -37,7 +37,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
 
   @PostConstruct
   void init() {
-    final String sql = "gcp-big-query.sql";
+    final String sql = "gcp-big-query.txt";
     final Resource resource = new ClassPathResource(sql);
     try {
       query = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
