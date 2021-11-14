@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @AllArgsConstructor
-@RequestMapping("${dqwapi.path-prefix}v1/kokoro/combinations")
+@RequestMapping("${dqwapi.path-prefix}v1/kokoro/combos")
 @RestController
 public class KokoroCombinationRestController {
 
@@ -33,8 +33,8 @@ public class KokoroCombinationRestController {
       @RequestParam(value = "l", required = false) Integer level,
       @RequestParam(value = "b", required = false) String bride,
       @RequestParam(value = "e", required = false) List<String> exclusions,
-      @RequestParam(value = "atr", required = false) AttributeType attributeType,
-      @RequestParam(value = "atk", required = false) AttackType attackType,
+      @RequestParam(value = "a", required = false) AttributeType attributeType,
+      @RequestParam(value = "k", required = false) AttackType attackType,
       @RequestParam(value = "r", required = false) RaceType raceType
   ) {
     log.info(
@@ -50,7 +50,7 @@ public class KokoroCombinationRestController {
       bride = "フローラ";
     } else {
       if (!bride.equals("ビアンカ") && !bride.equals("フローラ") && !bride.equals("デボラ")) {
-        throw new IllegalArgumentException("Illegal Argument: set correct bride name.");
+        throw new IllegalArgumentException("Unknown bride: " + bride);
       }
     }
     final Map<Integer, List<RankType>> excludeMap = new HashMap<>();

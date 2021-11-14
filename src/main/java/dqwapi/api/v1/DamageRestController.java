@@ -59,7 +59,7 @@ public class DamageRestController {
       bride = "フローラ";
     } else {
       if (!bride.equals("ビアンカ") && !bride.equals("フローラ") && !bride.equals("デボラ")) {
-        throw new IllegalArgumentException("Illegal Argument: set correct bride name.");
+        throw new IllegalArgumentException("Unknown bride: " + bride);
       }
     }
     final Map<Integer, List<RankType>> excludeMap = new HashMap<>();

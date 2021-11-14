@@ -304,6 +304,7 @@ public class KokoroRestController {
           objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(kokoroFlats);
       log.info(json);
 
+      // TODO: path
       final FileOutputStream fos = new FileOutputStream(kokoroFlatJson);
       fos.write(json.getBytes(StandardCharsets.UTF_8));
       fos.close();

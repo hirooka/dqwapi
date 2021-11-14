@@ -47,6 +47,7 @@ gcp:
   big-query:
     dataset: dqwapi
     table: kokoro_combination
+    table-type: CROSS
 
 logging:
   level:

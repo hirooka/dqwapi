@@ -1050,7 +1050,7 @@ public class DataService implements IDataService {
         }
       }
       stopWatch.stop();
-      log.info("{}}: {} kokoros, {} combinations, {} ms",
+      log.info("{}: {} kokoros, {} combinations, {} ms",
           csvName,
           kokoros.size(),
           String.format("%,d", count),
