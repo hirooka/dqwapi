@@ -2969,12 +2969,12 @@ k0id, k0rank, k1id, k1rank, k2id, k2rank, k3id, k3rank,
 $pattern
 FROM cb
 WHERE total_cost < $cost
-AND k0id NOT IN ( $joinedNonBrides )
-AND k1id NOT IN ( $joinedNonBrides )
-AND k2id NOT IN ( $joinedNonBrides )
-AND k3id NOT IN ( $joinedNonBrides )
-AND CONCAT(k0id, '_', k0rank) NOT IN ( $joinedExclusions )
-AND CONCAT(k1id, '_', k1rank) NOT IN ( $joinedExclusions )
-AND CONCAT(k2id, '_', k2rank) NOT IN ( $joinedExclusions )
-AND CONCAT(k3id, '_', k3rank) NOT IN ( $joinedExclusions )
+AND k0id NOT IN ($joinedNonBrides)
+AND k1id NOT IN ($joinedNonBrides)
+AND k2id NOT IN ($joinedNonBrides)
+AND k3id NOT IN ($joinedNonBrides)
+AND CONCAT(k0id, '_', k0rank) NOT IN ($joinedExclusions)
+AND CONCAT(k1id, '_', k1rank) NOT IN ($joinedExclusions)
+AND CONCAT(k2id, '_', k2rank) NOT IN ($joinedExclusions)
+AND CONCAT(k3id, '_', k3rank) NOT IN ($joinedExclusions)
 ORDER BY $column DESC limit $limit

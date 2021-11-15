@@ -90,8 +90,8 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
       query = query.replace("$pattern", pattern)
           .replace("$column", column)
           .replace("$cost", Integer.toString(cost))
-          .replaceAll("\\$joinedNonBrides", joinedNonBrides)
-          .replaceAll("\\$joinedExclusions", joinedExclusions)
+          .replace("$joinedNonBrides", joinedNonBrides)
+          .replace("$joinedExclusions", joinedExclusions)
           .replace("$limit", Integer.toString(limit));
     } else if (tableType.equals(BigQueryTableType.ONE)) {
       if (raceType.equals(RaceType.NONE)) {
