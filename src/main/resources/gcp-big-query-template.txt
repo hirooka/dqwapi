@@ -1,0 +1,65 @@
+WITH combo AS
+(
+SELECT
+`hirooka-pro.dqwapi.getMaxPattern`('{{JOB}}', k0.op, k0.type, k1.op, k1.type, k2.op, k2.type, k3.op, k3.type) as max_{{job}}_op_pattern,
+`hirooka-pro.dqwapi.getMaxPattern`('{{JOB}}', k0.os, k0.type, k1.os, k1.type, k2.os, k2.type, k3.os, k3.type) as max_{{job}}_os_pattern,
+`hirooka-pro.dqwapi.getMaxPattern`('{{JOB}}', k0.op+k0.os, k0.type, k1.op+k1.os, k1.type, k2.op+k2.os, k2.type, k3.op+k3.os, k3.type) as max_{{job}}_opos_pattern,
+`hirooka-pro.dqwapi.getMaxPattern`('{{JOB}}', k0.op+k0.dx, k0.type, k1.op+k1.dx, k1.type, k2.op+k2.dx, k2.type, k3.op+k3.dx, k3.type) as max_{{job}}_opdx_pattern,
+`hirooka-pro.dqwapi.getMaxPattern`('{{JOB}}', k0.ds, k0.type, k1.ds, k1.type, k2.ds, k2.type, k3.ds, k3.type) as max_{{job}}_ds_pattern,
+
+k0.id k0id, k0.rank k0rank, k0.type k0type, k0.hp k0hp, k0.mp k0mp, k0.op k0op, k0.dp k0dp, k0.os k0os, k0.ds k0ds, k0.dx k0dx, k0.sp k0sp, k0.cost k0cost,
+k1.id k1id, k1.rank k1rank, k1.type k1type, k1.hp k1hp, k1.mp k1mp, k1.op k1op, k1.dp k1dp, k1.os k1os, k1.ds k1ds, k1.dx k1dx, k1.sp k1sp, k1.cost k1cost,
+k2.id k2id, k2.rank k2rank, k2.type k2type, k2.hp k2hp, k2.mp k2mp, k2.op k2op, k2.dp k2dp, k2.os k2os, k2.ds k2ds, k2.dx k2dx, k2.sp k2sp, k2.cost k2cost,
+k3.id k3id, k3.rank k3rank, k3.type k3type, k3.hp k3hp, k3.mp k3mp, k3.op k3op, k3.dp k3dp, k3.os k3os, k3.ds k3ds, k3.dx k3dx, k3.sp k3sp, k3.cost k3cost,
+
+k0.name k0name, k1.name k1name, k2.name k2name, k3.name k3name,
+
+k0.cost + k1.cost + k2.cost + k3.cost - k0.plusCost - k1.plusCost - k2.plusCost - k3.plusCost total_cost,
+
+ceil(
+  `hirooka-pro.dqwapi.getMaxValue`('{{JOB}}', k0.op, k0.type, k1.op, k1.type, k2.op, k2.type, k3.op, k3.type)
+  * (1 + ((k0.{{attack}}NoneNone + k1.{{attack}}NoneNone + k2.{{attack}}NoneNone + k3.{{attack}}NoneNone) / 100.0))
+  * (1 + ((k0.{{attack}}{{Attribute}}None + k1.{{attack}}{{Attribute}}None + k2.{{attack}}{{Attribute}}None + k3.{{attack}}{{Attribute}}None) / 100.0))
+  * (1 + ((k0.all{{Attribute}}None + k1.all{{Attribute}}None + k2.all{{Attribute}}None + k3.all{{Attribute}}None) / 100.0))
+) {{job}}_{{attribute}}_{{attack}}_damage,
+
+ceil(
+  `hirooka-pro.dqwapi.getMaxValue`('{{JOB}}', k0.ds, k0.type, k1.ds, k1.type, k2.ds, k2.type, k3.ds, k3.type)
+  * (1 + ((k0.healingSkill + k1.healingSkill + k2.healingSkill + k3.healingSkill) / 100.0))
+  * (1 + ((k0.healingSpecialty + k1.healingSpecialty + k2.healingSpecialty + k3.healingSpecialty) / 100.0))
+) {{job}}_specialty_healing,
+
+ceil(
+  `hirooka-pro.dqwapi.getMaxValue`('{{JOB}}', k0.ds, k0.type, k1.ds, k1.type, k2.ds, k2.type, k3.ds, k3.type)
+  * (1 + ((k0.healingSkill + k1.healingSkill + k2.healingSkill + k3.healingSkill) / 100.0))
+  * (1 + ((k0.healingSpell + k1.healingSpell + k2.healingSpell + k3.healingSpell) / 100.0))
+) {{job}}_spell_healing,
+
+ceil(ceil(
+  `hirooka-pro.dqwapi.getMaxValue`('{{JOB}}', k0.op, k0.type, k1.op, k1.type, k2.op, k2.type, k3.op, k3.type)
+  * (1 + ((k0.{{attack}}NoneNone + k1.slashNoneNone + k2.slashNoneNone + k3.slashNoneNone) / 100.0))
+  * (1 + ((k0.{{attack}}{{Attribute}}None + k1.{{attack}}{{Attribute}}None + k2.{{attack}}{{Attribute}}None + k3.{{attack}}{{Attribute}}None) / 100.0))
+  * (1 + ((k0.all{{Attribute}}None + k1.all{{Attribute}}None + k2.all{{Attribute}}None + k3.all{{Attribute}}None) / 100.0))
+) * (1 + ((k0.allNone{{Race}} + k1.allNone{{Race}} + k2.allNone{{Race}} + k3.allNone{{Race}}) / 100.0))
+) {{job}}_{{attribute}}_{{attack}}_{{race}}_damage,
+
+FROM `hirooka-pro.dqwapi.kokoro` k0
+CROSS JOIN `hirooka-pro.dqwapi.kokoro` k1
+CROSS JOIN `hirooka-pro.dqwapi.kokoro` k2
+CROSS JOIN `hirooka-pro.dqwapi.kokoro` k3
+WHERE k0.name < k1.name AND k0.name < k2.name AND k0.name < k3.name AND k1.name < k2.name AND k1.name < k3.name AND k2.name < k3.name
+)
+SELECT
+k0id, k0rank, k1id, k1rank, k2id, k2rank, k3id, k3rank,
+{{pattern}}
+FROM combo
+WHERE total_cost < {{cost}}
+AND k0id NOT IN ({{joinedNonBrides}})
+AND k1id NOT IN ({{joinedNonBrides}})
+AND k2id NOT IN ({{joinedNonBrides}})
+AND k3id NOT IN ({{joinedNonBrides}})
+AND CONCAT(k0id, '_', k0rank) NOT IN ({{joinedExclusions}})
+AND CONCAT(k1id, '_', k1rank) NOT IN ({{joinedExclusions}})
+AND CONCAT(k2id, '_', k2rank) NOT IN ({{joinedExclusions}})
+AND CONCAT(k3id, '_', k3rank) NOT IN ({{joinedExclusions}})
+ORDER BY {{column}} DESC limit {{limit}}

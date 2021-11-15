@@ -1,5 +1,6 @@
 package dqwapi.infra.repository;
 
+import com.google.common.base.CaseFormat;
 import dqwapi.domain.entity.Result;
 import dqwapi.domain.model.common.AttackType;
 import dqwapi.domain.model.common.AttributeType;
@@ -34,13 +35,17 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
 
   private final IBigQueryConnector bigQueryConnector;
   private String query = "";
+  private String queryTemplate = "";
 
   @PostConstruct
   void init() {
     final String sql = "gcp-big-query.txt";
     final Resource resource = new ClassPathResource(sql);
+    final String sqlTemplate = "gcp-big-query-template.txt";
+    final Resource resourceTemplate = new ClassPathResource(sqlTemplate);
     try {
       query = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
+      queryTemplate = IOUtils.toString(resourceTemplate.getInputStream(), StandardCharsets.UTF_8);
     } catch (IOException e) {
       throw new IllegalStateException("Failed to read " + sql);
     }
@@ -81,6 +86,13 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
         .map(integer -> Integer.toString(integer)).collect(Collectors.joining(","));
     final String joinedExclusions = exclusionRanks.stream()
         .collect(Collectors.joining("','", "'", "'"));
+    // TODO: improve
+    final RaceType replacedRaceType;
+    if (raceType.equals(RaceType.NONE)) {
+      replacedRaceType = RaceType.ANIMAL;
+    } else {
+      replacedRaceType = raceType;
+    }
 
     if (tableType.equals(BigQueryTableType.CROSS)) {
       column = (jobType.name()
@@ -93,6 +105,19 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
           .replace("$joinedNonBrides", joinedNonBrides)
           .replace("$joinedExclusions", joinedExclusions)
           .replace("$limit", Integer.toString(limit));
+      queryTemplate = queryTemplate.replace("{{JOB}}", jobType.name())
+          .replace("{{job}}", jobType.name().toLowerCase())
+          .replace("{{attack}}", attackType.name().toLowerCase())
+          .replace("{{attribute}}", attributeType.name().toLowerCase())
+          .replace("{{Attribute}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, attributeType.name()))
+          .replace("{{race}}", raceType.name().toLowerCase())
+          .replace("{{Race}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedRaceType.name()))
+          .replace("{{pattern}}", pattern)
+          .replace("{{cost}}", Integer.toString(cost))
+          .replace("{{joinedNonBrides}}", joinedNonBrides)
+          .replace("{{joinedExclusions}}", joinedExclusions)
+          .replace("{{column}}", column)
+          .replace("{{limit}}", Integer.toString(limit));
     } else if (tableType.equals(BigQueryTableType.ONE)) {
       if (raceType.equals(RaceType.NONE)) {
         column = (jobType.name()
@@ -147,10 +172,10 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
     } else {
       throw new IllegalArgumentException("Unknown BigQuery table type: " + tableType);
     }
-    log.info("{}", query);
+    log.info("{}", queryTemplate);
 
     final List<Result> results = new ArrayList<>();
-    bigQueryConnector.query(query).iterateAll().forEach(row -> {
+    bigQueryConnector.query(queryTemplate).iterateAll().forEach(row -> {
       final Result result = new Result();
       result.setK0id(row.get(0).getNumericValue().intValue());
       result.setK0rank(RankType.valueOf(row.get(1).getStringValue()));
