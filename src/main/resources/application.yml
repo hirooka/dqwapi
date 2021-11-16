@@ -7,27 +7,11 @@ server:
 spring:
   application:
     name: dqwapi
+  profiles:
+    active: dwh-gcp-bigquery #dwh-gcp-cloudsql-postgresql
   jackson:
     serialization:
       indent_output: true
-  datasource:
-    url: \${DQWAPI_CLOUD_SQL_POSTGRESQL_URL}
-    username: \${DQWAPI_CLOUD_SQL_POSTGRESQL_USERNAME}
-    password: \${DQWAPI_CLOUD_SQL_POSTGRESQL_PASSWORD}
-    type: com.zaxxer.hikari.HikariDataSource
-    hikari:
-      data-source-properties:
-        socketFactory: com.google.cloud.sql.postgres.SocketFactory
-        cloudSqlInstance: \${DQWAPI_CLOUD_SQL_POSTGRESQL_INSTANCE_CONNECTION_NAME}
-        ipTypes: PUBLIC,PRIVATE
-  jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        globally_quoted_identifiers: true
-    hibernate:
-      ddl-auto: none
-    show-sql: false
 
 springdoc:
   swagger-ui:
@@ -40,14 +24,9 @@ dqwapi:
   kokoro-flat-json: kokoro-flat.json
   kokoro-persist: false
   response: 20
-  dwh: BIG_QUERY
 
 gcp:
   project-id: hirooka-pro
-  big-query:
-    dataset: dqwapi
-    table: kokoro_combination
-    table-type: CROSS
 
 logging:
   level:
@@ -57,3 +36,37 @@ logging:
           sql:
             core:
               CoreSocketFactory: warn
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dwh-gcp-bigquery
+gcp:
+  big-query:
+    dataset: dqwapi
+    table: kokoro
+    table-type: CROSS
+---
+spring:
+  config:
+    activate:
+      on-profile: dwh-gcp-cloudsql-postgresql
+  datasource:
+    url: \${DQWAPI_CLOUD_SQL_POSTGRESQL_URL}
+    username: \${DQWAPI_CLOUD_SQL_POSTGRESQL_USERNAME}
+    password: \${DQWAPI_CLOUD_SQL_POSTGRESQL_PASSWORD}
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      data-source-properties:
+        socketFactory: com.google.cloud.sql.postgres.SocketFactory
+        cloudSqlInstance: \${DQWAPI_CLOUD_SQL_POSTGRESQL_INSTANCE_CONNECTION_NAME}
+        ipTypes: PUBLIC,PRIVATE
+    jpa:
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          globally_quoted_identifiers: true
+      hibernate:
+        ddl-auto: none
+      show-sql: false

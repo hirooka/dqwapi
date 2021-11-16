@@ -68,8 +68,8 @@ import org.springframework.util.StopWatch;
 @Service
 public class KokoroService implements IKokoroService {
 
-  @Value("${dqwapi.dwh}")
-  private DwhType dwhType;
+  @Value("${spring.profiles.active}")
+  private String activeProfile;
 
   @Value("${dqwapi.kokoro-json}")
   private String kokoroJson;
@@ -1601,6 +1601,14 @@ public class KokoroService implements IKokoroService {
     final StopWatch stopWatch = new StopWatch();
     stopWatch.start("findCombinationsFromRdbms");
 
+    final DwhType dwhType;
+    if (activeProfile.equals("dwh-gcp-bigquery")) {
+      dwhType = DwhType.BIG_QUERY;
+    } else if (activeProfile.equals("dwh-gcp-cloudsql-postgresql")) {
+      dwhType = DwhType.CLOUD_SQL_POSTGRESQL;
+    } else {
+      throw new IllegalStateException("Unknown profile name: " + activeProfile);
+    }
     final List<Result> results = applicationContext
         .getBeansOfType(IKokoroCombinationRepository.class)
         .get(UPPER_UNDERSCORE.to(LOWER_HYPHEN, dwhType.name()) + repositorySuffix)
