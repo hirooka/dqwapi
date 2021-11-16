@@ -19,6 +19,7 @@ springdoc:
 
 dqwapi:
   version: $project.version
+  fqdn: dqwapi.hirooka.pro
   path-prefix:
   kokoro-json: kokoro.json
   kokoro-flat-json: kokoro-flat.json
