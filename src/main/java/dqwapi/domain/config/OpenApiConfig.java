@@ -29,7 +29,10 @@ public class OpenApiConfig {
   public OpenAPI customOpenApi() {
 
     if (ObjectUtils.isEmpty(CloudPlatform.getActive(environment)) || CloudPlatform.getActive(environment).equals(CloudPlatform.NONE)) {
-      return new OpenAPI().info(new Info().title("OpenAPI definition").version(version));
+      //return new OpenAPI().info(new Info().title("OpenAPI definition").version(version));
+      return new OpenAPI()
+          .addServersItem(new Server().url("https://" + fqdn))
+          .info(new Info().title("OpenAPI definition").version(version));
     } else {
       log.info("CloudPlatform: {}", CloudPlatform.getActive(environment).name());
       return new OpenAPI()
