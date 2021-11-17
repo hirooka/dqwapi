@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +32,8 @@ public class KokoroCombinationRestController {
 
   private final IKokoroOperator kokoroOperator;
 
-  @GetMapping
+  // TODO: without MediaType.APPLICATION_JSON_UTF8_VALUE, Japanese in response on macOS, iOS is be garbled
+  @GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
   List<KokoroCombinationResult> combinations(
 
       @Parameter(description = "職業",

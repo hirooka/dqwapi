@@ -22,6 +22,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import org.springframework.http.MediaType;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,7 +47,8 @@ public class KokoroRestController {
 
   private final IKokoroService kokoroService;
 
-  @GetMapping
+  // TODO: without MediaType.APPLICATION_JSON_UTF8_VALUE, Japanese in response on macOS, iOS is be garbled
+  @GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
   public List<Kokoro> getAll() {
     return kokoroService.getAll();
   }
