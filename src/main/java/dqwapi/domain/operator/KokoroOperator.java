@@ -8,7 +8,7 @@ import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.Combination;
 import dqwapi.domain.model.kokoro.Damage;
 import dqwapi.domain.model.kokoro.KokoroCombinationResult;
-import dqwapi.domain.model.kokoro.RankType;
+import dqwapi.domain.model.kokoro.GradeType;
 import dqwapi.domain.model.kokoro.Slot;
 import dqwapi.domain.service.IJobService;
 import dqwapi.domain.service.IKokoroService;
@@ -39,7 +39,7 @@ public class KokoroOperator implements IKokoroOperator {
       final JobType jobType,
       final int level,
       final String bride,
-      final Map<Integer, List<RankType>> exclusions,
+      final Map<Integer, List<GradeType>> exclusions,
       final AttributeType attributeType,
       final AttackType attackType,
       final RaceType raceType
@@ -137,7 +137,7 @@ public class KokoroOperator implements IKokoroOperator {
         simplifiedSlot.setType(slot.getType());
         simplifiedSlot.setId(slot.getKokoro().getId());
         simplifiedSlot.setName(slot.getKokoro().getName());
-        simplifiedSlot.setRank(slot.getKokoro().getRank());
+        simplifiedSlot.setGrade(slot.getKokoro().getGrade());
         simplifiedSlot.setCost(slot.getKokoro().getCost());
         simplifiedSlot.setUp(slot.isUp());
         simplifiedSlots.add(simplifiedSlot);

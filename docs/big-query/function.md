@@ -1,5 +1,8 @@
 ```
+cd src/main/resources
 jq -c '.[]' kokoro-flat.json > kokoro-flat-nd.json
+cs
+bq -> kokoro
 ```
 
 ```

@@ -36,7 +36,7 @@ import dqwapi.domain.model.kokoro.Damage;
 import dqwapi.domain.model.kokoro.JobKokoroCombination;
 import dqwapi.domain.model.kokoro.Kokoro;
 import dqwapi.domain.model.kokoro.KokoroFlat;
-import dqwapi.domain.model.kokoro.RankType;
+import dqwapi.domain.model.kokoro.GradeType;
 import dqwapi.domain.model.kokoro.Slot;
 import dqwapi.domain.model.kokoro.SuitableCombination;
 import dqwapi.domain.repository.ICombinationRepository;
@@ -719,8 +719,8 @@ public class KokoroService implements IKokoroService {
     final List<Map<String, String>> list = new ArrayList<>();
     for (Kokoro kokoro : kokoros) {
       final Map<String, String> map = new HashMap<>();
-      map.put("text", kokoro.getName() + " " + kokoro.getRank().name());
-      map.put("value", kokoro.getId() + "" + kokoro.getRank().name().toLowerCase());
+      map.put("text", kokoro.getName() + " " + kokoro.getGrade().name());
+      map.put("value", kokoro.getId() + "" + kokoro.getGrade().name().toLowerCase());
       list.add(map);
     }
     return list;
@@ -781,7 +781,7 @@ public class KokoroService implements IKokoroService {
       final JobType jobType,
       final int cost,
       final String bride,
-      final Map<Integer, List<RankType>> exclusions
+      final Map<Integer, List<GradeType>> exclusions
   ) {
     final int brideId;
     switch (bride) {
@@ -818,7 +818,7 @@ public class KokoroService implements IKokoroService {
               for (Slot slot : combination.getSlots()) {
                 if (exclusions.containsKey(slot.getKokoro().getId())) {
                   if (exclusions.get(slot.getKokoro().getId())
-                      .contains(slot.getKokoro().getRank())
+                      .contains(slot.getKokoro().getGrade())
                   ) {
                     return false;
                   }
@@ -833,9 +833,9 @@ public class KokoroService implements IKokoroService {
     return new ArrayList<>();
   }
 
-  private Kokoro get(final int id, final RankType rankType) {
+  private Kokoro get(final int id, final GradeType gradeType) {
     for (Kokoro kokoro : kokoros) {
-      if (kokoro.getId() == id && kokoro.getRank().equals(rankType)) {
+      if (kokoro.getId() == id && kokoro.getGrade().equals(gradeType)) {
         return kokoro;
       }
     }
@@ -1327,14 +1327,14 @@ public class KokoroService implements IKokoroService {
       List<Integer> ids = Arrays.asList(
           result.getK0id(), result.getK1id(), result.getK2id(), result.getK3id()
       );
-      List<RankType> ranks = Arrays.asList(
-          result.getK0rank(), result.getK1rank(), result.getK2rank(), result.getK3rank()
+      List<GradeType> grades = Arrays.asList(
+          result.getK0grade(), result.getK1grade(), result.getK2grade(), result.getK3grade()
       );
       final Combination combination = new Combination();
       final List<Slot> slots = new ArrayList<>();
       for (int i = 0; i < 4; i++) {
         final Slot slot = new Slot();
-        slot.setKokoro(get(ids.get(indexes.get(i)), ranks.get(indexes.get(i))));
+        slot.setKokoro(get(ids.get(indexes.get(i)), grades.get(indexes.get(i))));
         switch (jobType) {
           case BATTLE_MASTER:
             switch (i) {
@@ -1580,7 +1580,7 @@ public class KokoroService implements IKokoroService {
       final RaceType raceType,
       final int cost,
       final String bride,
-      final Map<Integer, List<RankType>> exclusions,
+      final Map<Integer, List<GradeType>> exclusions,
       final int limit
   ) {
     final List<Integer> nonBrides;
@@ -1628,7 +1628,7 @@ public class KokoroService implements IKokoroService {
     for (final KokoroFlat kokoroFlat : kokoroFlats) {
       final KokoroFlatEntity kokoroFlatEntity = modelMapper.map(kokoroFlat, KokoroFlatEntity.class);
       log.debug(kokoroFlatEntity.toString());
-      if (kokoroFlatRepository.findFirstByIdAndRank(kokoroFlat.getId(), kokoroFlat.getRank())
+      if (kokoroFlatRepository.findFirstByIdAndGrade(kokoroFlat.getId(), kokoroFlat.getGrade())
           .size() == 0
       ) {
         kokoroFlatRepository.save(kokoroFlatEntity);

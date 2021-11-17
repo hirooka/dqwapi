@@ -2,7 +2,7 @@
   {
     "id": 422,
     "name": "グレイトライドン",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "ZOMBIE",
     "cost": 114,
@@ -46,7 +46,7 @@
   {
     "id": 410,
     "name": "ダークシルフ",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "PLANT",
     "cost": 117,
@@ -70,7 +70,7 @@
   {
     "id": 408,
     "name": "メタルつむり",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "SLIME",
     "cost": 116,
@@ -96,7 +96,7 @@
   {
     "id": 404,
     "name": "ミルドラース",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "SECRET",
     "cost": 122,
@@ -140,7 +140,7 @@
   {
     "id": 404,
     "name": "ミルドラース",
-    "rank": "A",
+    "grade": "A",
     "type": "YELLOW",
     "race": "SECRET",
     "cost": 122,
@@ -184,7 +184,7 @@
   {
     "id": 403,
     "name": "イブール",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "DEVIL",
     "cost": 92,
@@ -208,7 +208,7 @@
   {
     "id": 402,
     "name": "ゲマ",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "ZOMBIE",
     "cost": 119,
@@ -246,7 +246,7 @@
   {
     "id": 402,
     "name": "ゲマ",
-    "rank": "A",
+    "grade": "A",
     "type": "PURPLE",
     "race": "ZOMBIE",
     "cost": 119,
@@ -284,7 +284,7 @@
   {
     "id": 401,
     "name": "ようがんげんじん",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "ELEMENT",
     "cost": 114,
@@ -334,7 +334,7 @@
   {
     "id": 401,
     "name": "ようがんげんじん",
-    "rank": "A",
+    "grade": "A",
     "type": "YELLOW",
     "race": "ELEMENT",
     "cost": 114,
@@ -384,7 +384,7 @@
   {
     "id": 400,
     "name": "ゴンズ",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "ANIMAL",
     "cost": 116,
@@ -428,7 +428,7 @@
   {
     "id": 400,
     "name": "ゴンズ",
-    "rank": "A",
+    "grade": "A",
     "type": "RED",
     "race": "ANIMAL",
     "cost": 116,
@@ -472,7 +472,7 @@
   {
     "id": 399,
     "name": "ジャミ",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "ANIMAL",
     "cost": 101,
@@ -522,7 +522,7 @@
   {
     "id": 398,
     "name": "グレイトドラゴン",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "DRAGON",
     "cost": 116,
@@ -554,7 +554,7 @@
   {
     "id": 398,
     "name": "グレイトドラゴン",
-    "rank": "A",
+    "grade": "A",
     "type": "BLUE",
     "race": "DRAGON",
     "cost": 116,
@@ -586,7 +586,7 @@
   {
     "id": 397,
     "name": "ゆきのじょおう",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "ELEMENT",
     "cost": 114,
@@ -630,7 +630,7 @@
   {
     "id": 396,
     "name": "バズールカンダタ",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "PHANTOM",
     "cost": 47,
@@ -680,7 +680,7 @@
   {
     "id": 395,
     "name": "オオヌシガルーダ",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "BIRD",
     "cost": 111,
@@ -718,7 +718,7 @@
   {
     "id": 395,
     "name": "オオヌシガルーダ",
-    "rank": "A",
+    "grade": "A",
     "type": "PURPLE",
     "race": "BIRD",
     "cost": 111,
@@ -756,7 +756,7 @@
   {
     "id": 394,
     "name": "ジャンボきづち",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "PHANTOM",
     "cost": 107,
@@ -794,7 +794,7 @@
   {
     "id": 390,
     "name": "グリーンドラゴン",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "DRAGON",
     "cost": 107,
@@ -838,7 +838,7 @@
   {
     "id": 388,
     "name": "おにこんぼう",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 111,
@@ -894,7 +894,7 @@
   {
     "id": 388,
     "name": "おにこんぼう",
-    "rank": "A",
+    "grade": "A",
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 111,
@@ -950,7 +950,7 @@
   {
     "id": 386,
     "name": "トロピカルアミーゴ",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "PLANT",
     "cost": 110,
@@ -975,7 +975,7 @@
   {
     "id": 383,
     "name": "バンユウ",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "PHANTOM",
     "cost": 110,
@@ -1007,7 +1007,7 @@
   {
     "id": 382,
     "name": "イズライール",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "DEVIL",
     "cost": 114,
@@ -1045,7 +1045,7 @@
   {
     "id": 379,
     "name": "破壊神シドー",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "SECRET",
     "cost": 113,
@@ -1070,7 +1070,7 @@
   {
     "id": 379,
     "name": "破壊神シドー",
-    "rank": "A",
+    "grade": "A",
     "type": "GREEN",
     "race": "SECRET",
     "cost": 113,
@@ -1095,7 +1095,7 @@
   {
     "id": 377,
     "name": "大神官ハーゴン",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "SECRET",
     "cost": 111,
@@ -1127,7 +1127,7 @@
   {
     "id": 377,
     "name": "大神官ハーゴン",
-    "rank": "A",
+    "grade": "A",
     "type": "PURPLE",
     "race": "SECRET",
     "cost": 111,
@@ -1159,7 +1159,7 @@
   {
     "id": 376,
     "name": "ベリアル",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 111,
@@ -1178,7 +1178,7 @@
   {
     "id": 375,
     "name": "バズズ",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "DEVIL",
     "cost": 84,
@@ -1216,7 +1216,7 @@
   {
     "id": 374,
     "name": "アトラス",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "DEVIL",
     "cost": 108,
@@ -1266,7 +1266,7 @@
   {
     "id": 373,
     "name": "アックスドラゴン",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "DRAGON",
     "cost": 99,
@@ -1304,7 +1304,7 @@
   {
     "id": 372,
     "name": "竜王",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "SECRET",
     "cost": 107,
@@ -1348,7 +1348,7 @@
   {
     "id": 372,
     "name": "竜王",
-    "rank": "A",
+    "grade": "A",
     "type": "BLUE",
     "race": "SECRET",
     "cost": 107,
@@ -1392,7 +1392,7 @@
   {
     "id": 371,
     "name": "スターキメラ",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "BIRD",
     "cost": 107,
@@ -1424,7 +1424,7 @@
   {
     "id": 364,
     "name": "碧落天バリゲーン",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "SECRET",
     "cost": 99,
@@ -1456,7 +1456,7 @@
   {
     "id": 359,
     "name": "アークデーモン",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 114,
@@ -1500,7 +1500,7 @@
   {
     "id": 359,
     "name": "アークデーモン",
-    "rank": "A",
+    "grade": "A",
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 114,
@@ -1544,7 +1544,7 @@
   {
     "id": 359,
     "name": "アークデーモン",
-    "rank": "B",
+    "grade": "B",
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 114,
@@ -1588,7 +1588,7 @@
   {
     "id": 354,
     "name": "ブラックチャック",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "PHANTOM",
     "cost": 110,
@@ -1607,7 +1607,7 @@
   {
     "id": 351,
     "name": "メガゴールドマン",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "MATERIAL",
     "cost": 66,
@@ -1626,7 +1626,7 @@
   {
     "id": 349,
     "name": "オルゴ・デミーラ",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "SECRET",
     "cost": 107,
@@ -1682,7 +1682,7 @@
   {
     "id": 349,
     "name": "オルゴ・デミーラ",
-    "rank": "A",
+    "grade": "A",
     "type": "RED",
     "race": "SECRET",
     "cost": 107,
@@ -1738,7 +1738,7 @@
   {
     "id": 348,
     "name": "オルゴ・デミーラ(変身前)",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "SECRET",
     "cost": 104,
@@ -1776,7 +1776,7 @@
   {
     "id": 347,
     "name": "メカバーン",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "MACHINE",
     "cost": 107,
@@ -1814,7 +1814,7 @@
   {
     "id": 346,
     "name": "ヘルクラウダー",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "ELEMENT",
     "cost": 102,
@@ -1845,7 +1845,7 @@
   {
     "id": 344,
     "name": "ヘルバオム",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "PLANT",
     "cost": 102,
@@ -1877,7 +1877,7 @@
   {
     "id": 340,
     "name": "デスマシーン",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "MACHINE",
     "cost": 101,
@@ -1909,7 +1909,7 @@
   {
     "id": 340,
     "name": "デスマシーン",
-    "rank": "A",
+    "grade": "A",
     "type": "YELLOW",
     "race": "MACHINE",
     "cost": 101,
@@ -1941,7 +1941,7 @@
   {
     "id": 338,
     "name": "ナイトリッチ",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "ZOMBIE",
     "cost": 102,
@@ -1979,7 +1979,7 @@
   {
     "id": 337,
     "name": "ヘルギフト",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "MATERIAL",
     "cost": 74,
@@ -2017,7 +2017,7 @@
   {
     "id": 335,
     "name": "グレイトマーマン",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "WATER",
     "cost": 102,
@@ -2049,7 +2049,7 @@
   {
     "id": 333,
     "name": "ガニラス",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "WATER",
     "cost": 99,
@@ -2081,7 +2081,7 @@
   {
     "id": 331,
     "name": "だいおうイカ",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "WATER",
     "cost": 102,
@@ -2119,7 +2119,7 @@
   {
     "id": 331,
     "name": "だいおうイカ",
-    "rank": "A",
+    "grade": "A",
     "type": "BLUE",
     "race": "WATER",
     "cost": 102,
@@ -2157,7 +2157,7 @@
   {
     "id": 325,
     "name": "キラーアーマー",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "MATERIAL",
     "cost": 111,
@@ -2201,7 +2201,7 @@
   {
     "id": 325,
     "name": "キラーアーマー",
-    "rank": "A",
+    "grade": "A",
     "type": "BLUE",
     "race": "MATERIAL",
     "cost": 111,
@@ -2245,7 +2245,7 @@
   {
     "id": 325,
     "name": "キラーアーマー",
-    "rank": "B",
+    "grade": "B",
     "type": "BLUE",
     "race": "MATERIAL",
     "cost": 111,
@@ -2289,7 +2289,7 @@
   {
     "id": 324,
     "name": "ウドラー",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "PLANT",
     "cost": 92,
@@ -2333,7 +2333,7 @@
   {
     "id": 322,
     "name": "ランプのまじん",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 107,
@@ -2377,7 +2377,7 @@
   {
     "id": 322,
     "name": "ランプのまじん",
-    "rank": "A",
+    "grade": "A",
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 107,
@@ -2421,7 +2421,7 @@
   {
     "id": 322,
     "name": "ランプのまじん",
-    "rank": "B",
+    "grade": "B",
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 107,
@@ -2465,7 +2465,7 @@
   {
     "id": 316,
     "name": "アンクルホーン",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "DEVIL",
     "cost": 95,
@@ -2497,7 +2497,7 @@
   {
     "id": 316,
     "name": "アンクルホーン",
-    "rank": "A",
+    "grade": "A",
     "type": "PURPLE",
     "race": "DEVIL",
     "cost": 95,
@@ -2529,7 +2529,7 @@
   {
     "id": 315,
     "name": "コキュードス",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "DRAGON",
     "cost": 78,
@@ -2579,7 +2579,7 @@
   {
     "id": 314,
     "name": "うごくひょうぞう",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "MATERIAL",
     "cost": 98,
@@ -2603,7 +2603,7 @@
   {
     "id": 313,
     "name": "ひょうがまじん",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "MATERIAL",
     "cost": 96,
@@ -2635,7 +2635,7 @@
   {
     "id": 311,
     "name": "ドラゴメタル",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "SLIME",
     "cost": 101,
@@ -2661,7 +2661,7 @@
   {
     "id": 310,
     "name": "賀正大王スライム",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "SLIME",
     "cost": 21,
@@ -2680,7 +2680,7 @@
   {
     "id": 308,
     "name": "フレイザード",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "MATERIAL",
     "cost": 99,
@@ -2718,7 +2718,7 @@
   {
     "id": 308,
     "name": "フレイザード",
-    "rank": "A",
+    "grade": "A",
     "type": "PURPLE",
     "race": "MATERIAL",
     "cost": 99,
@@ -2756,7 +2756,7 @@
   {
     "id": 306,
     "name": "ヒュンケル",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "SECRET",
     "cost": 89,
@@ -2812,7 +2812,7 @@
   {
     "id": 304,
     "name": "クロコダイン",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "ANIMAL",
     "cost": 92,
@@ -2850,7 +2850,7 @@
   {
     "id": 303,
     "name": "魔王ハドラー",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "SECRET",
     "cost": 92,
@@ -2888,7 +2888,7 @@
   {
     "id": 303,
     "name": "魔王ハドラー",
-    "rank": "A",
+    "grade": "A",
     "type": "PURPLE",
     "race": "SECRET",
     "cost": 92,
@@ -2926,7 +2926,7 @@
   {
     "id": 302,
     "name": "アバン(ドラゴラム)",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "DRAGON",
     "cost": 95,
@@ -2969,7 +2969,7 @@
   {
     "id": 301,
     "name": "バロン版キラーマシン",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "MACHINE",
     "cost": 93,
@@ -3013,7 +3013,7 @@
   {
     "id": 296,
     "name": "しろバラのきし",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 92,
@@ -3044,7 +3044,7 @@
   {
     "id": 293,
     "name": "フランケンゴーレム",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "ZOMBIE",
     "cost": 92,
@@ -3070,7 +3070,7 @@
   {
     "id": 290,
     "name": "シャドーサタン",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "DEVIL",
     "cost": 93,
@@ -3102,7 +3102,7 @@
   {
     "id": 290,
     "name": "シャドーサタン",
-    "rank": "A",
+    "grade": "A",
     "type": "RED",
     "race": "DEVIL",
     "cost": 93,
@@ -3134,7 +3134,7 @@
   {
     "id": 288,
     "name": "パンプキャビネット",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "MATERIAL",
     "cost": 92,
@@ -3190,7 +3190,7 @@
   {
     "id": 286,
     "name": "キマイラロード",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "ANIMAL",
     "cost": 92,
@@ -3234,7 +3234,7 @@
   {
     "id": 285,
     "name": "暴嵐天バリゲーン",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "SECRET",
     "cost": 99,
@@ -3266,7 +3266,7 @@
   {
     "id": 285,
     "name": "暴嵐天バリゲーン",
-    "rank": "A",
+    "grade": "A",
     "type": "YELLOW",
     "race": "SECRET",
     "cost": 99,
@@ -3298,7 +3298,7 @@
   {
     "id": 284,
     "name": "ボストロール",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "DEVIL",
     "cost": 90,
@@ -3330,7 +3330,7 @@
   {
     "id": 283,
     "name": "ブラックドラゴン",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "DRAGON",
     "cost": 93,
@@ -3362,7 +3362,7 @@
   {
     "id": 283,
     "name": "ブラックドラゴン",
-    "rank": "A",
+    "grade": "A",
     "type": "PURPLE",
     "race": "DRAGON",
     "cost": 93,
@@ -3394,7 +3394,7 @@
   {
     "id": 282,
     "name": "ウイングタイガー",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "ANIMAL",
     "cost": 92,
@@ -3432,7 +3432,7 @@
   {
     "id": 281,
     "name": "記念大王スライム",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "SLIME",
     "cost": 10,
@@ -3451,7 +3451,7 @@
   {
     "id": 278,
     "name": "ワイトキング",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "ZOMBIE",
     "cost": 122,
@@ -3483,7 +3483,7 @@
   {
     "id": 278,
     "name": "ワイトキング",
-    "rank": "A",
+    "grade": "A",
     "type": "PURPLE",
     "race": "ZOMBIE",
     "cost": 122,
@@ -3515,7 +3515,7 @@
   {
     "id": 278,
     "name": "ワイトキング",
-    "rank": "B",
+    "grade": "B",
     "type": "PURPLE",
     "race": "ZOMBIE",
     "cost": 122,
@@ -3547,7 +3547,7 @@
   {
     "id": 279,
     "name": "MCカンダタ",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "PHANTOM",
     "cost": 47,
@@ -3579,7 +3579,7 @@
   {
     "id": 278,
     "name": "ワイトキング",
-    "rank": "A",
+    "grade": "A",
     "type": "PURPLE",
     "race": "ZOMBIE",
     "cost": 122,
@@ -3611,7 +3611,7 @@
   {
     "id": 277,
     "name": "じごくのつかい",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "DEVIL",
     "cost": 104,
@@ -3643,7 +3643,7 @@
   {
     "id": 277,
     "name": "じごくのつかい",
-    "rank": "A",
+    "grade": "A",
     "type": "PURPLE",
     "race": "DEVIL",
     "cost": 104,
@@ -3675,7 +3675,7 @@
   {
     "id": 275,
     "name": "うごくせきぞう",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "MATERIAL",
     "cost": 119,
@@ -3719,7 +3719,7 @@
   {
     "id": 275,
     "name": "うごくせきぞう",
-    "rank": "A",
+    "grade": "A",
     "type": "RED",
     "race": "MATERIAL",
     "cost": 119,
@@ -3763,7 +3763,7 @@
   {
     "id": 272,
     "name": "ボボンガー",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "DRAGON",
     "cost": 99,
@@ -3787,7 +3787,7 @@
   {
     "id": 272,
     "name": "ボボンガー",
-    "rank": "A",
+    "grade": "A",
     "type": "GREEN",
     "race": "DRAGON",
     "cost": 99,
@@ -3811,7 +3811,7 @@
   {
     "id": 272,
     "name": "ボボンガー",
-    "rank": "B",
+    "grade": "B",
     "type": "GREEN",
     "race": "DRAGON",
     "cost": 99,
@@ -3835,7 +3835,7 @@
   {
     "id": 265,
     "name": "ヘルジュラシック",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "DRAGON",
     "cost": 84,
@@ -3879,7 +3879,7 @@
   {
     "id": 264,
     "name": "ドラゴンガイア",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "DRAGON",
     "cost": 87,
@@ -3935,7 +3935,7 @@
   {
     "id": 263,
     "name": "ドラゴンゾンビ",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "DRAGON",
     "cost": 84,
@@ -3960,7 +3960,7 @@
   {
     "id": 260,
     "name": "キングスイカ岩",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "PLANT",
     "cost": 84,
@@ -4016,7 +4016,7 @@
   {
     "id": 260,
     "name": "キングスイカ岩",
-    "rank": "A",
+    "grade": "A",
     "type": "YELLOW",
     "race": "PLANT",
     "cost": 84,
@@ -4072,7 +4072,7 @@
   {
     "id": 258,
     "name": "フレイムドック",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "ANIMAL",
     "cost": 81,
@@ -4110,7 +4110,7 @@
   {
     "id": 257,
     "name": "トロピカルドラゴ",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "PLANT",
     "cost": 87,
@@ -4148,7 +4148,7 @@
   {
     "id": 255,
     "name": "まなつのせんし",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "ELEMENT",
     "cost": 81,
@@ -4198,7 +4198,7 @@
   {
     "id": 254,
     "name": "ギガンテス",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 84,
@@ -4242,7 +4242,7 @@
   {
     "id": 254,
     "name": "ギガンテス",
-    "rank": "A",
+    "grade": "A",
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 84,
@@ -4286,7 +4286,7 @@
   {
     "id": 253,
     "name": "ヘルコンドル",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "BIRD",
     "cost": 81,
@@ -4342,7 +4342,7 @@
   {
     "id": 250,
     "name": "スカラベキング",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "INSECT",
     "cost": 99,
@@ -4386,7 +4386,7 @@
   {
     "id": 250,
     "name": "スカラベキング",
-    "rank": "A",
+    "grade": "A",
     "type": "BLUE",
     "race": "INSECT",
     "cost": 99,
@@ -4430,7 +4430,7 @@
   {
     "id": 249,
     "name": "ベスキング",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "SLIME",
     "cost": 81,
@@ -4474,7 +4474,7 @@
   {
     "id": 248,
     "name": "ダークキング",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "SLIME",
     "cost": 84,
@@ -4530,7 +4530,7 @@
   {
     "id": 248,
     "name": "ダークキング",
-    "rank": "A",
+    "grade": "A",
     "type": "YELLOW",
     "race": "SLIME",
     "cost": 84,
@@ -4586,7 +4586,7 @@
   {
     "id": 247,
     "name": "ダークスライム",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "SLIME",
     "cost": 81,
@@ -4624,7 +4624,7 @@
   {
     "id": 246,
     "name": "しにがみきぞく",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "ZOMBIE",
     "cost": 92,
@@ -4650,7 +4650,7 @@
   {
     "id": 245,
     "name": "ガーゴイル",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "BIRD",
     "cost": 98,
@@ -4676,7 +4676,7 @@
   {
     "id": 243,
     "name": "ホラービースト",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 96,
@@ -4720,7 +4720,7 @@
   {
     "id": 243,
     "name": "ホラービースト",
-    "rank": "A",
+    "grade": "A",
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 96,
@@ -4764,7 +4764,7 @@
   {
     "id": 243,
     "name": "ホラービースト",
-    "rank": "B",
+    "grade": "B",
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 96,
@@ -4808,7 +4808,7 @@
   {
     "id": 234,
     "name": "ゾーマ",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "SECRET",
     "cost": 84,
@@ -4834,7 +4834,7 @@
   {
     "id": 234,
     "name": "ゾーマ",
-    "rank": "A",
+    "grade": "A",
     "type": "PURPLE",
     "race": "SECRET",
     "cost": 84,
@@ -4860,7 +4860,7 @@
   {
     "id": 233,
     "name": "バラモスブロス",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "SECRET",
     "cost": 81,
@@ -4892,7 +4892,7 @@
   {
     "id": 232,
     "name": "バラモス",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "SECRET",
     "cost": 77,
@@ -4917,7 +4917,7 @@
   {
     "id": 232,
     "name": "バラモス",
-    "rank": "A",
+    "grade": "A",
     "type": "GREEN",
     "race": "SECRET",
     "cost": 77,
@@ -4942,7 +4942,7 @@
   {
     "id": 231,
     "name": "やまたのおろち",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "DRAGON",
     "cost": 80,
@@ -4992,7 +4992,7 @@
   {
     "id": 229,
     "name": "カンダタ",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "PHANTOM",
     "cost": 81,
@@ -5036,7 +5036,7 @@
   {
     "id": 227,
     "name": "きりさきピエロ",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "PHANTOM",
     "cost": 78,
@@ -5074,7 +5074,7 @@
   {
     "id": 226,
     "name": "おひなさまスライム",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "SLIME",
     "cost": 62,
@@ -5112,7 +5112,7 @@
   {
     "id": 225,
     "name": "ゲリュオン",
-    "rank": "A",
+    "grade": "A",
     "type": "YELLOW",
     "race": "ANIMAL",
     "cost": 99,
@@ -5156,7 +5156,7 @@
   {
     "id": 224,
     "name": "シルバーデビル",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "DEVIL",
     "cost": 87,
@@ -5181,7 +5181,7 @@
   {
     "id": 219,
     "name": "おどるほうせき",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "MATERIAL",
     "cost": 84,
@@ -5213,7 +5213,7 @@
   {
     "id": 219,
     "name": "おどるほうせき",
-    "rank": "A",
+    "grade": "A",
     "type": "PURPLE",
     "race": "MATERIAL",
     "cost": 84,
@@ -5245,7 +5245,7 @@
   {
     "id": 219,
     "name": "おどるほうせき",
-    "rank": "B",
+    "grade": "B",
     "type": "PURPLE",
     "race": "MATERIAL",
     "cost": 84,
@@ -5277,7 +5277,7 @@
   {
     "id": 207,
     "name": "セルゲイナス",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 77,
@@ -5333,7 +5333,7 @@
   {
     "id": 201,
     "name": "メタルホイミン",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "SLIME",
     "cost": 78,
@@ -5358,7 +5358,7 @@
   {
     "id": 200,
     "name": "メタルドラゴン",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "MACHINE",
     "cost": 69,
@@ -5390,7 +5390,7 @@
   {
     "id": 200,
     "name": "メタルドラゴン",
-    "rank": "A",
+    "grade": "A",
     "type": "RED",
     "race": "MACHINE",
     "cost": 69,
@@ -5422,7 +5422,7 @@
   {
     "id": 196,
     "name": "ブリザードマン",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "ELEMENT",
     "cost": 65,
@@ -5460,7 +5460,7 @@
   {
     "id": 192,
     "name": "究極エビルプリースト",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 77,
@@ -5504,7 +5504,7 @@
   {
     "id": 192,
     "name": "究極エビルプリースト",
-    "rank": "A",
+    "grade": "A",
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 77,
@@ -5548,7 +5548,7 @@
   {
     "id": 191,
     "name": "ヘルバトラー",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "DEVIL",
     "cost": 69,
@@ -5580,7 +5580,7 @@
   {
     "id": 190,
     "name": "デスピサロ",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "SECRET",
     "cost": 62,
@@ -5611,7 +5611,7 @@
   {
     "id": 190,
     "name": "デスピサロ",
-    "rank": "A",
+    "grade": "A",
     "type": "GREEN",
     "race": "SECRET",
     "cost": 62,
@@ -5642,7 +5642,7 @@
   {
     "id": 189,
     "name": "アンドレアル",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "DRAGON",
     "cost": 69,
@@ -5686,7 +5686,7 @@
   {
     "id": 188,
     "name": "キングレオ",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "ANIMAL",
     "cost": 47,
@@ -5718,7 +5718,7 @@
   {
     "id": 188,
     "name": "キングレオ",
-    "rank": "A",
+    "grade": "A",
     "type": "YELLOW",
     "race": "ANIMAL",
     "cost": 47,
@@ -5750,7 +5750,7 @@
   {
     "id": 186,
     "name": "ナウマンボーグ",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "ANIMAL",
     "cost": 62,
@@ -5781,7 +5781,7 @@
   {
     "id": 186,
     "name": "ナウマンボーグ",
-    "rank": "A",
+    "grade": "A",
     "type": "GREEN",
     "race": "ANIMAL",
     "cost": 62,
@@ -5812,7 +5812,7 @@
   {
     "id": 184,
     "name": "ドラゴンバゲージ",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "DRAGON",
     "cost": 44,
@@ -5838,7 +5838,7 @@
   {
     "id": 182,
     "name": "バトルレックス",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "DRAGON",
     "cost": 68,
@@ -5870,7 +5870,7 @@
   {
     "id": 172,
     "name": "りゅうおう",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "SECRET",
     "cost": 54,
@@ -5896,7 +5896,7 @@
   {
     "id": 172,
     "name": "りゅうおう",
-    "rank": "A",
+    "grade": "A",
     "type": "PURPLE",
     "race": "SECRET",
     "cost": 54,
@@ -5922,7 +5922,7 @@
   {
     "id": 171,
     "name": "ゴーレム",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "MATERIAL",
     "cost": 39,
@@ -5966,7 +5966,7 @@
   {
     "id": 171,
     "name": "ゴーレム",
-    "rank": "A",
+    "grade": "A",
     "type": "RED",
     "race": "MATERIAL",
     "cost": 39,
@@ -6010,7 +6010,7 @@
   {
     "id": 170,
     "name": "ドラゴン",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "DRAGON",
     "cost": 32,
@@ -6034,7 +6034,7 @@
   {
     "id": 170,
     "name": "ドラゴン",
-    "rank": "A",
+    "grade": "A",
     "type": "GREEN",
     "race": "DRAGON",
     "cost": 32,
@@ -6058,7 +6058,7 @@
   {
     "id": 169,
     "name": "あくまのきし",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "DEVIL",
     "cost": 92,
@@ -6102,7 +6102,7 @@
   {
     "id": 154,
     "name": "トロル",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 24,
@@ -6134,7 +6134,7 @@
   {
     "id": 154,
     "name": "トロル",
-    "rank": "A",
+    "grade": "A",
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 24,
@@ -6166,7 +6166,7 @@
   {
     "id": 153,
     "name": "まおうのつかい",
-    "rank": "A",
+    "grade": "A",
     "type": "BLUE",
     "race": "ZOMBIE",
     "cost": 99,
@@ -6216,7 +6216,7 @@
   {
     "id": 152,
     "name": "エビルホーク",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "BIRD",
     "cost": 81,
@@ -6260,7 +6260,7 @@
   {
     "id": 147,
     "name": "ドラゴスライム",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "SLIME",
     "cost": 71,
@@ -6285,7 +6285,7 @@
   {
     "id": 146,
     "name": "ヒイラギどうじ",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "PLANT",
     "cost": 69,
@@ -6317,7 +6317,7 @@
   {
     "id": 145,
     "name": "キングスライム",
-    "rank": "SP",
+    "grade": "SP",
     "type": "BLUE",
     "race": "SLIME",
     "cost": 102,
@@ -6361,7 +6361,7 @@
   {
     "id": 145,
     "name": "キングスライム",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "SLIME",
     "cost": 75,
@@ -6393,7 +6393,7 @@
   {
     "id": 137,
     "name": "アームライオン",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "ANIMAL",
     "cost": 92,
@@ -6437,7 +6437,7 @@
   {
     "id": 137,
     "name": "アームライオン",
-    "rank": "A",
+    "grade": "A",
     "type": "RED",
     "race": "ANIMAL",
     "cost": 92,
@@ -6481,7 +6481,7 @@
   {
     "id": 137,
     "name": "アームライオン",
-    "rank": "B",
+    "grade": "B",
     "type": "RED",
     "race": "ANIMAL",
     "cost": 92,
@@ -6525,7 +6525,7 @@
   {
     "id": 132,
     "name": "あくま神官",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "DEVIL",
     "cost": 62,
@@ -6556,7 +6556,7 @@
   {
     "id": 132,
     "name": "あくま神官",
-    "rank": "A",
+    "grade": "A",
     "type": "GREEN",
     "race": "DEVIL",
     "cost": 62,
@@ -6587,7 +6587,7 @@
   {
     "id": 132,
     "name": "あくま神官",
-    "rank": "B",
+    "grade": "B",
     "type": "GREEN",
     "race": "DEVIL",
     "cost": 62,
@@ -6618,7 +6618,7 @@
   {
     "id": 122,
     "name": "ホークブリザード",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "BIRD",
     "cost": 69,
@@ -6662,7 +6662,7 @@
   {
     "id": 122,
     "name": "ホークブリザード",
-    "rank": "A",
+    "grade": "A",
     "type": "BLUE",
     "race": "BIRD",
     "cost": 69,
@@ -6706,7 +6706,7 @@
   {
     "id": 122,
     "name": "ホークブリザード",
-    "rank": "B",
+    "grade": "B",
     "type": "BLUE",
     "race": "BIRD",
     "cost": 69,
@@ -6750,7 +6750,7 @@
   {
     "id": 118,
     "name": "ボーンナイト",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "ZOMBIE",
     "cost": 63,
@@ -6782,7 +6782,7 @@
   {
     "id": 116,
     "name": "ベビル",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "DEVIL",
     "cost": 57,
@@ -6813,7 +6813,7 @@
   {
     "id": 105,
     "name": "キラーマシン",
-    "rank": "SP",
+    "grade": "SP",
     "type": "YELLOW",
     "race": "MACHINE",
     "cost": 96,
@@ -6863,7 +6863,7 @@
   {
     "id": 105,
     "name": "キラーマシン",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "MACHINE",
     "cost": 77,
@@ -6895,7 +6895,7 @@
   {
     "id": 105,
     "name": "キラーマシン",
-    "rank": "A",
+    "grade": "A",
     "type": "YELLOW",
     "race": "MACHINE",
     "cost": 77,
@@ -6927,7 +6927,7 @@
   {
     "id": 105,
     "name": "キラーマシン",
-    "rank": "B",
+    "grade": "B",
     "type": "YELLOW",
     "race": "MACHINE",
     "cost": 77,
@@ -6959,7 +6959,7 @@
   {
     "id": 103,
     "name": "メタルハンター",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "MACHINE",
     "cost": 53,
@@ -6985,7 +6985,7 @@
   {
     "id": 95,
     "name": "ホークマン",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "BIRD",
     "cost": 54,
@@ -7011,7 +7011,7 @@
   {
     "id": 95,
     "name": "ホークマン",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "BIRD",
     "cost": 54,
@@ -7037,7 +7037,7 @@
   {
     "id": 93,
     "name": "ひくいどり",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "BIRD",
     "cost": 47,
@@ -7069,7 +7069,7 @@
   {
     "id": 93,
     "name": "ひくいどり",
-    "rank": "A",
+    "grade": "A",
     "type": "PURPLE",
     "race": "BIRD",
     "cost": 47,
@@ -7101,7 +7101,7 @@
   {
     "id": 93,
     "name": "ひくいどり",
-    "rank": "B",
+    "grade": "B",
     "type": "PURPLE",
     "race": "BIRD",
     "cost": 47,
@@ -7133,7 +7133,7 @@
   {
     "id": 92,
     "name": "はぐれメタル",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "SLIME",
     "cost": 54,
@@ -7159,7 +7159,7 @@
   {
     "id": 90,
     "name": "ごろつき",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "PHANTOM",
     "cost": 45,
@@ -7185,7 +7185,7 @@
   {
     "id": 82,
     "name": "よろいのきし",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "DEVIL",
     "cost": 51,
@@ -7217,7 +7217,7 @@
   {
     "id": 79,
     "name": "ともしびこぞう",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "MATERIAL",
     "cost": 39,
@@ -7249,7 +7249,7 @@
   {
     "id": 72,
     "name": "サイおとこ",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "ANIMAL",
     "cost": 75,
@@ -7275,7 +7275,7 @@
   {
     "id": 68,
     "name": "ヘルビースト",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 39,
@@ -7307,7 +7307,7 @@
   {
     "id": 68,
     "name": "ヘルビースト",
-    "rank": "A",
+    "grade": "A",
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 39,
@@ -7339,7 +7339,7 @@
   {
     "id": 68,
     "name": "ヘルビースト",
-    "rank": "B",
+    "grade": "B",
     "type": "BLUE",
     "race": "DEVIL",
     "cost": 39,
@@ -7371,7 +7371,7 @@
   {
     "id": 49,
     "name": "スノーモン",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "DEVIL",
     "cost": 27,
@@ -7395,7 +7395,7 @@
   {
     "id": 46,
     "name": "デザートゴースト",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "ANIMAL",
     "cost": 33,
@@ -7421,7 +7421,7 @@
   {
     "id": 42,
     "name": "グレムリン",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "DEVIL",
     "cost": 32,
@@ -7452,7 +7452,7 @@
   {
     "id": 42,
     "name": "グレムリン",
-    "rank": "A",
+    "grade": "A",
     "type": "GREEN",
     "race": "DEVIL",
     "cost": 32,
@@ -7483,7 +7483,7 @@
   {
     "id": 41,
     "name": "メタルブラザーズ",
-    "rank": "S",
+    "grade": "S",
     "type": "GREEN",
     "race": "SLIME",
     "cost": 29,
@@ -7507,7 +7507,7 @@
   {
     "id": 34,
     "name": "ドルイド",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "PHANTOM",
     "cost": 24,
@@ -7533,7 +7533,7 @@
   {
     "id": 34,
     "name": "ドルイド",
-    "rank": "A",
+    "grade": "A",
     "type": "PURPLE",
     "race": "PHANTOM",
     "cost": 24,
@@ -7559,7 +7559,7 @@
   {
     "id": 34,
     "name": "ドルイド",
-    "rank": "B",
+    "grade": "B",
     "type": "PURPLE",
     "race": "PHANTOM",
     "cost": 24,
@@ -7585,7 +7585,7 @@
   {
     "id": 25,
     "name": "あばれこまいぬ",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "ANIMAL",
     "cost": 21,
@@ -7617,7 +7617,7 @@
   {
     "id": 24,
     "name": "あやしいかげ",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "ELEMENT",
     "cost": 15,
@@ -7643,7 +7643,7 @@
   {
     "id": 21,
     "name": "メタルスライム",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "SLIME",
     "cost": 18,
@@ -7675,7 +7675,7 @@
   {
     "id": 13,
     "name": "メラリザード",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "DRAGON",
     "cost": 17,
@@ -7719,7 +7719,7 @@
   {
     "id": 13,
     "name": "メラリザード",
-    "rank": "A",
+    "grade": "A",
     "type": "RED",
     "race": "DRAGON",
     "cost": 17,
@@ -7763,7 +7763,7 @@
   {
     "id": 13,
     "name": "メラリザード",
-    "rank": "B",
+    "grade": "B",
     "type": "RED",
     "race": "DRAGON",
     "cost": 17,
@@ -7807,7 +7807,7 @@
   {
     "id": 12,
     "name": "きりかぶこぞう",
-    "rank": "S",
+    "grade": "S",
     "type": "PURPLE",
     "race": "PLANT",
     "cost": 9,
@@ -7839,7 +7839,7 @@
   {
     "id": 9989,
     "name": "デボラ",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "NONE",
     "cost": 99,
@@ -7907,7 +7907,7 @@
   {
     "id": 9990,
     "name": "フローラ",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "NONE",
     "cost": 99,
@@ -7975,7 +7975,7 @@
   {
     "id": 9991,
     "name": "ビアンカ",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "NONE",
     "cost": 99,
@@ -8043,7 +8043,7 @@
   {
     "id": 9992,
     "name": "記念大王スライム2",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "SLIME",
     "cost": 20,
@@ -8069,7 +8069,7 @@
   {
     "id": 9993,
     "name": "パパス",
-    "rank": "S",
+    "grade": "S",
     "type": "RED",
     "race": "NONE",
     "cost": 99,
@@ -8113,7 +8113,7 @@
   {
     "id": 9994,
     "name": "ロトの子孫",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "SECRET",
     "cost": 99,
@@ -8139,7 +8139,7 @@
   {
     "id": 9995,
     "name": "エデンの戦士たち2",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "NONE",
     "cost": 84,
@@ -8158,7 +8158,7 @@
   {
     "id": 9996,
     "name": "エデンの戦士たち1",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "NONE",
     "cost": 84,
@@ -8196,7 +8196,7 @@
   {
     "id": 9997,
     "name": "記念大王スライム1.5",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "SLIME",
     "cost": 15,
@@ -8215,7 +8215,7 @@
   {
     "id": 9998,
     "name": "アバン",
-    "rank": "S",
+    "grade": "S",
     "type": "YELLOW",
     "race": "NONE",
     "cost": 87,
@@ -8259,7 +8259,7 @@
   {
     "id": 9998,
     "name": "アバン",
-    "rank": "A",
+    "grade": "A",
     "type": "YELLOW",
     "race": "NONE",
     "cost": 87,
@@ -8303,7 +8303,7 @@
   {
     "id": 9999,
     "name": "ハロウィンルイーダ",
-    "rank": "S",
+    "grade": "S",
     "type": "BLUE",
     "race": "NONE",
     "cost": 66,

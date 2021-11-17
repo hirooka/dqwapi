@@ -2,7 +2,7 @@ package dqwapi.domain.entity;
 
 import dqwapi.domain.model.common.KokoroType;
 import dqwapi.domain.model.common.RaceType;
-import dqwapi.domain.model.kokoro.RankType;
+import dqwapi.domain.model.kokoro.GradeType;
 import java.util.List;
 import java.util.UUID;
 import javax.persistence.CascadeType;
@@ -14,7 +14,7 @@ import javax.persistence.UniqueConstraint;
 import lombok.Getter;
 import lombok.Setter;
 
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"id", "rank"}))
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"id", "grade"}))
 @Entity
 public class KokoroEntity {
 
@@ -33,7 +33,7 @@ public class KokoroEntity {
 
   @Getter
   @Setter
-  private RankType rank;
+  private GradeType grade;
 
   @Getter
   @Setter

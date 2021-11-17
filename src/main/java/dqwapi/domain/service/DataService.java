@@ -979,18 +979,18 @@ public class DataService implements IDataService {
                           + "," + k1.getId()
                           + "," + k2.getId()
                           + "," + k3.getId();
-                      final String ranks = k0.getRank().ordinal()
-                          + "," + k1.getRank().ordinal()
-                          + "," + k2.getRank().ordinal()
-                          + "," + k3.getRank().ordinal();
+                      final String grades = k0.getGrade().ordinal()
+                          + "," + k1.getGrade().ordinal()
+                          + "," + k2.getGrade().ordinal()
+                          + "," + k3.getGrade().ordinal();
                       int totalCost = k0.getCost() + k1.getCost()
                           + k2.getCost() + k3.getCost()
                           - k0.getPlusCost() - k1.getPlusCost()
                           - k2.getPlusCost() - k3.getPlusCost();
-                      final String idsAndRanks = k0.getId() + "," + k0.getRank().ordinal()
-                          + "," + k1.getId() + "," + k1.getRank().ordinal()
-                          + "," + k2.getId() + "," + k2.getRank().ordinal()
-                          + "," + k3.getId() + "," + k3.getRank().ordinal();
+                      final String idsAndGrades = k0.getId() + "," + k0.getGrade().ordinal()
+                          + "," + k1.getId() + "," + k1.getGrade().ordinal()
+                          + "," + k2.getId() + "," + k2.getGrade().ordinal()
+                          + "," + k3.getId() + "," + k3.getGrade().ordinal();
 
                       final String battleMaster = getCsv(
                           BATTLE_MASTER,
@@ -1029,7 +1029,7 @@ public class DataService implements IDataService {
                       );
 
                       bufferedWriter.write(
-                          idsAndRanks
+                          idsAndGrades
                               + ","
                               + battleMaster
                               + sage
@@ -1110,18 +1110,18 @@ public class DataService implements IDataService {
                             + "," + k1.getId()
                             + "," + k2.getId()
                             + "," + k3.getId();
-                        final String ranks = k0.getRank().ordinal()
-                            + "," + k1.getRank().ordinal()
-                            + "," + k2.getRank().ordinal()
-                            + "," + k3.getRank().ordinal();
+                        final String grades = k0.getGrade().ordinal()
+                            + "," + k1.getGrade().ordinal()
+                            + "," + k2.getGrade().ordinal()
+                            + "," + k3.getGrade().ordinal();
                         int totalCost = k0.getCost() + k1.getCost()
                             + k2.getCost() + k3.getCost()
                             - k0.getPlusCost() - k1.getPlusCost()
                             - k2.getPlusCost() - k3.getPlusCost();
-                        final String idsAndRanks = k0.getId() + "," + k0.getRank().ordinal()
-                            + "," + k1.getId() + "," + k1.getRank().ordinal()
-                            + "," + k2.getId() + "," + k2.getRank().ordinal()
-                            + "," + k3.getId() + "," + k3.getRank().ordinal();
+                        final String idsAndGrades = k0.getId() + "," + k0.getGrade().ordinal()
+                            + "," + k1.getId() + "," + k1.getGrade().ordinal()
+                            + "," + k2.getId() + "," + k2.getGrade().ordinal()
+                            + "," + k3.getId() + "," + k3.getGrade().ordinal();
 
                         final String string = getCsv(
                             jobType,
@@ -1133,7 +1133,7 @@ public class DataService implements IDataService {
                         );
 
                         bufferedWriter.write(
-                            idsAndRanks
+                            idsAndGrades
                                 + ","
                                 + string
                                 + totalCost
@@ -1172,7 +1172,7 @@ public class DataService implements IDataService {
         SLASH, HIT, SPELL, PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT, BREATH
     );
 
-    final String basis = "k0id,k0rank,k1id,k1rank,k2id,k2rank,k3id,k3rank,";
+    final String basis = "k0id,k0grade,k1id,k1grade,k2id,k2grade,k3id,k3grade,";
     header += basis;
     for (final JobType jobType : jobTypes) {
       final String pattern = "max_" + jobType.name().toLowerCase() + "_op_pattern,"
@@ -1211,7 +1211,7 @@ public class DataService implements IDataService {
     );
 
     //
-    final String basis = "k0id,k0rank,k1id,k1rank,k2id,k2rank,k3id,k3rank,";
+    final String basis = "k0id,k0grade,k1id,k1grade,k2id,k2grade,k3id,k3grade,";
     header += basis;
     final String pattern = "max_" + jobType.name().toLowerCase() + "_op_pattern,"
         + "max_" + jobType.name().toLowerCase() + "_os_pattern,"

@@ -2,13 +2,13 @@
 drop table if exists kokoro_combination_battle_master;
 create table kokoro_combination_battle_master (
   k0id integer,
-  k0rank integer,
+  k0grade integer,
   k1id integer,
-  k1rank integer,
+  k1grade integer,
   k2id integer,
-  k2rank integer,
+  k2grade integer,
   k3id integer,
-  k3rank integer,
+  k3grade integer,
 
   max_battle_master_op_pattern text,
   max_battle_master_os_pattern text,

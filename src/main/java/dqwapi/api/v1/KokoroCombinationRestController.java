@@ -5,7 +5,7 @@ import dqwapi.domain.model.common.AttributeType;
 import dqwapi.domain.model.common.RaceType;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.KokoroCombinationResult;
-import dqwapi.domain.model.kokoro.RankType;
+import dqwapi.domain.model.kokoro.GradeType;
 import dqwapi.domain.operator.IKokoroOperator;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -91,17 +91,17 @@ public class KokoroCombinationRestController {
         throw new IllegalArgumentException("Unknown bride: " + bride);
       }
     }
-    final Map<Integer, List<RankType>> excludeMap = new HashMap<>();
+    final Map<Integer, List<GradeType>> excludeMap = new HashMap<>();
     if (!ObjectUtils.isEmpty(exclusions)) {
       for (String str : exclusions) {
         final int key = Integer.parseInt(str.substring(0, str.length() - 1));
-        final RankType rankType = RankType.valueOf(str.substring(str.length() - 1).toUpperCase());
+        final GradeType gradeType = GradeType.valueOf(str.substring(str.length() - 1).toUpperCase());
         if (excludeMap.containsKey(key)) {
-          final List<RankType> rankTypes = new ArrayList<>(excludeMap.get(key));
-          rankTypes.add(rankType);
-          excludeMap.put(key, rankTypes);
+          final List<GradeType> gradeTypes = new ArrayList<>(excludeMap.get(key));
+          gradeTypes.add(gradeType);
+          excludeMap.put(key, gradeTypes);
         } else {
-          excludeMap.put(key, List.of(rankType));
+          excludeMap.put(key, List.of(gradeType));
         }
       }
     }

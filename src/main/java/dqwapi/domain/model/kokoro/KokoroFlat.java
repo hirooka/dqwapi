@@ -16,7 +16,7 @@ public class KokoroFlat {
 
   private int id;
   private String name;
-  private RankType rank;
+  private GradeType grade;
   private KokoroType type;
   private RaceType race;
 

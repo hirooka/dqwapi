@@ -7,7 +7,7 @@ import dqwapi.domain.model.common.AttributeType;
 import dqwapi.domain.model.common.BigQueryTableType;
 import dqwapi.domain.model.common.RaceType;
 import dqwapi.domain.model.job.JobType;
-import dqwapi.domain.model.kokoro.RankType;
+import dqwapi.domain.model.kokoro.GradeType;
 import dqwapi.domain.repository.IKokoroCombinationRepository;
 import dqwapi.infra.gcp.bigquery.IBigQueryConnector;
 import java.io.IOException;
@@ -61,18 +61,18 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
       final RaceType raceType,
       final int cost,
       final List<Integer> nonBrides,
-      final Map<Integer, List<RankType>> exclusions,
+      final Map<Integer, List<GradeType>> exclusions,
       final int limit
   ) {
-    final List<String> exclusionRanks = new ArrayList<>();
-    for (final Map.Entry<Integer, List<RankType>> entry : exclusions.entrySet()) {
+    final List<String> exclusionGrades = new ArrayList<>();
+    for (final Map.Entry<Integer, List<GradeType>> entry : exclusions.entrySet()) {
       final Integer key = entry.getKey();
-      for (RankType rankType : entry.getValue()) {
-        exclusionRanks.add(key + "_" + rankType.name());
+      for (GradeType gradeType : entry.getValue()) {
+        exclusionGrades.add(key + "_" + gradeType.name());
       }
     }
-    if (exclusionRanks.size() == 0) {
-      exclusionRanks.add("");
+    if (exclusionGrades.size() == 0) {
+      exclusionGrades.add("");
     }
 
     final String column;
@@ -86,7 +86,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
     final String pattern = "max_" + jobType.name().toLowerCase() + "_" + parameter + "_pattern";
     final String joinedNonBrides = nonBrides.stream()
         .map(integer -> Integer.toString(integer)).collect(Collectors.joining(","));
-    final String joinedExclusions = exclusionRanks.stream()
+    final String joinedExclusions = exclusionGrades.stream()
         .collect(Collectors.joining("','", "'", "'"));
     // TODO: improve
     final RaceType replacedRaceType;
@@ -126,7 +126,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
             + "_" + attributeType.name()
             + "_" + attackType.name()
             + "_damage").toLowerCase();
-        query = "SELECT k0id, k0rank, k1id, k1rank, k2id, k2rank, k3id, k3rank, " + pattern
+        query = "SELECT k0id, k0grade, k1id, k1grade, k2id, k2grade, k3id, k3grade, " + pattern
             + " FROM `"
             + "$projectId"
             + "."
@@ -139,10 +139,10 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
             + " AND k1id NOT IN (" + joinedNonBrides + ")"
             + " AND k2id NOT IN (" + joinedNonBrides + ")"
             + " AND k3id NOT IN (" + joinedNonBrides + ")"
-            + " AND CONCAT(k0id, '_', k0rank) NOT IN (" + joinedExclusions + ")"
-            + " AND CONCAT(k1id, '_', k1rank) NOT IN (" + joinedExclusions + ")"
-            + " AND CONCAT(k2id, '_', k2rank) NOT IN (" + joinedExclusions + ")"
-            + " AND CONCAT(k3id, '_', k3rank) NOT IN (" + joinedExclusions + ")"
+            + " AND CONCAT(k0id, '_', k0grade) NOT IN (" + joinedExclusions + ")"
+            + " AND CONCAT(k1id, '_', k1grade) NOT IN (" + joinedExclusions + ")"
+            + " AND CONCAT(k2id, '_', k2grade) NOT IN (" + joinedExclusions + ")"
+            + " AND CONCAT(k3id, '_', k3grade) NOT IN (" + joinedExclusions + ")"
             + " ORDER BY " + column + " DESC"
             + " LIMIT " + limit;
       } else {
@@ -151,7 +151,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
             + "_" + attackType.name()
             + "_" + raceType.name()
             + "_damage").toLowerCase();
-        query = "SELECT k0id, k0rank, k1id, k1rank, k2id, k2rank, k3id, k3rank, " + pattern
+        query = "SELECT k0id, k0grade, k1id, k1grade, k2id, k2grade, k3id, k3grade, " + pattern
             + " FROM `"
             + "$projectId"
             + "."
@@ -164,10 +164,10 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
             + " AND k1id NOT IN (" + joinedNonBrides + ")"
             + " AND k2id NOT IN (" + joinedNonBrides + ")"
             + " AND k3id NOT IN (" + joinedNonBrides + ")"
-            + " AND CONCAT(k0id, '_', k0rank) NOT IN (" + joinedExclusions + ")"
-            + " AND CONCAT(k1id, '_', k1rank) NOT IN (" + joinedExclusions + ")"
-            + " AND CONCAT(k2id, '_', k2rank) NOT IN (" + joinedExclusions + ")"
-            + " AND CONCAT(k3id, '_', k3rank) NOT IN (" + joinedExclusions + ")"
+            + " AND CONCAT(k0id, '_', k0grade) NOT IN (" + joinedExclusions + ")"
+            + " AND CONCAT(k1id, '_', k1grade) NOT IN (" + joinedExclusions + ")"
+            + " AND CONCAT(k2id, '_', k2grade) NOT IN (" + joinedExclusions + ")"
+            + " AND CONCAT(k3id, '_', k3grade) NOT IN (" + joinedExclusions + ")"
             + " ORDER BY " + column + " DESC"
             + " LIMIT " + limit;
       }
@@ -180,13 +180,13 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
     bigQueryConnector.query(queryTemplate).iterateAll().forEach(row -> {
       final Result result = new Result();
       result.setK0id(row.get(0).getNumericValue().intValue());
-      result.setK0rank(RankType.valueOf(row.get(1).getStringValue()));
+      result.setK0grade(GradeType.valueOf(row.get(1).getStringValue()));
       result.setK1id(row.get(2).getNumericValue().intValue());
-      result.setK1rank(RankType.valueOf(row.get(3).getStringValue()));
+      result.setK1grade(GradeType.valueOf(row.get(3).getStringValue()));
       result.setK2id(row.get(4).getNumericValue().intValue());
-      result.setK2rank(RankType.valueOf(row.get(5).getStringValue()));
+      result.setK2grade(GradeType.valueOf(row.get(5).getStringValue()));
       result.setK3id(row.get(6).getNumericValue().intValue());
-      result.setK3rank(RankType.valueOf(row.get(7).getStringValue()));
+      result.setK3grade(GradeType.valueOf(row.get(7).getStringValue()));
       result.setPattern(row.get(8).getStringValue());
       results.add(result);
     });

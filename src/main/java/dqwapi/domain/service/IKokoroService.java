@@ -6,7 +6,7 @@ import dqwapi.domain.model.common.RaceType;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.Combination;
 import dqwapi.domain.model.kokoro.Kokoro;
-import dqwapi.domain.model.kokoro.RankType;
+import dqwapi.domain.model.kokoro.GradeType;
 import java.util.List;
 import java.util.Map;
 
@@ -24,7 +24,7 @@ public interface IKokoroService {
       final JobType jobType,
       final int cost,
       final String bride,
-      final Map<Integer, List<RankType>> exclusions
+      final Map<Integer, List<GradeType>> exclusions
   );
 
   List<Combination> getCombinations(
@@ -34,7 +34,7 @@ public interface IKokoroService {
       final RaceType raceType,
       final int cost,
       final String bride,
-      final Map<Integer, List<RankType>> exclusions,
+      final Map<Integer, List<GradeType>> exclusions,
       final int limit
   );
 

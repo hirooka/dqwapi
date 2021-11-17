@@ -1,17 +1,17 @@
 package dqwapi.domain.entity;
 
-import dqwapi.domain.model.kokoro.RankType;
+import dqwapi.domain.model.kokoro.GradeType;
 import lombok.Data;
 
 @Data
 public class Result {
   private Integer k0id;
-  private RankType k0rank;
+  private GradeType k0grade;
   private Integer k1id;
-  private RankType k1rank;
+  private GradeType k1grade;
   private Integer k2id;
-  private RankType k2rank;
+  private GradeType k2grade;
   private Integer k3id;
-  private RankType k3rank;
+  private GradeType k3grade;
   private String pattern;
 }

@@ -3,7 +3,7 @@ package dqwapi.domain.operator;
 import dqwapi.domain.model.common.RaceType;
 import dqwapi.domain.model.damage.DamageResult;
 import dqwapi.domain.model.job.JobType;
-import dqwapi.domain.model.kokoro.RankType;
+import dqwapi.domain.model.kokoro.GradeType;
 import java.util.List;
 import java.util.Map;
 
@@ -15,7 +15,7 @@ public interface IDamageOperator {
       final int level,
       final int defence,
       final String bride,
-      final Map<Integer, List<RankType>> exclusions,
+      final Map<Integer, List<GradeType>> exclusions,
       final RaceType raceType
   );
 }

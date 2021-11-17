@@ -1,6 +1,6 @@
 package dqwapi.domain.model.kokoro;
 
-public enum RankType {
+public enum GradeType {
   SP,
   S,
   A,

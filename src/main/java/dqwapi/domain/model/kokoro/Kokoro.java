@@ -15,7 +15,7 @@ public class Kokoro {
   private UUID uuid = UUID.randomUUID();
   private int id;
   private String name;
-  private RankType rank;
+  private GradeType grade;
   private KokoroType type;
   private RaceType race;
   private int cost;
