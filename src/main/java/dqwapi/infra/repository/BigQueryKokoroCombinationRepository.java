@@ -96,6 +96,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
       replacedRaceType = raceType;
     }
 
+    final String replacedQuery;
     if (tableType.equals(BigQueryTableType.CROSS)) {
       column = (jobType.name()
           + "_" + attributeType.name()
@@ -107,7 +108,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
           .replace("$joinedNonBrides", joinedNonBrides)
           .replace("$joinedExclusions", joinedExclusions)
           .replace("$limit", Integer.toString(limit));
-      queryTemplate = queryTemplate.replace("{{JOB}}", jobType.name())
+      replacedQuery = queryTemplate.replace("{{JOB}}", jobType.name())
           .replace("{{job}}", jobType.name().toLowerCase())
           .replace("{{attack}}", attackType.name().toLowerCase())
           .replace("{{attribute}}", attributeType.name().toLowerCase())
@@ -121,6 +122,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
           .replace("{{column}}", column)
           .replace("{{limit}}", Integer.toString(limit));
     } else if (tableType.equals(BigQueryTableType.ONE)) {
+      replacedQuery = "";
       if (raceType.equals(RaceType.NONE)) {
         column = (jobType.name()
             + "_" + attributeType.name()
@@ -174,10 +176,10 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
     } else {
       throw new IllegalArgumentException("Unknown BigQuery table type: " + tableType);
     }
-    log.info("{}", queryTemplate);
+    log.info("{}", replacedQuery);
 
     final List<Result> results = new ArrayList<>();
-    bigQueryConnector.query(queryTemplate).iterateAll().forEach(row -> {
+    bigQueryConnector.query(replacedQuery).iterateAll().forEach(row -> {
       final Result result = new Result();
       result.setK0id(row.get(0).getNumericValue().intValue());
       result.setK0grade(GradeType.valueOf(row.get(1).getStringValue()));
