@@ -7,6 +7,8 @@ import dqwapi.domain.model.kokoro.Healing;
 import dqwapi.domain.model.kokoro.Kokoro;
 import dqwapi.domain.model.kokoro.KokoroFlat;
 import dqwapi.domain.service.IKokoroService;
+import io.swagger.v3.oas.annotations.Hidden;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -26,6 +28,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Tag(name = "こころ", description = "こころの一覧")
 @Slf4j
 @RequiredArgsConstructor
 @RequestMapping("${dqwapi.path-prefix}v1/kokoros")
@@ -48,16 +51,19 @@ public class KokoroRestController {
     return kokoroService.getAll();
   }
 
+  @Hidden
   @GetMapping("k")
   public List<Map<String, String>> get() {
     return kokoroService.get();
   }
 
+  @Hidden
   @GetMapping("j")
   public List<Map<String, String>> getJobs() {
     return kokoroService.getJobs();
   }
 
+  @Hidden
   @GetMapping("pkf")
   public String persistKokoroFlats() {
     if (!canPersist) {
@@ -67,6 +73,7 @@ public class KokoroRestController {
     return "persisted.";
   }
 
+  @Hidden
   @GetMapping("pk")
   public String persistK() {
     if (!canPersist) {
@@ -76,6 +83,7 @@ public class KokoroRestController {
     return "persisted.";
   }
 
+  @Hidden
   @GetMapping("pc")
   public String persistC() {
     if (!canPersist) {
@@ -85,6 +93,7 @@ public class KokoroRestController {
     return "persisted.";
   }
 
+  @Hidden
   @GetMapping("c")
   public String convert() {
     if (!canPersist) {

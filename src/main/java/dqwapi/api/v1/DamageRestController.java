@@ -5,6 +5,7 @@ import dqwapi.domain.model.damage.DamageResult;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.RankType;
 import dqwapi.domain.operator.IDamageOperator;
+import io.swagger.v3.oas.annotations.Hidden;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,6 +26,7 @@ public class DamageRestController {
 
   private final IDamageOperator damageOperator;
 
+  @Hidden
   @GetMapping
   List<DamageResult> damages(
       @RequestParam(value = "j", required = false) JobType jobType,

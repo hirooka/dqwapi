@@ -2,6 +2,7 @@ package dqwapi.api.v1;
 
 import dqwapi.domain.model.common.CsvType;
 import dqwapi.domain.service.IDataService;
+import io.swagger.v3.oas.annotations.Hidden;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,6 +24,7 @@ public class DataRestController {
 
   private final IDataService dataService;
 
+  @Hidden
   @GetMapping("csv")
   public Map<String, String> csv(@RequestParam(value = "t", required = false) CsvType csvType) {
     if (!canPersist) {

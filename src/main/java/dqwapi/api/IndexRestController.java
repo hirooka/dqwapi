@@ -1,6 +1,7 @@
 package dqwapi.api;
 
 import dqwapi.domain.model.Hello;
+import io.swagger.v3.oas.annotations.Hidden;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("")
 @RestController
 public class IndexRestController {
+
+  @Hidden
   @GetMapping
   public Hello hello() {
     final Instant instant = Instant.now();
