@@ -98,10 +98,18 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
 
     final String replacedQuery;
     if (tableType.equals(BigQueryTableType.CROSS)) {
-      column = (jobType.name()
-          + "_" + attributeType.name()
-          + "_" + attackType.name()
-          + "_damage").toLowerCase();
+      if (raceType.equals(RaceType.NONE) || raceType.equals(RaceType.SECRET)) {
+        column = (jobType.name()
+            + "_" + attributeType.name()
+            + "_" + attackType.name()
+            + "_damage").toLowerCase();
+      } else {
+        column = (jobType.name()
+            + "_" + attributeType.name()
+            + "_" + attackType.name()
+            + "_" + raceType.name()
+            + "_damage").toLowerCase();
+      }
       query = query.replace("$pattern", pattern)
           .replace("$column", column)
           .replace("$cost", Integer.toString(cost))
