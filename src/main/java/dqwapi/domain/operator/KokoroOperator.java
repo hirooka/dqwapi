@@ -138,6 +138,7 @@ public class KokoroOperator implements IKokoroOperator {
         simplifiedSlot.setId(slot.getKokoro().getId());
         simplifiedSlot.setName(slot.getKokoro().getName());
         simplifiedSlot.setGrade(slot.getKokoro().getGrade());
+        simplifiedSlot.setColor(slot.getKokoro().getType());
         simplifiedSlot.setCost(slot.getKokoro().getCost());
         simplifiedSlot.setUp(slot.isUp());
         simplifiedSlots.add(simplifiedSlot);

@@ -14,6 +14,7 @@ public class SimplifiedSlot {
   private int id;
   private String name;
   private GradeType grade;
+  private KokoroType color;
   private int cost;
   private boolean isUp;
 }
