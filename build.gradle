@@ -1,12 +1,12 @@
 plugins {
-  id 'org.springframework.boot' version '2.5.6'
+  id 'org.springframework.boot' version '2.6.0'
   id 'checkstyle'
 }
 apply plugin: 'java'
 apply plugin: 'io.spring.dependency-management'
 
 group 'pro.hirooka'
-version '0.9.3'
+version '0.9.4'
 
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17

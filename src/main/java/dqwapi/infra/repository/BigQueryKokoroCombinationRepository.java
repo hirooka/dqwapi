@@ -98,6 +98,35 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
 
     final String replacedQuery;
     if (tableType.equals(BigQueryTableType.CROSS)) {
+      final List<String> parameters = new ArrayList<>();
+      switch (attackType) {
+        case SLASH, HIT:
+          parameters.add("k0.op");
+          parameters.add("k1.op");
+          parameters.add("k2.op");
+          parameters.add("k3.op");
+          break;
+        case SPELL:
+          parameters.add("k0.os");
+          parameters.add("k1.os");
+          parameters.add("k2.os");
+          parameters.add("k3.os");
+          break;
+        case PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT:
+          parameters.add("k0.op + k0.os");
+          parameters.add("k1.op + k1.os");
+          parameters.add("k2.op + k2.os");
+          parameters.add("k3.op + k3.os");
+          break;
+        case BREATH:
+          parameters.add("k0.op + k0.dx");
+          parameters.add("k1.op + k1.dx");
+          parameters.add("k2.op + k2.dx");
+          parameters.add("k3.op + k3.dx");
+          break;
+        default:
+          throw new IllegalArgumentException("Unknown AttackType: " + attackType);
+      }
       final AttackType replacedAttackType;
       if (attackType.equals(AttackType.PHYSICS_SPELL_SLASH)) {
         replacedAttackType = AttackType.SLASH;
@@ -126,6 +155,10 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
           .replace("$limit", Integer.toString(limit));
       replacedQuery = queryTemplate.replace("{{JOB}}", jobType.name())
           .replace("{{job}}", jobType.name().toLowerCase())
+          .replace("{{param0}}", parameters.get(0))
+          .replace("{{param1}}", parameters.get(1))
+          .replace("{{param2}}", parameters.get(2))
+          .replace("{{param3}}", parameters.get(3))
           .replace("{{attack}}", replacedAttackType.name().toLowerCase())
           .replace("{{attribute}}", attributeType.name().toLowerCase())
           .replace("{{Attribute}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, attributeType.name()))

@@ -17,7 +17,7 @@ k0.name k0name, k1.name k1name, k2.name k2name, k3.name k3name,
 k0.cost + k1.cost + k2.cost + k3.cost - k0.plusCost - k1.plusCost - k2.plusCost - k3.plusCost total_cost,
 
 ceil(
-  `hirooka-pro.dqwapi.getMaxValue`('{{JOB}}', k0.op, k0.type, k1.op, k1.type, k2.op, k2.type, k3.op, k3.type)
+  `hirooka-pro.dqwapi.getMaxValue`('{{JOB}}', {{param0}}, k0.type, {{param1}}, k1.type, {{param2}}, k2.type, {{param3}}, k3.type)
   * (1 + ((k0.{{attack}}NoneNone + k1.{{attack}}NoneNone + k2.{{attack}}NoneNone + k3.{{attack}}NoneNone) / 100.0))
   * (1 + ((k0.{{attack}}{{Attribute}}None + k1.{{attack}}{{Attribute}}None + k2.{{attack}}{{Attribute}}None + k3.{{attack}}{{Attribute}}None) / 100.0))
   * (1 + ((k0.all{{Attribute}}None + k1.all{{Attribute}}None + k2.all{{Attribute}}None + k3.all{{Attribute}}None) / 100.0))
@@ -36,8 +36,8 @@ ceil(
 ) {{job}}_spell_healing,
 
 ceil(ceil(
-  `hirooka-pro.dqwapi.getMaxValue`('{{JOB}}', k0.op, k0.type, k1.op, k1.type, k2.op, k2.type, k3.op, k3.type)
-  * (1 + ((k0.{{attack}}NoneNone + k1.slashNoneNone + k2.slashNoneNone + k3.slashNoneNone) / 100.0))
+  `hirooka-pro.dqwapi.getMaxValue`('{{JOB}}', {{param0}}, k0.type, {{param1}}, k1.type, {{param2}}, k2.type, {{param3}}, k3.type)
+  * (1 + ((k0.{{attack}}NoneNone + k1.{{attack}}NoneNone + k2.{{attack}}NoneNone + k3.{{attack}}NoneNone) / 100.0))
   * (1 + ((k0.{{attack}}{{Attribute}}None + k1.{{attack}}{{Attribute}}None + k2.{{attack}}{{Attribute}}None + k3.{{attack}}{{Attribute}}None) / 100.0))
   * (1 + ((k0.all{{Attribute}}None + k1.all{{Attribute}}None + k2.all{{Attribute}}None + k3.all{{Attribute}}None) / 100.0))
 ) * (1 + ((k0.allNone{{Race}} + k1.allNone{{Race}} + k2.allNone{{Race}} + k3.allNone{{Race}}) / 100.0))
