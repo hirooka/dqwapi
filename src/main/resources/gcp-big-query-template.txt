@@ -53,7 +53,7 @@ SELECT
 k0id, k0grade, k1id, k1grade, k2id, k2grade, k3id, k3grade,
 {{pattern}}
 FROM combo
-WHERE total_cost < {{cost}}
+WHERE total_cost <= {{cost}}
 AND k0id NOT IN ({{joinedNonBrides}})
 AND k1id NOT IN ({{joinedNonBrides}})
 AND k2id NOT IN ({{joinedNonBrides}})
