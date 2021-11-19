@@ -98,15 +98,23 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
 
     final String replacedQuery;
     if (tableType.equals(BigQueryTableType.CROSS)) {
+      final AttackType replacedAttackType;
+      if (attackType.equals(AttackType.PHYSICS_SPELL_SLASH)) {
+        replacedAttackType = AttackType.SLASH;
+      } else if (attackType.equals(AttackType.PHYSICS_SPELL_HIT)) {
+        replacedAttackType = AttackType.HIT;
+      } else {
+        replacedAttackType = attackType;
+      }
       if (raceType.equals(RaceType.NONE) || raceType.equals(RaceType.SECRET)) {
         column = (jobType.name()
             + "_" + attributeType.name()
-            + "_" + attackType.name()
+            + "_" + replacedAttackType.name()
             + "_damage").toLowerCase();
       } else {
         column = (jobType.name()
             + "_" + attributeType.name()
-            + "_" + attackType.name()
+            + "_" + replacedAttackType.name()
             + "_" + raceType.name()
             + "_damage").toLowerCase();
       }
@@ -118,7 +126,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
           .replace("$limit", Integer.toString(limit));
       replacedQuery = queryTemplate.replace("{{JOB}}", jobType.name())
           .replace("{{job}}", jobType.name().toLowerCase())
-          .replace("{{attack}}", attackType.name().toLowerCase())
+          .replace("{{attack}}", replacedAttackType.name().toLowerCase())
           .replace("{{attribute}}", attributeType.name().toLowerCase())
           .replace("{{Attribute}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, attributeType.name()))
           .replace("{{race}}", raceType.name().toLowerCase())
