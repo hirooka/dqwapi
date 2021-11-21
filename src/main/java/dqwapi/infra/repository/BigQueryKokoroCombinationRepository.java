@@ -144,7 +144,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
         column = (jobType.name()
             + "_" + attributeType.name()
             + "_" + replacedAttackType.name()
-            + "_" + raceType.name()
+            + "_" + replacedRaceType.name()
             + "_damage").toLowerCase();
       }
       query = query.replace("$pattern", pattern)
@@ -162,7 +162,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
           .replace("{{attack}}", replacedAttackType.name().toLowerCase())
           .replace("{{attribute}}", attributeType.name().toLowerCase())
           .replace("{{Attribute}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, attributeType.name()))
-          .replace("{{race}}", raceType.name().toLowerCase())
+          .replace("{{race}}", replacedRaceType.name().toLowerCase())
           .replace("{{Race}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedRaceType.name()))
           .replace("{{pattern}}", pattern)
           .replace("{{cost}}", Integer.toString(cost))
