@@ -135,7 +135,7 @@ public class KokoroOperator implements IKokoroOperator {
       for (final Slot slot : combination.getSlots()) {
         final SimplifiedSlot simplifiedSlot = new SimplifiedSlot();
         simplifiedSlot.setType(slot.getType());
-        simplifiedSlot.setId(slot.getKokoro().getId());
+        simplifiedSlot.setNumber(slot.getKokoro().getNumber());
         simplifiedSlot.setName(slot.getKokoro().getName());
         simplifiedSlot.setGrade(slot.getKokoro().getGrade());
         simplifiedSlot.setColor(slot.getKokoro().getType());

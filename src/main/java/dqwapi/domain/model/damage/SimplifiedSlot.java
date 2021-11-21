@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class SimplifiedSlot {
   private KokoroType type;
-  private int id;
+  private int number;
   private String name;
   private GradeType grade;
   private KokoroType color;

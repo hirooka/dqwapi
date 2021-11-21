@@ -14,7 +14,7 @@ public class KokoroFlat {
 
   private UUID uuid = UUID.randomUUID();
 
-  private int id;
+  private int number;
   private String name;
   private GradeType grade;
   private KokoroType type;

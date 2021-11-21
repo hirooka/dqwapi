@@ -1,6 +1,6 @@
 [
   {
-    "id": 422,
+    "number": 422,
     "name": "グレイトライドン",
     "grade": "S",
     "type": "RED",
@@ -44,7 +44,7 @@
     "healings": []
   },
   {
-    "id": 410,
+    "number": 410,
     "name": "ダークシルフ",
     "grade": "S",
     "type": "GREEN",
@@ -68,7 +68,7 @@
     ]
   },
   {
-    "id": 408,
+    "number": 408,
     "name": "メタルつむり",
     "grade": "S",
     "type": "BLUE",
@@ -94,7 +94,7 @@
     "healings": []
   },
   {
-    "id": 404,
+    "number": 404,
     "name": "ミルドラース",
     "grade": "S",
     "type": "YELLOW",
@@ -138,7 +138,7 @@
     "healings": []
   },
   {
-    "id": 404,
+    "number": 404,
     "name": "ミルドラース",
     "grade": "A",
     "type": "YELLOW",
@@ -182,7 +182,7 @@
     "healings": []
   },
   {
-    "id": 403,
+    "number": 403,
     "name": "イブール",
     "grade": "S",
     "type": "GREEN",
@@ -206,7 +206,7 @@
     ]
   },
   {
-    "id": 402,
+    "number": 402,
     "name": "ゲマ",
     "grade": "S",
     "type": "PURPLE",
@@ -244,7 +244,7 @@
     "healings": []
   },
   {
-    "id": 402,
+    "number": 402,
     "name": "ゲマ",
     "grade": "A",
     "type": "PURPLE",
@@ -282,7 +282,7 @@
     "healings": []
   },
   {
-    "id": 401,
+    "number": 401,
     "name": "ようがんげんじん",
     "grade": "S",
     "type": "YELLOW",
@@ -332,7 +332,7 @@
     "healings": []
   },
   {
-    "id": 401,
+    "number": 401,
     "name": "ようがんげんじん",
     "grade": "A",
     "type": "YELLOW",
@@ -382,7 +382,7 @@
     "healings": []
   },
   {
-    "id": 400,
+    "number": 400,
     "name": "ゴンズ",
     "grade": "S",
     "type": "RED",
@@ -426,7 +426,7 @@
     "healings": []
   },
   {
-    "id": 400,
+    "number": 400,
     "name": "ゴンズ",
     "grade": "A",
     "type": "RED",
@@ -470,7 +470,7 @@
     "healings": []
   },
   {
-    "id": 399,
+    "number": 399,
     "name": "ジャミ",
     "grade": "S",
     "type": "BLUE",
@@ -520,7 +520,7 @@
     "healings": []
   },
   {
-    "id": 398,
+    "number": 398,
     "name": "グレイトドラゴン",
     "grade": "S",
     "type": "BLUE",
@@ -552,7 +552,7 @@
     "healings": []
   },
   {
-    "id": 398,
+    "number": 398,
     "name": "グレイトドラゴン",
     "grade": "A",
     "type": "BLUE",
@@ -584,7 +584,7 @@
     "healings": []
   },
   {
-    "id": 397,
+    "number": 397,
     "name": "ゆきのじょおう",
     "grade": "S",
     "type": "RED",
@@ -628,7 +628,7 @@
     "healings": []
   },
   {
-    "id": 396,
+    "number": 396,
     "name": "バズールカンダタ",
     "grade": "S",
     "type": "RED",
@@ -678,7 +678,7 @@
     "healings": []
   },
   {
-    "id": 395,
+    "number": 395,
     "name": "オオヌシガルーダ",
     "grade": "S",
     "type": "PURPLE",
@@ -716,7 +716,7 @@
     "healings": []
   },
   {
-    "id": 395,
+    "number": 395,
     "name": "オオヌシガルーダ",
     "grade": "A",
     "type": "PURPLE",
@@ -754,7 +754,7 @@
     "healings": []
   },
   {
-    "id": 394,
+    "number": 394,
     "name": "ジャンボきづち",
     "grade": "S",
     "type": "BLUE",
@@ -792,7 +792,7 @@
     "healings": []
   },
   {
-    "id": 390,
+    "number": 390,
     "name": "グリーンドラゴン",
     "grade": "S",
     "type": "RED",
@@ -836,7 +836,7 @@
     "healings": []
   },
   {
-    "id": 388,
+    "number": 388,
     "name": "おにこんぼう",
     "grade": "S",
     "type": "YELLOW",
@@ -892,7 +892,7 @@
     "healings": []
   },
   {
-    "id": 388,
+    "number": 388,
     "name": "おにこんぼう",
     "grade": "A",
     "type": "YELLOW",
@@ -948,7 +948,7 @@
     "healings": []
   },
   {
-    "id": 386,
+    "number": 386,
     "name": "トロピカルアミーゴ",
     "grade": "S",
     "type": "BLUE",
@@ -973,7 +973,7 @@
     ]
   },
   {
-    "id": 383,
+    "number": 383,
     "name": "バンユウ",
     "grade": "S",
     "type": "YELLOW",
@@ -1005,7 +1005,7 @@
     "healings": []
   },
   {
-    "id": 382,
+    "number": 382,
     "name": "イズライール",
     "grade": "S",
     "type": "PURPLE",
@@ -1043,7 +1043,7 @@
     "healings": []
   },
   {
-    "id": 379,
+    "number": 379,
     "name": "破壊神シドー",
     "grade": "S",
     "type": "GREEN",
@@ -1068,7 +1068,7 @@
     ]
   },
   {
-    "id": 379,
+    "number": 379,
     "name": "破壊神シドー",
     "grade": "A",
     "type": "GREEN",
@@ -1093,7 +1093,7 @@
     ]
   },
   {
-    "id": 377,
+    "number": 377,
     "name": "大神官ハーゴン",
     "grade": "S",
     "type": "PURPLE",
@@ -1125,7 +1125,7 @@
     "healings": []
   },
   {
-    "id": 377,
+    "number": 377,
     "name": "大神官ハーゴン",
     "grade": "A",
     "type": "PURPLE",
@@ -1157,7 +1157,7 @@
     "healings": []
   },
   {
-    "id": 376,
+    "number": 376,
     "name": "ベリアル",
     "grade": "S",
     "type": "YELLOW",
@@ -1176,7 +1176,7 @@
     "healings": []
   },
   {
-    "id": 375,
+    "number": 375,
     "name": "バズズ",
     "grade": "S",
     "type": "PURPLE",
@@ -1214,7 +1214,7 @@
     "healings": []
   },
   {
-    "id": 374,
+    "number": 374,
     "name": "アトラス",
     "grade": "S",
     "type": "RED",
@@ -1264,7 +1264,7 @@
     "healings": []
   },
   {
-    "id": 373,
+    "number": 373,
     "name": "アックスドラゴン",
     "grade": "S",
     "type": "BLUE",
@@ -1302,7 +1302,7 @@
     "healings": []
   },
   {
-    "id": 372,
+    "number": 372,
     "name": "竜王",
     "grade": "S",
     "type": "BLUE",
@@ -1346,7 +1346,7 @@
     "healings": []
   },
   {
-    "id": 372,
+    "number": 372,
     "name": "竜王",
     "grade": "A",
     "type": "BLUE",
@@ -1390,7 +1390,7 @@
     "healings": []
   },
   {
-    "id": 371,
+    "number": 371,
     "name": "スターキメラ",
     "grade": "S",
     "type": "PURPLE",
@@ -1422,7 +1422,7 @@
     "healings": []
   },
   {
-    "id": 364,
+    "number": 364,
     "name": "碧落天バリゲーン",
     "grade": "S",
     "type": "YELLOW",
@@ -1454,7 +1454,7 @@
     "healings": []
   },
   {
-    "id": 359,
+    "number": 359,
     "name": "アークデーモン",
     "grade": "S",
     "type": "YELLOW",
@@ -1498,7 +1498,7 @@
     "healings": []
   },
   {
-    "id": 359,
+    "number": 359,
     "name": "アークデーモン",
     "grade": "A",
     "type": "YELLOW",
@@ -1542,7 +1542,7 @@
     "healings": []
   },
   {
-    "id": 359,
+    "number": 359,
     "name": "アークデーモン",
     "grade": "B",
     "type": "YELLOW",
@@ -1586,7 +1586,7 @@
     "healings": []
   },
   {
-    "id": 354,
+    "number": 354,
     "name": "ブラックチャック",
     "grade": "S",
     "type": "RED",
@@ -1605,7 +1605,7 @@
     "healings": []
   },
   {
-    "id": 351,
+    "number": 351,
     "name": "メガゴールドマン",
     "grade": "S",
     "type": "YELLOW",
@@ -1624,7 +1624,7 @@
     "healings": []
   },
   {
-    "id": 349,
+    "number": 349,
     "name": "オルゴ・デミーラ",
     "grade": "S",
     "type": "RED",
@@ -1680,7 +1680,7 @@
     "healings": []
   },
   {
-    "id": 349,
+    "number": 349,
     "name": "オルゴ・デミーラ",
     "grade": "A",
     "type": "RED",
@@ -1736,7 +1736,7 @@
     "healings": []
   },
   {
-    "id": 348,
+    "number": 348,
     "name": "オルゴ・デミーラ(変身前)",
     "grade": "S",
     "type": "PURPLE",
@@ -1774,7 +1774,7 @@
     "healings": []
   },
   {
-    "id": 347,
+    "number": 347,
     "name": "メカバーン",
     "grade": "S",
     "type": "RED",
@@ -1812,7 +1812,7 @@
     "healings": []
   },
   {
-    "id": 346,
+    "number": 346,
     "name": "ヘルクラウダー",
     "grade": "S",
     "type": "GREEN",
@@ -1843,7 +1843,7 @@
     ]
   },
   {
-    "id": 344,
+    "number": 344,
     "name": "ヘルバオム",
     "grade": "S",
     "type": "BLUE",
@@ -1875,7 +1875,7 @@
     "healings": []
   },
   {
-    "id": 340,
+    "number": 340,
     "name": "デスマシーン",
     "grade": "S",
     "type": "YELLOW",
@@ -1907,7 +1907,7 @@
     "healings": []
   },
   {
-    "id": 340,
+    "number": 340,
     "name": "デスマシーン",
     "grade": "A",
     "type": "YELLOW",
@@ -1939,7 +1939,7 @@
     "healings": []
   },
   {
-    "id": 338,
+    "number": 338,
     "name": "ナイトリッチ",
     "grade": "S",
     "type": "RED",
@@ -1977,7 +1977,7 @@
     "healings": []
   },
   {
-    "id": 337,
+    "number": 337,
     "name": "ヘルギフト",
     "grade": "S",
     "type": "PURPLE",
@@ -2015,7 +2015,7 @@
     "healings": []
   },
   {
-    "id": 335,
+    "number": 335,
     "name": "グレイトマーマン",
     "grade": "S",
     "type": "YELLOW",
@@ -2047,7 +2047,7 @@
     "healings": []
   },
   {
-    "id": 333,
+    "number": 333,
     "name": "ガニラス",
     "grade": "S",
     "type": "RED",
@@ -2079,7 +2079,7 @@
     "healings": []
   },
   {
-    "id": 331,
+    "number": 331,
     "name": "だいおうイカ",
     "grade": "S",
     "type": "BLUE",
@@ -2117,7 +2117,7 @@
     "healings": []
   },
   {
-    "id": 331,
+    "number": 331,
     "name": "だいおうイカ",
     "grade": "A",
     "type": "BLUE",
@@ -2155,7 +2155,7 @@
     "healings": []
   },
   {
-    "id": 325,
+    "number": 325,
     "name": "キラーアーマー",
     "grade": "S",
     "type": "BLUE",
@@ -2199,7 +2199,7 @@
     "healings": []
   },
   {
-    "id": 325,
+    "number": 325,
     "name": "キラーアーマー",
     "grade": "A",
     "type": "BLUE",
@@ -2243,7 +2243,7 @@
     "healings": []
   },
   {
-    "id": 325,
+    "number": 325,
     "name": "キラーアーマー",
     "grade": "B",
     "type": "BLUE",
@@ -2287,7 +2287,7 @@
     "healings": []
   },
   {
-    "id": 324,
+    "number": 324,
     "name": "ウドラー",
     "grade": "S",
     "type": "YELLOW",
@@ -2331,7 +2331,7 @@
     "healings": []
   },
   {
-    "id": 322,
+    "number": 322,
     "name": "ランプのまじん",
     "grade": "S",
     "type": "BLUE",
@@ -2375,7 +2375,7 @@
     "healings": []
   },
   {
-    "id": 322,
+    "number": 322,
     "name": "ランプのまじん",
     "grade": "A",
     "type": "BLUE",
@@ -2419,7 +2419,7 @@
     "healings": []
   },
   {
-    "id": 322,
+    "number": 322,
     "name": "ランプのまじん",
     "grade": "B",
     "type": "BLUE",
@@ -2463,7 +2463,7 @@
     "healings": []
   },
   {
-    "id": 316,
+    "number": 316,
     "name": "アンクルホーン",
     "grade": "S",
     "type": "PURPLE",
@@ -2495,7 +2495,7 @@
     "healings": []
   },
   {
-    "id": 316,
+    "number": 316,
     "name": "アンクルホーン",
     "grade": "A",
     "type": "PURPLE",
@@ -2527,7 +2527,7 @@
     "healings": []
   },
   {
-    "id": 315,
+    "number": 315,
     "name": "コキュードス",
     "grade": "S",
     "type": "BLUE",
@@ -2577,7 +2577,7 @@
     "healings": []
   },
   {
-    "id": 314,
+    "number": 314,
     "name": "うごくひょうぞう",
     "grade": "S",
     "type": "GREEN",
@@ -2601,7 +2601,7 @@
     ]
   },
   {
-    "id": 313,
+    "number": 313,
     "name": "ひょうがまじん",
     "grade": "S",
     "type": "RED",
@@ -2633,7 +2633,7 @@
     "healings": []
   },
   {
-    "id": 311,
+    "number": 311,
     "name": "ドラゴメタル",
     "grade": "S",
     "type": "RED",
@@ -2659,7 +2659,7 @@
     "healings": []
   },
   {
-    "id": 310,
+    "number": 310,
     "name": "賀正大王スライム",
     "grade": "S",
     "type": "BLUE",
@@ -2678,7 +2678,7 @@
     "healings": []
   },
   {
-    "id": 308,
+    "number": 308,
     "name": "フレイザード",
     "grade": "S",
     "type": "PURPLE",
@@ -2716,7 +2716,7 @@
     "healings": []
   },
   {
-    "id": 308,
+    "number": 308,
     "name": "フレイザード",
     "grade": "A",
     "type": "PURPLE",
@@ -2754,7 +2754,7 @@
     "healings": []
   },
   {
-    "id": 306,
+    "number": 306,
     "name": "ヒュンケル",
     "grade": "S",
     "type": "RED",
@@ -2810,7 +2810,7 @@
     "healings": []
   },
   {
-    "id": 304,
+    "number": 304,
     "name": "クロコダイン",
     "grade": "S",
     "type": "YELLOW",
@@ -2848,7 +2848,7 @@
     "healings": []
   },
   {
-    "id": 303,
+    "number": 303,
     "name": "魔王ハドラー",
     "grade": "S",
     "type": "PURPLE",
@@ -2886,7 +2886,7 @@
     "healings": []
   },
   {
-    "id": 303,
+    "number": 303,
     "name": "魔王ハドラー",
     "grade": "A",
     "type": "PURPLE",
@@ -2924,7 +2924,7 @@
     "healings": []
   },
   {
-    "id": 302,
+    "number": 302,
     "name": "アバン(ドラゴラム)",
     "grade": "S",
     "type": "YELLOW",
@@ -2967,7 +2967,7 @@
     ]
   },
   {
-    "id": 301,
+    "number": 301,
     "name": "バロン版キラーマシン",
     "grade": "S",
     "type": "BLUE",
@@ -3011,7 +3011,7 @@
     "healings": []
   },
   {
-    "id": 296,
+    "number": 296,
     "name": "しろバラのきし",
     "grade": "S",
     "type": "YELLOW",
@@ -3042,7 +3042,7 @@
     ]
   },
   {
-    "id": 293,
+    "number": 293,
     "name": "フランケンゴーレム",
     "grade": "S",
     "type": "BLUE",
@@ -3068,7 +3068,7 @@
     "healings": []
   },
   {
-    "id": 290,
+    "number": 290,
     "name": "シャドーサタン",
     "grade": "S",
     "type": "RED",
@@ -3100,7 +3100,7 @@
     "healings": []
   },
   {
-    "id": 290,
+    "number": 290,
     "name": "シャドーサタン",
     "grade": "A",
     "type": "RED",
@@ -3132,7 +3132,7 @@
     "healings": []
   },
   {
-    "id": 288,
+    "number": 288,
     "name": "パンプキャビネット",
     "grade": "S",
     "type": "YELLOW",
@@ -3188,7 +3188,7 @@
     "healings": []
   },
   {
-    "id": 286,
+    "number": 286,
     "name": "キマイラロード",
     "grade": "S",
     "type": "PURPLE",
@@ -3232,7 +3232,7 @@
     "healings": []
   },
   {
-    "id": 285,
+    "number": 285,
     "name": "暴嵐天バリゲーン",
     "grade": "S",
     "type": "YELLOW",
@@ -3264,7 +3264,7 @@
     "healings": []
   },
   {
-    "id": 285,
+    "number": 285,
     "name": "暴嵐天バリゲーン",
     "grade": "A",
     "type": "YELLOW",
@@ -3296,7 +3296,7 @@
     "healings": []
   },
   {
-    "id": 284,
+    "number": 284,
     "name": "ボストロール",
     "grade": "S",
     "type": "RED",
@@ -3328,7 +3328,7 @@
     "healings": []
   },
   {
-    "id": 283,
+    "number": 283,
     "name": "ブラックドラゴン",
     "grade": "S",
     "type": "PURPLE",
@@ -3360,7 +3360,7 @@
     "healings": []
   },
   {
-    "id": 283,
+    "number": 283,
     "name": "ブラックドラゴン",
     "grade": "A",
     "type": "PURPLE",
@@ -3392,7 +3392,7 @@
     "healings": []
   },
   {
-    "id": 282,
+    "number": 282,
     "name": "ウイングタイガー",
     "grade": "S",
     "type": "BLUE",
@@ -3430,7 +3430,7 @@
     "healings": []
   },
   {
-    "id": 281,
+    "number": 281,
     "name": "記念大王スライム",
     "grade": "S",
     "type": "BLUE",
@@ -3449,103 +3449,7 @@
     "healings": []
   },
   {
-    "id": 278,
-    "name": "ワイトキング",
-    "grade": "S",
-    "type": "PURPLE",
-    "race": "ZOMBIE",
-    "cost": 122,
-    "plusCost": 4,
-    "hp": 115,
-    "mp": 127,
-    "op":  22,
-    "dp":  73,
-    "os": 112,
-    "ds":  45,
-    "sp":  81,
-    "dx":  96,
-    "damages": [
-      {
-        "attack": "SPELL",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 10
-      },
-      {
-        "attack": "SPELL",
-        "attribute": "BAGI",
-        "race": "NONE",
-        "magnification": 10
-      }
-    ],
-    "healings": []
-  },
-  {
-    "id": 278,
-    "name": "ワイトキング",
-    "grade": "A",
-    "type": "PURPLE",
-    "race": "ZOMBIE",
-    "cost": 122,
-    "plusCost": 3,
-    "hp": 102,
-    "mp": 112,
-    "op":  20,
-    "dp":  65,
-    "os": 100,
-    "ds":  40,
-    "sp":  72,
-    "dx":  84,
-    "damages": [
-      {
-        "attack": "SPELL",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 8
-      },
-      {
-        "attack": "SPELL",
-        "attribute": "BAGI",
-        "race": "NONE",
-        "magnification": 8
-      }
-    ],
-    "healings": []
-  },
-  {
-    "id": 278,
-    "name": "ワイトキング",
-    "grade": "B",
-    "type": "PURPLE",
-    "race": "ZOMBIE",
-    "cost": 122,
-    "plusCost": 2,
-    "hp":  94,
-    "mp": 103,
-    "op":  18,
-    "dp":  59,
-    "os":  92,
-    "ds":  37,
-    "sp":  66,
-    "dx":  77,
-    "damages": [
-      {
-        "attack": "SPELL",
-        "attribute": "NONE",
-        "race": "NONE",
-        "magnification": 6
-      },
-      {
-        "attack": "SPELL",
-        "attribute": "BAGI",
-        "race": "NONE",
-        "magnification": 6
-      }
-    ],
-    "healings": []
-  },
-  {
-    "id": 279,
+    "number": 279,
     "name": "MCカンダタ",
     "grade": "S",
     "type": "BLUE",
@@ -3577,7 +3481,39 @@
     "healings": []
   },
   {
-    "id": 278,
+    "number": 278,
+    "name": "ワイトキング",
+    "grade": "S",
+    "type": "PURPLE",
+    "race": "ZOMBIE",
+    "cost": 122,
+    "plusCost": 4,
+    "hp": 115,
+    "mp": 127,
+    "op":  22,
+    "dp":  73,
+    "os": 112,
+    "ds":  45,
+    "sp":  81,
+    "dx":  96,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 278,
     "name": "ワイトキング",
     "grade": "A",
     "type": "PURPLE",
@@ -3609,7 +3545,39 @@
     "healings": []
   },
   {
-    "id": 277,
+    "number": 278,
+    "name": "ワイトキング",
+    "grade": "B",
+    "type": "PURPLE",
+    "race": "ZOMBIE",
+    "cost": 122,
+    "plusCost": 2,
+    "hp":  94,
+    "mp": 103,
+    "op":  18,
+    "dp":  59,
+    "os":  92,
+    "ds":  37,
+    "sp":  66,
+    "dx":  77,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 6
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 277,
     "name": "じごくのつかい",
     "grade": "S",
     "type": "PURPLE",
@@ -3641,7 +3609,7 @@
     "healings": []
   },
   {
-    "id": 277,
+    "number": 277,
     "name": "じごくのつかい",
     "grade": "A",
     "type": "PURPLE",
@@ -3673,7 +3641,7 @@
     "healings": []
   },
   {
-    "id": 275,
+    "number": 275,
     "name": "うごくせきぞう",
     "grade": "S",
     "type": "RED",
@@ -3717,7 +3685,7 @@
     "healings": []
   },
   {
-    "id": 275,
+    "number": 275,
     "name": "うごくせきぞう",
     "grade": "A",
     "type": "RED",
@@ -3761,7 +3729,7 @@
     "healings": []
   },
   {
-    "id": 272,
+    "number": 272,
     "name": "ボボンガー",
     "grade": "S",
     "type": "GREEN",
@@ -3785,7 +3753,7 @@
     ]
   },
   {
-    "id": 272,
+    "number": 272,
     "name": "ボボンガー",
     "grade": "A",
     "type": "GREEN",
@@ -3809,7 +3777,7 @@
     ]
   },
   {
-    "id": 272,
+    "number": 272,
     "name": "ボボンガー",
     "grade": "B",
     "type": "GREEN",
@@ -3833,7 +3801,7 @@
     ]
   },
   {
-    "id": 265,
+    "number": 265,
     "name": "ヘルジュラシック",
     "grade": "S",
     "type": "YELLOW",
@@ -3877,7 +3845,7 @@
     "healings": []
   },
   {
-    "id": 264,
+    "number": 264,
     "name": "ドラゴンガイア",
     "grade": "S",
     "type": "RED",
@@ -3933,7 +3901,7 @@
     "healings": []
   },
   {
-    "id": 263,
+    "number": 263,
     "name": "ドラゴンゾンビ",
     "grade": "S",
     "type": "GREEN",
@@ -3958,7 +3926,7 @@
     ]
   },
   {
-    "id": 260,
+    "number": 260,
     "name": "キングスイカ岩",
     "grade": "S",
     "type": "YELLOW",
@@ -4014,7 +3982,7 @@
     "healings": []
   },
   {
-    "id": 260,
+    "number": 260,
     "name": "キングスイカ岩",
     "grade": "A",
     "type": "YELLOW",
@@ -4070,7 +4038,7 @@
     "healings": []
   },
   {
-    "id": 258,
+    "number": 258,
     "name": "フレイムドック",
     "grade": "S",
     "type": "BLUE",
@@ -4108,7 +4076,7 @@
     "healings": []
   },
   {
-    "id": 257,
+    "number": 257,
     "name": "トロピカルドラゴ",
     "grade": "S",
     "type": "PURPLE",
@@ -4146,7 +4114,7 @@
     "healings": []
   },
   {
-    "id": 255,
+    "number": 255,
     "name": "まなつのせんし",
     "grade": "S",
     "type": "RED",
@@ -4196,7 +4164,7 @@
     "healings": []
   },
   {
-    "id": 254,
+    "number": 254,
     "name": "ギガンテス",
     "grade": "S",
     "type": "BLUE",
@@ -4240,7 +4208,7 @@
     "healings": []
   },
   {
-    "id": 254,
+    "number": 254,
     "name": "ギガンテス",
     "grade": "A",
     "type": "BLUE",
@@ -4284,7 +4252,7 @@
     "healings": []
   },
   {
-    "id": 253,
+    "number": 253,
     "name": "ヘルコンドル",
     "grade": "S",
     "type": "RED",
@@ -4340,7 +4308,7 @@
     "healings": []
   },
   {
-    "id": 250,
+    "number": 250,
     "name": "スカラベキング",
     "grade": "S",
     "type": "BLUE",
@@ -4384,7 +4352,7 @@
     "healings": []
   },
   {
-    "id": 250,
+    "number": 250,
     "name": "スカラベキング",
     "grade": "A",
     "type": "BLUE",
@@ -4428,7 +4396,7 @@
     "healings": []
   },
   {
-    "id": 249,
+    "number": 249,
     "name": "ベスキング",
     "grade": "S",
     "type": "BLUE",
@@ -4472,7 +4440,7 @@
     "healings": []
   },
   {
-    "id": 248,
+    "number": 248,
     "name": "ダークキング",
     "grade": "S",
     "type": "YELLOW",
@@ -4528,7 +4496,7 @@
     "healings": []
   },
   {
-    "id": 248,
+    "number": 248,
     "name": "ダークキング",
     "grade": "A",
     "type": "YELLOW",
@@ -4584,7 +4552,7 @@
     "healings": []
   },
   {
-    "id": 247,
+    "number": 247,
     "name": "ダークスライム",
     "grade": "S",
     "type": "YELLOW",
@@ -4622,7 +4590,7 @@
     "healings": []
   },
   {
-    "id": 246,
+    "number": 246,
     "name": "しにがみきぞく",
     "grade": "S",
     "type": "YELLOW",
@@ -4648,7 +4616,7 @@
     "healings": []
   },
   {
-    "id": 245,
+    "number": 245,
     "name": "ガーゴイル",
     "grade": "S",
     "type": "RED",
@@ -4674,7 +4642,7 @@
     "healings": []
   },
   {
-    "id": 243,
+    "number": 243,
     "name": "ホラービースト",
     "grade": "S",
     "type": "YELLOW",
@@ -4718,7 +4686,7 @@
     "healings": []
   },
   {
-    "id": 243,
+    "number": 243,
     "name": "ホラービースト",
     "grade": "A",
     "type": "YELLOW",
@@ -4762,7 +4730,7 @@
     "healings": []
   },
   {
-    "id": 243,
+    "number": 243,
     "name": "ホラービースト",
     "grade": "B",
     "type": "YELLOW",
@@ -4806,7 +4774,7 @@
     "healings": []
   },
   {
-    "id": 234,
+    "number": 234,
     "name": "ゾーマ",
     "grade": "S",
     "type": "PURPLE",
@@ -4832,7 +4800,7 @@
     "healings": []
   },
   {
-    "id": 234,
+    "number": 234,
     "name": "ゾーマ",
     "grade": "A",
     "type": "PURPLE",
@@ -4858,7 +4826,7 @@
     "healings": []
   },
   {
-    "id": 233,
+    "number": 233,
     "name": "バラモスブロス",
     "grade": "S",
     "type": "PURPLE",
@@ -4890,7 +4858,7 @@
     "healings": []
   },
   {
-    "id": 232,
+    "number": 232,
     "name": "バラモス",
     "grade": "S",
     "type": "GREEN",
@@ -4915,7 +4883,7 @@
     ]
   },
   {
-    "id": 232,
+    "number": 232,
     "name": "バラモス",
     "grade": "A",
     "type": "GREEN",
@@ -4940,7 +4908,7 @@
     ]
   },
   {
-    "id": 231,
+    "number": 231,
     "name": "やまたのおろち",
     "grade": "S",
     "type": "RED",
@@ -4990,7 +4958,7 @@
     "healings": []
   },
   {
-    "id": 229,
+    "number": 229,
     "name": "カンダタ",
     "grade": "S",
     "type": "BLUE",
@@ -5034,7 +5002,7 @@
     "healings": []
   },
   {
-    "id": 227,
+    "number": 227,
     "name": "きりさきピエロ",
     "grade": "S",
     "type": "YELLOW",
@@ -5072,7 +5040,7 @@
     "healings": []
   },
   {
-    "id": 226,
+    "number": 226,
     "name": "おひなさまスライム",
     "grade": "S",
     "type": "PURPLE",
@@ -5110,7 +5078,7 @@
     "healings": []
   },
   {
-    "id": 225,
+    "number": 225,
     "name": "ゲリュオン",
     "grade": "A",
     "type": "YELLOW",
@@ -5154,7 +5122,7 @@
     "healings": []
   },
   {
-    "id": 224,
+    "number": 224,
     "name": "シルバーデビル",
     "grade": "S",
     "type": "GREEN",
@@ -5179,7 +5147,7 @@
     ]
   },
   {
-    "id": 219,
+    "number": 219,
     "name": "おどるほうせき",
     "grade": "S",
     "type": "PURPLE",
@@ -5211,7 +5179,7 @@
     "healings": []
   },
   {
-    "id": 219,
+    "number": 219,
     "name": "おどるほうせき",
     "grade": "A",
     "type": "PURPLE",
@@ -5243,7 +5211,7 @@
     "healings": []
   },
   {
-    "id": 219,
+    "number": 219,
     "name": "おどるほうせき",
     "grade": "B",
     "type": "PURPLE",
@@ -5275,7 +5243,7 @@
     "healings": []
   },
   {
-    "id": 207,
+    "number": 207,
     "name": "セルゲイナス",
     "grade": "S",
     "type": "YELLOW",
@@ -5331,7 +5299,7 @@
     "healings": []
   },
   {
-    "id": 201,
+    "number": 201,
     "name": "メタルホイミン",
     "grade": "S",
     "type": "GREEN",
@@ -5356,7 +5324,7 @@
     ]
   },
   {
-    "id": 200,
+    "number": 200,
     "name": "メタルドラゴン",
     "grade": "S",
     "type": "RED",
@@ -5388,7 +5356,7 @@
     "healings": []
   },
   {
-    "id": 200,
+    "number": 200,
     "name": "メタルドラゴン",
     "grade": "A",
     "type": "RED",
@@ -5420,7 +5388,7 @@
     "healings": []
   },
   {
-    "id": 196,
+    "number": 196,
     "name": "ブリザードマン",
     "grade": "S",
     "type": "PURPLE",
@@ -5458,7 +5426,7 @@
     "healings": []
   },
   {
-    "id": 192,
+    "number": 192,
     "name": "究極エビルプリースト",
     "grade": "S",
     "type": "BLUE",
@@ -5502,7 +5470,7 @@
     "healings": []
   },
   {
-    "id": 192,
+    "number": 192,
     "name": "究極エビルプリースト",
     "grade": "A",
     "type": "BLUE",
@@ -5546,7 +5514,7 @@
     "healings": []
   },
   {
-    "id": 191,
+    "number": 191,
     "name": "ヘルバトラー",
     "grade": "S",
     "type": "PURPLE",
@@ -5578,7 +5546,7 @@
     "healings": []
   },
   {
-    "id": 190,
+    "number": 190,
     "name": "デスピサロ",
     "grade": "S",
     "type": "GREEN",
@@ -5609,7 +5577,7 @@
     ]
   },
   {
-    "id": 190,
+    "number": 190,
     "name": "デスピサロ",
     "grade": "A",
     "type": "GREEN",
@@ -5640,7 +5608,7 @@
     ]
   },
   {
-    "id": 189,
+    "number": 189,
     "name": "アンドレアル",
     "grade": "S",
     "type": "RED",
@@ -5684,7 +5652,7 @@
     "healings": []
   },
   {
-    "id": 188,
+    "number": 188,
     "name": "キングレオ",
     "grade": "S",
     "type": "YELLOW",
@@ -5716,7 +5684,7 @@
     "healings": []
   },
   {
-    "id": 188,
+    "number": 188,
     "name": "キングレオ",
     "grade": "A",
     "type": "YELLOW",
@@ -5748,7 +5716,7 @@
     "healings": []
   },
   {
-    "id": 186,
+    "number": 186,
     "name": "ナウマンボーグ",
     "grade": "S",
     "type": "GREEN",
@@ -5779,7 +5747,7 @@
     ]
   },
   {
-    "id": 186,
+    "number": 186,
     "name": "ナウマンボーグ",
     "grade": "A",
     "type": "GREEN",
@@ -5810,7 +5778,7 @@
     ]
   },
   {
-    "id": 184,
+    "number": 184,
     "name": "ドラゴンバゲージ",
     "grade": "S",
     "type": "RED",
@@ -5836,7 +5804,7 @@
     "healings": []
   },
   {
-    "id": 182,
+    "number": 182,
     "name": "バトルレックス",
     "grade": "S",
     "type": "BLUE",
@@ -5868,7 +5836,7 @@
     "healings": []
   },
   {
-    "id": 172,
+    "number": 172,
     "name": "りゅうおう",
     "grade": "S",
     "type": "PURPLE",
@@ -5894,7 +5862,7 @@
     "healings": []
   },
   {
-    "id": 172,
+    "number": 172,
     "name": "りゅうおう",
     "grade": "A",
     "type": "PURPLE",
@@ -5920,7 +5888,7 @@
     "healings": []
   },
   {
-    "id": 171,
+    "number": 171,
     "name": "ゴーレム",
     "grade": "S",
     "type": "RED",
@@ -5964,7 +5932,7 @@
     "healings": []
   },
   {
-    "id": 171,
+    "number": 171,
     "name": "ゴーレム",
     "grade": "A",
     "type": "RED",
@@ -6008,7 +5976,7 @@
     "healings": []
   },
   {
-    "id": 170,
+    "number": 170,
     "name": "ドラゴン",
     "grade": "S",
     "type": "GREEN",
@@ -6032,7 +6000,7 @@
     ]
   },
   {
-    "id": 170,
+    "number": 170,
     "name": "ドラゴン",
     "grade": "A",
     "type": "GREEN",
@@ -6056,7 +6024,7 @@
     ]
   },
   {
-    "id": 169,
+    "number": 169,
     "name": "あくまのきし",
     "grade": "S",
     "type": "RED",
@@ -6100,7 +6068,7 @@
     "healings": []
   },
   {
-    "id": 154,
+    "number": 154,
     "name": "トロル",
     "grade": "S",
     "type": "YELLOW",
@@ -6132,7 +6100,7 @@
     "healings": []
   },
   {
-    "id": 154,
+    "number": 154,
     "name": "トロル",
     "grade": "A",
     "type": "YELLOW",
@@ -6164,7 +6132,7 @@
     "healings": []
   },
   {
-    "id": 153,
+    "number": 153,
     "name": "まおうのつかい",
     "grade": "A",
     "type": "BLUE",
@@ -6214,7 +6182,7 @@
     "healings": []
   },
   {
-    "id": 152,
+    "number": 152,
     "name": "エビルホーク",
     "grade": "S",
     "type": "RED",
@@ -6258,7 +6226,7 @@
     "healings": []
   },
   {
-    "id": 147,
+    "number": 147,
     "name": "ドラゴスライム",
     "grade": "S",
     "type": "GREEN",
@@ -6283,7 +6251,7 @@
     ]
   },
   {
-    "id": 146,
+    "number": 146,
     "name": "ヒイラギどうじ",
     "grade": "S",
     "type": "PURPLE",
@@ -6315,7 +6283,7 @@
     "healings": []
   },
   {
-    "id": 145,
+    "number": 145,
     "name": "キングスライム",
     "grade": "SP",
     "type": "BLUE",
@@ -6359,7 +6327,7 @@
     "healings": []
   },
   {
-    "id": 145,
+    "number": 145,
     "name": "キングスライム",
     "grade": "S",
     "type": "BLUE",
@@ -6391,7 +6359,7 @@
     "healings": []
   },
   {
-    "id": 137,
+    "number": 137,
     "name": "アームライオン",
     "grade": "S",
     "type": "RED",
@@ -6435,7 +6403,7 @@
     "healings": []
   },
   {
-    "id": 137,
+    "number": 137,
     "name": "アームライオン",
     "grade": "A",
     "type": "RED",
@@ -6479,7 +6447,7 @@
     "healings": []
   },
   {
-    "id": 137,
+    "number": 137,
     "name": "アームライオン",
     "grade": "B",
     "type": "RED",
@@ -6523,7 +6491,7 @@
     "healings": []
   },
   {
-    "id": 132,
+    "number": 132,
     "name": "あくま神官",
     "grade": "S",
     "type": "GREEN",
@@ -6554,7 +6522,7 @@
     ]
   },
   {
-    "id": 132,
+    "number": 132,
     "name": "あくま神官",
     "grade": "A",
     "type": "GREEN",
@@ -6585,7 +6553,7 @@
     ]
   },
   {
-    "id": 132,
+    "number": 132,
     "name": "あくま神官",
     "grade": "B",
     "type": "GREEN",
@@ -6616,7 +6584,7 @@
     ]
   },
   {
-    "id": 122,
+    "number": 122,
     "name": "ホークブリザード",
     "grade": "S",
     "type": "BLUE",
@@ -6660,7 +6628,7 @@
     "healings": []
   },
   {
-    "id": 122,
+    "number": 122,
     "name": "ホークブリザード",
     "grade": "A",
     "type": "BLUE",
@@ -6704,7 +6672,7 @@
     "healings": []
   },
   {
-    "id": 122,
+    "number": 122,
     "name": "ホークブリザード",
     "grade": "B",
     "type": "BLUE",
@@ -6748,7 +6716,7 @@
     "healings": []
   },
   {
-    "id": 118,
+    "number": 118,
     "name": "ボーンナイト",
     "grade": "S",
     "type": "RED",
@@ -6780,7 +6748,7 @@
     "healings": []
   },
   {
-    "id": 116,
+    "number": 116,
     "name": "ベビル",
     "grade": "S",
     "type": "GREEN",
@@ -6811,7 +6779,7 @@
     ]
   },
   {
-    "id": 105,
+    "number": 105,
     "name": "キラーマシン",
     "grade": "SP",
     "type": "YELLOW",
@@ -6861,7 +6829,7 @@
     "healings": []
   },
   {
-    "id": 105,
+    "number": 105,
     "name": "キラーマシン",
     "grade": "S",
     "type": "YELLOW",
@@ -6893,7 +6861,7 @@
     "healings": []
   },
   {
-    "id": 105,
+    "number": 105,
     "name": "キラーマシン",
     "grade": "A",
     "type": "YELLOW",
@@ -6925,7 +6893,7 @@
     "healings": []
   },
   {
-    "id": 105,
+    "number": 105,
     "name": "キラーマシン",
     "grade": "B",
     "type": "YELLOW",
@@ -6957,7 +6925,7 @@
     "healings": []
   },
   {
-    "id": 103,
+    "number": 103,
     "name": "メタルハンター",
     "grade": "S",
     "type": "RED",
@@ -6983,7 +6951,7 @@
     "healings": []
   },
   {
-    "id": 95,
+    "number": 95,
     "name": "ホークマン",
     "grade": "S",
     "type": "RED",
@@ -7009,7 +6977,7 @@
     "healings": []
   },
   {
-    "id": 95,
+    "number": 95,
     "name": "ホークマン",
     "grade": "S",
     "type": "RED",
@@ -7035,7 +7003,7 @@
     "healings": []
   },
   {
-    "id": 93,
+    "number": 93,
     "name": "ひくいどり",
     "grade": "S",
     "type": "PURPLE",
@@ -7067,7 +7035,7 @@
     "healings": []
   },
   {
-    "id": 93,
+    "number": 93,
     "name": "ひくいどり",
     "grade": "A",
     "type": "PURPLE",
@@ -7099,7 +7067,7 @@
     "healings": []
   },
   {
-    "id": 93,
+    "number": 93,
     "name": "ひくいどり",
     "grade": "B",
     "type": "PURPLE",
@@ -7131,7 +7099,7 @@
     "healings": []
   },
   {
-    "id": 92,
+    "number": 92,
     "name": "はぐれメタル",
     "grade": "S",
     "type": "PURPLE",
@@ -7157,7 +7125,7 @@
     "healings": []
   },
   {
-    "id": 90,
+    "number": 90,
     "name": "ごろつき",
     "grade": "S",
     "type": "BLUE",
@@ -7183,7 +7151,7 @@
     "healings": []
   },
   {
-    "id": 82,
+    "number": 82,
     "name": "よろいのきし",
     "grade": "S",
     "type": "YELLOW",
@@ -7215,7 +7183,7 @@
     "healings": []
   },
   {
-    "id": 79,
+    "number": 79,
     "name": "ともしびこぞう",
     "grade": "S",
     "type": "PURPLE",
@@ -7247,7 +7215,7 @@
     "healings": []
   },
   {
-    "id": 72,
+    "number": 72,
     "name": "サイおとこ",
     "grade": "S",
     "type": "RED",
@@ -7273,7 +7241,7 @@
     "healings": []
   },
   {
-    "id": 68,
+    "number": 68,
     "name": "ヘルビースト",
     "grade": "S",
     "type": "BLUE",
@@ -7305,7 +7273,7 @@
     "healings": []
   },
   {
-    "id": 68,
+    "number": 68,
     "name": "ヘルビースト",
     "grade": "A",
     "type": "BLUE",
@@ -7337,7 +7305,7 @@
     "healings": []
   },
   {
-    "id": 68,
+    "number": 68,
     "name": "ヘルビースト",
     "grade": "B",
     "type": "BLUE",
@@ -7369,7 +7337,7 @@
     "healings": []
   },
   {
-    "id": 49,
+    "number": 49,
     "name": "スノーモン",
     "grade": "S",
     "type": "GREEN",
@@ -7393,7 +7361,7 @@
     ]
   },
   {
-    "id": 46,
+    "number": 46,
     "name": "デザートゴースト",
     "grade": "S",
     "type": "RED",
@@ -7419,7 +7387,7 @@
     "healings": []
   },
   {
-    "id": 42,
+    "number": 42,
     "name": "グレムリン",
     "grade": "S",
     "type": "GREEN",
@@ -7450,7 +7418,7 @@
     ]
   },
   {
-    "id": 42,
+    "number": 42,
     "name": "グレムリン",
     "grade": "A",
     "type": "GREEN",
@@ -7481,7 +7449,7 @@
     ]
   },
   {
-    "id": 41,
+    "number": 41,
     "name": "メタルブラザーズ",
     "grade": "S",
     "type": "GREEN",
@@ -7505,7 +7473,7 @@
     ]
   },
   {
-    "id": 34,
+    "number": 34,
     "name": "ドルイド",
     "grade": "S",
     "type": "PURPLE",
@@ -7531,7 +7499,7 @@
     "healings": []
   },
   {
-    "id": 34,
+    "number": 34,
     "name": "ドルイド",
     "grade": "A",
     "type": "PURPLE",
@@ -7557,7 +7525,7 @@
     "healings": []
   },
   {
-    "id": 34,
+    "number": 34,
     "name": "ドルイド",
     "grade": "B",
     "type": "PURPLE",
@@ -7583,7 +7551,7 @@
     "healings": []
   },
   {
-    "id": 25,
+    "number": 25,
     "name": "あばれこまいぬ",
     "grade": "S",
     "type": "YELLOW",
@@ -7615,7 +7583,7 @@
     "healings": []
   },
   {
-    "id": 24,
+    "number": 24,
     "name": "あやしいかげ",
     "grade": "S",
     "type": "BLUE",
@@ -7641,7 +7609,7 @@
     "healings": []
   },
   {
-    "id": 21,
+    "number": 21,
     "name": "メタルスライム",
     "grade": "S",
     "type": "YELLOW",
@@ -7673,7 +7641,7 @@
     "healings": []
   },
   {
-    "id": 13,
+    "number": 13,
     "name": "メラリザード",
     "grade": "S",
     "type": "RED",
@@ -7717,7 +7685,7 @@
     "healings": []
   },
   {
-    "id": 13,
+    "number": 13,
     "name": "メラリザード",
     "grade": "A",
     "type": "RED",
@@ -7761,7 +7729,7 @@
     "healings": []
   },
   {
-    "id": 13,
+    "number": 13,
     "name": "メラリザード",
     "grade": "B",
     "type": "RED",
@@ -7805,7 +7773,7 @@
     "healings": []
   },
   {
-    "id": 12,
+    "number": 12,
     "name": "きりかぶこぞう",
     "grade": "S",
     "type": "PURPLE",
@@ -7837,7 +7805,7 @@
     "healings": []
   },
   {
-    "id": 9989,
+    "number": 9989,
     "name": "デボラ",
     "grade": "S",
     "type": "RED",
@@ -7905,7 +7873,7 @@
     "healings": []
   },
   {
-    "id": 9990,
+    "number": 9990,
     "name": "フローラ",
     "grade": "S",
     "type": "BLUE",
@@ -7973,7 +7941,7 @@
     "healings": []
   },
   {
-    "id": 9991,
+    "number": 9991,
     "name": "ビアンカ",
     "grade": "S",
     "type": "YELLOW",
@@ -8041,7 +8009,7 @@
     "healings": []
   },
   {
-    "id": 9992,
+    "number": 9992,
     "name": "記念大王スライム2",
     "grade": "S",
     "type": "BLUE",
@@ -8067,7 +8035,7 @@
     "healings": []
   },
   {
-    "id": 9993,
+    "number": 9993,
     "name": "パパス",
     "grade": "S",
     "type": "RED",
@@ -8111,7 +8079,7 @@
     "healings": []
   },
   {
-    "id": 9994,
+    "number": 9994,
     "name": "ロトの子孫",
     "grade": "S",
     "type": "YELLOW",
@@ -8137,7 +8105,7 @@
     "healings": []
   },
   {
-    "id": 9995,
+    "number": 9995,
     "name": "エデンの戦士たち2",
     "grade": "S",
     "type": "YELLOW",
@@ -8156,7 +8124,7 @@
     "healings": []
   },
   {
-    "id": 9996,
+    "number": 9996,
     "name": "エデンの戦士たち1",
     "grade": "S",
     "type": "BLUE",
@@ -8194,7 +8162,7 @@
     "healings": []
   },
   {
-    "id": 9997,
+    "number": 9997,
     "name": "記念大王スライム1.5",
     "grade": "S",
     "type": "BLUE",
@@ -8213,7 +8181,7 @@
     "healings": []
   },
   {
-    "id": 9998,
+    "number": 9998,
     "name": "アバン",
     "grade": "S",
     "type": "YELLOW",
@@ -8257,7 +8225,7 @@
     "healings": []
   },
   {
-    "id": 9998,
+    "number": 9998,
     "name": "アバン",
     "grade": "A",
     "type": "YELLOW",
@@ -8301,7 +8269,7 @@
     "healings": []
   },
   {
-    "id": 9999,
+    "number": 9999,
     "name": "ハロウィンルイーダ",
     "grade": "S",
     "type": "BLUE",

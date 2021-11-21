@@ -905,10 +905,10 @@ public class DataService implements IDataService {
             if (!(i >= k) && !(j >= k)) {
               for (int l = 0; l < len; l++) {
                 if (!(i >= l) && !(j >= l) && !(k >= l)) {
-                  final int i0 = kokoros.get(i).getId();
-                  final int i1 = kokoros.get(j).getId();
-                  final int i2 = kokoros.get(k).getId();
-                  final int i3 = kokoros.get(l).getId();
+                  final int i0 = kokoros.get(i).getNumber();
+                  final int i1 = kokoros.get(j).getNumber();
+                  final int i2 = kokoros.get(k).getNumber();
+                  final int i3 = kokoros.get(l).getNumber();
                   if (i0 != i1 && i0 != i2 && i0 != i3 && i1 != i2 && i1 != i3 && i2 != i3) {
                     count++;
                   }
@@ -958,10 +958,10 @@ public class DataService implements IDataService {
               if (!(i >= k) && !(j >= k)) {
                 for (int l = 0; l < len; l++) {
                   if (!(i >= l) && !(j >= l) && !(k >= l)) {
-                    final int i0 = kokoros.get(i).getId();
-                    final int i1 = kokoros.get(j).getId();
-                    final int i2 = kokoros.get(k).getId();
-                    final int i3 = kokoros.get(l).getId();
+                    final int i0 = kokoros.get(i).getNumber();
+                    final int i1 = kokoros.get(j).getNumber();
+                    final int i2 = kokoros.get(k).getNumber();
+                    final int i3 = kokoros.get(l).getNumber();
                     if (i0 != i1 && i0 != i2 && i0 != i3 && i1 != i2 && i1 != i3 && i2 != i3) {
                       count++;
 
@@ -975,10 +975,10 @@ public class DataService implements IDataService {
                           + "," + k1.getName()
                           + "," + k2.getName()
                           + "," + k3.getName();
-                      final String ids = k0.getId()
-                          + "," + k1.getId()
-                          + "," + k2.getId()
-                          + "," + k3.getId();
+                      final String numbers = k0.getNumber()
+                          + "," + k1.getNumber()
+                          + "," + k2.getNumber()
+                          + "," + k3.getNumber();
                       final String grades = k0.getGrade().ordinal()
                           + "," + k1.getGrade().ordinal()
                           + "," + k2.getGrade().ordinal()
@@ -987,10 +987,10 @@ public class DataService implements IDataService {
                           + k2.getCost() + k3.getCost()
                           - k0.getPlusCost() - k1.getPlusCost()
                           - k2.getPlusCost() - k3.getPlusCost();
-                      final String idsAndGrades = k0.getId() + "," + k0.getGrade().ordinal()
-                          + "," + k1.getId() + "," + k1.getGrade().ordinal()
-                          + "," + k2.getId() + "," + k2.getGrade().ordinal()
-                          + "," + k3.getId() + "," + k3.getGrade().ordinal();
+                      final String numbersAndGrades = k0.getNumber() + "," + k0.getGrade().ordinal()
+                          + "," + k1.getNumber() + "," + k1.getGrade().ordinal()
+                          + "," + k2.getNumber() + "," + k2.getGrade().ordinal()
+                          + "," + k3.getNumber() + "," + k3.getGrade().ordinal();
 
                       final String battleMaster = getCsv(
                           BATTLE_MASTER,
@@ -1029,7 +1029,7 @@ public class DataService implements IDataService {
                       );
 
                       bufferedWriter.write(
-                          idsAndGrades
+                          numbersAndGrades
                               + ","
                               + battleMaster
                               + sage
@@ -1089,10 +1089,10 @@ public class DataService implements IDataService {
                 if (!(i >= k) && !(j >= k)) {
                   for (int l = 0; l < len; l++) {
                     if (!(i >= l) && !(j >= l) && !(k >= l)) {
-                      final int i0 = kokoros.get(i).getId();
-                      final int i1 = kokoros.get(j).getId();
-                      final int i2 = kokoros.get(k).getId();
-                      final int i3 = kokoros.get(l).getId();
+                      final int i0 = kokoros.get(i).getNumber();
+                      final int i1 = kokoros.get(j).getNumber();
+                      final int i2 = kokoros.get(k).getNumber();
+                      final int i3 = kokoros.get(l).getNumber();
                       if (i0 != i1 && i0 != i2 && i0 != i3 && i1 != i2 && i1 != i3 && i2 != i3) {
                         count++;
 
@@ -1106,10 +1106,10 @@ public class DataService implements IDataService {
                             + "," + k1.getName()
                             + "," + k2.getName()
                             + "," + k3.getName();
-                        final String ids = k0.getId()
-                            + "," + k1.getId()
-                            + "," + k2.getId()
-                            + "," + k3.getId();
+                        final String numbers = k0.getNumber()
+                            + "," + k1.getNumber()
+                            + "," + k2.getNumber()
+                            + "," + k3.getNumber();
                         final String grades = k0.getGrade().ordinal()
                             + "," + k1.getGrade().ordinal()
                             + "," + k2.getGrade().ordinal()
@@ -1118,10 +1118,10 @@ public class DataService implements IDataService {
                             + k2.getCost() + k3.getCost()
                             - k0.getPlusCost() - k1.getPlusCost()
                             - k2.getPlusCost() - k3.getPlusCost();
-                        final String idsAndGrades = k0.getId() + "," + k0.getGrade().ordinal()
-                            + "," + k1.getId() + "," + k1.getGrade().ordinal()
-                            + "," + k2.getId() + "," + k2.getGrade().ordinal()
-                            + "," + k3.getId() + "," + k3.getGrade().ordinal();
+                        final String numbersAndGrades = k0.getNumber() + "," + k0.getGrade().ordinal()
+                            + "," + k1.getNumber() + "," + k1.getGrade().ordinal()
+                            + "," + k2.getNumber() + "," + k2.getGrade().ordinal()
+                            + "," + k3.getNumber() + "," + k3.getGrade().ordinal();
 
                         final String string = getCsv(
                             jobType,
@@ -1133,7 +1133,7 @@ public class DataService implements IDataService {
                         );
 
                         bufferedWriter.write(
-                            idsAndGrades
+                            numbersAndGrades
                                 + ","
                                 + string
                                 + totalCost
@@ -1172,7 +1172,7 @@ public class DataService implements IDataService {
         SLASH, HIT, SPELL, PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT, BREATH
     );
 
-    final String basis = "k0id,k0grade,k1id,k1grade,k2id,k2grade,k3id,k3grade,";
+    final String basis = "k0number,k0grade,k1number,k1grade,k2number,k2grade,k3number,k3grade,";
     header += basis;
     for (final JobType jobType : jobTypes) {
       final String pattern = "max_" + jobType.name().toLowerCase() + "_op_pattern,"
@@ -1211,7 +1211,7 @@ public class DataService implements IDataService {
     );
 
     //
-    final String basis = "k0id,k0grade,k1id,k1grade,k2id,k2grade,k3id,k3grade,";
+    final String basis = "k0number,k0grade,k1number,k1grade,k2number,k2grade,k3number,k3grade,";
     header += basis;
     final String pattern = "max_" + jobType.name().toLowerCase() + "_op_pattern,"
         + "max_" + jobType.name().toLowerCase() + "_os_pattern,"

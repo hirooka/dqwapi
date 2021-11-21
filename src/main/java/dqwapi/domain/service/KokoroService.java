@@ -539,10 +539,10 @@ public class KokoroService implements IKokoroService {
             if (!(i >= k) && !(j >= k)) {
               for (int l = 0; l < len; l++) {
                 if (!(i >= l) && !(j >= l) && !(k >= l)) {
-                  final int i0 = kokoros.get(i).getId();
-                  final int i1 = kokoros.get(j).getId();
-                  final int i2 = kokoros.get(k).getId();
-                  final int i3 = kokoros.get(l).getId();
+                  final int i0 = kokoros.get(i).getNumber();
+                  final int i1 = kokoros.get(j).getNumber();
+                  final int i2 = kokoros.get(k).getNumber();
+                  final int i3 = kokoros.get(l).getNumber();
                   if (i0 != i1 && i0 != i2 && i0 != i3 && i1 != i2 && i1 != i3 && i2 != i3
                       && !canBrideSkip(i0, i1, i2, i3)
                   ) {
@@ -720,7 +720,7 @@ public class KokoroService implements IKokoroService {
     for (Kokoro kokoro : kokoros) {
       final Map<String, String> map = new HashMap<>();
       map.put("text", kokoro.getName() + " " + kokoro.getGrade().name());
-      map.put("value", kokoro.getId() + "" + kokoro.getGrade().name().toLowerCase());
+      map.put("value", kokoro.getNumber() + "" + kokoro.getGrade().name().toLowerCase());
       list.add(map);
     }
     return list;
@@ -804,7 +804,7 @@ public class KokoroService implements IKokoroService {
             .filter(combination -> combination.getCost() <= cost)
             .filter(combination -> {
               final List<Integer> ids = combination.getSlots().stream()
-                  .map(slot -> slot.getKokoro().getId())
+                  .map(slot -> slot.getKokoro().getNumber())
                   .collect(Collectors.toList());
               if (brideId == 50_001) {
                 return !ids.contains(50_002) && !ids.contains(50_003);
@@ -816,8 +816,8 @@ public class KokoroService implements IKokoroService {
             })
             .filter(combination -> {
               for (Slot slot : combination.getSlots()) {
-                if (exclusions.containsKey(slot.getKokoro().getId())) {
-                  if (exclusions.get(slot.getKokoro().getId())
+                if (exclusions.containsKey(slot.getKokoro().getNumber())) {
+                  if (exclusions.get(slot.getKokoro().getNumber())
                       .contains(slot.getKokoro().getGrade())
                   ) {
                     return false;
@@ -833,9 +833,9 @@ public class KokoroService implements IKokoroService {
     return new ArrayList<>();
   }
 
-  private Kokoro get(final int id, final GradeType gradeType) {
+  private Kokoro get(final int number, final GradeType gradeType) {
     for (Kokoro kokoro : kokoros) {
-      if (kokoro.getId() == id && kokoro.getGrade().equals(gradeType)) {
+      if (kokoro.getNumber() == number && kokoro.getGrade().equals(gradeType)) {
         return kokoro;
       }
     }
@@ -1563,10 +1563,10 @@ public class KokoroService implements IKokoroService {
           result.getK3id()
       );
       log.debug("{}, {}, {}, {}",
-          slots.get(0).getKokoro().getId(),
-          slots.get(1).getKokoro().getId(),
-          slots.get(2).getKokoro().getId(),
-          slots.get(3).getKokoro().getId()
+          slots.get(0).getKokoro().getNumber(),
+          slots.get(1).getKokoro().getNumber(),
+          slots.get(2).getKokoro().getNumber(),
+          slots.get(3).getKokoro().getNumber()
       );
     }
     return combinations;
@@ -1628,7 +1628,7 @@ public class KokoroService implements IKokoroService {
     for (final KokoroFlat kokoroFlat : kokoroFlats) {
       final KokoroFlatEntity kokoroFlatEntity = modelMapper.map(kokoroFlat, KokoroFlatEntity.class);
       log.debug(kokoroFlatEntity.toString());
-      if (kokoroFlatRepository.findFirstByIdAndGrade(kokoroFlat.getId(), kokoroFlat.getGrade())
+      if (kokoroFlatRepository.findFirstByIdAndGrade(kokoroFlat.getNumber(), kokoroFlat.getGrade())
           .size() == 0
       ) {
         kokoroFlatRepository.save(kokoroFlatEntity);
