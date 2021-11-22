@@ -7,6 +7,7 @@ import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.KokoroCombinationResult;
 import dqwapi.domain.model.kokoro.GradeType;
 import dqwapi.domain.operator.IKokoroOperator;
+import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -31,6 +32,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class KokoroCombinationRestController {
 
   private final IKokoroOperator kokoroOperator;
+
+  @Hidden
+  @GetMapping(value = "info", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+  Map<String, Object> info() {
+    return kokoroOperator.getCombinationInfo();
+  }
 
   // TODO: without MediaType.APPLICATION_JSON_UTF8_VALUE, Japanese in response on macOS, iOS is be garbled
   @GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)

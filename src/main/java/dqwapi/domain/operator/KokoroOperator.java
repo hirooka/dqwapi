@@ -35,6 +35,11 @@ public class KokoroOperator implements IKokoroOperator {
   private final IKokoroService kokoroService;
 
   @Override
+  public Map<String, Object> getCombinationInfo() {
+    return kokoroService.getCombinationInfo();
+  }
+
+  @Override
   public List<KokoroCombinationResult> getCombinations(
       final JobType jobType,
       final int level,

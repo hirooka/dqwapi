@@ -16,6 +16,8 @@ public interface IKokoroService {
 
   List<Map<String, String>> get();
 
+  Map<String, Object> getCombinationInfo();
+
   List<Map<String, String>> getJobs();
 
   List<Combination> getCombinationsOnMemory(final JobType jobType);

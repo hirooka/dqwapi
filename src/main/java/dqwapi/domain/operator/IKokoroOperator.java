@@ -10,6 +10,9 @@ import java.util.List;
 import java.util.Map;
 
 public interface IKokoroOperator {
+
+  Map<String, Object> getCombinationInfo();
+
   List<KokoroCombinationResult> getCombinations(
       final JobType jobType,
       final int level,

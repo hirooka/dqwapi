@@ -727,6 +727,32 @@ public class KokoroService implements IKokoroService {
   }
 
   @Override
+  public Map<String, Object> getCombinationInfo() {
+    final int len = kokoros.size();
+    int combination = 0;
+    for (int i = 0; i < len; i++) {
+      for (int j = 0; j < len; j++) {
+        if (!(i >= j)) {
+          for (int k = 0; k < len; k++) {
+            if (!(i >= k) && !(j >= k)) {
+              for (int l = 0; l < len; l++) {
+                if (!(i >= l) && !(j >= l) && !(k >= l)) {
+                    combination++;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    final int digit = Integer.toString(combination).split("").length;
+    final double basis = Math.pow(10, digit - 2);
+    final int floored  = (int) (Math.floor(combination / basis) * basis);
+    final String combinationString = String.format("%,d", floored);
+    return Map.of("kokoro", len,"combination", combinationString);
+  }
+
+  @Override
   public List<Map<String, String>> getJobs() {
     // TODO:
     final List<Map<String, String>> list = new ArrayList<>();
