@@ -1,0 +1,33 @@
+[
+  {
+    "number": 100,
+    "name": "あああ",
+    "grade": "S",
+    "type": "RED",
+    "race": "SECRET",
+    "cost": 50,
+    "plusCost": 4,
+    "hp": 100,
+    "mp":  10,
+    "op":  10,
+    "dp":  10,
+    "os":  10,
+    "ds":  10,
+    "sp":  10,
+    "dx":  10,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 7
+      }
+    ]
+  }
+]

@@ -32,6 +32,15 @@ import org.springframework.stereotype.Repository;
 @Repository("big-query-repository")
 public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRepository {
 
+  @Value("${gcp.project-id}")
+  private String projectId;
+
+  @Value("${gcp.big-query.dataset}")
+  private String dataset;
+
+  @Value("${gcp.big-query.table}")
+  private String table;
+
   @Value("${gcp.big-query.table-type}")
   private BigQueryTableType tableType;
 
@@ -153,7 +162,10 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
           .replace("$joinedNonBrides", joinedNonBrides)
           .replace("$joinedExclusions", joinedExclusions)
           .replace("$limit", Integer.toString(limit));
-      replacedQuery = queryTemplate.replace("{{JOB}}", jobType.name())
+      replacedQuery = queryTemplate.replace("{{project-id}}", projectId)
+          .replace("{{dataset}}", dataset)
+          .replace("{{table}}", table)
+          .replace("{{JOB}}", jobType.name())
           .replace("{{job}}", jobType.name().toLowerCase())
           .replace("{{param0}}", parameters.get(0))
           .replace("{{param1}}", parameters.get(1))

@@ -1,11 +1,11 @@
 WITH combo AS
 (
 SELECT
-`hirooka-pro.dqwapi.getMaxPattern`('{{JOB}}', k0.op, k0.type, k1.op, k1.type, k2.op, k2.type, k3.op, k3.type) as max_{{job}}_op_pattern,
-`hirooka-pro.dqwapi.getMaxPattern`('{{JOB}}', k0.os, k0.type, k1.os, k1.type, k2.os, k2.type, k3.os, k3.type) as max_{{job}}_os_pattern,
-`hirooka-pro.dqwapi.getMaxPattern`('{{JOB}}', k0.op+k0.os, k0.type, k1.op+k1.os, k1.type, k2.op+k2.os, k2.type, k3.op+k3.os, k3.type) as max_{{job}}_opos_pattern,
-`hirooka-pro.dqwapi.getMaxPattern`('{{JOB}}', k0.op+k0.dx, k0.type, k1.op+k1.dx, k1.type, k2.op+k2.dx, k2.type, k3.op+k3.dx, k3.type) as max_{{job}}_opdx_pattern,
-`hirooka-pro.dqwapi.getMaxPattern`('{{JOB}}', k0.ds, k0.type, k1.ds, k1.type, k2.ds, k2.type, k3.ds, k3.type) as max_{{job}}_ds_pattern,
+`{{project-id}}.{{dataset}}.getMaxPattern`('{{JOB}}', k0.op, k0.type, k1.op, k1.type, k2.op, k2.type, k3.op, k3.type) as max_{{job}}_op_pattern,
+`{{project-id}}.{{dataset}}.getMaxPattern`('{{JOB}}', k0.os, k0.type, k1.os, k1.type, k2.os, k2.type, k3.os, k3.type) as max_{{job}}_os_pattern,
+`{{project-id}}.{{dataset}}.getMaxPattern`('{{JOB}}', k0.op+k0.os, k0.type, k1.op+k1.os, k1.type, k2.op+k2.os, k2.type, k3.op+k3.os, k3.type) as max_{{job}}_opos_pattern,
+`{{project-id}}.{{dataset}}.getMaxPattern`('{{JOB}}', k0.op+k0.dx, k0.type, k1.op+k1.dx, k1.type, k2.op+k2.dx, k2.type, k3.op+k3.dx, k3.type) as max_{{job}}_opdx_pattern,
+`{{project-id}}.{{dataset}}.getMaxPattern`('{{JOB}}', k0.ds, k0.type, k1.ds, k1.type, k2.ds, k2.type, k3.ds, k3.type) as max_{{job}}_ds_pattern,
 
 k0.number k0number, k0.grade k0grade, k0.type k0type, k0.hp k0hp, k0.mp k0mp, k0.op k0op, k0.dp k0dp, k0.os k0os, k0.ds k0ds, k0.dx k0dx, k0.sp k0sp, k0.cost k0cost,
 k1.number k1number, k1.grade k1grade, k1.type k1type, k1.hp k1hp, k1.mp k1mp, k1.op k1op, k1.dp k1dp, k1.os k1os, k1.ds k1ds, k1.dx k1dx, k1.sp k1sp, k1.cost k1cost,
@@ -18,7 +18,7 @@ k0.cost + k1.cost + k2.cost + k3.cost - k0.plusCost - k1.plusCost - k2.plusCost 
 
 ceil(
   ceil(
-    `hirooka-pro.dqwapi.getMaxValue`('{{JOB}}', {{param0}}, k0.type, {{param1}}, k1.type, {{param2}}, k2.type, {{param3}}, k3.type)
+    `{{project-id}}.{{dataset}}.getMaxValue`('{{JOB}}', {{param0}}, k0.type, {{param1}}, k1.type, {{param2}}, k2.type, {{param3}}, k3.type)
     * (1 + ((k0.{{attack}}NoneNone + k1.{{attack}}NoneNone + k2.{{attack}}NoneNone + k3.{{attack}}NoneNone) / 100.0))
   )
   * (1 + ((k0.{{attack}}{{Attribute}}None + k1.{{attack}}{{Attribute}}None + k2.{{attack}}{{Attribute}}None + k3.{{attack}}{{Attribute}}None + k0.all{{Attribute}}None + k1.all{{Attribute}}None + k2.all{{Attribute}}None + k3.all{{Attribute}}None) / 100.0))
@@ -26,7 +26,7 @@ ceil(
 
 ceil(
   ceil(
-    `hirooka-pro.dqwapi.getMaxValue`('{{JOB}}', k0.ds, k0.type, k1.ds, k1.type, k2.ds, k2.type, k3.ds, k3.type)
+    `{{project-id}}.{{dataset}}.getMaxValue`('{{JOB}}', k0.ds, k0.type, k1.ds, k1.type, k2.ds, k2.type, k3.ds, k3.type)
     * (1 + ((k0.healingSkill + k1.healingSkill + k2.healingSkill + k3.healingSkill) / 100.0))
   )
   * (1 + ((k0.healingSpecialty + k1.healingSpecialty + k2.healingSpecialty + k3.healingSpecialty) / 100.0))
@@ -34,7 +34,7 @@ ceil(
 
 ceil(
   ceil(
-    `hirooka-pro.dqwapi.getMaxValue`('{{JOB}}', k0.ds, k0.type, k1.ds, k1.type, k2.ds, k2.type, k3.ds, k3.type)
+    `{{project-id}}.{{dataset}}.getMaxValue`('{{JOB}}', k0.ds, k0.type, k1.ds, k1.type, k2.ds, k2.type, k3.ds, k3.type)
     * (1 + ((k0.healingSkill + k1.healingSkill + k2.healingSkill + k3.healingSkill) / 100.0))
   )
   * (1 + ((k0.healingSpell + k1.healingSpell + k2.healingSpell + k3.healingSpell) / 100.0))
@@ -43,7 +43,7 @@ ceil(
 ceil(
   ceil(
     ceil(
-      `hirooka-pro.dqwapi.getMaxValue`('{{JOB}}', {{param0}}, k0.type, {{param1}}, k1.type, {{param2}}, k2.type, {{param3}}, k3.type)
+      `{{project-id}}.{{dataset}}.getMaxValue`('{{JOB}}', {{param0}}, k0.type, {{param1}}, k1.type, {{param2}}, k2.type, {{param3}}, k3.type)
       * (1 + ((k0.{{attack}}NoneNone + k1.{{attack}}NoneNone + k2.{{attack}}NoneNone + k3.{{attack}}NoneNone) / 100.0))
     )
     * (1 + ((k0.{{attack}}{{Attribute}}None + k1.{{attack}}{{Attribute}}None + k2.{{attack}}{{Attribute}}None + k3.{{attack}}{{Attribute}}None + k0.all{{Attribute}}None + k1.all{{Attribute}}None + k2.all{{Attribute}}None + k3.all{{Attribute}}None) / 100.0))
@@ -51,10 +51,10 @@ ceil(
   * (1 + ((k0.allNone{{Race}} + k1.allNone{{Race}} + k2.allNone{{Race}} + k3.allNone{{Race}}) / 100.0))
 ) {{job}}_{{attribute}}_{{attack}}_{{race}}_damage,
 
-FROM `hirooka-pro.dqwapi.kokoro` k0
-CROSS JOIN `hirooka-pro.dqwapi.kokoro` k1
-CROSS JOIN `hirooka-pro.dqwapi.kokoro` k2
-CROSS JOIN `hirooka-pro.dqwapi.kokoro` k3
+FROM `{{project-id}}.{{dataset}}.{{table}}` k0
+CROSS JOIN `{{project-id}}.{{dataset}}.{{table}}` k1
+CROSS JOIN `{{project-id}}.{{dataset}}.{{table}}` k2
+CROSS JOIN `{{project-id}}.{{dataset}}.{{table}}` k3
 WHERE k0.name < k1.name AND k0.name < k2.name AND k0.name < k3.name AND k1.name < k2.name AND k1.name < k3.name AND k2.name < k3.name
 )
 SELECT

@@ -412,7 +412,7 @@ LANGUAGE js AS r"""
           if (i != k && j != k) {
             for (l = 0; l < 4; l++) {
               if (i != l && j != l && k != l) {
-                const val = get(job, ps[0], ts[0], ps[1], ts[1], ps[2], ts[2], ps[3]);
+                const val = get(job, ps[i], ts[i], ps[j], ts[j], ps[k], ts[k], ps[l]);
                 if (val > max) {
                   max = val;  
                 }
