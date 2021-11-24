@@ -88,6 +88,7 @@ public class KokoroService implements IKokoroService {
   private List<Kokoro> kokoros = new ArrayList<>();
   private final List<JobKokoroCombination> jobKokoroCombinations = new ArrayList<>();
   private List<KokoroFlat> kokoroFlats = new ArrayList<>();
+  private Map<String, Object> combinationInfo = new HashMap<>();
 
   private SuitableCombination sortKokoro(final JobType jobType, final List<Kokoro> kokoros) {
     final double magnification = 1.2;
@@ -704,6 +705,30 @@ public class KokoroService implements IKokoroService {
       stopWatch.stop();
       log.info("initialize: {} ms", String.format("%,d", stopWatch.getLastTaskTimeMillis()));
       */
+
+      final int len = kokoros.size();
+      int combination = 0;
+      for (int i = 0; i < len; i++) {
+        for (int j = 0; j < len; j++) {
+          if (!(i >= j)) {
+            for (int k = 0; k < len; k++) {
+              if (!(i >= k) && !(j >= k)) {
+                for (int l = 0; l < len; l++) {
+                  if (!(i >= l) && !(j >= l) && !(k >= l)) {
+                    combination++;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      final int digit = Integer.toString(combination).split("").length;
+      final double basis = Math.pow(10, digit - 2);
+      final int floored  = (int) (Math.floor(combination / basis) * basis);
+      final String combinationString = String.format("%,d", floored);
+      combinationInfo = Map.of("kokoro", len,"combination", combinationString);
+
     } catch (IOException ex) {
       throw new IllegalStateException("Failed to parse JSON file.", ex);
     }
@@ -728,28 +753,7 @@ public class KokoroService implements IKokoroService {
 
   @Override
   public Map<String, Object> getCombinationInfo() {
-    final int len = kokoros.size();
-    int combination = 0;
-    for (int i = 0; i < len; i++) {
-      for (int j = 0; j < len; j++) {
-        if (!(i >= j)) {
-          for (int k = 0; k < len; k++) {
-            if (!(i >= k) && !(j >= k)) {
-              for (int l = 0; l < len; l++) {
-                if (!(i >= l) && !(j >= l) && !(k >= l)) {
-                    combination++;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    final int digit = Integer.toString(combination).split("").length;
-    final double basis = Math.pow(10, digit - 2);
-    final int floored  = (int) (Math.floor(combination / basis) * basis);
-    final String combinationString = String.format("%,d", floored);
-    return Map.of("kokoro", len,"combination", combinationString);
+    return combinationInfo;
   }
 
   @Override
@@ -1607,6 +1611,7 @@ public class KokoroService implements IKokoroService {
       final int cost,
       final String bride,
       final Map<Integer, List<GradeType>> exclusions,
+      final Map<Integer, List<GradeType>> inclusions,
       final int limit
   ) {
     final List<Integer> nonBrides;
@@ -1638,7 +1643,7 @@ public class KokoroService implements IKokoroService {
     final List<Result> results = applicationContext
         .getBeansOfType(IKokoroCombinationRepository.class)
         .get(UPPER_UNDERSCORE.to(LOWER_HYPHEN, dwhType.name()) + repositorySuffix)
-        .get(jobType, attackType, attributeType, raceType, cost, nonBrides, exclusions, limit);
+        .get(jobType, attackType, attributeType, raceType, cost, nonBrides, exclusions, inclusions, limit);
 
     stopWatch.stop();
     log.info("{} results, {} ms",

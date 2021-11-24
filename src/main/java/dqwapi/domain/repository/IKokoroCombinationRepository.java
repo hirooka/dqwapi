@@ -19,6 +19,7 @@ public interface IKokoroCombinationRepository {
       final int cost,
       final List<Integer> nonBrides,
       final Map<Integer, List<GradeType>> exclusions,
+      final Map<Integer, List<GradeType>> inclusions,
       final int limit
   );
 

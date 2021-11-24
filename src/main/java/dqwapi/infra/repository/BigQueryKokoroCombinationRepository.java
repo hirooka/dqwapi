@@ -71,6 +71,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
       final int cost,
       final List<Integer> nonBrides,
       final Map<Integer, List<GradeType>> exclusions,
+      final Map<Integer, List<GradeType>> inclusions,
       final int limit
   ) {
     final List<String> exclusionGrades = new ArrayList<>();
@@ -82,6 +83,13 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
     }
     if (exclusionGrades.size() == 0) {
       exclusionGrades.add("");
+    }
+    final List<String> inclusionGrades = new ArrayList<>();
+    for (final Map.Entry<Integer, List<GradeType>> entry : inclusions.entrySet()) {
+      final Integer key = entry.getKey();
+      for (GradeType gradeType : entry.getValue()) {
+        inclusionGrades.add(key + "_" + gradeType.name());
+      }
     }
 
     final String column;
@@ -97,6 +105,14 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
         .map(integer -> Integer.toString(integer)).collect(Collectors.joining(","));
     final String joinedExclusions = exclusionGrades.stream()
         .collect(Collectors.joining("','", "'", "'"));
+    String replacedInclusions = "";
+    if (inclusionGrades.size() > 0) {
+      for (String str : inclusionGrades) {
+        replacedInclusions += """
+          AND (CONCAT(k0.number, '_', k0.grade) IN ('{{inclusion}}') OR CONCAT(k1.number, '_', k1.grade) IN ('{{inclusion}}') OR CONCAT(k2.number, '_', k2.grade) IN ('{{inclusion}}') OR CONCAT(k3.number, '_', k3.grade) IN ('{{inclusion}}')) 
+          """.replace("{{inclusion}}", str);
+      }
+    }
     // TODO: improve
     final RaceType replacedRaceType;
     if (raceType.equals(RaceType.NONE)) {
@@ -115,40 +131,40 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
           parameters.add("k1.op");
           parameters.add("k2.op");
           parameters.add("k3.op");
-          magicParameters.add("k0.op > 96");
-          magicParameters.add("k1.op > 96");
-          magicParameters.add("k2.op > 96");
-          magicParameters.add("k3.op > 96");
+          magicParameters.add("k0.op > 96 OR k0.number IN (115, 172, 351)");
+          magicParameters.add("k1.op > 96 OR k1.number IN (115, 172, 351)");
+          magicParameters.add("k2.op > 96 OR k2.number IN (115, 172, 351)");
+          magicParameters.add("k3.op > 96 OR k3.number IN (115, 172, 351)");
           break;
         case SPELL:
           parameters.add("k0.os");
           parameters.add("k1.os");
           parameters.add("k2.os");
           parameters.add("k3.os");
-          magicParameters.add("k0.os > 96");
-          magicParameters.add("k1.os > 96");
-          magicParameters.add("k2.os > 96");
-          magicParameters.add("k3.os > 96");
+          magicParameters.add("k0.os > 96 OR k0.number IN (115, 172, 351)");
+          magicParameters.add("k1.os > 96 OR k1.number IN (115, 172, 351)");
+          magicParameters.add("k2.os > 96 OR k2.number IN (115, 172, 351)");
+          magicParameters.add("k3.os > 96 OR k3.number IN (115, 172, 351)");
           break;
         case PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT:
           parameters.add("k0.op + k0.os");
           parameters.add("k1.op + k1.os");
           parameters.add("k2.op + k2.os");
           parameters.add("k3.op + k3.os");
-          magicParameters.add("k0.op + k0.os > 192");
-          magicParameters.add("k1.op + k1.os > 192");
-          magicParameters.add("k2.op + k2.os > 192");
-          magicParameters.add("k3.op + k3.os > 192");
+          magicParameters.add("k0.op + k0.os > 192 OR k0.number IN (115, 172, 351)");
+          magicParameters.add("k1.op + k1.os > 192 OR k1.number IN (115, 172, 351)");
+          magicParameters.add("k2.op + k2.os > 192 OR k2.number IN (115, 172, 351)");
+          magicParameters.add("k3.op + k3.os > 192 OR k3.number IN (115, 172, 351)");
           break;
         case BREATH:
           parameters.add("k0.op + k0.dx");
           parameters.add("k1.op + k1.dx");
           parameters.add("k2.op + k2.dx");
           parameters.add("k3.op + k3.dx");
-          magicParameters.add("k0.op + k0.dx > 192");
-          magicParameters.add("k1.op + k1.dx > 192");
-          magicParameters.add("k2.op + k2.dx > 192");
-          magicParameters.add("k3.op + k3.dx > 192");
+          magicParameters.add("k0.op + k0.dx > 192 OR k0.number IN (115, 172, 351)");
+          magicParameters.add("k1.op + k1.dx > 192 OR k1.number IN (115, 172, 351)");
+          magicParameters.add("k2.op + k2.dx > 192 OR k2.number IN (115, 172, 351)");
+          magicParameters.add("k3.op + k3.dx > 192 OR k3.number IN (115, 172, 351)");
           break;
         default:
           throw new IllegalArgumentException("Unknown AttackType: " + attackType);
@@ -201,6 +217,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
           .replace("{{cost}}", Integer.toString(cost))
           .replace("{{joinedNonBrides}}", joinedNonBrides)
           .replace("{{joinedExclusions}}", joinedExclusions)
+          .replace("{{inclusions}}", replacedInclusions)
           .replace("{{column}}", column)
           .replace("{{limit}}", Integer.toString(limit));
     } else if (tableType.equals(BigQueryTableType.ONE)) {

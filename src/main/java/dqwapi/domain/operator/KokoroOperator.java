@@ -45,6 +45,7 @@ public class KokoroOperator implements IKokoroOperator {
       final int level,
       final String bride,
       final Map<Integer, List<GradeType>> exclusions,
+      final Map<Integer, List<GradeType>> inclusions,
       final AttributeType attributeType,
       final AttackType attackType,
       final RaceType raceType
@@ -58,7 +59,7 @@ public class KokoroOperator implements IKokoroOperator {
     final List<Combination> combinations =
         kokoroService.getCombinations(
             jobType, attackType, attributeType, raceType,
-            cost, bride, exclusions, 50
+            cost, bride, exclusions, inclusions, 50
         );
     stopWatch.stop();
     log.info("getKokoroCombinations: {} ms",

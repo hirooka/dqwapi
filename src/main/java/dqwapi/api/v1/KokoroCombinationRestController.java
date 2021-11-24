@@ -41,6 +41,36 @@ public class KokoroCombinationRestController {
     return kokoroOperator.getCombinationInfo();
   }
 
+  Map<Integer, List<GradeType>> convert(final List<String> stringList) {
+    final Map<Integer, List<GradeType>> map = new HashMap<>();
+    if (!ObjectUtils.isEmpty(stringList)) {
+      for (String str : stringList) {
+        final int key;
+        final GradeType gradeType;
+        if (str.contains("sp") || str.contains("SP")) {
+          key = Integer.parseInt(str.substring(0, str.length() - 2));
+          gradeType = GradeType.valueOf(str.substring(str.length() - 2).toUpperCase());
+        } else {
+          final Pattern pattern = Pattern.compile("[1-9][0-9]*[sabcd]$", Pattern.CASE_INSENSITIVE);
+          if (pattern.matcher(str).find()) {
+            key = Integer.parseInt(str.substring(0, str.length() - 1));
+            gradeType = GradeType.valueOf(str.substring(str.length() - 1).toUpperCase());
+          } else {
+            throw new IllegalArgumentException("Unknown GradeType: " + str);
+          }
+        }
+        if (map.containsKey(key)) {
+          final List<GradeType> gradeTypes = new ArrayList<>(map.get(key));
+          gradeTypes.add(gradeType);
+          map.put(key, gradeTypes);
+        } else {
+          map.put(key, List.of(gradeType));
+        }
+      }
+    }
+    return map;
+  }
+
   // TODO: without MediaType.APPLICATION_JSON_UTF8_VALUE, Japanese in response on macOS, iOS is be garbled
   @GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
   List<KokoroCombinationResult> combinations(
@@ -61,8 +91,11 @@ public class KokoroCombinationRestController {
               defaultValue = "フローラ"))
       @RequestParam(value = "b", required = false) String bride,
 
-      @Parameter(description = "除外するこころのグレード (例えば、こころIDが123でグレードがSのこころを除外したい場合は、123s)")
+      @Parameter(description = "除外するこころのグレード (例えば、ばんごうが123でグレードがSのこころを除外したい場合は、123s)")
       @RequestParam(value = "e", required = false) List<String> exclusions,
+
+      @Parameter(description = "必ず含むこころのグレード (例えば、ばんごうが123でグレードがSのこころを必ず含みたい場合は、123s)")
+      @RequestParam(value = "i", required = false) List<String> inclusions,
 
       @Parameter(description = "属性",
           schema = @Schema(allowableValues = {
@@ -85,8 +118,8 @@ public class KokoroCombinationRestController {
       @RequestParam(value = "r", required = false) RaceType raceType
   ) {
     log.info(
-        "jobType: {}, level: {}, bride: {}, exclusions: {}, attribute: {}, attack: {}, race: {}",
-        jobType, level, bride, exclusions, attributeType, attackType, raceType);
+        "jobType: {}, level: {}, bride: {}, exclusions: {}, inclusions: {}, attribute: {}, attack: {}, race: {}",
+        jobType, level, bride, exclusions, inclusions, attributeType, attackType, raceType);
     if (ObjectUtils.isEmpty(jobType)) {
       jobType = JobType.BATTLE_MASTER;
     }
@@ -100,33 +133,8 @@ public class KokoroCombinationRestController {
         throw new IllegalArgumentException("Unknown bride: " + bride);
       }
     }
-    final Map<Integer, List<GradeType>> excludeMap = new HashMap<>();
-    if (!ObjectUtils.isEmpty(exclusions)) {
-      for (String str : exclusions) {
-        log.info("{}", str);
-        final int key;
-        final GradeType gradeType;
-        if (str.contains("sp") || str.contains("SP")) {
-          key = Integer.parseInt(str.substring(0, str.length() - 2));
-          gradeType = GradeType.valueOf(str.substring(str.length() - 2).toUpperCase());
-        } else {
-          final Pattern pattern = Pattern.compile("[1-9][0-9]*[sabcd]$", Pattern.CASE_INSENSITIVE);
-          if (pattern.matcher(str).find()) {
-            key = Integer.parseInt(str.substring(0, str.length() - 1));
-            gradeType = GradeType.valueOf(str.substring(str.length() - 1).toUpperCase());
-          } else {
-            throw new IllegalArgumentException("Unknown GradeType: " + str);
-          }
-        }
-        if (excludeMap.containsKey(key)) {
-          final List<GradeType> gradeTypes = new ArrayList<>(excludeMap.get(key));
-          gradeTypes.add(gradeType);
-          excludeMap.put(key, gradeTypes);
-        } else {
-          excludeMap.put(key, List.of(gradeType));
-        }
-      }
-    }
+    final Map<Integer, List<GradeType>> exclusionMap = convert(exclusions);
+    final Map<Integer, List<GradeType>> inclusionMap = convert(inclusions);
     if (ObjectUtils.isEmpty(attributeType)) {
       attributeType = AttributeType.DEIN;
     }
@@ -137,7 +145,7 @@ public class KokoroCombinationRestController {
       raceType = RaceType.NONE;
     }
     return kokoroOperator.getCombinations(
-        jobType, level, bride, excludeMap, attributeType, attackType, raceType
+        jobType, level, bride, exclusionMap, inclusionMap, attributeType, attackType, raceType
     );
   }
 }

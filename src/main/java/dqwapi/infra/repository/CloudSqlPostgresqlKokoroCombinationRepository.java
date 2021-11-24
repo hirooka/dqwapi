@@ -32,6 +32,7 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
       final int cost,
       final List<Integer> nonBrides,
       final Map<Integer, List<GradeType>> exclusions,
+      final Map<Integer, List<GradeType>> inclusions,
       final int limit
   ) {
     final List<String> exclusionGrades = new ArrayList<>();
@@ -568,10 +569,11 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
       final int cost,
       final List<Integer> nonBrides,
       final Map<Integer, List<GradeType>> exclusions,
+      final Map<Integer, List<GradeType>> inclusions,
       final int limit
   ) {
     return convertResult(
-        getObjects(jobType, attackType, attributeType, raceType, cost, nonBrides, exclusions, limit)
+        getObjects(jobType, attackType, attributeType, raceType, cost, nonBrides, exclusions, inclusions, limit)
     );
   }
 }

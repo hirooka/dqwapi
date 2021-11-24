@@ -92,7 +92,7 @@ public class DamageOperator implements IDamageOperator {
           final List<Combination> combinations =
               kokoroService.getCombinations(
                   jobType, skill.getAttack(), skill.getAttribute(), raceType,
-                  cost, bride, exclusions, 50
+                  cost, bride, exclusions, null,50
               );
           stopWatch.stop();
           log.info("getKokoroCombinations: {} ms", stopWatch.getLastTaskTimeMillis());

@@ -51,6 +51,7 @@ AND CONCAT(k0.number, '_', k0.grade) NOT IN ({{joinedExclusions}})
 AND CONCAT(k1.number, '_', k1.grade) NOT IN ({{joinedExclusions}})
 AND CONCAT(k2.number, '_', k2.grade) NOT IN ({{joinedExclusions}})
 AND CONCAT(k3.number, '_', k3.grade) NOT IN ({{joinedExclusions}})
+{{inclusions}}
 ORDER BY {{column}} DESC limit {{limit}}
 )
 SELECT

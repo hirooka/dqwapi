@@ -18,6 +18,7 @@ public interface IKokoroOperator {
       final int level,
       final String bride,
       final Map<Integer, List<GradeType>> exclusions,
+      final Map<Integer, List<GradeType>> inclusions,
       final AttributeType attributeType,
       final AttackType attackType,
       final RaceType raceType

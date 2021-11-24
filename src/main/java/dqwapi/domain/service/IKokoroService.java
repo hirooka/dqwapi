@@ -37,6 +37,7 @@ public interface IKokoroService {
       final int cost,
       final String bride,
       final Map<Integer, List<GradeType>> exclusions,
+      final Map<Integer, List<GradeType>> inclusions,
       final int limit
   );
 
