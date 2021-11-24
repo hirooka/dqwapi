@@ -52,7 +52,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
   void init() {
     final String sql = "gcp-big-query.txt";
     final Resource resource = new ClassPathResource(sql);
-    final String sqlTemplate = "gcp-big-query-template.txt";
+    final String sqlTemplate = "gcp-big-query-template-filtered.txt";
     final Resource resourceTemplate = new ClassPathResource(sqlTemplate);
     try {
       query = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
@@ -108,30 +108,47 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
     final String replacedQuery;
     if (tableType.equals(BigQueryTableType.CROSS)) {
       final List<String> parameters = new ArrayList<>();
+      final List<String> magicParameters = new ArrayList<>();
       switch (attackType) {
         case SLASH, HIT:
           parameters.add("k0.op");
           parameters.add("k1.op");
           parameters.add("k2.op");
           parameters.add("k3.op");
+          magicParameters.add("k0.op > 96");
+          magicParameters.add("k1.op > 96");
+          magicParameters.add("k2.op > 96");
+          magicParameters.add("k3.op > 96");
           break;
         case SPELL:
           parameters.add("k0.os");
           parameters.add("k1.os");
           parameters.add("k2.os");
           parameters.add("k3.os");
+          magicParameters.add("k0.os > 96");
+          magicParameters.add("k1.os > 96");
+          magicParameters.add("k2.os > 96");
+          magicParameters.add("k3.os > 96");
           break;
         case PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT:
           parameters.add("k0.op + k0.os");
           parameters.add("k1.op + k1.os");
           parameters.add("k2.op + k2.os");
           parameters.add("k3.op + k3.os");
+          magicParameters.add("k0.op + k0.os > 192");
+          magicParameters.add("k1.op + k1.os > 192");
+          magicParameters.add("k2.op + k2.os > 192");
+          magicParameters.add("k3.op + k3.os > 192");
           break;
         case BREATH:
           parameters.add("k0.op + k0.dx");
           parameters.add("k1.op + k1.dx");
           parameters.add("k2.op + k2.dx");
           parameters.add("k3.op + k3.dx");
+          magicParameters.add("k0.op + k0.dx > 192");
+          magicParameters.add("k1.op + k1.dx > 192");
+          magicParameters.add("k2.op + k2.dx > 192");
+          magicParameters.add("k3.op + k3.dx > 192");
           break;
         default:
           throw new IllegalArgumentException("Unknown AttackType: " + attackType);
@@ -171,6 +188,10 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
           .replace("{{param1}}", parameters.get(1))
           .replace("{{param2}}", parameters.get(2))
           .replace("{{param3}}", parameters.get(3))
+          .replace("{{mparam0}}", magicParameters.get(0))
+          .replace("{{mparam1}}", magicParameters.get(1))
+          .replace("{{mparam2}}", magicParameters.get(2))
+          .replace("{{mparam3}}", magicParameters.get(3))
           .replace("{{attack}}", replacedAttackType.name().toLowerCase())
           .replace("{{attribute}}", attributeType.name().toLowerCase())
           .replace("{{Attribute}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, attributeType.name()))
