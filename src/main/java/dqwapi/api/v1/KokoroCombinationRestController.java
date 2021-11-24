@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
+
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
@@ -101,8 +103,21 @@ public class KokoroCombinationRestController {
     final Map<Integer, List<GradeType>> excludeMap = new HashMap<>();
     if (!ObjectUtils.isEmpty(exclusions)) {
       for (String str : exclusions) {
-        final int key = Integer.parseInt(str.substring(0, str.length() - 1));
-        final GradeType gradeType = GradeType.valueOf(str.substring(str.length() - 1).toUpperCase());
+        log.info("{}", str);
+        final int key;
+        final GradeType gradeType;
+        if (str.contains("sp") || str.contains("SP")) {
+          key = Integer.parseInt(str.substring(0, str.length() - 2));
+          gradeType = GradeType.valueOf(str.substring(str.length() - 2).toUpperCase());
+        } else {
+          final Pattern pattern = Pattern.compile("[1-9][0-9]*[sabcd]$", Pattern.CASE_INSENSITIVE);
+          if (pattern.matcher(str).find()) {
+            key = Integer.parseInt(str.substring(0, str.length() - 1));
+            gradeType = GradeType.valueOf(str.substring(str.length() - 1).toUpperCase());
+          } else {
+            throw new IllegalArgumentException("Unknown GradeType: " + str);
+          }
+        }
         if (excludeMap.containsKey(key)) {
           final List<GradeType> gradeTypes = new ArrayList<>(excludeMap.get(key));
           gradeTypes.add(gradeType);
