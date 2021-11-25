@@ -2,11 +2,13 @@ package dqwapi.domain.operator;
 
 import dqwapi.domain.model.common.AttackType;
 import dqwapi.domain.model.common.AttributeType;
+import dqwapi.domain.model.common.HealingType;
 import dqwapi.domain.model.common.RaceType;
 import dqwapi.domain.model.damage.SimplifiedSlot;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.Combination;
 import dqwapi.domain.model.kokoro.Damage;
+import dqwapi.domain.model.kokoro.Healing;
 import dqwapi.domain.model.kokoro.KokoroCombinationResult;
 import dqwapi.domain.model.kokoro.GradeType;
 import dqwapi.domain.model.kokoro.Slot;
@@ -91,6 +93,21 @@ public class KokoroOperator implements IKokoroOperator {
         }
       }
 
+      int healingSkillMagnification = 100;
+      int healingSpellMagnification = 100;
+      int healingSpecialtyMagnification = 100;
+      for (final Healing healing : combination.getHealings()) {
+        if (healing.getType().equals(HealingType.SKILL)) {
+          healingSkillMagnification += healing.getMagnification();
+        }
+        if (healing.getType().equals(HealingType.SPELL)) {
+          healingSpellMagnification += healing.getMagnification();
+        }
+        if (healing.getType().equals(HealingType.SPECIALTY)) {
+          healingSpecialtyMagnification += healing.getMagnification();
+        }
+      }
+
       final int basis;
       switch (attackType) {
         case SLASH:
@@ -114,12 +131,34 @@ public class KokoroOperator implements IKokoroOperator {
         default:
           throw new IllegalArgumentException("Unknown AttackType: " + attackType);
       }
-      final int value = (int) Math.ceil(
-          basis
-              * (attackMagnification / 100.0)
-              * (attributeMagnification / 100.0)
-              * (raceMagnification / 100.0)
-      );
+
+      final int value;
+      switch (attackType) {
+        case SLASH, HIT, SPELL, PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT, BREATH:
+          value = (int) Math.ceil(
+              basis
+                  * (attackMagnification / 100.0)
+                  * (attributeMagnification / 100.0)
+                  * (raceMagnification / 100.0)
+          );
+          break;
+        case HEALING_SPELL:
+          value = (int) Math.ceil(
+              basis
+                  * (healingSkillMagnification / 100.0)
+                  * (healingSpellMagnification / 100.0)
+          );
+          break;
+        case HEALING_SPECIALTY:
+          value = (int) Math.ceil(
+              basis
+                  * (healingSkillMagnification / 100.0)
+                  * (healingSpecialtyMagnification / 100.0)
+          );
+          break;
+        default:
+          throw new IllegalArgumentException("Unknown AttackType: " + attackType);
+      }
 
       final KokoroCombinationResult result = new KokoroCombinationResult();
       result.setAttribute(attributeType);
@@ -138,6 +177,9 @@ public class KokoroOperator implements IKokoroOperator {
       result.setAttributeMag(attributeMagnification);
       result.setAttackMag(attackMagnification);
       result.setRaceMag(raceMagnification);
+      result.setHealingSkillMag(healingSkillMagnification);
+      result.setHealingSpellMag(healingSpellMagnification);
+      result.setHealingSpecialtyMag(healingSpecialtyMagnification);
       final List<SimplifiedSlot> simplifiedSlots = new ArrayList<>();
       for (final Slot slot : combination.getSlots()) {
         final SimplifiedSlot simplifiedSlot = new SimplifiedSlot();

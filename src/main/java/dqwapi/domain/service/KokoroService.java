@@ -33,6 +33,7 @@ import dqwapi.domain.model.common.RaceType;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.Combination;
 import dqwapi.domain.model.kokoro.Damage;
+import dqwapi.domain.model.kokoro.Healing;
 import dqwapi.domain.model.kokoro.JobKokoroCombination;
 import dqwapi.domain.model.kokoro.Kokoro;
 import dqwapi.domain.model.kokoro.KokoroFlat;
@@ -1584,6 +1585,32 @@ public class KokoroService implements IKokoroService {
         }
       }
       combination.setDamages(damages);
+
+      final List<Healing> healings = new ArrayList<>();
+      for (Slot slot : slots) {
+        healings.addAll(slot.getKokoro().getHealings());
+      }
+      final List<Healing> mergedHealings = new ArrayList<>();
+      for (int x = 0; x < healings.size(); x++) {
+        boolean isMerged = false;
+        int mergedMagnification = healings.get(x).getMagnification();
+        for (int y = 0; y < healings.size(); y++) {
+          if (healings.get(x).getType().equals(healings.get(y).getType())) {
+            if (y > x) {
+              mergedMagnification += healings.get(y).getMagnification();
+            } else if (y < x) {
+              isMerged = true;
+            }
+          }
+        }
+        if (!isMerged) {
+          final Healing mergedHealing = new Healing();
+          mergedHealing.setType(healings.get(x).getType());
+          mergedHealing.setMagnification(mergedMagnification);
+          mergedHealings.add(mergedHealing);
+        }
+      }
+      combination.setHealings(healings);
 
       combinations.add(combination);
       log.debug("{}, {}, {}, {}",

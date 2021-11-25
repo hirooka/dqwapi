@@ -30,4 +30,7 @@ public class KokoroCombinationResult {
   private int attackMag;
   private int attributeMag;
   private int raceMag;
+  private int healingSkillMag;
+  private int healingSpellMag;
+  private int healingSpecialtyMag;
 }
