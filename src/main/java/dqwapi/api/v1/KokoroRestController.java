@@ -285,28 +285,28 @@ public class KokoroRestController {
               throw new IllegalArgumentException("Unknown damage format.");
           }
         }
-        if (!ObjectUtils.isEmpty(kokoro.getHealings())) {
-          for (Healing healing : kokoro.getHealings()) {
-            final String string = "healing" + " " + healing.getType().name();
-            final String healingString =
-                CaseUtils.toCamelCase(string, false, ' ');
-            log.debug(healingString);
 
-            switch (healingString) {
-              case "healingSkill":
-                kokoroFlat.setHealingSkill(healing.getMagnification());
-                break;
-              case "healingSpecialty":
-                kokoroFlat.setHealingSpecialty(healing.getMagnification());
-                break;
-              case "healingSpell":
-                kokoroFlat.setHealingSpell(healing.getMagnification());
-                break;
-              default:
-                throw new IllegalArgumentException("Unknown healing format.");
-            }
+        for (Healing healing : kokoro.getHealings()) {
+          final String string = "healing" + " " + healing.getType().name();
+          final String healingString =
+              CaseUtils.toCamelCase(string, false, ' ');
+          log.debug(healingString);
+
+          switch (healingString) {
+            case "healingSkill":
+              kokoroFlat.setHealingSkill(healing.getMagnification());
+              break;
+            case "healingSpecialty":
+              kokoroFlat.setHealingSpecialty(healing.getMagnification());
+              break;
+            case "healingSpell":
+              kokoroFlat.setHealingSpell(healing.getMagnification());
+              break;
+            default:
+              throw new IllegalArgumentException("Unknown healing format.");
           }
         }
+
         log.debug(kokoroFlat.toString());
         kokoroFlats.add(kokoroFlat);
       }

@@ -1626,7 +1626,7 @@ public class KokoroService implements IKokoroService {
         nonBrides = Arrays.asList(9991, 9990);
         break;
       default:
-        throw new IllegalArgumentException("Illegal Argument: set correct bride name.");
+        throw new IllegalArgumentException("Illegal Argument: set correct bride name: " + bride + ".");
     }
 
     final StopWatch stopWatch = new StopWatch();

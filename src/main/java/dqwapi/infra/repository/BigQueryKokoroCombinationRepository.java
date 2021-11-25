@@ -23,7 +23,6 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Repository;
 
 @Profile("dwh-gcp-bigquery")
@@ -45,20 +44,18 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
   private BigQueryTableType tableType;
 
   private final IBigQueryConnector bigQueryConnector;
-  private String query = "";
-  private String queryTemplate = "";
+  private String queryTemplateDamageAttribute = "";
+  private String queryTemplateDamageNoneAttribute = "";
+  private String queryTemplateHealing = "";
 
   @PostConstruct
   void init() {
-    final String sql = "gcp-big-query.txt";
-    final Resource resource = new ClassPathResource(sql);
-    final String sqlTemplate = "gcp-big-query-template-filtered.txt";
-    final Resource resourceTemplate = new ClassPathResource(sqlTemplate);
     try {
-      query = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
-      queryTemplate = IOUtils.toString(resourceTemplate.getInputStream(), StandardCharsets.UTF_8);
-    } catch (IOException e) {
-      throw new IllegalStateException("Failed to read " + sql);
+      queryTemplateDamageAttribute = IOUtils.toString(new ClassPathResource("gcp-big-query-template-damage-attribute.txt").getInputStream(), StandardCharsets.UTF_8);
+      queryTemplateDamageNoneAttribute = IOUtils.toString(new ClassPathResource("gcp-big-query-template-damage-none-attribute.txt").getInputStream(), StandardCharsets.UTF_8);
+      queryTemplateHealing = IOUtils.toString(new ClassPathResource("gcp-big-query-template-healing.txt").getInputStream(), StandardCharsets.UTF_8);
+    } catch (IOException ex) {
+      throw new IllegalStateException("Failed to read SQL template.", ex);
     }
   }
 
@@ -92,12 +89,12 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
       }
     }
 
-    final String column;
     final String parameter = switch (attackType) {
       case SLASH, HIT -> "op";
       case SPELL -> "os";
       case PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT -> "opos";
       case BREATH -> "opdx";
+      case HEALING_SPELL, HEALING_SPECIALTY -> "ds";
       default -> throw new IllegalArgumentException("Unknown AttackType: " + attackType);
     };
     final String pattern = "max_" + jobType.name().toLowerCase() + "_" + parameter + "_pattern";
@@ -105,12 +102,12 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
         .map(integer -> Integer.toString(integer)).collect(Collectors.joining(","));
     final String joinedExclusions = exclusionGrades.stream()
         .collect(Collectors.joining("','", "'", "'"));
-    String replacedInclusions = "";
+    final StringBuilder replacedInclusions = new StringBuilder();
     if (inclusionGrades.size() > 0) {
-      for (String str : inclusionGrades) {
-        replacedInclusions += """
-          AND (CONCAT(k0.number, '_', k0.grade) IN ('{{inclusion}}') OR CONCAT(k1.number, '_', k1.grade) IN ('{{inclusion}}') OR CONCAT(k2.number, '_', k2.grade) IN ('{{inclusion}}') OR CONCAT(k3.number, '_', k3.grade) IN ('{{inclusion}}')) 
-          """.replace("{{inclusion}}", str);
+      for (final String str : inclusionGrades) {
+        replacedInclusions.append("""
+            AND (CONCAT(k0.number, '_', k0.grade) IN ('{{inclusion}}') OR CONCAT(k1.number, '_', k1.grade) IN ('{{inclusion}}') OR CONCAT(k2.number, '_', k2.grade) IN ('{{inclusion}}') OR CONCAT(k3.number, '_', k3.grade) IN ('{{inclusion}}')) 
+            """.replace("{{inclusion}}", str));
       }
     }
     // TODO: improve
@@ -166,6 +163,16 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
           magicParameters.add("k2.op + k2.dx > 192 OR k2.number IN (115, 172, 351)");
           magicParameters.add("k3.op + k3.dx > 192 OR k3.number IN (115, 172, 351)");
           break;
+        case HEALING_SPELL, HEALING_SPECIALTY:
+          parameters.add("k0.ds");
+          parameters.add("k1.ds");
+          parameters.add("k2.ds");
+          parameters.add("k3.ds");
+          magicParameters.add("k0.ds > 96 OR k0.number IN (115, 172, 351)");
+          magicParameters.add("k1.ds > 96 OR k1.number IN (115, 172, 351)");
+          magicParameters.add("k2.ds > 96 OR k2.number IN (115, 172, 351)");
+          magicParameters.add("k3.ds > 96 OR k3.number IN (115, 172, 351)");
+          break;
         default:
           throw new IllegalArgumentException("Unknown AttackType: " + attackType);
       }
@@ -177,101 +184,133 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
       } else {
         replacedAttackType = attackType;
       }
+
+      final String column;
       if (raceType.equals(RaceType.NONE) || raceType.equals(RaceType.SECRET)) {
-        column = (jobType.name()
-            + "_" + attributeType.name()
-            + "_" + replacedAttackType.name()
-            + "_damage").toLowerCase();
+        switch (attackType) {
+          case SLASH, HIT, SPELL, PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT, BREATH:
+            column = (jobType.name()
+                + "_" + attributeType.name()
+                + "_" + replacedAttackType.name()
+                + "_damage").toLowerCase();
+            break;
+          case HEALING_SPELL, HEALING_SPECIALTY:
+            column = (jobType.name()
+                + "_" + replacedAttackType.name()
+                + "_damage").toLowerCase();
+            break;
+          default:
+            throw new IllegalArgumentException("Unknown AttackType: " + attackType);
+        }
       } else {
-        column = (jobType.name()
-            + "_" + attributeType.name()
-            + "_" + replacedAttackType.name()
-            + "_" + replacedRaceType.name()
-            + "_damage").toLowerCase();
+        switch (attackType) {
+          case SLASH, HIT, SPELL, PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT, BREATH:
+            column = (jobType.name()
+                + "_" + attributeType.name()
+                + "_" + replacedAttackType.name()
+                + "_" + replacedRaceType.name()
+                + "_damage").toLowerCase();
+            break;
+          case HEALING_SPELL, HEALING_SPECIALTY:
+            column = (jobType.name()
+                + "_" + replacedAttackType.name()
+                + "_damage").toLowerCase();
+            break;
+          default:
+            throw new IllegalArgumentException("Unknown AttackType: " + attackType);
+        }
       }
-      query = query.replace("$pattern", pattern)
-          .replace("$column", column)
-          .replace("$cost", Integer.toString(cost))
-          .replace("$joinedNonBrides", joinedNonBrides)
-          .replace("$joinedExclusions", joinedExclusions)
-          .replace("$limit", Integer.toString(limit));
-      replacedQuery = queryTemplate.replace("{{project-id}}", projectId)
-          .replace("{{dataset}}", dataset)
-          .replace("{{table}}", table)
-          .replace("{{JOB}}", jobType.name())
-          .replace("{{job}}", jobType.name().toLowerCase())
-          .replace("{{param0}}", parameters.get(0))
-          .replace("{{param1}}", parameters.get(1))
-          .replace("{{param2}}", parameters.get(2))
-          .replace("{{param3}}", parameters.get(3))
-          .replace("{{mparam0}}", magicParameters.get(0))
-          .replace("{{mparam1}}", magicParameters.get(1))
-          .replace("{{mparam2}}", magicParameters.get(2))
-          .replace("{{mparam3}}", magicParameters.get(3))
-          .replace("{{attack}}", replacedAttackType.name().toLowerCase())
-          .replace("{{attribute}}", attributeType.name().toLowerCase())
-          .replace("{{Attribute}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, attributeType.name()))
-          .replace("{{race}}", replacedRaceType.name().toLowerCase())
-          .replace("{{Race}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedRaceType.name()))
-          .replace("{{pattern}}", pattern)
-          .replace("{{cost}}", Integer.toString(cost))
-          .replace("{{joinedNonBrides}}", joinedNonBrides)
-          .replace("{{joinedExclusions}}", joinedExclusions)
-          .replace("{{inclusions}}", replacedInclusions)
-          .replace("{{column}}", column)
-          .replace("{{limit}}", Integer.toString(limit));
+      switch (attackType) {
+        case SLASH, HIT, SPELL, PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT, BREATH:
+          if (attributeType.equals(AttributeType.NONE)) {
+            replacedQuery = queryTemplateDamageNoneAttribute.replace("{{project-id}}", projectId)
+                .replace("{{dataset}}", dataset)
+                .replace("{{table}}", table)
+                .replace("{{JOB}}", jobType.name())
+                .replace("{{job}}", jobType.name().toLowerCase())
+                .replace("{{param0}}", parameters.get(0))
+                .replace("{{param1}}", parameters.get(1))
+                .replace("{{param2}}", parameters.get(2))
+                .replace("{{param3}}", parameters.get(3))
+                .replace("{{mparam0}}", magicParameters.get(0))
+                .replace("{{mparam1}}", magicParameters.get(1))
+                .replace("{{mparam2}}", magicParameters.get(2))
+                .replace("{{mparam3}}", magicParameters.get(3))
+                .replace("{{attack}}", replacedAttackType.name().toLowerCase())
+                .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
+                .replace("{{attribute}}", attributeType.name().toLowerCase())
+                .replace("{{Attribute}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, attributeType.name()))
+                .replace("{{race}}", replacedRaceType.name().toLowerCase())
+                .replace("{{Race}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedRaceType.name()))
+                .replace("{{pattern}}", pattern)
+                .replace("{{cost}}", Integer.toString(cost))
+                .replace("{{joinedNonBrides}}", joinedNonBrides)
+                .replace("{{joinedExclusions}}", joinedExclusions)
+                .replace("{{inclusions}}", replacedInclusions.toString())
+                .replace("{{column}}", column)
+                .replace("{{limit}}", Integer.toString(limit));
+          } else {
+            replacedQuery = queryTemplateDamageAttribute.replace("{{project-id}}", projectId)
+                .replace("{{dataset}}", dataset)
+                .replace("{{table}}", table)
+                .replace("{{JOB}}", jobType.name())
+                .replace("{{job}}", jobType.name().toLowerCase())
+                .replace("{{param0}}", parameters.get(0))
+                .replace("{{param1}}", parameters.get(1))
+                .replace("{{param2}}", parameters.get(2))
+                .replace("{{param3}}", parameters.get(3))
+                .replace("{{mparam0}}", magicParameters.get(0))
+                .replace("{{mparam1}}", magicParameters.get(1))
+                .replace("{{mparam2}}", magicParameters.get(2))
+                .replace("{{mparam3}}", magicParameters.get(3))
+                .replace("{{attack}}", replacedAttackType.name().toLowerCase())
+                .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
+                .replace("{{attribute}}", attributeType.name().toLowerCase())
+                .replace("{{Attribute}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, attributeType.name()))
+                .replace("{{race}}", replacedRaceType.name().toLowerCase())
+                .replace("{{Race}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedRaceType.name()))
+                .replace("{{pattern}}", pattern)
+                .replace("{{cost}}", Integer.toString(cost))
+                .replace("{{joinedNonBrides}}", joinedNonBrides)
+                .replace("{{joinedExclusions}}", joinedExclusions)
+                .replace("{{inclusions}}", replacedInclusions.toString())
+                .replace("{{column}}", column)
+                .replace("{{limit}}", Integer.toString(limit));
+          }
+          break;
+        case HEALING_SPELL, HEALING_SPECIALTY:
+          replacedQuery = queryTemplateHealing.replace("{{project-id}}", projectId)
+              .replace("{{dataset}}", dataset)
+              .replace("{{table}}", table)
+              .replace("{{JOB}}", jobType.name())
+              .replace("{{job}}", jobType.name().toLowerCase())
+              .replace("{{param0}}", parameters.get(0))
+              .replace("{{param1}}", parameters.get(1))
+              .replace("{{param2}}", parameters.get(2))
+              .replace("{{param3}}", parameters.get(3))
+              .replace("{{mparam0}}", magicParameters.get(0))
+              .replace("{{mparam1}}", magicParameters.get(1))
+              .replace("{{mparam2}}", magicParameters.get(2))
+              .replace("{{mparam3}}", magicParameters.get(3))
+              .replace("{{attack}}", replacedAttackType.name().toLowerCase())
+              .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
+              .replace("{{attribute}}", attributeType.name().toLowerCase())
+              .replace("{{Attribute}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, attributeType.name()))
+              .replace("{{race}}", replacedRaceType.name().toLowerCase())
+              .replace("{{Race}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedRaceType.name()))
+              .replace("{{pattern}}", pattern)
+              .replace("{{cost}}", Integer.toString(cost))
+              .replace("{{joinedNonBrides}}", joinedNonBrides)
+              .replace("{{joinedExclusions}}", joinedExclusions)
+              .replace("{{inclusions}}", replacedInclusions.toString())
+              .replace("{{column}}", column)
+              .replace("{{limit}}", Integer.toString(limit));
+          break;
+        default:
+          throw new IllegalArgumentException("Unknown AttackType: " + attackType);
+      }
     } else if (tableType.equals(BigQueryTableType.ONE)) {
-      replacedQuery = "";
-      if (raceType.equals(RaceType.NONE)) {
-        column = (jobType.name()
-            + "_" + attributeType.name()
-            + "_" + attackType.name()
-            + "_damage").toLowerCase();
-        query = "SELECT k0id, k0grade, k1id, k1grade, k2id, k2grade, k3id, k3grade, " + pattern
-            + " FROM `"
-            + "$projectId"
-            + "."
-            + "$datasetName"
-            + "."
-            + "$tableName"
-            + "`"
-            + " WHERE total_cost < " + cost
-            + " AND k0id NOT IN (" + joinedNonBrides + ")"
-            + " AND k1id NOT IN (" + joinedNonBrides + ")"
-            + " AND k2id NOT IN (" + joinedNonBrides + ")"
-            + " AND k3id NOT IN (" + joinedNonBrides + ")"
-            + " AND CONCAT(k0id, '_', k0grade) NOT IN (" + joinedExclusions + ")"
-            + " AND CONCAT(k1id, '_', k1grade) NOT IN (" + joinedExclusions + ")"
-            + " AND CONCAT(k2id, '_', k2grade) NOT IN (" + joinedExclusions + ")"
-            + " AND CONCAT(k3id, '_', k3grade) NOT IN (" + joinedExclusions + ")"
-            + " ORDER BY " + column + " DESC"
-            + " LIMIT " + limit;
-      } else {
-        column = (jobType.name()
-            + "_" + attributeType.name()
-            + "_" + attackType.name()
-            + "_" + raceType.name()
-            + "_damage").toLowerCase();
-        query = "SELECT k0id, k0grade, k1id, k1grade, k2id, k2grade, k3id, k3grade, " + pattern
-            + " FROM `"
-            + "$projectId"
-            + "."
-            + "$datasetName"
-            + "."
-            + "$tableName" + "_" + jobType.name().toLowerCase()
-            + "`"
-            + " WHERE total_cost < " + cost
-            + " AND k0id NOT IN (" + joinedNonBrides + ")"
-            + " AND k1id NOT IN (" + joinedNonBrides + ")"
-            + " AND k2id NOT IN (" + joinedNonBrides + ")"
-            + " AND k3id NOT IN (" + joinedNonBrides + ")"
-            + " AND CONCAT(k0id, '_', k0grade) NOT IN (" + joinedExclusions + ")"
-            + " AND CONCAT(k1id, '_', k1grade) NOT IN (" + joinedExclusions + ")"
-            + " AND CONCAT(k2id, '_', k2grade) NOT IN (" + joinedExclusions + ")"
-            + " AND CONCAT(k3id, '_', k3grade) NOT IN (" + joinedExclusions + ")"
-            + " ORDER BY " + column + " DESC"
-            + " LIMIT " + limit;
-      }
+      throw new UnsupportedOperationException("Not implemented: " + tableType);
     } else {
       throw new IllegalArgumentException("Unknown BigQuery table type: " + tableType);
     }

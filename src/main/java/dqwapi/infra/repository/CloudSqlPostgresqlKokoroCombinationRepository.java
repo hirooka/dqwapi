@@ -83,7 +83,7 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
               );
-            case HEALING:
+            case HEALING_SPELL, HEALING_SPECIALTY:
               return cloudSqlPostgresqlConnector.findByBattleMasterDs(
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
@@ -115,7 +115,7 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
               );
-            case HEALING:
+            case HEALING_SPELL, HEALING_SPECIALTY:
               return cloudSqlPostgresqlConnector.findBySageDs(
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
@@ -147,7 +147,7 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
               );
-            case HEALING:
+            case HEALING_SPELL, HEALING_SPECIALTY:
               return cloudSqlPostgresqlConnector.findByRangerDs(
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
@@ -179,7 +179,7 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
               );
-            case HEALING:
+            case HEALING_SPELL, HEALING_SPECIALTY:
               return cloudSqlPostgresqlConnector.findByArmamentalistDs(
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
@@ -211,7 +211,7 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
               );
-            case HEALING:
+            case HEALING_SPELL, HEALING_SPECIALTY:
               return cloudSqlPostgresqlConnector.findByPaladinDs(
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
@@ -243,7 +243,7 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
               );
-            case HEALING:
+            case HEALING_SPELL, HEALING_SPECIALTY:
               return cloudSqlPostgresqlConnector.findBySuperstarDs(
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
@@ -275,7 +275,7 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
               );
-            case HEALING:
+            case HEALING_SPELL, HEALING_SPECIALTY:
               return cloudSqlPostgresqlConnector.findByPirateDs(
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
@@ -317,7 +317,7 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
               );
-            case HEALING:
+            case HEALING_SPELL, HEALING_SPECIALTY:
               return cloudSqlPostgresqlConnector.findCombinationsByBattleMasterDs(
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
@@ -349,7 +349,7 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
               );
-            case HEALING:
+            case HEALING_SPELL, HEALING_SPECIALTY:
               return cloudSqlPostgresqlConnector.findCombinationsBySageDs(
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
@@ -381,7 +381,7 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
               );
-            case HEALING:
+            case HEALING_SPELL, HEALING_SPECIALTY:
               return cloudSqlPostgresqlConnector.findCombinationsByRangerDs(
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
@@ -413,7 +413,7 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
               );
-            case HEALING:
+            case HEALING_SPELL, HEALING_SPECIALTY:
               return cloudSqlPostgresqlConnector.findCombinationsByArmamentalistDs(
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
@@ -445,7 +445,7 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
               );
-            case HEALING:
+            case HEALING_SPELL, HEALING_SPECIALTY:
               return cloudSqlPostgresqlConnector.findCombinationsByPaladinDs(
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
@@ -477,7 +477,7 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
               );
-            case HEALING:
+            case HEALING_SPELL, HEALING_SPECIALTY:
               return cloudSqlPostgresqlConnector.findCombinationsBySuperstarDs(
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
@@ -509,7 +509,7 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades
               );
-            case HEALING:
+            case HEALING_SPELL, HEALING_SPECIALTY:
               return cloudSqlPostgresqlConnector.findCombinationsByPirateDs(
                   PageRequest.of(0, limit, Sort.Direction.DESC, column),
                   cost, nonBrides, exclusionGrades

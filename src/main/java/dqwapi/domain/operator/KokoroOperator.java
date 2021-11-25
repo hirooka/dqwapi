@@ -59,7 +59,7 @@ public class KokoroOperator implements IKokoroOperator {
     final List<Combination> combinations =
         kokoroService.getCombinations(
             jobType, attackType, attributeType, raceType,
-            cost, bride, exclusions, inclusions, 50
+            cost, bride, exclusions, inclusions, response * 2
         );
     stopWatch.stop();
     log.info("getKokoroCombinations: {} ms",
@@ -107,7 +107,8 @@ public class KokoroOperator implements IKokoroOperator {
         case BREATH:
           basis = combination.getOp() + combination.getDx();
           break;
-        case HEALING:
+        case HEALING_SPELL:
+        case HEALING_SPECIALTY:
           basis = combination.getDs();
           break;
         default:

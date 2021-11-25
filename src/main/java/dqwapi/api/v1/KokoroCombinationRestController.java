@@ -16,7 +16,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
-
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
@@ -99,13 +98,14 @@ public class KokoroCombinationRestController {
 
       @Parameter(description = "属性",
           schema = @Schema(allowableValues = {
-              "BAGI", "DEIN", "DORUMA", "GIRA", "HYADO", "IO", "JIBARIA", "MERA"
+              "NONE", "BAGI", "DEIN", "DORUMA", "GIRA", "HYADO", "IO", "JIBARIA", "MERA"
           }, defaultValue = "DEIN"))
       @RequestParam(value = "a", required = false) AttributeType attributeType,
 
       @Parameter(description = "こうげきのタイプ",
           schema = @Schema(allowableValues = {
-              "SLASH", "HIT", "SPELL", "PHYSICS_SPELL_SLASH", "PHYSICS_SPELL_HIT", "BREATH"
+              "SLASH", "HIT", "SPELL", "PHYSICS_SPELL_SLASH", "PHYSICS_SPELL_HIT", "BREATH",
+              "HEALING_SPELL", "HEALING_SPECIALTY"
           }, defaultValue = "SLASH"))
       @RequestParam(value = "k", required = false) AttackType attackType,
 

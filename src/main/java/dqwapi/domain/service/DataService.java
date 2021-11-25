@@ -526,7 +526,8 @@ public class DataService implements IDataService {
                         indexes = Arrays.asList(i, j, k, l);
                       }
                       break;
-                    case HEALING:
+                    case HEALING_SPELL:
+                    case HEALING_SPECIALTY:
                       final int healing = getParameter(
                           jobType,
                           kokoros.get(i).getDs(), kokoros.get(i).getType(),
@@ -656,7 +657,7 @@ public class DataService implements IDataService {
 
     final MaxPattern dsMaxPattern = getMaxPattern(
         jobType,
-        AttackType.HEALING,
+        AttackType.HEALING_SPELL,
         Arrays.asList(
             k0, k1, k2, k3
         )

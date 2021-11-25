@@ -13,6 +13,7 @@ public class Combination {
   private UUID uuid = UUID.randomUUID();
   private List<Slot> slots;
   private List<Damage> damages;
+  private List<Healing> healings;
   private int hp;
   private int mp;
   private int op;
