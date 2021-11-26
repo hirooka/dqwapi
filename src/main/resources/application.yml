@@ -44,6 +44,7 @@ dqwapi:
   kokoro-flat-json: kokoro-flat.json
   kokoro-persist: false
   response: 20
+  run-on-cloud: \${RUN_ON_CLOUD:false}
 
 gcp:
   project-id: hirooka-pro
@@ -63,6 +64,7 @@ spring:
     activate:
       on-profile: dwh-gcp-bigquery
 gcp:
+  run-on-cloud: \${RUN_ON_CLOUD:false}
   big-query:
     dataset: dqwapi
     table: kokoro

@@ -23,18 +23,24 @@ public class OpenApiConfig {
   @Value("${dqwapi.fqdn}")
   private String fqdn;
 
+  @Value("${dqwapi.run-on-cloud}")
+  private boolean runOnCloud;
+
   private final Environment environment;
 
   @Bean
   public OpenAPI customOpenApi() {
 
     final String title = "DQW API";
-    final String description = "最適なこころの組み合わせを提供するAPIです。";
+    final String description = "ドラクエウォークの上級職において最適だと考えられるこころの組み合わせを提案するAPIです。";
     if (ObjectUtils.isEmpty(CloudPlatform.getActive(environment)) || CloudPlatform.getActive(environment).equals(CloudPlatform.NONE)) {
-      return new OpenAPI()
-          .addServersItem(new Server().url("https://" + fqdn))
-          .info(new Info().title(title).version(version).description(description));
-      //return new OpenAPI().info(new Info().title(title).version(version).description(description));
+      if (runOnCloud) {
+        return new OpenAPI()
+            .addServersItem(new Server().url("https://" + fqdn))
+            .info(new Info().title(title).version(version).description(description));
+      } else {
+        return new OpenAPI().info(new Info().title(title).version(version).description(description));
+      }
     } else {
       log.info("CloudPlatform: {}", CloudPlatform.getActive(environment).name());
       return new OpenAPI()

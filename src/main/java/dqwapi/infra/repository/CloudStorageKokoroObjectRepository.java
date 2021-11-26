@@ -9,28 +9,31 @@ import dqwapi.domain.model.kokoro.Kokoro;
 import dqwapi.domain.model.kokoro.KokoroFlat;
 import dqwapi.domain.repository.IKokoroObjectRepository;
 import dqwapi.infra.gcp.cloudstorage.ICloudStorageConnector;
-import lombok.AllArgsConstructor;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.text.CaseUtils;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StopWatch;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
+@Profile("dwh-gcp-bigquery")
 @Slf4j
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Repository
 public class CloudStorageKokoroObjectRepository implements IKokoroObjectRepository {
 
   private final ICloudStorageConnector cloudStorageConnector;
+
+  @Value("${gcp.run-on-cloud}")
+  private boolean runOnCloud;
 
   @Override
   public void save(final String file) {
@@ -264,7 +267,11 @@ public class CloudStorageKokoroObjectRepository implements IKokoroObjectReposito
         kokoroFlatNdJsonString.append("\n");
       }
 
-      cloudStorageConnector.uploadObject(kokoroFlatNdJsonString.toString());
+      if (runOnCloud) {
+        cloudStorageConnector.uploadObject(kokoroFlatNdJsonString.toString());
+      } else {
+        log.info("Did not upload kokoro NDJSON to Cloud Storage due to running on local.");
+      }
 
       stopWatch.stop();
       log.info(
