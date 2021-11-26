@@ -1,5 +1,37 @@
 [
   {
+    "number": 426,
+    "name": "ローズバトラー",
+    "grade": "S",
+    "type": "RED",
+    "race": "PLANT",
+    "cost": 116,
+    "plusCost": 4,
+    "hp":  73,
+    "mp":  41,
+    "op": 100,
+    "dp":  54,
+    "os":  14,
+    "ds":  14,
+    "sp":  76,
+    "dx":  67,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "PLANT",
+        "magnification": 10
+      }
+    ],
+    "healings": []
+  },
+  {
     "number": 422,
     "name": "グレイトライドン",
     "grade": "S",

@@ -43,6 +43,7 @@ import dqwapi.domain.model.kokoro.SuitableCombination;
 import dqwapi.domain.repository.ICombinationRepository;
 import dqwapi.domain.repository.IKokoroCombinationRepository;
 import dqwapi.domain.repository.IKokoroFlatRepository;
+import dqwapi.domain.repository.IKokoroObjectRepository;
 import dqwapi.domain.repository.IKokoroRepository;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -82,6 +83,7 @@ public class KokoroService implements IKokoroService {
   private final IKokoroRepository kokoroRepository;
   private final ICombinationRepository combinationRepository;
   private final IKokoroFlatRepository kokoroFlatRepository;
+  private final IKokoroObjectRepository kokoroObjectRepository;
 
   private final String repositorySuffix = "-repository";
 
@@ -729,6 +731,8 @@ public class KokoroService implements IKokoroService {
       final int floored  = (int) (Math.floor(combination / basis) * basis);
       final String combinationString = String.format("%,d", floored);
       combinationInfo = Map.of("kokoro", len,"combination", combinationString);
+
+      kokoroObjectRepository.save(kokoroJson);
 
     } catch (IOException ex) {
       throw new IllegalStateException("Failed to parse JSON file.", ex);

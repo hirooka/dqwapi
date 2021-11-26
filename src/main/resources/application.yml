@@ -67,6 +67,8 @@ gcp:
     dataset: dqwapi
     table: kokoro
     table-type: CROSS
+  cloud-storage:
+    bucket: dqwapi
 ---
 spring:
   config:
