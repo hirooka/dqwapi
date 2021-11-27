@@ -4,8 +4,8 @@ import dqwapi.domain.model.common.AttackType;
 import dqwapi.domain.model.common.AttributeType;
 import dqwapi.domain.model.common.RaceType;
 import dqwapi.domain.model.job.JobType;
-import dqwapi.domain.model.kokoro.KokoroCombinationResult;
 import dqwapi.domain.model.kokoro.GradeType;
+import dqwapi.domain.model.kokoro.KokoroCombinationResult;
 import dqwapi.domain.operator.IKokoroOperator;
 import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -70,7 +70,8 @@ public class KokoroCombinationRestController {
     return map;
   }
 
-  // TODO: without MediaType.APPLICATION_JSON_UTF8_VALUE, Japanese in response on macOS, iOS is be garbled
+  // TODO: without MediaType.APPLICATION_JSON_UTF8_VALUE,
+  //  Japanese in response on macOS, iOS is be garbled
   @GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
   List<KokoroCombinationResult> combinations(
 
