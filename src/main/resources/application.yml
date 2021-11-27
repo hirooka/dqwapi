@@ -37,7 +37,8 @@ springdoc:
 
 dqwapi:
   version: $project.version
-  commit-id: ${project.ext.gitProps['git.commit.id.abbrev']}
+  git-build-version: ${project.ext.gitProps['git.build.version']}
+  git-commit-id: ${project.ext.gitProps['git.commit.id.abbrev']}
   fqdn: dqwapi.hirooka.pro
   path-prefix:
   kokoro-json: kokoro.json

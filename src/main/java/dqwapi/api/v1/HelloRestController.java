@@ -19,7 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloRestController {
 
-  @Value("${dqwapi.commit-id}")
+  @Value("${dqwapi.git-build-version}")
+  private String version;
+
+  @Value("${dqwapi.git-commit-id}")
   private String commitId;
 
   @GetMapping
@@ -28,6 +31,7 @@ public class HelloRestController {
     return new Hello(
         instant.atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ISO_ZONED_DATE_TIME),
         instant.toEpochMilli(),
+        version,
         commitId
     );
   }

@@ -10,5 +10,6 @@ import lombok.NoArgsConstructor;
 public class Hello {
   private String date;
   private long epoch;
+  private String version;
   private String commitId;
 }
