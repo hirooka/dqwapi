@@ -8,7 +8,7 @@ steps:
   - 'deploy'
   - 'dqwapi'
   - '--image'
-  - 'asia-northeast1-docker.pkg.dev/hirooka-pro/dqwapi/dqwapiA'
+  - 'asia-northeast1-docker.pkg.dev/hirooka-pro/dqwapi/dqwapi'
   - '--region'
   - 'asia-northeast1'
 images:
