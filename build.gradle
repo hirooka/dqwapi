@@ -1,13 +1,14 @@
 plugins {
   id 'org.springframework.boot' version '2.6.0'
   id 'com.gorylenko.gradle-git-properties' version '2.3.1'
+  id 'com.palantir.git-version' version '0.12.3'
   id 'checkstyle'
 }
 apply plugin: 'java'
 apply plugin: 'io.spring.dependency-management'
 
 group 'pro.hirooka'
-version '0.9.20'
+version '0.9.21'
 
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
