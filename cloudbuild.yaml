@@ -1,18 +1,17 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'asia-northeast1-docker.pkg.dev/hirooka-pro/dqwapi/dqwapi:$COMMIT_SHA', '.']
+  args: ['build', '-t', 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/dqwapi/dqwapi', '.']
+images:
+  - 'asia-northeast1-docker.pkg.dev/hirooka-pro/dqwapi/dqwapi'
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
   args:
-  - 'run'
-  - 'services'
-  - 'update'
-  - 'dqwapi'
-  - '--image'
-  - 'asia-northeast1-docker.pkg.dev/hirooka-pro/dqwapi/dqwapi:$COMMIT_SHA'
-  - '--region'
-  - 'asia-northeast1'
-  - '--platform'
-  - 'managed'
-images:
-  - 'asia-northeast1-docker.pkg.dev/hirooka-pro/dqwapi/dqwapi:$COMMIT_SHA'
+    - 'run'
+    - 'deploy'
+    - 'dqwapi'
+    - '--image'
+    - 'asia-northeast1-docker.pkg.dev/hirooka-pro/dqwapi/dqwapi'
+    - '--region'
+    - 'asia-northeast1'
+    - '--platform'
+    - 'managed'
