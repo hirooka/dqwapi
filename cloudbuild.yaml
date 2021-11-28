@@ -5,7 +5,8 @@ steps:
   entrypoint: gcloud
   args:
   - 'run'
-  - 'deploy'
+  - 'service'
+  - 'update'
   - 'dqwapi'
   - '--image'
   - 'asia-northeast1-docker.pkg.dev/hirooka-pro/dqwapi/dqwapi'
