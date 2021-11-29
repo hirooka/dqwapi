@@ -32,6 +32,30 @@
     "healings": []
   },
   {
+    "number": 425,
+    "name": "わたぼう",
+    "grade": "A",
+    "type": "GREEN",
+    "race": "",
+    "cost": 99,
+    "plusCost": 3,
+    "hp":  96,
+    "mp":  86,
+    "op":  32,
+    "dp":  59,
+    "os":  48,
+    "ds":  82,
+    "sp":  43,
+    "dx":  35,
+    "damages": [],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 5
+      }
+    ]
+  },
+  {
     "number": 422,
     "name": "グレイトライドン",
     "grade": "S",
