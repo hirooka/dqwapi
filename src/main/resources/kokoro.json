@@ -36,7 +36,7 @@
     "name": "わたぼう",
     "grade": "A",
     "type": "GREEN",
-    "race": "",
+    "race": "SECRET",
     "cost": 99,
     "plusCost": 3,
     "hp":  96,
