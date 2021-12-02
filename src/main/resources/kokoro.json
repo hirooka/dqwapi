@@ -1,5 +1,43 @@
 [
   {
+    "number": 427,
+    "name": "にじくじゃく",
+    "grade": "S",
+    "type": "PURPLE",
+    "race": "BIRD",
+    "cost": 117,
+    "plusCost": 4,
+    "hp":  67,
+    "mp":  90,
+    "op":   8,
+    "dp":  42,
+    "os": 125,
+    "ds":  51,
+    "sp": 100,
+    "dx":  84,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "healings": []
+  },
+  {
     "number": 426,
     "name": "ローズバトラー",
     "grade": "S",
@@ -34,24 +72,24 @@
   {
     "number": 425,
     "name": "わたぼう",
-    "grade": "A",
+    "grade": "S",
     "type": "GREEN",
     "race": "SECRET",
     "cost": 99,
-    "plusCost": 3,
-    "hp":  96,
-    "mp":  86,
-    "op":  32,
-    "dp":  59,
-    "os":  48,
-    "ds":  82,
-    "sp":  43,
-    "dx":  35,
+    "plusCost": 4,
+    "hp": 102,
+    "mp":  91,
+    "op":  34,
+    "dp":  63,
+    "os":  51,
+    "ds":  87,
+    "sp":  46,
+    "dx":  37,
     "damages": [],
     "healings": [
       {
         "type": "SKILL",
-        "magnification": 5
+        "magnification": 7
       }
     ]
   },
