@@ -23,7 +23,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;
-import org.springframework.util.ObjectUtils;
 import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,7 +53,7 @@ public class KokoroRestController {
   }
 
   @Hidden
-  @GetMapping("k")
+  @GetMapping("min")
   public List<Map<String, String>> get() {
     return kokoroService.get();
   }
