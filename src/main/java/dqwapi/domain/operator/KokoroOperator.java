@@ -167,6 +167,8 @@ public class KokoroOperator implements IKokoroOperator {
       result.setDs(combination.getDs());
       result.setSp(combination.getSp());
       result.setDx(combination.getDx());
+      result.setOpos(combination.getOp() + combination.getOs());
+      result.setOpdx(combination.getOp() + combination.getDx());
       result.setCost(combination.getCost());
       result.setAttributeMag(attributeMagnification);
       result.setAttackMag(attackMagnification);

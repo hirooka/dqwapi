@@ -26,6 +26,8 @@ public class KokoroCombinationResult {
   private int ds;
   private int sp;
   private int dx;
+  private int opos;
+  private int opdx;
   private int cost;
   private int attackMag;
   private int attributeMag;
