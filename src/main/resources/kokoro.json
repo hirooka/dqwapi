@@ -1,5 +1,93 @@
 [
   {
+    "number": 429,
+    "name": "じげんりゅう",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "DRAGON",
+    "cost": 120,
+    "plusCost": 4,
+    "hp":  85,
+    "mp":  48,
+    "op":  98,
+    "dp":  56,
+    "os":  19,
+    "ds":  17,
+    "sp": 132,
+    "dx": 139,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 429,
+    "name": "じげんりゅう",
+    "grade": "A",
+    "type": "BLUE",
+    "race": "DRAGON",
+    "cost": 120,
+    "plusCost": 3,
+    "hp":  74,
+    "mp":  40,
+    "op":  89,
+    "dp":  48,
+    "os":  17,
+    "ds":  15,
+    "sp": 113,
+    "dx": 123,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 4
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 4
+      },
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 6
+      }
+    ],
+    "healings": []
+  },
+  {
     "number": 427,
     "name": "にじくじゃく",
     "grade": "S",
