@@ -1,5 +1,49 @@
 [
   {
+    "number": 430,
+    "name": "スライムボーグ",
+    "grade": "S",
+    "type": "RED",
+    "race": "SLIME",
+    "cost": 116,
+    "plusCost": 4,
+    "hp": 137,
+    "mp":  58,
+    "op":  78,
+    "dp":  59,
+    "os":  16,
+    "ds":  16,
+    "sp":  59,
+    "dx":  51,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "MACHINE",
+        "magnification": 5
+      }
+    ],
+    "healings": []
+  },
+  {
     "number": 429,
     "name": "じげんりゅう",
     "grade": "S",
@@ -83,6 +127,32 @@
         "attribute": "HYADO",
         "race": "NONE",
         "magnification": 6
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 428,
+    "name": "ワルぼう",
+    "grade": "S",
+    "type": "PURPLE",
+    "race": "SECRET",
+    "cost": 92,
+    "plusCost": 4,
+    "hp":  84,
+    "mp": 101,
+    "op":  16,
+    "dp":  52,
+    "os":  81,
+    "ds":  32,
+    "sp":  62,
+    "dx":  72,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
       }
     ],
     "healings": []
