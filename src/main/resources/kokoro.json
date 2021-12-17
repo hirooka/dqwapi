@@ -8651,6 +8651,37 @@
   {
     "number": 132,
     "name": "あくま神官",
+    "grade": "SP",
+    "type": "GREEN",
+    "race": "DEVIL",
+    "cost": 95,
+    "plusCost": 4,
+    "hp":  90,
+    "mp":  88,
+    "op":  37,
+    "dp":  57,
+    "os":  55,
+    "ds":  94,
+    "sp": 101,
+    "dx":  38,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 10
+      }
+    ]
+  },
+  {
+    "number": 132,
+    "name": "あくま神官",
     "grade": "S",
     "type": "GREEN",
     "race": "DEVIL",
