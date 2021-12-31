@@ -1,5 +1,173 @@
 [
   {
+    "number": 432,
+    "name": "サンライズスライム",
+    "grade": "S",
+    "type": "RED",
+    "race": "SLIME",
+    "cost": 122,
+    "plusCost": 4,
+    "hp": 120,
+    "mp":  51,
+    "op":  95,
+    "dp":  62,
+    "os":  17,
+    "ds":  17,
+    "sp":  78,
+    "dx":  67,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 432,
+    "name": "サンライズスライム",
+    "grade": "A",
+    "type": "RED",
+    "race": "SLIME",
+    "cost": 122,
+    "plusCost": 3,
+    "hp":  96,
+    "mp":  41,
+    "op":  76,
+    "dp":  50,
+    "os":  13,
+    "ds":  13,
+    "sp":  63,
+    "dx":  54,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 4
+      },
+      {
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 4
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 4
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 4
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 431,
+    "name": "とらおとこ",
+    "grade": "S",
+    "type": "YELLOW",
+    "race": "ANIMAL",
+    "cost": 35,
+    "plusCost": 4,
+    "hp":  28,
+    "mp":  10,
+    "op":  39,
+    "dp":  16,
+    "os":  10,
+    "ds":   6,
+    "sp":  16,
+    "dx":   3,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "healings": []
+  },
+  {
     "number": 430,
     "name": "スライムボーグ",
     "grade": "S",
