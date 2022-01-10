@@ -1,5 +1,105 @@
 [
   {
+    "number": 433,
+    "name": "ゴールデンゴーレム",
+    "grade": "S",
+    "type": "YELLOW",
+    "race": "MATERIAL",
+    "cost": 122,
+    "plusCost": 4,
+    "hp": 112,
+    "mp": 100,
+    "op": 105,
+    "dp": 69,
+    "os": 21,
+    "ds": 42,
+    "sp": 77,
+    "dx": 31,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "MATERIAL",
+        "magnification": 10
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 433,
+    "name": "ゴールデンゴーレム",
+    "grade": "A",
+    "type": "YELLOW",
+    "race": "MATERIAL",
+    "cost": 122,
+    "plusCost": 3,
+    "hp":  87,
+    "mp":  78,
+    "op":  82,
+    "dp":  54,
+    "os":  18,
+    "ds":  34,
+    "sp":  82,
+    "dx":  24,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "MATERIAL",
+        "magnification": 5
+      }
+    ],
+    "healings": []
+  },
+  {
     "number": 432,
     "name": "サンライズスライム",
     "grade": "S",
