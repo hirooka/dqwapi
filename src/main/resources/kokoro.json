@@ -1,5 +1,99 @@
 [
   {
+    "number": 435,
+    "name": "ドラゴンライダー",
+    "grade": "S",
+    "type": "RED",
+    "race": "DRAGON",
+    "cost": 119,
+    "plusCost": 4,
+    "hp": 107,
+    "mp":  46,
+    "op": 100,
+    "dp":  60,
+    "os":  16,
+    "ds":  16,
+    "sp":  84,
+    "dx":  74,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 434,
+    "name": "アイスフライ",
+    "grade": "S",
+    "type": "PURPLE",
+    "race": "DRAGON",
+    "cost": 95,
+    "plusCost": 4,
+    "hp":  76,
+    "mp": 113,
+    "op":  16,
+    "dp":  20,
+    "os":  84,
+    "ds":  33,
+    "sp":  80,
+    "dx":  84,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "healings": []
+  },
+  {
     "number": 433,
     "name": "ゴールデンゴーレム",
     "grade": "S",
@@ -10,11 +104,11 @@
     "hp": 112,
     "mp": 100,
     "op": 105,
-    "dp": 69,
-    "os": 21,
-    "ds": 42,
-    "sp": 77,
-    "dx": 31,
+    "dp":  69,
+    "os":  21,
+    "ds":  42,
+    "sp":  77,
+    "dx":  31,
     "damages": [
       {
         "attack": "SLASH",
