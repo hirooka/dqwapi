@@ -1,5 +1,55 @@
 [
   {
+    "number": 436,
+    "name": "ホワイトパンサー",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "ANIMAL",
+    "cost": 69,
+    "plusCost": 4,
+    "hp":  60,
+    "mp":  30,
+    "op":  70,
+    "dp":  35,
+    "os":  26,
+    "ds":  29,
+    "sp":  70,
+    "dx":  88,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ],
+    "healings": []
+  },
+  {
     "number": 435,
     "name": "ドラゴンライダー",
     "grade": "S",
