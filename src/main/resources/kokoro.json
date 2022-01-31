@@ -1,5 +1,112 @@
 [
   {
+    "number": 438,
+    "name": "豪氷天グリザード",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "SECRET",
+    "cost": 122,
+    "plusCost": 4,
+    "hp": 135,
+    "mp":  82,
+    "op":  94,
+    "dp":  90,
+    "os":  42,
+    "ds":  39,
+    "sp": 120,
+    "dx": 120,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 12
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 438,
+    "name": "豪氷天グリザード",
+    "grade": "A",
+    "type": "BLUE",
+    "race": "SECRET",
+    "cost": 122,
+    "plusCost": 3,
+    "hp": 108,
+    "mp":  65,
+    "op":  75,
+    "dp":  71,
+    "os":  34,
+    "ds":  30,
+    "sp":  95,
+    "dx":  95,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 9
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 437,
+    "name": "ひょうけつのきし",
+    "grade": "S",
+    "type": "YELLOW",
+    "race": "DEVIL",
+    "cost": 114,
+    "plusCost": 4,
+    "hp":  95,
+    "mp":  51,
+    "op":  76,
+    "dp":  50,
+    "os":  34,
+    "ds":  68,
+    "sp":  30,
+    "dx":  48,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 5
+      }
+    ]
+  },
+  {
     "number": 436,
     "name": "ホワイトパンサー",
     "grade": "S",
