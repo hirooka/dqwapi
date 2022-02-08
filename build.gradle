@@ -33,7 +33,7 @@ dependencies {
   implementation platform('com.google.cloud:libraries-bom:24.2.0')
   implementation 'com.google.cloud:google-cloud-bigquery'
   implementation 'com.google.cloud:google-cloud-storage'
-  implementation group: 'com.google.cloud.sql', name: 'postgres-socket-factory', version: '1.4.2'
+  implementation group: 'com.google.cloud.sql', name: 'postgres-socket-factory', version: '1.4.3'
   implementation group: 'org.hsqldb', name: 'hsqldb', version: '2.6.1'
 }
 
