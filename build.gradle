@@ -8,7 +8,7 @@ apply plugin: 'java'
 apply plugin: 'io.spring.dependency-management'
 
 group 'pro.hirooka'
-version '0.9.44'
+version '0.9.45'
 
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
@@ -42,7 +42,7 @@ gitProperties {
 }
 
 checkstyle {
-  toolVersion '9.2'
+  toolVersion '9.3'
 }
 
 processResources {
