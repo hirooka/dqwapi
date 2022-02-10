@@ -1,5 +1,61 @@
 [
   {
+    "number": 439,
+    "name": "ごうけつぐま",
+    "grade": "S",
+    "type": "YELLOW",
+    "race": "ANIMAL",
+    "cost": 122,
+    "plusCost": 4,
+    "hp": 145,
+    "mp":  59,
+    "op":  72,
+    "dp":  99,
+    "os":  38,
+    "ds":  38,
+    "sp":  34,
+    "dx":  55,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "healings": []
+  },
+  {
     "number": 438,
     "name": "豪氷天グリザード",
     "grade": "S",
