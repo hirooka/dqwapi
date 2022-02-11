@@ -33,10 +33,10 @@ CROSS JOIN `{{project-id}}.{{dataset}}.{{table}}` k2
 CROSS JOIN `{{project-id}}.{{dataset}}.{{table}}` k3
 WHERE k0.name < k1.name AND k0.name < k2.name AND k0.name < k3.name AND k1.name < k2.name AND k1.name < k3.name AND k2.name < k3.name
 AND k0.cost + k1.cost + k2.cost + k3.cost - k0.plusCost - k1.plusCost - k2.plusCost - k3.plusCost <= {{cost}}
-AND (k0.{{attack}}NoneNone >= 3 OR k0.allNone{{Race}} >= 3 OR {{mparam0}})
-AND (k1.{{attack}}NoneNone >= 3 OR k1.allNone{{Race}} >= 3 OR {{mparam1}})
-AND (k2.{{attack}}NoneNone >= 3 OR k2.allNone{{Race}} >= 3 OR {{mparam2}})
-AND (k3.{{attack}}NoneNone >= 3 OR k3.allNone{{Race}} >= 3 OR {{mparam3}})
+AND (k0.{{attack}}NoneNone >= 3 OR k0.allNone{{Race}} >= 3)
+AND (k1.{{attack}}NoneNone >= 3 OR k1.allNone{{Race}} >= 3)
+AND (k2.{{attack}}NoneNone >= 3 OR k2.allNone{{Race}} >= 3)
+AND (k3.{{attack}}NoneNone >= 3 OR k3.allNone{{Race}} >= 3)
 AND k0.number NOT IN ({{joinedNonBrides}})
 AND k1.number NOT IN ({{joinedNonBrides}})
 AND k2.number NOT IN ({{joinedNonBrides}})

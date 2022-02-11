@@ -128,50 +128,30 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
           parameters.add("k1.op");
           parameters.add("k2.op");
           parameters.add("k3.op");
-          magicParameters.add("k0.op > 96 OR k0.number IN (115, 172, 351)");
-          magicParameters.add("k1.op > 96 OR k1.number IN (115, 172, 351)");
-          magicParameters.add("k2.op > 96 OR k2.number IN (115, 172, 351)");
-          magicParameters.add("k3.op > 96 OR k3.number IN (115, 172, 351)");
           break;
         case SPELL:
           parameters.add("k0.os");
           parameters.add("k1.os");
           parameters.add("k2.os");
           parameters.add("k3.os");
-          magicParameters.add("k0.os > 96 OR k0.number IN (115, 172, 351)");
-          magicParameters.add("k1.os > 96 OR k1.number IN (115, 172, 351)");
-          magicParameters.add("k2.os > 96 OR k2.number IN (115, 172, 351)");
-          magicParameters.add("k3.os > 96 OR k3.number IN (115, 172, 351)");
           break;
         case PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT:
           parameters.add("k0.op + k0.os");
           parameters.add("k1.op + k1.os");
           parameters.add("k2.op + k2.os");
           parameters.add("k3.op + k3.os");
-          magicParameters.add("k0.op + k0.os > 192 OR k0.number IN (115, 172, 351)");
-          magicParameters.add("k1.op + k1.os > 192 OR k1.number IN (115, 172, 351)");
-          magicParameters.add("k2.op + k2.os > 192 OR k2.number IN (115, 172, 351)");
-          magicParameters.add("k3.op + k3.os > 192 OR k3.number IN (115, 172, 351)");
           break;
         case BREATH:
           parameters.add("k0.op + k0.dx");
           parameters.add("k1.op + k1.dx");
           parameters.add("k2.op + k2.dx");
           parameters.add("k3.op + k3.dx");
-          magicParameters.add("k0.op + k0.dx > 192 OR k0.number IN (115, 172, 351)");
-          magicParameters.add("k1.op + k1.dx > 192 OR k1.number IN (115, 172, 351)");
-          magicParameters.add("k2.op + k2.dx > 192 OR k2.number IN (115, 172, 351)");
-          magicParameters.add("k3.op + k3.dx > 192 OR k3.number IN (115, 172, 351)");
           break;
         case HEALING_SPELL, HEALING_SPECIALTY:
           parameters.add("k0.ds");
           parameters.add("k1.ds");
           parameters.add("k2.ds");
           parameters.add("k3.ds");
-          magicParameters.add("k0.ds > 96 OR k0.number IN (115, 172, 351)");
-          magicParameters.add("k1.ds > 96 OR k1.number IN (115, 172, 351)");
-          magicParameters.add("k2.ds > 96 OR k2.number IN (115, 172, 351)");
-          magicParameters.add("k3.ds > 96 OR k3.number IN (115, 172, 351)");
           break;
         default:
           throw new IllegalArgumentException("Unknown AttackType: " + attackType);
@@ -232,10 +212,6 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
                 .replace("{{param1}}", parameters.get(1))
                 .replace("{{param2}}", parameters.get(2))
                 .replace("{{param3}}", parameters.get(3))
-                .replace("{{mparam0}}", magicParameters.get(0))
-                .replace("{{mparam1}}", magicParameters.get(1))
-                .replace("{{mparam2}}", magicParameters.get(2))
-                .replace("{{mparam3}}", magicParameters.get(3))
                 .replace("{{attack}}", replacedAttackType.name().toLowerCase())
                 .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
                 .replace("{{attribute}}", attributeType.name().toLowerCase())
@@ -259,10 +235,6 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
                 .replace("{{param1}}", parameters.get(1))
                 .replace("{{param2}}", parameters.get(2))
                 .replace("{{param3}}", parameters.get(3))
-                .replace("{{mparam0}}", magicParameters.get(0))
-                .replace("{{mparam1}}", magicParameters.get(1))
-                .replace("{{mparam2}}", magicParameters.get(2))
-                .replace("{{mparam3}}", magicParameters.get(3))
                 .replace("{{attack}}", replacedAttackType.name().toLowerCase())
                 .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
                 .replace("{{attribute}}", attributeType.name().toLowerCase())
@@ -288,10 +260,6 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
               .replace("{{param1}}", parameters.get(1))
               .replace("{{param2}}", parameters.get(2))
               .replace("{{param3}}", parameters.get(3))
-              .replace("{{mparam0}}", magicParameters.get(0))
-              .replace("{{mparam1}}", magicParameters.get(1))
-              .replace("{{mparam2}}", magicParameters.get(2))
-              .replace("{{mparam3}}", magicParameters.get(3))
               .replace("{{attack}}", replacedAttackType.name().toLowerCase())
               .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
               .replace("{{attribute}}", attributeType.name().toLowerCase())
