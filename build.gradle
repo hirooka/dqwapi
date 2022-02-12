@@ -8,7 +8,7 @@ apply plugin: 'java'
 apply plugin: 'io.spring.dependency-management'
 
 group 'pro.hirooka'
-version '0.9.47'
+version '0.9.48'
 
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17

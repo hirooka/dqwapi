@@ -5473,25 +5473,13 @@
         "magnification": 5
       },
       {
-        "attack": "SLASH",
+        "attack": "ALL",
         "attribute": "HYADO",
         "race": "NONE",
         "magnification": 7
       },
       {
-        "attack": "HIT",
-        "attribute": "HYADO",
-        "race": "NONE",
-        "magnification": 7
-      },
-      {
-        "attack": "SLASH",
-        "attribute": "DEIN",
-        "race": "NONE",
-        "magnification": 7
-      },
-      {
-        "attack": "HIT",
+        "attack": "ALL",
         "attribute": "DEIN",
         "race": "NONE",
         "magnification": 7
@@ -5506,7 +5494,7 @@
     "type": "YELLOW",
     "race": "PLANT",
     "cost": 84,
-    "plusCost": 4,
+    "plusCost": 3,
     "hp":  75,
     "mp":  45,
     "op":  56,
@@ -5529,25 +5517,13 @@
         "magnification": 4
       },
       {
-        "attack": "SLASH",
+        "attack": "ALL",
         "attribute": "HYADO",
         "race": "NONE",
         "magnification": 6
       },
       {
-        "attack": "HIT",
-        "attribute": "HYADO",
-        "race": "NONE",
-        "magnification": 6
-      },
-      {
-        "attack": "SLASH",
-        "attribute": "DEIN",
-        "race": "NONE",
-        "magnification": 6
-      },
-      {
-        "attack": "HIT",
+        "attack": "ALL",
         "attribute": "DEIN",
         "race": "NONE",
         "magnification": 6
@@ -9158,6 +9134,25 @@
         "magnification": 8
       }
     ],
+    "healings": []
+  },
+  {
+    "number": 138,
+    "name": "キラーパンサー",
+    "grade": "S",
+    "type": "RED",
+    "race": "ANIMAL",
+    "cost": 72,
+    "plusCost": 4,
+    "hp":  33,
+    "mp":  24,
+    "op":  83,
+    "dp":  16,
+    "os":   9,
+    "ds":   9,
+    "sp":  63,
+    "dx":  97,
+    "damages": [],
     "healings": []
   },
   {

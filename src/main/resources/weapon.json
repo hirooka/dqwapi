@@ -1,5 +1,47 @@
 [
   {
+    "name": "じげんりゅうの闘扇",
+    "type": "BOOMERANG",
+    "offensivePower": 157,
+    "jobEffects": [
+    ],
+    "specialityEffects": [
+      {
+        "offensivePower": 12
+      }
+    ],
+    "skills": [
+      {
+        "name": "閃光バズーカ",
+        "attack": "BREATH",
+        "attribute": "IO",
+        "race": "NONE",
+        "range": "SINGLE",
+        "magnification": 0,
+        "pursuits": []
+      },
+      {
+        "name": "かがやくいき",
+        "attack": "BREATH",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "range": "ALL",
+        "magnification": 0,
+        "pursuits": []
+      }
+    ],
+    "raceEffects": [
+      {
+        "race": "SLIME",
+        "magnification": 5
+      },
+      {
+        "race": "DRAGON",
+        "magnification": 5
+      }
+    ]
+  },
+  {
     "name": "プラチナウィング",
     "type": "BOOMERANG",
     "offensivePower": 138,
