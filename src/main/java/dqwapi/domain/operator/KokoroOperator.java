@@ -212,4 +212,9 @@ public class KokoroOperator implements IKokoroOperator {
 
     return results;
   }
+
+  @Override
+  public List<KokoroCombinationResult> getCombinations(String weaponName, String skillName, JobType jobType, int level, String bride, Map<Integer, List<GradeType>> exclusions, Map<Integer, List<GradeType>> inclusions, AttributeType attributeType, AttackType attackType, RaceType raceType, String defense) {
+    return null;
+  }
 }

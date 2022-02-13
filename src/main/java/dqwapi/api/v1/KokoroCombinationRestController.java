@@ -50,7 +50,7 @@ public class KokoroCombinationRestController {
           key = Integer.parseInt(str.substring(0, str.length() - 2));
           gradeType = GradeType.valueOf(str.substring(str.length() - 2).toUpperCase());
         } else {
-          final Pattern pattern = Pattern.compile("[1-9][0-9]*[sabcd]$", Pattern.CASE_INSENSITIVE);
+          final Pattern pattern = Pattern.compile("[0-9][0-9]*[sabcd]$", Pattern.CASE_INSENSITIVE);
           if (pattern.matcher(str).find()) {
             key = Integer.parseInt(str.substring(0, str.length() - 1));
             gradeType = GradeType.valueOf(str.substring(str.length() - 1).toUpperCase());
@@ -83,7 +83,7 @@ public class KokoroCombinationRestController {
       @RequestParam(value = "j", required = false) JobType jobType,
 
       @Parameter(description = "レベル",
-          schema = @Schema(defaultValue = "80", minimum = "30", maximum = "86"))
+          schema = @Schema(defaultValue = "85", minimum = "30", maximum = "86"))
       @RequestParam(value = "l", required = false) Integer level,
 
       @Parameter(description = "花嫁のこころ",
@@ -125,7 +125,7 @@ public class KokoroCombinationRestController {
       jobType = JobType.BATTLE_MASTER;
     }
     if (ObjectUtils.isEmpty(level)) {
-      level = 80;
+      level = 85;
     }
     if (ObjectUtils.isEmpty(bride)) {
       bride = "フローラ";

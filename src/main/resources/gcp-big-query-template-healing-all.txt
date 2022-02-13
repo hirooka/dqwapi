@@ -1,0 +1,67 @@
+WITH combo AS
+(
+SELECT
+`{{project-id}}.{{dataset}}.getMaxPattern`('{{JOB}}', k0.ds, k0.type, k1.ds, k1.type, k2.ds, k2.type, k3.ds, k3.type) as max_{{job}}_ds_pattern,
+
+k0.number k0number, k0.grade k0grade, k0.type k0type, k0.cost k0cost,
+k1.number k1number, k1.grade k1grade, k1.type k1type, k1.cost k1cost,
+k2.number k2number, k2.grade k2grade, k2.type k2type, k2.cost k2cost,
+k3.number k3number, k3.grade k3grade, k3.type k3type, k3.cost k3cost,
+
+k0.cost + k1.cost + k2.cost + k3.cost - k0.plusCost - k1.plusCost - k2.plusCost - k3.plusCost total_cost,
+
+ceil(
+  ceil(
+    `{{project-id}}.{{dataset}}.getMaxValue`('{{JOB}}', {{param0}}, k0.type, {{param1}}, k1.type, {{param2}}, k2.type, {{param3}}, k3.type)
+    * (1 + ((k0.healingSkill + k1.healingSkill + k2.healingSkill + k3.healingSkill) / 100.0))
+  )
+  * (1 + ((k0.{{Attack}} + k1.{{Attack}} + k2.{{Attack}} + k3.{{Attack}}) / 100.0))
+) {{job}}_{{attack}}_damage,
+
+FROM (
+SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds, (op+os) opos, (op+dx) opdx, healingSkill, {{Attack}}
+FROM `{{project-id}}.{{dataset}}.{{table}}`
+WHERE number NOT IN ({{joinedNonBrides}})
+AND CONCAT(number, '_', grade) NOT IN ({{k0JoinedExclusions}})
+ORDER BY ({{k0Order}}) DESC LIMIT {{k0Limit}})
+UNION DISTINCT
+SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds, (op+os) opos, (op+dx) opdx, healingSkill, {{Attack}}
+FROM `{{project-id}}.{{dataset}}.{{table}}`
+WHERE number NOT IN ({{joinedNonBrides}})
+AND CONCAT(number, '_', grade) NOT IN ({{k0JoinedExclusions}})
+AND (healingSkill >= 3 OR {{Attack}} >= 3 {{k0Inclusions}})
+ORDER BY ({{k0Order}}) DESC LIMIT {{k0Limit}})
+) k0
+
+CROSS JOIN
+
+(
+SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds, (op+os) opos, (op+dx) opdx, healingSkill, {{Attack}}
+FROM `{{project-id}}.{{dataset}}.{{table}}`
+WHERE number NOT IN ({{joinedNonBrides}})
+AND CONCAT(number, '_', grade) NOT IN ({{k0JoinedExclusions}})
+ORDER BY ({{k1Order}}) DESC LIMIT {{k1Limit}})
+UNION DISTINCT
+SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds, (op+os) opos, (op+dx) opdx, healingSkill, {{Attack}}
+FROM `{{project-id}}.{{dataset}}.{{table}}`
+WHERE number NOT IN ({{joinedNonBrides}})
+AND CONCAT(number, '_', grade) NOT IN ({{k1JoinedExclusions}})
+AND (healingSkill >= 3 OR {{Attack}} >= 3 {{k1Inclusions}})
+ORDER BY ({{k1Order}}) DESC LIMIT {{k1Limit}})
+) k1
+
+CROSS JOIN `{{project-id}}.{{dataset}}.{{table}}` k2
+CROSS JOIN `{{project-id}}.{{dataset}}.{{table}}` k3
+WHERE k0.name < k1.name AND k0.name < k2.name AND k0.name < k3.name AND k1.name < k2.name AND k1.name < k3.name AND k2.name < k3.name
+AND k0.cost + k1.cost + k2.cost + k3.cost - k0.plusCost - k1.plusCost - k2.plusCost - k3.plusCost <= {{cost}}
+AND k2.number NOT IN ({{joinedNonBrides}})
+AND k3.number NOT IN ({{joinedNonBrides}})
+AND CONCAT(k2.number, '_', k2.grade) NOT IN ({{joinedExclusions}})
+AND CONCAT(k3.number, '_', k3.grade) NOT IN ({{joinedExclusions}})
+{{inclusions}}
+ORDER BY {{column}} DESC limit {{limit}}
+)
+SELECT
+k0number, k0grade, k1number, k1grade, k2number, k2grade, k3number, k3grade,
+{{pattern}}
+FROM combo

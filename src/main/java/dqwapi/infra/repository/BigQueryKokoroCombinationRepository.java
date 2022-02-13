@@ -44,16 +44,20 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
   private BigQueryTableType tableType;
 
   private final IBigQueryConnector bigQueryConnector;
-  private String queryTemplateDamageAttribute = "";
-  private String queryTemplateDamageNoneAttribute = "";
-  private String queryTemplateHealing = "";
+  private String queryTemplateDamageAttributeWithoutRace = "";
+  private String queryTemplateDamageAttributeWithRace = "";
+  private String queryTemplateDamageNoAttributeWithoutRace = "";
+  private String queryTemplateDamageNoAttributeWithRace = "";
+  private String queryTemplateHealingAll = "";
 
   @PostConstruct
   void init() {
     try {
-      queryTemplateDamageAttribute = IOUtils.toString(new ClassPathResource("gcp-big-query-template-damage-attribute.txt").getInputStream(), StandardCharsets.UTF_8);
-      queryTemplateDamageNoneAttribute = IOUtils.toString(new ClassPathResource("gcp-big-query-template-damage-none-attribute.txt").getInputStream(), StandardCharsets.UTF_8);
-      queryTemplateHealing = IOUtils.toString(new ClassPathResource("gcp-big-query-template-healing.txt").getInputStream(), StandardCharsets.UTF_8);
+      queryTemplateDamageAttributeWithoutRace = IOUtils.toString(new ClassPathResource("gcp-big-query-template-damage-attribute-without-race.txt").getInputStream(), StandardCharsets.UTF_8);
+      queryTemplateDamageAttributeWithRace = IOUtils.toString(new ClassPathResource("gcp-big-query-template-damage-attribute-with-race.txt").getInputStream(), StandardCharsets.UTF_8);
+      queryTemplateDamageNoAttributeWithoutRace = IOUtils.toString(new ClassPathResource("gcp-big-query-template-damage-no-attribute-without-race.txt").getInputStream(), StandardCharsets.UTF_8);
+      queryTemplateDamageNoAttributeWithRace = IOUtils.toString(new ClassPathResource("gcp-big-query-template-damage-no-attribute-with-race.txt").getInputStream(), StandardCharsets.UTF_8);
+      queryTemplateHealingAll = IOUtils.toString(new ClassPathResource("gcp-big-query-template-healing-all.txt").getInputStream(), StandardCharsets.UTF_8);
     } catch (IOException ex) {
       throw new IllegalStateException("Failed to read SQL template.", ex);
     }
@@ -110,18 +114,45 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
             """.replace("{{inclusion}}", str));
       }
     }
-    // TODO: improve
-    final RaceType replacedRaceType;
-    if (raceType.equals(RaceType.NONE)) {
-      replacedRaceType = RaceType.ANIMAL;
-    } else {
-      replacedRaceType = raceType;
+
+    // To reduce resource that query uses (from)
+    final String k0Order = switch (attackType) {
+      case SLASH, HIT -> "op";
+      case SPELL -> "os";
+      case PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT -> "op+os";
+      case BREATH -> "op+dx";
+      case HEALING_SPELL, HEALING_SPECIALTY -> "ds";
+      default -> throw new IllegalArgumentException("Unknown AttackType: " + attackType);
+    };
+    final String k0JoinedExclusions = exclusionGrades.stream()
+            .collect(Collectors.joining("','", "'", "'"));
+    final StringBuilder k0ReplacedInclusions = new StringBuilder();
+    if (inclusionGrades.size() > 0) {
+      for (final String str : inclusionGrades) {
+        k0ReplacedInclusions.append("""
+            OR CONCAT(number, '_', grade) IN ('{{inclusion}}') 
+            """.replace("{{inclusion}}", str));
+      }
     }
+    final int k0Limit = 50; // TODO: fix
+
+    final String k1Order = k0Order;
+    final String k1JoinedExclusions = exclusionGrades.stream()
+            .collect(Collectors.joining("','", "'", "'"));
+    final StringBuilder k1ReplacedInclusions = new StringBuilder();
+    if (inclusionGrades.size() > 0) {
+      for (final String str : inclusionGrades) {
+        k1ReplacedInclusions.append("""
+            OR CONCAT(number, '_', grade) IN ('{{inclusion}}') 
+            """.replace("{{inclusion}}", str));
+      }
+    }
+    final int k1Limit = 50; // TODO: fix
+    // To reduce resource that query uses (to)
 
     final String replacedQuery;
     if (tableType.equals(BigQueryTableType.CROSS)) {
       final List<String> parameters = new ArrayList<>();
-      final List<String> magicParameters = new ArrayList<>();
       switch (attackType) {
         case SLASH, HIT:
           parameters.add("k0.op");
@@ -188,7 +219,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
             column = (jobType.name()
                 + "_" + attributeType.name()
                 + "_" + replacedAttackType.name()
-                + "_" + replacedRaceType.name()
+                + "_" + raceType.name()
                 + "_damage").toLowerCase();
             break;
           case HEALING_SPELL, HEALING_SPECIALTY:
@@ -203,76 +234,166 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
       switch (attackType) {
         case SLASH, HIT, SPELL, PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT, BREATH:
           if (attributeType.equals(AttributeType.NONE)) {
-            replacedQuery = queryTemplateDamageNoneAttribute.replace("{{project-id}}", projectId)
-                .replace("{{dataset}}", dataset)
-                .replace("{{table}}", table)
-                .replace("{{JOB}}", jobType.name())
-                .replace("{{job}}", jobType.name().toLowerCase())
-                .replace("{{param0}}", parameters.get(0))
-                .replace("{{param1}}", parameters.get(1))
-                .replace("{{param2}}", parameters.get(2))
-                .replace("{{param3}}", parameters.get(3))
-                .replace("{{attack}}", replacedAttackType.name().toLowerCase())
-                .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
-                .replace("{{attribute}}", attributeType.name().toLowerCase())
-                .replace("{{Attribute}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, attributeType.name()))
-                .replace("{{race}}", replacedRaceType.name().toLowerCase())
-                .replace("{{Race}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedRaceType.name()))
-                .replace("{{pattern}}", pattern)
-                .replace("{{cost}}", Integer.toString(cost))
-                .replace("{{joinedNonBrides}}", joinedNonBrides)
-                .replace("{{joinedExclusions}}", joinedExclusions)
-                .replace("{{inclusions}}", replacedInclusions.toString())
-                .replace("{{column}}", column)
-                .replace("{{limit}}", Integer.toString(limit));
+            if (raceType.equals(RaceType.NONE)) {
+              replacedQuery = queryTemplateDamageNoAttributeWithoutRace.replace("{{project-id}}", projectId)
+                      .replace("{{dataset}}", dataset)
+                      .replace("{{table}}", table)
+                      .replace("{{JOB}}", jobType.name())
+                      .replace("{{job}}", jobType.name().toLowerCase())
+                      .replace("{{param0}}", parameters.get(0))
+                      .replace("{{param1}}", parameters.get(1))
+                      .replace("{{param2}}", parameters.get(2))
+                      .replace("{{param3}}", parameters.get(3))
+                      .replace("{{attack}}", replacedAttackType.name().toLowerCase())
+                      .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
+                      .replace("{{attribute}}", attributeType.name().toLowerCase())
+                      .replace("{{Attribute}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, attributeType.name()))
+                      .replace("{{race}}", raceType.name().toLowerCase())
+                      .replace("{{Race}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, raceType.name()))
+                      .replace("{{pattern}}", pattern)
+                      .replace("{{cost}}", Integer.toString(cost))
+                      .replace("{{joinedNonBrides}}", joinedNonBrides)
+                      .replace("{{joinedExclusions}}", joinedExclusions)
+                      .replace("{{inclusions}}", replacedInclusions.toString())
+                      .replace("{{column}}", column)
+                      .replace("{{limit}}", Integer.toString(limit))
+                      .replace("{{k0Order}}", k0Order)
+                      .replace("{{k0Limit}}", Integer.toString(k0Limit))
+                      .replace("{{k0JoinedExclusions}}", k0JoinedExclusions)
+                      .replace("{{k0Inclusions}}", k0ReplacedInclusions.toString())
+                      .replace("{{k1Order}}", k1Order)
+                      .replace("{{k1Limit}}", Integer.toString(k1Limit))
+                      .replace("{{k1JoinedExclusions}}", k1JoinedExclusions)
+                      .replace("{{k1Inclusions}}", k1ReplacedInclusions.toString());
+            } else {
+              replacedQuery = queryTemplateDamageNoAttributeWithRace.replace("{{project-id}}", projectId)
+                      .replace("{{dataset}}", dataset)
+                      .replace("{{table}}", table)
+                      .replace("{{JOB}}", jobType.name())
+                      .replace("{{job}}", jobType.name().toLowerCase())
+                      .replace("{{param0}}", parameters.get(0))
+                      .replace("{{param1}}", parameters.get(1))
+                      .replace("{{param2}}", parameters.get(2))
+                      .replace("{{param3}}", parameters.get(3))
+                      .replace("{{attack}}", replacedAttackType.name().toLowerCase())
+                      .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
+                      .replace("{{attribute}}", attributeType.name().toLowerCase())
+                      .replace("{{Attribute}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, attributeType.name()))
+                      .replace("{{race}}", raceType.name().toLowerCase())
+                      .replace("{{Race}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, raceType.name()))
+                      .replace("{{pattern}}", pattern)
+                      .replace("{{cost}}", Integer.toString(cost))
+                      .replace("{{joinedNonBrides}}", joinedNonBrides)
+                      .replace("{{joinedExclusions}}", joinedExclusions)
+                      .replace("{{inclusions}}", replacedInclusions.toString())
+                      .replace("{{column}}", column)
+                      .replace("{{limit}}", Integer.toString(limit))
+                      .replace("{{k0Order}}", k0Order)
+                      .replace("{{k0Limit}}", Integer.toString(k0Limit))
+                      .replace("{{k0JoinedExclusions}}", k0JoinedExclusions)
+                      .replace("{{k0Inclusions}}", k0ReplacedInclusions.toString())
+                      .replace("{{k1Order}}", k1Order)
+                      .replace("{{k1Limit}}", Integer.toString(k1Limit))
+                      .replace("{{k1JoinedExclusions}}", k1JoinedExclusions)
+                      .replace("{{k1Inclusions}}", k1ReplacedInclusions.toString());
+            }
           } else {
-            replacedQuery = queryTemplateDamageAttribute.replace("{{project-id}}", projectId)
-                .replace("{{dataset}}", dataset)
-                .replace("{{table}}", table)
-                .replace("{{JOB}}", jobType.name())
-                .replace("{{job}}", jobType.name().toLowerCase())
-                .replace("{{param0}}", parameters.get(0))
-                .replace("{{param1}}", parameters.get(1))
-                .replace("{{param2}}", parameters.get(2))
-                .replace("{{param3}}", parameters.get(3))
-                .replace("{{attack}}", replacedAttackType.name().toLowerCase())
-                .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
-                .replace("{{attribute}}", attributeType.name().toLowerCase())
-                .replace("{{Attribute}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, attributeType.name()))
-                .replace("{{race}}", replacedRaceType.name().toLowerCase())
-                .replace("{{Race}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedRaceType.name()))
-                .replace("{{pattern}}", pattern)
-                .replace("{{cost}}", Integer.toString(cost))
-                .replace("{{joinedNonBrides}}", joinedNonBrides)
-                .replace("{{joinedExclusions}}", joinedExclusions)
-                .replace("{{inclusions}}", replacedInclusions.toString())
-                .replace("{{column}}", column)
-                .replace("{{limit}}", Integer.toString(limit));
+            if (raceType.equals(RaceType.NONE)) {
+              replacedQuery = queryTemplateDamageAttributeWithoutRace.replace("{{project-id}}", projectId)
+                      .replace("{{dataset}}", dataset)
+                      .replace("{{table}}", table)
+                      .replace("{{JOB}}", jobType.name())
+                      .replace("{{job}}", jobType.name().toLowerCase())
+                      .replace("{{param0}}", parameters.get(0))
+                      .replace("{{param1}}", parameters.get(1))
+                      .replace("{{param2}}", parameters.get(2))
+                      .replace("{{param3}}", parameters.get(3))
+                      .replace("{{attack}}", replacedAttackType.name().toLowerCase())
+                      .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
+                      .replace("{{attribute}}", attributeType.name().toLowerCase())
+                      .replace("{{Attribute}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, attributeType.name()))
+                      .replace("{{race}}", raceType.name().toLowerCase())
+                      .replace("{{Race}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, raceType.name()))
+                      .replace("{{pattern}}", pattern)
+                      .replace("{{cost}}", Integer.toString(cost))
+                      .replace("{{joinedNonBrides}}", joinedNonBrides)
+                      .replace("{{joinedExclusions}}", joinedExclusions)
+                      .replace("{{inclusions}}", replacedInclusions.toString())
+                      .replace("{{column}}", column)
+                      .replace("{{limit}}", Integer.toString(limit))
+                      .replace("{{k0Order}}", k0Order)
+                      .replace("{{k0Limit}}", Integer.toString(k0Limit))
+                      .replace("{{k0JoinedExclusions}}", k0JoinedExclusions)
+                      .replace("{{k0Inclusions}}", k0ReplacedInclusions.toString())
+                      .replace("{{k1Order}}", k1Order)
+                      .replace("{{k1Limit}}", Integer.toString(k1Limit))
+                      .replace("{{k1JoinedExclusions}}", k1JoinedExclusions)
+                      .replace("{{k1Inclusions}}", k1ReplacedInclusions.toString());
+            } else {
+              replacedQuery = queryTemplateDamageAttributeWithRace.replace("{{project-id}}", projectId)
+                      .replace("{{dataset}}", dataset)
+                      .replace("{{table}}", table)
+                      .replace("{{JOB}}", jobType.name())
+                      .replace("{{job}}", jobType.name().toLowerCase())
+                      .replace("{{param0}}", parameters.get(0))
+                      .replace("{{param1}}", parameters.get(1))
+                      .replace("{{param2}}", parameters.get(2))
+                      .replace("{{param3}}", parameters.get(3))
+                      .replace("{{attack}}", replacedAttackType.name().toLowerCase())
+                      .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
+                      .replace("{{attribute}}", attributeType.name().toLowerCase())
+                      .replace("{{Attribute}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, attributeType.name()))
+                      .replace("{{race}}", raceType.name().toLowerCase())
+                      .replace("{{Race}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, raceType.name()))
+                      .replace("{{pattern}}", pattern)
+                      .replace("{{cost}}", Integer.toString(cost))
+                      .replace("{{joinedNonBrides}}", joinedNonBrides)
+                      .replace("{{joinedExclusions}}", joinedExclusions)
+                      .replace("{{inclusions}}", replacedInclusions.toString())
+                      .replace("{{column}}", column)
+                      .replace("{{limit}}", Integer.toString(limit))
+                      .replace("{{k0Order}}", k0Order)
+                      .replace("{{k0Limit}}", Integer.toString(k0Limit))
+                      .replace("{{k0JoinedExclusions}}", k0JoinedExclusions)
+                      .replace("{{k0Inclusions}}", k0ReplacedInclusions.toString())
+                      .replace("{{k1Order}}", k1Order)
+                      .replace("{{k1Limit}}", Integer.toString(k1Limit))
+                      .replace("{{k1JoinedExclusions}}", k1JoinedExclusions)
+                      .replace("{{k1Inclusions}}", k1ReplacedInclusions.toString());
+            }
           }
           break;
         case HEALING_SPELL, HEALING_SPECIALTY:
-          replacedQuery = queryTemplateHealing.replace("{{project-id}}", projectId)
-              .replace("{{dataset}}", dataset)
-              .replace("{{table}}", table)
-              .replace("{{JOB}}", jobType.name())
-              .replace("{{job}}", jobType.name().toLowerCase())
-              .replace("{{param0}}", parameters.get(0))
-              .replace("{{param1}}", parameters.get(1))
-              .replace("{{param2}}", parameters.get(2))
-              .replace("{{param3}}", parameters.get(3))
-              .replace("{{attack}}", replacedAttackType.name().toLowerCase())
-              .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
-              .replace("{{attribute}}", attributeType.name().toLowerCase())
-              .replace("{{Attribute}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, attributeType.name()))
-              .replace("{{race}}", replacedRaceType.name().toLowerCase())
-              .replace("{{Race}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedRaceType.name()))
-              .replace("{{pattern}}", pattern)
-              .replace("{{cost}}", Integer.toString(cost))
-              .replace("{{joinedNonBrides}}", joinedNonBrides)
-              .replace("{{joinedExclusions}}", joinedExclusions)
-              .replace("{{inclusions}}", replacedInclusions.toString())
-              .replace("{{column}}", column)
-              .replace("{{limit}}", Integer.toString(limit));
+          replacedQuery = queryTemplateHealingAll.replace("{{project-id}}", projectId)
+                  .replace("{{dataset}}", dataset)
+                  .replace("{{table}}", table)
+                  .replace("{{JOB}}", jobType.name())
+                  .replace("{{job}}", jobType.name().toLowerCase())
+                  .replace("{{param0}}", parameters.get(0))
+                  .replace("{{param1}}", parameters.get(1))
+                  .replace("{{param2}}", parameters.get(2))
+                  .replace("{{param3}}", parameters.get(3))
+                  .replace("{{attack}}", replacedAttackType.name().toLowerCase())
+                  .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
+                  .replace("{{attribute}}", attributeType.name().toLowerCase())
+                  .replace("{{Attribute}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, attributeType.name()))
+                  .replace("{{race}}", raceType.name().toLowerCase())
+                  .replace("{{Race}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, raceType.name()))
+                  .replace("{{pattern}}", pattern)
+                  .replace("{{cost}}", Integer.toString(cost))
+                  .replace("{{joinedNonBrides}}", joinedNonBrides)
+                  .replace("{{joinedExclusions}}", joinedExclusions)
+                  .replace("{{inclusions}}", replacedInclusions.toString())
+                  .replace("{{column}}", column)
+                  .replace("{{limit}}", Integer.toString(limit))
+                  .replace("{{k0Order}}", k0Order)
+                  .replace("{{k0Limit}}", Integer.toString(k0Limit))
+                  .replace("{{k0JoinedExclusions}}", k0JoinedExclusions)
+                  .replace("{{k0Inclusions}}", k0ReplacedInclusions.toString())
+                  .replace("{{k1Order}}", k1Order)
+                  .replace("{{k1Limit}}", Integer.toString(k1Limit))
+                  .replace("{{k1JoinedExclusions}}", k1JoinedExclusions)
+                  .replace("{{k1Inclusions}}", k1ReplacedInclusions.toString());
           break;
         default:
           throw new IllegalArgumentException("Unknown AttackType: " + attackType);
