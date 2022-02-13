@@ -12318,5 +12318,24 @@
       }
     ],
     "healings": []
+  },
+  {
+    "number": 0,
+    "name": "無し",
+    "grade": "S",
+    "type": "GREEN",
+    "race": "NONE",
+    "cost": 0,
+    "plusCost": 0,
+    "hp": 0,
+    "mp": 0,
+    "op": 0,
+    "dp": 0,
+    "os": 0,
+    "ds": 0,
+    "sp": 0,
+    "dx": 0,
+    "damages": [],
+    "healings": []
   }
 ]
