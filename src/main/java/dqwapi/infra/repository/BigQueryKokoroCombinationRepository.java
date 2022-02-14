@@ -134,7 +134,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
             """.replace("{{inclusion}}", str));
       }
     }
-    final int k0Limit = 50; // TODO: fix
+    final int k0Limit = 100; // TODO: fix
 
     final String k1Order = k0Order;
     final String k1JoinedExclusions = exclusionGrades.stream()
@@ -147,7 +147,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
             """.replace("{{inclusion}}", str));
       }
     }
-    final int k1Limit = 50; // TODO: fix
+    final int k1Limit = 100; // TODO: fix
     // To reduce resource that query uses (to)
 
     final String replacedQuery;
