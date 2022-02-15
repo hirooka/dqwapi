@@ -34,7 +34,7 @@ FROM `{{project-id}}.{{dataset}}.{{table}}`
 WHERE number NOT IN ({{joinedNonBrides}})
 AND CONCAT(number, '_', grade) NOT IN ({{k0JoinedExclusions}})
 AND ({{attack}}NoneNone >= 3 OR {{attack}}{{Attribute}}None >= 3 OR all{{Attribute}}None >= 3 {{k0Inclusions}})
-ORDER BY ({{k0Order}}) DESC LIMIT {{k0Limit}})
+ORDER BY all{{Attribute}}None DESC, {{attack}}{{Attribute}}None DESC, {{attack}}NoneNone DESC LIMIT {{k0Limit}})
 ) k0
 
 CROSS JOIN
@@ -51,7 +51,7 @@ FROM `{{project-id}}.{{dataset}}.{{table}}`
 WHERE number NOT IN ({{joinedNonBrides}})
 AND CONCAT(number, '_', grade) NOT IN ({{k1JoinedExclusions}})
 AND ({{attack}}NoneNone >= 3 OR {{attack}}{{Attribute}}None >= 3 OR all{{Attribute}}None >= 3 {{k1Inclusions}})
-ORDER BY ({{k1Order}}) DESC LIMIT {{k1Limit}})
+ORDER BY all{{Attribute}}None DESC, {{attack}}{{Attribute}}None DESC, {{attack}}NoneNone DESC LIMIT {{k1Limit}})
 ) k1
 
 CROSS JOIN `{{project-id}}.{{dataset}}.{{table}}` k2
