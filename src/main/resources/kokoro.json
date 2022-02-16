@@ -871,6 +871,25 @@
     "healings": []
   },
   {
+    "number": 412,
+    "name": "はくろうじゅ",
+    "grade": "S",
+    "type": "YELLOW",
+    "race": "PLANT",
+    "cost": 120,
+    "plusCost": 4,
+    "hp": 130,
+    "mp":  53,
+    "op":  61,
+    "dp":  94,
+    "os":  35,
+    "ds":  35,
+    "sp":  31,
+    "dx":  49,
+    "damages": [],
+    "healings": []
+  },
+  {
     "number": 410,
     "name": "ダークシルフ",
     "grade": "S",
@@ -2327,7 +2346,7 @@
   {
     "number": 364,
     "name": "碧落天バリゲーン",
-    "grade": "S",
+    "grade": "SP",
     "type": "YELLOW",
     "race": "SECRET",
     "cost": 99,
@@ -5081,7 +5100,7 @@
     "type": "PURPLE",
     "race": "DEVIL",
     "cost": 104,
-    "plusCost": 4,
+    "plusCost": 3,
     "hp":  53,
     "mp":  75,
     "op":   6,
@@ -5102,6 +5121,38 @@
         "attribute": "DORUMA",
         "race": "NONE",
         "magnification": 6
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 277,
+    "name": "じごくのつかい",
+    "grade": "B",
+    "type": "PURPLE",
+    "race": "DEVIL",
+    "cost": 104,
+    "plusCost": 2,
+    "hp":  49,
+    "mp":  70,
+    "op":   6,
+    "dp":  24,
+    "os":  83,
+    "ds":  38,
+    "sp":  99,
+    "dx":  63,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
       }
     ],
     "healings": []
@@ -5216,6 +5267,50 @@
         "attribute": "MERA",
         "race": "NONE",
         "magnification": 6
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 275,
+    "name": "うごくせきぞう",
+    "grade": "B",
+    "type": "RED",
+    "race": "MATERIAL",
+    "cost": 119,
+    "plusCost": 2,
+    "hp":  88,
+    "mp":  38,
+    "op":  75,
+    "dp":  60,
+    "os":  13,
+    "ds":  13,
+    "sp":  56,
+    "dx":  56,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
       }
     ],
     "healings": []
@@ -8947,6 +9042,70 @@
     "healings": []
   },
   {
+    "number": 146,
+    "name": "ヒイラギどうじ",
+    "grade": "A",
+    "type": "PURPLE",
+    "race": "PLANT",
+    "cost": 69,
+    "plusCost": 3,
+    "hp":  64,
+    "mp":  78,
+    "op":  26,
+    "dp":  35,
+    "os":  50,
+    "ds":  20,
+    "sp":  48,
+    "dx":  46,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 4
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 8
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 146,
+    "name": "ヒイラギどうじ",
+    "grade": "B",
+    "type": "PURPLE",
+    "race": "PLANT",
+    "cost": 69,
+    "plusCost": 2,
+    "hp":  59,
+    "mp":  72,
+    "op":  25,
+    "dp":  32,
+    "os":  47,
+    "ds":  19,
+    "sp":  44,
+    "dx":  42,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "healings": []
+  },
+  {
     "number": 145,
     "name": "キングスライム",
     "grade": "SP",
@@ -9018,6 +9177,70 @@
         "attribute": "NONE",
         "race": "NONE",
         "magnification": 7
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 145,
+    "name": "キングスライム",
+    "grade": "A",
+    "type": "BLUE",
+    "race": "SLIME",
+    "cost": 75,
+    "plusCost": 3,
+    "hp":  36,
+    "mp":  51,
+    "op":  72,
+    "dp":  21,
+    "os":  25,
+    "ds":  27,
+    "sp": 106,
+    "dx":  66,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 145,
+    "name": "キングスライム",
+    "grade": "B",
+    "type": "BLUE",
+    "race": "SLIME",
+    "cost": 75,
+    "plusCost": 2,
+    "hp":  33,
+    "mp":  47,
+    "op":  67,
+    "dp":  19,
+    "os":  23,
+    "ds":  25,
+    "sp":  98,
+    "dx":  61,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
       }
     ],
     "healings": []
@@ -9775,6 +9998,38 @@
     "healings": []
   },
   {
+    "number": 118,
+    "name": "ボーンナイト",
+    "grade": "B",
+    "type": "RED",
+    "race": "ZOMBIE",
+    "cost": 63,
+    "plusCost": 2,
+    "hp":  89,
+    "mp":  15,
+    "op":  44,
+    "dp":  17,
+    "os":   8,
+    "ds":   8,
+    "sp":  48,
+    "dx":  59,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "SLIME",
+        "magnification": 3
+      }
+    ],
+    "healings": []
+  },
+  {
     "number": 117,
     "name": "メタルライダー",
     "grade": "S",
@@ -9859,6 +10114,37 @@
       {
         "type": "SKILL",
         "magnification": 6
+      }
+    ]
+  },
+  {
+    "number": 116,
+    "name": "ベビル",
+    "grade": "B",
+    "type": "GREEN",
+    "race": "DEVIL",
+    "cost": 57,
+    "plusCost": 2,
+    "hp":  64,
+    "mp":  67,
+    "op":  25,
+    "dp":  19,
+    "os":  11,
+    "ds":  40,
+    "sp":  16,
+    "dx":  24,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 5
       }
     ]
   },
@@ -10208,6 +10494,32 @@
     "healings": []
   },
   {
+    "number": 95,
+    "name": "ホークマン",
+    "grade": "B",
+    "type": "RED",
+    "race": "BIRD",
+    "cost": 54,
+    "plusCost": 2,
+    "hp":  59,
+    "mp":  21,
+    "op":  43,
+    "dp":  28,
+    "os":   8,
+    "ds":   8,
+    "sp":  47,
+    "dx":  59,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "healings": []
+  },
+  {
     "number": 93,
     "name": "ひくいどり",
     "grade": "S",
@@ -10382,6 +10694,25 @@
     "healings": []
   },
   {
+    "number": 88,
+    "name": "ミイラ男",
+    "grade": "S",
+    "type": "YELLOW",
+    "race": "ZOMBIE",
+    "cost": 44,
+    "plusCost": 4,
+    "hp":  40,
+    "mp":  12,
+    "op":  49,
+    "dp":  24,
+    "os":  11,
+    "ds":   8,
+    "sp":   6,
+    "dx":   4,
+    "damages": [],
+    "healings": []
+  },
+  {
     "number": 82,
     "name": "よろいのきし",
     "grade": "S",
@@ -10441,6 +10772,38 @@
         "attribute": "NONE",
         "race": "DRAGON",
         "magnification": 6
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 82,
+    "name": "よろいのきし",
+    "grade": "B",
+    "type": "YELLOW",
+    "race": "DEVIL",
+    "cost": 51,
+    "plusCost": 2,
+    "hp":  41,
+    "mp":  13,
+    "op":  52,
+    "dp":  26,
+    "os":  12,
+    "ds":   8,
+    "sp":   7,
+    "dx":   4,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "DRAGON",
+        "magnification": 5
       }
     ],
     "healings": []
@@ -10524,6 +10887,38 @@
         "attribute": "HYADO",
         "race": "NONE",
         "magnification": 8
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 79,
+    "name": "ともしびこぞう",
+    "grade": "B",
+    "type": "PURPLE",
+    "race": "MATERIAL",
+    "cost": 39,
+    "plusCost": 2,
+    "hp":  37,
+    "mp":  46,
+    "op":  13,
+    "dp":  19,
+    "os":  29,
+    "ds":   9,
+    "sp":  28,
+    "dx":  27,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
       }
     ],
     "healings": []
@@ -10797,6 +11192,25 @@
     "healings": []
   },
   {
+    "number": 61,
+    "name": "メーダプリンス男",
+    "grade": "S",
+    "type": "GREEN",
+    "race": "INSECT",
+    "cost": 32,
+    "plusCost": 4,
+    "hp":  21,
+    "mp":  35,
+    "op":  15,
+    "dp":   9,
+    "os":  12,
+    "ds":  46,
+    "sp":  12,
+    "dx":  15,
+    "damages": [],
+    "healings": []
+  },
+  {
     "number": 60,
     "name": "スウィートバッグ",
     "grade": "S",
@@ -11036,6 +11450,30 @@
     ]
   },
   {
+    "number": 49,
+    "name": "スノーモン",
+    "grade": "B",
+    "type": "GREEN",
+    "race": "DEVIL",
+    "cost": 27,
+    "plusCost": 2,
+    "hp":  17,
+    "mp":  27,
+    "op":  12,
+    "dp":   7,
+    "os":   9,
+    "ds":  35,
+    "sp":   9,
+    "dx":  12,
+    "damages": [],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 5
+      }
+    ]
+  },
+  {
     "number": 47,
     "name": "アルミラージ",
     "grade": "S",
@@ -11102,6 +11540,32 @@
         "attribute": "NONE",
         "race": "NONE",
         "magnification": 6
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 46,
+    "name": "デザートゴースト",
+    "grade": "B",
+    "type": "RED",
+    "race": "ANIMAL",
+    "cost": 33,
+    "plusCost": 2,
+    "hp":  35,
+    "mp":  11,
+    "op":  24,
+    "dp":  15,
+    "os":   5,
+    "ds":   5,
+    "sp":  28,
+    "dx":  35,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
       }
     ],
     "healings": []
@@ -11480,6 +11944,44 @@
     "healings": []
   },
   {
+    "number": 25,
+    "name": "あばれこまいぬ",
+    "grade": "B",
+    "type": "YELLOW",
+    "race": "ANIMAL",
+    "cost": 21,
+    "plusCost": 2,
+    "hp":  28,
+    "mp":  10,
+    "op":  13,
+    "dp":  13,
+    "os":   5,
+    "ds":   3,
+    "sp":   5,
+    "dx":   3,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "healings": []
+  },
+  {
     "number": 24,
     "name": "あやしいかげ",
     "grade": "S",
@@ -11501,6 +12003,58 @@
         "attribute": "NONE",
         "race": "NONE",
         "magnification": 10
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 24,
+    "name": "あやしいかげ",
+    "grade": "A",
+    "type": "BLUE",
+    "race": "ELEMENT",
+    "cost": 15,
+    "plusCost": 3,
+    "hp":  17,
+    "mp":  11,
+    "op":  10,
+    "dp":   9,
+    "os":   5,
+    "ds":   5,
+    "sp":  18,
+    "dx":  13,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 8
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 24,
+    "name": "あやしいかげ",
+    "grade": "B",
+    "type": "BLUE",
+    "race": "ELEMENT",
+    "cost": 15,
+    "plusCost": 2,
+    "hp":  16,
+    "mp":  11,
+    "op":   9,
+    "dp":   9,
+    "os":   5,
+    "ds":   5,
+    "sp":  16,
+    "dx":  12,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
       }
     ],
     "healings": []
@@ -11774,6 +12328,38 @@
         "attribute": "HYADO",
         "race": "NONE",
         "magnification": 8
+      }
+    ],
+    "healings": []
+  },
+  {
+    "number": 12,
+    "name": "きりかぶこぞう",
+    "grade": "B",
+    "type": "PURPLE",
+    "race": "PLANT",
+    "cost": 9,
+    "plusCost": 2,
+    "hp":  10,
+    "mp":  13,
+    "op":   3,
+    "dp":   4,
+    "os":   7,
+    "ds":   1,
+    "sp":   5,
+    "dx":   6,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
       }
     ],
     "healings": []
