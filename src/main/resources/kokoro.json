@@ -8697,6 +8697,50 @@
     "healings": []
   },
   {
+    "number": 169,
+    "name": "あくまのきし",
+    "grade": "A",
+    "type": "RED",
+    "race": "DEVIL",
+    "cost": 92,
+    "plusCost": 3,
+    "hp":  77,
+    "mp":  33,
+    "op":  72,
+    "dp":  44,
+    "os":  11,
+    "ds":  11,
+    "sp":  64,
+    "dx":  56,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "DEVIL",
+        "magnification": 3
+      }
+    ],
+    "healings": []
+  },
+  {
     "number": 163,
     "name": "リカントマムル",
     "grade": "S",
@@ -10821,6 +10865,32 @@
     "healings": []
   },
   {
+    "number": 90,
+    "name": "ごろつき",
+    "grade": "B",
+    "type": "BLUE",
+    "race": "PHANTOM",
+    "cost": 45,
+    "plusCost": 2,
+    "hp":  45,
+    "mp":  31,
+    "op":  26,
+    "dp":  24,
+    "os":  14,
+    "ds":  16,
+    "sp":  46,
+    "dx":  35,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ],
+    "healings": []
+  },
+  {
     "number": 88,
     "name": "ミイラ男",
     "grade": "S",
@@ -11780,6 +11850,37 @@
       {
         "type": "SKILL",
         "magnification": 8
+      }
+    ]
+  },
+  {
+    "number": 42,
+    "name": "グレムリン",
+    "grade": "B",
+    "type": "GREEN",
+    "race": "DEVIL",
+    "cost": 32,
+    "plusCost": 2,
+    "hp":  36,
+    "mp":  36,
+    "op":  15,
+    "dp":  17,
+    "os":  10,
+    "ds":  26,
+    "sp":  17,
+    "dx":  15,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ],
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 7
       }
     ]
   },
