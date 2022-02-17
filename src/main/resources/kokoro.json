@@ -645,6 +645,50 @@
     "healings": []
   },
   {
+    "number": 430,
+    "name": "スライムボーグ",
+    "grade": "A",
+    "type": "RED",
+    "race": "SLIME",
+    "cost": 116,
+    "plusCost": 3,
+    "hp": 130,
+    "mp":  55,
+    "op":  74,
+    "dp":  56,
+    "os":  15,
+    "ds":  15,
+    "sp":  56,
+    "dx":  48,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "MACHINE",
+        "magnification": 3
+      }
+    ],
+    "healings": []
+  },
+  {
     "number": 429,
     "name": "じげんりゅう",
     "grade": "S",
@@ -5961,6 +6005,25 @@
     "healings": []
   },
   {
+    "number": 251,
+    "name": "セキバーン",
+    "grade": "S",
+    "type": "GREEN",
+    "race": "WATER",
+    "cost": 69,
+    "plusCost": 4,
+    "hp":  75,
+    "mp":  74,
+    "op":  30,
+    "dp":  17,
+    "os":  22,
+    "ds":  38,
+    "sp":  38,
+    "dx":  28,
+    "damages": [],
+    "healings": []
+  },
+  {
     "number": 250,
     "name": "スカラベキング",
     "grade": "S",
@@ -7321,6 +7384,44 @@
         "magnification": 3
       }
     ],
+    "healings": []
+  },
+  {
+    "number": 206,
+    "name": "じごくのもんばん",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "DEVIL",
+    "cost": 62,
+    "plusCost": 4,
+    "hp":  58,
+    "mp":  41,
+    "op":  34,
+    "dp":  33,
+    "os":  20,
+    "ds":  22,
+    "sp":  59,
+    "dx":  45,
+    "damages": [],
+    "healings": []
+  },
+  {
+    "number": 203,
+    "name": "プリーストナイト",
+    "grade": "S",
+    "type": "GREEN",
+    "race": "DEVIL",
+    "cost": 62,
+    "plusCost": 4,
+    "hp":  29,
+    "mp":  57,
+    "op":  27,
+    "dp":  15,
+    "os":  29,
+    "ds":  65,
+    "sp":  12,
+    "dx":  26,
+    "damages": [],
     "healings": []
   },
   {
