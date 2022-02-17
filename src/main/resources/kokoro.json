@@ -1,5 +1,31 @@
 [
   {
+    "number": 440,
+    "name": "じごくのきし",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "ZOMBIE",
+    "cost": 128,
+    "plusCost": 4,
+    "hp": 115,
+    "mp":  70,
+    "op":  81,
+    "dp":  78,
+    "os":  37,
+    "ds":  33,
+    "sp": 102,
+    "dx": 102,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ],
+    "healings": []
+  },
+  {
     "number": 439,
     "name": "ごうけつぐま",
     "grade": "S",
