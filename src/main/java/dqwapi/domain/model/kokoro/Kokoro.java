@@ -19,7 +19,6 @@ public class Kokoro {
   private KokoroType type;
   private RaceType race;
   private int cost;
-  private int plusCost;
   private int hp;
   private int mp;
   private int op;
@@ -28,6 +27,9 @@ public class Kokoro {
   private int ds;
   private int sp;
   private int dx;
+  private int plusCost;
   private List<Damage> damages;
+  private int chr;
   private List<Healing> healings;
+  private List<Damage> resistances;
 }

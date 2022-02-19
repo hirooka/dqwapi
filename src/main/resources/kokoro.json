@@ -23,7 +23,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 439,
@@ -79,7 +88,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 438,
@@ -111,7 +129,16 @@
         "magnification": 12
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 438,
@@ -143,7 +170,16 @@
         "magnification": 9
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 437,
@@ -181,9 +217,18 @@
         "magnification": 5
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
+        "magnification": 5
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
         "magnification": 5
       }
     ]
@@ -236,7 +281,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 435,
@@ -292,7 +346,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 434,
@@ -330,7 +386,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 433,
@@ -380,7 +438,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 433,
@@ -430,7 +490,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 432,
@@ -486,7 +548,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 432,
@@ -542,7 +606,9 @@
         "magnification": 4
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 431,
@@ -598,7 +664,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 430,
@@ -642,7 +710,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 430,
@@ -686,7 +756,9 @@
         "magnification": 3
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 429,
@@ -730,7 +802,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 429,
@@ -774,7 +848,9 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 428,
@@ -800,7 +876,22 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "HIT",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 427,
@@ -838,7 +929,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 426,
@@ -870,7 +963,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 425,
@@ -889,10 +984,19 @@
     "dx":  37,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "SPELL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 10
       }
     ]
   },
@@ -938,7 +1042,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 412,
@@ -957,7 +1063,28 @@
     "dx":  49,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 410,
@@ -976,12 +1103,14 @@
     "dx":  36,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 408,
@@ -1007,7 +1136,22 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "HIT",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 404,
@@ -1051,7 +1195,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 404,
@@ -1095,7 +1248,16 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 403,
@@ -1114,10 +1276,19 @@
     "dx":  35,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
       }
     ]
   },
@@ -1157,7 +1328,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 402,
@@ -1195,7 +1368,9 @@
         "magnification": 4
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 401,
@@ -1245,7 +1420,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 401,
@@ -1295,7 +1479,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ]
   },
   {
     "number": 400,
@@ -1339,7 +1532,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 400,
@@ -1383,7 +1585,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 4
+      }
+    ]
   },
   {
     "number": 399,
@@ -1433,7 +1644,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "SPELL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ]
   },
   {
     "number": 398,
@@ -1465,7 +1685,16 @@
         "magnification": 14
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 398,
@@ -1497,7 +1726,16 @@
         "magnification": 9
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ]
   },
   {
     "number": 397,
@@ -1541,7 +1779,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ]
   },
   {
     "number": 396,
@@ -1591,7 +1838,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 395,
@@ -1629,7 +1878,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 395,
@@ -1667,7 +1918,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 394,
@@ -1705,7 +1958,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 390,
@@ -1749,7 +2011,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 388,
@@ -1805,7 +2069,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 3,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 388,
@@ -1861,7 +2127,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 2,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 386,
@@ -1881,12 +2149,14 @@
     "plusCost": 4,
     "damages": [
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SPECIALTY",
         "magnification": 7
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 383,
@@ -1918,7 +2188,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 382,
@@ -1956,7 +2228,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 382,
@@ -1994,7 +2268,9 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 379,
@@ -2012,11 +2288,19 @@
     "sp":  44,
     "dx":  43,
     "plusCost": 4,
-    "damages": [
-    ],
+    "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
+        "magnification": 10
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
         "magnification": 10
       }
     ]
@@ -2037,12 +2321,20 @@
     "sp":  39,
     "dx":  38,
     "plusCost": 3,
-    "damages": [
-    ],
+    "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 6
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 5
       }
     ]
   },
@@ -2076,7 +2368,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 377,
@@ -2108,7 +2402,9 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 376,
@@ -2127,7 +2423,22 @@
     "dx":  20,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 375,
@@ -2165,7 +2476,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 374,
@@ -2215,7 +2528,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 373,
@@ -2253,7 +2568,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 373,
@@ -2291,7 +2615,16 @@
         "magnification": 3
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 372,
@@ -2335,7 +2668,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 372,
@@ -2379,7 +2714,9 @@
         "magnification": 4
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 371,
@@ -2411,7 +2748,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 364,
@@ -2443,7 +2782,16 @@
         "magnification": 13
       }
     ],
-    "healings": []
+    "chr": 5,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 359,
@@ -2487,7 +2835,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 359,
@@ -2531,7 +2888,16 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 359,
@@ -2575,7 +2941,16 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 354,
@@ -2594,7 +2969,9 @@
     "dx":  76,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 352,
@@ -2613,10 +2990,19 @@
     "dx":  34,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
       }
     ]
   },
@@ -2637,7 +3023,9 @@
     "dx":  12,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 349,
@@ -2693,7 +3081,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 349,
@@ -2749,7 +3139,9 @@
         "magnification": 4
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 348,
@@ -2787,7 +3179,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 347,
@@ -2825,7 +3226,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 347,
@@ -2863,7 +3266,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 346,
@@ -2889,9 +3294,18 @@
         "magnification": 5
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
+        "magnification": 7
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
         "magnification": 7
       }
     ]
@@ -2920,10 +3334,19 @@
         "magnification": 3
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 6
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
       }
     ]
   },
@@ -2957,7 +3380,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "MATERIAL",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 340,
@@ -2989,7 +3421,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "SPELL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ]
   },
   {
     "number": 340,
@@ -3021,7 +3462,9 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 339,
@@ -3065,7 +3508,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "MACHINE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 338,
@@ -3103,7 +3555,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 337,
@@ -3141,7 +3595,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 335,
@@ -3173,7 +3629,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 334,
@@ -3229,7 +3694,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 333,
@@ -3261,7 +3728,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 331,
@@ -3299,7 +3768,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 331,
@@ -3337,7 +3808,9 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 330,
@@ -3375,10 +3848,19 @@
         "magnification": 5
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 5
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
       }
     ]
   },
@@ -3418,10 +3900,19 @@
         "magnification": 3
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 3
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 5
       }
     ]
   },
@@ -3449,7 +3940,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 325,
@@ -3493,7 +3986,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 325,
@@ -3537,7 +4039,16 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 325,
@@ -3581,7 +4092,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 324,
@@ -3619,7 +4139,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 324,
@@ -3657,7 +4186,16 @@
         "magnification": 3
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 322,
@@ -3701,7 +4239,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 322,
@@ -3745,7 +4292,16 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 322,
@@ -3789,7 +4345,16 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 316,
@@ -3821,7 +4386,16 @@
         "magnification": 14
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 316,
@@ -3853,7 +4427,16 @@
         "magnification": 11
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 315,
@@ -3903,7 +4486,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 314,
@@ -3922,9 +4514,24 @@
     "dx":  36,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
+        "magnification": 7
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
         "magnification": 7
       }
     ]
@@ -3959,7 +4566,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 311,
@@ -3985,7 +4594,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 310,
@@ -4004,7 +4622,9 @@
     "dx":  21,
     "plusCost": 0,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 308,
@@ -4042,7 +4662,22 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 308,
@@ -4080,7 +4715,22 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 307,
@@ -4118,7 +4768,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 307,
@@ -4156,7 +4808,9 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 306,
@@ -4212,7 +4866,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "SPELL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ]
   },
   {
     "number": 304,
@@ -4250,7 +4913,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 303,
@@ -4288,7 +4960,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 303,
@@ -4326,7 +5007,16 @@
         "magnification": 3
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 302,
@@ -4364,10 +5054,19 @@
         "magnification": 7
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
-        "magnification": 7
+        "magnification": 5
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 5
       }
     ]
   },
@@ -4413,7 +5112,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 300,
@@ -4451,7 +5159,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 299,
@@ -4483,7 +5200,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 298,
@@ -4502,9 +5228,18 @@
     "dx":  31,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
+        "magnification": 5
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "PLANT",
         "magnification": 5
       }
     ]
@@ -4539,7 +5274,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 296,
@@ -4565,10 +5302,19 @@
         "magnification": 7
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SPELL",
         "magnification": 7
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 5
       }
     ]
   },
@@ -4596,7 +5342,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 292,
@@ -4615,9 +5370,18 @@
     "dx":  22,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
+        "magnification": 7
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
         "magnification": 7
       }
     ]
@@ -4652,7 +5416,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 290,
@@ -4684,7 +5450,9 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 288,
@@ -4740,7 +5508,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 286,
@@ -4784,7 +5554,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 285,
@@ -4816,7 +5588,16 @@
         "magnification": 13
       }
     ],
-    "healings": []
+    "chr": 5,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 285,
@@ -4848,7 +5629,16 @@
         "magnification": 9
       }
     ],
-    "healings": []
+    "chr": 3,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 284,
@@ -4880,7 +5670,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 283,
@@ -4912,7 +5704,16 @@
         "magnification": 14
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 283,
@@ -4944,7 +5745,16 @@
         "magnification": 11
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ]
   },
   {
     "number": 282,
@@ -4982,7 +5792,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 281,
@@ -5001,7 +5813,16 @@
     "dx":  10,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "SLIME",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 279,
@@ -5033,7 +5854,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 278,
@@ -5065,7 +5888,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 278,
@@ -5097,7 +5929,16 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 278,
@@ -5129,7 +5970,16 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 277,
@@ -5161,7 +6011,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 277,
@@ -5193,7 +6052,16 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 277,
@@ -5225,7 +6093,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 276,
@@ -5251,7 +6128,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 275,
@@ -5295,7 +6174,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 275,
@@ -5339,7 +6227,16 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 275,
@@ -5383,7 +6280,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 274,
@@ -5409,7 +6315,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 272,
@@ -5428,12 +6343,14 @@
     "dx":  41,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 10
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 272,
@@ -5452,12 +6369,14 @@
     "dx":  36,
     "plusCost": 3,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 8
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 272,
@@ -5476,12 +6395,14 @@
     "dx":  34,
     "plusCost": 2,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 6
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 265,
@@ -5525,7 +6446,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 264,
@@ -5581,7 +6511,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 263,
@@ -5599,14 +6538,15 @@
     "sp":  22,
     "dx":  30,
     "plusCost": 4,
-    "damages": [
-    ],
+    "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 260,
@@ -5650,7 +6590,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 260,
@@ -5694,7 +6643,16 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 258,
@@ -5732,7 +6690,9 @@
         "magnification": 3
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 257,
@@ -5770,7 +6730,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 255,
@@ -5820,7 +6789,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 254,
@@ -5864,7 +6842,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 254,
@@ -5908,7 +6895,16 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 253,
@@ -5964,7 +6960,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 252,
@@ -6002,7 +7007,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 251,
@@ -6021,7 +7028,16 @@
     "dx":  28,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 250,
@@ -6065,7 +7081,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 250,
@@ -6109,7 +7134,16 @@
         "magnification": 3
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 249,
@@ -6153,7 +7187,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 248,
@@ -6209,7 +7252,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 248,
@@ -6265,7 +7317,16 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 247,
@@ -6303,7 +7364,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 246,
@@ -6329,9 +7392,18 @@
         "magnification": 7
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
+        "magnification": 7
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
         "magnification": 7
       }
     ]
@@ -6360,9 +7432,18 @@
         "magnification": 5
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
+        "magnification": 5
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
         "magnification": 5
       }
     ]
@@ -6391,7 +7472,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 243,
@@ -6435,7 +7518,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 243,
@@ -6479,7 +7571,16 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 243,
@@ -6523,7 +7624,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 241,
@@ -6549,7 +7659,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 239,
@@ -6581,7 +7693,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 234,
@@ -6607,7 +7721,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 234,
@@ -6633,7 +7756,16 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 233,
@@ -6665,7 +7797,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 232,
@@ -6683,12 +7817,26 @@
     "sp":  55,
     "dx":  41,
     "plusCost": 4,
-    "damages": [
-    ],
+    "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 10
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "SPELL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 5
       }
     ]
   },
@@ -6708,12 +7856,20 @@
     "sp":  43,
     "dx":  32,
     "plusCost": 3,
-    "damages": [
-    ],
+    "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 6
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "SPELL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 3
       }
     ]
   },
@@ -6765,7 +7921,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 229,
@@ -6809,7 +7974,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 227,
@@ -6847,7 +8014,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 226,
@@ -6885,7 +8054,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 225,
@@ -6935,7 +8113,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 225,
@@ -6985,7 +8165,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 224,
@@ -7003,14 +8185,15 @@
     "sp":  42,
     "dx":  34,
     "plusCost": 4,
-    "damages": [
-    ],
+    "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 224,
@@ -7028,14 +8211,15 @@
     "sp":  37,
     "dx":  30,
     "plusCost": 3,
-    "damages": [
-    ],
+    "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 6
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 224,
@@ -7053,14 +8237,15 @@
     "sp":  34,
     "dx":  27,
     "plusCost": 2,
-    "damages": [
-    ],
+    "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 5
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 222,
@@ -7086,7 +8271,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 219,
@@ -7118,7 +8305,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 219,
@@ -7150,7 +8339,9 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 219,
@@ -7182,7 +8373,9 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 216,
@@ -7208,7 +8401,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 211,
@@ -7234,7 +8429,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 207,
@@ -7290,7 +8494,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 205,
@@ -7340,7 +8553,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 204,
@@ -7384,7 +8606,9 @@
         "magnification": 3
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 206,
@@ -7403,7 +8627,9 @@
     "dx":  45,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 203,
@@ -7422,7 +8648,16 @@
     "dx":  26,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 201,
@@ -7440,12 +8675,20 @@
     "sp":  35,
     "dx":  28,
     "plusCost": 4,
-    "damages": [
-    ],
+    "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 5
       }
     ]
   },
@@ -7479,7 +8722,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 200,
@@ -7511,7 +8756,9 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 199,
@@ -7549,7 +8796,9 @@
         "magnification": 3
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 196,
@@ -7587,7 +8836,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 195,
@@ -7606,12 +8864,14 @@
     "dx":  30,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 192,
@@ -7655,7 +8915,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 192,
@@ -7699,7 +8968,16 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 191,
@@ -7731,7 +9009,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 190,
@@ -7757,9 +9044,18 @@
         "magnification": 10
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
+        "magnification": 10
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
         "magnification": 10
       }
     ]
@@ -7788,10 +9084,19 @@
         "magnification": 6
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 6
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 10
       }
     ]
   },
@@ -7837,7 +9142,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 188,
@@ -7869,7 +9183,22 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 5,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 188,
@@ -7901,7 +9230,22 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 3,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 187,
@@ -7939,7 +9283,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 4,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 186,
@@ -7965,12 +9311,14 @@
         "magnification": 10
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 10
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 186,
@@ -7996,12 +9344,14 @@
         "magnification": 7
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 185,
@@ -8027,7 +9377,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 184,
@@ -8053,7 +9405,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 183,
@@ -8085,7 +9446,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 182,
@@ -8117,7 +9487,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 181,
@@ -8149,7 +9528,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 180,
@@ -8181,7 +9569,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 179,
@@ -8213,7 +9610,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 178,
@@ -8245,7 +9651,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 178,
@@ -8277,7 +9692,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ]
   },
   {
     "number": 177,
@@ -8309,7 +9733,22 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 176,
@@ -8335,7 +9774,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 176,
@@ -8361,7 +9802,9 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 175,
@@ -8399,7 +9842,16 @@
         "magnification": 4
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 174,
@@ -8431,7 +9883,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 173,
@@ -8457,12 +9918,14 @@
         "magnification": 5
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 172,
@@ -8488,7 +9951,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 172,
@@ -8514,7 +9986,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ]
   },
   {
     "number": 171,
@@ -8558,7 +10039,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 171,
@@ -8602,7 +10092,16 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 170,
@@ -8621,12 +10120,14 @@
     "dx":  19,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 10
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 170,
@@ -8645,12 +10146,14 @@
     "dx":  15,
     "plusCost": 3,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 6
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 169,
@@ -8694,7 +10197,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 169,
@@ -8738,7 +10250,16 @@
         "magnification": 3
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 163,
@@ -8757,7 +10278,9 @@
     "dx":  20,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 162,
@@ -8776,7 +10299,16 @@
     "dx":  23,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 161,
@@ -8795,7 +10327,9 @@
     "dx":   9,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 160,
@@ -8814,7 +10348,9 @@
     "dx":   4,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 154,
@@ -8846,7 +10382,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 5,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 154,
@@ -8878,7 +10423,16 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 4,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 153,
@@ -8928,7 +10482,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 153,
@@ -8978,7 +10534,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 152,
@@ -9022,7 +10580,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 152,
@@ -9066,7 +10633,16 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 152,
@@ -9110,7 +10686,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 149,
@@ -9148,10 +10733,19 @@
         "magnification": 5
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 5
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
       }
     ]
   },
@@ -9171,12 +10765,26 @@
     "sp":  35,
     "dx":  31,
     "plusCost": 4,
-    "damages": [
-    ],
+    "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "BREATH",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 5
       }
     ]
   },
@@ -9210,7 +10818,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 146,
@@ -9242,7 +10852,9 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 146,
@@ -9274,7 +10886,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 145,
@@ -9318,7 +10932,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 4,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 145,
@@ -9350,7 +10973,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 4,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 145,
@@ -9382,7 +11014,16 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 3,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 145,
@@ -9414,7 +11055,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 2,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 141,
@@ -9440,7 +11090,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 138,
@@ -9459,7 +11118,16 @@
     "dx":  97,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ]
   },
   {
     "number": 137,
@@ -9503,7 +11171,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 137,
@@ -9547,7 +11217,9 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 137,
@@ -9591,7 +11263,9 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 136,
@@ -9610,7 +11284,9 @@
     "dx":  26,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 132,
@@ -9636,9 +11312,24 @@
         "magnification": 5
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
+        "magnification": 10
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
         "magnification": 10
       }
     ]
@@ -9667,9 +11358,24 @@
         "magnification": 5
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
+        "magnification": 10
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
         "magnification": 10
       }
     ]
@@ -9698,10 +11404,25 @@
         "magnification": 4
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 8
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 10
       }
     ]
   },
@@ -9729,10 +11450,25 @@
         "magnification": 3
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 10
       }
     ]
   },
@@ -9760,7 +11496,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 129,
@@ -9792,7 +11537,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 128,
@@ -9824,7 +11578,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 127,
@@ -9850,12 +11606,14 @@
         "magnification": 5
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 126,
@@ -9881,12 +11639,14 @@
         "magnification": 7
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 5
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 125,
@@ -9918,7 +11678,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 124,
@@ -9944,7 +11713,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 2,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 123,
@@ -9970,7 +11748,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 122,
@@ -10014,7 +11794,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 122,
@@ -10058,7 +11847,16 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 122,
@@ -10102,7 +11900,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 118,
@@ -10134,7 +11941,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 118,
@@ -10166,7 +11982,16 @@
         "magnification": 4
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 118,
@@ -10198,7 +12023,16 @@
         "magnification": 3
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 117,
@@ -10224,7 +12058,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 116,
@@ -10250,9 +12093,18 @@
         "magnification": 10
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
+        "magnification": 7
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
         "magnification": 7
       }
     ]
@@ -10281,10 +12133,19 @@
         "magnification": 8
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 6
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
       }
     ]
   },
@@ -10312,10 +12173,19 @@
         "magnification": 7
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 5
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
       }
     ]
   },
@@ -10343,7 +12213,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 105,
@@ -10393,7 +12265,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 105,
@@ -10425,7 +12306,16 @@
         "magnification": 12
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 105,
@@ -10457,7 +12347,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 105,
@@ -10489,7 +12388,16 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 104,
@@ -10508,7 +12416,9 @@
     "dx":  37,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 103,
@@ -10534,7 +12444,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 102,
@@ -10553,7 +12472,9 @@
     "dx":   7,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 100,
@@ -10572,7 +12493,9 @@
     "dx":  49,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 98,
@@ -10591,7 +12514,9 @@
     "dx":  22,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 97,
@@ -10610,7 +12535,9 @@
     "dx":   6,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 95,
@@ -10636,7 +12563,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 95,
@@ -10662,7 +12598,16 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 95,
@@ -10688,7 +12633,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 93,
@@ -10720,7 +12674,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 93,
@@ -10752,7 +12715,16 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 93,
@@ -10784,7 +12756,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 92,
@@ -10810,7 +12791,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 90,
@@ -10836,7 +12826,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 90,
@@ -10862,7 +12861,16 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 90,
@@ -10888,7 +12896,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 88,
@@ -10907,7 +12924,9 @@
     "dx":   4,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 82,
@@ -10939,7 +12958,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 82,
@@ -10971,7 +12992,9 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 82,
@@ -11003,7 +13026,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 80,
@@ -11022,7 +13047,9 @@
     "dx":  44,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 79,
@@ -11054,7 +13081,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 79,
@@ -11086,7 +13115,9 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 79,
@@ -11118,7 +13149,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 78,
@@ -11144,7 +13177,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 75,
@@ -11163,12 +13198,14 @@
     "dx":  22,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 72,
@@ -11194,7 +13231,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 69,
@@ -11220,7 +13259,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 68,
@@ -11252,7 +13293,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 68,
@@ -11284,7 +13327,9 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 68,
@@ -11316,7 +13361,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 67,
@@ -11335,7 +13382,9 @@
     "dx":  24,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 66,
@@ -11354,7 +13403,9 @@
     "dx":  27,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 62,
@@ -11386,11 +13437,13 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 61,
-    "name": "メーダプリンス男",
+    "name": "メーダプリンス",
     "grade": "S",
     "type": "GREEN",
     "race": "INSECT",
@@ -11405,7 +13458,9 @@
     "dx":  15,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 60,
@@ -11431,7 +13486,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 59,
@@ -11457,7 +13514,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 58,
@@ -11495,7 +13554,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 57,
@@ -11527,7 +13588,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 56,
@@ -11546,10 +13609,19 @@
     "dx":  15,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 5
       }
     ]
   },
@@ -11577,7 +13649,9 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 51,
@@ -11596,7 +13670,9 @@
     "dx":   4,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 49,
@@ -11615,9 +13691,24 @@
     "dx":  14,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
+        "magnification": 7
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
         "magnification": 7
       }
     ]
@@ -11639,10 +13730,25 @@
     "dx":  13,
     "plusCost": 3,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 6
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
       }
     ]
   },
@@ -11663,10 +13769,25 @@
     "dx":  12,
     "plusCost": 2,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 5
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
       }
     ]
   },
@@ -11687,7 +13808,9 @@
     "dx":  20,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 46,
@@ -11713,7 +13836,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 4,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 46,
@@ -11739,7 +13871,16 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 3,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 46,
@@ -11765,7 +13906,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 2,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 44,
@@ -11784,12 +13934,14 @@
     "dx":  12,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
       }
-    ]
+    ],
+    "resistances": []
   },
   {
     "number": 42,
@@ -11815,9 +13967,18 @@
         "magnification": 5
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
+        "magnification": 10
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
         "magnification": 10
       }
     ]
@@ -11846,10 +14007,19 @@
         "magnification": 4
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 8
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
       }
     ]
   },
@@ -11877,10 +14047,19 @@
         "magnification": 3
       }
     ],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
       }
     ]
   },
@@ -11901,10 +14080,19 @@
     "dx":  14,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
     "healings": [
       {
         "type": "SKILL",
         "magnification": 7
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 10
       }
     ]
   },
@@ -11932,7 +14120,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 34,
@@ -11958,7 +14148,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 34,
@@ -11984,7 +14176,9 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 34,
@@ -12010,7 +14204,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 33,
@@ -12029,7 +14225,9 @@
     "dx":  22,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 30,
@@ -12048,7 +14246,9 @@
     "dx":   8,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 28,
@@ -12067,7 +14267,9 @@
     "dx":  30,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 27,
@@ -12093,7 +14295,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 25,
@@ -12131,7 +14335,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 25,
@@ -12169,7 +14382,16 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 25,
@@ -12207,7 +14429,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 24,
@@ -12233,7 +14464,16 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 24,
@@ -12259,7 +14499,16 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 24,
@@ -12285,7 +14534,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
   },
   {
     "number": 21,
@@ -12317,7 +14575,16 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 18,
@@ -12343,7 +14610,16 @@
         "magnification": 5
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 15,
@@ -12362,7 +14638,9 @@
     "dx":   3,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 13,
@@ -12406,7 +14684,22 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 13,
@@ -12450,7 +14743,22 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 13,
@@ -12494,7 +14802,22 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 12,
@@ -12526,7 +14849,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 12,
@@ -12558,7 +14883,9 @@
         "magnification": 8
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 12,
@@ -12590,7 +14917,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 9,
@@ -12616,7 +14945,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 8,
@@ -12635,7 +14966,9 @@
     "dx":   2,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 9989,
@@ -12703,7 +15036,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 9990,
@@ -12771,7 +15106,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 9991,
@@ -12839,7 +15176,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 9992,
@@ -12865,7 +15204,9 @@
         "magnification": 10
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 9993,
@@ -12909,7 +15250,22 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "HIT",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 9994,
@@ -12935,7 +15291,9 @@
         "magnification": 16
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 9995,
@@ -12954,7 +15312,9 @@
     "dx":  78,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 9996,
@@ -12992,7 +15352,22 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "HIT",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 9997,
@@ -13011,7 +15386,16 @@
     "dx":  15,
     "plusCost": 4,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "SLIME",
+        "magnification": 10
+      }
+    ]
   },
   {
     "number": 9998,
@@ -13055,7 +15439,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 9998,
@@ -13099,7 +15485,9 @@
         "magnification": 6
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 9999,
@@ -13131,7 +15519,9 @@
         "magnification": 7
       }
     ],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 0,
@@ -13150,6 +15540,8 @@
     "dx": 0,
     "plusCost": 0,
     "damages": [],
-    "healings": []
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   }
 ]
