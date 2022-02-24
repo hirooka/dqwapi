@@ -172,7 +172,7 @@
       },
       {
         "attack": "ALL",
-        "attribute": "ALL",
+        "attribute": "NONE",
         "race": "ZOMBIE",
         "magnification": 5
       }
@@ -212,7 +212,7 @@
       },
       {
         "attack": "ALL",
-        "attribute": "ALL",
+        "attribute": "NONE",
         "race": "ZOMBIE",
         "magnification": 3
       }
