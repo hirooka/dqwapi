@@ -1,5 +1,227 @@
 [
   {
+    "number": 442,
+    "name": "キングヒドラ",
+    "grade": "S",
+    "type": "RED",
+    "race": "DRAGON",
+    "cost": 123,
+    "hp": 143,
+    "mp":  61,
+    "op":  90,
+    "dp":  54,
+    "os":  17,
+    "ds":  17,
+    "sp":  61,
+    "dx":  53,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "BREATH",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ]
+  },
+  {
+    "number": 442,
+    "name": "キングヒドラ",
+    "grade": "A",
+    "type": "RED",
+    "race": "DRAGON",
+    "cost": 123,
+    "hp": 126,
+    "mp":  54,
+    "op":  73,
+    "dp":  50,
+    "os":  14,
+    "ds":  14,
+    "sp":  53,
+    "dx":  48,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 4
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 4
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "HIT",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 6
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "BREATH",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 2
+      }
+    ]
+  },
+  {
+    "number": 441,
+    "name": "バラモスゾンビ",
+    "grade": "S",
+    "type": "PURPLE",
+    "race": "ZOMBIE",
+    "cost": 107,
+    "hp":  94,
+    "mp": 108,
+    "op":  18,
+    "dp":  59,
+    "os":  93,
+    "ds":  37,
+    "sp":  68,
+    "dx":  79,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 12
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "ZOMBIE",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 441,
+    "name": "バラモスゾンビ",
+    "grade": "A",
+    "type": "PURPLE",
+    "race": "ZOMBIE",
+    "cost": 107,
+    "hp":  84,
+    "mp":  96,
+    "op":  16,
+    "dp":  53,
+    "os":  81,
+    "ds":  33,
+    "sp":  61,
+    "dx":  70,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 8
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification":5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "ZOMBIE",
+        "magnification": 3
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
     "number": 440,
     "name": "じごくのきし",
     "grade": "S",
