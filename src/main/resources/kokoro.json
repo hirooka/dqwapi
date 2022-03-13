@@ -1,5 +1,78 @@
 [
   {
+    "number": 445,
+    "name": "タイムマスター",
+    "grade": "S",
+    "type": "PURPLE",
+    "race": "DEVIL",
+    "cost": 120,
+    "hp": 103,
+    "mp": 113,
+    "op":  19,
+    "dp":  65,
+    "os": 101,
+    "ds":  41,
+    "sp":  73,
+    "dx":  85,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "number": 443,
+    "name": "クイーンスライム",
+    "grade": "A",
+    "type": "BLUE",
+    "race": "SLIME",
+    "cost": 114,
+    "hp":  68,
+    "mp":  62,
+    "op":  71,
+    "dp":  28,
+    "os":  20,
+    "ds":  72,
+    "sp":  69,
+    "dx":  64,
+    "plusCost": 3,
+    "damages": [],
+    "chr": 0,
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 5
+      }
+    ],
+    "resistances": []
+  },
+  {
     "number": 442,
     "name": "キングヒドラ",
     "grade": "S",
