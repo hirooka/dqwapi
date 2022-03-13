@@ -49,6 +49,32 @@
   {
     "number": 443,
     "name": "クイーンスライム",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "SLIME",
+    "cost": 114,
+    "hp":  77,
+    "mp":  70,
+    "op":  81,
+    "dp":  32,
+    "os":  22,
+    "ds":  83,
+    "sp":  78,
+    "dx":  73,
+    "plusCost": 4,
+    "damages": [],
+    "chr": 0,
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 7
+      }
+    ],
+    "resistances": []
+  },
+  {
+    "number": 443,
+    "name": "クイーンスライム",
     "grade": "A",
     "type": "BLUE",
     "race": "SLIME",
