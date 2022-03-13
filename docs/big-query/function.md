@@ -396,7 +396,34 @@ LANGUAGE js AS r"""
             }  
           }
         }
-        return 0;                    
+        return 0;
+      case 'MONSTER_MASTER':
+        if (t0 === 'BLUE' || t0 === 'PURPLE') {
+          if (t1 === 'BLUE' || t1 === 'PURPLE') {
+            return Math.ceil(p0 * mag)
+              + Math.ceil(p1 * mag)
+              + Math.ceil(p2 * mag)
+              + Math.ceil(p3 * mag);
+          } else {
+            return Math.ceil(p0 * mag)
+              + p1
+              + Math.ceil(p2 * mag)
+              + Math.ceil(p3 * mag);
+          }
+        } else {
+          if (t1 === 'PURPLE' || t1 === 'GREEN') {
+            return p0
+              + Math.ceil(p1 * mag)
+              + Math.ceil(p2 * mag)
+              + Math.ceil(p3 * mag);
+          } else {
+            return p0
+              + p1
+              + Math.ceil(p2 * mag)
+              + Math.ceil(p3 * mag);
+          }
+        }
+        return 0;
       default:
         return 0;
     }  
@@ -818,7 +845,34 @@ LANGUAGE js AS r"""
             }  
           }
         }
-        return 0;                    
+        return 0;
+      case 'MONSTER_MASTER':
+        if (t0 === 'BLUE' || t0 === 'PURPLE') {
+          if (t1 === 'BLUE' || t1 === 'PURPLE') {
+            return Math.ceil(p0 * mag)
+              + Math.ceil(p1 * mag)
+              + Math.ceil(p2 * mag)
+              + Math.ceil(p3 * mag);
+          } else {
+            return Math.ceil(p0 * mag)
+              + p1
+              + Math.ceil(p2 * mag)
+              + Math.ceil(p3 * mag);
+          }
+        } else {
+          if (t1 === 'PURPLE' || t1 === 'GREEN') {
+            return p0
+              + Math.ceil(p1 * mag)
+              + Math.ceil(p2 * mag)
+              + Math.ceil(p3 * mag);
+          } else {
+            return p0
+              + p1
+              + Math.ceil(p2 * mag)
+              + Math.ceil(p3 * mag);
+          }
+        }
+        return 0;  
       default:
         return 0;
     }  
