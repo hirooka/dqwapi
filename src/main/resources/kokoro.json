@@ -1,5 +1,39 @@
 [
   {
+    "number": 446,
+    "name": "バリクナジャ",
+    "grade": "S",
+    "type": "RED",
+    "race": "DEVIL",
+    "cost": 120,
+    "hp":  81,
+    "mp":  38,
+    "op": 110,
+    "dp":  42,
+    "os":  10,
+    "ds":  10,
+    "sp":  85,
+    "dx":  78,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "DRAGON",
+        "magnification": 10
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
     "number": 445,
     "name": "タイムマスター",
     "grade": "S",

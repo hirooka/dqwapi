@@ -1,17 +1,20 @@
 plugins {
   id 'org.springframework.boot' version '2.6.4'
   id 'com.gorylenko.gradle-git-properties' version '2.4.0'
-  id 'com.palantir.git-version' version '0.13.0'
+  id 'com.palantir.git-version' version '0.14.0'
   id 'checkstyle'
 }
 apply plugin: 'java'
 apply plugin: 'io.spring.dependency-management'
 
 group 'pro.hirooka'
-version '0.9.62'
+version '0.9.63'
 
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(17)
+  }
+}
 
 repositories {
   mavenCentral()
@@ -42,7 +45,7 @@ gitProperties {
 }
 
 checkstyle {
-  toolVersion '9.3'
+  toolVersion '10.0'
 }
 
 processResources {
