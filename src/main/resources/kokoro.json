@@ -1,5 +1,87 @@
 [
   {
+    "number": 448,
+    "name": "ギガントドラゴン",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "DRAGON",
+    "cost": 129,
+    "hp": 137,
+    "mp":  89,
+    "op":  70,
+    "dp":  71,
+    "os":  33,
+    "ds":  30,
+    "sp":  92,
+    "dx": 115,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NODE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NODE",
+        "magnification": 10
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "number": 448,
+    "name": "ギガントドラゴン",
+    "grade": "A",
+    "type": "BLUE",
+    "race": "DRAGON",
+    "cost": 129,
+    "hp": 122,
+    "mp":  79,
+    "op":  62,
+    "dp":  63,
+    "os":  29,
+    "ds":  27,
+    "sp":  82,
+    "dx": 102,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NODE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NODE",
+        "magnification": 7
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
     "number": 446,
     "name": "バリクナジャ",
     "grade": "S",
@@ -11487,6 +11569,52 @@
   {
     "number": 137,
     "name": "アームライオン",
+    "grade": "SP",
+    "type": "RED",
+    "race": "ANIMAL",
+    "cost": 111,
+    "hp": 148,
+    "mp":  63,
+    "op":  85,
+    "dp":  65,
+    "os":  16,
+    "ds":  16,
+    "sp":  64,
+    "dx":  56,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ANIMAL",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 137,
+    "name": "アームライオン",
     "grade": "S",
     "type": "RED",
     "race": "ANIMAL",
@@ -15321,6 +15449,34 @@
     "dx":   2,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 9988,
+    "name": "記念大王スライム2.5",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "SLIME",
+    "cost": 25,
+    "hp":  25,
+    "mp":  25,
+    "op":  25,
+    "dp":  25,
+    "os":  25,
+    "ds":  25,
+    "sp":  25,
+    "dx":  25,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "SLIME",
+        "magnification": 10
+      }
+    ],
     "chr": 0,
     "healings": [],
     "resistances": []
