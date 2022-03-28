@@ -19,13 +19,13 @@
       {
         "attack": "ALL",
         "attribute": "DORUMA",
-        "race": "NODE",
+        "race": "NONE",
         "magnification": 10
       },
       {
         "attack": "ALL",
         "attribute": "MERA",
-        "race": "NODE",
+        "race": "NONE",
         "magnification": 10
       }
     ],
@@ -60,13 +60,13 @@
       {
         "attack": "ALL",
         "attribute": "DORUMA",
-        "race": "NODE",
+        "race": "NONE",
         "magnification": 7
       },
       {
         "attack": "ALL",
         "attribute": "MERA",
-        "race": "NODE",
+        "race": "NONE",
         "magnification": 7
       }
     ],
