@@ -2,6 +2,53 @@
   {
     "number": 448,
     "name": "ギガントドラゴン",
+    "grade": "SP",
+    "type": "BLUE",
+    "race": "DRAGON",
+    "cost": 129,
+    "hp": 147,
+    "mp":  96,
+    "op":  75,
+    "dp":  76,
+    "os":  35,
+    "ds":  33,
+    "sp":  99,
+    "dx": 130,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "BREATH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
+  },
+  {
+    "number": 448,
+    "name": "ギガントドラゴン",
     "grade": "S",
     "type": "BLUE",
     "race": "DRAGON",
