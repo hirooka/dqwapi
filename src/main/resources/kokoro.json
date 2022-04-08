@@ -1,5 +1,73 @@
 [
   {
+    "number": 455,
+    "name": "トロルキング",
+    "grade": "S",
+    "type": "RED",
+    "race": "DEVIL",
+    "cost": 129,
+    "hp": 143,
+    "mp":  69,
+    "op": 101,
+    "dp":  80,
+    "os":  18,
+    "ds":  18,
+    "sp":  69,
+    "dx":  60,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ],
+    "chr": 5,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 455,
+    "name": "トロルキング",
+    "grade": "A",
+    "type": "RED",
+    "race": "DEVIL",
+    "cost": 129,
+    "hp": 123,
+    "mp":  61,
+    "op":  90,
+    "dp":  71,
+    "os":  16,
+    "ds":  16,
+    "sp":  61,
+    "dx":  54,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 8
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 8
+      }
+    ],
+    "chr": 4,
+    "healings": [],
+    "resistances": []
+  },
+  {
     "number": 448,
     "name": "ギガントドラゴン",
     "grade": "SP",
@@ -3278,6 +3346,34 @@
     ]
   },
   {
+    "number": 363,
+    "name": "サイレス",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "BIRD",
+    "cost": 128,
+    "hp":  81,
+    "mp":  60,
+    "op": 103,
+    "dp":  40,
+    "os":  18,
+    "ds":  17,
+    "sp": 121,
+    "dx": 121,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
     "number": 359,
     "name": "アークデーモン",
     "grade": "S",
@@ -4397,6 +4493,40 @@
         "attribute": "JIBARIA",
         "race": "NONE",
         "magnification": 5
+      }
+    ]
+  },
+  {
+    "number": 327,
+    "name": "ボーンファイター",
+    "grade": "S",
+    "type": "YELLOW",
+    "race": "ZOMBIE",
+    "cost": 126,
+    "hp": 149,
+    "mp":  60,
+    "op":  69,
+    "dp": 107,
+    "os":  40,
+    "ds":  40,
+    "sp":  35,
+    "dx":  56,
+    "plusCost": 4,
+    "damages": [],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
       }
     ]
   },
