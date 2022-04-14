@@ -1,5 +1,39 @@
 [
   {
+    "number": 457,
+    "name": "ゆうれいせんちょう",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "ZOMBIE",
+    "cost": 123,
+    "hp":  92,
+    "mp":  40,
+    "op": 101,
+    "dp":  45,
+    "os":  18,
+    "ds":  18,
+    "sp": 119,
+    "dx": 118,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "ZOMBIE",
+        "magnification": 10
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
     "number": 455,
     "name": "トロルキング",
     "grade": "S",
@@ -1597,6 +1631,41 @@
     "chr": 0,
     "healings": [],
     "resistances": []
+  },
+  {
+    "number": 415,
+    "name": "ダークペルシャ",
+    "grade": "S",
+    "type": "PURPLE",
+    "race": "ANIMAL",
+    "cost": 125,
+    "hp": 122,
+    "mp":  80,
+    "op":  18,
+    "dp":  67,
+    "os":  67,
+    "ds":  30,
+    "sp":  55,
+    "dx":  80,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 412,
