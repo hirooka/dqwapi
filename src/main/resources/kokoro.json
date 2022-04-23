@@ -1,5 +1,61 @@
 [
   {
+    "number": 458,
+    "name": "ゆうれい船",
+    "grade": "S",
+    "type": "YELLOW",
+    "race": "ZOMBIE",
+    "cost": 125,
+    "hp": 178,
+    "mp":  30,
+    "op":  48,
+    "dp": 149,
+    "os":  27,
+    "ds":  28,
+    "sp":  18,
+    "dx":  28,
+    "plusCost": 4,
+    "damages": [],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "number": 458,
+    "name": "ゆうれい船",
+    "grade": "A",
+    "type": "YELLOW",
+    "race": "ZOMBIE",
+    "cost": 125,
+    "hp": 156,
+    "mp":  26,
+    "op":  43,
+    "dp": 131,
+    "os":  24,
+    "ds":  24,
+    "sp":  15,
+    "dx":  25,
+    "plusCost": 3,
+    "damages": [],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
+  },
+  {
     "number": 457,
     "name": "ゆうれいせんちょう",
     "grade": "S",
