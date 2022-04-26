@@ -102,25 +102,25 @@ public class KokoroOperator implements IKokoroOperator {
         }
       }
 
-      final int basis;
+      final int basis; // TODO:
       switch (attackType) {
         case SLASH:
         case HIT:
-          basis = combination.getOp();
+          basis = combination.getOp() + 400;
           break;
         case SPELL:
-          basis = combination.getOs();
+          basis = combination.getOs() + 400;
           break;
         case PHYSICS_SPELL_SLASH:
         case PHYSICS_SPELL_HIT:
-          basis = combination.getOp() + combination.getOs();
+          basis = combination.getOp() + combination.getOs() + 400;
           break;
         case BREATH:
-          basis = combination.getOp() + combination.getDx();
+          basis = combination.getOp() + combination.getDx() + 400;
           break;
         case HEALING_SPELL:
         case HEALING_SPECIALTY:
-          basis = combination.getDs();
+          basis = combination.getDs() + 400;
           break;
         default:
           throw new IllegalArgumentException("Unknown AttackType: " + attackType);
