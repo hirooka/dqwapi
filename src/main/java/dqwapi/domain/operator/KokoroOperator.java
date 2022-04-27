@@ -5,6 +5,7 @@ import dqwapi.domain.model.common.AttributeType;
 import dqwapi.domain.model.common.HealingType;
 import dqwapi.domain.model.common.RaceType;
 import dqwapi.domain.model.damage.SimplifiedSlot;
+import dqwapi.domain.model.job.JobParameter;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.Combination;
 import dqwapi.domain.model.kokoro.Damage;
@@ -55,13 +56,14 @@ public class KokoroOperator implements IKokoroOperator {
     List<KokoroCombinationResult> results = new ArrayList<>();
 
     final int cost = jobService.getCost(level);
+    final JobParameter jobParameter = jobService.getJobParameter(jobType, level, 10);
 
     final StopWatch stopWatch = new StopWatch();
     stopWatch.start("getKokoroCombinations");
     final List<Combination> combinations =
         kokoroService.getCombinations(
             jobType, attackType, attributeType, raceType,
-            cost, bride, exclusions, inclusions, response * 2
+            cost, jobParameter, bride, exclusions, inclusions, response * 2
         );
     stopWatch.stop();
     log.info("getKokoroCombinations: {} ms",
@@ -102,25 +104,25 @@ public class KokoroOperator implements IKokoroOperator {
         }
       }
 
-      final int basis; // TODO:
+      final int basis;
       switch (attackType) {
         case SLASH:
         case HIT:
-          basis = combination.getOp() + 400;
+          basis = combination.getOp() + jobParameter.getOp();
           break;
         case SPELL:
-          basis = combination.getOs() + 400;
+          basis = combination.getOs() + jobParameter.getOs();
           break;
         case PHYSICS_SPELL_SLASH:
         case PHYSICS_SPELL_HIT:
-          basis = combination.getOp() + combination.getOs() + 400;
+          basis = combination.getOp() + combination.getOs() + jobParameter.getOp() + jobParameter.getOs();
           break;
         case BREATH:
-          basis = combination.getOp() + combination.getDx() + 400;
+          basis = combination.getOp() + combination.getDx() + jobParameter.getOp() + jobParameter.getDx();
           break;
         case HEALING_SPELL:
         case HEALING_SPECIALTY:
-          basis = combination.getDs() + 400;
+          basis = combination.getDs() + jobParameter.getDs();
           break;
         default:
           throw new IllegalArgumentException("Unknown AttackType: " + attackType);

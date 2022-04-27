@@ -16,7 +16,7 @@ k0.cost + k1.cost + k2.cost + k3.cost - k0.plusCost - k1.plusCost - k2.plusCost 
 
 ceil(
   ceil(
-    `{{project-id}}.{{dataset}}.getMaxValue`('{{JOB}}', {{param0}}, k0.type, {{param1}}, k1.type, {{param2}}, k2.type, {{param3}}, k3.type)
+    (`{{project-id}}.{{dataset}}.getMaxValue`('{{JOB}}', {{param0}}, k0.type, {{param1}}, k1.type, {{param2}}, k2.type, {{param3}}, k3.type) + {{base}})
     * (1 + ((k0.{{attack}}NoneNone + k1.{{attack}}NoneNone + k2.{{attack}}NoneNone + k3.{{attack}}NoneNone) / 100.0))
   )
   * (1 + ((k0.{{attack}}{{Attribute}}None + k1.{{attack}}{{Attribute}}None + k2.{{attack}}{{Attribute}}None + k3.{{attack}}{{Attribute}}None + k0.all{{Attribute}}None + k1.all{{Attribute}}None + k2.all{{Attribute}}None + k3.all{{Attribute}}None) / 100.0))
@@ -27,7 +27,7 @@ SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds,
 FROM `{{project-id}}.{{dataset}}.{{table}}`
 WHERE number NOT IN ({{joinedNonBrides}})
 AND CONCAT(number, '_', grade) NOT IN ({{k0JoinedExclusions}})
-ORDER BY ({{k0Order}}) DESC LIMIT {{k0Limit}})
+ORDER BY (({{k0Order}} + {{base}}) * (1 + ({{attack}}NoneNone / 100.0)) * (1 + (({{attack}}{{Attribute}}None + all{{Attribute}}None) / 100.0))) DESC LIMIT {{k0Limit}})
 UNION DISTINCT
 SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds, (op+os) opos, (op+dx) opdx, {{attack}}NoneNone, {{attack}}{{Attribute}}None, all{{Attribute}}None
 FROM `{{project-id}}.{{dataset}}.{{table}}`

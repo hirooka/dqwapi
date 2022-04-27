@@ -1,0 +1,162 @@
+{
+  "BATTLE_MASTER": [
+    {
+      "l": 85,
+      "hp": 0,
+      "mp": 0,
+      "op": 55,
+      "dp": 0,
+      "os": 0,
+      "ds": 0,
+      "sp": 14,
+      "dx": 0,
+      "slash": 10,
+      "hit": 10,
+      "spell": 0,
+      "breath": 0,
+      "healing": 0,
+      "chr": 4,
+      "rar": 0
+    }
+  ],
+  "SAGE": [
+    {
+      "l": 85,
+      "hp": 0,
+      "mp": 15,
+      "op": 0,
+      "dp": 0,
+      "os": 37,
+      "ds": 37,
+      "sp": 0,
+      "dx": 0,
+      "slash": 0,
+      "hit": 0,
+      "spell": 10,
+      "breath": 0,
+      "healing": 10,
+      "chr": 0,
+      "rar": 3
+    }
+  ],
+  "RANGER": [
+    {
+      "l": 85,
+      "hp": 0,
+      "mp": 0,
+      "op": 25,
+      "dp": 0,
+      "os": 0,
+      "ds": 0,
+      "sp": 35,
+      "dx": 54,
+      "slash": 10,
+      "hit": 10,
+      "spell": 0,
+      "breath": 0,
+      "healing": 0,
+      "chr": 0,
+      "rar": 0
+    }
+  ],
+  "ARMAMENTALIST": [
+    {
+      "l": 85,
+      "hp": 0,
+      "mp": 0,
+      "op": 35,
+      "dp": 0,
+      "os": 35,
+      "ds": 0,
+      "sp": 0,
+      "dx": 0,
+      "slash": 10,
+      "hit": 10,
+      "spell": 10,
+      "breath": 0,
+      "healing": 0,
+      "chr": 0,
+      "rar": 3
+    }
+  ],
+  "PALADIN": [
+    {
+      "l": 85,
+      "hp": 5,
+      "mp": 0,
+      "op": 15,
+      "dp": 46,
+      "os": 0,
+      "ds": 10,
+      "sp": 0,
+      "dx": 0,
+      "slash": 10,
+      "hit": 10,
+      "spell": 0,
+      "breath": 0,
+      "healing": 0,
+      "chr": 0,
+      "rar": 0
+    }
+  ],
+  "SUPERSTAR": [
+    {
+      "l": 85,
+      "hp": 0,
+      "mp": 0,
+      "op": 0,
+      "dp": 0,
+      "os": 0,
+      "ds": 0,
+      "sp": 0,
+      "dx": 0,
+      "slash": 0,
+      "hit": 0,
+      "spell": 0,
+      "breath": 0,
+      "healing": 0,
+      "chr": 0,
+      "rar": 0
+    }
+  ],
+  "PIRATE": [
+    {
+      "l": 85,
+      "hp": 0,
+      "mp": 0,
+      "op": 0,
+      "dp": 0,
+      "os": 0,
+      "ds": 0,
+      "sp": 0,
+      "dx": 0,
+      "slash": 0,
+      "hit": 0,
+      "spell": 0,
+      "breath": 0,
+      "healing": 0,
+      "chr": 0,
+      "rar": 0
+    }
+  ],
+  "MONSTER_MASTER": [
+    {
+      "l": 85,
+      "hp": 0,
+      "mp": 0,
+      "op": 0,
+      "dp": 0,
+      "os": 0,
+      "ds": 0,
+      "sp": 0,
+      "dx": 0,
+      "slash": 0,
+      "hit": 0,
+      "spell": 0,
+      "breath": 0,
+      "healing": 0,
+      "chr": 0,
+      "rar": 0
+    }
+  ]
+}

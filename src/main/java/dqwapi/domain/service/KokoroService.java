@@ -18,6 +18,7 @@ import dqwapi.domain.model.common.DwhType;
 import dqwapi.domain.model.common.KokoroType;
 import dqwapi.domain.model.common.Parameter;
 import dqwapi.domain.model.common.RaceType;
+import dqwapi.domain.model.job.JobParameter;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.Combination;
 import dqwapi.domain.model.kokoro.Damage;
@@ -1700,6 +1701,7 @@ public class KokoroService implements IKokoroService {
       final AttributeType attributeType,
       final RaceType raceType,
       final int cost,
+      final JobParameter jobParameter,
       final String bride,
       final Map<Integer, List<GradeType>> exclusions,
       final Map<Integer, List<GradeType>> inclusions,
@@ -1734,7 +1736,7 @@ public class KokoroService implements IKokoroService {
     final List<Result> results = applicationContext
         .getBeansOfType(IKokoroCombinationRepository.class)
         .get(UPPER_UNDERSCORE.to(LOWER_HYPHEN, dwhType.name()) + repositorySuffix)
-        .get(jobType, attackType, attributeType, raceType, cost, nonBrides, exclusions, inclusions, limit);
+        .get(jobType, attackType, attributeType, raceType, cost, jobParameter, nonBrides, exclusions, inclusions, limit);
 
     stopWatch.stop();
     log.info("{} results, {} ms",

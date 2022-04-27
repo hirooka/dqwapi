@@ -4,6 +4,7 @@ import dqwapi.domain.entity.Result;
 import dqwapi.domain.model.common.AttackType;
 import dqwapi.domain.model.common.AttributeType;
 import dqwapi.domain.model.common.RaceType;
+import dqwapi.domain.model.job.JobParameter;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.GradeType;
 import dqwapi.domain.repository.IKokoroCombinationRepository;
@@ -567,6 +568,7 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
       final AttributeType attributeType,
       final RaceType raceType,
       final int cost,
+      final JobParameter jobParameter,
       final List<Integer> nonBrides,
       final Map<Integer, List<GradeType>> exclusions,
       final Map<Integer, List<GradeType>> inclusions,

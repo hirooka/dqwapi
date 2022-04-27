@@ -12,7 +12,7 @@ k0.cost + k1.cost + k2.cost + k3.cost - k0.plusCost - k1.plusCost - k2.plusCost 
 
 ceil(
   ceil(
-    `{{project-id}}.{{dataset}}.getMaxValue`('{{JOB}}', {{param0}}, k0.type, {{param1}}, k1.type, {{param2}}, k2.type, {{param3}}, k3.type)
+    (`{{project-id}}.{{dataset}}.getMaxValue`('{{JOB}}', {{param0}}, k0.type, {{param1}}, k1.type, {{param2}}, k2.type, {{param3}}, k3.type) + {{base}})
     * (1 + ((k0.healingSkill + k1.healingSkill + k2.healingSkill + k3.healingSkill) / 100.0))
   )
   * (1 + ((k0.{{Attack}} + k1.{{Attack}} + k2.{{Attack}} + k3.{{Attack}}) / 100.0))
@@ -23,7 +23,7 @@ SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds,
 FROM `{{project-id}}.{{dataset}}.{{table}}`
 WHERE number NOT IN ({{joinedNonBrides}})
 AND CONCAT(number, '_', grade) NOT IN ({{k0JoinedExclusions}})
-ORDER BY ({{k0Order}}) DESC LIMIT {{k0Limit}})
+ORDER BY (({{k0Order}} + {{base}}) * (1 + (healingSkill / 100.0)) * (1 + ({{Attack}} / 100.0))) DESC LIMIT {{k0Limit}})
 UNION DISTINCT
 SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds, (op+os) opos, (op+dx) opdx, healingSkill, {{Attack}}
 FROM `{{project-id}}.{{dataset}}.{{table}}`

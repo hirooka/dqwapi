@@ -6,6 +6,7 @@ import dqwapi.domain.model.common.AttackType;
 import dqwapi.domain.model.common.AttributeType;
 import dqwapi.domain.model.common.BigQueryTableType;
 import dqwapi.domain.model.common.RaceType;
+import dqwapi.domain.model.job.JobParameter;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.GradeType;
 import dqwapi.domain.repository.IKokoroCombinationRepository;
@@ -70,6 +71,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
       final AttributeType attributeType,
       final RaceType raceType,
       final int cost,
+      final JobParameter jobParameter,
       final List<Integer> nonBrides,
       final Map<Integer, List<GradeType>> exclusions,
       final Map<Integer, List<GradeType>> inclusions,
@@ -92,6 +94,15 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
         inclusionGrades.add(key + "_" + gradeType.name());
       }
     }
+
+    final int base = switch (attackType) {
+      case SLASH, HIT -> jobParameter.getOp();
+      case SPELL -> jobParameter.getOs();
+      case PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT -> jobParameter.getOp() + jobParameter.getOs();
+      case BREATH -> jobParameter.getOp() + jobParameter.getDx();
+      case HEALING_SPELL, HEALING_SPECIALTY -> jobParameter.getDs();
+      default -> throw new IllegalArgumentException("Unknown AttackType: " + attackType);
+    };
 
     final String parameter = switch (attackType) {
       case SLASH, HIT -> "op";
@@ -244,6 +255,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
                       .replace("{{param1}}", parameters.get(1))
                       .replace("{{param2}}", parameters.get(2))
                       .replace("{{param3}}", parameters.get(3))
+                      .replace("{{base}}", Integer.toString(base))
                       .replace("{{attack}}", replacedAttackType.name().toLowerCase())
                       .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
                       .replace("{{attribute}}", attributeType.name().toLowerCase())
@@ -275,6 +287,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
                       .replace("{{param1}}", parameters.get(1))
                       .replace("{{param2}}", parameters.get(2))
                       .replace("{{param3}}", parameters.get(3))
+                      .replace("{{base}}", Integer.toString(base))
                       .replace("{{attack}}", replacedAttackType.name().toLowerCase())
                       .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
                       .replace("{{attribute}}", attributeType.name().toLowerCase())
@@ -308,6 +321,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
                       .replace("{{param1}}", parameters.get(1))
                       .replace("{{param2}}", parameters.get(2))
                       .replace("{{param3}}", parameters.get(3))
+                      .replace("{{base}}", Integer.toString(base))
                       .replace("{{attack}}", replacedAttackType.name().toLowerCase())
                       .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
                       .replace("{{attribute}}", attributeType.name().toLowerCase())
@@ -339,6 +353,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
                       .replace("{{param1}}", parameters.get(1))
                       .replace("{{param2}}", parameters.get(2))
                       .replace("{{param3}}", parameters.get(3))
+                      .replace("{{base}}", Integer.toString(base))
                       .replace("{{attack}}", replacedAttackType.name().toLowerCase())
                       .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
                       .replace("{{attribute}}", attributeType.name().toLowerCase())
@@ -373,6 +388,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
                   .replace("{{param1}}", parameters.get(1))
                   .replace("{{param2}}", parameters.get(2))
                   .replace("{{param3}}", parameters.get(3))
+                  .replace("{{base}}", Integer.toString(base))
                   .replace("{{attack}}", replacedAttackType.name().toLowerCase())
                   .replace("{{Attack}}", CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, replacedAttackType.name()))
                   .replace("{{attribute}}", attributeType.name().toLowerCase())

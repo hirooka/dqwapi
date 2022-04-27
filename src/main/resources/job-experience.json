@@ -1,0 +1,138 @@
+{
+  "BATTLE_MASTER": [
+    {
+      "l": 10,
+      "hp": 0,
+      "mp": 5,
+      "op": 40,
+      "dp": 0,
+      "os": 0,
+      "ds": 0,
+      "sp": 14,
+      "dx": 14,
+      "slash": 5,
+      "hit": 5,
+      "spell": 0,
+      "breath": 0
+    }
+  ],
+  "SAGE": [
+    {
+      "l": 10,
+      "hp": 0,
+      "mp": 10,
+      "op": 0,
+      "dp": 0,
+      "os": 28,
+      "ds": 28,
+      "sp": 14,
+      "dx": 0,
+      "slash": 0,
+      "hit": 0,
+      "spell": 5,
+      "breath": 0
+    }
+  ],
+  "RANGER": [
+    {
+      "l": 10,
+      "hp": 7,
+      "mp": 0,
+      "op": 28,
+      "dp": 18,
+      "os": 0,
+      "ds": 0,
+      "sp": 25,
+      "dx": 10,
+      "slash": 4,
+      "hit": 4,
+      "spell": 0,
+      "breath": 0
+    }
+  ],
+  "ARMAMENTALIST": [
+    {
+      "l": 10,
+      "hp": 18,
+      "mp": 10,
+      "op": 20,
+      "dp": 7,
+      "os": 20,
+      "ds": 0,
+      "sp": 0,
+      "dx": 0,
+      "slash": 5,
+      "hit": 5,
+      "spell": 5,
+      "breath": 0
+    }
+  ],
+  "PALADIN": [
+    {
+      "l": 10,
+      "hp": 21,
+      "mp": 17,
+      "op": 10,
+      "dp": 14,
+      "os": 0,
+      "ds": 23,
+      "sp": 0,
+      "dx": 0,
+      "slash": 5,
+      "hit": 5,
+      "spell": 0,
+      "breath": 0
+    }
+  ],
+  "SUPERSTAR": [
+    {
+      "l": 10,
+      "hp": 0,
+      "mp": 10,
+      "op": 23,
+      "dp": 7,
+      "os": 0,
+      "ds": 15,
+      "sp": 14,
+      "dx": 7,
+      "slash": 5,
+      "hit": 5,
+      "spell": 0,
+      "breath": 0
+    }
+  ],
+  "PIRATE": [
+    {
+      "l": 10,
+      "hp": 27,
+      "mp": 3,
+      "op": 30,
+      "dp": 14,
+      "os": 0,
+      "ds": 0,
+      "sp": 4,
+      "dx": 7,
+      "slash": 6,
+      "hit": 6,
+      "spell": 0,
+      "breath": 0
+    }
+  ],
+  "MONSTER_MASTER": [
+    {
+      "l": 10,
+      "hp": 0,
+      "mp": 7,
+      "op": 25,
+      "dp": 7,
+      "os": 10,
+      "ds": 0,
+      "sp": 25,
+      "dx": 23,
+      "slash": 4,
+      "hit": 4,
+      "spell": 4,
+      "breath": 1
+    }
+  ]
+}
