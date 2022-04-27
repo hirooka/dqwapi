@@ -1,5 +1,181 @@
 [
   {
+    "number": 467,
+    "name": "ピンキーパンサー",
+    "grade": "S",
+    "type": "RED",
+    "race": "ANIMAL",
+    "cost": 122,
+    "hp":  99,
+    "mp":  38,
+    "op":  93,
+    "dp":  57,
+    "os":  15,
+    "ds":  15,
+    "sp":  90,
+    "dx":  69,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
+  },
+  {
+    "number": 466,
+    "name": "じごくのドアボーイ",
+    "grade": "S",
+    "type": "YELLOW",
+    "race": "PHANTOM",
+    "cost": 122,
+    "hp": 159,
+    "mp":  27,
+    "op":  43,
+    "dp": 133,
+    "os":  24,
+    "ds":  24,
+    "sp":  16,
+    "dx":  25,
+    "plusCost": 4,
+    "damages": [],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "number": 465,
+    "name": "マッドスミス",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "ZOMBIE",
+    "cost": 122,
+    "hp": 134,
+    "mp":  80,
+    "op":  51,
+    "dp":  75,
+    "os":  24,
+    "ds":  22,
+    "sp":  69,
+    "dx":  69,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 464,
+    "name": "ムーンキメラ",
+    "grade": "S",
+    "type": "PURPLE",
+    "race": "BIRD",
+    "cost": 122,
+    "hp":  95,
+    "mp": 104,
+    "op":  18,
+    "dp":  61,
+    "os":  93,
+    "ds":  38,
+    "sp":  67,
+    "dx":  79,
+    "plusCost": 4,
+    "damages": [],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 459,
+    "name": "スライムヒーローズ",
+    "grade": "S",
+    "type": "YELLOW",
+    "race": "SLIME",
+    "cost": 125,
+    "hp": 104,
+    "mp": 115,
+    "op":  86,
+    "dp":  63,
+    "os":  39,
+    "ds":  35,
+    "sp": 109,
+    "dx": 109,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
     "number": 458,
     "name": "ゆうれい船",
     "grade": "S",
