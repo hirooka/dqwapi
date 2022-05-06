@@ -131,10 +131,11 @@ public class JobService implements IJobService {
   }
 
   private JobParameter calculateJobParameter(JobType jobType, int level, int experience) {
+    // TODO: 85 -> level
     final JobParameter baseParameter = jobBase.get(jobType).stream()
-            .filter(p -> p.getL() == level).findFirst().orElseThrow(NoSuchElementException::new);
+            .filter(p -> p.getL() == 85).findFirst().orElseThrow(NoSuchElementException::new);
     final JobParameter specialityParameter = jobSpeciality.get(jobType).stream()
-            .filter(p -> p.getL() == level).findFirst().orElseThrow(NoSuchElementException::new);
+            .filter(p -> p.getL() == 85).findFirst().orElseThrow(NoSuchElementException::new);
     final JobParameter experienceParameter = jobExperience.get(jobType).stream()
             .filter(p -> p.getL() == 10).findFirst().orElseThrow(NoSuchElementException::new);
     final JobParameter monsterParameter = jobMonster.get(jobType).stream()
