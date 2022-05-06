@@ -1,5 +1,45 @@
 [
   {
+    "number": 468,
+    "name": "はめつの使者",
+    "grade": "S",
+    "type": "PURPLE",
+    "race": "DEVIL",
+    "cost": 41,
+    "hp":  24,
+    "mp":  58,
+    "op":  17,
+    "dp":  10,
+    "os":  59,
+    "ds":  18,
+    "sp":  65,
+    "dx":  30,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
     "number": 467,
     "name": "ピンキーパンサー",
     "grade": "S",
@@ -113,6 +153,40 @@
     "dx":  79,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 463,
+    "name": "テンタクルス",
+    "grade": "S",
+    "type": "RED",
+    "race": "WATER",
+    "cost": 122,
+    "hp": 106,
+    "mp":  46,
+    "op": 105,
+    "dp":  60,
+    "os":  16,
+    "ds":  16,
+    "sp":  87,
+    "dx":  77,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ],
     "chr": 0,
     "healings": [],
     "resistances": []
