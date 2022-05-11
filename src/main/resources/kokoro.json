@@ -10918,6 +10918,41 @@
   },
   {
     "number": 172,
+    "name": "闇の覇者りゅうおう",
+    "grade": "SP",
+    "type": "PURPLE",
+    "race": "SECRET",
+    "cost": 125,
+    "hp": 110,
+    "mp": 129,
+    "op":  27,
+    "dp":  53,
+    "os": 107,
+    "ds":  35,
+    "sp": 101,
+    "dx":  99,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
+  },
+  {
+    "number": 172,
     "name": "りゅうおう",
     "grade": "S",
     "type": "PURPLE",
