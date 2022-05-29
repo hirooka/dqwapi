@@ -1,5 +1,45 @@
 [
   {
+    "number": 470,
+    "name": "なげきの亡霊",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "ZOMBIE",
+    "cost": 125,
+    "hp": 105,
+    "mp":  41,
+    "op":  99,
+    "dp":  39,
+    "os":  18,
+    "ds":  16,
+    "sp": 110,
+    "dx": 135,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "BIRD",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "MATERIAL",
+        "magnification": 10
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
     "number": 468,
     "name": "はめつの使者",
     "grade": "S",
