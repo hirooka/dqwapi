@@ -1,5 +1,46 @@
 [
   {
+    "number": 471,
+    "name": "ドルマゲス",
+    "grade": "S",
+    "type": "YELLOW",
+    "race": "SECRET",
+    "cost": 128,
+    "hp": 120,
+    "mp":  72,
+    "op":  96,
+    "dp":  74,
+    "os":  46,
+    "ds":  20,
+    "sp":  35,
+    "dx":  75,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 12
+      },
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 12
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
     "number": 470,
     "name": "なげきの亡霊",
     "grade": "S",
