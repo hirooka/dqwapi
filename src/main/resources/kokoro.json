@@ -1,5 +1,121 @@
 [
   {
+    "number": 472,
+    "name": "ドルマゲス",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "SECRET",
+    "cost": 128,
+    "hp": 126,
+    "mp":  76,
+    "op":  95,
+    "dp":  66,
+    "os":  40,
+    "ds":  36,
+    "sp": 111,
+    "dx": 111,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "chr": 0,
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 5
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "number": 472,
+    "name": "ドルマゲス",
+    "grade": "A",
+    "type": "BLUE",
+    "race": "SECRET",
+    "cost": 128,
+    "hp": 112,
+    "mp":  67,
+    "op":  84,
+    "dp":  59,
+    "os":  35,
+    "ds":  32,
+    "sp":  98,
+    "dx":  98,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 3
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
+  },
+  {
     "number": 471,
     "name": "ドルマゲス",
     "grade": "S",
