@@ -1,5 +1,91 @@
 [
   {
+    "number": 474,
+    "name": "妖魔ゲモン",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "BIRD",
+    "cost": 119,
+    "hp": 119,
+    "mp":  72,
+    "op":  83,
+    "dp":  80,
+    "os":  38,
+    "ds":  34,
+    "sp": 136,
+    "dx":  76,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "BIRD",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 473,
+    "name": "呪われしゼシカ",
+    "grade": "S",
+    "type": "PURPLE",
+    "race": "SECRET",
+    "cost": 126,
+    "hp":  92,
+    "mp": 105,
+    "op":  14,
+    "dp":  57,
+    "os": 119,
+    "ds":  46,
+    "sp":  85,
+    "dx":  87,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
     "number": 472,
     "name": "ドルマゲス",
     "grade": "S",
@@ -16233,6 +16319,66 @@
     "dx":   2,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 9986,
+    "name": "ゼシカとククール",
+    "grade": "S",
+    "type": "GREEN",
+    "race": "NONE",
+    "cost": 107,
+    "hp": 134,
+    "mp": 103,
+    "op":  36,
+    "dp":  34,
+    "os":  43,
+    "ds":  64,
+    "sp":  29,
+    "dx":  38,
+    "plusCost": 4,
+    "damages": [],
+    "chr": 0,
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 7
+      }
+    ],
+    "resistances": []
+  },
+  {
+    "number": 9987,
+    "name": "エイトとヤンガス",
+    "grade": "S",
+    "type": "RED",
+    "race": "NONE",
+    "cost": 107,
+    "hp":  99,
+    "mp":  42,
+    "op":  93,
+    "dp":  56,
+    "os":  15,
+    "ds":  15,
+    "sp":  79,
+    "dx":  69,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 8
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 8
+      }
+    ],
     "chr": 0,
     "healings": [],
     "resistances": []
