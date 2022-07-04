@@ -83,7 +83,7 @@ public class KokoroCombinationRestController {
       @RequestParam(value = "j", required = false) JobType jobType,
 
       @Parameter(description = "レベル",
-          schema = @Schema(defaultValue = "85", minimum = "30", maximum = "86"))
+          schema = @Schema(defaultValue = "85", minimum = "30", maximum = "91"))
       @RequestParam(value = "l", required = false) Integer level,
 
       @Parameter(description = "花嫁のこころ",

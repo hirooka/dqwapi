@@ -1,5 +1,10 @@
 [
-  {"level": 86, "cost": 999},
+  {"level": 91, "cost": 999},
+  {"level": 90, "cost": 500},
+  {"level": 89, "cost": 494},
+  {"level": 88, "cost": 488},
+  {"level": 87, "cost": 482},
+  {"level": 86, "cost": 476},
   {"level": 85, "cost": 470},
   {"level": 84, "cost": 464},
   {"level": 83, "cost": 458},
