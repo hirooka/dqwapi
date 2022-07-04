@@ -1,5 +1,191 @@
 [
   {
+    "number": 475,
+    "name": "暗黒神ラプソーン",
+    "grade": "SP",
+    "type": "RED",
+    "race": "SECRET",
+    "cost": 129,
+    "hp": 130,
+    "mp":  54,
+    "op": 114,
+    "dp":  88,
+    "os":  18,
+    "ds":  18,
+    "sp":  75,
+    "dx":  76,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 475,
+    "name": "暗黒神ラプソーン",
+    "grade": "S",
+    "type": "RED",
+    "race": "SECRET",
+    "cost": 129,
+    "hp": 114,
+    "mp":  49,
+    "op": 104,
+    "dp":  75,
+    "os":  17,
+    "ds":  17,
+    "sp":  65,
+    "dx":  67,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 475,
+    "name": "暗黒神ラプソーン",
+    "grade": "A",
+    "type": "RED",
+    "race": "SECRET",
+    "cost": 129,
+    "hp": 101,
+    "mp":  43,
+    "op":  92,
+    "dp":  67,
+    "os":  15,
+    "ds":  15,
+    "sp":  58,
+    "dx":  59,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
     "number": 474,
     "name": "妖魔ゲモン",
     "grade": "S",
@@ -5151,6 +5337,76 @@
         "attribute": "JIBARIA",
         "race": "NONE",
         "magnification": 5
+      }
+    ]
+  },
+  {
+    "number": 329,
+    "name": "バッファロン",
+    "grade": "S",
+    "type": "YELLOW",
+    "race": "ANIMAL",
+    "cost": 129,
+    "hp": 167,
+    "mp":  67,
+    "op":  90,
+    "dp": 120,
+    "os":  44,
+    "ds":  44,
+    "sp":  39,
+    "dx":  63,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
+  },
+  {
+    "number": 329,
+    "name": "バッファロン",
+    "grade": "A",
+    "type": "YELLOW",
+    "race": "ANIMAL",
+    "cost": 129,
+    "hp": 147,
+    "mp":  59,
+    "op":  77,
+    "dp": 105,
+    "os":  39,
+    "ds":  39,
+    "sp":  35,
+    "dx":  55,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 8
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 10
       }
     ]
   },
@@ -13267,6 +13523,71 @@
   {
     "number": 118,
     "name": "ボーンナイト",
+    "grade": "SP",
+    "type": "RED",
+    "race": "ZOMBIE",
+    "cost": 117,
+    "hp": 125,
+    "mp":  59,
+    "op":  86,
+    "dp":  50,
+    "os":  16,
+    "ds":  16,
+    "sp":  59,
+    "dx":  75,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "SLIME",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "DEVIL",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "number": 118,
+    "name": "ボーンナイト",
     "grade": "S",
     "type": "RED",
     "race": "ZOMBIE",
@@ -13301,7 +13622,7 @@
         "attack": "ALL",
         "attribute": "DORUMA",
         "race": "NONE",
-        "magnification": 7
+        "magnification": 5
       }
     ]
   },
