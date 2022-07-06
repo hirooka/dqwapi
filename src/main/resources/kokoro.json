@@ -1,5 +1,45 @@
 [
   {
+    "number": 477,
+    "name": "ユニコーン",
+    "grade": "S",
+    "type": "GREEN",
+    "race": "ANIMAL",
+    "cost": 129,
+    "hp": 120,
+    "mp": 113,
+    "op":  46,
+    "dp":  85,
+    "os":  94,
+    "ds": 100,
+    "sp":  59,
+    "dx":  46,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 10
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
+  },
+  {
     "number": 475,
     "name": "暗黒神ラプソーン",
     "grade": "SP",
