@@ -1,5 +1,110 @@
 [
   {
+    "number": 479,
+    "name": "呪われしゼシカ",
+    "grade": "S",
+    "type": "PURPLE",
+    "race": "DEVIL",
+    "cost": 128,
+    "hp": 110,
+    "mp": 128,
+    "op":  20,
+    "dp":  20,
+    "os":  96,
+    "ds":  34,
+    "sp":  60,
+    "dx":  88,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 8
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 478,
+    "name": "まじょのかげ",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "ELEMENT",
+    "cost": 62,
+    "hp":  66,
+    "mp":  50,
+    "op":  62,
+    "dp":  40,
+    "os":  24,
+    "ds":  26,
+    "sp":  75,
+    "dx":  55,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "BIRD",
+        "magnification": 5
+      }
+    ]
+  },
+  {
     "number": 477,
     "name": "ユニコーン",
     "grade": "S",
