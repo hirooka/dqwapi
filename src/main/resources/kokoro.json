@@ -1,7 +1,7 @@
 [
   {
     "number": 479,
-    "name": "呪われしゼシカ",
+    "name": "グレイツェル",
     "grade": "S",
     "type": "PURPLE",
     "race": "DEVIL",
@@ -33,6 +33,46 @@
         "attribute": "HYADO",
         "race": "NONE",
         "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 479,
+    "name": "グレイツェル",
+    "grade": "A",
+    "type": "PURPLE",
+    "race": "DEVIL",
+    "cost": 128,
+    "hp":  97,
+    "mp": 113,
+    "op":  18,
+    "dp":  18,
+    "os":  84,
+    "ds":  30,
+    "sp":  53,
+    "dx":  78,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 3
       }
     ],
     "chr": 0,
