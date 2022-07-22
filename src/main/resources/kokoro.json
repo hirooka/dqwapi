@@ -5596,6 +5596,76 @@
     ]
   },
   {
+    "number": 328,
+    "name": "モヒカント",
+    "grade": "S",
+    "type": "YELLOW",
+    "race": "ANIMAL",
+    "cost": 129,
+    "hp": 140,
+    "mp":  85,
+    "op":  85,
+    "dp":  93,
+    "os":  44,
+    "ds":  40,
+    "sp": 124,
+    "dx": 124,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
+  },
+  {
+    "number": 328,
+    "name": "モヒカント",
+    "grade": "A",
+    "type": "BLUE",
+    "race": "ANIMAL",
+    "cost": 129,
+    "hp": 124,
+    "mp":  74,
+    "op":  79,
+    "dp":  82,
+    "os":  39,
+    "ds":  36,
+    "sp": 108,
+    "dx": 108,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 8
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
+  },
+  {
     "number": 327,
     "name": "ボーンファイター",
     "grade": "S",
@@ -12535,6 +12605,52 @@
         "magnification": 5
       }
     ]
+  },
+  {
+    "number": 146,
+    "name": "ヒイラギどうじ",
+    "grade": "SP",
+    "type": "PURPLE",
+    "race": "PLANT",
+    "cost": 123,
+    "hp": 105,
+    "mp": 124,
+    "op":  42,
+    "dp":  48,
+    "os": 114,
+    "ds":  58,
+    "sp": 150,
+    "dx": 104,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "PLANT",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "MATERIAL",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
   },
   {
     "number": 146,
