@@ -1,6 +1,64 @@
 [
   {
     "number": 479,
+    "name": "キングリザード",
+    "grade": "S",
+    "type": "RED",
+    "race": "DRAGON",
+    "cost": 128,
+    "hp":  77,
+    "mp":  36,
+    "op": 116,
+    "dp":  45,
+    "os":   7,
+    "ds":   7,
+    "sp":  96,
+    "dx":  92,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "DRAGON",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 478,
     "name": "グレイツェル",
     "grade": "S",
     "type": "PURPLE",
@@ -40,7 +98,7 @@
     "resistances": []
   },
   {
-    "number": 479,
+    "number": 478,
     "name": "グレイツェル",
     "grade": "A",
     "type": "PURPLE",
@@ -80,7 +138,7 @@
     "resistances": []
   },
   {
-    "number": 478,
+    "number": 477,
     "name": "まじょのかげ",
     "grade": "S",
     "type": "BLUE",
@@ -145,7 +203,7 @@
     ]
   },
   {
-    "number": 477,
+    "number": 476,
     "name": "ユニコーン",
     "grade": "S",
     "type": "GREEN",
@@ -181,6 +239,46 @@
         "attribute": "MERA",
         "race": "NONE",
         "magnification": 10
+      }
+    ]
+  },
+  {
+    "number": 476,
+    "name": "ユニコーン",
+    "grade": "A",
+    "type": "GREEN",
+    "race": "ANIMAL",
+    "cost": 129,
+    "hp": 109,
+    "mp":  90,
+    "op":  37,
+    "dp":  68,
+    "os":  74,
+    "ds":  90,
+    "sp":  47,
+    "dx":  37,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      }
+    ],
+    "chr": 0,
+    "healings": [
+      {
+        "type": "SKILL",
+        "magnification": 7
+      }
+    ],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
       }
     ]
   },
