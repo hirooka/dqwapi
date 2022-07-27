@@ -37,7 +37,7 @@ dependencies {
   implementation 'com.google.cloud:google-cloud-bigquery'
   implementation 'com.google.cloud:google-cloud-storage'
   implementation group: 'com.google.cloud.sql', name: 'postgres-socket-factory', version: '1.6.2'
-  implementation group: 'org.hsqldb', name: 'hsqldb', version: '2.6.1'
+  implementation group: 'org.hsqldb', name: 'hsqldb', version: '2.7.0'
 }
 
 gitProperties {
