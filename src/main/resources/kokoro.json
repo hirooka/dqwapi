@@ -1,5 +1,111 @@
 [
   {
+    "number": 482,
+    "name": "冥王ネルゲル",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "SECRET",
+    "cost": 131,
+    "hp": 111,
+    "mp":  46,
+    "op": 106,
+    "dp":  53,
+    "os":  41,
+    "ds":  18,
+    "sp": 134,
+    "dx": 126,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "number": 480,
+    "name": "魔勇者アンルシア",
+    "grade": "S",
+    "type": "PURPLE",
+    "race": "SECRET",
+    "cost": 129,
+    "hp": 109,
+    "mp":  69,
+    "op":  55,
+    "dp":  62,
+    "os":  91,
+    "ds":  14,
+    "sp":  45,
+    "dx":  53,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 12
+      },
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 12
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
     "number": 479,
     "name": "キングリザード",
     "grade": "S",
