@@ -1,5 +1,46 @@
 [
   {
+    "number": 483,
+    "name": "魔兵タナト＆ヒプノス",
+    "grade": "S",
+    "type": "YELLOW",
+    "race": "DEVIL",
+    "cost": 122,
+    "hp": 131,
+    "mp":  59,
+    "op":  85,
+    "dp":  93,
+    "os":  38,
+    "ds":  38,
+    "sp":  34,
+    "dx":  55,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "DEVIL",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
     "number": 482,
     "name": "冥王ネルゲル",
     "grade": "S",
@@ -61,6 +102,71 @@
         "attribute": "DORUMA",
         "race": "NONE",
         "magnification": 7
+      }
+    ]
+  },
+  {
+    "number": 482,
+    "name": "冥王ネルゲル",
+    "grade": "A",
+    "type": "BLUE",
+    "race": "SECRET",
+    "cost": 131,
+    "hp":  96,
+    "mp":  42,
+    "op":  93,
+    "dp":  47,
+    "os":  37,
+    "ds":  16,
+    "sp": 119,
+    "dx": 111,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
       }
     ]
   },
