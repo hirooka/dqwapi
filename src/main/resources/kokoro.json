@@ -1,5 +1,50 @@
 [
   {
+    "number": 485,
+    "name": "冥獣王ネルゲル",
+    "grade": "S",
+    "type": "PURPLE",
+    "race": "SECRET",
+    "cost": 129,
+    "hp": 135,
+    "mp": 136,
+    "op":  23,
+    "dp":  58,
+    "os": 100,
+    "ds":  68,
+    "sp":  26,
+    "dx":  99,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "chr": 0,
+    "healings": [
+      {
+        "type": "SPELL",
+        "magnification": 7
+      }
+    ],
+    "resistances": []
+  },
+  {
     "number": 483,
     "name": "魔兵タナト＆ヒプノス",
     "grade": "S",
