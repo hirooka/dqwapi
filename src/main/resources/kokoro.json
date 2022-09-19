@@ -1,5 +1,97 @@
 [
   {
+    "number": 488,
+    "name": "スロットマジーン",
+    "grade": "S",
+    "type": "PURPLE",
+    "race": "MACHINE",
+    "cost": 96,
+    "hp":  57,
+    "mp":  83,
+    "op":   7,
+    "dp":  28,
+    "os": 119,
+    "ds":  44,
+    "sp":  83,
+    "dx":  75,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 486,
+    "name": "かんだたん",
+    "grade": "S",
+    "type": "YELLOW",
+    "race": "PHANTOM",
+    "cost":  24,
+    "hp":  22,
+    "mp":   8,
+    "op":  30,
+    "dp":  13,
+    "os":   8,
+    "ds":   5,
+    "sp":  12,
+    "dx":   2,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
     "number": 485,
     "name": "冥獣王ネルゲル",
     "grade": "S",
