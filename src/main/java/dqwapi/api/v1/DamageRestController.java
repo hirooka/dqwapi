@@ -46,7 +46,7 @@ public class DamageRestController {
       jobType = JobType.BATTLE_MASTER;
     }
     if (ObjectUtils.isEmpty(level)) {
-      level = 80;
+      level = 90;
     }
     if (ObjectUtils.isEmpty(defence)) {
       defence = 500;

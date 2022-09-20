@@ -17445,7 +17445,7 @@
     "resistances": []
   },
   {
-    "number": 9985,
+    "number": 9984,
     "name": "記念大王スライム3",
     "grade": "S",
     "type": "BLUE",
@@ -17471,6 +17471,65 @@
     "chr": 0,
     "healings": [],
     "resistances": []
+  },
+  {
+    "number": 9985,
+    "name": "勇者姫アンルシア",
+    "grade": "S",
+    "type": "RAINBOW",
+    "race": "NONE",
+    "cost": 116,
+    "hp": 118,
+    "mp":  78,
+    "op":  92,
+    "dp":  89,
+    "os":  41,
+    "ds":  37,
+    "sp": 113,
+    "dx": 113,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "DEIN",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "SECRET",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ]
   },
   {
     "number": 9986,
