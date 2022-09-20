@@ -1,5 +1,57 @@
 [
   {
+    "number": 489,
+    "name": "マッスルガード",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "DEVIL",
+    "cost": 131,
+    "hp": 118,
+    "mp":  78,
+    "op":  92,
+    "dp":  89,
+    "os":  41,
+    "ds":  37,
+    "sp": 113,
+    "dx": 113,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
     "number": 488,
     "name": "スロットマジーン",
     "grade": "S",
@@ -17388,6 +17440,34 @@
     "dx":   2,
     "plusCost": 4,
     "damages": [],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 9985,
+    "name": "記念大王スライム3",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "SLIME",
+    "cost": 30,
+    "hp":  30,
+    "mp":  30,
+    "op":  30,
+    "dp":  30,
+    "os":  30,
+    "ds":  30,
+    "sp":  30,
+    "dx":  30,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "SLIME",
+        "magnification": 10
+      }
+    ],
     "chr": 0,
     "healings": [],
     "resistances": []
