@@ -114,7 +114,7 @@ public class KokoroCombinationRestController {
           schema = @Schema(allowableValues = {
               "NONE", "ANIMAL", "BIRD", "DEVIL", "DRAGON",
               "ELEMENT", "INSECT", "MACHINE", "MATERIAL", "PHANTOM",
-              "PLANT", "SLIME", "WATER", "ZOMBIE"
+              "PLANT", "SECRET", "SLIME", "WATER", "ZOMBIE"
           }, defaultValue = "NONE"))
       @RequestParam(value = "r", required = false) RaceType raceType
   ) {
@@ -125,7 +125,7 @@ public class KokoroCombinationRestController {
       jobType = JobType.BATTLE_MASTER;
     }
     if (ObjectUtils.isEmpty(level)) {
-      level = 85;
+      level = 90;
     }
     if (ObjectUtils.isEmpty(bride)) {
       bride = "フローラ";

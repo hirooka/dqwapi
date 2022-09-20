@@ -37,6 +37,7 @@ public class KokoroFlat {
   private int spellNoneNone;
   private int breathNoneNone;
 
+  private int allNoneNone;
   private int allBagiNone;
   private int allDeinNone;
   private int allDorumaNone;
@@ -92,6 +93,7 @@ public class KokoroFlat {
   private int allNoneMaterial;
   private int allNonePhantom;
   private int allNonePlant;
+  private int allNoneSecret;
   private int allNoneSlime;
   private int allNoneWater;
   private int allNoneZombie;

@@ -79,6 +79,9 @@ public class CloudStorageKokoroObjectRepository implements IKokoroObjectReposito
               kokoroFlat.setSpellNoneNone(damage.getMagnification());
               break;
 
+            case "allNoneNone":
+              kokoroFlat.setAllNoneNone(damage.getMagnification());
+              break;
             case "allBagiNone":
               kokoroFlat.setAllBagiNone(damage.getMagnification());
               break;
@@ -209,6 +212,9 @@ public class CloudStorageKokoroObjectRepository implements IKokoroObjectReposito
             case "allNonePlant":
               kokoroFlat.setAllNonePlant(damage.getMagnification());
               break;
+            case "allNoneSecret":
+              kokoroFlat.setAllNoneSecret(damage.getMagnification());
+              break;
             case "allNoneSlime":
               kokoroFlat.setAllNoneSlime(damage.getMagnification());
               break;
@@ -219,7 +225,7 @@ public class CloudStorageKokoroObjectRepository implements IKokoroObjectReposito
               kokoroFlat.setAllNoneZombie(damage.getMagnification());
               break;
             default:
-              throw new IllegalArgumentException("Unknown damage format.");
+              throw new IllegalArgumentException("Unknown damage format. " + damageString);
           }
         }
 
