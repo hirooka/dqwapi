@@ -33,7 +33,7 @@ SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds,
 FROM `{{project-id}}.{{dataset}}.{{table}}`
 WHERE number NOT IN ({{joinedNonBrides}})
 AND CONCAT(number, '_', grade) NOT IN ({{k0JoinedExclusions}})
-AND ({{attack}}NoneNone >= 3 OR allNone{{Race}} >= 3 {{k0Inclusions}})
+AND (allNoneNone >= 3 OR {{attack}}NoneNone >= 3 OR allNone{{Race}} >= 3 {{k0Inclusions}})
 ORDER BY allNone{{Race}} DESC, {{attack}}NoneNone DESC LIMIT {{k0Limit}})
 ) k0
 
@@ -50,7 +50,7 @@ SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds,
 FROM `{{project-id}}.{{dataset}}.{{table}}`
 WHERE number NOT IN ({{joinedNonBrides}})
 AND CONCAT(number, '_', grade) NOT IN ({{k1JoinedExclusions}})
-AND ({{attack}}NoneNone >= 3 OR allNone{{Race}} >= 3 {{k1Inclusions}})
+AND (allNoneNone >= 3 OR {{attack}}NoneNone >= 3 OR allNone{{Race}} >= 3 {{k1Inclusions}})
 ORDER BY allNone{{Race}} DESC, {{attack}}NoneNone DESC LIMIT {{k1Limit}})
 ) k1
 

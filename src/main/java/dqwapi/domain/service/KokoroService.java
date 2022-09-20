@@ -1417,14 +1417,14 @@ public class KokoroService implements IKokoroService {
               case 0:
               case 1:
                 slot.setType(RED);
-                if (slot.getKokoro().getType().equals(RED)) {
+                if (slot.getKokoro().getType().equals(RED) || slot.getKokoro().getType().equals(RAINBOW)) {
                   slot.setUp(true);
                 }
                 break;
               case 2:
                 slot.setType(RED_YELLOW);
                 if (slot.getKokoro().getType().equals(RED)
-                    || slot.getKokoro().getType().equals(YELLOW)
+                    || slot.getKokoro().getType().equals(YELLOW) || slot.getKokoro().getType().equals(RAINBOW)
                 ) {
                   slot.setUp(true);
                 }
@@ -1444,7 +1444,7 @@ public class KokoroService implements IKokoroService {
               case 2:
                 slot.setType(PURPLE_GREEN);
                 if (slot.getKokoro().getType().equals(PURPLE)
-                    || slot.getKokoro().getType().equals(GREEN)
+                    || slot.getKokoro().getType().equals(GREEN) || slot.getKokoro().getType().equals(RAINBOW)
                 ) {
                   slot.setUp(true);
                 }
@@ -1462,14 +1462,14 @@ public class KokoroService implements IKokoroService {
               case 0:
               case 1:
                 slot.setType(BLUE);
-                if (slot.getKokoro().getType().equals(BLUE)) {
+                if (slot.getKokoro().getType().equals(BLUE) || slot.getKokoro().getType().equals(RAINBOW)) {
                   slot.setUp(true);
                 }
                 break;
               case 2:
                 slot.setType(RED_BLUE);
                 if (slot.getKokoro().getType().equals(RED)
-                    || slot.getKokoro().getType().equals(BLUE)
+                    || slot.getKokoro().getType().equals(BLUE) || slot.getKokoro().getType().equals(RAINBOW)
                 ) {
                   slot.setUp(true);
                 }
@@ -1489,7 +1489,7 @@ public class KokoroService implements IKokoroService {
               case 2:
                 slot.setType(YELLOW_PURPLE);
                 if (slot.getKokoro().getType().equals(YELLOW)
-                    || slot.getKokoro().getType().equals(PURPLE)
+                    || slot.getKokoro().getType().equals(PURPLE) || slot.getKokoro().getType().equals(RAINBOW)
                 ) {
                   slot.setUp(true);
                 }
@@ -1509,7 +1509,7 @@ public class KokoroService implements IKokoroService {
               case 2:
                 slot.setType(YELLOW_GREEN);
                 if (slot.getKokoro().getType().equals(YELLOW)
-                    || slot.getKokoro().getType().equals(GREEN)
+                    || slot.getKokoro().getType().equals(GREEN) || slot.getKokoro().getType().equals(RAINBOW)
                 ) {
                   slot.setUp(true);
                 }
@@ -1526,20 +1526,20 @@ public class KokoroService implements IKokoroService {
             switch (i) {
               case 0:
                 slot.setType(BLUE);
-                if (slot.getKokoro().getType().equals(BLUE)) {
+                if (slot.getKokoro().getType().equals(BLUE) || slot.getKokoro().getType().equals(RAINBOW)) {
                   slot.setUp(true);
                 }
                 break;
               case 1:
                 slot.setType(GREEN);
-                if (slot.getKokoro().getType().equals(GREEN)) {
+                if (slot.getKokoro().getType().equals(GREEN) || slot.getKokoro().getType().equals(RAINBOW)) {
                   slot.setUp(true);
                 }
                 break;
               case 2:
                 slot.setType(BLUE_GREEN);
                 if (slot.getKokoro().getType().equals(BLUE)
-                    || slot.getKokoro().getType().equals(GREEN)
+                    || slot.getKokoro().getType().equals(GREEN) || slot.getKokoro().getType().equals(RAINBOW)
                 ) {
                   slot.setUp(true);
                 }
@@ -1556,20 +1556,20 @@ public class KokoroService implements IKokoroService {
             switch (i) {
               case 0:
                 slot.setType(YELLOW);
-                if (slot.getKokoro().getType().equals(YELLOW)) {
+                if (slot.getKokoro().getType().equals(YELLOW) || slot.getKokoro().getType().equals(RAINBOW)) {
                   slot.setUp(true);
                 }
                 break;
               case 1:
                 slot.setType(BLUE);
-                if (slot.getKokoro().getType().equals(BLUE)) {
+                if (slot.getKokoro().getType().equals(BLUE) || slot.getKokoro().getType().equals(RAINBOW)) {
                   slot.setUp(true);
                 }
                 break;
               case 2:
                 slot.setType(YELLOW_BLUE);
                 if (slot.getKokoro().getType().equals(YELLOW)
-                    || slot.getKokoro().getType().equals(BLUE)
+                    || slot.getKokoro().getType().equals(BLUE) || slot.getKokoro().getType().equals(RAINBOW)
                 ) {
                   slot.setUp(true);
                 }
@@ -1588,7 +1588,7 @@ public class KokoroService implements IKokoroService {
               case 1:
                 slot.setType(BLUE_PURPLE);
                 if (slot.getKokoro().getType().equals(BLUE)
-                        || slot.getKokoro().getType().equals(PURPLE)
+                        || slot.getKokoro().getType().equals(PURPLE) || slot.getKokoro().getType().equals(RAINBOW)
                 ) {
                   slot.setUp(true);
                 }
