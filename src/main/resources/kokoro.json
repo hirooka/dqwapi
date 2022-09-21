@@ -17491,7 +17491,7 @@
     "damages": [
       {
         "attack": "ALL",
-        "attribute": "NONE",
+        "attribute": "ALL",
         "race": "NONE",
         "magnification": 5
       },
