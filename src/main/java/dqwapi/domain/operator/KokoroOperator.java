@@ -81,7 +81,7 @@ public class KokoroOperator implements IKokoroOperator {
         ) {
           attackMagnification += damage.getMagnification();
         }
-        if (!damage.getAttribute().equals(AttributeType.NONE) && (attackType.equals(damage.getAttack()) && damage.getAttribute().equals(attributeType) && damage.getRace().equals(RaceType.NONE) || damage.getAttack().equals(AttackType.ALL) && damage.getAttribute().equals(attributeType) && damage.getRace().equals(RaceType.NONE))) {
+        if (!damage.getAttribute().equals(AttributeType.NONE) && (attackType.equals(damage.getAttack()) && damage.getAttribute().equals(attributeType) && damage.getRace().equals(RaceType.NONE) || damage.getAttack().equals(AttackType.ALL) && damage.getAttribute().equals(attributeType) && damage.getRace().equals(RaceType.NONE) || damage.getAttack().equals(AttackType.ALL) && damage.getAttribute().equals(AttributeType.ALL) && damage.getRace().equals(RaceType.NONE))) {
           attributeMagnification += damage.getMagnification();
         }
         if (!raceType.equals(RaceType.NONE) && damage.getRace().equals(raceType)) {

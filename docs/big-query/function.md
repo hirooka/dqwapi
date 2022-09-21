@@ -13,9 +13,9 @@ LANGUAGE js AS r"""
     const mag = 1.2;
     switch (job) {
       case 'BATTLE_MASTER':
-        if (t0 === 'RED') {
-          if (t1 === 'RED') {
-            if (t2 === 'RED' || t2 === 'YELLOW') {
+        if (t0 === 'RED' || t0 === 'RAINBOW') {
+          if (t1 === 'RED' || t1 === 'RAINBOW') {
+            if (t2 === 'RED' || t2 === 'YELLOW' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -27,7 +27,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'RED' || t2 === 'YELLOW') {
+            if (t2 === 'RED' || t2 === 'YELLOW' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + p1
                 + Math.ceil(p2 * mag)
@@ -40,8 +40,8 @@ LANGUAGE js AS r"""
             }  
           }
         } else {
-          if (t1 === 'RED') {
-            if (t2 === 'RED' || t2 === 'YELLOW') {
+          if (t1 === 'RED' || t1 === 'RAINBOW') {
+            if (t2 === 'RED' || t2 === 'YELLOW' || t2 === 'RAINBOW') {
               return p0
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -53,7 +53,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'RED' || t2 === 'YELLOW') {
+            if (t2 === 'RED' || t2 === 'YELLOW' || t2 === 'RAINBOW') {
               return p0
                 + p1
                 + Math.ceil(p2 * mag)
@@ -68,9 +68,9 @@ LANGUAGE js AS r"""
         }
         return 0;
       case 'SAGE':
-        if (t0 === 'PURPLE' || t0 === 'GREEN') {
-          if (t1 === 'PURPLE' || t1 === 'GREEN') {
-            if (t2 === 'PURPLE' || t2 === 'GREEN') {
+        if (t0 === 'PURPLE' || t0 === 'GREEN' || t0 === 'RAINBOW') {
+          if (t1 === 'PURPLE' || t1 === 'GREEN' || t1 === 'RAINBOW') {
+            if (t2 === 'PURPLE' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -82,7 +82,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'PURPLE' || t2 === 'GREEN') {
+            if (t2 === 'PURPLE' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + p1
                 + Math.ceil(p2 * mag)
@@ -95,8 +95,8 @@ LANGUAGE js AS r"""
             }  
           }
         } else {
-          if (t1 === 'PURPLE' || t1 === 'GREEN') {
-            if (t2 === 'PURPLE' || t2 === 'GREEN') {
+          if (t1 === 'PURPLE' || t1 === 'GREEN' || t1 === 'RAINBOW') {
+            if (t2 === 'PURPLE' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return p0
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -108,7 +108,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'PURPLE' || t2 === 'GREEN') {
+            if (t2 === 'PURPLE' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return p0
                 + p1
                 + Math.ceil(p2 * mag)
@@ -123,9 +123,9 @@ LANGUAGE js AS r"""
         }
         return 0;
       case 'RANGER':
-        if (t0 === 'BLUE') {
-          if (t1 === 'BLUE') {
-            if (t2 === 'RED' || t2 === 'BLUE') {
+        if (t0 === 'BLUE' || t0 === 'RAINBOW') {
+          if (t1 === 'BLUE' || t1 === 'RAINBOW') {
+            if (t2 === 'RED' || t2 === 'BLUE' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -137,7 +137,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'RED' || t2 === 'BLUE') {
+            if (t2 === 'RED' || t2 === 'BLUE' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + p1
                 + Math.ceil(p2 * mag)
@@ -150,8 +150,8 @@ LANGUAGE js AS r"""
             }  
           }
         } else {
-          if (t1 === 'BLUE') {
-            if (t2 === 'RED' || t2 === 'BLUE') {
+          if (t1 === 'BLUE' || t1 === 'RAINBOW') {
+            if (t2 === 'RED' || t2 === 'BLUE' || t2 === 'RAINBOW') {
               return p0
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -163,7 +163,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'RED' || t2 === 'BLUE') {
+            if (t2 === 'RED' || t2 === 'BLUE' || t2 === 'RAINBOW') {
               return p0
                 + p1
                 + Math.ceil(p2 * mag)
@@ -178,9 +178,9 @@ LANGUAGE js AS r"""
         }
         return 0;
       case 'ARMAMENTALIST':
-        if (t0 === 'YELLOW' || t0 === 'PURPLE') {
-          if (t1 === 'YELLOW' || t1 === 'PURPLE') {
-            if (t2 === 'YELLOW' || t2 === 'PURPLE') {
+        if (t0 === 'YELLOW' || t0 === 'PURPLE' || t0 === 'RAINBOW') {
+          if (t1 === 'YELLOW' || t1 === 'PURPLE' || t1 === 'RAINBOW') {
+            if (t2 === 'YELLOW' || t2 === 'PURPLE' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -192,7 +192,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'YELLOW' || t2 === 'PURPLE') {
+            if (t2 === 'YELLOW' || t2 === 'PURPLE' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + p1
                 + Math.ceil(p2 * mag)
@@ -205,8 +205,8 @@ LANGUAGE js AS r"""
             }  
           }
         } else {
-          if (t1 === 'YELLOW' || t1 === 'PURPLE') {
-            if (t2 === 'YELLOW' || t2 === 'PURPLE') {
+          if (t1 === 'YELLOW' || t1 === 'PURPLE' || t1 === 'RAINBOW') {
+            if (t2 === 'YELLOW' || t2 === 'PURPLE' || t2 === 'RAINBOW') {
               return p0
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -218,7 +218,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'YELLOW' || t2 === 'PURPLE') {
+            if (t2 === 'YELLOW' || t2 === 'PURPLE' || t2 === 'RAINBOW') {
               return p0
                 + p1
                 + Math.ceil(p2 * mag)
@@ -247,7 +247,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'YELLOW' || t2 === 'GREEN') {
+            if (t2 === 'YELLOW' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + p1
                 + Math.ceil(p2 * mag)
@@ -260,8 +260,8 @@ LANGUAGE js AS r"""
             }  
           }
         } else {
-          if (t1 === 'YELLOW' || t1 === 'GREEN') {
-            if (t2 === 'YELLOW' || t2 === 'GREEN') {
+          if (t1 === 'YELLOW' || t1 === 'GREEN' || t1 === 'RAINBOW') {
+            if (t2 === 'YELLOW' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return p0
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -273,7 +273,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'YELLOW' || t2 === 'GREEN') {
+            if (t2 === 'YELLOW' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return p0
                 + p1
                 + Math.ceil(p2 * mag)
@@ -288,9 +288,9 @@ LANGUAGE js AS r"""
         }
         return 0;
       case 'SUPERSTAR':
-        if (t0 === 'BLUE') {
-          if (t1 === 'GREEN') {
-            if (t2 === 'BLUE' || t2 === 'GREEN') {
+        if (t0 === 'BLUE' || t0 === 'RAINBOW') {
+          if (t1 === 'GREEN' || t1 === 'RAINBOW') {
+            if (t2 === 'BLUE' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -302,7 +302,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'BLUE' || t2 === 'GREEN') {
+            if (t2 === 'BLUE' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + p1
                 + Math.ceil(p2 * mag)
@@ -316,7 +316,7 @@ LANGUAGE js AS r"""
           }
         } else {
           if (t1 === 'GREEN') {
-            if (t2 === 'BLUE' || t2 === 'GREEN') {
+            if (t2 === 'BLUE' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return p0
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -328,7 +328,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'BLUE' || t2 === 'GREEN') {
+            if (t2 === 'BLUE' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return p0
                 + p1
                 + Math.ceil(p2 * mag)
@@ -343,9 +343,9 @@ LANGUAGE js AS r"""
         }
         return 0;
       case 'PIRATE':
-        if (t0 === 'YELLOW') {
-          if (t1 === 'BLUE') {
-            if (t2 === 'YELLOW' || t2 === 'BLUE') {
+        if (t0 === 'YELLOW' || t0 === 'RAINBOW') {
+          if (t1 === 'BLUE' || t1 === 'RAINBOW') {
+            if (t2 === 'YELLOW' || t2 === 'BLUE' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -357,7 +357,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'YELLOW' || t2 === 'BLUE') {
+            if (t2 === 'YELLOW' || t2 === 'BLUE' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + p1
                 + Math.ceil(p2 * mag)
@@ -370,8 +370,8 @@ LANGUAGE js AS r"""
             }  
           }
         } else {
-          if (t1 === 'BLUE') {
-            if (t2 === 'YELLOW' || t2 === 'BLUE') {
+          if (t1 === 'BLUE' || t1 === 'RAINBOW') {
+            if (t2 === 'YELLOW' || t2 === 'BLUE' || t2 === 'RAINBOW') {
               return p0
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -383,7 +383,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'RED' || t2 === 'YELLOW') {
+            if (t2 === 'RED' || t2 === 'YELLOW' || t2 === 'RAINBOW') {
               return p0
                 + p1
                 + Math.ceil(p2 * mag)
@@ -398,8 +398,8 @@ LANGUAGE js AS r"""
         }
         return 0;
       case 'MONSTER_MASTER':
-        if (t0 === 'BLUE' || t0 === 'PURPLE') {
-          if (t1 === 'BLUE' || t1 === 'PURPLE') {
+        if (t0 === 'BLUE' || t0 === 'PURPLE' || t0 === 'RAINBOW') {
+          if (t1 === 'BLUE' || t1 === 'PURPLE' || t1 === 'RAINBOW') {
             return Math.ceil(p0 * mag)
               + Math.ceil(p1 * mag)
               + Math.ceil(p2 * mag)
@@ -411,7 +411,7 @@ LANGUAGE js AS r"""
               + Math.ceil(p3 * mag);
           }
         } else {
-          if (t1 === 'PURPLE' || t1 === 'GREEN') {
+          if (t1 === 'PURPLE' || t1 === 'GREEN' || t1 === 'RAINBOW') {
             return p0
               + Math.ceil(p1 * mag)
               + Math.ceil(p2 * mag)
@@ -462,9 +462,9 @@ LANGUAGE js AS r"""
     const mag = 1.2;
     switch (job) {
       case 'BATTLE_MASTER':
-        if (t0 === 'RED') {
-          if (t1 === 'RED') {
-            if (t2 === 'RED' || t2 === 'YELLOW') {
+        if (t0 === 'RED' || t0 === 'RAINBOW') {
+          if (t1 === 'RED' || t1 === 'RAINBOW') {
+            if (t2 === 'RED' || t2 === 'YELLOW' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -476,7 +476,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'RED' || t2 === 'YELLOW') {
+            if (t2 === 'RED' || t2 === 'YELLOW' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + p1
                 + Math.ceil(p2 * mag)
@@ -489,8 +489,8 @@ LANGUAGE js AS r"""
             }  
           }
         } else {
-          if (t1 === 'RED') {
-            if (t2 === 'RED' || t2 === 'YELLOW') {
+          if (t1 === 'RED' || t1 === 'RAINBOW') {
+            if (t2 === 'RED' || t2 === 'YELLOW' || t2 === 'RAINBOW') {
               return p0
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -502,7 +502,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'RED' || t2 === 'YELLOW') {
+            if (t2 === 'RED' || t2 === 'YELLOW' || t2 === 'RAINBOW') {
               return p0
                 + p1
                 + Math.ceil(p2 * mag)
@@ -517,9 +517,9 @@ LANGUAGE js AS r"""
         }
         return 0;
       case 'SAGE':
-        if (t0 === 'PURPLE' || t0 === 'GREEN') {
-          if (t1 === 'PURPLE' || t1 === 'GREEN') {
-            if (t2 === 'PURPLE' || t2 === 'GREEN') {
+        if (t0 === 'PURPLE' || t0 === 'GREEN' || t0 === 'RAINBOW') {
+          if (t1 === 'PURPLE' || t1 === 'GREEN' || t1 === 'RAINBOW') {
+            if (t2 === 'PURPLE' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -531,7 +531,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'PURPLE' || t2 === 'GREEN') {
+            if (t2 === 'PURPLE' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + p1
                 + Math.ceil(p2 * mag)
@@ -544,8 +544,8 @@ LANGUAGE js AS r"""
             }  
           }
         } else {
-          if (t1 === 'PURPLE' || t1 === 'GREEN') {
-            if (t2 === 'PURPLE' || t2 === 'GREEN') {
+          if (t1 === 'PURPLE' || t1 === 'GREEN' || t1 === 'RAINBOW') {
+            if (t2 === 'PURPLE' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return p0
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -557,7 +557,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'PURPLE' || t2 === 'GREEN') {
+            if (t2 === 'PURPLE' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return p0
                 + p1
                 + Math.ceil(p2 * mag)
@@ -572,9 +572,9 @@ LANGUAGE js AS r"""
         }
         return 0;
       case 'RANGER':
-        if (t0 === 'BLUE') {
-          if (t1 === 'BLUE') {
-            if (t2 === 'RED' || t2 === 'BLUE') {
+        if (t0 === 'BLUE' || t0 === 'RAINBOW') {
+          if (t1 === 'BLUE' || t1 === 'RAINBOW') {
+            if (t2 === 'RED' || t2 === 'BLUE' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -586,7 +586,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'RED' || t2 === 'BLUE') {
+            if (t2 === 'RED' || t2 === 'BLUE' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + p1
                 + Math.ceil(p2 * mag)
@@ -599,8 +599,8 @@ LANGUAGE js AS r"""
             }  
           }
         } else {
-          if (t1 === 'BLUE') {
-            if (t2 === 'RED' || t2 === 'BLUE') {
+          if (t1 === 'BLUE' || t1 === 'RAINBOW') {
+            if (t2 === 'RED' || t2 === 'BLUE' || t2 === 'RAINBOW') {
               return p0
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -612,7 +612,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'RED' || t2 === 'BLUE') {
+            if (t2 === 'RED' || t2 === 'BLUE' || t2 === 'RAINBOW') {
               return p0
                 + p1
                 + Math.ceil(p2 * mag)
@@ -627,9 +627,9 @@ LANGUAGE js AS r"""
         }
         return 0;
       case 'ARMAMENTALIST':
-        if (t0 === 'YELLOW' || t0 === 'PURPLE') {
-          if (t1 === 'YELLOW' || t1 === 'PURPLE') {
-            if (t2 === 'YELLOW' || t2 === 'PURPLE') {
+        if (t0 === 'YELLOW' || t0 === 'PURPLE' || t0 === 'RAINBOW') {
+          if (t1 === 'YELLOW' || t1 === 'PURPLE' || t1 === 'RAINBOW') {
+            if (t2 === 'YELLOW' || t2 === 'PURPLE' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -641,7 +641,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'YELLOW' || t2 === 'PURPLE') {
+            if (t2 === 'YELLOW' || t2 === 'PURPLE' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + p1
                 + Math.ceil(p2 * mag)
@@ -654,8 +654,8 @@ LANGUAGE js AS r"""
             }  
           }
         } else {
-          if (t1 === 'YELLOW' || t1 === 'PURPLE') {
-            if (t2 === 'YELLOW' || t2 === 'PURPLE') {
+          if (t1 === 'YELLOW' || t1 === 'PURPLE' || t1 === 'RAINBOW') {
+            if (t2 === 'YELLOW' || t2 === 'PURPLE' || t2 === 'RAINBOW') {
               return p0
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -667,7 +667,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'YELLOW' || t2 === 'PURPLE') {
+            if (t2 === 'YELLOW' || t2 === 'PURPLE' || t2 === 'RAINBOW') {
               return p0
                 + p1
                 + Math.ceil(p2 * mag)
@@ -682,9 +682,9 @@ LANGUAGE js AS r"""
         }
         return 0;
       case 'PALADIN':
-        if (t0 === 'YELLOW' || t0 === 'GREEN') {
-          if (t1 === 'YELLOW' || t1 === 'GREEN') {
-            if (t2 === 'YELLOW' || t2 === 'GREEN') {
+        if (t0 === 'YELLOW' || t0 === 'GREEN' || t0 === 'RAINBOW') {
+          if (t1 === 'YELLOW' || t1 === 'GREEN' || t1 === 'RAINBOW') {
+            if (t2 === 'YELLOW' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -696,7 +696,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'YELLOW' || t2 === 'GREEN') {
+            if (t2 === 'YELLOW' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + p1
                 + Math.ceil(p2 * mag)
@@ -709,8 +709,8 @@ LANGUAGE js AS r"""
             }  
           }
         } else {
-          if (t1 === 'YELLOW' || t1 === 'GREEN') {
-            if (t2 === 'YELLOW' || t2 === 'GREEN') {
+          if (t1 === 'YELLOW' || t1 === 'GREEN' || t1 === 'RAINBOW') {
+            if (t2 === 'YELLOW' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return p0
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -722,7 +722,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'YELLOW' || t2 === 'GREEN') {
+            if (t2 === 'YELLOW' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return p0
                 + p1
                 + Math.ceil(p2 * mag)
@@ -737,9 +737,9 @@ LANGUAGE js AS r"""
         }
         return 0;
       case 'SUPERSTAR':
-        if (t0 === 'BLUE') {
-          if (t1 === 'GREEN') {
-            if (t2 === 'BLUE' || t2 === 'GREEN') {
+        if (t0 === 'BLUE' || t0 === 'RAINBOW') {
+          if (t1 === 'GREEN' || t1 === 'RAINBOW') {
+            if (t2 === 'BLUE' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -751,7 +751,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'BLUE' || t2 === 'GREEN') {
+            if (t2 === 'BLUE' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + p1
                 + Math.ceil(p2 * mag)
@@ -764,8 +764,8 @@ LANGUAGE js AS r"""
             }  
           }
         } else {
-          if (t1 === 'GREEN') {
-            if (t2 === 'BLUE' || t2 === 'GREEN') {
+          if (t1 === 'GREEN' || t1 === 'RAINBOW') {
+            if (t2 === 'BLUE' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return p0
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -777,7 +777,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'BLUE' || t2 === 'GREEN') {
+            if (t2 === 'BLUE' || t2 === 'GREEN' || t2 === 'RAINBOW') {
               return p0
                 + p1
                 + Math.ceil(p2 * mag)
@@ -792,9 +792,9 @@ LANGUAGE js AS r"""
         }
         return 0;
       case 'PIRATE':
-        if (t0 === 'YELLOW') {
-          if (t1 === 'BLUE') {
-            if (t2 === 'YELLOW' || t2 === 'BLUE') {
+        if (t0 === 'YELLOW' || t0 === 'RAINBOW') {
+          if (t1 === 'BLUE' || t1 === 'RAINBOW') {
+            if (t2 === 'YELLOW' || t2 === 'BLUE' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -806,7 +806,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'YELLOW' || t2 === 'BLUE') {
+            if (t2 === 'YELLOW' || t2 === 'BLUE' || t2 === 'RAINBOW') {
               return Math.ceil(p0 * mag)
                 + p1
                 + Math.ceil(p2 * mag)
@@ -819,8 +819,8 @@ LANGUAGE js AS r"""
             }  
           }
         } else {
-          if (t1 === 'BLUE') {
-            if (t2 === 'YELLOW' || t2 === 'BLUE') {
+          if (t1 === 'BLUE' || t1 === 'RAINBOW') {
+            if (t2 === 'YELLOW' || t2 === 'BLUE' || t2 === 'RAINBOW') {
               return p0
                 + Math.ceil(p1 * mag)
                 + Math.ceil(p2 * mag)
@@ -832,7 +832,7 @@ LANGUAGE js AS r"""
                 + Math.ceil(p3 * mag); 
             }
           } else {
-            if (t2 === 'RED' || t2 === 'YELLOW') {
+            if (t2 === 'RED' || t2 === 'YELLOW' || t2 === 'RAINBOW') {
               return p0
                 + p1
                 + Math.ceil(p2 * mag)
@@ -847,8 +847,8 @@ LANGUAGE js AS r"""
         }
         return 0;
       case 'MONSTER_MASTER':
-        if (t0 === 'BLUE' || t0 === 'PURPLE') {
-          if (t1 === 'BLUE' || t1 === 'PURPLE') {
+        if (t0 === 'BLUE' || t0 === 'PURPLE' || t0 === 'RAINBOW') {
+          if (t1 === 'BLUE' || t1 === 'PURPLE' || t1 === 'RAINBOW') {
             return Math.ceil(p0 * mag)
               + Math.ceil(p1 * mag)
               + Math.ceil(p2 * mag)
@@ -860,7 +860,7 @@ LANGUAGE js AS r"""
               + Math.ceil(p3 * mag);
           }
         } else {
-          if (t1 === 'PURPLE' || t1 === 'GREEN') {
+          if (t1 === 'PURPLE' || t1 === 'GREEN' || t1 === 'RAINBOW') {
             return p0
               + Math.ceil(p1 * mag)
               + Math.ceil(p2 * mag)

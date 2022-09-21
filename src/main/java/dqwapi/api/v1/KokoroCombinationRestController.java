@@ -83,7 +83,7 @@ public class KokoroCombinationRestController {
       @RequestParam(value = "j", required = false) JobType jobType,
 
       @Parameter(description = "レベル",
-          schema = @Schema(defaultValue = "85", minimum = "30", maximum = "91"))
+          schema = @Schema(defaultValue = "90", minimum = "30", maximum = "91"))
       @RequestParam(value = "l", required = false) Integer level,
 
       @Parameter(description = "花嫁のこころ",
@@ -99,14 +99,14 @@ public class KokoroCombinationRestController {
 
       @Parameter(description = "属性",
           schema = @Schema(allowableValues = {
-              "NONE", "BAGI", "DEIN", "DORUMA", "GIRA", "HYADO", "IO", "JIBARIA", "MERA"
+              "NONE", "BAGI", "DEIN", "DORUMA", "GIRA", "HYADO", "IO", "JIBARIA", "MERA", "ALL"
           }, defaultValue = "DEIN"))
       @RequestParam(value = "a", required = false) AttributeType attributeType,
 
       @Parameter(description = "こうげきのタイプ",
           schema = @Schema(allowableValues = {
               "SLASH", "HIT", "SPELL", "PHYSICS_SPELL_SLASH", "PHYSICS_SPELL_HIT", "BREATH",
-              "HEALING_SPELL", "HEALING_SPECIALTY"
+              "HEALING_SPELL", "HEALING_SPECIALTY", "ALL"
           }, defaultValue = "SLASH"))
       @RequestParam(value = "k", required = false) AttackType attackType,
 

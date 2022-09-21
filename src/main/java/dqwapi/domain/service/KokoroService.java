@@ -878,7 +878,7 @@ public class KokoroService implements IKokoroService {
     int dx = 0;
     switch (jobType) {
       case BATTLE_MASTER:
-        if (combination.getSlots().get(0).getKokoro().getType().equals(RED)) {
+        if (combination.getSlots().get(0).getKokoro().getType().equals(RED) || combination.getSlots().get(0).getKokoro().getType().equals(RAINBOW)) {
           hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
           op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
@@ -897,7 +897,7 @@ public class KokoroService implements IKokoroService {
           sp += combination.getSlots().get(0).getKokoro().getSp();
           dx += combination.getSlots().get(0).getKokoro().getDx();
         }
-        if (combination.getSlots().get(1).getKokoro().getType().equals(RED)) {
+        if (combination.getSlots().get(1).getKokoro().getType().equals(RED) || combination.getSlots().get(1).getKokoro().getType().equals(RAINBOW)) {
           hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
           op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
@@ -918,6 +918,7 @@ public class KokoroService implements IKokoroService {
         }
         if (combination.getSlots().get(2).getKokoro().getType().equals(RED)
             || combination.getSlots().get(2).getKokoro().getType().equals(YELLOW)
+            || combination.getSlots().get(2).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
@@ -941,6 +942,7 @@ public class KokoroService implements IKokoroService {
       case SAGE:
         if (combination.getSlots().get(0).getKokoro().getType().equals(PURPLE)
             || combination.getSlots().get(0).getKokoro().getType().equals(GREEN)
+            || combination.getSlots().get(0).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
@@ -962,6 +964,7 @@ public class KokoroService implements IKokoroService {
         }
         if (combination.getSlots().get(1).getKokoro().getType().equals(PURPLE)
             || combination.getSlots().get(1).getKokoro().getType().equals(GREEN)
+            || combination.getSlots().get(1).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
@@ -983,6 +986,7 @@ public class KokoroService implements IKokoroService {
         }
         if (combination.getSlots().get(2).getKokoro().getType().equals(PURPLE)
             || combination.getSlots().get(2).getKokoro().getType().equals(GREEN)
+            || combination.getSlots().get(2).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
@@ -1004,7 +1008,7 @@ public class KokoroService implements IKokoroService {
         }
         break;
       case RANGER:
-        if (combination.getSlots().get(0).getKokoro().getType().equals(BLUE)) {
+        if (combination.getSlots().get(0).getKokoro().getType().equals(BLUE) || combination.getSlots().get(0).getKokoro().getType().equals(RAINBOW)) {
           hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
           op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
@@ -1023,7 +1027,7 @@ public class KokoroService implements IKokoroService {
           sp += combination.getSlots().get(0).getKokoro().getSp();
           dx += combination.getSlots().get(0).getKokoro().getDx();
         }
-        if (combination.getSlots().get(1).getKokoro().getType().equals(BLUE)) {
+        if (combination.getSlots().get(1).getKokoro().getType().equals(BLUE) || combination.getSlots().get(1).getKokoro().getType().equals(RAINBOW)) {
           hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
           op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
@@ -1044,6 +1048,7 @@ public class KokoroService implements IKokoroService {
         }
         if (combination.getSlots().get(2).getKokoro().getType().equals(RED)
             || combination.getSlots().get(2).getKokoro().getType().equals(BLUE)
+            || combination.getSlots().get(2).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
@@ -1066,7 +1071,7 @@ public class KokoroService implements IKokoroService {
         break;
       case ARMAMENTALIST:
         if (combination.getSlots().get(0).getKokoro().getType().equals(YELLOW)
-            || combination.getSlots().get(0).getKokoro().getType().equals(PURPLE)
+            || combination.getSlots().get(0).getKokoro().getType().equals(PURPLE) || combination.getSlots().get(0).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
@@ -1087,7 +1092,7 @@ public class KokoroService implements IKokoroService {
           dx += combination.getSlots().get(0).getKokoro().getDx();
         }
         if (combination.getSlots().get(1).getKokoro().getType().equals(YELLOW)
-            || combination.getSlots().get(1).getKokoro().getType().equals(PURPLE)
+            || combination.getSlots().get(1).getKokoro().getType().equals(PURPLE) || combination.getSlots().get(1).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
@@ -1108,7 +1113,7 @@ public class KokoroService implements IKokoroService {
           dx += combination.getSlots().get(1).getKokoro().getDx();
         }
         if (combination.getSlots().get(2).getKokoro().getType().equals(YELLOW)
-            || combination.getSlots().get(2).getKokoro().getType().equals(PURPLE)
+            || combination.getSlots().get(2).getKokoro().getType().equals(PURPLE) || combination.getSlots().get(2).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
@@ -1131,7 +1136,7 @@ public class KokoroService implements IKokoroService {
         break;
       case PALADIN:
         if (combination.getSlots().get(0).getKokoro().getType().equals(YELLOW)
-            || combination.getSlots().get(0).getKokoro().getType().equals(GREEN)
+            || combination.getSlots().get(0).getKokoro().getType().equals(GREEN) || combination.getSlots().get(0).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
@@ -1152,7 +1157,7 @@ public class KokoroService implements IKokoroService {
           dx += combination.getSlots().get(0).getKokoro().getDx();
         }
         if (combination.getSlots().get(1).getKokoro().getType().equals(YELLOW)
-            || combination.getSlots().get(1).getKokoro().getType().equals(GREEN)
+            || combination.getSlots().get(1).getKokoro().getType().equals(GREEN) || combination.getSlots().get(1).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
@@ -1173,7 +1178,7 @@ public class KokoroService implements IKokoroService {
           dx += combination.getSlots().get(1).getKokoro().getDx();
         }
         if (combination.getSlots().get(2).getKokoro().getType().equals(YELLOW)
-            || combination.getSlots().get(2).getKokoro().getType().equals(GREEN)
+            || combination.getSlots().get(2).getKokoro().getType().equals(GREEN) || combination.getSlots().get(2).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
@@ -1195,7 +1200,7 @@ public class KokoroService implements IKokoroService {
         }
         break;
       case SUPERSTAR:
-        if (combination.getSlots().get(0).getKokoro().getType().equals(BLUE)) {
+        if (combination.getSlots().get(0).getKokoro().getType().equals(BLUE) || combination.getSlots().get(0).getKokoro().getType().equals(RAINBOW)) {
           hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
           op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
@@ -1214,7 +1219,7 @@ public class KokoroService implements IKokoroService {
           sp += combination.getSlots().get(0).getKokoro().getSp();
           dx += combination.getSlots().get(0).getKokoro().getDx();
         }
-        if (combination.getSlots().get(1).getKokoro().getType().equals(GREEN)) {
+        if (combination.getSlots().get(1).getKokoro().getType().equals(GREEN) || combination.getSlots().get(1).getKokoro().getType().equals(RAINBOW)) {
           hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
           op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
@@ -1234,7 +1239,7 @@ public class KokoroService implements IKokoroService {
           dx += combination.getSlots().get(1).getKokoro().getDx();
         }
         if (combination.getSlots().get(2).getKokoro().getType().equals(BLUE)
-            || combination.getSlots().get(2).getKokoro().getType().equals(GREEN)
+            || combination.getSlots().get(2).getKokoro().getType().equals(GREEN) || combination.getSlots().get(2).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
@@ -1256,7 +1261,7 @@ public class KokoroService implements IKokoroService {
         }
         break;
       case PIRATE:
-        if (combination.getSlots().get(0).getKokoro().getType().equals(YELLOW)) {
+        if (combination.getSlots().get(0).getKokoro().getType().equals(YELLOW) || combination.getSlots().get(0).getKokoro().getType().equals(RAINBOW)) {
           hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
           op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
@@ -1275,7 +1280,7 @@ public class KokoroService implements IKokoroService {
           sp += combination.getSlots().get(0).getKokoro().getSp();
           dx += combination.getSlots().get(0).getKokoro().getDx();
         }
-        if (combination.getSlots().get(1).getKokoro().getType().equals(BLUE)) {
+        if (combination.getSlots().get(1).getKokoro().getType().equals(BLUE) || combination.getSlots().get(1).getKokoro().getType().equals(RAINBOW)) {
           hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
           op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
@@ -1295,7 +1300,7 @@ public class KokoroService implements IKokoroService {
           dx += combination.getSlots().get(1).getKokoro().getDx();
         }
         if (combination.getSlots().get(2).getKokoro().getType().equals(YELLOW)
-            || combination.getSlots().get(2).getKokoro().getType().equals(BLUE)
+            || combination.getSlots().get(2).getKokoro().getType().equals(BLUE) || combination.getSlots().get(2).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
@@ -1318,7 +1323,7 @@ public class KokoroService implements IKokoroService {
         break;
       case MONSTER_MASTER:
         if (combination.getSlots().get(0).getKokoro().getType().equals(BLUE)
-                || combination.getSlots().get(0).getKokoro().getType().equals(PURPLE)
+                || combination.getSlots().get(0).getKokoro().getType().equals(PURPLE) || combination.getSlots().get(0).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
@@ -1339,7 +1344,7 @@ public class KokoroService implements IKokoroService {
           dx += combination.getSlots().get(0).getKokoro().getDx();
         }
         if (combination.getSlots().get(1).getKokoro().getType().equals(BLUE)
-                || combination.getSlots().get(1).getKokoro().getType().equals(PURPLE)
+                || combination.getSlots().get(1).getKokoro().getType().equals(PURPLE) || combination.getSlots().get(1).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
           mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);

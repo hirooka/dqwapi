@@ -20,41 +20,41 @@ ceil(
       (`{{project-id}}.{{dataset}}.getMaxValue`('{{JOB}}', {{param0}}, k0.type, {{param1}}, k1.type, {{param2}}, k2.type, {{param3}}, k3.type) + {{base}})
       * (1 + ((k0.{{attack}}NoneNone + k1.{{attack}}NoneNone + k2.{{attack}}NoneNone + k3.{{attack}}NoneNone) / 100.0))
     )
-    * (1 + ((k0.{{attack}}{{Attribute}}None + k1.{{attack}}{{Attribute}}None + k2.{{attack}}{{Attribute}}None + k3.{{attack}}{{Attribute}}None + k0.all{{Attribute}}None + k1.all{{Attribute}}None + k2.all{{Attribute}}None + k3.all{{Attribute}}None) / 100.0))
+    * (1 + ((k0.{{attack}}{{Attribute}}None + k1.{{attack}}{{Attribute}}None + k2.{{attack}}{{Attribute}}None + k3.{{attack}}{{Attribute}}None + k0.all{{Attribute}}None + k1.all{{Attribute}}None + k2.all{{Attribute}}None + k3.all{{Attribute}}None + k0.allAllNone + k1.allAllNone + k2.allAllNone + k3.allAllNone) / 100.0))
   )
   * (1 + ((k0.allNone{{Race}} + k1.allNone{{Race}} + k2.allNone{{Race}} + k3.allNone{{Race}}) / 100.0))
 ) {{job}}_{{attribute}}_{{attack}}_{{race}}_damage,
 
 FROM (
-SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds, (op+os) opos, (op+dx) opdx, {{attack}}NoneNone, {{attack}}{{Attribute}}None, all{{Attribute}}None, allNone{{Race}}
+SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds, (op+os) opos, (op+dx) opdx, allAllNone, {{attack}}NoneNone, {{attack}}{{Attribute}}None, all{{Attribute}}None, allNone{{Race}}
 FROM `{{project-id}}.{{dataset}}.{{table}}`
 WHERE number NOT IN ({{joinedNonBrides}})
 AND CONCAT(number, '_', grade) NOT IN ({{k0JoinedExclusions}})
-ORDER BY (({{k0Order}} + {{base}}) * (1 + ({{attack}}NoneNone / 100.0)) * (1 + (({{attack}}{{Attribute}}None + all{{Attribute}}None) / 100.0)) * (1 + (allNone{{Race}} / 100.0))) DESC LIMIT {{k0Limit}})
+ORDER BY (({{k0Order}} + {{base}}) * (1 + ({{attack}}NoneNone / 100.0)) * (1 + ((allAllNone + {{attack}}{{Attribute}}None + all{{Attribute}}None) / 100.0)) * (1 + (allNone{{Race}} / 100.0))) DESC LIMIT {{k0Limit}})
 UNION DISTINCT
-SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds, (op+os) opos, (op+dx) opdx, {{attack}}NoneNone, {{attack}}{{Attribute}}None, all{{Attribute}}None, allNone{{Race}}
+SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds, (op+os) opos, (op+dx) opdx, allAllNone, {{attack}}NoneNone, {{attack}}{{Attribute}}None, all{{Attribute}}None, allNone{{Race}}
 FROM `{{project-id}}.{{dataset}}.{{table}}`
 WHERE number NOT IN ({{joinedNonBrides}})
 AND CONCAT(number, '_', grade) NOT IN ({{k0JoinedExclusions}})
-AND (allNoneNone >= 3 OR {{attack}}NoneNone >= 3 OR {{attack}}{{Attribute}}None >= 3 OR all{{Attribute}}None >= 3　OR allNone{{Race}} >= 3 {{k0Inclusions}})
-ORDER BY allNone{{Race}} DESC, all{{Attribute}}None DESC, {{attack}}{{Attribute}}None DESC, {{attack}}NoneNone DESC LIMIT {{k0Limit}})
+AND (allAllNone >= 3 OR {{attack}}NoneNone >= 3 OR {{attack}}{{Attribute}}None >= 3 OR all{{Attribute}}None >= 3　OR allNone{{Race}} >= 3 {{k0Inclusions}})
+ORDER BY allAllNone DESC, allNone{{Race}} DESC, all{{Attribute}}None DESC, {{attack}}{{Attribute}}None DESC, {{attack}}NoneNone DESC LIMIT {{k0Limit}})
 ) k0
 
 CROSS JOIN
 
 (
-SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds, (op+os) opos, (op+dx) opdx, {{attack}}NoneNone, {{attack}}{{Attribute}}None, all{{Attribute}}None, allNone{{Race}}
+SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds, (op+os) opos, (op+dx) opdx, allAllNone, {{attack}}NoneNone, {{attack}}{{Attribute}}None, all{{Attribute}}None, allNone{{Race}}
 FROM `{{project-id}}.{{dataset}}.{{table}}`
 WHERE number NOT IN ({{joinedNonBrides}})
 AND CONCAT(number, '_', grade) NOT IN ({{k1JoinedExclusions}})
 ORDER BY ({{k1Order}}) DESC LIMIT {{k1Limit}})
 UNION DISTINCT
-SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds, (op+os) opos, (op+dx) opdx, {{attack}}NoneNone, {{attack}}{{Attribute}}None, all{{Attribute}}None, allNone{{Race}}
+SELECT * FROM (SELECT number, name, grade, type, cost, plusCost, op, os, dx, ds, (op+os) opos, (op+dx) opdx, allAllNone, {{attack}}NoneNone, {{attack}}{{Attribute}}None, all{{Attribute}}None, allNone{{Race}}
 FROM `{{project-id}}.{{dataset}}.{{table}}`
 WHERE number NOT IN ({{joinedNonBrides}})
 AND CONCAT(number, '_', grade) NOT IN ({{k1JoinedExclusions}})
-AND ({{attack}}NoneNone >= 3 OR {{attack}}{{Attribute}}None >= 3 OR all{{Attribute}}None >= 3　OR allNone{{Race}} >= 3 {{k1Inclusions}})
-ORDER BY allNone{{Race}} DESC, all{{Attribute}}None DESC, {{attack}}{{Attribute}}None DESC, {{attack}}NoneNone DESC LIMIT {{k1Limit}})
+AND (allAllNone >= 3 OR {{attack}}NoneNone >= 3 OR {{attack}}{{Attribute}}None >= 3 OR all{{Attribute}}None >= 3　OR allNone{{Race}} >= 3 {{k1Inclusions}})
+ORDER BY allAllNone DESC, allNone{{Race}} DESC, all{{Attribute}}None DESC, {{attack}}{{Attribute}}None DESC, {{attack}}NoneNone DESC LIMIT {{k1Limit}})
 ) k1
 
 CROSS JOIN `{{project-id}}.{{dataset}}.{{table}}` k2
