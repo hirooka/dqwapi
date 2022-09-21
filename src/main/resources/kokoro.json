@@ -52,6 +52,58 @@
     "resistances": []
   },
   {
+    "number": 489,
+    "name": "マッスルガード",
+    "grade": "S",
+    "type": "BLUE",
+    "race": "DEVIL",
+    "cost": 131,
+    "hp": 105,
+    "mp":  68,
+    "op":  81,
+    "dp":  78,
+    "os":  36,
+    "ds":  32,
+    "sp":  99,
+    "dx":  99,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "ALL",
+        "attribute": "DORUMA",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "HYADO",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "JIBARIA",
+        "race": "NONE",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
     "number": 488,
     "name": "スロットマジーン",
     "grade": "S",
@@ -189,6 +241,46 @@
     "resistances": []
   },
   {
+    "number": 485,
+    "name": "冥獣王ネルゲル",
+    "grade": "A",
+    "type": "PURPLE",
+    "race": "SECRET",
+    "cost": 129,
+    "hp": 121,
+    "mp": 122,
+    "op":  20,
+    "dp":  52,
+    "os":  90,
+    "ds":  61,
+    "sp":  23,
+    "dx":  89,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 4
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 4
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
     "number": 483,
     "name": "魔兵タナト＆ヒプノス",
     "grade": "S",
@@ -226,6 +318,47 @@
         "attribute": "GIRA",
         "race": "NONE",
         "magnification": 7
+      }
+    ]
+  },
+  {
+    "number": 483,
+    "name": "魔兵タナト＆ヒプノス",
+    "grade": "A",
+    "type": "YELLOW",
+    "race": "DEVIL",
+    "cost": 122,
+    "hp": 118,
+    "mp":  53,
+    "op":  77,
+    "dp":  84,
+    "os":  34,
+    "ds":  34,
+    "sp":  31,
+    "dx":  49,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "DEVIL",
+        "magnification": 3
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "GIRA",
+        "race": "NONE",
+        "magnification": 5
       }
     ]
   },
@@ -916,6 +1049,52 @@
     "resistances": []
   },
   {
+    "number": 474,
+    "name": "妖魔ゲモン",
+    "grade": "A",
+    "type": "BLUE",
+    "race": "BIRD",
+    "cost": 106,
+    "hp": 119,
+    "mp":  64,
+    "op":  73,
+    "dp":  70,
+    "os":  33,
+    "ds":  30,
+    "sp": 120,
+    "dx":  67,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "HIT",
+        "attribute": "BAGI",
+        "race": "NONE",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "BIRD",
+        "magnification": 3
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
     "number": 473,
     "name": "呪われしゼシカ",
     "grade": "S",
@@ -1557,6 +1736,40 @@
       }
     ],
     "chr": 4,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 455,
+    "name": "トロルキング",
+    "grade": "A",
+    "type": "RED",
+    "race": "DEVIL",
+    "cost": 129,
+    "hp": 112,
+    "mp":  56,
+    "op":  83,
+    "dp":  66,
+    "os":  15,
+    "ds":  15,
+    "sp":  56,
+    "dx":  49,
+    "plusCost": 2,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 6
+      }
+    ],
+    "chr": 3,
     "healings": [],
     "resistances": []
   },
