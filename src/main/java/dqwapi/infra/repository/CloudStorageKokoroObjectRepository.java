@@ -79,8 +79,8 @@ public class CloudStorageKokoroObjectRepository implements IKokoroObjectReposito
               kokoroFlat.setSpellNoneNone(damage.getMagnification());
               break;
 
-            case "allNoneNone":
-              kokoroFlat.setAllNoneNone(damage.getMagnification());
+            case "allAllNone":
+              kokoroFlat.setAllAllNone(damage.getMagnification());
               break;
             case "allBagiNone":
               kokoroFlat.setAllBagiNone(damage.getMagnification());

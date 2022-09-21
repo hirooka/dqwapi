@@ -37,7 +37,7 @@ public class KokoroFlat {
   private int spellNoneNone;
   private int breathNoneNone;
 
-  private int allNoneNone;
+  private int allAllNone;
   private int allBagiNone;
   private int allDeinNone;
   private int allDorumaNone;
