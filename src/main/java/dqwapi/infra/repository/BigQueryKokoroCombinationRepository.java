@@ -208,7 +208,7 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
       }
 
       final String column;
-      if (raceType.equals(RaceType.NONE) || raceType.equals(RaceType.SECRET)) {
+      if (raceType.equals(RaceType.NONE)) {
         switch (attackType) {
           case SLASH, HIT, SPELL, PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT, BREATH:
             column = (jobType.name()
