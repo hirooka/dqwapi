@@ -26,6 +26,12 @@ public class JobService implements IJobService {
   private Map<JobType, List<JobParameter>> jobExperience = new HashMap<>();
   private Map<JobType, List<JobParameter>> jobMonster = new HashMap<>();
 
+  private List<Map<String, Integer>> levelCost5Map = new ArrayList<>();
+  private Map<JobType, List<JobParameter>> jobBase5 = new HashMap<>();
+  private Map<JobType, List<JobParameter>> jobSpeciality5 = new HashMap<>();
+  private Map<JobType, List<JobParameter>> jobExperience5 = new HashMap<>();
+  private Map<JobType, List<JobParameter>> jobMonster5 = new HashMap<>();
+
   private Map<JobType, List<JobParameter>> map(final String json) throws IOException {
     return new ObjectMapper().readValue(new ClassPathResource(json).getInputStream(), new TypeReference<>() {});
   }
@@ -47,6 +53,16 @@ public class JobService implements IJobService {
       jobSpeciality = map("job-speciality.json");
       jobExperience = map("job-experience.json");
       jobMonster = map("job-monster.json");
+
+      final String levelCost5Json = "level-cost5.json";
+      final Resource levelCost5JsonResource = new ClassPathResource(levelCost5Json);
+      levelCost5Map = objectMapper.readValue(levelCostJsonResource.getInputStream(), new TypeReference<>() {});
+      log.info("{} levels", levelCostMap.size());
+      log.debug(levelCost5Map.toString());
+      jobBase5 = map("job-base5.json");
+      jobSpeciality5 = map("job-speciality5.json");
+      jobExperience5 = map("job-experience5.json");
+      jobMonster5 = map("job-monster5.json");
     } catch (IOException ex) {
       throw new IllegalStateException("Failed to parse JSON file.", ex);
     }
@@ -169,6 +185,10 @@ public class JobService implements IJobService {
 
   @Override
   public JobParameter getJobParameter(JobType jobType, int level, int experience) {
-    return calculateJobParameter(jobType, level, 10);
+    if (jobType.equals(JobType.GOD_HAND)) {
+      return new JobParameter();
+    } else {
+      return calculateJobParameter(jobType, level, 10);
+    }
   }
 }

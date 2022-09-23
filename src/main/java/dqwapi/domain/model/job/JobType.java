@@ -8,5 +8,6 @@ public enum JobType {
   PALADIN,
   SUPERSTAR,
   PIRATE,
-  MONSTER_MASTER
+  MONSTER_MASTER,
+  GOD_HAND
 }
