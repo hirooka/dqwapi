@@ -5,6 +5,7 @@ import dqwapi.domain.model.common.AttributeType;
 import dqwapi.domain.model.common.HealingType;
 import dqwapi.domain.model.common.RaceType;
 import dqwapi.domain.model.damage.SimplifiedSlot;
+import dqwapi.domain.model.job.JobClassType;
 import dqwapi.domain.model.job.JobParameter;
 import dqwapi.domain.model.job.JobType;
 import dqwapi.domain.model.kokoro.Combination;
@@ -55,14 +56,15 @@ public class KokoroOperator implements IKokoroOperator {
   ) {
     List<KokoroCombinationResult> results = new ArrayList<>();
 
-    final int cost = jobService.getCost(level);
+    final int cost = jobService.getCost(jobType, level);
     final JobParameter jobParameter = jobService.getJobParameter(jobType, level, 10);
+    final JobClassType jobClassType = jobService.getJobClass(jobType);
 
     final StopWatch stopWatch = new StopWatch();
     stopWatch.start("getKokoroCombinations");
     final List<Combination> combinations =
         kokoroService.getCombinations(
-            jobType, attackType, attributeType, raceType,
+            jobType, jobClassType, attackType, attributeType, raceType,
             cost, jobParameter, bride, exclusions, inclusions, response * 2
         );
     stopWatch.stop();

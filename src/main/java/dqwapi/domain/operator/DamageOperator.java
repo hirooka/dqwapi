@@ -5,6 +5,7 @@ import dqwapi.domain.model.common.AttributeType;
 import dqwapi.domain.model.common.RaceType;
 import dqwapi.domain.model.damage.DamageResult;
 import dqwapi.domain.model.damage.SimplifiedSlot;
+import dqwapi.domain.model.job.JobClassType;
 import dqwapi.domain.model.job.JobParameter;
 import dqwapi.domain.model.job.JobSpecificEffect;
 import dqwapi.domain.model.job.JobStatus;
@@ -57,7 +58,8 @@ public class DamageOperator implements IDamageOperator {
     List<DamageResult> damageResults = new ArrayList<>();
 
     final List<Weapon> weapons = weaponService.getAll();
-    final int cost = jobService.getCost(level);
+    final int cost = jobService.getCost(jobType, level);
+    final JobClassType jobClassType = jobService.getJobClass(jobType);
 
     final JobStatus jobStatus = jobService.getStatus(jobType, level);
     final int power = jobStatus.getParameter().getOp();
@@ -92,7 +94,7 @@ public class DamageOperator implements IDamageOperator {
           stopWatch.start("getKokoroCombinations");
           final List<Combination> combinations =
               kokoroService.getCombinations(
-                  jobType, skill.getAttack(), skill.getAttribute(), raceType,
+                  jobType, jobClassType, skill.getAttack(), skill.getAttribute(), raceType,
                   cost, new JobParameter(), bride, exclusions, null,50
               );
           stopWatch.stop();
