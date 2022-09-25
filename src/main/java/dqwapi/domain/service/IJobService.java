@@ -1,5 +1,6 @@
 package dqwapi.domain.service;
 
+import dqwapi.domain.model.job.JobClassType;
 import dqwapi.domain.model.job.JobParameter;
 import dqwapi.domain.model.job.JobSpecificEffect;
 import dqwapi.domain.model.job.JobStatus;
@@ -13,6 +14,10 @@ public interface IJobService {
   );
 
   int getCost(final int level);
+
+  int getCost(final JobType jobType, final int level);
+
+  JobClassType getJobClass(final JobType jobType);
 
   JobParameter getJobParameter(final JobType jobType, final int level, final int experience);
 

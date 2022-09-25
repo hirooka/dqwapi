@@ -3,6 +3,7 @@ package dqwapi.domain.service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dqwapi.domain.model.common.Parameter;
+import dqwapi.domain.model.job.JobClassType;
 import dqwapi.domain.model.job.JobParameter;
 import dqwapi.domain.model.job.JobSpecificEffect;
 import dqwapi.domain.model.job.JobStatus;
@@ -20,7 +21,8 @@ import org.springframework.util.StopWatch;
 @Service
 public class JobService implements IJobService {
 
-  private List<Map<String, Integer>> levelCostMap = new ArrayList<>();
+  private Map<JobType, JobClassType> jobMap = new HashMap<>();
+  private Map<JobClassType, List<Map<String, Integer>>> levelCostMap = new HashMap<>();
   private Map<JobType, List<JobParameter>> jobBase = new HashMap<>();
   private Map<JobType, List<JobParameter>> jobSpeciality = new HashMap<>();
   private Map<JobType, List<JobParameter>> jobExperience = new HashMap<>();
@@ -32,17 +34,16 @@ public class JobService implements IJobService {
 
   @PostConstruct
   void init() {
-    final String levelCostJson = "level-cost.json";
-    final Resource levelCostJsonResource = new ClassPathResource(levelCostJson);
     try {
       final StopWatch stopWatch = new StopWatch();
       stopWatch.start("levelCost");
       final ObjectMapper objectMapper = new ObjectMapper();
       levelCostMap =
-          objectMapper.readValue(levelCostJsonResource.getInputStream(), new TypeReference<>() {});
+          objectMapper.readValue(new ClassPathResource("level-cost.json").getInputStream(), new TypeReference<>() {});
       stopWatch.stop();
       log.info("{} levels, {} ms", levelCostMap.size(), stopWatch.getLastTaskTimeMillis());
       log.debug(levelCostMap.toString());
+      jobMap = objectMapper.readValue(new ClassPathResource("job.json").getInputStream(), new TypeReference<>() {});
       jobBase = map("job-base.json");
       jobSpeciality = map("job-speciality.json");
       jobExperience = map("job-experience.json");
@@ -122,12 +123,35 @@ public class JobService implements IJobService {
 
   @Override
   public int getCost(final int level) {
-    for (Map<String, Integer> map : levelCostMap) {
-      if (map.get("level") == level) {
-        return map.get("cost");
+//    for (Map<String, Integer> map : levelCostMap) {
+//      if (map.get("level") == level) {
+//        return map.get("cost");
+//      }
+//    }
+    throw new IllegalArgumentException("Illegal Argument: level = " + level + ".");
+  }
+
+  private JobClassType getJobClassType(final JobType jobType) {
+    return jobMap.get(jobType);
+  }
+
+  @Override
+  public int getCost(final JobType jobType, final int level) {
+    for (Map.Entry<JobClassType, List<Map<String, Integer>>> entry : levelCostMap.entrySet()) {
+      if (entry.getKey().equals(getJobClassType(jobType))) {
+        for(Map<String, Integer> map : entry.getValue()) {
+          if (map.get("level") == level) {
+            return map.get("cost");
+          }
+        }
       }
     }
     throw new IllegalArgumentException("Illegal Argument: level = " + level + ".");
+  }
+
+  @Override
+  public JobClassType getJobClass(JobType jobType) {
+    return jobMap.get(jobType);
   }
 
   private JobParameter calculateJobParameter(JobType jobType, int level, int experience) {
@@ -169,6 +193,10 @@ public class JobService implements IJobService {
 
   @Override
   public JobParameter getJobParameter(JobType jobType, int level, int experience) {
-    return calculateJobParameter(jobType, level, 10);
+    if (getJobClassType(jobType).equals(JobClassType.ADVANCED)) {
+      return calculateJobParameter(jobType, level, 10);
+    } else {
+      return new JobParameter();
+    }
   }
 }
