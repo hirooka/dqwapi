@@ -6,6 +6,7 @@ import dqwapi.domain.model.common.AttributeType;
 import dqwapi.domain.model.common.RaceType;
 import dqwapi.domain.model.job.JobParameter;
 import dqwapi.domain.model.job.JobType;
+import dqwapi.domain.model.kokoro.Combination;
 import dqwapi.domain.model.kokoro.GradeType;
 import dqwapi.domain.repository.IKokoroCombinationRepository;
 import dqwapi.infra.gcp.cloudsql.ICloudSqlPostgresqlConnector;
@@ -562,7 +563,7 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
   }
 
   @Override
-  public List<Result> get(
+  public List<Combination> get(
       final JobType jobType,
       final AttackType attackType,
       final AttributeType attributeType,
@@ -574,8 +575,9 @@ public class CloudSqlPostgresqlKokoroCombinationRepository implements IKokoroCom
       final Map<Integer, List<GradeType>> inclusions,
       final int limit
   ) {
-    return convertResult(
-        getObjects(jobType, attackType, attributeType, raceType, cost, nonBrides, exclusions, inclusions, limit)
-    );
+    return new ArrayList<>();
+//    return convertResult(
+//        getObjects(jobType, attackType, attributeType, raceType, cost, nonBrides, exclusions, inclusions, limit)
+//    );
   }
 }

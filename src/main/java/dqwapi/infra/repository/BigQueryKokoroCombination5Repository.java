@@ -53,11 +53,17 @@ public class BigQueryKokoroCombination5Repository implements IKokoroCombinationR
   private BigQueryTableType tableType;
 
   private final IBigQueryConnector bigQueryConnector;
-  private String queryTemplateDamageAttributeWithoutRace = "";
-  private String queryTemplateDamageAttributeWithRace = "";
-  private String queryTemplateDamageNoAttributeWithoutRace = "";
-  private String queryTemplateDamageNoAttributeWithRace = "";
-  private String queryTemplateHealingAll = "";
+  private String queryTemplate5DamageAttributeWithoutRace = "";
+  private String queryTemplate5DamageAttributeWithRace = "";
+  private String queryTemplate5DamageNoAttributeWithoutRace = "";
+  private String queryTemplate5DamageNoAttributeWithRace = "";
+  private String queryTemplate5HealingAll = "";
+
+  private String queryTemplate5minDamageAttributeWithoutRace = "";
+  private String queryTemplate5minDamageAttributeWithRace = "";
+  private String queryTemplate5minDamageNoAttributeWithoutRace = "";
+  private String queryTemplate5minDamageNoAttributeWithRace = "";
+  private String queryTemplate5minHealingAll = "";
 
   @Value("${dqwapi.kokoro-json}")
   private String kokoroJson;
@@ -67,11 +73,17 @@ public class BigQueryKokoroCombination5Repository implements IKokoroCombinationR
   @PostConstruct
   void init() {
     try {
-      queryTemplateDamageAttributeWithoutRace = IOUtils.toString(new ClassPathResource("gcp-big-query-template5-damage-attribute-without-race.txt").getInputStream(), StandardCharsets.UTF_8);
-      queryTemplateDamageAttributeWithRace = IOUtils.toString(new ClassPathResource("gcp-big-query-template5-damage-attribute-with-race.txt").getInputStream(), StandardCharsets.UTF_8);
-      queryTemplateDamageNoAttributeWithoutRace = IOUtils.toString(new ClassPathResource("gcp-big-query-template5-damage-no-attribute-without-race.txt").getInputStream(), StandardCharsets.UTF_8);
-      queryTemplateDamageNoAttributeWithRace = IOUtils.toString(new ClassPathResource("gcp-big-query-template5-damage-no-attribute-with-race.txt").getInputStream(), StandardCharsets.UTF_8);
-      queryTemplateHealingAll = IOUtils.toString(new ClassPathResource("gcp-big-query-template5-healing-all.txt").getInputStream(), StandardCharsets.UTF_8);
+      queryTemplate5DamageAttributeWithoutRace = IOUtils.toString(new ClassPathResource("gcp-big-query-template5-damage-attribute-without-race.txt").getInputStream(), StandardCharsets.UTF_8);
+      queryTemplate5DamageAttributeWithRace = IOUtils.toString(new ClassPathResource("gcp-big-query-template5-damage-attribute-with-race.txt").getInputStream(), StandardCharsets.UTF_8);
+      queryTemplate5DamageNoAttributeWithoutRace = IOUtils.toString(new ClassPathResource("gcp-big-query-template5-damage-no-attribute-without-race.txt").getInputStream(), StandardCharsets.UTF_8);
+      queryTemplate5DamageNoAttributeWithRace = IOUtils.toString(new ClassPathResource("gcp-big-query-template5-damage-no-attribute-with-race.txt").getInputStream(), StandardCharsets.UTF_8);
+      queryTemplate5HealingAll = IOUtils.toString(new ClassPathResource("gcp-big-query-template5-healing-all.txt").getInputStream(), StandardCharsets.UTF_8);
+
+      queryTemplate5minDamageAttributeWithoutRace = IOUtils.toString(new ClassPathResource("gcp-big-query-template5min-damage-attribute-without-race.txt").getInputStream(), StandardCharsets.UTF_8);
+      queryTemplate5minDamageAttributeWithRace = IOUtils.toString(new ClassPathResource("gcp-big-query-template5min-damage-attribute-with-race.txt").getInputStream(), StandardCharsets.UTF_8);
+      queryTemplate5minDamageNoAttributeWithoutRace = IOUtils.toString(new ClassPathResource("gcp-big-query-template5min-damage-no-attribute-without-race.txt").getInputStream(), StandardCharsets.UTF_8);
+      queryTemplate5minDamageNoAttributeWithRace = IOUtils.toString(new ClassPathResource("gcp-big-query-template5min-damage-no-attribute-with-race.txt").getInputStream(), StandardCharsets.UTF_8);
+      queryTemplate5minHealingAll = IOUtils.toString(new ClassPathResource("gcp-big-query-template5min-healing-all.txt").getInputStream(), StandardCharsets.UTF_8);
 
       kokoros = new ObjectMapper().readValue(new ClassPathResource(kokoroJson).getInputStream(), new TypeReference<>() {});
     } catch (IOException ex) {
@@ -555,6 +567,25 @@ public class BigQueryKokoroCombination5Repository implements IKokoroCombinationR
           default:
             throw new IllegalArgumentException("Unknown AttackType: " + attackType);
         }
+      }
+
+      final String queryTemplateDamageAttributeWithoutRace;
+      final String queryTemplateDamageAttributeWithRace;
+      final String queryTemplateDamageNoAttributeWithoutRace;
+      final String queryTemplateDamageNoAttributeWithRace;
+      final String queryTemplateHealingAll;
+      if (cost >= 350) {
+        queryTemplateDamageAttributeWithoutRace = queryTemplate5DamageAttributeWithoutRace;
+        queryTemplateDamageAttributeWithRace = queryTemplate5DamageAttributeWithRace;
+        queryTemplateDamageNoAttributeWithoutRace = queryTemplate5DamageNoAttributeWithoutRace;
+        queryTemplateDamageNoAttributeWithRace = queryTemplate5DamageNoAttributeWithRace;
+        queryTemplateHealingAll = queryTemplate5HealingAll;
+      } else {
+        queryTemplateDamageAttributeWithoutRace = queryTemplate5minDamageAttributeWithoutRace;
+        queryTemplateDamageAttributeWithRace = queryTemplate5minDamageAttributeWithRace;
+        queryTemplateDamageNoAttributeWithoutRace = queryTemplate5minDamageNoAttributeWithoutRace;
+        queryTemplateDamageNoAttributeWithRace = queryTemplate5minDamageNoAttributeWithRace;
+        queryTemplateHealingAll = queryTemplate5minHealingAll;
       }
       switch (attackType) {
         case SLASH, HIT, SPELL, PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT, BREATH:
