@@ -95,14 +95,15 @@ public class BigQueryKokoroCombinationRepository implements IKokoroCombinationRe
       }
     }
 
-    final int base = switch (attackType) {
-      case SLASH, HIT -> jobParameter.getOp();
-      case SPELL -> jobParameter.getOs();
-      case PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT -> jobParameter.getOp() + jobParameter.getOs();
-      case BREATH -> jobParameter.getOp() + jobParameter.getDx();
-      case HEALING_SPELL, HEALING_SPECIALTY -> jobParameter.getDs();
-      default -> throw new IllegalArgumentException("Unknown AttackType: " + attackType);
-    };
+//    final int base = switch (attackType) {
+//      case SLASH, HIT -> jobParameter.getOp();
+//      case SPELL -> jobParameter.getOs();
+//      case PHYSICS_SPELL_SLASH, PHYSICS_SPELL_HIT -> jobParameter.getOp() + jobParameter.getOs();
+//      case BREATH -> jobParameter.getOp() + jobParameter.getDx();
+//      case HEALING_SPELL, HEALING_SPECIALTY -> jobParameter.getDs();
+//      default -> throw new IllegalArgumentException("Unknown AttackType: " + attackType);
+//    };
+    final int base = 0;
 
     final String parameter = switch (attackType) {
       case SLASH, HIT -> "op";

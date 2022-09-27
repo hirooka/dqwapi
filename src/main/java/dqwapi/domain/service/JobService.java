@@ -194,7 +194,8 @@ public class JobService implements IJobService {
   @Override
   public JobParameter getJobParameter(JobType jobType, int level, int experience) {
     if (getJobClassType(jobType).equals(JobClassType.ADVANCED)) {
-      return calculateJobParameter(jobType, level, 10);
+      //return calculateJobParameter(jobType, level, 10);
+      return new JobParameter();
     } else {
       return new JobParameter();
     }
