@@ -8,7 +8,7 @@ apply plugin: 'java'
 apply plugin: 'io.spring.dependency-management'
 
 group 'pro.hirooka'
-version '0.9.105'
+version '0.9.106'
 
 java {
   toolchain {

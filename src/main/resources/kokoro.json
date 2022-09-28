@@ -1564,6 +1564,40 @@
     "resistances": []
   },
   {
+    "number": 463,
+    "name": "テンタクルス",
+    "grade": "A",
+    "type": "RED",
+    "race": "WATER",
+    "cost": 122,
+    "hp":  93,
+    "mp":  40,
+    "op":  93,
+    "dp":  53,
+    "os":  13,
+    "ds":  13,
+    "sp":  77,
+    "dx":  67,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 2
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 2
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
     "number": 459,
     "name": "スライムヒーローズ",
     "grade": "S",
@@ -1782,7 +1816,7 @@
   {
     "number": 455,
     "name": "トロルキング",
-    "grade": "A",
+    "grade": "B",
     "type": "RED",
     "race": "DEVIL",
     "cost": 129,
@@ -5506,7 +5540,7 @@
   },
   {
     "number": 348,
-    "name": "オルゴ・デミーラ(変身前)",
+    "name": "オルゴ・デミーラ",
     "grade": "S",
     "type": "PURPLE",
     "race": "SECRET",
