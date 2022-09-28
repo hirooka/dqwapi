@@ -1,5 +1,45 @@
 [
   {
+    "number": 490,
+    "name": "ゴールデンタイタス",
+    "grade": "S",
+    "type": "RED",
+    "race": "DEVIL",
+    "cost": 132,
+    "hp":  65,
+    "mp":  37,
+    "op": 127,
+    "dp":  43,
+    "os":   7,
+    "ds":   7,
+    "sp":  98,
+    "dx":  94,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 3
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "MATERIAL",
+        "magnification": 10
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
     "number": 489,
     "name": "マッスルガード",
     "grade": "S",
