@@ -38,6 +38,15 @@ public class KokoroOperator implements IKokoroOperator {
   private final IJobService jobService;
   private final IKokoroService kokoroService;
 
+  private int plusMagnification(final Combination combination, final AttackType attackType) {
+    if (attackType.equals(AttackType.HIT)) {
+      if (combination.getSlots().stream().anyMatch(slot -> slot.getKokoro().getNumber() == 328 && slot.getKokoro().getGrade().equals(GradeType.S)) && combination.getSlots().stream().anyMatch(slot -> slot.getKokoro().getNumber() == 329 && slot.getKokoro().getGrade().equals(GradeType.S))) {
+        return 10;
+      }
+    }
+    return 0;
+  }
+
   @Override
   public Map<String, Object> getCombinationInfo() {
     return kokoroService.getCombinationInfo();
@@ -74,7 +83,7 @@ public class KokoroOperator implements IKokoroOperator {
     stopWatch.start("processCombinations");
     for (final Combination combination : combinations) {
       int attributeMagnification = 100;
-      int attackMagnification = 100;
+      int attackMagnification = 100 + plusMagnification(combination, attackType);
       int raceMagnification = 100;
       for (final Damage damage : combination.getDamages()) {
         if (attackType.equals(damage.getAttack())

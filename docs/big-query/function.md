@@ -6,6 +6,31 @@ bq -> kokoro
 ```
 
 ```
+CREATE OR REPLACE FUNCTION `hirooka-pro.dqwapi.getPlusMagnification`(attack STRING, n0 INT64, g0 STRING, n1 INT64, g1 STRING, n2 INT64, g2 STRING, n3 INT64, g3 STRING)
+RETURNS INT64 
+LANGUAGE js AS r"""
+  if (attack === 'HIT') {
+    if (n0 == 328 && g0 === 'S' && n1 == 329 && g1 === 'S'
+      || n0 == 328 && g0 === 'S' && n2 == 329 && g2 === 'S'
+      || n0 == 328 && g0 === 'S' && n3 == 329 && g3 === 'S'
+      || n1 == 328 && g1 === 'S' && n2 == 329 && g2 === 'S'
+      || n1 == 328 && g1 === 'S' && n3 == 329 && g3 === 'S'
+      || n2 == 328 && g2 === 'S' && n3 == 329 && g3 === 'S'
+      || n0 == 329 && g0 === 'S' && n1 == 328 && g1 === 'S'
+      || n0 == 329 && g0 === 'S' && n2 == 328 && g2 === 'S'
+      || n0 == 329 && g0 === 'S' && n3 == 328 && g3 === 'S'
+      || n1 == 329 && g1 === 'S' && n2 == 328 && g2 === 'S'
+      || n1 == 329 && g1 === 'S' && n3 == 328 && g3 === 'S'
+      || n2 == 329 && g2 === 'S' && n3 == 328 && g3 === 'S'
+    ) {
+      return 10;
+    }
+  }
+  return 0;
+""";
+```
+
+```
 CREATE OR REPLACE FUNCTION `hirooka-pro.dqwapi.getMaxValue`(job STRING, p0 FLOAT64, t0 STRING, p1 FLOAT64, t1 STRING, p2 FLOAT64, t2 STRING, p3 FLOAT64, t3 STRING)
 RETURNS INT64 
 LANGUAGE js AS r"""
