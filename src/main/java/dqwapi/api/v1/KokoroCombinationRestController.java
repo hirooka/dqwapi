@@ -132,6 +132,9 @@ public class KokoroCombinationRestController {
     if (ObjectUtils.isEmpty(level)) {
       level = 90;
     }
+    if (ObjectUtils.isEmpty(cost)) {
+      cost = 0;
+    }
     if (ObjectUtils.isEmpty(bride)) {
       bride = "フローラ";
     } else {
