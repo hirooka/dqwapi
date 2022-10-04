@@ -55,6 +55,7 @@ public class KokoroOperator implements IKokoroOperator {
   @Override
   public List<KokoroCombinationResult> getCombinations(
       final JobType jobType,
+      int cost,
       final int level,
       final String bride,
       final Map<Integer, List<GradeType>> exclusions,
@@ -65,7 +66,9 @@ public class KokoroOperator implements IKokoroOperator {
   ) {
     List<KokoroCombinationResult> results = new ArrayList<>();
 
-    final int cost = jobService.getCost(jobType, level);
+    if (level > 0) {
+      cost = jobService.getCost(jobType, level);
+    }
     final JobParameter jobParameter = jobService.getJobParameter(jobType, level, 10);
     final JobClassType jobClassType = jobService.getJobClass(jobType);
 

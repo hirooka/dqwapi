@@ -15,6 +15,7 @@ public interface IKokoroOperator {
 
   List<KokoroCombinationResult> getCombinations(
       final JobType jobType,
+      int cost,
       final int level,
       final String bride,
       final Map<Integer, List<GradeType>> exclusions,
