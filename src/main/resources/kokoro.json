@@ -1,5 +1,99 @@
 [
   {
+    "number": 491,
+    "name": "欲望の魔人",
+    "grade": "S",
+    "type": "YELLOW",
+    "race": "MATERIAL",
+    "cost": 122,
+    "hp": 109,
+    "mp":  59,
+    "op": 100,
+    "dp":  63,
+    "os":  19,
+    "ds":  38,
+    "sp":  77,
+    "dx":  28,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "HIT",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ]
+  },
+  {
+    "number": 491,
+    "name": "欲望の魔人",
+    "grade": "A",
+    "type": "YELLOW",
+    "race": "MATERIAL",
+    "cost": 122,
+    "hp":  96,
+    "mp":  51,
+    "op":  89,
+    "dp":  54,
+    "os":  18,
+    "ds":  34,
+    "sp":  69,
+    "dx":  24,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 4
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 4
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "HIT",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 4
+      },
+      {
+        "attack": "SLASH",
+        "attribute": "ALL",
+        "race": "NONE",
+        "magnification": 4
+      }
+    ]
+  },
+  {
     "number": 490,
     "name": "ゴールデンタイタス",
     "grade": "S",
