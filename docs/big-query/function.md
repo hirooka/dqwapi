@@ -6,10 +6,67 @@ bq -> kokoro
 ```
 
 ```
+CREATE OR REPLACE FUNCTION `hirooka-pro.dqwapi.getPlusAttributeMagnification`(attribute STRING, n0 INT64, g0 STRING, n1 INT64, g1 STRING, n2 INT64, g2 STRING, n3 INT64, g3 STRING)
+RETURNS INT64 
+LANGUAGE js AS r"""
+  if (attribute === 'bagi') {
+    if (n0 == 491 && g0 === 'SP' && n1 == 364 && g1 === 'SP'
+      || n0 == 491 && g0 === 'SP' && n2 == 364 && g2 === 'SP'
+      || n0 == 491 && g0 === 'SP' && n3 == 364 && g3 === 'SP'
+      || n1 == 491 && g1 === 'SP' && n2 == 364 && g2 === 'SP'
+      || n1 == 491 && g1 === 'SP' && n3 == 364 && g3 === 'SP'
+      || n2 == 491 && g2 === 'SP' && n3 == 364 && g3 === 'SP'
+      || n0 == 491 && g0 === 'SP' && n1 == 364 && g1 === 'SP'
+      || n0 == 491 && g0 === 'SP' && n2 == 364 && g2 === 'SP'
+      || n0 == 491 && g0 === 'SP' && n3 == 364 && g3 === 'SP'
+      || n1 == 491 && g1 === 'SP' && n2 == 364 && g2 === 'SP'
+      || n1 == 491 && g1 === 'SP' && n3 == 364 && g3 === 'SP'
+      || n2 == 491 && g2 === 'SP' && n3 == 364 && g3 === 'SP'
+    ) {
+      return 10;
+    }
+    if (n0 == 491 && g0 === 'SP' && n1 == 285 && g1 === 'S'
+      || n0 == 491 && g0 === 'SP' && n2 == 285 && g2 === 'S'
+      || n0 == 491 && g0 === 'SP' && n3 == 285 && g3 === 'S'
+      || n1 == 491 && g1 === 'SP' && n2 == 285 && g2 === 'S'
+      || n1 == 491 && g1 === 'SP' && n3 == 285 && g3 === 'S'
+      || n2 == 491 && g2 === 'SP' && n3 == 285 && g3 === 'S'
+      || n0 == 491 && g0 === 'SP' && n1 == 285 && g1 === 'S'
+      || n0 == 491 && g0 === 'SP' && n2 == 285 && g2 === 'S'
+      || n0 == 491 && g0 === 'SP' && n3 == 285 && g3 === 'S'
+      || n1 == 491 && g1 === 'SP' && n2 == 285 && g2 === 'S'
+      || n1 == 491 && g1 === 'SP' && n3 == 285 && g3 === 'S'
+      || n2 == 491 && g2 === 'SP' && n3 == 285 && g3 === 'S'
+    ) {
+      return 10;
+    }
+  }
+  if (attribute === 'hyado') {
+    if (n0 == 491 && g0 === 'SP' && n1 == 438 && g1 === 'S'
+      || n0 == 491 && g0 === 'SP' && n2 == 438 && g2 === 'S'
+      || n0 == 491 && g0 === 'SP' && n3 == 438 && g3 === 'S'
+      || n1 == 491 && g1 === 'SP' && n2 == 438 && g2 === 'S'
+      || n1 == 491 && g1 === 'SP' && n3 == 438 && g3 === 'S'
+      || n2 == 491 && g2 === 'SP' && n3 == 438 && g3 === 'S'
+      || n0 == 491 && g0 === 'SP' && n1 == 438 && g1 === 'S'
+      || n0 == 491 && g0 === 'SP' && n2 == 438 && g2 === 'S'
+      || n0 == 491 && g0 === 'SP' && n3 == 438 && g3 === 'S'
+      || n1 == 491 && g1 === 'SP' && n2 == 438 && g2 === 'S'
+      || n1 == 491 && g1 === 'SP' && n3 == 438 && g3 === 'S'
+      || n2 == 491 && g2 === 'SP' && n3 == 438 && g3 === 'S'
+    ) {
+      return 10;
+    }
+  }
+  return 0;
+""";
+```
+
+```
 CREATE OR REPLACE FUNCTION `hirooka-pro.dqwapi.getPlusMagnification`(attack STRING, n0 INT64, g0 STRING, n1 INT64, g1 STRING, n2 INT64, g2 STRING, n3 INT64, g3 STRING)
 RETURNS INT64 
 LANGUAGE js AS r"""
-  if (attack === 'HIT') {
+  if (attack === 'hit') {
     if (n0 == 328 && g0 === 'S' && n1 == 329 && g1 === 'S'
       || n0 == 328 && g0 === 'S' && n2 == 329 && g2 === 'S'
       || n0 == 328 && g0 === 'S' && n3 == 329 && g3 === 'S'

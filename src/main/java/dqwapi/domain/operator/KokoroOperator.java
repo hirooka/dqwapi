@@ -47,6 +47,23 @@ public class KokoroOperator implements IKokoroOperator {
     return 0;
   }
 
+  private int plusAttributeMagnification(final Combination combination, final AttributeType attributeType) {
+    if (attributeType.equals(AttributeType.BAGI)) {
+      if (combination.getSlots().stream().anyMatch(slot -> slot.getKokoro().getNumber() == 491 && slot.getKokoro().getGrade().equals(GradeType.SP)) && combination.getSlots().stream().anyMatch(slot -> slot.getKokoro().getNumber() == 364 && slot.getKokoro().getGrade().equals(GradeType.S))) {
+        return 10;
+      }
+      if (combination.getSlots().stream().anyMatch(slot -> slot.getKokoro().getNumber() == 491 && slot.getKokoro().getGrade().equals(GradeType.SP)) && combination.getSlots().stream().anyMatch(slot -> slot.getKokoro().getNumber() == 285 && slot.getKokoro().getGrade().equals(GradeType.S))) {
+        return 10;
+      }
+    }
+    if (attributeType.equals(AttributeType.HYADO)) {
+      if (combination.getSlots().stream().anyMatch(slot -> slot.getKokoro().getNumber() == 491 && slot.getKokoro().getGrade().equals(GradeType.SP)) && combination.getSlots().stream().anyMatch(slot -> slot.getKokoro().getNumber() == 438 && slot.getKokoro().getGrade().equals(GradeType.S))) {
+        return 10;
+      }
+    }
+    return 0;
+  }
+
   @Override
   public Map<String, Object> getCombinationInfo() {
     return kokoroService.getCombinationInfo();
@@ -85,7 +102,7 @@ public class KokoroOperator implements IKokoroOperator {
 
     stopWatch.start("processCombinations");
     for (final Combination combination : combinations) {
-      int attributeMagnification = 100;
+      int attributeMagnification = 100 + plusAttributeMagnification(combination, attributeType);
       int attackMagnification = 100 + plusMagnification(combination, attackType);
       int raceMagnification = 100;
       for (final Damage damage : combination.getDamages()) {
