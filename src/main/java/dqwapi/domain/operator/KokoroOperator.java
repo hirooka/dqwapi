@@ -49,7 +49,7 @@ public class KokoroOperator implements IKokoroOperator {
 
   private int plusAttributeMagnification(final Combination combination, final AttributeType attributeType) {
     if (attributeType.equals(AttributeType.BAGI)) {
-      if (combination.getSlots().stream().anyMatch(slot -> slot.getKokoro().getNumber() == 491 && slot.getKokoro().getGrade().equals(GradeType.SP)) && combination.getSlots().stream().anyMatch(slot -> slot.getKokoro().getNumber() == 364 && slot.getKokoro().getGrade().equals(GradeType.S))) {
+      if (combination.getSlots().stream().anyMatch(slot -> slot.getKokoro().getNumber() == 491 && slot.getKokoro().getGrade().equals(GradeType.SP)) && combination.getSlots().stream().anyMatch(slot -> slot.getKokoro().getNumber() == 364 && slot.getKokoro().getGrade().equals(GradeType.SP))) {
         return 10;
       }
       if (combination.getSlots().stream().anyMatch(slot -> slot.getKokoro().getNumber() == 491 && slot.getKokoro().getGrade().equals(GradeType.SP)) && combination.getSlots().stream().anyMatch(slot -> slot.getKokoro().getNumber() == 285 && slot.getKokoro().getGrade().equals(GradeType.S))) {
