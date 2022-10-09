@@ -79,7 +79,7 @@ public class KokoroCombinationRestController {
           schema = @Schema(allowableValues = {
               "BATTLE_MASTER", "SAGE", "RANGER", "ARMAMENTALIST", "PALADIN",
               "SUPERSTAR", "PIRATE", "MONSTER_MASTER",
-              "GOD_HAND", "MAKENDOUSHI",
+              "GOD_HAND", "DAIMADOUSHI",
           }, defaultValue = "BATTLE_MASTER"))
       @RequestParam(value = "j", required = false) JobType jobType,
 

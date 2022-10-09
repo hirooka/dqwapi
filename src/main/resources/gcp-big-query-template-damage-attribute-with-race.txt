@@ -18,7 +18,7 @@ ceil(
   ceil(
     ceil(
       (`{{project-id}}.{{dataset}}.getMaxValue`('{{JOB}}', {{param0}}, k0.type, {{param1}}, k1.type, {{param2}}, k2.type, {{param3}}, k3.type) + {{base}})
-      * (1 + ((k0.{{attack}}NoneNone + k1.{{attack}}NoneNone + k2.{{attack}}NoneNone + k3.{{attack}}NoneNone + `{{project-id}}.{{dataset}}.getPlusMagnification`('{{attack}}', k0.number, k0.grade, k1.number, k1.grade, k2.number, k2.grade, k3.number, k3.grade)) / 100.0))
+      * (1 + ((k0.{{attack}}NoneNone + k1.{{attack}}NoneNone + k2.{{attack}}NoneNone + k3.{{attack}}NoneNone + `{{project-id}}.{{dataset}}.getPlusAttackMagnification`('{{attack}}', k0.number, k0.grade, k1.number, k1.grade, k2.number, k2.grade, k3.number, k3.grade)) / 100.0))
     )
     * (1 + ((k0.{{attack}}{{Attribute}}None + k1.{{attack}}{{Attribute}}None + k2.{{attack}}{{Attribute}}None + k3.{{attack}}{{Attribute}}None + k0.all{{Attribute}}None + k1.all{{Attribute}}None + k2.all{{Attribute}}None + k3.all{{Attribute}}None + k0.allAllNone + k1.allAllNone + k2.allAllNone + k3.allAllNone + `{{project-id}}.{{dataset}}.getPlusAttributeMagnification`('{{attribute}}', k0.number, k0.grade, k1.number, k1.grade, k2.number, k2.grade, k3.number, k3.grade)) / 100.0))
   )

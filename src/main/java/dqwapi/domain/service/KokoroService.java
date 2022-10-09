@@ -1443,9 +1443,9 @@ public class KokoroService implements IKokoroService {
           dx += combination.getSlots().get(2).getKokoro().getDx();
         }
         break;
-      case MAKENDOUSHI:
-        if (combination.getSlots().get(0).getKokoro().getType().equals(PURPLE)
-                || combination.getSlots().get(0).getKokoro().getType().equals(GREEN)
+      case DAIMADOUSHI:
+        if (combination.getSlots().get(0).getKokoro().getType().equals(YELLOW)
+                || combination.getSlots().get(0).getKokoro().getType().equals(PURPLE)
                 || combination.getSlots().get(0).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
@@ -1466,8 +1466,7 @@ public class KokoroService implements IKokoroService {
           sp += combination.getSlots().get(0).getKokoro().getSp();
           dx += combination.getSlots().get(0).getKokoro().getDx();
         }
-        if (combination.getSlots().get(1).getKokoro().getType().equals(YELLOW)
-                || combination.getSlots().get(1).getKokoro().getType().equals(PURPLE)
+        if (combination.getSlots().get(1).getKokoro().getType().equals(PURPLE)
                 || combination.getSlots().get(1).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
@@ -1489,7 +1488,7 @@ public class KokoroService implements IKokoroService {
           dx += combination.getSlots().get(1).getKokoro().getDx();
         }
         if (combination.getSlots().get(2).getKokoro().getType().equals(YELLOW)
-                || combination.getSlots().get(2).getKokoro().getType().equals(GREEN)
+                || combination.getSlots().get(2).getKokoro().getType().equals(PURPLE)
                 || combination.getSlots().get(2).getKokoro().getType().equals(RAINBOW)
         ) {
           hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
@@ -1776,18 +1775,9 @@ public class KokoroService implements IKokoroService {
                 throw new IllegalArgumentException("");
             }
             break;
-          case MAKENDOUSHI:
+          case DAIMADOUSHI:
             switch (i) {
               case 0:
-                slot.setType(PURPLE_GREEN);
-                if (slot.getKokoro().getType().equals(PURPLE)
-                        || slot.getKokoro().getType().equals(GREEN)
-                        || slot.getKokoro().getType().equals(RAINBOW)
-                ) {
-                  slot.setUp(true);
-                }
-                break;
-              case 1:
                 slot.setType(YELLOW_PURPLE);
                 if (slot.getKokoro().getType().equals(YELLOW)
                         || slot.getKokoro().getType().equals(PURPLE)
@@ -1796,10 +1786,18 @@ public class KokoroService implements IKokoroService {
                   slot.setUp(true);
                 }
                 break;
+              case 1:
+                slot.setType(PURPLE);
+                if (slot.getKokoro().getType().equals(PURPLE)
+                        || slot.getKokoro().getType().equals(RAINBOW)
+                ) {
+                  slot.setUp(true);
+                }
+                break;
               case 2:
                 slot.setType(YELLOW_GREEN);
                 if (slot.getKokoro().getType().equals(YELLOW)
-                        || slot.getKokoro().getType().equals(GREEN)
+                        || slot.getKokoro().getType().equals(PURPLE)
                         || slot.getKokoro().getType().equals(RAINBOW)
                 ) {
                   slot.setUp(true);

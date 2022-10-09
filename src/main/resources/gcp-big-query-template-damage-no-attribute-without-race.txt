@@ -16,7 +16,7 @@ k0.cost + k1.cost + k2.cost + k3.cost - k0.plusCost - k1.plusCost - k2.plusCost 
 
 ceil(
   (`{{project-id}}.{{dataset}}.getMaxValue`('{{JOB}}', {{param0}}, k0.type, {{param1}}, k1.type, {{param2}}, k2.type, {{param3}}, k3.type) + {{base}})
-  * (1 + ((k0.{{attack}}NoneNone + k1.{{attack}}NoneNone + k2.{{attack}}NoneNone + k3.{{attack}}NoneNone + `{{project-id}}.{{dataset}}.getPlusMagnification`('{{attack}}', k0.number, k0.grade, k1.number, k1.grade, k2.number, k2.grade, k3.number, k3.grade)) / 100.0))
+  * (1 + ((k0.{{attack}}NoneNone + k1.{{attack}}NoneNone + k2.{{attack}}NoneNone + k3.{{attack}}NoneNone + `{{project-id}}.{{dataset}}.getPlusAttackMagnification`('{{attack}}', k0.number, k0.grade, k1.number, k1.grade, k2.number, k2.grade, k3.number, k3.grade)) / 100.0))
 ) {{job}}_{{attribute}}_{{attack}}_damage,
 
 FROM (

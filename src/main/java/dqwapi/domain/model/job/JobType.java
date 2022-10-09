@@ -10,5 +10,5 @@ public enum JobType {
   PIRATE,
   MONSTER_MASTER,
   GOD_HAND,
-  MAKENDOUSHI
+  DAIMADOUSHI
 }
