@@ -1,5 +1,87 @@
 [
   {
+    "number": 492,
+    "name": "灼爍天ブレア",
+    "grade": "S",
+    "type": "RED",
+    "race": "SECRET",
+    "cost": 137,
+    "hp": 125,
+    "mp":  59,
+    "op": 117,
+    "dp":  75,
+    "os":  19,
+    "ds":  19,
+    "sp": 112,
+    "dx":  89,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
+  },
+  {
+    "number": 492,
+    "name": "灼爍天ブレア",
+    "grade": "A",
+    "type": "RED",
+    "race": "SECRET",
+    "cost": 137,
+    "hp": 111,
+    "mp":  49,
+    "op": 104,
+    "dp":  66,
+    "os":  16,
+    "ds":  16,
+    "sp":  98,
+    "dx":  78,
+    "plusCost": 3,
+    "damages": [
+      {
+        "attack": "SLASH",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      },
+      {
+        "attack": "HIT",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 7
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": [
+      {
+        "attack": "ALL",
+        "attribute": "MERA",
+        "race": "NONE",
+        "magnification": 10
+      }
+    ]
+  },
+  {
     "number": 491,
     "name": "欲望の魔人(覚醒)",
     "grade": "SP",
