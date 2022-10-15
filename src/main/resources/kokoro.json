@@ -11069,6 +11069,52 @@
   },
   {
     "number": 219,
+    "name": "おどるほうせき(覚醒)",
+    "grade": "SP",
+    "type": "PURPLE",
+    "race": "MATERIAL",
+    "cost": 129,
+    "hp":  87,
+    "mp": 110,
+    "op":  24,
+    "dp":  54,
+    "os":  84,
+    "ds":  34,
+    "sp":  66,
+    "dx":  77,
+    "plusCost": 4,
+    "damages": [
+      {
+        "attack": "SPELL",
+        "attribute": "NONE",
+        "race": "NONE",
+        "magnification": 10
+      },
+      {
+        "attack": "SPELL",
+        "attribute": "IO",
+        "race": "NONE",
+        "magnification": 12
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "DEVIL",
+        "magnification": 5
+      },
+      {
+        "attack": "ALL",
+        "attribute": "NONE",
+        "race": "MATERIAL",
+        "magnification": 5
+      }
+    ],
+    "chr": 0,
+    "healings": [],
+    "resistances": []
+  },
+  {
+    "number": 219,
     "name": "おどるほうせき",
     "grade": "S",
     "type": "PURPLE",
