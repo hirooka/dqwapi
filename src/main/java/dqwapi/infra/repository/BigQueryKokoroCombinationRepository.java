@@ -26,7 +26,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Repository;
 
-@Profile("dwh-gcp-bigquery")
+@Profile({"dwh-gcp-bigquery-prod", "dwh-gcp-bigquery-dev"})
 @Slf4j
 @RequiredArgsConstructor
 @Repository("big-query-repository")

@@ -2,7 +2,20 @@ package dqwapi.domain.service;
 
 import static com.google.common.base.CaseFormat.LOWER_HYPHEN;
 import static com.google.common.base.CaseFormat.UPPER_UNDERSCORE;
-import static dqwapi.domain.model.common.KokoroType.*;
+import static dqwapi.domain.model.common.KokoroType.BLUE;
+import static dqwapi.domain.model.common.KokoroType.BLUE_GREEN;
+import static dqwapi.domain.model.common.KokoroType.BLUE_PURPLE;
+import static dqwapi.domain.model.common.KokoroType.GREEN;
+import static dqwapi.domain.model.common.KokoroType.PURPLE;
+import static dqwapi.domain.model.common.KokoroType.PURPLE_GREEN;
+import static dqwapi.domain.model.common.KokoroType.RAINBOW;
+import static dqwapi.domain.model.common.KokoroType.RED;
+import static dqwapi.domain.model.common.KokoroType.RED_BLUE;
+import static dqwapi.domain.model.common.KokoroType.RED_YELLOW;
+import static dqwapi.domain.model.common.KokoroType.YELLOW;
+import static dqwapi.domain.model.common.KokoroType.YELLOW_BLUE;
+import static dqwapi.domain.model.common.KokoroType.YELLOW_GREEN;
+import static dqwapi.domain.model.common.KokoroType.YELLOW_PURPLE;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -675,15 +688,15 @@ public class KokoroService implements IKokoroService {
       );
       log.debug(kokoros.toString());
 
-      stopWatch.start("kokoroFlats");
-      objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-      kokoroFlats =
-          objectMapper.readValue(kokoroFlatJsonResource.getInputStream(), new TypeReference<>() {});
-      stopWatch.stop();
-      log.info("{} kokoroFlats, {} ms",
-          kokoroFlats.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis())
-      );
-      log.debug(kokoroFlats.toString());
+//      stopWatch.start("kokoroFlats");
+//      objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+//      kokoroFlats =
+//          objectMapper.readValue(kokoroFlatJsonResource.getInputStream(), new TypeReference<>() {});
+//      stopWatch.stop();
+//      log.info("{} kokoroFlats, {} ms",
+//          kokoroFlats.size(), String.format("%,d", stopWatch.getLastTaskTimeMillis())
+//      );
+//      log.debug(kokoroFlats.toString());
 
       // TODO: initialized on memory (too many memory usage)
       /*
@@ -1936,7 +1949,7 @@ public class KokoroService implements IKokoroService {
     stopWatch.start("findCombinationsFromRdbms");
 
     final DwhType dwhType;
-    if (activeProfile.equals("dwh-gcp-bigquery")) {
+    if (activeProfile.equals("dwh-gcp-bigquery-prod") || activeProfile.equals("dwh-gcp-bigquery-dev")) {
       dwhType = DwhType.BIG_QUERY;
     } else if (activeProfile.equals("dwh-gcp-cloudsql-postgresql")) {
       dwhType = DwhType.CLOUD_SQL_POSTGRESQL;

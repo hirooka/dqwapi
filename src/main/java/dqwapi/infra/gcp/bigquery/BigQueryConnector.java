@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-@Profile("dwh-gcp-bigquery")
+@Profile({"dwh-gcp-bigquery-prod", "dwh-gcp-bigquery-dev"})
 @Slf4j
 @Component
 public class BigQueryConnector implements IBigQueryConnector {

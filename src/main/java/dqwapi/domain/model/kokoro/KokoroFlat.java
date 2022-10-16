@@ -16,13 +16,11 @@ public class KokoroFlat {
 
   private int number;
   private String name;
-  private GradeType grade;
+  private EncounterType encounter;
   private KokoroType type;
   private RaceType race;
-
+  private GradeType grade;
   private int cost;
-  private int plusCost;
-
   private int hp;
   private int mp;
   private int op;
@@ -31,6 +29,7 @@ public class KokoroFlat {
   private int ds;
   private int sp;
   private int dx;
+  private int plusCost;
 
   private int slashNoneNone;
   private int hitNoneNone;
@@ -38,68 +37,68 @@ public class KokoroFlat {
   private int breathNoneNone;
 
   private int allAllNone;
-  private int allBagiNone;
-  private int allDeinNone;
-  private int allDorumaNone;
+  private int allMeraNone;
   private int allGiraNone;
   private int allHyadoNone;
-  private int allIoNone;
+  private int allBagiNone;
+  private int allDeinNone;
   private int allJibariaNone;
-  private int allMeraNone;
+  private int allIoNone;
+  private int allDorumaNone;
 
-  private int slashBagiNone;
-  private int slashDeinNone;
-  private int slashDorumaNone;
+  private int slashMeraNone;
   private int slashGiraNone;
   private int slashHyadoNone;
-  private int slashIoNone;
+  private int slashBagiNone;
+  private int slashDeinNone;
   private int slashJibariaNone;
-  private int slashMeraNone;
+  private int slashIoNone;
+  private int slashDorumaNone;
 
-  private int hitBagiNone;
-  private int hitDeinNone;
-  private int hitDorumaNone;
+  private int hitMeraNone;
   private int hitGiraNone;
   private int hitHyadoNone;
-  private int hitIoNone;
+  private int hitBagiNone;
+  private int hitDeinNone;
   private int hitJibariaNone;
-  private int hitMeraNone;
+  private int hitIoNone;
+  private int hitDorumaNone;
 
-  private int spellBagiNone;
-  private int spellDeinNone;
-  private int spellDorumaNone;
+  private int spellMeraNone;
   private int spellGiraNone;
   private int spellHyadoNone;
-  private int spellIoNone;
+  private int spellBagiNone;
+  private int spellDeinNone;
   private int spellJibariaNone;
-  private int spellMeraNone;
+  private int spellIoNone;
+  private int spellDorumaNone;
 
-  private int breathBagiNone;
-  private int breathDeinNone;
-  private int breathDorumaNone;
+  private int breathMeraNone;
   private int breathGiraNone;
   private int breathHyadoNone;
-  private int breathIoNone;
+  private int breathBagiNone;
+  private int breathDeinNone;
   private int breathJibariaNone;
-  private int breathMeraNone;
+  private int breathIoNone;
+  private int breathDorumaNone;
 
-  private int allNoneAnimal;
-  private int allNoneBird;
-  private int allNoneDevil;
-  private int allNoneDragon;
-  private int allNoneElement;
-  private int allNoneInsect;
-  private int allNoneMachine;
-  private int allNoneMaterial;
-  private int allNonePhantom;
-  private int allNonePlant;
-  private int allNoneSecret;
   private int allNoneSlime;
-  private int allNoneWater;
+  private int allNoneAnimal;
+  private int allNoneDragon;
+  private int allNoneInsect;
+  private int allNoneBird;
+  private int allNonePlant;
+  private int allNoneMaterial;
+  private int allNoneMachine;
   private int allNoneZombie;
+  private int allNoneDevil;
+  private int allNoneElement;
+  private int allNonePhantom;
+  private int allNoneWater;
+  private int allNoneSecret;
 
   private int healingSkill;
-  private int healingSpecialty;
   private int healingSpell;
+  private int healingSpecialty;
 
 }
