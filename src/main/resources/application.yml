@@ -68,7 +68,7 @@ gcp:
   run-on-cloud: \${RUN_ON_CLOUD:false}
   big-query:
     dataset: dqwapi
-    table: kokoro
+    table: kokoro-prod
     table-type: CROSS
   cloud-storage:
     bucket: dqwapi
