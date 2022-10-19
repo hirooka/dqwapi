@@ -8,7 +8,7 @@ spring:
   application:
     name: dqwapi
   profiles:
-    active: dwh-gcp-bigquery #dwh-gcp-cloudsql-postgresql
+    active: dwh-gcp-bigquery-dev #dwh-gcp-cloudsql-postgresql
   jackson:
     serialization:
       indent_output: true
@@ -41,7 +41,7 @@ dqwapi:
   git-commit-id: ${project.ext.gitProps['git.commit.id.abbrev']}
   fqdn: dqwapi.hirooka.pro
   path-prefix:
-  kokoro-json: kokoro.json
+  kokoro-json: kokoro-v2.json
   kokoro-flat-json: kokoro-flat.json
   kokoro-persist: false
   response: 20
@@ -63,12 +63,25 @@ logging:
 spring:
   config:
     activate:
-      on-profile: dwh-gcp-bigquery
+      on-profile: dwh-gcp-bigquery-prod
 gcp:
   run-on-cloud: \${RUN_ON_CLOUD:false}
   big-query:
     dataset: dqwapi
-    table: kokoro
+    table: kokoro-prod
+    table-type: CROSS
+  cloud-storage:
+    bucket: dqwapi
+---
+spring:
+  config:
+    activate:
+      on-profile: dwh-gcp-bigquery-dev
+gcp:
+  run-on-cloud: \${RUN_ON_CLOUD:false}
+  big-query:
+    dataset: dqwapi
+    table: kokoro-dev
     table-type: CROSS
   cloud-storage:
     bucket: dqwapi

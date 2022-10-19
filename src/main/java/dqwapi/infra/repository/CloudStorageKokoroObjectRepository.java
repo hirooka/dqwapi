@@ -24,7 +24,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StopWatch;
 
-@Profile("dwh-gcp-bigquery")
+@Profile({"dwh-gcp-bigquery-prod", "dwh-gcp-bigquery-dev"})
 @Slf4j
 @RequiredArgsConstructor
 @Repository
@@ -66,14 +66,14 @@ public class CloudStorageKokoroObjectRepository implements IKokoroObjectReposito
 
           switch (damageString) {
 
-            case "breathNoneNone":
-              kokoroFlat.setBreathNoneNone(damage.getMagnification());
+            case "slashNoneNone":
+              kokoroFlat.setSlashNoneNone(damage.getMagnification());
               break;
             case "hitNoneNone":
               kokoroFlat.setHitNoneNone(damage.getMagnification());
               break;
-            case "slashNoneNone":
-              kokoroFlat.setSlashNoneNone(damage.getMagnification());
+            case "breathNoneNone":
+              kokoroFlat.setBreathNoneNone(damage.getMagnification());
               break;
             case "spellNoneNone":
               kokoroFlat.setSpellNoneNone(damage.getMagnification());
@@ -82,14 +82,8 @@ public class CloudStorageKokoroObjectRepository implements IKokoroObjectReposito
             case "allAllNone":
               kokoroFlat.setAllAllNone(damage.getMagnification());
               break;
-            case "allBagiNone":
-              kokoroFlat.setAllBagiNone(damage.getMagnification());
-              break;
-            case "allDeinNone":
-              kokoroFlat.setAllDeinNone(damage.getMagnification());
-              break;
-            case "allDorumaNone":
-              kokoroFlat.setAllDorumaNone(damage.getMagnification());
+            case "allMeraNone":
+              kokoroFlat.setAllMeraNone(damage.getMagnification());
               break;
             case "allGiraNone":
               kokoroFlat.setAllGiraNone(damage.getMagnification());
@@ -97,49 +91,24 @@ public class CloudStorageKokoroObjectRepository implements IKokoroObjectReposito
             case "allHyadoNone":
               kokoroFlat.setAllHyadoNone(damage.getMagnification());
               break;
-            case "allIoNone":
-              kokoroFlat.setAllIoNone(damage.getMagnification());
+            case "allBagiNone":
+              kokoroFlat.setAllBagiNone(damage.getMagnification());
+              break;
+            case "allDeinNone":
+              kokoroFlat.setAllDeinNone(damage.getMagnification());
               break;
             case "allJibariaNone":
               kokoroFlat.setAllJibariaNone(damage.getMagnification());
               break;
-            case "allMeraNone":
-              kokoroFlat.setAllMeraNone(damage.getMagnification());
+            case "allIoNone":
+              kokoroFlat.setAllIoNone(damage.getMagnification());
+              break;
+            case "allDorumaNone":
+              kokoroFlat.setAllDorumaNone(damage.getMagnification());
               break;
 
-            case "hitBagiNone":
-              kokoroFlat.setHitBagiNone(damage.getMagnification());
-              break;
-            case "hitDeinNone":
-              kokoroFlat.setHitDeinNone(damage.getMagnification());
-              break;
-            case "hitDorumaNone":
-              kokoroFlat.setHitDorumaNone(damage.getMagnification());
-              break;
-            case "hitGiraNone":
-              kokoroFlat.setHitGiraNone(damage.getMagnification());
-              break;
-            case "hitHyadoNone":
-              kokoroFlat.setHitHyadoNone(damage.getMagnification());
-              break;
-            case "hitIoNone":
-              kokoroFlat.setHitIoNone(damage.getMagnification());
-              break;
-            case "hitJibariaNone":
-              kokoroFlat.setHitJibariaNone(damage.getMagnification());
-              break;
-            case "hitMeraNone":
-              kokoroFlat.setHitMeraNone(damage.getMagnification());
-              break;
-
-            case "slashBagiNone":
-              kokoroFlat.setSlashBagiNone(damage.getMagnification());
-              break;
-            case "slashDeinNone":
-              kokoroFlat.setSlashDeinNone(damage.getMagnification());
-              break;
-            case "slashDorumaNone":
-              kokoroFlat.setSlashDorumaNone(damage.getMagnification());
+            case "slashMeraNone":
+              kokoroFlat.setSlashMeraNone(damage.getMagnification());
               break;
             case "slashGiraNone":
               kokoroFlat.setSlashGiraNone(damage.getMagnification());
@@ -147,24 +116,74 @@ public class CloudStorageKokoroObjectRepository implements IKokoroObjectReposito
             case "slashHyadoNone":
               kokoroFlat.setSlashHyadoNone(damage.getMagnification());
               break;
-            case "slashIoNone":
-              kokoroFlat.setSlashIoNone(damage.getMagnification());
+            case "slashBagiNone":
+              kokoroFlat.setSlashBagiNone(damage.getMagnification());
+              break;
+            case "slashDeinNone":
+              kokoroFlat.setSlashDeinNone(damage.getMagnification());
               break;
             case "slashJibariaNone":
               kokoroFlat.setSlashJibariaNone(damage.getMagnification());
               break;
-            case "slashMeraNone":
-              kokoroFlat.setSlashMeraNone(damage.getMagnification());
+            case "slashIoNone":
+              kokoroFlat.setSlashIoNone(damage.getMagnification());
+              break;
+            case "slashDorumaNone":
+              kokoroFlat.setSlashDorumaNone(damage.getMagnification());
               break;
 
-            case "spellBagiNone":
-              kokoroFlat.setSpellBagiNone(damage.getMagnification());
+            case "hitMeraNone":
+              kokoroFlat.setHitMeraNone(damage.getMagnification());
               break;
-            case "spellDeinNone":
-              kokoroFlat.setSpellDeinNone(damage.getMagnification());
+            case "hitGiraNone":
+              kokoroFlat.setHitGiraNone(damage.getMagnification());
               break;
-            case "spellDorumaNone":
-              kokoroFlat.setSpellDorumaNone(damage.getMagnification());
+            case "hitHyadoNone":
+              kokoroFlat.setHitHyadoNone(damage.getMagnification());
+              break;
+            case "hitBagiNone":
+              kokoroFlat.setHitBagiNone(damage.getMagnification());
+              break;
+            case "hitDeinNone":
+              kokoroFlat.setHitDeinNone(damage.getMagnification());
+              break;
+            case "hitJibariaNone":
+              kokoroFlat.setHitJibariaNone(damage.getMagnification());
+              break;
+            case "hitIoNone":
+              kokoroFlat.setHitIoNone(damage.getMagnification());
+              break;
+            case "hitDorumaNone":
+              kokoroFlat.setHitDorumaNone(damage.getMagnification());
+              break;
+
+            case "breathMeraNone":
+              kokoroFlat.setBreathMeraNone(damage.getMagnification());
+              break;
+            case "breathGiraNone":
+              kokoroFlat.setBreathGiraNone(damage.getMagnification());
+              break;
+            case "breathHyadoNone":
+              kokoroFlat.setBreathHyadoNone(damage.getMagnification());
+              break;
+            case "breathBagiNone":
+              kokoroFlat.setBreathBagiNone(damage.getMagnification());
+              break;
+            case "breathDeinNone":
+              kokoroFlat.setBreathDeinNone(damage.getMagnification());
+              break;
+            case "breathJibariaNone":
+              kokoroFlat.setBreathJibariaNone(damage.getMagnification());
+              break;
+            case "breathIoNone":
+              kokoroFlat.setBreathIoNone(damage.getMagnification());
+              break;
+            case "breathDorumaNone":
+              kokoroFlat.setBreathDorumaNone(damage.getMagnification());
+              break;
+
+            case "spellMeraNone":
+              kokoroFlat.setSpellMeraNone(damage.getMagnification());
               break;
             case "spellGiraNone":
               kokoroFlat.setSpellGiraNone(damage.getMagnification());
@@ -172,58 +191,65 @@ public class CloudStorageKokoroObjectRepository implements IKokoroObjectReposito
             case "spellHyadoNone":
               kokoroFlat.setSpellHyadoNone(damage.getMagnification());
               break;
-            case "spellIoNone":
-              kokoroFlat.setSpellIoNone(damage.getMagnification());
+            case "spellBagiNone":
+              kokoroFlat.setSpellBagiNone(damage.getMagnification());
+              break;
+            case "spellDeinNone":
+              kokoroFlat.setSpellDeinNone(damage.getMagnification());
               break;
             case "spellJibariaNone":
               kokoroFlat.setSpellJibariaNone(damage.getMagnification());
               break;
-            case "spellMeraNone":
-              kokoroFlat.setSpellMeraNone(damage.getMagnification());
+            case "spellIoNone":
+              kokoroFlat.setSpellIoNone(damage.getMagnification());
+              break;
+            case "spellDorumaNone":
+              kokoroFlat.setSpellDorumaNone(damage.getMagnification());
               break;
 
+            case "allNoneSlime":
+              kokoroFlat.setAllNoneSlime(damage.getMagnification());
+              break;
             case "allNoneAnimal":
               kokoroFlat.setAllNoneAnimal(damage.getMagnification());
-              break;
-            case "allNoneBird":
-              kokoroFlat.setAllNoneBird(damage.getMagnification());
-              break;
-            case "allNoneDevil":
-              kokoroFlat.setAllNoneDevil(damage.getMagnification());
               break;
             case "allNoneDragon":
               kokoroFlat.setAllNoneDragon(damage.getMagnification());
               break;
-            case "allNoneElement":
-              kokoroFlat.setAllNoneElement(damage.getMagnification());
-              break;
             case "allNoneInsect":
               kokoroFlat.setAllNoneInsect(damage.getMagnification());
               break;
-            case "allNoneMachine":
-              kokoroFlat.setAllNoneMachine(damage.getMagnification());
-              break;
-            case "allNoneMaterial":
-              kokoroFlat.setAllNoneMaterial(damage.getMagnification());
-              break;
-            case "allNonePhantom":
-              kokoroFlat.setAllNonePhantom(damage.getMagnification());
+            case "allNoneBird":
+              kokoroFlat.setAllNoneBird(damage.getMagnification());
               break;
             case "allNonePlant":
               kokoroFlat.setAllNonePlant(damage.getMagnification());
               break;
-            case "allNoneSecret":
-              kokoroFlat.setAllNoneSecret(damage.getMagnification());
+            case "allNoneMaterial":
+              kokoroFlat.setAllNoneMaterial(damage.getMagnification());
               break;
-            case "allNoneSlime":
-              kokoroFlat.setAllNoneSlime(damage.getMagnification());
-              break;
-            case "allNoneWater":
-              kokoroFlat.setAllNoneWater(damage.getMagnification());
+            case "allNoneMachine":
+              kokoroFlat.setAllNoneMachine(damage.getMagnification());
               break;
             case "allNoneZombie":
               kokoroFlat.setAllNoneZombie(damage.getMagnification());
               break;
+            case "allNoneDevil":
+              kokoroFlat.setAllNoneDevil(damage.getMagnification());
+              break;
+            case "allNoneElement":
+              kokoroFlat.setAllNoneElement(damage.getMagnification());
+              break;
+            case "allNonePhantom":
+              kokoroFlat.setAllNonePhantom(damage.getMagnification());
+              break;
+            case "allNoneWater":
+              kokoroFlat.setAllNoneWater(damage.getMagnification());
+              break;
+            case "allNoneSecret":
+              kokoroFlat.setAllNoneSecret(damage.getMagnification());
+              break;
+
             default:
               throw new IllegalArgumentException("Unknown damage format. " + damageString);
           }
@@ -239,11 +265,11 @@ public class CloudStorageKokoroObjectRepository implements IKokoroObjectReposito
             case "healingSkill":
               kokoroFlat.setHealingSkill(healing.getMagnification());
               break;
-            case "healingSpecialty":
-              kokoroFlat.setHealingSpecialty(healing.getMagnification());
-              break;
             case "healingSpell":
               kokoroFlat.setHealingSpell(healing.getMagnification());
+              break;
+            case "healingSpecialty":
+              kokoroFlat.setHealingSpecialty(healing.getMagnification());
               break;
             default:
               throw new IllegalArgumentException("Unknown healing format.");
@@ -273,7 +299,7 @@ public class CloudStorageKokoroObjectRepository implements IKokoroObjectReposito
         kokoroFlatNdJsonString.append("\n");
       }
 
-      if (runOnCloud) {
+      if (!runOnCloud) {
         cloudStorageConnector.uploadObject(kokoroFlatNdJsonString.toString());
       } else {
         log.info("Did not upload kokoro NDJSON to Cloud Storage due to running on local.");

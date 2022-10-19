@@ -15,9 +15,10 @@ public class Kokoro {
   private UUID uuid = UUID.randomUUID();
   private int number;
   private String name;
-  private GradeType grade;
+  private EncounterType encounter;
   private KokoroType type;
   private RaceType race;
+  private GradeType grade;
   private int cost;
   private int hp;
   private int mp;
@@ -29,7 +30,10 @@ public class Kokoro {
   private int dx;
   private int plusCost;
   private List<Damage> damages;
-  private int chr;
   private List<Healing> healings;
+  private int kaishin;
+  private int bousou;
+  private int mikawashi;
+  private int guard;
   private List<Damage> resistances;
 }
