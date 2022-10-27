@@ -299,11 +299,11 @@ public class CloudStorageKokoroObjectRepository implements IKokoroObjectReposito
         kokoroFlatNdJsonString.append("\n");
       }
 
-      if (!runOnCloud) {
+      //if (!runOnCloud) {
         cloudStorageConnector.uploadObject(kokoroFlatNdJsonString.toString());
-      } else {
-        log.info("Did not upload kokoro NDJSON to Cloud Storage due to running on local.");
-      }
+      //} else {
+      //  log.info("Did not upload kokoro NDJSON to Cloud Storage due to running on local.");
+      //}
 
       stopWatch.stop();
       log.info(
