@@ -29,7 +29,7 @@ public class CloudStorageConnector implements ICloudStorageConnector {
   public void uploadObject(String object) {
     final String objectName;
     if (Arrays.asList(environment.getActiveProfiles()).contains("dwh-gcp-bigquery-prod")) {
-      objectName = "kokoro-flat-nd.json";
+      objectName = "kokoro-flat-nd-prod.json";
     } else {
       objectName = "kokoro-flat-nd-dev.json";
     }
