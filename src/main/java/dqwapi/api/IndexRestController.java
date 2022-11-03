@@ -5,24 +5,20 @@ import io.swagger.v3.oas.annotations.Hidden;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.info.GitProperties;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
-@RequiredArgsConstructor
+@AllArgsConstructor
 @RequestMapping("")
 @RestController
 public class IndexRestController {
 
-  @Value("${dqwapi.git-build-version}")
-  private String version;
-
-  @Value("${dqwapi.git-commit-id}")
-  private String commitId;
+  private final GitProperties gitProperties;
 
   @Hidden
   @GetMapping
@@ -31,8 +27,9 @@ public class IndexRestController {
     return new Hello(
         instant.atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ISO_ZONED_DATE_TIME),
         instant.toEpochMilli(),
-        version,
-        commitId
+        gitProperties.get("build.version"),
+        gitProperties.getShortCommitId(),
+        gitProperties.getCommitTime()
     );
   }
 }

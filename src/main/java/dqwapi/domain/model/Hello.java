@@ -1,5 +1,6 @@
 package dqwapi.domain.model;
 
+import java.time.Instant;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,4 +13,5 @@ public class Hello {
   private long epoch;
   private String version;
   private String commitId;
+  private Instant commitTime;
 }

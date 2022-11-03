@@ -17,9 +17,6 @@ import org.springframework.util.ObjectUtils;
 @Configuration
 public class OpenApiConfig {
 
-  @Value("${dqwapi.version}")
-  private String version;
-
   @Value("${dqwapi.fqdn}")
   private String fqdn;
 
@@ -37,15 +34,15 @@ public class OpenApiConfig {
       if (runOnCloud) {
         return new OpenAPI()
             .addServersItem(new Server().url("https://" + fqdn))
-            .info(new Info().title(title).version(version).description(description));
+            .info(new Info().title(title).version("").description(description));
       } else {
-        return new OpenAPI().info(new Info().title(title).version(version).description(description));
+        return new OpenAPI().info(new Info().title(title).version("").description(description));
       }
     } else {
       log.info("CloudPlatform: {}", CloudPlatform.getActive(environment).name());
       return new OpenAPI()
           .addServersItem(new Server().url("https://" + fqdn))
-          .info(new Info().title(title).version(version).description(description));
+          .info(new Info().title(title).version("").description(description));
     }
   }
 
