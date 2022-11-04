@@ -1,32 +1,23 @@
 # dqwapi
 
-API that suggests the optimal combination of kokoro for advanced jobs of DRAGON QUEST WALK.
+ドラゴンクエストウォークの特級職、上級職において最適だと考えられるこころの組み合わせを提案する API です。
 
-## Prerequisites
+## 動かすために必要なもの
 
 - Java 17
 - BigQuery, Cloud Storage, Cloud Functions (Google Cloud)
 
-## Getting Started
+## 対応しているこころ
 
-The easiest way to run application is to use Docker.
-
-Swagger UI is
-
-```
-http://localhost:8888/api.html
-```
-
-## Supported Kokoro
-
-| Type | Grade |
-|--------|--------|
-| メガモンスター | S, A |
-| ほこら(上級職推奨レベル60以上) | S, A |
-| ほこら(上級職推奨レベル60未満) | S |
-| 強敵 | S |
-| めったに見かけない | S, A, B |
-| あまり見かけない | S, A, B |
-| ときどき見かける | S |
-| よく見かける | Unsupported |
-| とてもよく見かける | Unsupported |
+| Type      | Grade |
+|-----------|--|
+| ギガモンスター   | 覚醒, S, A |
+| メガモンスター   | 覚醒, S, A |
+| ほこら(一部)   | S, A |
+| ほこら       | S |
+| 強敵        | S |
+| めったに見かけない | 覚醒, S, A, B |
+| あまり見かけない  | 覚醒, S, A, B |
+| ときどき見かける  | S |
+| よく見かける    | 未対応 |
+| とてもよく見かける | 未対応 |
