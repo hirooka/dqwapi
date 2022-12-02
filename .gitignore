@@ -53,4 +53,5 @@ atlassian-ide-plugin.xml
 
 # Custom
 build/
+src/main/resources/kokoro.xlsx
 kokoro-flat.json

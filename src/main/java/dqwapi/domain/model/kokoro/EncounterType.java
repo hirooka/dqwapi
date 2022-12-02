@@ -6,5 +6,8 @@ public enum EncounterType {
     TOKIDOKI,
     YOKU,
     TOTEMOYOKU,
+    MEGAMON,
+    GIGAMON,
+    KYOUTEKI,
     NONE
 }
