@@ -11,5 +11,6 @@ public enum JobType {
   MONSTER_MASTER,
   GOD_HAND,
   DAIMADOUSHI,
-  DAISHINKAN
+  DAISHINKAN,
+  NINJA
 }

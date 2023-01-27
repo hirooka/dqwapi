@@ -1590,6 +1590,74 @@ public class KokoroService implements IKokoroService {
           dx += combination.getSlots().get(2).getKokoro().getDx();
         }
         break;
+      case NINJA:
+        if (combination.getSlots().get(0).getKokoro().getType().equals(YELLOW)
+            || combination.getSlots().get(0).getKokoro().getType().equals(BLUE)
+            || combination.getSlots().get(0).getKokoro().getType().equals(RAINBOW)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(0).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(0).getKokoro().getHp();
+          mp += combination.getSlots().get(0).getKokoro().getMp();
+          op += combination.getSlots().get(0).getKokoro().getOp();
+          dp += combination.getSlots().get(0).getKokoro().getDp();
+          os += combination.getSlots().get(0).getKokoro().getOs();
+          ds += combination.getSlots().get(0).getKokoro().getDs();
+          sp += combination.getSlots().get(0).getKokoro().getSp();
+          dx += combination.getSlots().get(0).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(1).getKokoro().getType().equals(BLUE)
+            || combination.getSlots().get(1).getKokoro().getType().equals(RAINBOW)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(1).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(1).getKokoro().getHp();
+          mp += combination.getSlots().get(1).getKokoro().getMp();
+          op += combination.getSlots().get(1).getKokoro().getOp();
+          dp += combination.getSlots().get(1).getKokoro().getDp();
+          os += combination.getSlots().get(1).getKokoro().getOs();
+          ds += combination.getSlots().get(1).getKokoro().getDs();
+          sp += combination.getSlots().get(1).getKokoro().getSp();
+          dx += combination.getSlots().get(1).getKokoro().getDx();
+        }
+        if (combination.getSlots().get(2).getKokoro().getType().equals(YELLOW)
+            || combination.getSlots().get(2).getKokoro().getType().equals(BLUE)
+            || combination.getSlots().get(2).getKokoro().getType().equals(RAINBOW)
+        ) {
+          hp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getHp() * magnification);
+          mp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getMp() * magnification);
+          op += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOp() * magnification);
+          dp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDp() * magnification);
+          os += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getOs() * magnification);
+          ds += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDs() * magnification);
+          sp += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getSp() * magnification);
+          dx += (int) Math.ceil(combination.getSlots().get(2).getKokoro().getDx() * magnification);
+        } else {
+          hp += combination.getSlots().get(2).getKokoro().getHp();
+          mp += combination.getSlots().get(2).getKokoro().getMp();
+          op += combination.getSlots().get(2).getKokoro().getOp();
+          dp += combination.getSlots().get(2).getKokoro().getDp();
+          os += combination.getSlots().get(2).getKokoro().getOs();
+          ds += combination.getSlots().get(2).getKokoro().getDs();
+          sp += combination.getSlots().get(2).getKokoro().getSp();
+          dx += combination.getSlots().get(2).getKokoro().getDx();
+        }
+        break;
+
       default:
         throw new IllegalArgumentException("");
     }
@@ -1915,6 +1983,42 @@ public class KokoroService implements IKokoroService {
                 if (slot.getKokoro().getType().equals(BLUE)
                         || slot.getKokoro().getType().equals(GREEN)
                         || slot.getKokoro().getType().equals(RAINBOW)
+                ) {
+                  slot.setUp(true);
+                }
+                break;
+              case 3:
+                slot.setType(RAINBOW);
+                slot.setUp(true);
+                break;
+              default:
+                throw new IllegalArgumentException("");
+            }
+            break;
+          case NINJA:
+            switch (i) {
+              case 0:
+                slot.setType(YELLOW_BLUE);
+                if (slot.getKokoro().getType().equals(YELLOW)
+                    || slot.getKokoro().getType().equals(BLUE)
+                    || slot.getKokoro().getType().equals(RAINBOW)
+                ) {
+                  slot.setUp(true);
+                }
+                break;
+              case 1:
+                slot.setType(BLUE);
+                if (slot.getKokoro().getType().equals(BLUE)
+                    || slot.getKokoro().getType().equals(RAINBOW)
+                ) {
+                  slot.setUp(true);
+                }
+                break;
+              case 2:
+                slot.setType(YELLOW_BLUE);
+                if (slot.getKokoro().getType().equals(YELLOW)
+                    || slot.getKokoro().getType().equals(BLUE)
+                    || slot.getKokoro().getType().equals(RAINBOW)
                 ) {
                   slot.setUp(true);
                 }
