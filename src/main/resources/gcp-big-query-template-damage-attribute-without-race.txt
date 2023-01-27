@@ -63,6 +63,7 @@ AND k3.number NOT IN ({{joinedNonBrides}})
 AND CONCAT(k2.number, '_', k2.grade) NOT IN ({{joinedExclusions}})
 AND CONCAT(k3.number, '_', k3.grade) NOT IN ({{joinedExclusions}})
 {{inclusions}}
+AND (k0.number != k1.number AND k0.number != k2.number AND k0.number != k3.number AND k1.number != k2.number AND k1.number != k3.number AND k2.number != k3.number)
 ORDER BY {{column}} DESC limit {{limit}}
 )
 SELECT
