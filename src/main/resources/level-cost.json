@@ -64,7 +64,12 @@
     {"level": 30, "cost": 174}
   ],
   "SPECIAL": [
-    {"level": 51, "cost": 999},
+    {"level": 56, "cost": 999},
+    {"level": 55, "cost": 546},
+    {"level": 54, "cost": 544},
+    {"level": 53, "cost": 541},
+    {"level": 52, "cost": 538},
+    {"level": 51, "cost": 535},
     {"level": 50, "cost": 532},
     {"level": 49, "cost": 526},
     {"level": 48, "cost": 519},
