@@ -12,5 +12,6 @@ public enum JobType {
   GOD_HAND,
   DAIMADOUSHI,
   DAISHINKAN,
-  NINJA
+  NINJA,
+  MAKENSHI
 }

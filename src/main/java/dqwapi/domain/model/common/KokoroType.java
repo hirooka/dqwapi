@@ -14,5 +14,6 @@ public enum KokoroType {
   YELLOW_GREEN,
   BLUE_GREEN,
   BLUE_PURPLE,
-  PURPLE_GREEN
+  PURPLE_GREEN,
+  RED_PURPLE
 }
