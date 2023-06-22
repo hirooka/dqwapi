@@ -84,11 +84,11 @@ public class KokoroCombinationRestController {
       @RequestParam(value = "j", required = false) JobType jobType,
 
       @Parameter(description = "コスト",
-              schema = @Schema(defaultValue = "532", minimum = "1", maximum = "999"))
+              schema = @Schema(defaultValue = "565", minimum = "1", maximum = "999"))
       @RequestParam(value = "c", required = false) Integer cost,
 
       @Parameter(description = "レベル",
-          schema = @Schema(defaultValue = "50", minimum = "30", maximum = "91"))
+          schema = @Schema(defaultValue = "60", minimum = "30", maximum = "91"))
       @RequestParam(value = "l", required = false) Integer level,
 
       @Parameter(description = "花嫁のこころ",
